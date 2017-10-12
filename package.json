@@ -1,0 +1,48 @@
+{
+  "name": "coindevelopmentindex",
+  "version": "1.0.0",
+  "description": "Tracking Core Software Development of Altcoins and ERC-20 Tokens",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PatchChat/coindevindex-website.git"
+  },
+  "keywords": [
+    "cryptocurrency",
+    "virtual coins",
+    "ERC-20",
+    "tokens",
+    "Altcoins",
+    "Bitcoin",
+    "development index",
+    "software tracking",
+    "development teams"
+  ],
+  "author": "Leo Vroegindewey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PatchChat/coindevindex-website/issues"
+  },
+  "homepage": "https://github.com/PatchChat/coindevindex-website#readme",
+  "dependencies": {
+    "bootstrap-v4-dev": "^4.0.0-alpha.6",
+    "jquery": "^3.2.1",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-htmlmin": "^2.4.0",
+    "grunt-contrib-imagemin": "^2.0.1",
+    "grunt-contrib-uglify": "^3.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-import": "^1.0.3",
+    "grunt-sass": "^2.0.0"
+  }
+}
