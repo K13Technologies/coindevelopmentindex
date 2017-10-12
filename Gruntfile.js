@@ -167,6 +167,13 @@ module.exports = function(grunt) {
                 return buildPathJSON + src;
           }
         }],
+      },
+      misc: {
+        files: [
+          { src:'BingSiteAuth.xml', dest:'build/BingSiteAuth.xml' },
+          { src:'sitemap.xml', dest:'build/sitemap.xml' },
+          { src:'favicon.ico', dest:'build/favicon.ico' },
+        ]
       }
     },
 
