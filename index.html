@@ -45,28 +45,11 @@
 	<meta property="og:image:height" content="630"/>
 	<meta property="og:description" content="Tracking Cryptocurrency software development so that you don't have to. We track Bitcoin, Altcoin and ERC-20 token core software development progress." />
 
-	<!-- Bootstrap core CSS -->
-	<!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
-
-	<!-- Custom styles for this template -->
-	<!-- <link href="css/jumbotron.css" rel="stylesheet"> -->
-
-	<!-- Custom styles for this template (footer)-->
-	<!-- <link href="css/footer-distributed.css" rel="stylesheet"> -->
-
-	<!-- CSS defining icons (required) -->
-	<!-- <link rel="stylesheet" href="cryptocoins-master/webfont/cryptocoins.css"> -->
-
-	<!-- CSS defining icon/coin colors (optional) -->
-	<!-- <link rel="stylesheet" href="cryptocoins-master/webfont/cryptocoins-colors.css"> -->
-
 	<!-- Minified build CSS -->
 	<link rel="stylesheet" href="assets/css/coindevelopmentindex.css">
 
 	<!-- Sumo Script -->
 	<script src="https://load.sumome.com/" data-sumo-site-id="616479a2e0a5d822659cd9b571bb3f9e195e012c6968077e5c328a1bb95fc571" async="async"></script>
-
-
 
 	<!-- Google Adsense -->
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -77,7 +60,6 @@
 			enable_page_level_ads: true
 		});
 	</script>
-
 
 </head>
 
@@ -958,101 +940,11 @@
 
 		</footer>
 
-
-
-	<!-- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script> -->
-	<!-- <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script> -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-
 	<!-- Font Awesome -->
     <script src="https://use.fontawesome.com/f4dcdc7aa3.js"></script>
 
-
-	<!-- <script src="js/js/bootstrap.min.js"></script> -->
-	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
-	<!-- Underscore JS file -->
-	<!-- <script src="js/js/underscore-min.js"></script> -->
-	<!-- gh3-master -->
-	<!-- <script src="gh3-master/gh3.min.js"></script> -->
-
 	<!-- Minified build js -->
 	<script src="assets/js/coindevelopmentindex.js"></script>
-
-    <script>
-
-	function sortTable(f,n){
-		var rows = $('#myTable tbody  tr').get();
-
-		rows.sort(function(a, b) {
-
-			var A = getVal(a);
-			var B = getVal(b);
-
-			if(A < B) {
-				return -1*f;
-			}
-			if(A > B) {
-				return 1*f;
-			}
-			return 0;
-		});
-
-		function getVal(elm){
-			var v = $(elm).children('td').eq(n).text().toUpperCase();
-			if($.isNumeric(v)){
-				v = parseInt(v,10);
-			}
-			return v;
-		}
-
-		$.each(rows, function(index, row) {
-			$('#myTable').children('tbody').append(row);
-		});
-	}
-var f_stars = 1;
-var f_name = 1;
-var f_team = 1;
-var f_contributors = 1;
-var f_repo = 1;
-var f_update = 1;
-$("#stars").click(function(){
-    f_stars *= -1;
-    var n = $(this).prevAll().length;
-    sortTable(f_stars,n);
-});
-$("#name").click(function(){
-    f_name *= -1;
-    var n = $(this).prevAll().length;
-    sortTable(f_name,n);
-});
-$("#team").click(function(){
-    f_team *= -1;
-    var n = $(this).prevAll().length;
-    sortTable(f_team,n);
-});
-$("#contributors").click(function(){
-    f_contributors *= -1;
-    var n = $(this).prevAll().length;
-    sortTable(f_contributors,n);
-});
-$("#repo").click(function(){
-    f_repo *= -1;
-    var n = $(this).prevAll().length;
-    sortTable(f_repo,n);
-});
-$("#update").click(function(){
-    f_update *= -1;
-    var n = $(this).prevAll().length;
-    sortTable(f_update,n);
-});
-</script>
-
-
-
-
-
-
 
     <!-- Quantcast Tag -->
     <script type="text/javascript">

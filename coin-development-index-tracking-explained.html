@@ -45,28 +45,11 @@
 	<meta property="og:image:height" content="630"/>
 	<meta property="og:description" content="Tracking Cryptocurrency software development so that you don't have to. We track Bitcoin, Altcoin and ERC-20 token core software development progress." />
 
-	<!-- Bootstrap core CSS -->
-	<!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
-
-	<!-- Custom styles for this template -->
-	<!-- <link href="css/jumbotron.css" rel="stylesheet"> -->
-
-	<!-- Custom styles for this template (footer)-->
-	<!-- <link href="css/footer-distributed.css" rel="stylesheet"> -->
-
-	<!-- CSS defining icons (required) -->
-	<!-- <link rel="stylesheet" href="cryptocoins-master/webfont/cryptocoins.css"> -->
-
-	<!-- CSS defining icon/coin colors (optional) -->
-	<!-- <link rel="stylesheet" href="cryptocoins-master/webfont/cryptocoins-colors.css"> -->
-
 	<!-- Minified build CSS -->
 	<link rel="stylesheet" href="assets/css/coindevelopmentindex.css">
 
 	<!-- Sumo Script -->
 	<script src="https://load.sumome.com/" data-sumo-site-id="616479a2e0a5d822659cd9b571bb3f9e195e012c6968077e5c328a1bb95fc571" async="async"></script>
-
-
 
 	<!-- Google Adsense -->
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -124,25 +107,25 @@
 		<h2 class="jumbotron-white align right-left-margin"></h2>
 	</div>
 </div>
-<body data-spy="scroll" data-target="#myScrollspy" data-offset="#">
 	<div class="container">
 		<div class="row">
-			<nav class="col-md-3" id="myScrollspy">
-				<div id="list-example" class="list-group">
-					<a class="list-group-item list-group-item-action" href="#list-item-1">Coin Ranking</a>
-					<a class="list-group-item list-group-item-action" href="#list-item-2">Code Library</a>
-					<a class="list-group-item list-group-item-action" href="#list-item-3">Development Team</a>
-					<a class="list-group-item list-group-item-action" href="#list-item-4">Developer Documentation</a>
-					<a class="list-group-item list-group-item-action" href="#list-item-5">Repositories</a>
-					<a class="list-group-item list-group-item-action" href="#list-item-6">Stars</a>
-					<a class="list-group-item list-group-item-action" href="#list-item-7">Developer Contributors</a>
-					<a class="list-group-item list-group-item-action" href="#list-item-8">Latest Update</a>
-					<a class="list-group-item list-group-item-action" href="#list-item-9">Current Release</a>
-					<a class="list-group-item list-group-item-action" href="#list-item-10">Top Languages</a>
-				</div>
-			</nav>
+			<div id="list-example" class="col-md-3">
+				<nav class="nav list-group" id="myScrollspy">
+					<li class="nav-item"><a class="nav-link list-group-item list-group-item-action" href="#list-item-1">Coin Ranking</a></li>
+					<li class="nav-item"><a class="nav-link list-group-item list-group-item-action" href="#list-item-2">Code Library</a></li>
+					<li class="nav-item"><a class="nav-link list-group-item list-group-item-action" href="#list-item-3">Development Team</a></li>
+					<li class="nav-item"><a class="nav-link list-group-item list-group-item-action" href="#list-item-4">Developer Documentation</a></li>
+					<li class="nav-item"><a class="nav-link list-group-item list-group-item-action" href="#list-item-5">Repositories</a></li>
+					<li class="nav-item"><a class="nav-link list-group-item list-group-item-action" href="#list-item-6">Stars</a></li>
+					<li class="nav-item"><a class="nav-link list-group-item list-group-item-action" href="#list-item-7">Developer Contributors</a></li>
+					<li class="nav-item"><a class="nav-link list-group-item list-group-item-action" href="#list-item-8">Latest Update</a></li>
+					<li class="nav-item"><a class="nav-link list-group-item list-group-item-action" href="#list-item-9">Current Release</a></li>
+					<li class="nav-item"><a class="nav-link list-group-item list-group-item-action" href="#list-item-10">Top Languages</a></li>
+				</nav>
+			</div>
+			<!-- I don't think scrollspy is warranted here...  data-spy="scroll" data-target="#list-example" data-offset="0" style="position:relative;" -->
 			<div class="col-md-9">
-				<div data-spy="scroll" data-target="#list-example" data-offset="20" class="scrollspy-example">
+				<div>
 					<h4 id="list-item-1"> Coin Ranking</h4>
 					<p>
 						We loosely follow cryptocoin market cap rankings and add new cryptocoins in that order. In the future we aim to provide a weighted developement index ranking of all the cryptocoins available on the cryptocurrency markets.
@@ -186,7 +169,6 @@
 			</div>
 		</div>
 	</div>
-</body>
 
 
 <div class="row p-3">
@@ -216,12 +198,12 @@
 		<a href="https://www.linkedin.com/company/18238926/"><i class="fa fa-linkedin"></i></a>
 	<!--		<a href="#"><i class="fa fa-github"></i></a>
 -->
-</div>
+	</div>
 
-<div class="footer-left">
+	<div class="footer-left">
 
-	<p class="footer-links">
-		<a href="https://twitter.com/LeoVroegindewey">Created and maintained by @LeoVroegindewey</a>
+		<p class="footer-links">
+			<a href="https://twitter.com/LeoVroegindewey">Created and maintained by @LeoVroegindewey</a>
 
 		<!--		<a href="#">Blog</a>
 				·
@@ -232,50 +214,21 @@
 				<a href="#">Faq</a>
 				·
 				<a href="#">Contact</a> -->
-			</p>
+		</p>
 
-			<p>Cryptocoin Software Development Index &copy; 2017 All Rights Reserved</p>
+		<p>Cryptocoin Software Development Index &copy; 2017 All Rights Reserved</p>
+	</div>
+
+	<!-- Quantcast Measure Tag -->
+	<noscript>
+		<div style="display:none;">
+			<img src="https://pixel.quantserve.com/pixel/p-7qhc2DDu8BrpP.gif" border="0" height="1" width="1" alt="Quantcast"/>
 		</div>
-
-		<!-- Quantcast Measure Tag -->
-		<noscript>
-			<div style="display:none;">
-				<img src="https://pixel.quantserve.com/pixel/p-7qhc2DDu8BrpP.gif" border="0" height="1" width="1" alt="Quantcast"/>
-			</div>
-		</noscript>
-		<!-- End of Quantcast Measure Tag -->
+	</noscript>
+	<!-- End of Quantcast Measure Tag -->
 
 
-	</footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<!-- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script> -->
-	<!-- <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script> -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-
-	<!-- <script src="js/js/bootstrap.min.js"></script> -->
-	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
-	<!-- Underscore JS file -->
-	<!-- <script src="js/js/underscore-min.js"></script> -->
-	<!-- gh3-master -->
-	<!-- <script src="gh3-master/gh3.min.js"></script> -->
+</footer>
 
 	<!-- Minified build js -->
 	<script src="assets/js/coindevelopmentindex.js"></script>

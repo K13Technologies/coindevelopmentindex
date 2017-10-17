@@ -7,7 +7,7 @@ module.exports = function(grunt) {
   var buildPathCSS  = "build/assets/css/";
   var buildPathIMG  = "build/assets/img/";
   var buildPathJSON = "build/assets/json/";
-  var buildPathFONT = "build/assets/css/";
+  var buildPathFONT = "build/assets/fonts/";
   var buildPathJS = "build/assets/js/";
 
   ////////////////////////////////////////////
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
     watch: {
       html: {
         files: ['*.html'],
-        tasks: ['htmlmin'],
+        tasks: ['build'],
         options: {
           livereload: true
         }
@@ -110,7 +110,7 @@ module.exports = function(grunt) {
       css: {
         src: [
             'node_modules/bootstrap-v4-dev/dist/css/bootstrap.min.css',
-            'node_modules/bootstrap-v4-dev/dist/css/bootstrap.min.css',
+            'node_modules/font-awesome/css/font-awesome.min.css',
             assetdir+'css/*.min.css',
           ],
           dest: buildPathCSS+dist+'.css',
@@ -153,6 +153,12 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: assetdir+'vendor/cryptocoins-master/webfont/',
+          src: [ '*.woff', '*.woff2', '*.ttf'],
+          dest: buildPathFONT
+        },
+        {
+          expand: true,
+          cwd: 'node_modules/font-awesome/fonts',
           src: [ '*.woff', '*.woff2', '*.ttf'],
           dest: buildPathFONT
         }]
@@ -216,6 +222,7 @@ module.exports = function(grunt) {
           src: [
             'node_modules/jquery/dist/jquery.slim.min.js',
             'node_modules/underscore/underscore-min.js',
+            'node_modules/tether/dist/js/tether.min.js',
             'node_modules/bootstrap-v4-dev/dist/js/bootstrap.min.js',
             assetdir+'vendor/gh3-master/gh3.min.js',
             assetdir+'js/*.min.js',
