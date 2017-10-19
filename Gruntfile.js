@@ -37,15 +37,15 @@ module.exports = function(grunt) {
         }
       },
       js: {
-        files: ['<%= assetdir %>js/_*/*.js'],
+        files: ['<%= assetdir %>js/**/*.js'],
         tasks: ['import:js','uglify:js'],
         options: {
           livereload: true
         }
       },
       json: {
-        files: ['<%= assetdir %>json/_*/*.json'],
-        tasks: ['uglify:json']
+        files: ['<%= assetdir %>json/**/*.json'],
+        tasks: ['copy:buildJSON']
       }
     },
 
@@ -220,23 +220,14 @@ module.exports = function(grunt) {
       js: {
         files: [{
           src: [
-            'node_modules/jquery/dist/jquery.slim.min.js',
+            'node_modules/jquery/dist/jquery.min.js',
             'node_modules/underscore/underscore-min.js',
             'node_modules/tether/dist/js/tether.min.js',
             'node_modules/bootstrap-v4-dev/dist/js/bootstrap.min.js',
             assetdir+'vendor/gh3-master/gh3.min.js',
-            assetdir+'js/*.min.js',
+            assetdir+'js/**/*.js',
           ],
           dest: buildPathJS+dist+'.js',
-        }]
-      },
-      json: {
-        files: [{
-          expand: true,
-          cwd: assetdir+'json/_source/',
-          src: ['*.json'],
-          dest: buildPathJSON,
-          ext: '.json'
         }]
       }
     }
