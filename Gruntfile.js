@@ -16,6 +16,9 @@ module.exports = function(grunt) {
 
   var initObj = {
     assetdir: assetdir,
+    dist: dist,
+    buildPathCSS: buildPathCSS,
+    buildPathJS: buildPathJS,
     pkg: grunt.file.readJSON('package.json'),
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -30,7 +33,7 @@ module.exports = function(grunt) {
         }
       },
       css: {
-        files: ['<%= assetdir %>css/_*/*.scss'],
+        files: ['<%= assetdir %>css/_**/*.scss'],
         tasks: ['sass', 'cssmin', 'concat', 'clean'],
         options: {
           livereload: true
@@ -57,15 +60,15 @@ module.exports = function(grunt) {
       dist: {
         options: {
           outputStyle: 'compressed',
-          sourceMap: false
+          sourceMap: true
         },
         files: [{
           expand: true,
-          cwd: assetdir+'css/_partials/',
+          cwd: '<%= assetdir %>css/_partials/',
           src: ['*.scss'],
-          dest: assetdir+'css/',
-          ext: '.css',
-          extDot: 'first'
+          dest: '<%= assetdir %>css/',
+          ext: '.min.css',
+          // extDot: 'first'
         }]
       }
     },
@@ -76,12 +79,12 @@ module.exports = function(grunt) {
     cssmin: {
       dist: {
         files: {
-          'assets/css/cryptocoins.min.css': [
-            assetdir+'vendor/cryptocoins-master/webfont/cryptocoins.css',
-            assetdir+'vendor/cryptocoins-master/webfont/cryptocoins-colors.css',
+          '<%= assetdir %>css/cryptocoins.min.css': [
+            '<%= assetdir %>vendor/cryptocoins-master/webfont/cryptocoins.css',
+            '<%= assetdir %>vendor/cryptocoins-master/webfont/cryptocoins-colors.css',
           ],
-          'assets/css/footer-distributed.min.css': assetdir+'css/footer-distributed.css',
-          'assets/css/jumbotron.min.css': assetdir+'css/jumbotron.css'
+          '<%= assetdir %>css/footer-distributed.min.css': '<%= assetdir %>css/footer-distributed.css',
+          '<%= assetdir %>css/jumbotron.min.css': '<%= assetdir %>css/jumbotron.css'
         }
       }
     },
@@ -111,9 +114,9 @@ module.exports = function(grunt) {
         src: [
             'node_modules/bootstrap-v4-dev/dist/css/bootstrap.min.css',
             'node_modules/font-awesome/css/font-awesome.min.css',
-            assetdir+'css/*.min.css',
+            '<%= assetdir %>css/*.min.css',
           ],
-          dest: buildPathCSS+dist+'.css',
+          dest: '<%= buildPathCSS %><%= dist %>.css',
       }
     },
 
@@ -127,9 +130,9 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          cwd: assetdir+'js/_source/',
+          cwd: '<%= assetdir %>js/_source/',
           src: ['*.js'],
-          dest: assetdir+'js/',
+          dest: '<%= assetdir %>js/',
           ext: '.js'
         }]
       },
@@ -152,7 +155,7 @@ module.exports = function(grunt) {
       buildFonts: {
         files: [{
           expand: true,
-          cwd: assetdir+'vendor/cryptocoins-master/webfont/',
+          cwd: '<%= assetdir %>vendor/cryptocoins-master/webfont/',
           src: [ '*.woff', '*.woff2', '*.ttf'],
           dest: buildPathFONT
         },
@@ -224,10 +227,10 @@ module.exports = function(grunt) {
             'node_modules/underscore/underscore-min.js',
             'node_modules/tether/dist/js/tether.min.js',
             'node_modules/bootstrap-v4-dev/dist/js/bootstrap.min.js',
-            assetdir+'vendor/gh3-master/gh3.min.js',
-            assetdir+'js/**/*.js',
+            '<%= assetdir %>vendor/gh3-master/gh3.min.js',
+            '<%= assetdir %>js/**/*.js',
           ],
-          dest: buildPathJS+dist+'.js',
+          dest: '<%= buildPathCSS %><%= dist %>.js',
         }]
       }
     }

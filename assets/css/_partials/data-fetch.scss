@@ -1,0 +1,37 @@
+/*! DATA-FETCH */
+
+.token-form {
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1600px;
+    margin: 0 auto;
+
+    header{
+        display:flex;
+        align-items:center;
+        h1 {
+            font-size:5em;
+            font-weight:300;
+            color:#b4b4b4;
+        }
+        p {
+            color:#BADA55;
+        }
+    }
+
+    form {
+        display:flex;
+        flex-flow:row nowrap;
+        justify-content:space-between;
+        width:40em;
+
+        #bearer {
+            flex:2;
+            margin:0 0.8em 0 0.2em;
+        }
+    }
+
+}
