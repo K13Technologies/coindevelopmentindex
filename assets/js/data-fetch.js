@@ -1,26 +1,17 @@
-jQuery.noConflict();
 jQuery(document).ready(function($) {
 
     var handleForm = function(e) {
 
-        console.log('ok');
-
         e.preventDefault();
 
         var token = $('#bearer').val(),
-            json;
-
-        $.get('/assets/json/data.json')
-            .done(function(data) {
-
-                json = data;//JSON.parse(data);
-
-                $.post({
-                      url: 'https://api.github.com/graphql',
-                      data: JSON.stringify({ query: ' { \
-                        repository(owner: "bitcoin", name: "bitcoin") { \
+            owner = $('#owner').val(),
+            repo = $('#repo').val(),
+            query = ' { \
+                        repository(owner: "' + owner + '", name: "' + repo + '") { \
                                 description \
                                 createdAt \
+                                homepageUrl \
                                 pushedAt \
                                 stargazers { \
                                     totalCount \
@@ -33,28 +24,44 @@ jQuery(document).ready(function($) {
                                     } \
                                 } \
                             } \
-                        }' }),
-                      headers: {
-                        Authorization: "Bearer " + token
-                      }
-                    })
-                    .done(function(response) {
+                        }',
+            json;
 
-                        json.data[0].pushedAt = response.data.repository.pushedAt;
-                        json.data[0].stars = response.data.repository.stargazers.totalCount;
-                        json.data[0].languages = response.data.repository.languages.edges.reduce(function(prev, curr) { prev.push(curr.node.name); return prev; }, []);
+        // $.get('/assets/json/data.json')
+        //     .done(function(data) {
 
-                        $('.output .container').html(json);
+        //         json = data; //JSON.parse(data);
+
+        // reset output warning
+        $('.output .container').removeClass('alert alert-danger');
+
+        $.post({
+              url: 'https://api.github.com/graphql',
+              data: JSON.stringify({ query: query}),
+              headers: {
+                Authorization: "Bearer " + token
+              }
+            })
+            .done(function(response) {
+
+                // json.data[0].pushedAt = response.data.repository.pushedAt;
+                // json.data[0].stars = response.data.repository.stargazers.totalCount;
+                // json.data[0].languages = response.data.repository.languages.edges.reduce(function(prev, curr) { prev.push(curr.node.name); return prev; }, []);
+
+                $('.output .container').html('<pre><b>QUERY:</b> \n' + query.replace(/\s{24}/g, '\n') + '\n\n\n<b>RESPONSE:</b> \n' + JSON.stringify(response, null, 4) + '</pre>');
 
 
-                    });
+            })
+            .fail(function(err) {
+                // console.log(err);
+                $('.output .container').addClass('alert alert-danger').html(err.responseJSON.message);
             });
+            // });
 
     };
 
-    $('.token-form form[name="token"]').on('submit', function(e) {
-        e.preventDefault();
-        handleForm();
-    });
+    $('#bearer').focus();
 
-})(jQuery);
+    $('.token-form form[name="token"]').on('submit', handleForm);
+
+});

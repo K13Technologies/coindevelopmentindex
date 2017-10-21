@@ -10,28 +10,61 @@
     margin: 0 auto;
 
     header{
+        width:40em;
         display:flex;
+        flex-flow:row wrap;
+        justify-content:center;
         align-items:center;
+        > * {
+            flex:1 1 auto;
+        }
         h1 {
             font-size:5em;
             font-weight:300;
+            text-align:right;
             color:#b4b4b4;
         }
         p {
             color:#BADA55;
         }
-    }
-
-    form {
-        display:flex;
-        flex-flow:row nowrap;
-        justify-content:space-between;
-        width:40em;
-
-        #bearer {
-            flex:2;
-            margin:0 0.8em 0 0.2em;
+        p:last-of-type {
+            flex-basis:100%;
+            text-align:center;
+            color:#333;
         }
     }
 
+    form {
+        width:40em;
+
+        display: flex;
+        flex-flow:column nowrap;
+        justify-content: space-between;
+
+        .form-row {
+            display:flex;
+
+            .form-group:first-child {
+                padding-left:0;
+            }
+            .form-group:last-child {
+                padding-right:0;
+            }
+        }
+
+    }
+
+}
+
+.output {
+    width:48em;
+    margin:2em;
+    padding:2em;
+    border:1px solid #ccc;
+    border-radius:5px;
+    .container {
+        pre {
+            white-space: pre-wrap;
+        }
+    }
 }

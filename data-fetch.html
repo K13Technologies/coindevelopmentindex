@@ -26,13 +26,26 @@
         <header>
             <h1>github api</h1>
             <p>with GraphQL</p>
+            <p>You can obtain a Personal Access Token from <a href="https://github.com/settings/tokens" target="_blank">GitHub</a>.<br><br>Request the following scopes:<br><em>repo (all), read:org, read:public_key, read:repo_hook, user (all), read:gpg_key</em></p>
         </header>
 
         <section>
-            <form name="token" class="form-inline">
-                <label for="bearer">Authorization </label>
-                <input type="text" id="bearer" placeholder="3adf9edb0eac...">
-                <button type="submit" class="btn">Call API</button>
+            <form name="token">
+                <div class="form-group">
+                    <label for="bearer">Authorization </label>
+                    <input class="form-control" type="text" id="bearer" placeholder="3adf9edb0eac...">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="owner">Owner</label>
+                        <input class="form-control" type="text" id="owner" placeholder="Github Owner">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="repo">Name</label>
+                        <input class="form-control" type="text" id="repo" placeholder="Repo Name">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Call API</button>
             </form>
         </section>
 
