@@ -34,7 +34,7 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['<%= assetdir %>css/_**/*.scss'],
-        tasks: ['sass', 'cssmin', 'concat', 'clean'],
+        tasks: ['sass', 'cssmin', 'concat', 'clean:tmpdir'],
         options: {
           livereload: true
         }
@@ -111,6 +111,9 @@ module.exports = function(grunt) {
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     concat: {
       css: {
+        options: {
+          separator: grunt.util.linefeed,
+        },
         src: [
             'node_modules/bootstrap-v4-dev/dist/css/bootstrap.min.css',
             'node_modules/font-awesome/css/font-awesome.min.css',
@@ -143,6 +146,9 @@ module.exports = function(grunt) {
     // CLEAN - DELETES FILES
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     clean : {
+      builddir: {
+        src: ['build/assets/']
+      },
       tmpdir: {
         src: ['build/**/tmp/']
       }
@@ -227,10 +233,11 @@ module.exports = function(grunt) {
             'node_modules/underscore/underscore-min.js',
             'node_modules/tether/dist/js/tether.min.js',
             'node_modules/bootstrap-v4-dev/dist/js/bootstrap.min.js',
-            '<%= assetdir %>vendor/gh3-master/gh3.min.js',
+            // '<%= assetdir %>vendor/gh3-master/gh3.min.js',
             '<%= assetdir %>js/**/*.js',
+            '!<%= assetdir %>js/vendor/*.js',
           ],
-          dest: '<%= buildPathCSS %><%= dist %>.js',
+          dest: '<%= buildPathJS %><%= dist %>.js',
         }]
       }
     }
@@ -255,6 +262,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('css', ['sass', 'cssmin', 'concat']);
   grunt.registerTask('js', ['import:js', 'uglify:js']);
-  grunt.registerTask('build', ['css', 'js', 'htmlmin', 'copy', 'clean', 'imagemin']);
+  grunt.registerTask('cleanup', ['clean:builddir']);
+  grunt.registerTask('build', ['css', 'js', 'htmlmin', 'copy', 'clean:tmpdir', 'imagemin']);
 
 };
