@@ -1,0 +1,237 @@
+[
+    {
+        "owner": "bitcoin",
+        "name": "bitcoin"
+    },
+    {
+        "owner": "ethereum",
+        "name": "go-ethereum"
+    },
+    {
+        "owner": "ripple",
+        "name": "rippled"
+    },
+    {
+        "owner": "iotaledger",
+        "name": "iota.lib.js"
+    },
+    {
+        "owner": "litecoin-project",
+        "name": "litecoin"
+    },
+    {
+        "owner": "NemProject",
+        "name": "nem.core"
+    },
+    {
+        "owner": "dashpay",
+        "name": "dash"
+    },
+    {
+        "owner": "neo-project",
+        "name": "neo"
+    },
+    {
+        "owner": "gnosis",
+        "name": "gnosis-contracts"
+    },
+    {
+        "owner": "FactomProject",
+        "name": "factomd"
+    },
+    {
+        "owner": "LiskHQ",
+        "name": "lisk"
+    },
+    {
+        "owner": "wavesplatform",
+        "name": "waves"
+    },
+    {
+        "owner": "stratisproject",
+        "name": "StratisBitcoinFullNode"
+    },
+    {
+        "owner": "Gulden",
+        "name": "gulden-official"
+    },
+    {
+        "owner": "monero-project",
+        "name": "monero"
+    },
+    {
+        "owner": "digibyte",
+        "name": "digibyte"
+
+    },
+    {
+        "owner": "zcash",
+        "name": "zcash"
+
+    },
+    {
+        "owner": "ethereumclassic",
+        "name": "ethereumclassic.github.io"
+
+    },
+    {
+        "owner": "qtumproject",
+        "name": "qtum"
+    },
+    {
+        "owner": "MetalPay",
+        "name": "metal-token"
+    },
+    {
+        "owner": "amjuarez",
+        "name": "bytecoin"
+    },
+    {
+        "owner": "iExecBlockchainComputing",
+        "name": "rlc-token"
+    },
+    {
+        "owner": "vergecurrency",
+        "name": "VERGE"
+    },
+    {
+        "owner": "skycoin",
+        "name": "skycoin"
+    },
+    {
+        "owner": "dogecoin",
+        "name": "dogecoin"
+    },
+    {
+        "owner": "maidsafe",
+        "name": "safe_client_libs"
+    },
+    {
+        "owner": "bitshares",
+        "name": "bitshares-core"
+    },
+    {
+        "owner": "ArkEcosystem",
+        "name": "ark-node"
+    },
+    {
+        "owner": "okcashpro",
+        "name": "okcash"
+    },
+    {
+        "owner": "syscoin",
+        "name": "syscoin2"
+    },
+    {
+        "owner": "golemfactory",
+        "name": "golem"
+    },
+    {
+        "owner": "stellar",
+        "name": "stellar-core"
+    },
+    {
+        "owner": "OxProjects",
+        "name": "contracts"
+    },
+    {
+        "owner": "NAVCoin",
+        "name": "navcoin-core"
+    },
+    {
+        "owner": "openvcash",
+        "name": "vcash"
+    },
+    {
+        "owner": "NebulousLabs",
+        "name": "Sia"
+    },
+    {
+        "owner": "EOSIO",
+        "name": "eos"
+    },
+    {
+        "owner": "elastic-coin",
+        "name": "elastic.github.io"
+    },
+    {
+        "owner": "RiseVision",
+        "name": "rise-ts"
+    },
+    {
+        "owner": "Infinitecoin",
+        "name": "infinitecoin"
+    },
+    {
+        "owner": "hempcoin-project",
+        "name": "THC"
+    },
+    {
+        "owner": "AugurProject",
+        "name": "augur-core"
+    },
+    {
+        "owner": "brave-intl",
+        "name": "basic-attention-token-crowdsale"
+    },
+    {
+        "owner": "CoinBlack",
+        "name": "blackcoin"
+    },
+    {
+        "owner": "DistrictOx",
+        "name": "ethlance"
+    },
+    {
+        "owner": "monacoinproject",
+        "name": "monacoin"
+    },
+    {
+        "owner": "input-output-hk",
+        "name": "cardano-sl"
+    },
+    {
+        "owner": "HcashOrg",
+        "name": "Hshare"
+    },
+    {
+        "owner": "xdn-project",
+        "name": "digitalnote"
+    },
+    {
+        "owner": "vertcoin",
+        "name": "vertcoin"
+    },
+    {
+        "owner": "ZencashOfficial",
+        "name": "zen"
+    },
+    {
+        "owner": "unobtanium-official",
+        "name": "Unobtanium"
+    },
+    {
+        "owner": "z-classic",
+        "name": "zclassic"
+    },
+    {
+        "owner": "smartcontractkit",
+        "name": "chainlink"
+    },
+    {
+        "owner": "AventusSystems",
+        "name": "aventus-dapp-proposals"
+    },
+    {
+        "owner": "viacoin",
+        "name": "viacoin"
+    },
+    {
+        "owner": "rubycoinorg",
+        "name": "rubycoin"
+    },
+    {
+        "owner": "rubycoinorg",
+        "name": "rubycoin"
+    }
+]

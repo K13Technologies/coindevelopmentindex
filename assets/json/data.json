@@ -1,414 +1,1106 @@
-{
-    "data": [
-        {
-            "owner": "bitcoin",
-            "name": "bitcoin",
-            "description": "Bitcoin Core integration/staging tree",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://bitcoin.org/en/download"
-        },
-          {
-            "owner": "ethereum",
-            "name": "go-ethereum",
-            "description": "Official Go implementation of the Ethereum protocol",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://geth.ethereum.org"
-        },
-         {
-            "owner": "ripple",
-            "name": "rippled",
-            "description": "Decentralized cryptocurrency blockchain daemon implementing the XRP Ledger in C++",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://ripple.com/xrp"
-        },
-        {
-            "owner": "iotaledger",
-            "name": "iota.lib.js",
-            "description": "IOTA Javascript Library",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://dev.iota.org"
-        },
-        {
-            "owner": "litecoin-project",
-            "name": "litecoin",
-            "description": "Litecoin source tree",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "http://www.litecoin.org"
-        },
-        {
-            "owner": "NemProject",
-            "name": "nem.core",
-            "description": "org.nem.core package",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "http://nem.io"
-        },
-        {
-            "owner": "dashpay",
-            "name": "dash",
-            "description": "Dash - Reinventing Cryptocurrency",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://www.dash.org"
-        },
-         {
-            "owner": "neo-project",
-            "name": "neo",
-            "description": "NEO Smart Economy",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": ""
-        },
-         {
-            "owner": "gnosis",
-            "name": "gnosis-contracts",
-            "description": "Collection of smart contracts for the Gnosis prediction market platform.",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://www.gnosis.pm"
-        },
-          {
-            "owner": "FactomProject",
-            "name": "factomd",
-            "description": "Factom Daemon",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": ""
-        },
-        {
-            "owner": "LiskHQ",
-            "name": "lisk",
-            "description": "Lisk blockchain application platform",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://lisk.io/"
-        },
-        {
-            "owner": "wavesplatform",
-            "name": "waves",
-            "description": "Waves node application",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://wavesplatform.com/"
-        },
-         {
-            "owner": "stratisproject",
-            "name": "StratisBitcoinFullNode",
-            "description": "Bitcoin full node in C#",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://stratisplatform.com"
-        },
-        {
-            "owner": "Gulden",
-            "name": "gulden-official",
-            "description": "The official repository for Gulden core wallet, updated at each release.",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://www.gulden.com"
-        },
-        {
-            "owner": "monero-project",
-            "name": "monero",
-            "description": "Monero: the secure, private, untraceable cryptocurrency",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://getmonero.org"
-        },
-         {
-            "owner": "digibyte",
-            "name": "digibyte",
-            "description": "DigiByte Core 6.14.2 - CURRENT",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "http://digibyte.co"
-
-        },
-        {
-            "owner": "zcash",
-            "name": "zcash",
-            "description": "Zcash - Internet Money",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://z.cash/"
-
-        },
-           {
-            "owner": "ethereumclassic",
-            "name": "ethereumclassic.github.io",
-            "description": "Ethereum Classic Website",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "http://ethereumclassic.github.io"
-
-        },
-        {
-            "owner": "qtumproject",
-            "name": "qtum",
-            "description": "Beyond the Qtum prototype",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://qtum.org"
-        },
-        {
-            "owner": "MetalPay",
-            "name": "metal-token",
-            "description": "Source and audit results of the MTL ERC20 token.",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://qtum.org"
-        },
-        {
-            "owner": "amjuarez",
-            "name": "bytecoin",
-            "description": "CryptoNote protocol implementation",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "http://bytecoin.org"
-        },
-        {
-            "owner": "iExecBlockchainComputing",
-            "name": "rlc-token",
-            "description": "RLC Token for the iEx.ec project",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": ""
-        },
-         {
-            "owner": "vergecurrency",
-            "name": "VERGE",
-            "description": "official source code repository for VERGE cryptocurrency",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://VergeCurrency.com"
-        },
-        {
-            "owner": "skycoin",
-            "name": "skycoin",
-            "description": "Skycoin Core and Wallet",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": ""
-        },
-        {
-            "owner": "dogecoin",
-            "name": "dogecoin",
-            "description": "very currency",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": ""
-        },
-        {
-            "owner": "maidsafe",
-            "name": "safe_client_libs",
-            "description": "SAFE Network client side rust module(s)",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": ""
-        },
-        {
-            "owner": "bitshares",
-            "name": "bitshares-core",
-            "description": "Your share in the Decentralized Exchange",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://bitshares.org/"
-        },
-        {
-            "owner": "ArkEcosystem",
-            "name": "ark-node",
-            "description": "CryptoCurrency for all",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://ark.io"
-        },
-        {
-            "owner": "okcashpro",
-            "name": "okcash",
-            "description": "OKcash (source-code) - OK Core integration/staging tree.",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": ""
-        },
-        {
-            "owner": "syscoin",
-            "name": "syscoin2",
-            "description": "Syscoin2 Core integration/staging tree",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://syscoin.org"
-        },
-         {
-            "owner": "golemfactory",
-            "name": "golem",
-            "description": "Golem is creating a global market for computing power.",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://golem.network"
-        },
-        {
-            "owner": "stellar",
-            "name": "stellar-core",
-            "description": "stellar-core is the backbone of the Stellar network. It maintains a local copy of the ledger, communicating and staying in sync with other instances of stellar-core on the network. Optionally, stellar-core can store historical records of the ledger and participate in consensus.",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": ""
-        },
-          {
-            "owner": "OxProjects",
-            "name": "contracts",
-            "description": "0x smart contracts and tests.",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": ""
-        },
-          {
-            "owner": "NAVCoin",
-            "name": "navcoin-core",
-            "description": "bitcoin-core 0.13 fork ported for Nav Coin",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": ""
-        },
-            {
-            "owner": "openvcash",
-            "name": "vcash",
-            "description": "A decentralized currency for the internet.",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://vcash.info"
-        },
-           {
-            "owner": "NebulousLabs",
-            "name": "Sia",
-            "description": "Blockchain-based marketplace for file storage",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://sia.tech"
-        },
-          {
-            "owner": "EOSIO",
-            "name": "eos",
-            "description": "An open source smart contract platform",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://eosio.github.io/eos/"
-        },
-         {
-            "owner": "elastic-coin",
-            "name": "elastic.github.io",
-            "description": "Elastic Official Website Repository",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "http://www.elastic.pw"
-        },
-        {
-            "owner": "RiseVision",
-            "name": "rise-ts",
-            "description": "",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": ""
-        },
-        {
-            "owner": "Infinitecoin",
-            "name": "infinitecoin",
-            "description": "",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": ""
-        },
-        {
-            "owner": "hempcoin-project",
-            "name": "THC",
-            "description": "Hempcoin Crypto Currency and Crypto-Stash",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": ""
-        },
-        {
-            "owner": "AugurProject",
-            "name": "augur-core",
-            "description": "Augur back-end (Ethereum contracts)",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://www.augur.net"
-        },
-        {
-            "owner": "brave-intl",
-            "name": "basic-attention-token-crowdsale",
-            "description": "Basic Attention Token",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://basicattentiontoken.org/"
-        },
-        {
-            "owner": "CoinBlack",
-            "name": "blackcoin",
-            "description": "BlackCoin Core integration/staging tree",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "http://blackcoin.co"
-        },
-        {
-            "owner": "DistrictOx",
-            "name": "ethlance",
-            "description": "Ethlance is the first job market platform built entirely on the Ethereum blockchain. Free to use forever!",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "http://ethlance.com"
-        },
-        {
-            "owner": "monacoinproject",
-            "name": "monacoin",
-            "description": "",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": ""
-        },
-        {
-            "owner": "input-output-hk",
-            "name": "cardano-sl",
-            "description": "Cryptographic currency implementing Ouroboros PoS protocol",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": ""
-        },
-        {
-            "owner": "HcashOrg",
-            "name": "Hshare",
-            "description": "",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": ""
-        },
-          {
-            "owner": "xdn-project",
-            "name": "digitalnote",
-            "description": "DigitalNote XDN (duckNote, DarkNote) is a private cryptocurrency with ecrypted messages and deposits",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "http://digitalnote.org"
-        },
-         {
-            "owner": "vertcoin",
-            "name": "vertcoin",
-            "description": "A digital currency with mining decentralisation and ASIC resistance as a key focus",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://vertcoin.org"
-        },
-        {
-            "owner": "ZencashOfficial",
-            "name": "zen",
-            "description": "2.0.10 - TLS integration and more!",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://zensystem.io"
-        },
-        {
-            "owner": "unobtanium-official",
-            "name": "Unobtanium",
-            "description": "Colder than CGB, Still shinier than BitBar",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "http://unobtanium.uno"
-        },
-        {
-            "owner": "z-classic",
-            "name": "zclassic",
-            "description": "Zclassic is financial freedom.",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://www.reddit.com/r/ZClassic/"
-        },
-        {
-            "owner": "smartcontractkit",
-            "name": "chainlink",
-            "description": "Easily connect your applications to blockchains",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": "https://chainlink-docs.smartcontract.com"
-        },
-        {
-            "owner": "AventusSystems",
-            "name": "aventus-dapp-proposals",
-            "description": "Proposals for DApp ideas for the Aventus Protocol DApp Idea Competition",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": ""
-        },
-        {
-            "owner": "viacoin",
-            "name": "viacoin",
-            "description": "Viacoin Core integration/staging tree",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": ""
-        },
-         {
-            "owner": "rubycoinorg",
-            "name": "rubycoin",
-            "description": "A precious gem for the digital age.",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": ""
-        },
-         {
-            "owner": "rubycoinorg",
-            "name": "rubycoin",
-            "description": "A precious gem for the digital age.",
-            "createdAt": "2010-12-19T15:16:43Z",
-            "homepageUrl": ""
-        },
-    ]
-    
-}
+[
+    {
+        "owner": "bitcoin",
+        "name": "bitcoin",
+        "id": "MDEwOlJlcG9zaXRvcnkxMTgxOTI3",
+        "description": "Bitcoin Core integration/staging tree",
+        "createdAt": "2010-12-19T15:16:43Z",
+        "homepageUrl": "https://bitcoin.org/en/download",
+        "pushedAt": "2017-10-28T20:24:24Z",
+        "languages": [
+            "C++",
+            "Python",
+            "C"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 18135,
+                "users": 481
+            }
+        }
+    },
+    {
+        "owner": "ethereum",
+        "name": "go-ethereum",
+        "id": "MDEwOlJlcG9zaXRvcnkxNTQ1MjkxOQ==",
+        "description": "Official Go implementation of the Ethereum protocol",
+        "createdAt": "2013-12-26T13:05:46Z",
+        "homepageUrl": "https://geth.ethereum.org",
+        "pushedAt": "2017-10-28T09:41:18Z",
+        "languages": [
+            "Go",
+            "C",
+            "JavaScript"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 8384,
+                "users": 189
+            }
+        }
+    },
+    {
+        "owner": "ripple",
+        "name": "rippled",
+        "id": "MDEwOlJlcG9zaXRvcnkyNzI0MTY3",
+        "description": "Decentralized cryptocurrency blockchain daemon implementing the XRP Ledger in C++",
+        "createdAt": "2011-11-07T04:40:15Z",
+        "homepageUrl": "https://ripple.com/xrp",
+        "pushedAt": "2017-10-28T02:47:05Z",
+        "languages": [
+            "C++",
+            "C",
+            "Java"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 1634,
+                "users": 72
+            }
+        }
+    },
+    {
+        "owner": "iotaledger",
+        "name": "iota.lib.js",
+        "id": "MDEwOlJlcG9zaXRvcnk2Nzg2MDg2Mg==",
+        "description": "IOTA Javascript Library",
+        "createdAt": "2016-09-10T08:49:13Z",
+        "homepageUrl": "https://dev.iota.org",
+        "pushedAt": "2017-10-25T00:58:02Z",
+        "languages": [
+            "JavaScript"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 166,
+                "users": 22
+            }
+        }
+    },
+    {
+        "owner": "litecoin-project",
+        "name": "litecoin",
+        "id": "MDEwOlJlcG9zaXRvcnk0NjQ2MTk4",
+        "description": "Litecoin source tree",
+        "createdAt": "2012-06-13T04:18:26Z",
+        "homepageUrl": "http://www.litecoin.org",
+        "pushedAt": "2017-10-04T08:30:46Z",
+        "languages": [
+            "C++",
+            "Python",
+            "C"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 1880,
+                "users": 11
+            }
+        }
+    },
+    {
+        "owner": "NemProject",
+        "name": "nem.core",
+        "id": "MDEwOlJlcG9zaXRvcnkzNDIxNjMzOA==",
+        "description": "org.nem.core package",
+        "createdAt": "2015-04-19T17:24:03Z",
+        "homepageUrl": "http://nem.io",
+        "pushedAt": "2017-10-25T17:13:02Z",
+        "languages": [
+            "Java",
+            "Batchfile"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 120,
+                "users": 4
+            }
+        }
+    },
+    {
+        "owner": "dashpay",
+        "name": "dash",
+        "id": "MDEwOlJlcG9zaXRvcnkxOTM1MjQ1MA==",
+        "description": "Dash - Reinventing Cryptocurrency",
+        "createdAt": "2014-05-01T17:45:34Z",
+        "homepageUrl": "https://www.dash.org",
+        "pushedAt": "2017-10-27T12:59:21Z",
+        "languages": [
+            "C++",
+            "C",
+            "Python"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 630,
+                "users": 5
+            }
+        }
+    },
+    {
+        "owner": "neo-project",
+        "name": "neo",
+        "id": "MDEwOlJlcG9zaXRvcnkzNjYxMzAzNg==",
+        "description": "NEO Smart Economy",
+        "createdAt": "2015-05-31T17:02:33Z",
+        "homepageUrl": "",
+        "pushedAt": "2017-10-28T20:17:04Z",
+        "languages": [
+            "C#"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 981,
+                "users": 29
+            }
+        }
+    },
+    {
+        "owner": "gnosis",
+        "name": "gnosis-contracts",
+        "id": "MDEwOlJlcG9zaXRvcnk5MTgwNDM2OQ==",
+        "description": "Collection of smart contracts for the Gnosis prediction market platform.",
+        "createdAt": "2017-05-19T12:38:57Z",
+        "homepageUrl": "https://www.gnosis.pm",
+        "pushedAt": "2017-10-27T21:52:22Z",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "Shell"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 51,
+                "users": 21
+            }
+        }
+    },
+    {
+        "owner": "FactomProject",
+        "name": "factomd",
+        "id": "MDEwOlJlcG9zaXRvcnk0MjY2NDA4NA==",
+        "description": "Factom Daemon ",
+        "createdAt": "2015-09-17T15:21:26Z",
+        "homepageUrl": "",
+        "pushedAt": "2017-10-28T00:14:14Z",
+        "languages": [
+            "Go",
+            "Shell",
+            "HTML"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 84,
+                "users": 60
+            }
+        }
+    },
+    {
+        "owner": "LiskHQ",
+        "name": "lisk",
+        "id": "MDEwOlJlcG9zaXRvcnk1MDg3MzY0MQ==",
+        "description": "\ud83d\udcdf Lisk blockchain application platform",
+        "createdAt": "2016-02-01T21:45:35Z",
+        "homepageUrl": "https://lisk.io/",
+        "pushedAt": "2017-10-27T17:44:38Z",
+        "languages": [
+            "JavaScript",
+            "PLpgSQL"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 605,
+                "users": 38
+            }
+        }
+    },
+    {
+        "owner": "wavesplatform",
+        "name": "waves",
+        "id": "MDEwOlJlcG9zaXRvcnk1NjQyNjk3NQ==",
+        "description": "Waves node application",
+        "createdAt": "2016-04-17T08:38:48Z",
+        "homepageUrl": "https://wavesplatform.com/",
+        "pushedAt": "2017-10-27T15:40:27Z",
+        "languages": [
+            "Scala",
+            "Shell"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 252,
+                "users": 33
+            }
+        }
+    },
+    {
+        "owner": "stratisproject",
+        "name": "StratisBitcoinFullNode",
+        "id": "MDEwOlJlcG9zaXRvcnk2NzI3MTI5MA==",
+        "description": "Bitcoin full node in C#",
+        "createdAt": "2016-09-03T04:32:51Z",
+        "homepageUrl": "https://stratisplatform.com",
+        "pushedAt": "2017-10-28T21:29:01Z",
+        "languages": [
+            "C#",
+            "Shell",
+            "Batchfile"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 201,
+                "users": 29
+            }
+        }
+    },
+    {
+        "owner": "Gulden",
+        "name": "gulden-official",
+        "id": "MDEwOlJlcG9zaXRvcnk0MDY1MzYyMA==",
+        "description": "The official repository for Gulden core wallet, updated at each release.",
+        "createdAt": "2015-08-13T10:46:44Z",
+        "homepageUrl": "https://www.gulden.com",
+        "pushedAt": "2017-10-16T20:38:26Z",
+        "languages": [
+            "C++",
+            "Python",
+            "C"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 53,
+                "users": 293
+            }
+        }
+    },
+    {
+        "owner": "monero-project",
+        "name": "monero",
+        "id": "MDEwOlJlcG9zaXRvcnkxOTMxNjYxOQ==",
+        "description": "Monero: the secure, private, untraceable cryptocurrency",
+        "createdAt": "2014-04-30T14:38:28Z",
+        "homepageUrl": "https://getmonero.org",
+        "pushedAt": "2017-10-28T19:31:29Z",
+        "languages": [
+            "C++",
+            "C",
+            "CMake"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 1290,
+                "users": 125
+            }
+        }
+    },
+    {
+        "owner": "digibyte",
+        "name": "digibyte",
+        "id": "MDEwOlJlcG9zaXRvcnkxNTg0ODM2Mg==",
+        "description": "DigiByte Core 6.14.2 - CURRENT",
+        "createdAt": "2014-01-12T18:53:08Z",
+        "homepageUrl": "http://digibyte.co",
+        "pushedAt": "2017-09-28T14:01:26Z",
+        "languages": [
+            "C++",
+            "C",
+            "Python"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 127,
+                "users": 424
+            }
+        }
+    },
+    {
+        "owner": "zcash",
+        "name": "zcash",
+        "id": "MDEwOlJlcG9zaXRvcnkyNjk4NzA0OQ==",
+        "description": "Zcash - Internet Money",
+        "createdAt": "2014-11-22T03:13:10Z",
+        "homepageUrl": "https://z.cash/",
+        "pushedAt": "2017-10-26T23:03:35Z",
+        "languages": [
+            "C++",
+            "C",
+            "Python"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 2921,
+                "users": 375
+            }
+        }
+    },
+    {
+        "owner": "ethereumclassic",
+        "name": "ethereumclassic.github.io",
+        "id": "MDEwOlJlcG9zaXRvcnk2MzQwMjE4Ng==",
+        "description": "Ethereum Classic Website",
+        "createdAt": "2016-07-15T07:43:41Z",
+        "homepageUrl": "http://ethereumclassic.github.io",
+        "pushedAt": "2017-10-20T17:26:20Z",
+        "languages": [
+            "HTML"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 33,
+                "users": 20
+            }
+        }
+    },
+    {
+        "owner": "qtumproject",
+        "name": "qtum",
+        "id": "MDEwOlJlcG9zaXRvcnk4Mzc3NDkwNg==",
+        "description": "Beyond the Qtum prototype",
+        "createdAt": "2017-03-03T08:17:11Z",
+        "homepageUrl": "https://qtum.org",
+        "pushedAt": "2017-10-27T16:03:22Z",
+        "languages": [
+            "C++",
+            "Python",
+            "C"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 339,
+                "users": 434
+            }
+        }
+    },
+    {
+        "owner": "MetalPay",
+        "name": "metal-token",
+        "id": "MDEwOlJlcG9zaXRvcnk5NDgyMTU1Ng==",
+        "description": "Source and audit results of the MTL ERC20 token.",
+        "createdAt": "2017-06-19T21:15:05Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-08-17T15:39:58Z",
+        "languages": [],
+        "data": {
+            "2017-43": {
+                "stars": 3,
+                "users": 4
+            }
+        }
+    },
+    {
+        "owner": "amjuarez",
+        "name": "bytecoin",
+        "id": "MDEwOlJlcG9zaXRvcnkxNzU2MjU0NQ==",
+        "description": "CryptoNote protocol implementation",
+        "createdAt": "2014-03-09T10:47:36Z",
+        "homepageUrl": "bytecoin.org",
+        "pushedAt": "2017-10-10T08:48:40Z",
+        "languages": [
+            "C++",
+            "C",
+            "CMake"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 209,
+                "users": 6
+            }
+        }
+    },
+    {
+        "owner": "iExecBlockchainComputing",
+        "name": "rlc-token",
+        "id": "MDEwOlJlcG9zaXRvcnk4MzY0OTQ3Nw==",
+        "description": "RLC Token for the iEx.ec project",
+        "createdAt": "2017-03-02T07:42:57Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-10-04T12:09:42Z",
+        "languages": [
+            "JavaScript",
+            "Shell"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 19,
+                "users": 11
+            }
+        }
+    },
+    {
+        "owner": "vergecurrency",
+        "name": "VERGE",
+        "id": "MDEwOlJlcG9zaXRvcnk1MDIyMzEyOA==",
+        "description": "official source code repository for VERGE cryptocurrency",
+        "createdAt": "2016-01-23T04:20:14Z",
+        "homepageUrl": "https://VergeCurrency.com",
+        "pushedAt": "2017-10-26T22:48:45Z",
+        "languages": [
+            "C",
+            "C++",
+            "M4"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 107,
+                "users": 15
+            }
+        }
+    },
+    {
+        "owner": "skycoin",
+        "name": "skycoin",
+        "id": "MDEwOlJlcG9zaXRvcnkxNTQyNzgzNQ==",
+        "description": "Skycoin Core and Wallet",
+        "createdAt": "2013-12-25T01:50:16Z",
+        "homepageUrl": "",
+        "pushedAt": "2017-10-26T06:00:05Z",
+        "languages": [
+            "Go",
+            "TypeScript",
+            "Shell"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 218,
+                "users": 32
+            }
+        }
+    },
+    {
+        "owner": "dogecoin",
+        "name": "dogecoin",
+        "id": "MDEwOlJlcG9zaXRvcnkxNDk4MTM3Ng==",
+        "description": "very currency",
+        "createdAt": "2013-12-06T11:38:05Z",
+        "homepageUrl": "",
+        "pushedAt": "2017-10-22T01:00:48Z",
+        "languages": [
+            "C++",
+            "C",
+            "Python"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 1375,
+                "users": 156
+            }
+        }
+    },
+    {
+        "owner": "maidsafe",
+        "name": "safe_client_libs",
+        "id": "MDEwOlJlcG9zaXRvcnkzMjAyMDUzMw==",
+        "description": "SAFE Network client side rust module(s)",
+        "createdAt": "2015-03-11T13:58:08Z",
+        "homepageUrl": "",
+        "pushedAt": "2017-10-27T15:05:29Z",
+        "languages": [
+            "Rust"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 101,
+                "users": 24
+            }
+        }
+    },
+    {
+        "owner": "bitshares",
+        "name": "bitshares-core",
+        "id": "MDEwOlJlcG9zaXRvcnk0NDEyMzI1Mg==",
+        "description": "Your share in the Decentralized Exchange",
+        "createdAt": "2015-10-12T17:36:04Z",
+        "homepageUrl": "https://bitshares.org/",
+        "pushedAt": "2017-10-28T13:30:08Z",
+        "languages": [
+            "C++",
+            "CMake",
+            "Python"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 403,
+                "users": 14
+            }
+        }
+    },
+    {
+        "owner": "ArkEcosystem",
+        "name": "ark-node",
+        "id": "MDEwOlJlcG9zaXRvcnk3MzQ5NjE3Mw==",
+        "description": ":money_with_wings: CryptoCurrency for all",
+        "createdAt": "2016-11-11T17:08:05Z",
+        "homepageUrl": "https://ark.io",
+        "pushedAt": "2017-10-25T12:20:39Z",
+        "languages": [
+            "JavaScript",
+            "PLpgSQL",
+            "HTML"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 57,
+                "users": 15
+            }
+        }
+    },
+    {
+        "owner": "okcashpro",
+        "name": "okcash",
+        "id": "MDEwOlJlcG9zaXRvcnk3NTE0OTIwOQ==",
+        "description": "OKcash (source-code) - OK Core integration/staging tree.",
+        "createdAt": "2016-11-30T03:52:02Z",
+        "homepageUrl": "",
+        "pushedAt": "2017-10-04T08:10:25Z",
+        "languages": [
+            "C++",
+            "JavaScript",
+            "HTML"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 151,
+                "users": 112
+            }
+        }
+    },
+    {
+        "owner": "syscoin",
+        "name": "syscoin2",
+        "id": "MDEwOlJlcG9zaXRvcnk1Mjc2MjI3OA==",
+        "description": "Syscoin2 Core integration/staging tree",
+        "createdAt": "2016-02-29T03:47:32Z",
+        "homepageUrl": "https://syscoin.org",
+        "pushedAt": "2017-10-27T23:58:53Z",
+        "languages": [
+            "C++",
+            "Python",
+            "C"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 37,
+                "users": 8
+            }
+        }
+    },
+    {
+        "owner": "golemfactory",
+        "name": "golem",
+        "id": "MDEwOlJlcG9zaXRvcnk0NjQzMzkzNw==",
+        "description": "Golem is creating a global market for computing power.",
+        "createdAt": "2015-11-18T17:02:35Z",
+        "homepageUrl": "https://golem.network",
+        "pushedAt": "2017-10-28T13:05:43Z",
+        "languages": [
+            "Python",
+            "C",
+            "Shell"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 1632,
+                "users": 30
+            }
+        }
+    },
+    {
+        "owner": "stellar",
+        "name": "stellar-core",
+        "id": "MDEwOlJlcG9zaXRvcnkyNzA4NTgyMQ==",
+        "description": "stellar-core is the backbone of the Stellar network. It maintains a local copy of the ledger, communicating and staying in sync with other instances of stellar-core on the network. Optionally, stellar-core can store historical records of the ledger and participate in consensus.",
+        "createdAt": "2014-11-24T17:11:12Z",
+        "homepageUrl": "",
+        "pushedAt": "2017-10-28T20:25:10Z",
+        "languages": [
+            "C++",
+            "C",
+            "Objective-C"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 566,
+                "users": 45
+            }
+        }
+    },
+    {
+        "owner": "OxProjects",
+        "name": "contracts"
+    },
+    {
+        "owner": "NAVCoin",
+        "name": "navcoin-core",
+        "id": "MDEwOlJlcG9zaXRvcnk4Mjc2MjQzNw==",
+        "description": "bitcoin-core 0.13 fork ported for Nav Coin",
+        "createdAt": "2017-02-22T04:57:00Z",
+        "homepageUrl": "",
+        "pushedAt": "2017-10-28T11:01:46Z",
+        "languages": [
+            "C++",
+            "C",
+            "Python"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 22,
+                "users": 9
+            }
+        }
+    },
+    {
+        "owner": "openvcash",
+        "name": "vcash",
+        "id": "MDEwOlJlcG9zaXRvcnk3NTQxNTUzMQ==",
+        "description": "A decentralized currency for the internet.",
+        "createdAt": "2016-12-02T17:13:31Z",
+        "homepageUrl": "https://vcash.info",
+        "pushedAt": "2017-10-27T22:45:40Z",
+        "languages": [
+            "C++",
+            "C",
+            "Makefile"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 21,
+                "users": 6
+            }
+        }
+    },
+    {
+        "owner": "NebulousLabs",
+        "name": "Sia",
+        "id": "MDEwOlJlcG9zaXRvcnkyNTM3MDA3Mg==",
+        "description": "Blockchain-based marketplace for file storage",
+        "createdAt": "2014-10-17T17:50:25Z",
+        "homepageUrl": "https://sia.tech",
+        "pushedAt": "2017-10-28T03:03:35Z",
+        "languages": [
+            "Go",
+            "Makefile",
+            "Shell"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 1708,
+                "users": 40
+            }
+        }
+    },
+    {
+        "owner": "EOSIO",
+        "name": "eos",
+        "id": "MDEwOlJlcG9zaXRvcnk4NzMzNTk4MA==",
+        "description": "An open source smart contract platform ",
+        "createdAt": "2017-04-05T17:09:53Z",
+        "homepageUrl": "https://eosio.github.io/eos/",
+        "pushedAt": "2017-10-28T19:06:09Z",
+        "languages": [
+            "WebAssembly",
+            "C++",
+            "C"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 1295,
+                "users": 55
+            }
+        }
+    },
+    {
+        "owner": "elastic-coin",
+        "name": "elastic.github.io",
+        "id": "MDEwOlJlcG9zaXRvcnk4Nzk0OTA0Nw==",
+        "description": "Elastic Official Website Repository",
+        "createdAt": "2017-04-11T15:15:52Z",
+        "homepageUrl": "http://www.elastic.pw",
+        "pushedAt": "2017-10-25T20:25:48Z",
+        "languages": [
+            "HTML"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 4,
+                "users": 2
+            }
+        }
+    },
+    {
+        "owner": "RiseVision",
+        "name": "rise-ts",
+        "id": "MDEwOlJlcG9zaXRvcnk5ODQ1MTA3Nw==",
+        "description": null,
+        "createdAt": "2017-07-26T17:56:29Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-09-24T11:48:57Z",
+        "languages": [
+            "TypeScript",
+            "JavaScript"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 7,
+                "users": 10
+            }
+        }
+    },
+    {
+        "owner": "Infinitecoin",
+        "name": "infinitecoin",
+        "id": "MDEwOlJlcG9zaXRvcnkxMTA2MzMwNw==",
+        "description": null,
+        "createdAt": "2013-06-30T02:17:26Z",
+        "homepageUrl": null,
+        "pushedAt": "2014-05-01T22:48:19Z",
+        "languages": [
+            "TypeScript",
+            "C++",
+            "C"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 22,
+                "users": 1
+            }
+        }
+    },
+    {
+        "owner": "hempcoin-project",
+        "name": "THC",
+        "id": "MDEwOlJlcG9zaXRvcnkxNzM4Mjg3OA==",
+        "description": "Hempcoin Crypto Currency and Crypto-Stash",
+        "createdAt": "2014-03-03T22:47:02Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-10-14T14:28:01Z",
+        "languages": [
+            "C++",
+            "HTML",
+            "C"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 7,
+                "users": 5
+            }
+        }
+    },
+    {
+        "owner": "AugurProject",
+        "name": "augur-core",
+        "id": "MDEwOlJlcG9zaXRvcnkyNzYyMzgwNg==",
+        "description": "Augur back-end (Ethereum contracts)",
+        "createdAt": "2014-12-06T05:42:19Z",
+        "homepageUrl": "https://www.augur.net",
+        "pushedAt": "2017-10-28T19:09:38Z",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "TypeScript"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 272,
+                "users": 23
+            }
+        }
+    },
+    {
+        "owner": "brave-intl",
+        "name": "basic-attention-token-crowdsale",
+        "id": "MDEwOlJlcG9zaXRvcnk4NTE1MzQ3Mw==",
+        "description": "Basic Attention Token",
+        "createdAt": "2017-03-16T04:42:59Z",
+        "homepageUrl": "https://basicattentiontoken.org/",
+        "pushedAt": "2017-08-15T00:38:06Z",
+        "languages": [
+            "TeX",
+            "Makefile"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 84,
+                "users": 9
+            }
+        }
+    },
+    {
+        "owner": "CoinBlack",
+        "name": "blackcoin",
+        "id": "MDEwOlJlcG9zaXRvcnk0MDk2NDkyNg==",
+        "description": "BlackCoin Core integration/staging tree",
+        "createdAt": "2015-08-18T10:08:00Z",
+        "homepageUrl": "http://blackcoin.co",
+        "pushedAt": "2017-10-20T13:44:00Z",
+        "languages": [
+            "C++",
+            "Python",
+            "Assembly"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 38,
+                "users": 1
+            }
+        }
+    },
+    {
+        "owner": "DistrictOx",
+        "name": "ethlance"
+    },
+    {
+        "owner": "monacoinproject",
+        "name": "monacoin",
+        "id": "MDEwOlJlcG9zaXRvcnkxNTU1ODMzMw==",
+        "description": null,
+        "createdAt": "2013-12-31T23:43:01Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-10-10T08:17:26Z",
+        "languages": [
+            "C++",
+            "C",
+            "Python"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 98,
+                "users": 427
+            }
+        }
+    },
+    {
+        "owner": "input-output-hk",
+        "name": "cardano-sl",
+        "id": "MDEwOlJlcG9zaXRvcnk3MDkxMzk5Nw==",
+        "description": "Cryptographic currency implementing Ouroboros PoS protocol",
+        "createdAt": "2016-10-14T13:44:38Z",
+        "homepageUrl": "",
+        "pushedAt": "2017-10-28T18:08:45Z",
+        "languages": [
+            "Haskell",
+            "PureScript",
+            "Nix"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 365,
+                "users": 51
+            }
+        }
+    },
+    {
+        "owner": "HcashOrg",
+        "name": "Hshare",
+        "id": "MDEwOlJlcG9zaXRvcnk5NTczOTQ4NA==",
+        "description": null,
+        "createdAt": "2017-06-29T04:46:02Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-09-20T11:47:56Z",
+        "languages": [
+            "C",
+            "C++",
+            "Python"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 52,
+                "users": 13
+            }
+        }
+    },
+    {
+        "owner": "xdn-project",
+        "name": "digitalnote",
+        "id": "MDEwOlJlcG9zaXRvcnkzNjk4ODEyOA==",
+        "description": "DigitalNote XDN (duckNote, DarkNote) is a private cryptocurrency with ecrypted messages and deposits",
+        "createdAt": "2015-06-06T17:06:48Z",
+        "homepageUrl": "http://digitalnote.org",
+        "pushedAt": "2017-08-18T15:28:16Z",
+        "languages": [
+            "C++",
+            "C",
+            "CMake"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 30,
+                "users": 1
+            }
+        }
+    },
+    {
+        "owner": "vertcoin",
+        "name": "vertcoin",
+        "id": "MDEwOlJlcG9zaXRvcnk4MTI1NzAxOQ==",
+        "description": "A digital currency with mining decentralisation and ASIC resistance as a key focus",
+        "createdAt": "2017-02-07T21:38:35Z",
+        "homepageUrl": "https://vertcoin.org",
+        "pushedAt": "2017-10-10T07:15:02Z",
+        "languages": [
+            "C++",
+            "C",
+            "Python"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 91,
+                "users": 2
+            }
+        }
+    },
+    {
+        "owner": "ZencashOfficial",
+        "name": "zen",
+        "id": "MDEwOlJlcG9zaXRvcnk5Mzc5ODgxNw==",
+        "description": "2.0.10 - TLS integration and more!",
+        "createdAt": "2017-06-08T23:05:59Z",
+        "homepageUrl": "https://zensystem.io",
+        "pushedAt": "2017-10-26T00:17:22Z",
+        "languages": [
+            "C++",
+            "Python",
+            "C"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 51,
+                "users": 19
+            }
+        }
+    },
+    {
+        "owner": "unobtanium-official",
+        "name": "Unobtanium",
+        "id": "MDEwOlJlcG9zaXRvcnkyMDk1Nzg1MA==",
+        "description": "Colder than CGB, Still shinier than BitBar  http://unobtanium.uno",
+        "createdAt": "2014-06-18T10:06:00Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-09-08T23:44:36Z",
+        "languages": [
+            "C++",
+            "C",
+            "Shell"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 10,
+                "users": 9
+            }
+        }
+    },
+    {
+        "owner": "z-classic",
+        "name": "zclassic",
+        "id": "MDEwOlJlcG9zaXRvcnk3MjkwMjQ5OQ==",
+        "description": "Zclassic is financial freedom.",
+        "createdAt": "2016-11-05T03:22:38Z",
+        "homepageUrl": "https://www.reddit.com/r/ZClassic/",
+        "pushedAt": "2017-09-15T17:18:27Z",
+        "languages": [
+            "C++",
+            "C",
+            "Python"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 71,
+                "users": 4
+            }
+        }
+    },
+    {
+        "owner": "smartcontractkit",
+        "name": "chainlink",
+        "id": "MDEwOlJlcG9zaXRvcnk2ODM1MzQzMA==",
+        "description": "Easily connect your applications to blockchains",
+        "createdAt": "2016-09-16T04:48:45Z",
+        "homepageUrl": "https://chainlink-docs.smartcontract.com",
+        "pushedAt": "2017-07-21T21:25:21Z",
+        "languages": [
+            "Ruby",
+            "HTML",
+            "CSS"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 78,
+                "users": 2
+            }
+        }
+    },
+    {
+        "owner": "AventusSystems",
+        "name": "aventus-dapp-proposals",
+        "id": "MDEwOlJlcG9zaXRvcnkxMDA2MjYyNDI=",
+        "description": "Proposals for DApp ideas for the Aventus Protocol DApp Idea Competition",
+        "createdAt": "2017-08-17T16:56:52Z",
+        "homepageUrl": "",
+        "pushedAt": "2017-09-03T15:21:05Z",
+        "languages": [],
+        "data": {
+            "2017-43": {
+                "stars": 7,
+                "users": 5
+            }
+        }
+    },
+    {
+        "owner": "viacoin",
+        "name": "viacoin",
+        "id": "MDEwOlJlcG9zaXRvcnk5MTg4MTI2Mw==",
+        "description": "Viacoin Core integration/staging tree",
+        "createdAt": "2017-05-20T10:16:53Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-08-06T02:11:35Z",
+        "languages": [
+            "C++",
+            "Python",
+            "C"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 28,
+                "users": 393
+            }
+        }
+    },
+    {
+        "owner": "rubycoinorg",
+        "name": "rubycoin",
+        "id": "MDEwOlJlcG9zaXRvcnkxNjY4NDA1OQ==",
+        "description": "A precious gem for the digital age.",
+        "createdAt": "2014-02-10T04:10:49Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-10-27T07:42:43Z",
+        "languages": [
+            "C++",
+            "Assembly",
+            "HTML"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 17,
+                "users": 3
+            }
+        }
+    },
+    {
+        "owner": "rubycoinorg",
+        "name": "rubycoin",
+        "id": "MDEwOlJlcG9zaXRvcnkxNjY4NDA1OQ==",
+        "description": "A precious gem for the digital age.",
+        "createdAt": "2014-02-10T04:10:49Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-10-27T07:42:43Z",
+        "languages": [
+            "C++",
+            "Assembly",
+            "HTML"
+        ],
+        "data": {
+            "2017-43": {
+                "stars": 17,
+                "users": 3
+            }
+        }
+    }
+]
