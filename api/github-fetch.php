@@ -3,21 +3,31 @@
 	include('./json.php');
 	include('./token.php');
 
-	$json = fetchRepos();
-
+	$repos = fetchJSON(REPOS_FILE);
+	$json = fetchJSON(JSON_FILE);
+	$out = new stdClass();
 	$ch = curl_init();
 
 	// set URL and other appropriate options
 	curl_setopt($ch, CURLOPT_URL, "https://api.github.com/graphql");
 	curl_setopt($ch, CURLOPT_POST, 1);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($ch, CURLOPT_USERAGENT, 'PatchChat');
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-		'Authorization:Bearer ' . GITHUB_TOKEN,
-		'User-Agent: PatchChat'));
+		'Authorization:Bearer ' . GITHUB_TOKEN));
+
+	if($_GET['proxy']) {
+		curl_setopt($ch, CURLOPT_PROXY, PROXY_SERVER);
+		curl_setopt($ch, CURLOPT_PROXYPORT, '80');
+	}
 
 	echo '<pre>';
 
-	foreach($json as &$repo) {
+	foreach($repos as $repo) {
+
+		// if(!array_filter($json, function())
+
+
 		$query = <<<QUERY
 
 query {
