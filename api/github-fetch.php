@@ -35,13 +35,23 @@ query {
   	id
     description
     createdAt
+    url
     homepageUrl
     pushedAt
-    stargazers {
-      totalCount
+    releases (last: 3) {
+      edges {
+        node {
+          name
+          description
+          publishedAt
+        }
+      }
     }
     mentionableUsers {
-    	totalCount
+      totalCount
+    }
+    stargazers {
+      totalCount
     }
     languages (first: 3, orderBy: { field: SIZE, direction: DESC }) {
       edges {
@@ -64,6 +74,8 @@ QUERY;
 		$raw = json_decode(stripslashes(curl_exec($ch)));
 		$errors = $raw->errors;
 		$response = $raw->data->repository;
+
+		// var_dump($raw);
 
 		if(isset($errors)) {
 			foreach($errors as $error) {
@@ -98,7 +110,7 @@ QUERY;
 		flush();
 
 	}
-		
+
 	curl_close($ch);
 
 	echo '</pre>';
