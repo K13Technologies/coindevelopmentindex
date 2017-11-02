@@ -1,0 +1,80 @@
+/*! DATA-FETCH */
+
+.token-form {
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1600px;
+    margin: 0 auto;
+
+    header{
+        width:40em;
+        display:flex;
+        flex-flow:row wrap;
+        justify-content:center;
+        align-items:center;
+        > * {
+            flex:1 1 auto;
+        }
+        h1 {
+            font-size:5em;
+            font-weight:300;
+            text-align:right;
+            color:#b4b4b4;
+        }
+        p {
+            color:#BADA55;
+        }
+        p:last-of-type {
+            flex-basis:100%;
+            text-align:center;
+            color:#333;
+        }
+    }
+
+    form {
+        width:40em;
+
+        display: flex;
+        flex-flow:column nowrap;
+        justify-content: space-between;
+
+        .form-row {
+            display:flex;
+
+            .form-group:first-child {
+                padding-left:0;
+            }
+            .form-group:last-child {
+                padding-right:0;
+            }
+        }
+
+    }
+
+}
+
+#output {
+    padding-top:2em;
+    [role="tab"] {
+        min-width:40em;
+
+        a {
+            display:block;
+            width:100%;
+            height:100%;
+        }
+    }
+
+    [id*='json'] {
+        min-height:10em;
+        max-width:1180px;
+
+        pre {
+            padding:2em;
+            white-space: pre-wrap;
+        }
+    }
+}
