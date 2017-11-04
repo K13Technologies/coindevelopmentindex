@@ -2,22 +2,13 @@
 
 	include('./json.php');
 	include('./token.php');
+	include('./utils.php');
+
+	// check file permissions for updating file
+	checkPermissions(JSON_FILE, '0777');
 
 	$repos = fetchJSON(REPOS_FILE);
 	$json = fetchJSON(JSON_FILE);
-
-	// check file permissions for updating file
-	$perms = substr(sprintf('%o', fileperms(JSON_FILE)), -4);
-
-	if($perms !== '0777') {
-		echo '<div style="font-family:sans-serif;line-height:1.5;">';
-		echo '<b style="display:block;background-color:red;padding:10px;">ERROR: Incorrect permissions on ' . JSON_FILE;
-		echo '&nbsp;&nbsp;Permissions are: ' . $perms . ', but should be 0777 </b>';
-		echo '<br>To fix, enter the the following command in Terminal:<br>';
-		echo '<pre>sudo chmod 777 ' . JSON_FILE . '</pre>';
-		echo '</div>';
-		die;
-	}
 
 	$out = new stdClass();
 	$ch = curl_init();
