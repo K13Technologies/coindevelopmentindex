@@ -1,7 +1,9 @@
 [
     {
         "owner": "bitcoin",
-        "name": "bitcoin"
+        "name": "bitcoin",
+        "coinname": "Bitcoin",
+        "symbol": "BTC"
     },
     {
         "owner": "ethereum",
@@ -9,31 +11,45 @@
     },
     {
         "owner": "ripple",
-        "name": "rippled"
+        "name": "rippled",
+        "coinname": "Ripple",
+        "symbol": "XRP"
     },
     {
         "owner": "iotaledger",
-        "name": "iota.lib.js"
+        "name": "iota.lib.js",
+        "coinname": "IOTA",
+        "symbol": "IOT"
     },
     {
         "owner": "litecoin-project",
-        "name": "litecoin"
+        "name": "litecoin",
+        "coinname": "Litecoin",
+        "symbol": "LTC"
     },
     {
         "owner": "NemProject",
-        "name": "nem.core"
+        "name": "nem.core",
+        "coinname": "NEM",
+        "symbol": "XEM"
     },
     {
         "owner": "dashpay",
-        "name": "dash"
+        "name": "dash",
+        "coinname": "DAS",
+        "symbol": "DAS"
     },
     {
         "owner": "neo-project",
-        "name": "neo"
+        "name": "neo",
+        "coinname": "NEO",
+        "symbol": "NEO"
     },
     {
         "owner": "gnosis",
-        "name": "gnosis-contracts"
+        "name": "gnosis-contracts",
+        "coinname": "Gnosis",
+        "symbol": "GNO"
     },
     {
         "owner": "FactomProject",
@@ -41,50 +57,67 @@
     },
     {
         "owner": "LiskHQ",
-        "name": "lisk"
+        "name": "lisk",
+        "coinname": "Lisk",
+        "symbol": "LSK"
     },
     {
         "owner": "wavesplatform",
-        "name": "waves"
+        "name": "waves",
+        "coinname": "Waves",
+        "symbol": "WAVES"
     },
     {
         "owner": "stratisproject",
-        "name": "StratisBitcoinFullNode"
+        "name": "StratisBitcoinFullNode",
+        "coinname": "Stratis",
+        "symbol": "STRAT"
     },
     {
         "owner": "Gulden",
-        "name": "gulden-official"
+        "name": "gulden-official",
+        "coinname": "Gulden",
+        "symbol": "NLG"
     },
     {
         "owner": "monero-project",
-        "name": "monero"
+        "name": "monero",
+        "coinname": "Monero",
+        "symbol": "XMR"
     },
     {
         "owner": "digibyte",
-        "name": "digibyte"
-
+        "name": "digibyte",
+        "coinname": "DigiByte",
+        "symbol": "DGB"
     },
     {
         "owner": "zcash",
-        "name": "zcash"
-
+        "name": "zcash",
+        "coinname": "ZCash",
+        "symbol": "ZEC"
     },
     {
         "owner": "ethereumclassic",
         "name": "ethereumclassic.github.io"
-
     },
     {
         "owner": "qtumproject",
-        "name": "qtum"
+        "name": "qtum",
+        "coinname": "QTUM",
+        "symbol": "QTUM"
     },
     {
         "owner": "MetalPay",
-        "name": "metal-token"
+        "name": "metal-token",
+        "coinname": "Metal",
+        "symbol": "MTL"
     },
     {
         "owner": "amjuarez",
-        "name": "bytecoin"
+        "name": "bytecoin",
+        "coinname": "ByteCoin",
+        "symbol": "BCN"
     },
     {
         "owner": "iExecBlockchainComputing",
@@ -92,15 +125,21 @@
     },
     {
         "owner": "vergecurrency",
-        "name": "VERGE"
+        "name": "VERGE",
+        "coinname": "Verge",
+        "symbol": "XVG"
     },
     {
         "owner": "skycoin",
-        "name": "skycoin"
+        "name": "skycoin",
+        "coinname": "Skycoin",
+        "symbol": "SKY"
     },
     {
         "owner": "dogecoin",
-        "name": "dogecoin"
+        "name": "dogecoin",
+        "coinname": "Dogecoin",
+        "symbol": "DOGE"
     },
     {
         "owner": "maidsafe",
@@ -108,19 +147,27 @@
     },
     {
         "owner": "bitshares",
-        "name": "bitshares-core"
+        "name": "bitshares-core",
+        "coinname": "Bitshares",
+        "symbol": "BTS"
     },
     {
         "owner": "ArkEcosystem",
-        "name": "ark-node"
+        "name": "ark-node",
+        "coinname": "ARK",
+        "symbol": "ARK"
     },
     {
         "owner": "okcashpro",
-        "name": "okcash"
+        "name": "okcash",
+        "coinname": "OKCash",
+        "symbol": "OK"
     },
     {
         "owner": "syscoin",
-        "name": "syscoin2"
+        "name": "syscoin2",
+        "coinname": "SysCoin",
+        "symbol": "SYS"
     },
     {
         "owner": "golemfactory",
@@ -128,7 +175,9 @@
     },
     {
         "owner": "stellar",
-        "name": "stellar-core"
+        "name": "stellar-core",
+        "coinname": "Stellar",
+        "symbol": "XLM"
     },
     {
         "owner": "OxProjects",
@@ -136,11 +185,15 @@
     },
     {
         "owner": "NAVCoin",
-        "name": "navcoin-core"
+        "name": "navcoin-core",
+        "coinname": "NavCoin",
+        "symbol": "NAV"
     },
     {
         "owner": "openvcash",
-        "name": "vcash"
+        "name": "vcash",
+        "coinname": "Vcash",
+        "symbol": "XVC"
     },
     {
         "owner": "NebulousLabs",
@@ -148,15 +201,21 @@
     },
     {
         "owner": "EOSIO",
-        "name": "eos"
+        "name": "eos",
+        "coinname": "EOS",
+        "symbol": "EOS"
     },
     {
         "owner": "elastic-coin",
-        "name": "elastic.github.io"
+        "name": "elastic.github.io",
+        "coinname": "Elastic",
+        "symbol": "XEL"
     },
     {
         "owner": "RiseVision",
-        "name": "rise-ts"
+        "name": "rise-ts",
+        "coinname": "Rise",
+        "symbol": "RISE"
     },
     {
         "owner": "Infinitecoin",
@@ -168,7 +227,9 @@
     },
     {
         "owner": "AugurProject",
-        "name": "augur-core"
+        "name": "augur-core",
+        "coinname": "Augur",
+        "symbol": "REP"
     },
     {
         "owner": "brave-intl",
@@ -176,7 +237,9 @@
     },
     {
         "owner": "CoinBlack",
-        "name": "blackcoin"
+        "name": "blackcoin",
+        "coinname": "BlackCoin",
+        "symbol": "BLK"
     },
     {
         "owner": "DistrictOx",
@@ -184,15 +247,21 @@
     },
     {
         "owner": "monacoinproject",
-        "name": "monacoin"
+        "name": "monacoin",
+        "coinname": "MonaCoin",
+        "symbol": "MONA"
     },
     {
         "owner": "input-output-hk",
-        "name": "cardano-sl"
+        "name": "cardano-sl",
+        "coinname": "Cardano",
+        "symbol": "ADA"
     },
     {
         "owner": "HcashOrg",
-        "name": "Hshare"
+        "name": "Hshare",
+        "coinname": "Hshare",
+        "symbol": "HSR"
     },
     {
         "owner": "xdn-project",
@@ -200,7 +269,9 @@
     },
     {
         "owner": "vertcoin",
-        "name": "vertcoin"
+        "name": "vertcoin",
+        "coinname": "VertCoin",
+        "symbol": "VTC"
     },
     {
         "owner": "ZencashOfficial",
@@ -212,11 +283,15 @@
     },
     {
         "owner": "z-classic",
-        "name": "zclassic"
+        "name": "zclassic",
+        "coinname": "ZClassic",
+        "symbol": "ZCL"
     },
     {
         "owner": "smartcontractkit",
-        "name": "chainlink"
+        "name": "chainlink",
+        "coinname": "ChainLink",
+        "symbol": "LINK"
     },
     {
         "owner": "AventusSystems",
@@ -224,11 +299,9 @@
     },
     {
         "owner": "viacoin",
-        "name": "viacoin"
-    },
-    {
-        "owner": "rubycoinorg",
-        "name": "rubycoin"
+        "name": "viacoin",
+        "coinname": "ViaCoin",
+        "symbol": "VIA"
     },
     {
         "owner": "rubycoinorg",
