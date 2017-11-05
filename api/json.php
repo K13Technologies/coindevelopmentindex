@@ -1,13 +1,14 @@
-<?php 
+<?php
 
 define('JSON_FILE', dirname($_SERVER['DOCUMENT_ROOT']) . '/assets/json/data.json');
 define('REPOS_FILE', dirname($_SERVER['DOCUMENT_ROOT']) . '/assets/json/repos.json');
+define('COIN_LIST', 'https://min-api.cryptocompare.com/data/all/coinlist');
 
 $cache = new stdClass();
 
 function fetchJSON($url) {
 	global $cache;
-	
+
 	if(isset($cache->{$url})) return $cache->{$url};
 
 	$json = json_decode(file_get_contents($url));
@@ -20,7 +21,7 @@ function fetchJSON($url) {
 
 	return $json;
 }
-	
+
 function getRecord($owner,$name) {
 
 	$json = fetchJSON(JSON_FILE);
