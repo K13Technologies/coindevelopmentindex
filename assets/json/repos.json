@@ -63,7 +63,7 @@
     },
     {
         "owner": "wavesplatform",
-        "name": "waves",
+        "name": "Waves",
         "coinname": "Waves",
         "symbol": "WAVES"
     },
@@ -218,7 +218,7 @@
         "symbol": "RISE"
     },
     {
-        "owner": "Infinitecoin",
+        "owner": "infinitecoin",
         "name": "infinitecoin"
     },
     {
@@ -306,5 +306,61 @@
     {
         "owner": "rubycoinorg",
         "name": "rubycoin"
+    },
+    {
+        "owner": "emc2foundation",
+        "name": "einsteinium"
+    },
+    {
+        "owner": "gxchain",
+        "name": "gxb-core"
+    },
+     {
+        "owner": "mvs-org",
+        "name": "metaverse"
+    },
+    {
+        "owner": "AdExBlockchain",
+        "name": "adex-core"
+    },
+    {
+        "owner": "gamers-coin",
+        "name": "gamecredits"
+    },
+    {
+        "owner": "saluscoin",
+        "name": "salus"
+    },
+    {
+        "owner": "BTCGPU",
+        "name": "BTCGPU"
+    },
+    {
+        "owner": "eidoo",
+        "name": "eth-lightwallet"
+    },
+    {
+        "owner": "florincoin",
+        "name": "florincoin"
+    },
+    {
+        "owner": "BitClubDev",
+        "name": "ClubCoin"
+    },
+    {
+        "owner": "status-im",
+        "name": "status-react"
+    },
+    {
+        "owner": "FeatherCoin",
+        "name": "Feathercoin"
+    },
+    {
+        "owner": "transferdev",
+        "name": "Transfercoin"
+    },
+    {
+        "owner": "KyberNetwork",
+        "name": "smart-contracts"
     }
 ]
