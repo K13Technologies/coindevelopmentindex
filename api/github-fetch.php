@@ -8,6 +8,14 @@ define('DEBUG', $_REQUEST['debug']);
 
 if(DEBUG) {
 	$json = fetchJSON(JSON_FILE);
+	if(!checkPermissions(JSON_FILE, '0777')) {
+		$error = errorOutput()->errors[0];
+		echo '<div style="font-family:sans-serif">';
+		echo '<b style="color:darkred;">ERROR: ' . $error->type . '</b>';
+		echo $error->message;
+		echo '</div>';
+		die;
+	}
 	fetchGithubData($json);
 }
 
@@ -91,7 +99,10 @@ QUERY;
 			$hasErrors = true;
 			foreach($errors as $error) {
 				errorLog($error->type, $error->message);
-				if(DEBUG) echo '<b style="display:block;background-color:red;padding:10px;">' . $error->type . ': ' . $error->message . '</b>';
+				if(DEBUG) {
+					echo '<div style="font-family:sans-serif;background-color:darkred;color:#fff;padding:10px;">';
+					echo '<b>ERROR: ' . $error->type . '</b><br>' . $error->message . '</div>';
+				}
 			}
 			continue;
 		}
@@ -136,7 +147,10 @@ QUERY;
 
 	curl_close($ch);
 
-	if(DEBUG) echo '</pre>';
+	if(DEBUG) {
+		echo '</pre>';
+		file_put_contents(JSON_FILE, json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+	}
 
 	if($hasErrors) return errorOutput();
 	else return $json;
