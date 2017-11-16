@@ -53,28 +53,30 @@
         }
 
     }
+    #output {
+        padding-top:2em;
+        opacity: 1 !important;
+        [role="tab"] {
+            min-width:40em;
 
-}
+            a {
+                display:block;
+                width:100%;
+                height:100%;
+            }
+        }
 
-#output {
-    padding-top:2em;
-    [role="tab"] {
-        min-width:40em;
+        [id*='json'] {
+            min-height:10em;
+            max-width:1180px;
 
-        a {
-            display:block;
-            width:100%;
-            height:100%;
+            pre {
+                padding:2em;
+                white-space: pre-wrap;
+            }
         }
     }
 
-    [id*='json'] {
-        min-height:10em;
-        max-width:1180px;
-
-        pre {
-            padding:2em;
-            white-space: pre-wrap;
-        }
-    }
 }
+
+

@@ -3,7 +3,9 @@ jQuery(document).ready(function($) {
 
     if(!$('.token-form form[name="token"]')[0]) return false;
 
-    var $ownerSel = $('#owner'),
+    var $tokenForm = $('.token-form form[name="token"]'),
+        $ownerSel = $('#owner'),
+        $output = $('#output'),
         repos, query;
 
     $.ajax({
@@ -16,6 +18,8 @@ jQuery(document).ready(function($) {
         $ownerSel.html(repos.map(function(repo) {
             return '<option value="' + repo.owner + '/' + repo.name + '">' + repo.owner + ' / ' + repo.name + '</option>';
         }).join('\n'));
+
+        $ownerSel.prepend('<option selected>Select a repo...</option>');
     });
 
     var handleOwnerChange = function(e) {
@@ -58,8 +62,8 @@ jQuery(document).ready(function($) {
                           } \
                         }';
 
-        $('#output #datajson').html('<pre>' + JSON.stringify(repo, null, 4) + '</pre>');
-        $('#output #queryjson').html('<pre>' + query.replace(/\s{24}/g, '\n') + '</pre>');
+        $('#datajson').html('<pre>' + JSON.stringify(repo, null, 4) + '</pre>');
+        $('#queryjson').html('<pre>' + query.replace(/\s{24}/g, '\n') + '</pre>');
     };
 
     var handleForm = function(e) {
@@ -70,7 +74,7 @@ jQuery(document).ready(function($) {
             repo = $('#owner').val().split(' / ').reduce(function(acc,cur,i){ if(i==0){pre.owner=cur}else{pre.name=cur}return pre}),
             json;
 
-        $('#output #apijson').removeClass('alert alert-danger');
+        $output.removeClass('alert alert-danger');
 
         $.post({
               url: 'https://api.github.com/graphql',
@@ -80,19 +84,30 @@ jQuery(document).ready(function($) {
               }
             })
             .done(function(response) {
-                $('#output #apijson').html('<pre>' + JSON.stringify(response, null, 4) + '</pre>');
+                $('#apijson').html('<pre>' + JSON.stringify(response, null, 4) + '</pre>');
             })
             .fail(function(err) {
-                $('#output #apijson').addClass('alert alert-danger').html(err.responseJSON.message);
+                $output.addClass('alert alert-danger').html(err.responseJSON.message);
             })
             .always(function() {
-                 $('#output #apijson').collapse('show');
+                 $('#apijson').collapse('show');
             });
+    };
+
+    var hideAlert = function(t) {
+        t = t || 2000;
+        setTimeout(function() {
+            $output.removeClass('alert alert-danger alert-success active');
+        }, t);
+        setTimeout(function() {
+            $output.empty();
+        }, t + 800);
     };
 
     $('#bearer').focus();
 
     $ownerSel.on('change', handleOwnerChange);
-    $('.token-form form[name="token"]').on('submit', handleForm);
+    $tokenForm.on('submit', handleForm);
+    $output.on('click', hideAlert);
 
 });
