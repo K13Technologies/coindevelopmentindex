@@ -1,11 +1,13 @@
 jQuery(document).ready(function($) {
     'use strict';
 
+    if(!$('.token-form form[name="token"]')[0]) return false;
+
     var $ownerSel = $('#owner'),
         repos, query;
 
     $.ajax({
-        url: '/assets/json/data.json',
+        url: '//coindev.local/assets/json/data.json',
         dataType: 'json'
     })
     .done(function(data) {

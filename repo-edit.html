@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <title>Edit Repository</title>
+    <meta name="Title" content="Larry's Cryptocoin Development Index | Tracking Cryptocoin Core Software Development">
+    <meta name="description" content="Tracking Cryptocurrency software development. We track Bitcoin, Altcoin and ERC-20 token core software development progress.">
+    <meta name="keywords" content="cryptocurrency, virtual coins, ERC-20 tokens, Altcoins, Bitcoin, development index, software tracking, development teams">
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="//coindev.local/assets/css/coindevelopmentindex.css">
+
+</head>
+<body>
+
+    <div class="repo-form wrapper">
+
+        <header>
+            <h1>repo edit</h1>
+            <p>Select a coin repository to edit, or update from Github API.</p>
+            <p>Or create a new repo by entering the <b>owner</b> and <b>name</b> of the repo to fetch from Github API.</p>
+        </header>
+
+        <section>
+            <div id="output">
+
+            </div>
+            <form name="repo" class="form-horizontal">
+                <div class="form-row">
+                    <div class="form-group col-md-6 mx-auto">
+                        <label for="owner">Owner / Name</label>
+                        <select class="form-control" name="ownername" placeholder="Github Owner">
+                            <!-- data.json repo:owner/repo:name -->
+                        </select>
+                    </div>
+                </div>
+                <div class="auto-fields">
+                    <!-- form-fields.json -->
+                </div>
+                <div class="form-row">
+                    <label class="col-sm-3" for="owner">releases</label>
+                    <div class="releases col-sm-9">
+                        <!-- data.json -->
+                    </div>
+                </div>
+                <hr>
+                <div class="form-row">
+                    <div class="col-md-9 offset-md-3 form-group">
+                        <button name="remote" type="button" class="btn btn-block btn-success">Fetch from Github API</button>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-9 offset-md-3 form-group">
+                        <button name="local" type="submit" class="btn btn-block btn-primary">Create New JSON Entry</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+
+    </div>
+
+    <!-- Minified build js -->
+    <script src="//coindev.local/assets/js/coindevelopmentindex.js"></script>
+
+</body>
+</html>

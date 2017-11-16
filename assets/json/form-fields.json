@@ -1,0 +1,76 @@
+[
+	{
+  	"name": "id",
+  	"type": "text",
+  	"disabled": true,
+    "required": false
+  },
+  {
+  	"name": "owner",
+  	"type": "text",
+  	"disabled": false,
+    "placeholder": "repo-owner",
+    "required": true
+  },
+  {
+  	"name": "name",
+  	"type": "text",
+  	"disabled": false,
+    "placeholder": "repo-name",
+    "required": true
+  },
+  {
+  	"name": "coinname",
+  	"type": "text",
+  	"disabled": false,
+    "placeholder": "Official Coin Name",
+    "required": false
+  },
+  {
+  	"name": "symbol",
+  	"type": "text",
+  	"placeholder": "XYZ",
+  	"disabled": false,
+    "required": false
+  },
+  {
+  	"name": "description",
+  	"type": "text",
+    "placeholder": "A description of the repo.",
+  	"disabled": false,
+    "required": false
+  },
+  {
+  	"name": "createdAt",
+  	"type": "datetime-local",
+  	"disabled": false,
+    "required": false
+  },
+  {
+  	"name": "homepageUrl",
+  	"type": "url",
+  	"placeholder": "https://example.org/en/download",
+  	"disabled": false,
+    "required": false
+  },
+  {
+  	"name": "pushedAt",
+  	"type": "datetime-local",
+  	"disabled": false,
+    "required": false
+  },
+  {
+  	"name": "languages",
+  	"type": "text",
+  	"placeholder": "Comma, Sep, Langs",
+  	"disabled": false,
+    "required": false
+  },
+  {
+    "name": "url",
+    "type": "url",
+    "placeholder": "https://github.com/owner/name",
+    "disabled": false,
+    "required": false
+  }
+]

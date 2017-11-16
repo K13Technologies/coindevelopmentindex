@@ -1,17 +1,44 @@
 <?php
 
+$output = new stdClass();
+$output->errors = array();
+
 function checkPermissions($file, $mod) {
 
 	// check file permissions for updating file
 	$perms = substr(sprintf('%o', fileperms($file)), -4);
 
 	if($perms !== $mod) {
-		echo '<div style="font-family:sans-serif;line-height:1.5;">';
-		echo '<b style="display:block;background-color:red;padding:10px;">ERROR: Incorrect permissions on ' . $file;
-		echo '&nbsp;&nbsp;Permissions are: ' . $perms . ', but should be ' . $mod . ' </b>';
-		echo '<br>To fix, enter the the following command in Terminal:<br>';
-		echo '<pre>sudo chmod ' . $mod . ' ' . $file . '</pre>';
-		echo '</div>';
-		die;
+		$message = '<br>Incorrect permissions on ' . $file;
+		$message .= '<br>Permissions are: ' . $perms . ', but should be ' . $mod . ' </b>';
+		$message .= '<br><br>To fix, enter the the following command in Terminal:';
+		$message .= '<br><br><pre style="padding:3px;background:#fff">sudo chmod ' . $mod . ' ' . $file . '</pre>';
+
+		errorLog('FILE_PERMISSIONS', $message);
+
+		return false;
+
+	} else {
+		return true;
 	}
+}
+
+function errorLog($type, $message) {
+
+	global $output;
+
+	$error = new stdClass();
+	$error->type = $type;
+	$error->message = $message;
+
+	array_push($output->errors, $error);
+
+}
+
+function errorOutput() {
+
+	global $output;
+
+	return $output;
+
 }

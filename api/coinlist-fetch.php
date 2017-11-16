@@ -24,7 +24,7 @@
 			return preg_match('/\b' . addcslashes($item->CoinName, '\b/') . '/i', $repo->name);
 		}));
 
-		if($curr) {
+		if($curr && !isset($repo->coinname)) {
 			echo 'found <b>' . $curr->FullName . '</b> <b style="color:green">&#x2714;</b>';
 			$repo->coinname = $curr->CoinName;
 			$repo->symbol = $curr->Symbol;

@@ -1,43 +1,45 @@
 <?php
 
+	include_once('./utils.php');
 	include('./json.php');
+	include('./github-fetch.php');
 
 	switch($_SERVER['REQUEST_METHOD']) {
 
 		case 'POST':
 
+			if(!checkPermissions(JSON_FILE, '0777')) {
+				out(errorOutput());
+				break;
+			}
+
+			if(isset($_POST['githubfetch'])) {
+				// new entry called from repo-edit
+				if($_POST['owner'] && $_POST['name'] && $_POST['id'] === '') {
+					array_push($json, (object) [
+							'owner' => $_POST['owner'],
+							'name' => $_POST['name']
+					]);
+				}
+				if($_POST['id'] !== '') {
+					$records = fetchGithubData(getRecord(array('id' => $_POST['id'])));
+				}
+				out($records);
+				break;
+			}
+
+			$records = array(getRecord(array('id' => $_POST['id'])));
+			out(updateRecords($records));
+
 			break;
 
 		case 'GET':
 		default:
-			getRecord($_GET['owner'],$_GET['name']);
+			out(getRecord(array(
+				'owner' => $_GET['owner'],
+				'name' => $_GET['name']
+			)));
 			break;
 
 	}
 
-	function getRecord($owner,$name) {
-
-		$json = fetchJSON(JSON_FILE);
-
-		if(isset($owner) || isset($name)) {
-			out(getRecordByName($json, $owner, $name));
-		} else {
-			out($json);
-		}
-
-	}
-
-	function getRecordByName($json, $owner, $name) {
-		return array_filter($json, function($item) use ($owner,$name) {
-			if(isset($owner) && isset($name)) return $item->owner === $owner && $item->name === $name;
-			elseif(isset($owner)) return $item->owner === $owner;
-			elseif(isset($name)) return $item->name === $name;
-			else return false;
-		});
-	}
-
-	function updateRecord($id, $vals) {
-
-		$record = fetchJSON(JSON_FILE);
-
-	}

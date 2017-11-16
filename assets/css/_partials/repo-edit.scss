@@ -1,0 +1,84 @@
+/*! REPO-EDIT */
+
+.repo-form {
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-bottom: 5em;
+
+    header {
+        width:40em;
+        display:flex;
+        flex-flow:row wrap;
+        justify-content:center;
+        align-items:center;
+        > * {
+            flex:1 1 auto;
+        }
+        h1 {
+            font-size:5em;
+            font-weight:300;
+            text-align:center;
+            color:#b4b4b4;
+        }
+        p {
+            flex-basis:100%;
+            text-align:center;
+            color:#333;
+        }
+    }
+
+    section {
+        width:40em;
+    }
+
+    form {
+
+        display: flex;
+        flex-flow:column nowrap;
+        justify-content: space-between;
+
+
+        .form-row {
+            display:flex;
+
+            .form-group:first-child {
+                padding-left:0;
+            }
+            .form-group:last-child {
+                padding-right:0;
+            }
+        }
+
+        ul {
+            padding-left: 0.333em;
+        }
+
+        hr {
+            width:100%;
+        }
+
+        ::placeholder {
+            font-style:italic;
+            color:#ccc;
+        }
+
+    }
+
+}
+
+#output {
+    padding:1em;
+    font-size:0.8rem;
+    opacity:0;
+    transition: 400ms opacity;
+
+    &.active {
+        opacity:1;
+        transition: 400ms opacity;
+    }
+}
