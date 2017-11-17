@@ -62,6 +62,26 @@
             width:100%;
         }
 
+        .newform {
+            align-self: flex-end;
+            text-align: right;
+        }
+
+        [name="remote"] {
+            border-top-right-radius:0;
+            border-bottom-right-radius:0;
+        }
+
+        .input-group-addon {
+            font-size:0.8em;
+            color:rgba(255,255,255,0.4);
+            background:darkgreen;
+            padding-top:0;
+            input {
+                margin:0 auto;
+            }
+        }
+
         ::placeholder {
             font-style:italic;
             color:#ccc;

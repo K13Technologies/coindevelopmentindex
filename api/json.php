@@ -55,6 +55,27 @@ function getRecordByName($owner, $name) {
 	}));
 }
 
+function addRecords($records) {
+	global $json;
+
+	if($json === null) fetchJSON(JSON_FILE);
+
+	$added = array();
+
+	foreach($records as $record) {
+		$repo = (object) $record;
+		$repo->languages = explode(',', $record['languages']);
+		$repo->ownername = $record['owner'] . '/' . $record['name'];
+		array_push($json, $repo);
+		array_push($added, $repo);
+	}
+
+	if(write($json, JSON_FILE)) {
+		return $added;
+	}
+
+}
+
 function updateRecords($records) {
 	global $json;
 

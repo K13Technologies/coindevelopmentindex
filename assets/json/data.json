@@ -1,84 +1,17 @@
 [
     {
-        "owner": "bitcoin",
-        "name": "bitcoin",
-        "id": "MDEwOlJlcG9zaXRvcnkxMTgxOTI3",
-        "description": "Bitcoin Core integration/staging tree",
-        "createdAt": "2010-12-19T15:16:43Z",
-        "homepageUrl": "https://bitcoin.org/en/download",
-        "pushedAt": "2017-11-16T15:15:54Z",
-        "languages": [
-            "C++",
-            "Python",
-            "C"
-        ],
-        "data": {
-            "2017-43": {
-                "stars": 18135,
-                "users": 481
-            },
-            "2017-44": {
-                "stars": 18460,
-                "users": 483
-            },
-            "2017-46": {
-                "stars": 19226,
-                "users": 486
-            }
-        },
-        "releases": [
-            {
-                "name": "Bitcoin Core 0.15.1",
-                "description": "Bitcoin Core version 0.15.1 is now available from:\r\n\r\nhttps://bitcoin.org/bin/bitcoin-core-0.15.1/\r\n\r\nand\r\n\r\nhttps://bitcoincore.org/bin/bitcoin-core-0.15.1/\r\n\r\nFor the release notes please see the git repository:\r\n\r\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.15.1.md\r\n\r\nPreferably use the above download link, not the below links to download the source tarball, as the release tarballs are generated deterministically and GitHub's are not.",
-                "publishedAt": "2017-11-11T14:24:25Z"
-            },
-            {
-                "name": "Bitcoin Core 0.15.0.1",
-                "description": "Bitcoin Core version 0.15.0.1 is now available from:\r\n\r\nhttps://bitcoin.org/bin/bitcoin-core-0.15.0.1/\r\n\r\nand\r\n\r\nhttps://bitcoincore.org/bin/bitcoin-core-0.15.0.1/\r\n\r\nFor the release notes please see the git repository:\r\n\r\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.15.0.1.md\r\n\r\nPreferably use the above download link, not the below links to download the source tarball, as the release tarballs are generated deterministically and GitHub's are not.",
-                "publishedAt": "2017-09-19T13:05:50Z"
-            },
-            {
-                "name": "Bitcoin Core 0.15.0",
-                "description": "Bitcoin Core version 0.15.0 is now available from:\r\n\r\nhttps://bitcoin.org/bin/bitcoin-core-0.15.0/\r\n\r\nand\r\n\r\nhttps://bitcoincore.org/bin/bitcoin-core-0.15.0/\r\n\r\nFor the release notes please see the git repository:\r\n\r\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.15.0.md\r\n\r\nPreferably use the above download link, not the below links to download the source tarball, as the release tarballs are generated deterministically and GitHubs's are not.",
-                "publishedAt": "2017-09-14T14:34:57Z"
-            },
-            {
-                "name": "Bitcoin Core 0.14.2",
-                "description": "Bitcoin Core version 0.14.2 is now available from:\r\n\r\n  https://bitcoin.org/bin/bitcoin-core-0.14.2/\r\n\r\nFor the release notes please see the git repository:\r\n\r\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.14.2.md",
-                "publishedAt": "2017-06-18T08:42:37Z"
-            },
-            {
-                "name": "Bitcoin Core 0.14.1",
-                "description": "Bitcoin Core version 0.14.1 is now available from:\r\n\r\n  https://bitcoin.org/bin/bitcoin-core-0.14.1/\r\n\r\nFor the release notes please see the git repository:\r\n\r\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.14.1.md",
-                "publishedAt": "2017-04-22T14:19:24Z"
-            },
-            {
-                "name": "Bitcoin Core v0.14.0",
-                "description": "Bitcoin Core version 0.14.0 is now available from:\r\n\r\n  https://bitcoin.org/bin/bitcoin-core-0.14.0/\r\n\r\nFor the release notes please see the git repository:\r\n\r\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.14.0.md",
-                "publishedAt": "2017-03-08T15:20:25Z"
-            },
-            {
-                "name": "Bitcoin Core v0.13.2",
-                "description": "Bitcoin Core version 0.13.2 is now available from:\n\n  https://bitcoin.org/bin/bitcoin-core-0.13.2/\n\nFor the release notes please see the git repository:\n\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.13.2.md\n",
-                "publishedAt": "2017-01-03T10:48:14Z"
-            },
-            {
-                "name": "Bitcoin Core v0.10.0",
-                "description": "Bitcoin Core version 0.10.0 is now available from:\n\n  https://bitcoin.org/bin/0.10.0/\n\nFor the release notes please see the git repository:\n\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.10.0.md\n",
-                "publishedAt": "2016-11-01T19:31:28Z"
-            },
-            {
-                "name": "Bitcoin Core v0.10.1",
-                "description": "Bitcoin Core version 0.10.1 is now available from:\n\n  https://bitcoin.org/bin/bitcoin-core-0.10.1/\n\nFor the release notes please see the git repository:\n\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.10.1.md\n",
-                "publishedAt": "2016-11-01T19:31:06Z"
-            },
-            {
-                "name": "Bitcoin Core v0.10.2",
-                "description": "Bitcoin Core version 0.10.2 is now available from:\n\n  https://bitcoin.org/bin/bitcoin-core-0.10.2/\n\nFor the release notes please see the git repository:\n\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.10.2.md\n",
-                "publishedAt": "2016-11-01T19:30:39Z"
-            }
-        ],
-        "url": "https://github.com/bitcoin/bitcoin"
+        "ownername": "ArkEcosystem/ark-node",
+        "id": "MDEwOlJlcG9zaXRvcnk3MzQ5NjE3Mw==",
+        "owner": "ArkEcosystem",
+        "name": "ark-node",
+        "coinname": "",
+        "symbol": "",
+        "description": ":money_with_wings: CryptoCurrency for all",
+        "createdAt": "2016-11-11T17:08",
+        "homepageUrl": "https://ark.io",
+        "pushedAt": "2017-11-09T07:47",
+        "languages": "JavaScript,PLpgSQL,HTML",
+        "url": "https://github.com/ArkEcosystem/ark-node"
     },
     {
         "owner": "ethereum",
@@ -87,7 +20,7 @@
         "description": "Official Go implementation of the Ethereum protocol",
         "createdAt": "2013-12-26T13:05:46Z",
         "homepageUrl": "https://geth.ethereum.org",
-        "pushedAt": "2017-11-16T15:03:07Z",
+        "pushedAt": "2017-11-16T22:30:40Z",
         "languages": [
             "Go",
             "C",
@@ -103,7 +36,7 @@
                 "users": 190
             },
             "2017-46": {
-                "stars": 8908,
+                "stars": 8910,
                 "users": 201
             }
         },
@@ -168,7 +101,7 @@
         "description": "Decentralized cryptocurrency blockchain daemon implementing the XRP Ledger in C++",
         "createdAt": "2011-11-07T04:40:15Z",
         "homepageUrl": "https://ripple.com/xrp",
-        "pushedAt": "2017-11-16T03:23:07Z",
+        "pushedAt": "2017-11-16T18:07:20Z",
         "languages": [
             "C++",
             "C",
@@ -184,7 +117,7 @@
                 "users": 72
             },
             "2017-46": {
-                "stars": 1665,
+                "stars": 1666,
                 "users": 72
             }
         },
@@ -263,7 +196,7 @@
                 "users": 22
             },
             "2017-46": {
-                "stars": 191,
+                "stars": 192,
                 "users": 22
             }
         },
@@ -344,7 +277,7 @@
                 "users": 11
             },
             "2017-46": {
-                "stars": 1937,
+                "stars": 1938,
                 "users": 11
             }
         },
@@ -493,7 +426,7 @@
                 "users": 32
             },
             "2017-46": {
-                "stars": 1060,
+                "stars": 1061,
                 "users": 32
             }
         },
@@ -618,7 +551,7 @@
         "description": "\ud83d\udcdf Lisk blockchain application platform",
         "createdAt": "2016-02-01T21:45:35Z",
         "homepageUrl": "https://lisk.io/",
-        "pushedAt": "2017-11-16T15:56:47Z",
+        "pushedAt": "2017-11-16T18:12:34Z",
         "languages": [
             "JavaScript",
             "PLpgSQL"
@@ -633,7 +566,7 @@
                 "users": 39
             },
             "2017-46": {
-                "stars": 1356,
+                "stars": 1362,
                 "users": 41
             }
         },
@@ -779,7 +712,7 @@
         "description": "Bitcoin full node in C#",
         "createdAt": "2016-09-03T04:32:51Z",
         "homepageUrl": "https://stratisplatform.com",
-        "pushedAt": "2017-11-16T14:47:24Z",
+        "pushedAt": "2017-11-16T19:23:45Z",
         "languages": [
             "C#",
             "PowerShell",
@@ -901,7 +834,7 @@
         "description": "Monero: the secure, private, untraceable cryptocurrency",
         "createdAt": "2014-04-30T14:38:28Z",
         "homepageUrl": "https://getmonero.org",
-        "pushedAt": "2017-11-16T12:43:38Z",
+        "pushedAt": "2017-11-16T22:25:10Z",
         "languages": [
             "C++",
             "C",
@@ -917,7 +850,7 @@
                 "users": 128
             },
             "2017-46": {
-                "stars": 1426,
+                "stars": 1428,
                 "users": 131
             }
         },
@@ -1044,7 +977,7 @@
                 "users": 375
             },
             "2017-46": {
-                "stars": 2984,
+                "stars": 2985,
                 "users": 374
             }
         },
@@ -1137,7 +1070,7 @@
         "description": "Beyond the Qtum prototype",
         "createdAt": "2017-03-03T08:17:11Z",
         "homepageUrl": "https://qtum.org",
-        "pushedAt": "2017-11-16T15:50:10Z",
+        "pushedAt": "2017-11-16T21:03:49Z",
         "languages": [
             "C++",
             "Python",
@@ -1158,6 +1091,11 @@
             }
         },
         "releases": [
+            {
+                "name": null,
+                "description": null,
+                "publishedAt": null
+            },
             {
                 "name": "Mainnet Ignition v1.1.1 - Qtum QRC Token Support",
                 "description": "About Qtum and Mainnet Ignition\r\n-------------------------------\r\n\r\nQtum is a decentralized blockchain project built on Bitcoin's UTXO model, with support for Ethereum Virtual Machine based smart contracts, and secured by a proof of stake consensus model. It achieves this through the revolutionary Account Abstraction Layer which allows the EVM to communicate with Qtum's Bitcoin-like UTXO blockchain. For more general information about Qtum as well as links to join our community, go to https://qtum.org\r\n\r\nWelcome to the Qtum Ignition Main Network. This is the main network where the tokens hold value and should be guarded very carefully. There will be a testnet setup soon for developers, in the meantime you can use `-regtest` mode for testing needs. We will announce details about the token swap from QTUM ERC20 coins to QTUM mainnet tokens soon, watch our [website](https://qtum.org) for details about that.  \r\n\r\nThe major features implemented in Qtum Ignition include:\r\n\r\n1. The Ethereum Virtual Machine, which allows for compatibility with most existing Solidity based smart contracts.\r\n2. The Smart Staking Protocol is complete, which is an optimized Proof of Stake implementation designed for a smart contract platform (however, smart contracts can not participate in staking yet).\r\n3. An early and basic smart contract GUI has been implemented that can be used for creating contracts, sending data and Qtum to them, and checking their status by executing them locally. This functionality is similar to Mist's UI right now, but it is still an early version. We will be working on this more to improve it. \r\n4. Regtest mode, which is ideal for developers who wish to create their own private blockchain. It is tuned specifically to make development easier. It will stake blocks automatically every 30 seconds, and can generate proof-of-work blocks instantly as needed.\r\n5. The Decentralized Governance Protocol is completely implemented and functional, which allows certain network parameters to be modified without a fork.\r\n\r\nFor more technical information for how to start developing with Qtum please read the [Guide](https://github.com/qtumproject/qtum/blob/master/doc/sparknet-guide.md) and also see this tutorial for deploying a simple [faucet smart contract](http://earlz.net/view/2017/06/30/2144/the-qtum-sparknet-faucet) (it hasn't yet been updated for Mainnet for obvious reasons, but all the instructions are the same and you can try them in regtest mode)\r\n\r\nNote: Qtum Core is considered beta software. We make no warranties or guarantees of its security or stability.\r\n\r\nUpdate History\r\n--------------\r\n\r\n* v1.1.1: When sending to contracts, the sender address is now the default change address to reduce confusion; fix -salvagewallet so it works with token transactions\r\n* v1.1.0: Add GUI support Qtum QRC tokens, allowing full management of tokens on the Qtum blockchain from the Qt wallet\r\n    * Sending to a contract no longer requires ABI data, allowing easy participation in simple crowdsale contracts\r\n* v1.0.4: Fix bug where certain circumstances when staking could cause the displayed balance to be inaccurate until completely redownloading the blockchain.\r\n* v1.0.3: Fix staker bug that reported false messages; slightly increases staking performance; optimize staker parameters; fix white send button in GUI\r\n* v1.0.2: Various UI fixes, minor gas overflow consensus fix, per-txout exploit fix, testnet mode setup and functioning\r\n* v1.0.1: Fixed network magic bytes and minimum version to ensure the main network does not conflict with the Skynet network\r\n* v1.0: Initial release\r\n\r\nReindex Required When Upgrading from v1.0.1\r\n----------------------------------------------\r\n\r\nWhen you first start the Qtum 1.0.2 GUI wallet after using Qtum v1.0.1 it will prompt you that it must reindex the database. This is normal and is a result of switching our internal database format from per-transaction to per-txout. If you use `qtumd -daemon` it will silently fail to start. You need to use `qtumd -daemon -reindex` in this case. \r\n\r\nQtum Documentation and Usage Resources\r\n---------------\r\n\r\nBasic usage resources:\r\n\r\n* [Official Qtum Usage Guide](https://github.com/qtumproject/qtum/wiki/Qtum-Wallet-Tutorial)\r\n* [Unofficial Qtum staking tutorial](https://steemit.com/qtum/@cryptominder/qtum-staking-tutorial-using-qtum-qt)\r\n* [Unofficial Qtum staking tutorial on Raspberry Pi](https://steemit.com/qtum/@cryptominder/qtum-staking-tutorial-using-qtumd-on-a-raspberry-pi-3)\r\n* [Unofficial guide for keeping your wallet safe](https://steemit.com/qtum/@cryptominder/encrypting-backing-up-and-restoring-your-qtum-wallet)\r\n* [Block explorer](https://explorer.qtum.org)\r\n* [Unofficial block explorer](https://qtumexplorer.io/)\r\n\r\nDevelopment resources:\r\n\r\n* [Deploying a custom token to Qtum](https://blog.qtum.org/qtum-custom-token-walkthrough-467d725fa27d)\r\n* [Early example faucet contract](http://earlz.net/view/2017/06/30/2144/the-qtum-sparknet-faucet)\r\n* [Unofficial Qtum Hello World tutorial](https://steemit.com/qtum/@cryptominder/quantum-qtum-blockchain-developer-tutorial-hello-world)\r\n\r\nGeneral Info about Qtum:\r\n\r\n* [Mainnet event AMA](https://www.reddit.com/r/Qtum/comments/6zs8t0/official_qtum_ama_thread_starts_at_10pm_beijing/)\r\n* [Qtum's PoS vs CASPER](https://www.reddit.com/r/Qtum/comments/788oa5/qtums_pos_vs_casper_and_the_nothingatstake_problem/)\r\n* [Technical article explaining Qtum's PoS model in depth](http://earlz.net/view/2017/07/27/1904/the-missing-explanation-of-proof-of-stake-version)\r\n* [Unofficial What is Qtum article](https://storeofvalue.github.io/posts/what-is-qtum-without-the-bullshit/)\r\n\r\nQuickstart\r\n----------\r\n\r\nThe easiest way to get started with Qtum is to simply download the binaries below. To give a brief breakdown of the different versions available: \r\n\r\n#### Windows\r\n\r\n* [qtum-0.14.7-win64.zip](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.1/qtum-0.14.7-win64.zip) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 machines using Windows.\r\n* [qtum-0.14.7-win64-setup-unsigned.exe](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.1/qtum-0.14.7-win64-setup-unsigned.exe) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 machines using Windows. This includes an installer and will install Qtum system wide.\r\n* [qtum-0.14.7-win32.zip](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.1/qtum-0.14.7-win32.zip) - A version of Qtum-Qt, qtumd, and qtum-cli built for 32bit x86 machines using Windows. If you have an older Windows computer and don't care about installing Qtum system-wide, \r\n* [qtum-0.14.7-win32-setup-unsigned.exe](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.1/qtum-0.14.7-win32-setup-unsigned.exe) - A version of Qtum-Qt, qtumd, and qtum-cli built for 32bit x86 machines using Windows. This includes an installer and will install Qtum system wide. If you have an older Windows computer and want to install Qtum then this is for you.\r\n\r\n#### OSX\r\n\r\n* [qtum-0.14.7-osx64.tar.gz](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.1/qtum-0.14.7-osx64.tar.gz) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 machines using OSX. If you use a modern Mac and want development tools, this is what you want; we do not support older 32bit or PowerPC based Macs.\r\n* [qtum-0.14.7-osx-unsigned.dmg](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.1/qtum-0.14.7-osx-unsigned.dmg) - A version of Qtum-Qt built for 64bit x86 machines using OSX in a .DMG installable format. If you use a modern Mac and aren't a developer, this is what you want; we do not support older 32bit or PowerPC based Macs.\r\n\r\n#### Linux\r\n\r\n* [qtum-0.14.7-i686-pc-linux-gnu.tar.gz](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.1/qtum-0.14.7-i686-pc-linux-gnu.tar.gz) - A version of Qtum-Qt, qtumd, and qtum-cli built for 32bit x86 PC platforms running Linux. This is probably what you want for older computers running Linux\r\n* [qtum-0.14.7-x86_64-linux-gnu.tar.gz](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.1/qtum-0.14.7-x86_64-linux-gnu.tar.gz) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 PC platforms running Linux. This is probably what you want for any modern PC or server running Linux\r\n* [qtum-0.14.7-arm-linux-gnueabihf.tar.gz](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.1/qtum-0.14.7-arm-linux-gnueabihf.tar.gz) - A version of qtumd and qtum-cli built for 32bit ARM platforms using Linux. This includes the Raspberry Pi and many of it's clones\r\n* [qtum-0.14.7-aarch64-linux-gnu.tar.gz](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.1/qtum-0.14.7-aarch64-linux-gnu.tar.gz) - A version of qtumd and qtum-cli built for 64bit ARM platforms using Linux\r\n\r\nBelow in the full list of binaries, there are also versions that include debug symbols. These are useful for developers, but will run slower and are significantly larger to download. \r\n\r\n#### Build Qtum Core\r\n\r\nIf you want to build it from source, it's recommended to follow the specific [\"build\" documentation](https://github.com/qtumproject/qtum/tree/testnet-2/doc) for your platform. But mostly it boils down to the following:\r\n\r\n1. Clone the qtum source code and cd into `qtum`\r\n\r\n        git clone --recursive https://github.com/qtumproject/qtum.git\r\n        cd qtum\r\n\r\n\r\n2.  Build qtum-core:\r\n\r\n    Configure and build the headless qtum binaries as well as the GUI (if Qt is found).\r\n\r\n    You can disable the GUI build by passing `--without-gui` to configure.\r\n\r\n        ./autogen.sh\r\n        ./configure\r\n        make\r\n\r\n3.  It is recommended to build and run the unit tests to ensure everything is working correctly:\r\n\r\n        make check\r\n\r\n\r\nIf you encounter an error like:\r\n\r\n> make[2]: *** No rule to make target \u2018cpp-ethereum/utils/libscrypt/b64.c\u2019, needed by \u2018cpp-ethereum/utils/libscrypt/libbitcoinconsensus_la-b64.lo\u2019.  Stop.\r\n\r\nThen you did not checkout the cpp-ethereum submodule for Qtum. To do that, simply:\r\n\r\n    cd qtum\r\n    git submodule update --init --recursive\r\n\r\nValidate and Reproduce Binaries\r\n---------------------------------\r\n\r\nQtum uses a tool called Gitian to make reproducible builds that can be verified by anyone. Instructions on setting up a Gitian VM and building Qtum are provided [in doc/gitian-building.md](https://github.com/qtumproject/qtum/blob/master/doc/gitian-building.md)\r\n\r\nCommunity Resources\r\n---------\r\n\r\nMake sure to check out these resources as well for more information and to keep up to date with all the latest news about Qtum. At least 1 developer is always around, so if you're developing on Qtum and need help, we'd love to welcome you to our community.  \r\n\r\n* [/r/Qtum on Reddit](https://www.reddit.com/r/Qtum/)\r\n* [Qtum Telegram Group](https://t.me/joinchat/D5oBaw29NeOdpw6qqqf2lw)\r\n* [@QtumOfficial on Twitter](https://mobile.twitter.com/qtumofficial)\r\n* [Qtum on Facebook](https://www.facebook.com/QtumOfficial/)\r\n* [Qtum Forum](https://forum.qtum.org/)\r\n* [Qtum.org](https://qtum.org/en/)\r\n\r\n\r\nQtum Smart Contract Limitations\r\n-----------\r\n\r\n* EVM smart contracts can not receive coins from or send coins to any address type other than pay-to-pubkeyhash (starts with Q) addresses. This is due to a limitation in the EVM\r\n* Contracts are not allowed to create contracts with an initial endowment of coins. The contract must first be created, and then be sent coins in a separate transaction. Humans are also not allowed to create contracts with an initial endowment of coins.\r\n* Although all of the infrastructure is present, Qtum Core does not currently parse Solidity event data. You must parse this yourself using either `searchlogs` or `-record-log-opcodes` features.\r\n* It is not possible to send a contract coins without also executing the contract. This is also the case of Ethereum. This was promised in earlier discussions and technically does work, but due to lack of time for testing this feature was disabled. We hope to reenable this feature with release of the x86 virtual machine in 2018.\r\n* In Qtum there can be multiple addresses used to create a proof-of-stake block. However, the EVM can only see the first output using the `coinbase` operation in Solidity (this address is also the one registered for the continuous staker rewards after 500 blocks). \r\n\r\nHash Validation\r\n----------------\r\n\r\n```\r\n-----BEGIN PGP SIGNED MESSAGE-----\r\nHash: SHA512\r\n\r\nIf you would like to validate that the binaries you download are exactly the same as those provided and built by the Qtum team, then you can compare your binaries to the following sha256sum hashes:\r\n\r\nb852c05722d2f2dc9139ab29c976487c5dc20047c72eb86173bae4680a5aff3b  qtum-0.14.7-osx-unsigned.dmg \r\n4e5a3b3da068835375370522b9fe0cd25cab87af56adbf924714403f92c85150  qtum-0.14.7-osx-unsigned.tar.gz \r\n54f28d3cf61d4f764e68ad4bb64fe03b9c757975cfa085c23e71414d4cd1301a  qtum-0.14.7-osx64.tar.gz \r\na23747d3b59170e0a040a995108b1e4a0a947b06335903a199e4021aada6bc3d  src/qtum-0.14.7.tar.gz \r\necc13ada7fcccf470246e1d9488eeefeb1ceae0431c853cbf8e06a3b60430df6  qtum-osx-0.14-res.yml \r\n\r\n3929ae8b22e32b2f2d6d99e4ec6c654486ac3bc4c663b8054e5243923f504803  qtum-0.14.7-aarch64-linux-gnu-debug.tar.gz\r\n9b29a0da81b7f3005240a83da9874d10002ed48ec759d57db97e9bc12a9c4eda  qtum-0.14.7-aarch64-linux-gnu.tar.gz\r\ncbee2a21780f33624650e538c4f812d852283c86486f915e285d7455f53ba21a  qtum-0.14.7-arm-linux-gnueabihf-debug.tar.gz\r\n22b885543d4231ca7f6d9c4c023fa2ecb9a44fb630c6cc05a395b21f0fc47f09  qtum-0.14.7-arm-linux-gnueabihf.tar.gz\r\n2d58cc607339e19f805529860f927173ed5f9d503a4985fdeaf082ae0d4b44d0  qtum-0.14.7-i686-pc-linux-gnu-debug.tar.gz\r\n283753c6f2c8e9848947e8211dffcb08ba9380ce3ab74728858d64239d48ecfb  qtum-0.14.7-i686-pc-linux-gnu.tar.gz\r\nb465060bf0e714e4fca305529dc911eca518eb482f53dd652e51af6d5f48fa37  qtum-0.14.7-x86_64-linux-gnu-debug.tar.gz\r\nf6c49a692734bf021b6c0a53ee32f745b71b7179466eaea98aa398db160a7797  qtum-0.14.7-x86_64-linux-gnu.tar.gz\r\na23747d3b59170e0a040a995108b1e4a0a947b06335903a199e4021aada6bc3d  src/qtum-0.14.7.tar.gz\r\nca422302c4e6d4ab5422acdd138d1eda368e68a229800688d2ed4c4b8c7c3435  qtum-linux-0.14-res.yml\r\n\r\naa7baae9a0710d884da0cae199eb1218644b68b51012d99749385a1436b08213  qtum-0.14.7-win-unsigned.tar.gz\r\n850fc62b59d718691ca35501ded4fcf18c7c54fc863962cc68a8e7b735878f00  qtum-0.14.7-win32-debug.zip\r\n8bc1c9b78063e618d2468623c831d8830238df772169f516a9e56808f2e42ef2  qtum-0.14.7-win32-setup-unsigned.exe\r\n2843fe492f2281076338071ff4f04e9c633b17d9db1e56cf67e45de193044285  qtum-0.14.7-win32.zip\r\n3cb46f26119e85915b681ad8bd99b3b4547cbf590e0d677742d34c31a214a8c9  qtum-0.14.7-win64-debug.zip\r\na642721f52abae5d95a4e644368a851f5e69454e0103d9593eabea75c27f6831  qtum-0.14.7-win64-setup-unsigned.exe\r\nac60106d970b8ff54bdaf592f2725c2fcdeb4967550643ea937dc3233af9087d  qtum-0.14.7-win64.zip\r\ned0e3c8506e9d80dcb443fa160c6bced2b7706c1f7cdd212f836301acf3ba3ff  src/qtum-0.14.7.tar.gz\r\n10b5822b7e3ad878dc14e3cc2156daf63f8e8606e5570e4e73ca768214745612  qtum-win-0.14-res.yml\r\n\r\nIn addition, as of the time of this writing, VirusTotal detects 0 false positives on the Windows 32bit and 64bit zip files and win64 installer, and 1 false positive from 2 vendors on the Windows 32bit installer.\r\n\r\ninstaller win32: https://www.virustotal.com/#/file/8bc1c9b78063e618d2468623c831d8830238df772169f516a9e56808f2e42ef2/detection 1 false positive (\"HEUR:Trojan.Win32.Generic\" from Kaspersky and ZoneAlarm)\r\n\r\ninstaller win64 https://www.virustotal.com/#/file/a642721f52abae5d95a4e644368a851f5e69454e0103d9593eabea75c27f6831/detection 0 false positives\r\n\r\nzip win32 https://www.virustotal.com/#/file/2843fe492f2281076338071ff4f04e9c633b17d9db1e56cf67e45de193044285/detection 0 false positives\r\n\r\nzip win64 https://www.virustotal.com/#/file/ac60106d970b8ff54bdaf592f2725c2fcdeb4967550643ea937dc3233af9087d/detection 0 false positives\r\n\r\nYou can validate this message is from Earlz at https://keybase.io/verify\r\n-----BEGIN PGP SIGNATURE-----\r\nVersion: Keybase OpenPGP v2.0.76\r\nComment: https://keybase.io/crypto\r\n\r\nwsFcBAABCgAGBQJaAPxLAAoJEAKXMK2l7Ra+CeIQAI7Fp957XjzIdzZPnIjF7Qdo\r\n5LuPZxex7Q6n94td75xWM9fCU/TuFS4s5ze4XJiO3wEzPwwQ9V78lyWLGKOdX8EF\r\nLwrSUdESaZCnt9iygAgJA2Ckmbds46o81hFb5QjgzKmu6MvlXslpadw12cElqla8\r\nHS4Vobz7Vg5BG6cQfO2neJyIaUbx3915rQ1/v2QHSyYyuiHmfTo7qOY7Llr8qZq8\r\ndAeaFm0hP4ro+CxbKjdkU89CApgtwINPRtGcrnv1rnnHnAcJlnz6qWkJOiNT7rVp\r\nEnZ4J976h/4uPcEWWFJKd4AQzu1C7eWOEjMk6Ndd5PuFRyVFvY4X3s859FOeW0W0\r\nD1ekMDUHvYKoEhUphKeKyjB+m7qU6gdr1OmGOMyYspDlfk5CRe24ObNeT4RVgW6y\r\nv8GPQYTAyPcNYzC+StXxHFvTIGCiK7iiwj5qy0FgiIZgqRoOsLvJ1i85lQAiM62+\r\n7Y3r2iKRY6sGgPkFwiknEAZLly164nBMDUuq8Io0Xv1ViQb17r8QpIUVkKmRAru7\r\n/5gtNYiMFv9HLua4Tt8Qo0gdyDdNtt51l/rP7r5vOdkZuVfmAexEKztsoc2HTDeh\r\nibXyHrVI3DgeH0WIV2CNvlYoE1dkAOFUUlXzk/Y9BazHW/PsSMk3ma2dJkDNPDm+\r\nScxZUHP9h/9LgLj/tLSe\r\n=PmzK\r\n-----END PGP SIGNATURE-----\r\n```",
@@ -1202,11 +1140,6 @@
                 "name": "Skynet Release v1.1",
                 "description": "Qtum is a decentralized blockchain project built on Bitcoin's UTXO model, but with support for Ethereum Virtual Machine based smart contracts. It achieves this through the revolutionary Account Abstraction Layer. For more general information about Qtum as well as links to join our community, go to https://qtum.org\r\n\r\nWelcome to Qtum Skynet, the second public testnet for the Qtum blockchain. The previous testnet was named Sparknet. The testnet is only for testing, as such, its tokens hold no value and production applications should not yet be created on the testnet blockchain. All tokens aqcuired during the testnet will cease to exist when the mainnet is released which actually has tokens which hold value. The purpose of the public testnet is to allow developers to begin testing and developing applications, allow early adopters to see a preview of how the network will behave, and for the Qtum development team to run several load tests which are not directly comparable when done on a private and controlled network. \r\n\r\nQtum Skynet will ideally have the same consensus features and parameters as the Qtum mainnet. We do not intend to add new consensus features during this period and the Skynet testnet should be a very realistic preview of how the mainnet network will function and behave. We will be added new non-consensus features such as new RPC commands, GUI features, and of course bug fixes and other things that make Qtum easier to use without modifying the blockchain protocol.\r\n\r\nThe major features and improvements implemented in Skynet include:\r\n\r\n1. The Decentralized Governance Protocol is completely implemented and functional\r\n2. The Smart Staking Protocol is complete to our specifications (Sparknet was missing a feature called MPoS which makes attacks more expensive to execute)\r\n3. A very early and basic smart contract GUI has been implemented that can be used for creating contracts, sending data and Qtum to them, and checking their status by executing them locally\r\n4. A great number of bug fixes and various improvements, including a bug fix to a performance problem which caused Sparknet nodes to sync extremely slowly as the blockchain grew larger\r\n5. All Solidity operations for smart contracts behave as expected now. The only compatibility break is contracts are not allowed to create contracts with an initial endowment of coins. The contract must first be created and then sent coins in a separate transaction.\r\n\r\nFor more technical information for how to start developing with Qtum Skynet please read the [Guide](https://github.com/qtumproject/qtum/blob/testnet-2/doc/sparknet-guide.md) and also see this tutorial for deploying a simple [faucet smart contract](http://earlz.net/view/2017/06/30/2144/the-qtum-sparknet-faucet) (it hasn't yet been updated for Skynet, but all the instructions are the same)\r\n\r\nDeleting the Sparknet blockchain\r\n--------------------------------\r\n\r\nIf you downloaded the Sparknet wallet and ran it at some point, then most likely you have a copy of the Sparknet blockchain on your computer. There is no value in keeping this and it is safe to delete. You simply need to delete the data directory you chose when you first ran Qtum. If you're not sure, then it is probably in the default location. This location depends on platform:\r\n\r\n* On Linux: `~/.qtum`\r\n* On OSX: `~/Library/Application Support/Qtum`\r\n* On Windows: `%APPDATA%\\Qtum` (copy and paste this into your Explorer address bar and it'll take you there)\r\n\r\nIf you get an error about \"unknown genesis block\" or something similar, then this is the problem and you need to delete the old blockchain.\r\n\r\nQuickstart\r\n----------\r\n\r\nThe easiest way to get started with Qtum is to simply download the binaries below. To give a brief breakdown of the different versions available: \r\n\r\n#### Windows\r\n\r\n* [qtum-0.14.0-win32.zip](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.1/qtum-0.14.0-win32.zip) - A version of Qtum-Qt, qtumd, and qtum-cli built for 32bit x86 machines using Windows. If you have an older Windows computer and don't care about installing Qtum system-wide, then this is for you. \r\n* [qtum-0.14.0-win64.zip](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.1/qtum-0.14.0-win64.zip) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 machines using Windows. If you have a modern Windows computer and don't care about installing Qtum system-wide, then this is for you. \r\n* [qtum-0.14.0-win32-setup-unsigned.exe](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.1/qtum-0.14.0-win32-setup-unsigned.exe) - A version of Qtum-Qt, qtumd, and qtum-cli built for 32bit x86 machines using Windows. This includes an installer and will install Qtum system wide. If you have an older Windows computer and want to install Qtum then this is for you.\r\n* [qtum-0.14.0-win64-setup-unsigned.exe](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.1/qtum-0.14.0-win64-setup-unsigned.exe) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 machines using Windows. This includes an installer and will install Qtum system wide. If you have a modern Windows computer and want to install Qtum then this is for you.\r\n\r\n#### OSX\r\n\r\n* [qtum-0.14.0-osx64.tar.gz](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.1/qtum-0.14.0-osx64.tar.gz) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 machines using OSX. If you use a modern Mac and want development tools, this is what you want; we do not support older 32bit or PowerPC based Macs.\r\n* [qtum-0.14.0-osx-unsigned.dmg](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.1/qtum-0.14.0-osx-unsigned.dmg) - A version of Qtum-Qt built for 64bit x86 machines using OSX in a .DMG installable format. If you use a modern Mac and aren't a developer, this is what you want; we do not support older 32bit or PowerPC based Macs.\r\n\r\n#### Linux\r\n\r\n* [qtum-0.14.0-i686-pc-linux-gnu.tar.gz](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.1/qtum-0.14.0-i686-pc-linux-gnu.tar.gz) - A version of Qtum-Qt, qtumd, and qtum-cli built for 32bit x86 PC platforms running Linux. This is probably what you want for older computers running Linux\r\n* [qtum-0.14.0-x86_64-linux-gnu.tar.gz](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.1/qtum-0.14.0-x86_64-linux-gnu.tar.gz) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 PC platforms running Linux. This is probably what you want for any modern PC or server running Linux\r\n* [qtum-0.14.0-arm-linux-gnueabihf.tar.gz](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.1/qtum-0.14.0-arm-linux-gnueabihf.tar.gz) - A version of qtumd and qtum-cli built for 32bit ARM platforms using Linux. This includes the Raspberry Pi and many of it's clones\r\n* [qtum-0.14.0-aarch64-linux-gnu.tar.gz](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.1/qtum-0.14.0-aarch64-linux-gnu.tar.gz) - A version of qtumd and qtum-cli built for 64bit ARM platforms using Linux\r\n\r\nBelow in the full list of binaries, there are also versions that include debug symbols. These are useful for developers, but will run slower and are significantly larger to download. \r\n\r\n\r\n#### Build Qtum Core\r\n\r\nIf you want to build it from source, it's recommended to follow the specific [\"build\" documentation](https://github.com/qtumproject/qtum/tree/testnet-2/doc) for your platform. But mostly it boils down to the following:\r\n\r\n1. Clone the qtum source code and cd into `qtum`\r\n\r\n        git clone --recursive https://github.com/qtumproject/qtum.git\r\n        cd qtum\r\n\r\n\r\n2.  Build qtum-core:\r\n\r\n    Configure and build the headless qtum binaries as well as the GUI (if Qt is found).\r\n\r\n    You can disable the GUI build by passing `--without-gui` to configure.\r\n\r\n        ./autogen.sh\r\n        ./configure\r\n        make\r\n\r\n3.  It is recommended to build and run the unit tests to ensure everything is working correctly:\r\n\r\n        make check\r\n\r\n\r\nIf you encounter an error like:\r\n\r\n> make[2]: *** No rule to make target \u2018cpp-ethereum/utils/libscrypt/b64.c\u2019, needed by \u2018cpp-ethereum/utils/libscrypt/libbitcoinconsensus_la-b64.lo\u2019.  Stop.\r\n\r\nThen you did not checkout the cpp-ethereum submodule for Qtum. To do that, simply:\r\n\r\n    cd qtum\r\n    git submodule update --init --recursive\r\n\r\n\r\nResources\r\n---------\r\n\r\nMake sure to check out these resources as well for more information and to keep up to date with all the latest news about Qtum. At least 1 developer is always around, so if you're developing on Qtum and need help, we'd love to welcome you to our community.  \r\n\r\n* [/r/Qtum on Reddit](https://www.reddit.com/r/Qtum/)\r\n* [Qtum.org](https://qtum.org/en/)\r\n* [Slack chat room](https://qtumslack.herokuapp.com/)\r\n* [@QtumOfficial on Twitter](https://mobile.twitter.com/qtumofficial)\r\n* [Qtum on Facebook](https://www.facebook.com/QtumOfficial/)\r\n* [Qtum Forum](https://forum.qtum.org/)\r\n* Block explorer for Skynet (Coming soon!)\r\n* Faucet for Skynet (Coming soon! Ask in our community in the meantime)\r\n\r\nUpdate History\r\n--------------\r\n\r\n* v1.1: Fixed a consensus-critical bug with how contract funds were managed in Skynet v1.0\r\n* v1.0: Initial release",
                 "publishedAt": "2017-08-17T18:07:36Z"
-            },
-            {
-                "name": "Skynet Release",
-                "description": "This release was for v1.0, please see the new release page for Skynet v1.1: https://github.com/qtumproject/qtum/releases/tag/testnet-skynet-v1.1",
-                "publishedAt": "2017-08-15T22:49:17Z"
             }
         ],
         "url": "https://github.com/qtumproject/qtum"
@@ -1260,7 +1193,7 @@
                 "users": 6
             },
             "2017-46": {
-                "stars": 219,
+                "stars": 220,
                 "users": 6
             }
         },
@@ -1431,7 +1364,7 @@
                 "users": 156
             },
             "2017-46": {
-                "stars": 1398,
+                "stars": 1400,
                 "users": 156
             }
         },
@@ -1732,7 +1665,7 @@
         "description": "Syscoin2 Core integration/staging tree",
         "createdAt": "2016-02-29T03:47:32Z",
         "homepageUrl": "https://syscoin.org",
-        "pushedAt": "2017-11-14T20:16:01Z",
+        "pushedAt": "2017-11-16T22:13:46Z",
         "languages": [
             "C++",
             "Python",
@@ -1813,7 +1746,7 @@
         "description": "Golem is creating a global market for computing power.",
         "createdAt": "2015-11-18T17:02:35Z",
         "homepageUrl": "https://golem.network",
-        "pushedAt": "2017-11-16T14:31:53Z",
+        "pushedAt": "2017-11-16T18:46:20Z",
         "languages": [
             "Python",
             "C",
@@ -1889,7 +1822,7 @@
         "description": "stellar-core is the backbone of the Stellar network. It maintains a local copy of the ledger, communicating and staying in sync with other instances of stellar-core on the network. Optionally, stellar-core can store historical records of the ledger and participate in consensus.",
         "createdAt": "2014-11-24T17:11:12Z",
         "homepageUrl": "",
-        "pushedAt": "2017-11-15T20:01:30Z",
+        "pushedAt": "2017-11-16T22:13:47Z",
         "languages": [
             "C++",
             "C",
@@ -1905,7 +1838,7 @@
                 "users": 45
             },
             "2017-46": {
-                "stars": 582,
+                "stars": 583,
                 "users": 45
             }
         },
@@ -1964,8 +1897,18 @@
         "url": "https://github.com/stellar/stellar-core"
     },
     {
-        "owner": "OxProjects",
-        "name": "contracts"
+        "ownername": "bitcoin/bitcoin",
+        "id": "MDEwOlJlcG9zaXRvcnkxMTgxOTI3",
+        "owner": "bitcoin",
+        "name": "bitcoin",
+        "coinname": "",
+        "symbol": "",
+        "description": "Bitcoin Core integration/staging tree",
+        "createdAt": "2010-12-19T15:16",
+        "homepageUrl": "https://bitcoin.org/en/download",
+        "pushedAt": "2017-11-16T22:05",
+        "languages": "C++,Python,C",
+        "url": "https://github.com/bitcoin/bitcoin"
     },
     {
         "owner": "NAVCoin",
@@ -1974,7 +1917,7 @@
         "description": "bitcoin-core 0.13 fork ported for Nav Coin",
         "createdAt": "2017-02-22T04:57:00Z",
         "homepageUrl": "",
-        "pushedAt": "2017-11-15T23:24:01Z",
+        "pushedAt": "2017-11-16T22:28:36Z",
         "languages": [
             "C++",
             "C",
@@ -2102,7 +2045,7 @@
                 "users": 40
             },
             "2017-46": {
-                "stars": 1757,
+                "stars": 1758,
                 "users": 40
             }
         },
@@ -2167,7 +2110,7 @@
         "description": "An open source smart contract platform ",
         "createdAt": "2017-04-05T17:09:53Z",
         "homepageUrl": "https://eosio.github.io/eos/",
-        "pushedAt": "2017-11-16T15:54:40Z",
+        "pushedAt": "2017-11-16T22:23:02Z",
         "languages": [
             "WebAssembly",
             "C++",
@@ -2183,7 +2126,7 @@
                 "users": 56
             },
             "2017-46": {
-                "stars": 1412,
+                "stars": 1413,
                 "users": 61
             }
         },
@@ -2331,10 +2274,10 @@
         "description": "Augur back-end (Ethereum contracts)",
         "createdAt": "2014-12-06T05:42:19Z",
         "homepageUrl": "https://www.augur.net",
-        "pushedAt": "2017-11-16T07:30:33Z",
+        "pushedAt": "2017-11-16T22:22:32Z",
         "languages": [
-            "TypeScript",
             "Python",
+            "TypeScript",
             "Shell"
         ],
         "data": {
@@ -2431,8 +2374,18 @@
         "url": "https://github.com/CoinBlack/blackcoin"
     },
     {
-        "owner": "DistrictOx",
-        "name": "ethlance"
+        "ownername": "bitcoin/bitcoin",
+        "id": "MDEwOlJlcG9zaXRvcnkxMTgxOTI3",
+        "owner": "bitcoin",
+        "name": "bitcoin",
+        "coinname": "",
+        "symbol": "",
+        "description": "Bitcoin Core integration/staging tree",
+        "createdAt": "2010-12-19T15:16",
+        "homepageUrl": "https://bitcoin.org/en/download",
+        "pushedAt": "2017-11-16T22:05",
+        "languages": "C++,Python,C",
+        "url": "https://github.com/bitcoin/bitcoin"
     },
     {
         "owner": "monacoinproject",
@@ -2517,7 +2470,7 @@
         "description": "Cryptographic currency implementing Ouroboros PoS protocol",
         "createdAt": "2016-10-14T13:44:38Z",
         "homepageUrl": "",
-        "pushedAt": "2017-11-16T15:59:15Z",
+        "pushedAt": "2017-11-16T22:27:00Z",
         "languages": [
             "Haskell",
             "PureScript",
@@ -3043,5 +2996,75 @@
             }
         ],
         "url": "https://github.com/rubycoinorg/rubycoin"
+    },
+    {
+        "ownername": "AdExBlockchain/adex-core",
+        "id": "MDEwOlJlcG9zaXRvcnkxMDAwMDU5MjM=",
+        "owner": "AdExBlockchain",
+        "name": "adex-core",
+        "coinname": "",
+        "symbol": "",
+        "description": "AdEx Core: the smart contracts that power the AdEx Network",
+        "createdAt": "2017-08-11T07:41",
+        "homepageUrl": "https://www.adex.network",
+        "pushedAt": "2017-11-16T12:55",
+        "languages": [
+            "JavaScript",
+            "Shell"
+        ],
+        "url": "https://github.com/AdExBlockchain/adex-core"
+    },
+    {
+        "ownername": "emc2foundation/einsteinium",
+        "id": "MDEwOlJlcG9zaXRvcnk5NTk4MzE4Ng==",
+        "owner": "emc2foundation",
+        "name": "einsteinium",
+        "coinname": "",
+        "symbol": "",
+        "description": "Litecoin source tree",
+        "createdAt": "2017-07-01T19:15",
+        "homepageUrl": "http://www.litecoin.org",
+        "pushedAt": "2017-10-21T10:05",
+        "languages": [
+            "C++",
+            "Python",
+            "C"
+        ],
+        "url": "https://github.com/emc2foundation/einsteinium"
+    },
+    {
+        "ownername": "saluscoin/salus",
+        "id": "MDEwOlJlcG9zaXRvcnk0OTYwMjc2Mg==",
+        "owner": "saluscoin",
+        "name": "salus",
+        "coinname": "",
+        "symbol": "",
+        "description": "",
+        "createdAt": "2016-01-13T21:23",
+        "homepageUrl": "",
+        "pushedAt": "2016-09-19T14:30",
+        "languages": [
+            "C++",
+            "Assembly",
+            "HTML"
+        ],
+        "url": "https://github.com/saluscoin/salus"
+    },
+    {
+        "ownername": "eidoo/eth-lightwallet",
+        "id": "MDEwOlJlcG9zaXRvcnk3NzU1NjU4NQ==",
+        "owner": "eidoo",
+        "name": "eth-lightwallet",
+        "coinname": "",
+        "symbol": "",
+        "description": "Lightweight JS Wallet for Node and the browser ",
+        "createdAt": "2016-12-28T19:35",
+        "homepageUrl": "",
+        "pushedAt": "2017-11-02T15:32",
+        "languages": [
+            "JavaScript",
+            "HTML"
+        ],
+        "url": "https://github.com/eidoo/eth-lightwallet"
     }
 ]

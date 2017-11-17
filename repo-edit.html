@@ -26,12 +26,12 @@
         </header>
 
         <section>
-            <div id="output">
-
-            </div>
             <form name="repo" class="form-horizontal">
                 <div class="form-row">
-                    <div class="form-group col-md-6 mx-auto">
+                    <div class="col-md-3 form-group newform">
+                        <button name="new" class="btn btn-info">New / Clear</button>
+                    </div>
+                    <div class="form-group col-md-9">
                         <label for="owner">Owner / Name</label>
                         <select class="form-control" name="ownername" placeholder="Github Owner">
                             <!-- data.json repo:owner/repo:name -->
@@ -48,9 +48,15 @@
                     </div>
                 </div>
                 <hr>
+                <div id="output">
+
+                </div>
                 <div class="form-row">
-                    <div class="col-md-9 offset-md-3 form-group">
+                    <div class="col-md-9 offset-md-3 form-group input-group">
                         <button name="remote" type="button" class="btn btn-block btn-success">Fetch from Github API</button>
+                        <span class="input-group-addon">
+                            proxy<input type="checkbox" name="proxy">
+                        </span>
                     </div>
                 </div>
                 <div class="form-row">

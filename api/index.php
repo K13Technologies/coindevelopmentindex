@@ -15,10 +15,10 @@
 
 			if(isset($_POST['githubfetch'])) {
 				// new entry called from repo-edit
-				if($_POST['owner'] && $_POST['name'] && $_POST['id'] === '') {
-					array_push($json, (object) [
-							'owner' => $_POST['owner'],
-							'name' => $_POST['name']
+				if($_POST['ownername'] === 'new') {
+					$records = fetchGithubData([(object)
+						['owner' => $_POST['owner'],
+							'name' => $_POST['name'] ]
 					]);
 				}
 				if($_POST['id'] !== '') {
@@ -28,9 +28,12 @@
 				break;
 			}
 
-			$records = array(getRecord(array('id' => $_POST['id'])));
-			out(updateRecords($records));
-
+			if($_POST['ownername'] === 'new') {
+				out(addRecords(array($_POST)));
+			} else {
+				// $records = array(getRecord(array('id' => $_POST['id'])));
+				out(updateRecords(array($_POST)));
+			}
 			break;
 
 		case 'GET':

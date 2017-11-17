@@ -9,10 +9,70 @@ jQuery(document).ready(function($) {
         loco = window.location,
         repos, fields;
 
+    var fetchJSONdata = function() {
+        $.ajax({
+            url: '/assets/json/data.json',
+            dataType: 'json'
+        })
+        .done(function(data) {
+
+            repos = data;
+
+            $ownerSel.html(repos.map(function(repo) {
+                var selected = (loco.hash.slice(1) === repo.owner + '/' + repo.name) ? 'selected' : '';
+                return '<option value="' + repo.owner + '/' + repo.name + '" ' + selected + '>' +
+                            repo.owner + ' / ' + repo.name + '</option>';
+            }).join('\n'));
+
+            $ownerSel.prepend('<option value="new">Create new repo...</option>');
+
+            handleOwnerChange();
+        });
+    };
+
+    var fetchFormFields = function() {
+        $.ajax({
+            url: '/assets/json/form-fields.json',
+            dataType: 'json'
+        })
+        .done(function(data) {
+
+            fields = data;
+
+            fields.forEach(function(field) {
+
+                var $div = $('<div class="form-group form-row"></div>'),
+                    $el = $('<input class="form-control col-sm-9" />'),
+                    $label = $('<label class="col-sm-3"></label>'),
+                    a;
+
+                for(a in field) {
+                    if(field.hasOwnProperty(a)) {
+                        switch(a) {
+                            case 'name':
+                                $label.attr('for', field[a])
+                                    .text(field[a])
+                                    .css('font-weight', field.required ? 'bold' : '');
+                            case 'disabled':
+                            case 'required':
+                                $el.prop(a, field[a]);
+                                break;
+                            default:
+                                $el.attr(a, field[a]);
+                                break;
+                        }
+                    }
+                }
+                $div.append($label).append($el);
+                $fields.append($div);
+            });
+        });
+    };
+
     var handleOwnerChange = function(e) {
 
         var repo = repos ? repos.find(function(repo) {
-                return repo.owner + repo.name === $ownerSel.val();
+                return repo.owner + '/' + repo.name === $ownerSel.val();
             }) : false;
 
         if(repo) {
@@ -20,6 +80,7 @@ jQuery(document).ready(function($) {
             window.history.pushState(repo, '', '#'+repo.owner+'/'+repo.name);
         } else {
             $fields.find('input').val('');
+            loco.hash = '';
             $repoForm.find('button[type="submit"]').text('Create New JSON Entry');
         }
 
@@ -43,14 +104,15 @@ jQuery(document).ready(function($) {
               data: data
             })
             .done(function(response) {
-                console.log(response);
                 $output.addClass('alert alert-success active').html(response[0].owner + '/' + response[0].name + ' updated successfully.');
-                hideAlert();
+                window.history.pushState(response[0], '', '#'+response[0].owner+'/'+response[0].name);
+                hideAlert(3000);
             })
             .fail(function(err) {
                 $output.addClass('alert alert-danger active').html(err);
             })
             .always(function() {
+                $repoForm.find('input:disabled').prop('disabled', true);
             });
     };
 
@@ -82,6 +144,8 @@ jQuery(document).ready(function($) {
                     });
                     $output.addClass('alert alert-danger active').html(out);
                     return;
+                } else {
+                    $output.addClass('alert alert-success active').html('Found data for ' + response[0].owner + '/' + response[0].name);
                 }
 
                 mapToFields(response[0]);
@@ -92,11 +156,12 @@ jQuery(document).ready(function($) {
                 $output.addClass('alert alert-danger active').html(err);
             })
             .always(function() {
-
+                $repoForm.find('input:disabled').prop('disabled', true);
             });
     };
 
     var mapToFields = function(repo) {
+        var status;
 
         $fields.find('input').each(function() {
             var $f = $(this),
@@ -106,17 +171,24 @@ jQuery(document).ready(function($) {
             if(val && $f.attr('type') === 'datetime-local') {
                 val = val.replace(/:\d{2}Z$/, '');
             }
-            if(val)$f.val(val);
+            if(val) {
+                $f.data('prev', $f.val()).val(val);
+            }
         });
 
+        if(repo.releases) {
+            $('.releases').html('<ul>' +
+                repo.releases.map(function(release) {
+                    return '<li><b>' + release.name + '</b> - <em>' +
+                            release.publishedAt + '</em></li>';
+                }).join('') + '</ul>');
+        } else {
+            $('.releases').empty();
+        }
 
-        $('.releases').html('<ul>' +
-            repo.releases.map(function(release) {
-                return '<li><b>' + release.name + '</b> - <em>' +
-                        release.publishedAt + '</em></li>';
-            }).join('') + '</ul>');
+        status = $ownerSel.val() === 'new' ? 'Create' : 'Update';
 
-        $repoForm.find('button[type="submit"]').text('Update ' + repo.owner + ' / ' + repo.name + ' JSON');
+        $repoForm.find('button[type="submit"]').text(status + ' ' + repo.owner + ' / ' + repo.name + ' JSON');
     };
 
     var hideAlert = function(t) {
@@ -129,6 +201,9 @@ jQuery(document).ready(function($) {
         }, t + 800);
     };
 
+    fetchJSONdata();
+    fetchFormFields();
+
     $ownerSel.focus();
 
     $ownerSel.on('change', handleOwnerChange);
@@ -136,66 +211,7 @@ jQuery(document).ready(function($) {
     $repoForm.on('submit', handleForm);
     $output.on('click', hideAlert);
 
-    $.ajax({
-        url: '/assets/json/data.json',
-        dataType: 'json'
-    })
-    .done(function(data) {
-        repos = data;
 
-        $ownerSel.html(repos.map(function(repo) {
-            return '<option value="' + repo.owner + repo.name + '">' +
-                        repo.owner + ' / ' + repo.name + '</option>';
-        }).join('\n'));
-
-        $ownerSel.prepend('<option value="new" selected>Create new repo...</option>');
-
-    });
-
-    $.ajax({
-        url: '/assets/json/form-fields.json',
-        dataType: 'json'
-    })
-    .done(function(data) {
-
-        fields = data;
-
-        fields.forEach(function(field) {
-
-            var $div = $('<div class="form-group form-row"></div>'),
-                $el = $('<input class="form-control col-sm-9" />'),
-                $label = $('<label class="col-sm-3"></label>'),
-                a;
-
-            for(a in field) {
-                if(field.hasOwnProperty(a)) {
-                    switch(a) {
-                        case 'name':
-                            $label.attr('for', field[a])
-                                .text(field[a])
-                                .css('font-weight', field.required ? 'bold' : '');
-                        case 'disabled':
-                        case 'required':
-                            $el.prop(a, field[a]);
-                            break;
-                        default:
-                            $el.attr(a, field[a]);
-                            break;
-                    }
-                }
-            }
-
-            $div.append($label).append($el);
-            $fields.append($div);
-        });
-
-        if(loco.hash.length > 0) {
-            // console.log(loco.hash.slice(1).replace(/\//,''));
-            $('option[value="' + loco.hash.slice(1).replace(/\//,'') + '"]').prop('selected',true);
-            handleOwnerChange();
-        }
-
-    });
 
 
 
