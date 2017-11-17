@@ -1,17 +1,17 @@
 [
     {
-        "ownername": "ArkEcosystem/ark-node",
-        "id": "MDEwOlJlcG9zaXRvcnk3MzQ5NjE3Mw==",
-        "owner": "ArkEcosystem",
-        "name": "ark-node",
+        "ownername": "bitshares/bitshares-core",
+        "id": "MDEwOlJlcG9zaXRvcnk0NDEyMzI1Mg==",
+        "owner": "bitshares",
+        "name": "bitshares-core",
         "coinname": "",
         "symbol": "",
-        "description": ":money_with_wings: CryptoCurrency for all",
-        "createdAt": "2016-11-11T17:08",
-        "homepageUrl": "https://ark.io",
-        "pushedAt": "2017-11-09T07:47",
-        "languages": "JavaScript,PLpgSQL,HTML",
-        "url": "https://github.com/ArkEcosystem/ark-node"
+        "description": "Your share in the Decentralized Exchange",
+        "createdAt": "2015-10-12T17:36",
+        "homepageUrl": "https://bitshares.org/",
+        "pushedAt": "2017-11-16T11:25",
+        "languages": "C++,CMake,Python",
+        "url": "https://github.com/bitshares/bitshares-core"
     },
     {
         "owner": "ethereum",

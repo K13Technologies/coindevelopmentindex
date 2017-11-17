@@ -64,14 +64,23 @@ function addRecords($records) {
 
 	foreach($records as $record) {
 		$repo = (object) $record;
+		$existing = getRecordByName($repo->owner, $repo->name);
+		if($existing) {
+				errorLog('REPO_EXISTS', '<br>Repo ' . $existing->owner . '/' . $existing->name . ' already exists');
+				return errorOutput();
+		}
 		$repo->languages = explode(',', $record['languages']);
 		$repo->ownername = $record['owner'] . '/' . $record['name'];
 		array_push($json, $repo);
 		array_push($added, $repo);
 	}
 
-	if(write($json, JSON_FILE)) {
+	try {
+		write($json, JSON_FILE);
 		return $added;
+	} catch (Exception $e) {
+		errorLog('ADDRECORDS_ERROR', $e->getMessage());
+		return errorOutput();
 	}
 
 }

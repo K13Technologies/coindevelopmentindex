@@ -16,13 +16,18 @@ jQuery(document).ready(function($) {
         })
         .done(function(data) {
 
+            // TODO: sort array by owner
             repos = data;
 
-            $ownerSel.html(repos.map(function(repo) {
-                var selected = (loco.hash.slice(1) === repo.owner + '/' + repo.name) ? 'selected' : '';
-                return '<option value="' + repo.owner + '/' + repo.name + '" ' + selected + '>' +
-                            repo.owner + ' / ' + repo.name + '</option>';
-            }).join('\n'));
+            repos.map(function(repo) {
+                var selected = (loco.hash.slice(1) === repo.owner + '/' + repo.name),
+                    $opt;
+
+                $opt = $('<option value="' + repo.owner + '/' + repo.name + '" ' + '>' +
+                        repo.owner + ' / ' + repo.name + '</option>')
+                    .prop('selected', selected)
+                    .appendTo($ownerSel);
+            });
 
             $ownerSel.prepend('<option value="new">Create new repo...</option>');
 
@@ -80,7 +85,7 @@ jQuery(document).ready(function($) {
             window.history.pushState(repo, '', '#'+repo.owner+'/'+repo.name);
         } else {
             $fields.find('input').val('');
-            loco.hash = '';
+            window.history.pushState('', '', '#');
             $repoForm.find('button[type="submit"]').text('Create New JSON Entry');
         }
 
@@ -90,7 +95,6 @@ jQuery(document).ready(function($) {
 
         var data;
 
-        hideAlert();
         e.preventDefault();
 
         $repoForm.find('input:disabled').prop('disabled', false);
@@ -104,9 +108,20 @@ jQuery(document).ready(function($) {
               data: data
             })
             .done(function(response) {
-                $output.addClass('alert alert-success active').html(response[0].owner + '/' + response[0].name + ' updated successfully.');
-                window.history.pushState(response[0], '', '#'+response[0].owner+'/'+response[0].name);
-                hideAlert(3000);
+                var errors = response.errors,
+                    out = '';
+
+                if(errors && errors.length > 0) {
+                    errors.forEach(function(error) {
+                        out += '<b>ERROR: ' + error.type + '</b> ' + error.message;
+                    });
+                    $output.addClass('alert alert-danger active').html(out);
+                    return;
+                } else {
+                    $output.addClass('alert alert-success active').html(response[0].owner + '/' + response[0].name + ' updated successfully.');
+                    window.history.pushState(response[0], '', '#'+response[0].owner+'/'+response[0].name);
+                    hideAlert(3000);
+                }
             })
             .fail(function(err) {
                 $output.addClass('alert alert-danger active').html(err);
@@ -117,8 +132,6 @@ jQuery(document).ready(function($) {
     };
 
     var apiFetch = function(e) {
-
-        hideAlert();
 
         $repoForm.find('input:disabled').prop('disabled', false);
 
@@ -158,6 +171,13 @@ jQuery(document).ready(function($) {
             .always(function() {
                 $repoForm.find('input:disabled').prop('disabled', true);
             });
+    };
+
+    var resetForm = function(e) {
+        $ownerSel.val('new');
+        $('.releases').empty();
+        $repoForm.find('button[type="submit"]').text('Create New JSON Entry');
+        window.history.pushState('', '', '#');
     };
 
     var mapToFields = function(repo) {
@@ -209,7 +229,8 @@ jQuery(document).ready(function($) {
     $ownerSel.on('change', handleOwnerChange);
     $apiBtn.on('click', apiFetch);
     $repoForm.on('submit', handleForm);
-    $output.on('click', hideAlert);
+    $repoForm.on('reset', resetForm);
+    // $output.on('click', hideAlert);
 
 
 
