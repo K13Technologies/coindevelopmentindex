@@ -71,8 +71,8 @@ function addRecords($records) {
 				errorLog('REPO_EXISTS', '<br>Repo ' . $existing->owner . '/' . $existing->name . ' already exists');
 				return errorOutput();
 		}
-		$repo->languages = explode(',', $record['languages']);
-		$repo->ownername = $record['owner'] . '/' . $record['name'];
+		$repo->languages = explode(',', $record->languages);
+		$repo->ownername = $record->owner . '/' . $record->name;
 		array_push($json, $repo);
 		array_push($added, $repo);
 	}
