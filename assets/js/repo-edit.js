@@ -209,7 +209,7 @@ jQuery(document).ready(function($) {
                 if(!reset) {
                     $f.data('prev', $f.val());
                     if(val !== $f.val()) {
-                        console.log(val, $f.val());
+                        addRevertBtn($f);
                         $f.addClass('update');
                     }
                  }
@@ -233,6 +233,24 @@ jQuery(document).ready(function($) {
         $repoForm.find('button[type="submit"]').text(status + ' ' + repo.owner + ' / ' + repo.name + ' JSON');
     };
 
+    var addRevertBtn = function($input) {
+        var $grp = $('<div class="input-group col-sm-9"></div>');
+        $input.removeClass('col-sm-9').wrap($grp);
+        $input.after('<span class="undo input-group-addon"><i class="fa fa-undo" title="Revert Update"></i></span>');
+    };
+
+    var revertField = function(e) {
+        var $grp = $(e.target).closest('.input-group'),
+            $input = $grp.find('input');
+
+        $input
+            .val($input.data('prev'))
+            .removeClass('update')
+            .addClass('col-sm-9')
+            .unwrap()
+            .next('.input-group-addon').remove();
+    };
+
     var hideAlert = function(t) {
         t = t || 2000;
         setTimeout(function() {
@@ -251,6 +269,7 @@ jQuery(document).ready(function($) {
 
     $ownerSel.on('change', handleOwnerChange);
     $apiBtn.on('click', apiFetch);
+    $repoForm.on('click', '.undo', revertField);
     $repoForm.on('submit', handleForm);
     $repoForm.on('reset', resetForm);
 

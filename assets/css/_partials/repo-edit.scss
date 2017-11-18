@@ -67,7 +67,7 @@
             width:100%;
         }
 
-        input.update {
+        .update {
             animation: 800ms pulse forwards;
         }
 
@@ -81,7 +81,35 @@
             border-bottom-right-radius:0;
         }
 
-        .input-group-addon {
+        .input-group {
+            padding:0;
+        }
+
+        input ~ .input-group-addon {
+            padding:10px;
+            color:darkslateblue;
+            border:1px solid darkslateblue;
+            transition: 200ms all;
+            box-shadow:
+                0 0 5px rgba(255, 255, 255, 0.6),
+                0 0 5px rgba(23, 109, 193, 0.2);
+
+            i {
+                transform: rotate(359deg);
+                transition: 800ms transform;
+            }
+
+            &:hover {
+                color:dodgerblue;
+                background-color:#fff;
+
+                i {
+                    transform: rotate(0);
+                }
+            }
+        }
+
+        button ~ .input-group-addon {
             display: flex;
             flex-direction: column;
             font-size:0.8em;
