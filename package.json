@@ -28,10 +28,11 @@
   },
   "homepage": "https://github.com/PatchChat/coindevindex-website#readme",
   "dependencies": {
-    "bootstrap-v4-dev": "^4.0.0-alpha.6",
+    "bootstrap-beta": "^4.0.0-beta",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
-    "tether": "^1.4.0",
+    "popper.js": "^1.12.9",
+    "tether": "^1.4.1",
     "underscore": "^1.8.3"
   },
   "devDependencies": {

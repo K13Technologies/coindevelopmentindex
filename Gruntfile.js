@@ -115,7 +115,7 @@ module.exports = function(grunt) {
           separator: grunt.util.linefeed,
         },
         src: [
-            'node_modules/bootstrap-v4-dev/dist/css/bootstrap.min.css',
+            'node_modules/bootstrap-beta/dist/css/bootstrap.min.css',
             'node_modules/font-awesome/css/font-awesome.min.css',
             '<%= assetdir %>css/*.min.css',
           ],
@@ -229,10 +229,11 @@ module.exports = function(grunt) {
       js: {
         files: [{
           src: [
+            'node_modules/popper.js/dist/umd/popper.min.js',
             'node_modules/jquery/dist/jquery.min.js',
             'node_modules/underscore/underscore-min.js',
             'node_modules/tether/dist/js/tether.min.js',
-            'node_modules/bootstrap-v4-dev/dist/js/bootstrap.min.js',
+            'node_modules/bootstrap-beta/dist/js/bootstrap.min.js',
             // '<%= assetdir %>vendor/gh3-master/gh3.min.js',
             '<%= assetdir %>js/**/*.js',
             '!<%= assetdir %>js/vendor/*.js',
