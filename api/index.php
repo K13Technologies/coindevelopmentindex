@@ -38,6 +38,10 @@
 
 		case 'GET':
 		default:
+			if(isset($_GET['sort'])) {
+				sortJSON($_GET['sort'], isset($_GET['asc']) ? $_GET['asc'] : true);
+				break;
+			}
 			out(getRecord(array(
 				'owner' => $_GET['owner'],
 				'name' => $_GET['name']

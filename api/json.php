@@ -104,6 +104,24 @@ function updateRecords($records) {
 
 }
 
+function sortJSON($prop, $asc) {
+	global $json;
+
+	if($json === null) fetchJSON(JSON_FILE);
+
+	usort($json, function($a, $b) use($prop,$asc) {
+		if(is_numeric($prop)) {
+			if($a->$prop === $b->$prop) return 0;
+			if($asc) return $a->$prop > $b->$prop ? 1 : -1;
+			else return $a->$prop < $b->$prop ? 1 : -1;
+		}
+		else return $asc ? strcasecmp($a->$prop, $b->$prop) : strcasecmp($b->$prop, $a->$prop);
+	});
+
+	return write($json, JSON_FILE);
+
+}
+
 function write($json, $file) {
 	return file_put_contents($file, json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
 }
