@@ -219,7 +219,8 @@ jQuery(document).ready(function($) {
                 repo.releases.map(function(release) {
                     return '<li><b>' + release.name + '</b> - <em>' +
                             release.publishedAt + '</em></li>';
-                }).join('') + '</ul>');
+                }).join('') + '</ul>')
+                .append('<input type="hidden" value="' + encodeURIComponent(JSON.stringify(repo.releases)) + '" >');
         } else {
             $('.releases').empty();
         }

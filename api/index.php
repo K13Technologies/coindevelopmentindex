@@ -29,9 +29,9 @@
 			}
 
 			if($_POST['ownername'] === 'new') {
-				out(addRecords(array($_POST)));
+				out(addRecords(array(json_decode(json_encode($_POST)))));
 			} else {
-				out(updateRecords(array($_POST)));
+				out(updateRecords(array(json_decode(json_encode($_POST)))));
 			}
 			break;
 

@@ -68,7 +68,7 @@
         }
 
         input.update {
-            animation: 400ms pulse forwards;
+            animation: 800ms pulse forwards;
         }
 
         .newform {
@@ -113,12 +113,26 @@
 }
 
 @keyframes pulse {
-    from {
+    0% {
         box-shadow: 0 0 0 #fff;
     }
-    to {
+    50% {
         color:dodgerblue;
         border:1px solid dodgerblue;
-        box-shadow:0 0 5px rgba(23, 109, 193, 0.6);
+        background-clip: content-box;
+        box-shadow:
+            0 0 5px rgba(23, 109, 193, 0.6);
+    }
+    75% {
+         box-shadow:
+            0 0 5px rgba(255, 255, 255, 0.6),
+            0 0 10px rgba(23, 109, 193, 0.6);
+    }
+    100% {
+        color:darkslateblue;
+        border:1px solid darkslateblue;
+         box-shadow:
+            0 0 5px rgba(255, 255, 255, 0.6),
+            0 0 5px rgba(23, 109, 193, 0.2);
     }
 }
