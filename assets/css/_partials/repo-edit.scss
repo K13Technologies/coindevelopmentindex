@@ -82,10 +82,13 @@
         }
 
         .input-group-addon {
+            display: flex;
+            flex-direction: column;
             font-size:0.8em;
             color:rgba(255,255,255,0.4);
             background:darkgreen;
             padding-top:0;
+            height: 100%;
             input {
                 margin:0 auto;
             }
@@ -110,6 +113,10 @@
         opacity:1;
         transition: 400ms opacity;
     }
+}
+
+.fa-spinner {
+    float:right;
 }
 
 @keyframes pulse {

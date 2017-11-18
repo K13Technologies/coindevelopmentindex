@@ -30,6 +30,7 @@ jQuery(document).ready(function($) {
             });
 
             $ownerSel.prepend('<option value="new">Create new repo...</option>');
+            $('header .alert').find('i.fa-spinner').remove();
 
             handleOwnerChange();
         });
@@ -101,7 +102,7 @@ jQuery(document).ready(function($) {
 
         data = $repoForm.serialize();
 
-        $output.removeClass('alert alert-danger');
+        $output.addClass('alert alert-secondary active').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Sending JSON...');
 
         $.post({
               url: 'http://api.coindev.local',
@@ -141,6 +142,8 @@ jQuery(document).ready(function($) {
             return false;
         }
 
+        $output.addClass('alert alert-secondary active').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Contacting Github API...');
+
         $.post({
               url: 'http://api.coindev.local',
               data: $repoForm.serialize() + '&githubfetch=1'
@@ -177,7 +180,7 @@ jQuery(document).ready(function($) {
 
     var getJSONLocation = function() {
         $.get('http://api.coindev.local?location=1').done(function(loc) {
-            $('header h1').after('<div class="alert alert-info active"><small>' + loc + '</small></div>');
+            $('header h1').after('<div class="alert alert-info active"><small>' + loc + '</small><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></div>');
         });
     };
 
@@ -233,7 +236,7 @@ jQuery(document).ready(function($) {
     var hideAlert = function(t) {
         t = t || 2000;
         setTimeout(function() {
-            $output.removeClass('alert alert-danger alert-success  alert-info active');
+            $output.removeClass('alert alert-danger alert-success  alert-info  alert-secondary active');
         }, t);
         setTimeout(function() {
             $output.empty();
