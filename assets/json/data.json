@@ -7,11 +7,73 @@
         "coinname": "",
         "symbol": "",
         "description": "Your share in the Decentralized Exchange",
-        "createdAt": "2015-10-12T17:36",
+        "createdAt": "2015-10-12T17:36:04Z",
         "homepageUrl": "https://bitshares.org/",
-        "pushedAt": "2017-11-16T11:25",
-        "languages": "C++,CMake,Python",
-        "url": "https://github.com/bitshares/bitshares-core"
+        "pushedAt": "2017-11-16T11:25:18Z",
+        "languages": [
+            "C++",
+            "CMake",
+            "Python"
+        ],
+        "url": "https://github.com/bitshares/bitshares-core",
+        "releases": [
+            {
+                "name": "BitShares Core Release 2.0.171105a",
+                "description": "**This release contains a consensus change. All nodes must upgrade before 2017-12-08 15:40:00 UTC!**\r\n\r\nChanges:\r\n* Bugfixes\r\n\r\nSHA256 Checksum:\r\n* `BitShares-Core-2.0.171105a-x64-cli-tools.zip`\r\n  * `8e7bb51b985d709f2e7d7a03a855ca2d9ce24ea62d1fab679585f3d30997c6e4`",
+                "publishedAt": "2017-11-05T20:13:42Z"
+            },
+            {
+                "name": "BitShares Core Release 2.0.171025",
+                "description": "UPDATE (2017-11-07): Please use `2.0.171105a`. Consensus upgrade is scheduled at 2017-12-08 15:40:00 UTC.\r\n\r\n**UPDATE (2017-11-03): Don't upgrade to this release. It won't sync further than block `#21462208`. We've found the reason, will release a new version soon. Before the fix is out, block producing nodes (witnesses) and seed nodes please use `2.0.171019a`, other nodes please use `2.0.170710` or  `2.0.171019a`.**\r\n\r\nThis release merges all the work done in the last 3 months in the develop Bitshares branch into master.\r\n\r\n<del>All full nodes must upgrade before 2017-11-27 14:40:00 UTC!</del>\r\n\r\n**Changes:**\r\n\r\n* BSIP-0018 #340\r\n* Improved startup time #339 \r\n* Fix for early withdrawal claims #23\r\n* Fix for bug in vote evaluation #369\r\n* Fix to prohibit voting for non-existant entities #348\r\n* Some API changes #352 #344 #347 #330 #311 #312 #306 #304 #420\r\n* new option --plugins for run-time selection of active plugins #288\r\n* Fix for the \"no blocks to pop\" message during shutdown #336\r\n* Fix for transaction signing in cli_wallet #321\r\n* Improved error logging #332\r\n* Get rid of broken flat_index #335\r\n* Fix for blockchain crash #324\r\n* Incorporate p2p fixes that were made to steem codebase #411\r\n* Changed default settings to reduce RAM for new nodes #422\r\n* Fixed rounding issue when creating assets #429\r\n* Fix and softfork protection for asset creation fee issue #433\r\n* Fixed issue of more than 100 accounts owned by the same user #295\r\n* Prevent new bid_collateral operation from entering the blockchain before hardfork #441 \r\n\r\n**Contributors:**\r\n\r\n* @pmconrad\r\n* @oxarbitrage\r\n* @abitmore\r\n* @takaaki7\r\n* @TheTaconator\r\n* @xeroc\r\n\r\n**Checksum of Binaries:**\r\n\r\n* `BitShares-Core-2.0.171025-x64-cli-tools.zip`\r\n  * SHA256SUM: `22360e99d923881b95f1c0c92c00ccfde52c8454306d15a33e013d829f1fbd6c` ",
+                "publishedAt": "2017-10-25T18:48:17Z"
+            },
+            {
+                "name": "BitShares Core 2.0.171019a",
+                "description": "This release is to addresses issue #433.\r\n\r\nWitnesses are required to upgrade to this release as soon as possible. Seed nodes are recommended to upgrade. Optional for other nodes.\r\n\r\nNote: the nodes upgraded to `2.0.171019` already still need to upgrade to this version.",
+                "publishedAt": "2017-10-19T21:18:58Z"
+            },
+            {
+                "name": "BitShares Core Release 2.0.170710",
+                "description": "This is a critical bug fix release.\r\n\r\nAll nodes need to upgrade to this release and replay the blockchain.\r\n\r\nTo replay:\r\n```\r\n./witness_node --replay-blockchain\r\n```\r\n\r\nSHA256 checksum of attached binary `BitShares-Core-2.0.170710-x64-cli-tools.zip` is `d3f02ca21050aa45b2cf6634f394b4e313cde86d8cb4572f9a50a87daabada91`",
+                "publishedAt": "2017-07-10T19:59:47Z"
+            },
+            {
+                "name": "BitShares Core Release 2.0.170606",
+                "description": "This release is mainly for Windows full node users and public API service providers or similar businesses / users who need to track **recent** activities of **all** accounts. It's optional for witnesses, seed nodes and other users.\r\n\r\n**NOTE: It's REQUIRED to run a NTP daemon on the same server which will mitigate several issues.**\r\n\r\n## New features and changes\r\n* Added a `max-ops-per-account` option to `account_history` plugin, when set, only at most that number of history entries per account will be kept in memory. Set it to `0` to store no history. Set it to a big number to keep all history. If `partial-operations` option is set to `true` at the same time, old `operation_history_object` data (1.11.x) will be removed from memory as well, which will save a lot of RAM. Changing of these parameters need a replay to take effect.\r\n\r\n  This is recommended for public API service providers. Set these options in `config.ini`, then restart `witness_node` with `--replay-blockchain`:\r\n  ```\r\n  max-ops-per-account = 1000\r\n  partial-operations = true\r\n  ```\r\n* Added a `removed_ops` field to `account_statistics_object` to track number of entries removed; behavior of `total_ops` field didn't change.\r\n* Fixed Windows build.\r\n\r\n## Known issues\r\n* `get_relative_account_history` command / API in `cli_wallet` may return incorrect data when `limit` is greater than `100` and `start` is too big. (see #298)\r\n* As of writing, the Windows binaries attached to this release are built without `readline` support, so `cli_wallet.exe` lack of some features, for example tab completion and Ctrl-D termination. \r\n\r\n## Other notes\r\n* Future GUI releases will be published under https://github.com/bitshares/bitshares-ui/releases only.\r\n* SHA256 checksum of attached binary `BitShares-Core-2.0.170606-x64-cli-tools.zip` is `0a96598b1020daca5987558bfc998f3663c7e4188cdf0a1abac779253ac33635`\r\n",
+                "publishedAt": "2017-06-06T00:26:34Z"
+            },
+            {
+                "name": "BitShares Core Release 2.0.170531 - Recommended Update for Ubuntu Nodes",
+                "description": "This release contains several security fixes, as well as new features that improve performance.\r\n\r\n* **All Ubuntu nodes are recommended to upgrade to this release.** Untested under other Operating Systems so far.\r\n* It's **REQUIRED** to run a NTP daemon on the same server which will mitigate several issues.\r\n\r\n## New features and changes\r\n* Added a `partial-operations` option to `account_history` plugin. RAM requirement is significantly reduced when this option is used with `track-account` option combined. Highly recommended for Witness nodes, seed nodes, Exchanges and other node operators which don't need to watch account history or only need to watch histories of a small set of accounts. (#289)\r\n  For Example, the OpenLedger.io exchange can use this config (for deposit processing, but not for API servers):\r\n  ```\r\n  track-account = \"1.2.96393\"\r\n  track-account = \"1.2.96397\"\r\n  partial-operations = true\r\n  ```\r\n* Added a `get_relative_account_history` command / API to CLI wallet. Very useful for accounts with large quantity of histories. (#277)\r\n* Added `get_block_header_batch` database API (#262)\r\n* Added `get_account_history_operations` node API for account_history plugin (#237)\r\n* Added new API sets: `asset_api` and `block_api` (#224, #225, #226)\r\n* Added `is_public_key_registered` database API and CLI command / API, added `derive_owner_keys_from_brain_key` CLI command / API (#235)\r\n* `get_full_accounts` API now returns force settlement orders, withdraw permissions and list of owned assets (#261, #232, #229)\r\n* `get_market_history` CLI command / API now returns the most recent data (#242)\r\n* When calling an API method, now it's able to specify the API-identifier by the name directly, rather than a number.(https://github.com/bitshares/bitshares-fc/pull/2, more info in #223)\r\n* Clients now will be authenticated implicitly on the server side if a correct HTTP Authorization request header is present when connected. This means API's those require `login` now can be accessed via HTTP directly as well as WebSocket without an explicit `login` call. (#223, https://github.com/bitshares/bitshares-fc/pull/1)\r\n\r\n## Improvements\r\n* Additional console log for already in use p2p port (#264)\r\n* Web socket now pushes less data by default. (#249)\r\n* Removed log of private keys in witness start (#236)\r\n\r\n## Bug fixes\r\n* Fixed an issue that may cause the network to stale when a witness is misbehaving (#17)\r\n* Fixed an issue that may cause double spending when a witness is misbehaving\r\n* Fixed an issue that causes seed nodes to stop responding to new connections\r\n* Fixed a crash caused by DNS issues when the node is starting (#18)\r\n* Fixed a crash when the node is starting (#274)\r\n* Fixed a crash in get_ticker and get_24_volume API (#250, #255)\r\n* Fixed a memory leak issue (#257)\r\n* Fixed `track-account` option of account history plugin (#259)\r\n* Fixed several issues found in `get_relative_account_history` node API (#280, #281)\r\n\r\n## Other changes\r\n* Updated default seed node list\r\n\r\n## Other notes\r\n* Future GUI releases will be published under https://github.com/bitshares/bitshares-ui/releases only.\r\n",
+                "publishedAt": "2017-05-31T12:58:29Z"
+            },
+            {
+                "name": "GUI Release v2.0.170522",
+                "description": "Mostly bug fixes and some new markets added like HERO, YOYOW and EOS (EOS still unconfirmed as real asset and not yet trading).\r\n\r\n## Binary checksums\r\n\r\n**_bitshares-light_2.0.170522_amd64.deb_**\r\nsha256: `028223d27dd98894bcdfdc8bdda89091fddb5cd8ff70971e14f0622e9979f75a`\r\n\r\n**_BitShares-light_2.0.170522.exe_**\r\nsha256: `634766ff1b7a4cb140fb01dfbd84786d3c5f2e9be7501b0adc3f91cf168ad908`\r\n\r\n**_BitShares-light_2.0.170522.dmg_**\r\nsha256: `d3cd4772555a5a9b7768c820bc303c6fb9e68c8b6067e86359b21aed14e0305b`",
+                "publishedAt": "2017-05-22T19:55:05Z"
+            },
+            {
+                "name": "GUI Release v2.0.170418",
+                "description": "Bug fixes\r\n--------\r\n- Use Openledger url for blocktrades coins by default (adds missing deposit/withdraw assets)\r\n- Fix wallet state update after creating new account with password model\r\n- Fix header update when logging in with password model\r\n- Make sure the fee asset is set properly for transfers when user only has one asset\r\n\r\n\r\n## Binary checksums\r\n\r\n**_bitshares-light_2.0.170418_amd64.deb_**\r\nsha256: `f50958434f227004dec89bae85daa6006a291e9b7f1b3a74723fe04a1a5e6be9`\r\n\r\n**_BitShares-light_2.0.170418.exe_**\r\nsha256: `663b18c95549b3e14de3f0daa06d7f57c9b89f9e429c61c1b4dbabd2797e8c95`\r\n\r\n## Compiled html/javascript\r\n\r\n**html_dist_170418.zip**\r\nsha256: `322c4c5e24c010795c911b7e31d49a9689c2c29cb5851c93c55289930095d47b`\r\nUses browser history, requires nginx/apache server with special configuration for HTML5 history API.\r\n\r\n**html_dist_hash_history_170418.zip**\r\nsha256: `bb91bbe546cbcf3ffd973dc48af3e7a75d3d57b0fa67a93a9f76fffa6f8fb316`\r\nUses hash history (#/ in the URL), requires no special configuration.",
+                "publishedAt": "2017-04-18T07:10:16Z"
+            },
+            {
+                "name": "GUI Release v2.0.170410",
+                "description": "New features\r\n--------\r\n- Allow the mini depth chart to be hidden by the user\r\n- Refactor the MyMarkets component, 'show star only' and revamped search\r\n- Display up to 20 rows of the orderbook by default instead of 10\r\n- Add Trade and Borrow links to the default assets in AccountOverview\r\n\r\nBug fixes\r\n--------\r\n- Fix an issue with blocktrades deposit addresses being set incorrectly\r\n- Change positioning of some tooltips\r\n- Fix password score checker freezing on very long passwords\r\n- Hide 'something for nothing order history items\r\n- Update bitsharesjs to fix proposals array undefined error\r\n- Fix 'Cannot use 'in' operator to search for 'translate'' error in api dropdown\r\n- Fix order rounding when modifying the 'Total' after clicking an order from the orderbook\r\n- Improve first-time brainkey lookup to check at least 10 positions\r\n- Log pub keys when creating a new account\r\n- Fix some Account permissions css issues and add some loggin\r\n- Also check if generated active key matches owner key and vice versa\r\n- Fix account create with faucet not rejecting errors properly\r\n- Fix password strength meter turning red for long passwords\r\n- Fix gateway actions in progress return\r\n\r\n## Binary checksums\r\n\r\n**_bitshares-light_2.0.170410_amd64.deb_**\r\nsha256: `75d3c17fdd611c5ed60a70a7ff3145099f37e9d6adcfaed95c987d0db4976000`\r\n\r\n**_BitShares-light_2.0.170410.exe_**\r\nsha256: `5424a1c1cf4539ad41a0f5cfa39f5635a2818d3feedbf4faa9e72666ecba32ea`\r\n\r\n## Compiled html/javascript\r\n\r\n**html_dist_170410.zip**\r\nsha256: `48482a57a8cf92016a1ed230fa2b2b13773f71b6fdef1acc49b945df92024434`\r\nUses browser history, requires nginx/apache server with special configuration for HTML5 history API.\r\n\r\n**html_dist_hash_history_170410.zip**\r\nsha256: `93e0ba08a192469afa192167f287f03c6c862ae3456b15519522b47542726326`\r\nUses hash history (#/ in the URL), requires no special configuration.",
+                "publishedAt": "2017-04-10T12:08:48Z"
+            },
+            {
+                "name": "GUI Release v2.0.170328",
+                "description": "This is a hotfix release that fixes login for accounts created using the Openledger faucet which sets the provided active key as owner and vice versa. If you created an account using the password model this release will let you login using that password.\r\n\r\n## Binary checksums\r\n\r\n**_bitshares-light_2.0.170328_amd64.deb_**\r\nsha256: `9d89dc33717ced0e9c9dda1fd35927881cfaca3d710d8867aa29f82fec68789c`\r\n\r\n**_BitShares-light_2.0.170328.exe_**\r\nsha256: `8842d9c6eb7a20780bc1dc0d4892221dd181fd01fe2395b58300a96f0b3a3faf`\r\n\r\n**_BitShares-light_2.0.170328.dmg_**\r\nsha256: `089cbb9679b3f42647768fd1fb30e4ac019b54dde4d5fce43997c2a2a22f9896`\r\n\r\n**html_dist_hash_history_170328.zip**\r\nsha256: `fd85003bec945b0f41be93516ffcfbc0d848fcd6e6190885685b499b7b133dfc`\r\nUses hash history (#/ in the URL), requires no special configuration.\r\n",
+                "publishedAt": "2017-03-28T09:36:04Z"
+            }
+        ],
+        "data": {
+            "2017-46": {
+                "stars": 423,
+                "users": 14
+            }
+        }
     },
     {
         "owner": "ethereum",
@@ -20,7 +82,7 @@
         "description": "Official Go implementation of the Ethereum protocol",
         "createdAt": "2013-12-26T13:05:46Z",
         "homepageUrl": "https://geth.ethereum.org",
-        "pushedAt": "2017-11-16T22:30:40Z",
+        "pushedAt": "2017-11-18T01:56:04Z",
         "languages": [
             "Go",
             "C",
@@ -36,8 +98,8 @@
                 "users": 190
             },
             "2017-46": {
-                "stars": 8910,
-                "users": 201
+                "stars": 8936,
+                "users": 204
             }
         },
         "releases": [
@@ -101,7 +163,7 @@
         "description": "Decentralized cryptocurrency blockchain daemon implementing the XRP Ledger in C++",
         "createdAt": "2011-11-07T04:40:15Z",
         "homepageUrl": "https://ripple.com/xrp",
-        "pushedAt": "2017-11-16T18:07:20Z",
+        "pushedAt": "2017-11-17T23:35:58Z",
         "languages": [
             "C++",
             "C",
@@ -117,7 +179,7 @@
                 "users": 72
             },
             "2017-46": {
-                "stars": 1666,
+                "stars": 1667,
                 "users": 72
             }
         },
@@ -196,7 +258,7 @@
                 "users": 22
             },
             "2017-46": {
-                "stars": 192,
+                "stars": 196,
                 "users": 22
             }
         },
@@ -277,7 +339,7 @@
                 "users": 11
             },
             "2017-46": {
-                "stars": 1938,
+                "stars": 1939,
                 "users": 11
             }
         },
@@ -317,7 +379,7 @@
                 "users": 4
             },
             "2017-46": {
-                "stars": 127,
+                "stars": 128,
                 "users": 4
             }
         },
@@ -347,7 +409,7 @@
                 "users": 5
             },
             "2017-46": {
-                "stars": 666,
+                "stars": 669,
                 "users": 5
             }
         },
@@ -412,7 +474,7 @@
         "description": "NEO Smart Economy",
         "createdAt": "2015-05-31T17:02:33Z",
         "homepageUrl": "",
-        "pushedAt": "2017-11-10T12:51:40Z",
+        "pushedAt": "2017-11-17T19:35:51Z",
         "languages": [
             "C#"
         ],
@@ -426,7 +488,7 @@
                 "users": 32
             },
             "2017-46": {
-                "stars": 1061,
+                "stars": 1072,
                 "users": 32
             }
         },
@@ -456,7 +518,7 @@
                 "users": 21
             },
             "2017-46": {
-                "stars": 58,
+                "stars": 59,
                 "users": 21
             }
         },
@@ -521,7 +583,7 @@
         "description": "Factom Daemon ",
         "createdAt": "2015-09-17T15:21:26Z",
         "homepageUrl": "",
-        "pushedAt": "2017-11-16T12:20:51Z",
+        "pushedAt": "2017-11-17T23:37:46Z",
         "languages": [
             "Go",
             "Shell",
@@ -551,7 +613,7 @@
         "description": "\ud83d\udcdf Lisk blockchain application platform",
         "createdAt": "2016-02-01T21:45:35Z",
         "homepageUrl": "https://lisk.io/",
-        "pushedAt": "2017-11-16T18:12:34Z",
+        "pushedAt": "2017-11-17T21:10:28Z",
         "languages": [
             "JavaScript",
             "PLpgSQL"
@@ -566,7 +628,7 @@
                 "users": 39
             },
             "2017-46": {
-                "stars": 1362,
+                "stars": 1373,
                 "users": 41
             }
         },
@@ -631,7 +693,7 @@
         "description": "Waves node application",
         "createdAt": "2016-04-17T08:38:48Z",
         "homepageUrl": "https://wavesplatform.com/",
-        "pushedAt": "2017-11-16T15:15:03Z",
+        "pushedAt": "2017-11-17T09:56:01Z",
         "languages": [
             "Scala",
             "JavaScript",
@@ -647,7 +709,7 @@
                 "users": 33
             },
             "2017-46": {
-                "stars": 276,
+                "stars": 277,
                 "users": 34
             }
         },
@@ -712,7 +774,7 @@
         "description": "Bitcoin full node in C#",
         "createdAt": "2016-09-03T04:32:51Z",
         "homepageUrl": "https://stratisplatform.com",
-        "pushedAt": "2017-11-16T19:23:45Z",
+        "pushedAt": "2017-11-17T21:53:31Z",
         "languages": [
             "C#",
             "PowerShell",
@@ -834,7 +896,7 @@
         "description": "Monero: the secure, private, untraceable cryptocurrency",
         "createdAt": "2014-04-30T14:38:28Z",
         "homepageUrl": "https://getmonero.org",
-        "pushedAt": "2017-11-16T22:25:10Z",
+        "pushedAt": "2017-11-18T00:13:29Z",
         "languages": [
             "C++",
             "C",
@@ -850,7 +912,7 @@
                 "users": 128
             },
             "2017-46": {
-                "stars": 1428,
+                "stars": 1432,
                 "users": 131
             }
         },
@@ -961,7 +1023,7 @@
         "description": "Zcash - Internet Money",
         "createdAt": "2014-11-22T03:13:10Z",
         "homepageUrl": "https://z.cash/",
-        "pushedAt": "2017-11-15T11:04:56Z",
+        "pushedAt": "2017-11-17T23:48:15Z",
         "languages": [
             "C++",
             "C",
@@ -977,7 +1039,7 @@
                 "users": 375
             },
             "2017-46": {
-                "stars": 2985,
+                "stars": 2986,
                 "users": 374
             }
         },
@@ -1042,7 +1104,7 @@
         "description": "Ethereum Classic Website",
         "createdAt": "2016-07-15T07:43:41Z",
         "homepageUrl": "http://ethereumclassic.github.io",
-        "pushedAt": "2017-11-11T15:21:01Z",
+        "pushedAt": "2017-11-17T16:09:42Z",
         "languages": [
             "HTML"
         ],
@@ -1070,7 +1132,7 @@
         "description": "Beyond the Qtum prototype",
         "createdAt": "2017-03-03T08:17:11Z",
         "homepageUrl": "https://qtum.org",
-        "pushedAt": "2017-11-16T21:03:49Z",
+        "pushedAt": "2017-11-17T16:01:18Z",
         "languages": [
             "C++",
             "Python",
@@ -1086,15 +1148,15 @@
                 "users": 435
             },
             "2017-46": {
-                "stars": 369,
+                "stars": 370,
                 "users": 435
             }
         },
         "releases": [
             {
-                "name": null,
-                "description": null,
-                "publishedAt": null
+                "name": "Mainnet Ignition v1.1.2 - Qtum QRC Token Support (bugfixes)",
+                "description": "About Qtum and Mainnet Ignition\r\n-------------------------------\r\n\r\nQtum is a decentralized blockchain project built on Bitcoin's UTXO model, with support for Ethereum Virtual Machine based smart contracts, and secured by a proof of stake consensus model. It achieves this through the revolutionary Account Abstraction Layer which allows the EVM to communicate with Qtum's Bitcoin-like UTXO blockchain. For more general information about Qtum as well as links to join our community, go to https://qtum.org\r\n\r\nWelcome to the Qtum Ignition Main Network. This is the main network where the tokens hold value and should be guarded very carefully. There will be a testnet setup soon for developers, in the meantime you can use `-regtest` mode for testing needs. We will announce details about the token swap from QTUM ERC20 coins to QTUM mainnet tokens soon, watch our [website](https://qtum.org) for details about that.  \r\n\r\nThe major features implemented in Qtum Ignition include:\r\n\r\n1. The Ethereum Virtual Machine, which allows for compatibility with most existing Solidity based smart contracts.\r\n2. The Smart Staking Protocol is complete, which is an optimized Proof of Stake implementation designed for a smart contract platform (however, smart contracts can not participate in staking yet).\r\n3. An early and basic smart contract GUI has been implemented that can be used for creating contracts, sending data and Qtum to them, and checking their status by executing them locally. This functionality is similar to Mist's UI right now, but it is still an early version. We will be working on this more to improve it. \r\n4. Regtest mode, which is ideal for developers who wish to create their own private blockchain. It is tuned specifically to make development easier. It will stake blocks automatically every 30 seconds, and can generate proof-of-work blocks instantly as needed.\r\n5. The Decentralized Governance Protocol is completely implemented and functional, which allows certain network parameters to be modified without a fork.\r\n\r\nFor more technical information for how to start developing with Qtum please read the [Guide](https://github.com/qtumproject/qtum/blob/master/doc/sparknet-guide.md) and also see this tutorial for deploying a simple [faucet smart contract](http://earlz.net/view/2017/06/30/2144/the-qtum-sparknet-faucet) (it hasn't yet been updated for Mainnet for obvious reasons, but all the instructions are the same and you can try them in regtest mode)\r\n\r\nNote: Qtum Core is considered beta software. We make no warranties or guarantees of its security or stability.\r\n\r\nUpdate History\r\n--------------\r\n\r\n* v1.1.2 - Optional update, but recommended if using QRC tokens\r\n    * Fixed a bug with token transactions where the transaction ID displayed was incorrect in the Qt wallet\r\n    * Allow adding 0 balance addresses as the token receiver in the Qt wallet\r\n* v1.1.1: When sending to contracts, the sender address is now the default change address to reduce confusion; fix -salvagewallet so it works with token transactions\r\n* v1.1.0: Add GUI support Qtum QRC tokens, allowing full management of tokens on the Qtum blockchain from the Qt wallet\r\n    * Sending to a contract no longer requires ABI data, allowing easy participation in simple crowdsale contracts\r\n* v1.0.4: Fix bug where certain circumstances when staking could cause the displayed balance to be inaccurate until completely redownloading the blockchain.\r\n* v1.0.3: Fix staker bug that reported false messages; slightly increases staking performance; optimize staker parameters; fix white send button in GUI\r\n* v1.0.2: Various UI fixes, minor gas overflow consensus fix, per-txout exploit fix, testnet mode setup and functioning\r\n* v1.0.1: Fixed network magic bytes and minimum version to ensure the main network does not conflict with the Skynet network\r\n* v1.0: Initial release\r\n\r\nReindex Required When Upgrading from v1.0.1\r\n----------------------------------------------\r\n\r\nWhen you first start the Qtum 1.0.2 GUI wallet after using Qtum v1.0.1 it will prompt you that it must reindex the database. This is normal and is a result of switching our internal database format from per-transaction to per-txout. If you use `qtumd -daemon` it will silently fail to start. You need to use `qtumd -daemon -reindex` in this case. \r\n\r\nQtum Documentation and Usage Resources\r\n---------------\r\n\r\nBasic usage resources:\r\n\r\n* [Official Qtum Usage Guide](https://github.com/qtumproject/qtum/wiki/Qtum-Wallet-Tutorial)\r\n* [Unofficial Qtum staking tutorial](https://steemit.com/qtum/@cryptominder/qtum-staking-tutorial-using-qtum-qt)\r\n* [Unofficial Qtum staking tutorial on Raspberry Pi](https://steemit.com/qtum/@cryptominder/qtum-staking-tutorial-using-qtumd-on-a-raspberry-pi-3)\r\n* [Unofficial guide for keeping your wallet safe](https://steemit.com/qtum/@cryptominder/encrypting-backing-up-and-restoring-your-qtum-wallet)\r\n* [Block explorer](https://explorer.qtum.org)\r\n* [Unofficial block explorer](https://qtumexplorer.io/)\r\n\r\nDevelopment resources:\r\n\r\n* [Deploying a custom token to Qtum](https://blog.qtum.org/qtum-custom-token-walkthrough-467d725fa27d)\r\n* [Early example faucet contract](http://earlz.net/view/2017/06/30/2144/the-qtum-sparknet-faucet)\r\n* [Unofficial Qtum Hello World tutorial](https://steemit.com/qtum/@cryptominder/quantum-qtum-blockchain-developer-tutorial-hello-world)\r\n\r\nGeneral Info about Qtum:\r\n\r\n* [Mainnet event AMA](https://www.reddit.com/r/Qtum/comments/6zs8t0/official_qtum_ama_thread_starts_at_10pm_beijing/)\r\n* [Qtum's PoS vs CASPER](https://www.reddit.com/r/Qtum/comments/788oa5/qtums_pos_vs_casper_and_the_nothingatstake_problem/)\r\n* [Technical article explaining Qtum's PoS model in depth](http://earlz.net/view/2017/07/27/1904/the-missing-explanation-of-proof-of-stake-version)\r\n* [Unofficial What is Qtum article](https://storeofvalue.github.io/posts/what-is-qtum-without-the-bullshit/)\r\n\r\nQuickstart\r\n----------\r\n\r\nThe easiest way to get started with Qtum is to simply download the binaries below. To give a brief breakdown of the different versions available: \r\n\r\n#### Windows\r\n\r\n* [qtum-0.14.8-win64.zip](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.2/qtum-0.14.8-win64.zip) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 machines using Windows.\r\n* [qtum-0.14.8-win64-setup-unsigned.exe](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.2/qtum-0.14.8-win64-setup-unsigned.exe) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 machines using Windows. This includes an installer and will install Qtum system wide.\r\n* [qtum-0.14.8-win32.zip](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.2/qtum-0.14.8-win32.zip) - A version of Qtum-Qt, qtumd, and qtum-cli built for 32bit x86 machines using Windows. If you have an older Windows computer and don't care about installing Qtum system-wide, \r\n* [qtum-0.14.8-win32-setup-unsigned.exe](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.2/qtum-0.14.8-win32-setup-unsigned.exe) - A version of Qtum-Qt, qtumd, and qtum-cli built for 32bit x86 machines using Windows. This includes an installer and will install Qtum system wide. If you have an older Windows computer and want to install Qtum then this is for you.\r\n\r\n#### OSX\r\n\r\n* [qtum-0.14.8-osx64.tar.gz](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.2/qtum-0.14.8-osx64.tar.gz) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 machines using OSX. If you use a modern Mac and want development tools, this is what you want; we do not support older 32bit or PowerPC based Macs.\r\n* [qtum-0.14.8-osx-unsigned.dmg](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.2/qtum-0.14.8-osx-unsigned.dmg) - A version of Qtum-Qt built for 64bit x86 machines using OSX in a .DMG installable format. If you use a modern Mac and aren't a developer, this is what you want; we do not support older 32bit or PowerPC based Macs.\r\n\r\n#### Linux\r\n\r\n* [qtum-0.14.8-i686-pc-linux-gnu.tar.gz](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.2/qtum-0.14.8-i686-pc-linux-gnu.tar.gz) - A version of Qtum-Qt, qtumd, and qtum-cli built for 32bit x86 PC platforms running Linux. This is probably what you want for older computers running Linux\r\n* [qtum-0.14.8-x86_64-linux-gnu.tar.gz](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.2/qtum-0.14.8-x86_64-linux-gnu.tar.gz) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 PC platforms running Linux. This is probably what you want for any modern PC or server running Linux\r\n* [qtum-0.14.8-arm-linux-gnueabihf.tar.gz](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.2/qtum-0.14.8-arm-linux-gnueabihf.tar.gz) - A version of qtumd and qtum-cli built for 32bit ARM platforms using Linux. This includes the Raspberry Pi and many of it's clones\r\n* [qtum-0.14.8-aarch64-linux-gnu.tar.gz](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.2/qtum-0.14.8-aarch64-linux-gnu.tar.gz) - A version of qtumd and qtum-cli built for 64bit ARM platforms using Linux\r\n\r\nBelow in the full list of binaries, there are also versions that include debug symbols. These are useful for developers, but will run slower and are significantly larger to download. \r\n\r\n#### Build Qtum Core\r\n\r\nIf you want to build it from source, it's recommended to follow the specific [\"build\" documentation](https://github.com/qtumproject/qtum/tree/testnet-2/doc) for your platform. But mostly it boils down to the following:\r\n\r\n1. Clone the qtum source code and cd into `qtum`\r\n\r\n        git clone --recursive https://github.com/qtumproject/qtum.git\r\n        cd qtum\r\n\r\n\r\n2.  Build qtum-core:\r\n\r\n    Configure and build the headless qtum binaries as well as the GUI (if Qt is found).\r\n\r\n    You can disable the GUI build by passing `--without-gui` to configure.\r\n\r\n        ./autogen.sh\r\n        ./configure\r\n        make\r\n\r\n3.  It is recommended to build and run the unit tests to ensure everything is working correctly:\r\n\r\n        make check\r\n\r\n\r\nIf you encounter an error like:\r\n\r\n> make[2]: *** No rule to make target \u2018cpp-ethereum/utils/libscrypt/b64.c\u2019, needed by \u2018cpp-ethereum/utils/libscrypt/libbitcoinconsensus_la-b64.lo\u2019.  Stop.\r\n\r\nThen you did not checkout the cpp-ethereum submodule for Qtum. To do that, simply:\r\n\r\n    cd qtum\r\n    git submodule update --init --recursive\r\n\r\nValidate and Reproduce Binaries\r\n---------------------------------\r\n\r\nQtum uses a tool called Gitian to make reproducible builds that can be verified by anyone. Instructions on setting up a Gitian VM and building Qtum are provided [in doc/gitian-building.md](https://github.com/qtumproject/qtum/blob/master/doc/gitian-building.md)\r\n\r\nCommunity Resources\r\n---------\r\n\r\nMake sure to check out these resources as well for more information and to keep up to date with all the latest news about Qtum. At least 1 developer is always around, so if you're developing on Qtum and need help, we'd love to welcome you to our community.  \r\n\r\n* [/r/Qtum on Reddit](https://www.reddit.com/r/Qtum/)\r\n* [Qtum Telegram Group](https://t.me/joinchat/D5oBaw29NeOdpw6qqqf2lw)\r\n* [@QtumOfficial on Twitter](https://mobile.twitter.com/qtumofficial)\r\n* [Qtum on Facebook](https://www.facebook.com/QtumOfficial/)\r\n* [Qtum Forum](https://forum.qtum.org/)\r\n* [Qtum.org](https://qtum.org/en/)\r\n\r\n\r\nQtum Smart Contract Limitations\r\n-----------\r\n\r\n* EVM smart contracts can not receive coins from or send coins to any address type other than pay-to-pubkeyhash (starts with Q) addresses. This is due to a limitation in the EVM\r\n* Contracts are not allowed to create contracts with an initial endowment of coins. The contract must first be created, and then be sent coins in a separate transaction. Humans are also not allowed to create contracts with an initial endowment of coins.\r\n* Although all of the infrastructure is present, Qtum Core does not currently parse Solidity event data. You must parse this yourself using either `searchlogs` or `-record-log-opcodes` features.\r\n* It is not possible to send a contract coins without also executing the contract. This is also the case of Ethereum. This was promised in earlier discussions and technically does work, but due to lack of time for testing this feature was disabled. We hope to reenable this feature with release of the x86 virtual machine in 2018.\r\n* In Qtum there can be multiple addresses used to create a proof-of-stake block. However, the EVM can only see the first output using the `coinbase` operation in Solidity (this address is also the one registered for the continuous staker rewards after 500 blocks). \r\n\r\nHash Validation\r\n----------------\r\n\r\n```\r\n-----BEGIN PGP SIGNED MESSAGE-----\r\nHash: SHA512\r\n\r\nIf you would like to validate that the binaries you download are exactly the same as those provided and built by the Qtum team, then you can compare your binaries to the following sha256sum hashes:\r\n\r\n8b3154f78567b0656e65a27035a97d97a800744dacefae0c6cc286c6866e34a4  qtum-0.14.8-osx-unsigned.dmg\r\nc855987b4bb16a333622a1f5b185573c780512789997f9c628a8c06bfae26eb1  qtum-0.14.8-osx-unsigned.tar.gz\r\n10f4c5574ca900e2134dca9ac8880d5ae0f82ec08c4f9aea88da3937c7a08edb  qtum-0.14.8-osx64.tar.gz\r\nedfd26416545caea73c73c62e6326690fa5a239fcbe66300bd42cdf010dd0cb8  src/qtum-0.14.8.tar.gz\r\n1887a60f01571c1156028dd9b7c3316c387517d7177bdb2d870c0458ac28781d  qtum-osx-0.14-res.yml\r\n\r\n1683f03a3448862cae1bcb0069e06b3b7c9805c90e7d43f64b28b78f2d243cb1  qtum-0.14.8-aarch64-linux-gnu-debug.tar.gz \r\n3ea7fd8a049ac5e6fb86e75944ccd5bf0dec62ae7cbc0caaa92d6e28b7233d5f  qtum-0.14.8-aarch64-linux-gnu.tar.gz \r\n5ef4a469aedd210cdf855155e6f389aacd890ee2cd9309682f01f9a6e60c62c2  qtum-0.14.8-arm-linux-gnueabihf-debug.tar.gz \r\nfe60a3c82116c98fa25bb6dc203ff6211c26bb4977fa4d3df5290a42b9ecc446  qtum-0.14.8-arm-linux-gnueabihf.tar.gz \r\n49b7c64c7b3efa598980feb5442823871208de41a57caf4b124639d4962e4270  qtum-0.14.8-i686-pc-linux-gnu-debug.tar.gz \r\n86151f07bebcc044780a1b8f7035d4fe344d4f330040b9b6f55bee5f95434974  qtum-0.14.8-i686-pc-linux-gnu.tar.gz \r\nf0ec5d129183bb94d4a06b411b648d0948e55eb1b4c1b117afcde4fd75d2aaed  qtum-0.14.8-x86_64-linux-gnu-debug.tar.gz \r\na94a5e61473eb83a90e34bae29b1d44af8ed966cac09003148778aa63a46e081  qtum-0.14.8-x86_64-linux-gnu.tar.gz \r\nedfd26416545caea73c73c62e6326690fa5a239fcbe66300bd42cdf010dd0cb8  src/qtum-0.14.8.tar.gz \r\ne940134ac98546638fac8f6a3dc5b006ef1a9ed8f1255e1457f4ffd0e6e10de3  qtum-linux-0.14-res.yml \r\n\r\n274c4653cacf2c9519d0fed6e60e121649ad9311570c4300349c1639926f2433  qtum-0.14.8-win-unsigned.tar.gz\r\n9f910b6f6116eba4530ff86461d9b692725bddce19d3732632d1e25a55e07d29  qtum-0.14.8-win32-debug.zip\r\n2c79d901f503ed110ce46453e1ca06db2a62d266fcbf847e33b102dacfeaa6c5  qtum-0.14.8-win32-setup-unsigned.exe\r\n93ffe9cce42ba2aa104249f5b20de17e9fa95c36f68b8909aefb071151f9be46  qtum-0.14.8-win32.zip\r\n9ba4aad9dfd38db2a853b1f30b683db8b701b665b3d3776e9a377483dad29919  qtum-0.14.8-win64-debug.zip\r\n8f3b4c4e138b81b7bc91cf213dd29a311cc3ca5999b5b80b95a0373b8746ce90  qtum-0.14.8-win64-setup-unsigned.exe\r\n61ea512e630bc9a8783488188460ab176d5ec967d8def2438b9ecc3dccf58d13  qtum-0.14.8-win64.zip\r\na7d1d7a038b3b85f48de56c4f283bf0eb0ee621c6d5d53f3584c0f7398e32fcd  src/qtum-0.14.8.tar.gz\r\nce46c4471d174d7983dcff15d2a289ca6111bc6709d8cd16f0e700ad110ff5dc  qtum-win-0.14-res.yml\r\n\r\nIn addition, as of the time of this writing, VirusTotal detects 2 false positives on all of the windows files. These false positives are labeled \"HEUR:Trojan.Win32.Generic\" and are from Kaspersky and ZoneAlarm.\r\n\r\ninstaller win32: https://www.virustotal.com/#/file/2c79d901f503ed110ce46453e1ca06db2a62d266fcbf847e33b102dacfeaa6c5/detection\r\n\r\ninstaller win64 https://www.virustotal.com/#/file/8f3b4c4e138b81b7bc91cf213dd29a311cc3ca5999b5b80b95a0373b8746ce90/detection\r\n\r\nzip win32 https://www.virustotal.com/#/file/93ffe9cce42ba2aa104249f5b20de17e9fa95c36f68b8909aefb071151f9be46/detection\r\n\r\nzip win64 https://www.virustotal.com/#/file/61ea512e630bc9a8783488188460ab176d5ec967d8def2438b9ecc3dccf58d13/detection\r\n\r\nYou can validate this message is from Earlz at https://keybase.io/verify\r\n-----BEGIN PGP SIGNATURE-----\r\nVersion: Keybase OpenPGP v2.0.76\r\nComment: https://keybase.io/crypto\r\n\r\nwsFcBAABCgAGBQJaDiJ5AAoJEAKXMK2l7Ra+Li4P/0qO2DWNtsch85NYA6V6Jer5\r\nxQPGqIrU1cd0FA6LhVXzuGAYuSBwGTcu4IOgkjV9Z86aGA2/4N95cn5H+ZROqFaP\r\n2cmxah+YgxfjLSPu0Wmn9hrfBL8a71ggc7zEOOoaRz6H9u6Utj94iazMDx1Mb5SD\r\n5fxmIxCLajbDduHqQTz9wVJUnXL3FWD5WAQ454yIzTRAxXdZ3SD9BcGwiX3zQ4VM\r\n82pcOgjxnP3FvS20rTFIyViXGAN0CcrXtZa+Co32cpBufKim+LvVgHUm0maa0kKz\r\nkwPbs8TYssnVP/IIGr3TkdtY+nAbqQvVzcjVlA7A1L6jobe41LCyGuYtDPGh0Dsi\r\nyb2ba+g0SX+vyUyJJHkZrFfwIimgLPpAfGAA2/KuJj+YYK/LBw4Z9T1h/6yQWPWW\r\nN8p9jQtG/nTFXue5xAiksYtIxWwtnKkNEtMIeddfn9Vox2emqEXEDEoqTbTYHkKa\r\n/JnK40mkyJ1C52PD53avqUpQeTydAmzWU3f5sQB3S2iSvU4aaEW6wt4OeYNFMARH\r\nW6CNn2L+oXJz1Uf7biQefaq1hvP80bJiecNb+KAAr3OMtUJWv5oiFsZIttAp0qmn\r\nM3LLPQn5vsoWlI5WQ/kLSu4hT9JUfGAOmkeByh1MIE8oH/1mxEgr5L/ORFBHTzZw\r\nuUJSvqQmmG6COhcIkqrz\r\n=eBNe\r\n-----END PGP SIGNATURE-----\r\n```",
+                "publishedAt": "2017-11-16T23:41:55Z"
             },
             {
                 "name": "Mainnet Ignition v1.1.1 - Qtum QRC Token Support",
@@ -1193,7 +1255,7 @@
                 "users": 6
             },
             "2017-46": {
-                "stars": 220,
+                "stars": 222,
                 "users": 6
             }
         },
@@ -1277,7 +1339,7 @@
         "description": "Skycoin Core and Wallet",
         "createdAt": "2013-12-25T01:50:16Z",
         "homepageUrl": "",
-        "pushedAt": "2017-11-15T09:22:03Z",
+        "pushedAt": "2017-11-17T01:43:59Z",
         "languages": [
             "Go",
             "TypeScript",
@@ -1364,7 +1426,7 @@
                 "users": 156
             },
             "2017-46": {
-                "stars": 1400,
+                "stars": 1401,
                 "users": 156
             }
         },
@@ -1473,7 +1535,7 @@
                 "users": 14
             },
             "2017-46": {
-                "stars": 422,
+                "stars": 423,
                 "users": 14
             }
         },
@@ -1554,7 +1616,7 @@
                 "users": 15
             },
             "2017-46": {
-                "stars": 65,
+                "stars": 66,
                 "users": 17
             }
         },
@@ -1665,7 +1727,7 @@
         "description": "Syscoin2 Core integration/staging tree",
         "createdAt": "2016-02-29T03:47:32Z",
         "homepageUrl": "https://syscoin.org",
-        "pushedAt": "2017-11-16T22:13:46Z",
+        "pushedAt": "2017-11-18T00:44:49Z",
         "languages": [
             "C++",
             "Python",
@@ -1681,7 +1743,7 @@
                 "users": 8
             },
             "2017-46": {
-                "stars": 40,
+                "stars": 41,
                 "users": 8
             }
         },
@@ -1746,7 +1808,7 @@
         "description": "Golem is creating a global market for computing power.",
         "createdAt": "2015-11-18T17:02:35Z",
         "homepageUrl": "https://golem.network",
-        "pushedAt": "2017-11-16T18:46:20Z",
+        "pushedAt": "2017-11-17T19:08:41Z",
         "languages": [
             "Python",
             "C",
@@ -1762,7 +1824,7 @@
                 "users": 35
             },
             "2017-46": {
-                "stars": 1690,
+                "stars": 1694,
                 "users": 38
             }
         },
@@ -1822,7 +1884,7 @@
         "description": "stellar-core is the backbone of the Stellar network. It maintains a local copy of the ledger, communicating and staying in sync with other instances of stellar-core on the network. Optionally, stellar-core can store historical records of the ledger and participate in consensus.",
         "createdAt": "2014-11-24T17:11:12Z",
         "homepageUrl": "",
-        "pushedAt": "2017-11-16T22:13:47Z",
+        "pushedAt": "2017-11-18T01:02:17Z",
         "languages": [
             "C++",
             "C",
@@ -1838,8 +1900,8 @@
                 "users": 45
             },
             "2017-46": {
-                "stars": 583,
-                "users": 45
+                "stars": 587,
+                "users": 46
             }
         },
         "releases": [
@@ -1904,11 +1966,73 @@
         "coinname": "",
         "symbol": "",
         "description": "Bitcoin Core integration/staging tree",
-        "createdAt": "2010-12-19T15:16",
+        "createdAt": "2010-12-19T15:16:43Z",
         "homepageUrl": "https://bitcoin.org/en/download",
-        "pushedAt": "2017-11-16T22:05",
-        "languages": "C++,Python,C",
-        "url": "https://github.com/bitcoin/bitcoin"
+        "pushedAt": "2017-11-18T00:52:33Z",
+        "languages": [
+            "C++",
+            "Python",
+            "C"
+        ],
+        "url": "https://github.com/bitcoin/bitcoin",
+        "releases": [
+            {
+                "name": "Bitcoin Core 0.15.1",
+                "description": "Bitcoin Core version 0.15.1 is now available from:\r\n\r\nhttps://bitcoin.org/bin/bitcoin-core-0.15.1/\r\n\r\nand\r\n\r\nhttps://bitcoincore.org/bin/bitcoin-core-0.15.1/\r\n\r\nFor the release notes please see the git repository:\r\n\r\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.15.1.md\r\n\r\nPreferably use the above download link, not the below links to download the source tarball, as the release tarballs are generated deterministically and GitHub's are not.",
+                "publishedAt": "2017-11-11T14:24:25Z"
+            },
+            {
+                "name": "Bitcoin Core 0.15.0.1",
+                "description": "Bitcoin Core version 0.15.0.1 is now available from:\r\n\r\nhttps://bitcoin.org/bin/bitcoin-core-0.15.0.1/\r\n\r\nand\r\n\r\nhttps://bitcoincore.org/bin/bitcoin-core-0.15.0.1/\r\n\r\nFor the release notes please see the git repository:\r\n\r\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.15.0.1.md\r\n\r\nPreferably use the above download link, not the below links to download the source tarball, as the release tarballs are generated deterministically and GitHub's are not.",
+                "publishedAt": "2017-09-19T13:05:50Z"
+            },
+            {
+                "name": "Bitcoin Core 0.15.0",
+                "description": "Bitcoin Core version 0.15.0 is now available from:\r\n\r\nhttps://bitcoin.org/bin/bitcoin-core-0.15.0/\r\n\r\nand\r\n\r\nhttps://bitcoincore.org/bin/bitcoin-core-0.15.0/\r\n\r\nFor the release notes please see the git repository:\r\n\r\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.15.0.md\r\n\r\nPreferably use the above download link, not the below links to download the source tarball, as the release tarballs are generated deterministically and GitHubs's are not.",
+                "publishedAt": "2017-09-14T14:34:57Z"
+            },
+            {
+                "name": "Bitcoin Core 0.14.2",
+                "description": "Bitcoin Core version 0.14.2 is now available from:\r\n\r\n  https://bitcoin.org/bin/bitcoin-core-0.14.2/\r\n\r\nFor the release notes please see the git repository:\r\n\r\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.14.2.md",
+                "publishedAt": "2017-06-18T08:42:37Z"
+            },
+            {
+                "name": "Bitcoin Core 0.14.1",
+                "description": "Bitcoin Core version 0.14.1 is now available from:\r\n\r\n  https://bitcoin.org/bin/bitcoin-core-0.14.1/\r\n\r\nFor the release notes please see the git repository:\r\n\r\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.14.1.md",
+                "publishedAt": "2017-04-22T14:19:24Z"
+            },
+            {
+                "name": "Bitcoin Core v0.14.0",
+                "description": "Bitcoin Core version 0.14.0 is now available from:\r\n\r\n  https://bitcoin.org/bin/bitcoin-core-0.14.0/\r\n\r\nFor the release notes please see the git repository:\r\n\r\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.14.0.md",
+                "publishedAt": "2017-03-08T15:20:25Z"
+            },
+            {
+                "name": "Bitcoin Core v0.13.2",
+                "description": "Bitcoin Core version 0.13.2 is now available from:\n\n  https://bitcoin.org/bin/bitcoin-core-0.13.2/\n\nFor the release notes please see the git repository:\n\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.13.2.md\n",
+                "publishedAt": "2017-01-03T10:48:14Z"
+            },
+            {
+                "name": "Bitcoin Core v0.10.0",
+                "description": "Bitcoin Core version 0.10.0 is now available from:\n\n  https://bitcoin.org/bin/0.10.0/\n\nFor the release notes please see the git repository:\n\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.10.0.md\n",
+                "publishedAt": "2016-11-01T19:31:28Z"
+            },
+            {
+                "name": "Bitcoin Core v0.10.1",
+                "description": "Bitcoin Core version 0.10.1 is now available from:\n\n  https://bitcoin.org/bin/bitcoin-core-0.10.1/\n\nFor the release notes please see the git repository:\n\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.10.1.md\n",
+                "publishedAt": "2016-11-01T19:31:06Z"
+            },
+            {
+                "name": "Bitcoin Core v0.10.2",
+                "description": "Bitcoin Core version 0.10.2 is now available from:\n\n  https://bitcoin.org/bin/bitcoin-core-0.10.2/\n\nFor the release notes please see the git repository:\n\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.10.2.md\n",
+                "publishedAt": "2016-11-01T19:30:39Z"
+            }
+        ],
+        "data": {
+            "2017-46": {
+                "stars": 19290,
+                "users": 487
+            }
+        }
     },
     {
         "owner": "NAVCoin",
@@ -1917,7 +2041,7 @@
         "description": "bitcoin-core 0.13 fork ported for Nav Coin",
         "createdAt": "2017-02-22T04:57:00Z",
         "homepageUrl": "",
-        "pushedAt": "2017-11-16T22:28:36Z",
+        "pushedAt": "2017-11-18T00:58:43Z",
         "languages": [
             "C++",
             "C",
@@ -1934,7 +2058,7 @@
             },
             "2017-46": {
                 "stars": 28,
-                "users": 9
+                "users": 10
             }
         },
         "releases": [
@@ -2045,7 +2169,7 @@
                 "users": 40
             },
             "2017-46": {
-                "stars": 1758,
+                "stars": 1760,
                 "users": 40
             }
         },
@@ -2110,7 +2234,7 @@
         "description": "An open source smart contract platform ",
         "createdAt": "2017-04-05T17:09:53Z",
         "homepageUrl": "https://eosio.github.io/eos/",
-        "pushedAt": "2017-11-16T22:23:02Z",
+        "pushedAt": "2017-11-18T02:59:29Z",
         "languages": [
             "WebAssembly",
             "C++",
@@ -2126,7 +2250,7 @@
                 "users": 56
             },
             "2017-46": {
-                "stars": 1413,
+                "stars": 1418,
                 "users": 61
             }
         },
@@ -2274,7 +2398,7 @@
         "description": "Augur back-end (Ethereum contracts)",
         "createdAt": "2014-12-06T05:42:19Z",
         "homepageUrl": "https://www.augur.net",
-        "pushedAt": "2017-11-16T22:22:32Z",
+        "pushedAt": "2017-11-17T21:23:21Z",
         "languages": [
             "Python",
             "TypeScript",
@@ -2290,7 +2414,7 @@
                 "users": 23
             },
             "2017-46": {
-                "stars": 277,
+                "stars": 278,
                 "users": 24
             }
         },
@@ -2381,11 +2505,73 @@
         "coinname": "",
         "symbol": "",
         "description": "Bitcoin Core integration/staging tree",
-        "createdAt": "2010-12-19T15:16",
+        "createdAt": "2010-12-19T15:16:43Z",
         "homepageUrl": "https://bitcoin.org/en/download",
-        "pushedAt": "2017-11-16T22:05",
-        "languages": "C++,Python,C",
-        "url": "https://github.com/bitcoin/bitcoin"
+        "pushedAt": "2017-11-18T00:52:33Z",
+        "languages": [
+            "C++",
+            "Python",
+            "C"
+        ],
+        "url": "https://github.com/bitcoin/bitcoin",
+        "releases": [
+            {
+                "name": "Bitcoin Core 0.15.1",
+                "description": "Bitcoin Core version 0.15.1 is now available from:\r\n\r\nhttps://bitcoin.org/bin/bitcoin-core-0.15.1/\r\n\r\nand\r\n\r\nhttps://bitcoincore.org/bin/bitcoin-core-0.15.1/\r\n\r\nFor the release notes please see the git repository:\r\n\r\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.15.1.md\r\n\r\nPreferably use the above download link, not the below links to download the source tarball, as the release tarballs are generated deterministically and GitHub's are not.",
+                "publishedAt": "2017-11-11T14:24:25Z"
+            },
+            {
+                "name": "Bitcoin Core 0.15.0.1",
+                "description": "Bitcoin Core version 0.15.0.1 is now available from:\r\n\r\nhttps://bitcoin.org/bin/bitcoin-core-0.15.0.1/\r\n\r\nand\r\n\r\nhttps://bitcoincore.org/bin/bitcoin-core-0.15.0.1/\r\n\r\nFor the release notes please see the git repository:\r\n\r\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.15.0.1.md\r\n\r\nPreferably use the above download link, not the below links to download the source tarball, as the release tarballs are generated deterministically and GitHub's are not.",
+                "publishedAt": "2017-09-19T13:05:50Z"
+            },
+            {
+                "name": "Bitcoin Core 0.15.0",
+                "description": "Bitcoin Core version 0.15.0 is now available from:\r\n\r\nhttps://bitcoin.org/bin/bitcoin-core-0.15.0/\r\n\r\nand\r\n\r\nhttps://bitcoincore.org/bin/bitcoin-core-0.15.0/\r\n\r\nFor the release notes please see the git repository:\r\n\r\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.15.0.md\r\n\r\nPreferably use the above download link, not the below links to download the source tarball, as the release tarballs are generated deterministically and GitHubs's are not.",
+                "publishedAt": "2017-09-14T14:34:57Z"
+            },
+            {
+                "name": "Bitcoin Core 0.14.2",
+                "description": "Bitcoin Core version 0.14.2 is now available from:\r\n\r\n  https://bitcoin.org/bin/bitcoin-core-0.14.2/\r\n\r\nFor the release notes please see the git repository:\r\n\r\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.14.2.md",
+                "publishedAt": "2017-06-18T08:42:37Z"
+            },
+            {
+                "name": "Bitcoin Core 0.14.1",
+                "description": "Bitcoin Core version 0.14.1 is now available from:\r\n\r\n  https://bitcoin.org/bin/bitcoin-core-0.14.1/\r\n\r\nFor the release notes please see the git repository:\r\n\r\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.14.1.md",
+                "publishedAt": "2017-04-22T14:19:24Z"
+            },
+            {
+                "name": "Bitcoin Core v0.14.0",
+                "description": "Bitcoin Core version 0.14.0 is now available from:\r\n\r\n  https://bitcoin.org/bin/bitcoin-core-0.14.0/\r\n\r\nFor the release notes please see the git repository:\r\n\r\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.14.0.md",
+                "publishedAt": "2017-03-08T15:20:25Z"
+            },
+            {
+                "name": "Bitcoin Core v0.13.2",
+                "description": "Bitcoin Core version 0.13.2 is now available from:\n\n  https://bitcoin.org/bin/bitcoin-core-0.13.2/\n\nFor the release notes please see the git repository:\n\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.13.2.md\n",
+                "publishedAt": "2017-01-03T10:48:14Z"
+            },
+            {
+                "name": "Bitcoin Core v0.10.0",
+                "description": "Bitcoin Core version 0.10.0 is now available from:\n\n  https://bitcoin.org/bin/0.10.0/\n\nFor the release notes please see the git repository:\n\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.10.0.md\n",
+                "publishedAt": "2016-11-01T19:31:28Z"
+            },
+            {
+                "name": "Bitcoin Core v0.10.1",
+                "description": "Bitcoin Core version 0.10.1 is now available from:\n\n  https://bitcoin.org/bin/bitcoin-core-0.10.1/\n\nFor the release notes please see the git repository:\n\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.10.1.md\n",
+                "publishedAt": "2016-11-01T19:31:06Z"
+            },
+            {
+                "name": "Bitcoin Core v0.10.2",
+                "description": "Bitcoin Core version 0.10.2 is now available from:\n\n  https://bitcoin.org/bin/bitcoin-core-0.10.2/\n\nFor the release notes please see the git repository:\n\nhttps://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.10.2.md\n",
+                "publishedAt": "2016-11-01T19:30:39Z"
+            }
+        ],
+        "data": {
+            "2017-46": {
+                "stars": 19290,
+                "users": 487
+            }
+        }
     },
     {
         "owner": "monacoinproject",
@@ -2470,7 +2656,7 @@
         "description": "Cryptographic currency implementing Ouroboros PoS protocol",
         "createdAt": "2016-10-14T13:44:38Z",
         "homepageUrl": "",
-        "pushedAt": "2017-11-16T22:27:00Z",
+        "pushedAt": "2017-11-17T22:15:10Z",
         "languages": [
             "Haskell",
             "PureScript",
@@ -2486,7 +2672,7 @@
                 "users": 53
             },
             "2017-46": {
-                "stars": 410,
+                "stars": 414,
                 "users": 53
             }
         },
@@ -2649,7 +2835,7 @@
                 "users": 2
             },
             "2017-46": {
-                "stars": 127,
+                "stars": 130,
                 "users": 2
             }
         },
@@ -2694,7 +2880,7 @@
         "description": "2.0.10 - TLS integration and more!",
         "createdAt": "2017-06-08T23:05:59Z",
         "homepageUrl": "https://zensystem.io",
-        "pushedAt": "2017-11-02T23:44:39Z",
+        "pushedAt": "2017-11-18T02:38:02Z",
         "languages": [
             "C++",
             "Python",
@@ -2710,7 +2896,7 @@
                 "users": 19
             },
             "2017-46": {
-                "stars": 60,
+                "stars": 62,
                 "users": 20
             }
         },
@@ -2796,7 +2982,7 @@
                 "users": 4
             },
             "2017-46": {
-                "stars": 72,
+                "stars": 73,
                 "users": 4
             }
         },
@@ -2846,7 +3032,7 @@
         "description": "Easily connect your applications to blockchains",
         "createdAt": "2016-09-16T04:48:45Z",
         "homepageUrl": "https://chainlink-docs.smartcontract.com",
-        "pushedAt": "2017-11-15T10:39:44Z",
+        "pushedAt": "2017-11-18T01:15:21Z",
         "languages": [
             "Ruby",
             "HTML",
@@ -2862,8 +3048,8 @@
                 "users": 2
             },
             "2017-46": {
-                "stars": 92,
-                "users": 3
+                "stars": 93,
+                "users": 4
             }
         },
         "releases": [],
@@ -2964,7 +3150,7 @@
                 "users": 3
             },
             "2017-46": {
-                "stars": 17,
+                "stars": 16,
                 "users": 5
             }
         },
@@ -3005,14 +3191,21 @@
         "coinname": "",
         "symbol": "",
         "description": "AdEx Core: the smart contracts that power the AdEx Network",
-        "createdAt": "2017-08-11T07:41",
+        "createdAt": "2017-08-11T07:41:02Z",
         "homepageUrl": "https://www.adex.network",
-        "pushedAt": "2017-11-16T12:55",
+        "pushedAt": "2017-11-16T12:55:19Z",
         "languages": [
             "JavaScript",
             "Shell"
         ],
-        "url": "https://github.com/AdExBlockchain/adex-core"
+        "url": "https://github.com/AdExBlockchain/adex-core",
+        "releases": [],
+        "data": {
+            "2017-46": {
+                "stars": 28,
+                "users": 7
+            }
+        }
     },
     {
         "ownername": "emc2foundation/einsteinium",
@@ -3022,15 +3215,22 @@
         "coinname": "",
         "symbol": "",
         "description": "Litecoin source tree",
-        "createdAt": "2017-07-01T19:15",
+        "createdAt": "2017-07-01T19:15:43Z",
         "homepageUrl": "http://www.litecoin.org",
-        "pushedAt": "2017-10-21T10:05",
+        "pushedAt": "2017-10-21T10:05:48Z",
         "languages": [
             "C++",
             "Python",
             "C"
         ],
-        "url": "https://github.com/emc2foundation/einsteinium"
+        "url": "https://github.com/emc2foundation/einsteinium",
+        "releases": [],
+        "data": {
+            "2017-46": {
+                "stars": 8,
+                "users": 1
+            }
+        }
     },
     {
         "ownername": "saluscoin/salus",
@@ -3039,16 +3239,23 @@
         "name": "salus",
         "coinname": "",
         "symbol": "",
-        "description": "",
-        "createdAt": "2016-01-13T21:23",
-        "homepageUrl": "",
-        "pushedAt": "2016-09-19T14:30",
+        "description": null,
+        "createdAt": "2016-01-13T21:23:21Z",
+        "homepageUrl": null,
+        "pushedAt": "2016-09-19T14:30:04Z",
         "languages": [
             "C++",
             "Assembly",
             "HTML"
         ],
-        "url": "https://github.com/saluscoin/salus"
+        "url": "https://github.com/saluscoin/salus",
+        "releases": [],
+        "data": {
+            "2017-46": {
+                "stars": 1,
+                "users": 1
+            }
+        }
     },
     {
         "ownername": "eidoo/eth-lightwallet",
@@ -3058,13 +3265,350 @@
         "coinname": "",
         "symbol": "",
         "description": "Lightweight JS Wallet for Node and the browser ",
-        "createdAt": "2016-12-28T19:35",
-        "homepageUrl": "",
-        "pushedAt": "2017-11-02T15:32",
+        "createdAt": "2016-12-28T19:35:31Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-11-02T15:32:15Z",
         "languages": [
             "JavaScript",
             "HTML"
         ],
-        "url": "https://github.com/eidoo/eth-lightwallet"
+        "url": "https://github.com/eidoo/eth-lightwallet",
+        "releases": [],
+        "data": {
+            "2017-46": {
+                "stars": 0,
+                "users": 8
+            }
+        }
+    },
+    {
+        "owner": "gxchain",
+        "name": "gxb-core",
+        "id": "MDEwOlJlcG9zaXRvcnk5OTg5NDYyNw==",
+        "description": "GXB-Core",
+        "createdAt": "2017-08-10T07:29:52Z",
+        "url": "https://github.com/gxchain/gxb-core",
+        "homepageUrl": "https://www.gxb.io/",
+        "pushedAt": "2017-11-15T09:59:47Z",
+        "releases": [
+            {
+                "name": "GXB-Core Release v1.0.171031",
+                "description": "",
+                "publishedAt": "2017-11-15T08:14:53Z"
+            },
+            {
+                "name": "GXB-Core Release v1.0.3",
+                "description": "## New features and changes:\r\n* Added get_relative_account_history command / API to CLI wallet. \r\n* Added data transaction statistics function.\r\n* Optimized the data transaction copyright algorithm.\r\n* Optimized the data transaction process, added an effective subscription interface.\r\n* Optimized the algorithm for PoCS.\r\n* For data transaction copyright, added second-hand data source statistics.",
+                "publishedAt": "2017-10-19T08:38:11Z"
+            }
+        ],
+        "languages": [
+            "C++",
+            "Python",
+            "CMake"
+        ],
+        "data": {
+            "2017-46": {
+                "stars": 35,
+                "users": 7
+            }
+        }
+    },
+    {
+        "owner": "mvs-org",
+        "name": "metaverse",
+        "id": "MDEwOlJlcG9zaXRvcnk3MjMzNTg1NQ==",
+        "description": "The metaverse blockchain service and command-line tools in C++ 14 implementation",
+        "createdAt": "2016-10-30T07:36:52Z",
+        "url": "https://github.com/mvs-org/metaverse",
+        "homepageUrl": "https://mvs.org",
+        "pushedAt": "2017-11-17T06:09:28Z",
+        "releases": [],
+        "languages": [
+            "C++",
+            "C",
+            "CMake"
+        ],
+        "data": {
+            "2017-46": {
+                "stars": 85,
+                "users": 11
+            }
+        }
+    },
+    {
+        "owner": "gamers-coin",
+        "name": "gamecredits",
+        "id": "MDEwOlJlcG9zaXRvcnkxNjk2Mjk3Nw==",
+        "description": "GameCredits Digital Gaming Crypto Currency Source tree",
+        "createdAt": "2014-02-18T20:40:54Z",
+        "url": "https://github.com/gamers-coin/gamecredits",
+        "homepageUrl": "http://gamecredits.net",
+        "pushedAt": "2016-10-05T10:38:54Z",
+        "releases": [],
+        "languages": [
+            "C++",
+            "C",
+            "M4"
+        ],
+        "data": {
+            "2017-46": {
+                "stars": 8,
+                "users": 6
+            }
+        }
+    },
+    {
+        "owner": "BTCGPU",
+        "name": "BTCGPU",
+        "id": "MDEwOlJlcG9zaXRvcnk5ODA3Nzk2Nw==",
+        "description": "Current work on BTCGPU",
+        "createdAt": "2017-07-23T05:59:24Z",
+        "url": "https://github.com/BTCGPU/BTCGPU",
+        "homepageUrl": "http://bitcoingold.org",
+        "pushedAt": "2017-11-16T09:44:35Z",
+        "releases": [
+            {
+                "name": "Bitcoin Gold 0.15.0.1",
+                "description": "This is the precompiled release of Bitcoin Gold\r\n\r\n* Windows 64bits\r\n* Linux 64bits\r\n* macOS coming soon.\r\n\r\n```\r\nSHA-256 checksum:\r\n53e01dd7366e87fb920645b29541f8487f6f9eec233cbb43032c60c0398fc9fa  bitcoingold-0.15.0-win64-setup.exe\r\n25d7bf0deb125ecf5b50925a1c58e98c4b0b0a524470379c952f6b9310e97cfe  bitcoingold-0.15.0-x86_64-pc-linux-gnu.zip\r\n```",
+                "publishedAt": "2017-11-12T19:43:50Z"
+            }
+        ],
+        "languages": [
+            "C++",
+            "Python",
+            "C"
+        ],
+        "data": {
+            "2017-46": {
+                "stars": 372,
+                "users": 77
+            }
+        }
+    },
+    {
+        "owner": "florincoin",
+        "name": "florincoin",
+        "id": "MDEwOlJlcG9zaXRvcnkyMDkyNDMyOA==",
+        "description": "Florin",
+        "createdAt": "2014-06-17T13:28:34Z",
+        "url": "https://github.com/florincoin/florincoin",
+        "homepageUrl": "http://www.florincoin.org",
+        "pushedAt": "2017-06-26T10:21:38Z",
+        "releases": [
+            {
+                "name": "v0.10.4.4",
+                "description": "- OP_RETURN include message hash (from v0.10.4.2)\n- Transaction detail displays tx comment (from v0.10.4.3)\n- Transaction view displays tx comment (from v0.10.4.3)\n- Update \"Florincoin\" text and splash screen copyright\n",
+                "publishedAt": "2016-06-19T17:42:59Z"
+            },
+            {
+                "name": "",
+                "description": "Checkpoints\nDisconnects 0.8 peers\n",
+                "publishedAt": "2016-04-02T17:59:21Z"
+            }
+        ],
+        "languages": [
+            "C++",
+            "C",
+            "Python"
+        ],
+        "data": {
+            "2017-46": {
+                "stars": 18,
+                "users": 3
+            }
+        }
+    },
+    {
+        "owner": "BitClubDev",
+        "name": "ClubCoin",
+        "id": "MDEwOlJlcG9zaXRvcnk0Njc5OTEwMw==",
+        "description": "ClubCoin cryptocurrency software",
+        "createdAt": "2015-11-24T15:07:17Z",
+        "url": "https://github.com/BitClubDev/ClubCoin",
+        "homepageUrl": null,
+        "pushedAt": "2017-02-21T03:32:07Z",
+        "releases": [
+            {
+                "name": "ClubCoin 1.2.0",
+                "description": "This is the release of ClubCoin v1.2.0.\n\n[Release notes](https://github.com/BitClubDev/ClubCoin/blob/master/doc/release-notes.md)\n\nHave fun!, and as always, be careful, backup your wallets before doing anything;\nThe ClubCoin team\n",
+                "publishedAt": "2016-11-04T13:50:05Z"
+            },
+            {
+                "name": "ClubCoin 1.1.0",
+                "description": "This is the release of ClubCoin v1.1.0.\n\nHave fun!, and as always, be careful, backup your wallets before doing anything;\nThe ClubCoin team\n",
+                "publishedAt": "2016-04-11T07:19:46Z"
+            },
+            {
+                "name": "ClubCoin 1.0.3.0 Builds",
+                "description": "This is the release of ClubCoin v1.0.3.0.\nWhat is new:\n- Updated the translations for Chinese language.\n- Migrated the GUI toolkit from Qt 4 to Qt 5.\n- Minor bug fixes from upstream Bitcoin.\n\nFILES:\n- clubcoin-qt.exe: Windows build, 64-bit version.\n- clubcoin-qt32.exe: Windows build, 32-bit version.\n- clubcoin-qt: Linux build, 64-bit version.\n\nFor Linux builds, remember to set the executable bit:\n\"chmod +x ./clubcoin-qt\"\n\nHISTORY:\n- Updating Linux build to fix a library problem.\n\nHave fun!, and as always, be careful, backup your wallets before doing anything;\n        The ClubCoin team\n",
+                "publishedAt": "2016-04-11T07:11:28Z"
+            }
+        ],
+        "languages": [
+            "C++",
+            "C",
+            "M4"
+        ],
+        "data": {
+            "2017-46": {
+                "stars": 3,
+                "users": 10
+            }
+        }
+    },
+    {
+        "owner": "status-im",
+        "name": "status-react",
+        "id": "MDEwOlJlcG9zaXRvcnk1MjMwODQ0MQ==",
+        "description": "a free (libre) open source, mobile OS for Ethereum",
+        "createdAt": "2016-02-22T21:48:48Z",
+        "url": "https://github.com/status-im/status-react",
+        "homepageUrl": "https://status.im",
+        "pushedAt": "2017-11-17T22:38:14Z",
+        "releases": [
+            {
+                "name": "0.9.4 (alpha)",
+                "description": "0.9.4 marks the launch of developer tools. We've also added Ethlance, Dentacoin & CommitETH as default contacts.\r\n\r\nLearn more about this release [here](https://blog.status.im/status-0-9-4-trufflebox-embark-plugin-ethlance-dentacoin-commiteth-dbc040dd554d).",
+                "publishedAt": "2017-04-12T09:59:38Z"
+            },
+            {
+                "name": "0.9.3 (alpha)",
+                "description": "0.9.3 includes [38 bug fixes](https://github.com/status-im/status-react/issues?q=is%3Aissue+is%3Aclosed+label%3Abug+milestone%3A0.9.3), along with compatibility with Melonport, Gnosis, Firstblood and bchat.\r\n\r\nLearn more about this release [here](https://blog.status.im/status-0-9-3-melonport-gnosis-firstblood-bchat-79b4ee85f2fe).",
+                "publishedAt": "2017-04-12T09:57:19Z"
+            },
+            {
+                "name": "0.9.2 (alpha)",
+                "description": "Learn more about this release [here](https://blog.status.im/status-alpha-release-fcecfedd2b94).",
+                "publishedAt": "2017-04-12T09:54:47Z"
+            },
+            {
+                "name": "0.9.0 (alpha)",
+                "description": "Status' first public alpha release. For the first time, you can browse DApps on Android & iOS and have a mobile Ethereum node in your pocket.",
+                "publishedAt": "2017-04-12T09:51:19Z"
+            },
+            {
+                "name": "0.9.5 (alpha)",
+                "description": "",
+                "publishedAt": "2017-04-12T09:49:33Z"
+            },
+            {
+                "name": "0.9.1 (alpha)",
+                "description": "",
+                "publishedAt": "2017-01-04T19:27:07Z"
+            }
+        ],
+        "languages": [
+            "Clojure",
+            "JavaScript",
+            "Python"
+        ],
+        "data": {
+            "2017-46": {
+                "stars": 1507,
+                "users": 103
+            }
+        }
+    },
+    {
+        "owner": "FeatherCoin",
+        "name": "Feathercoin",
+        "id": "MDEwOlJlcG9zaXRvcnkxMzg4NzEzOA==",
+        "description": null,
+        "createdAt": "2013-10-26T16:52:25Z",
+        "url": "https://github.com/FeatherCoin/Feathercoin",
+        "homepageUrl": "https://www.feathercoin.com/",
+        "pushedAt": "2017-11-17T20:25:02Z",
+        "releases": [
+            {
+                "name": "0.9.6.1 Bugfixes for 0.9.6 tree",
+                "description": "This is a bugfix release.\r\n\r\nIssues Fixed:\r\n\r\n    - When a 0.11.x node connects, the connection will be with 'invalid pchMessageStart in 0.9.6 and earlier versions. (Github Issue #171) This has been fixed by implementing pchMessageStartNew constant to allow future 0.11.x nodes to connect.\r\n\r\n    - The configuration parameter 'enfoce checkpoint was not handled correctly in 0.9.6, when set. (Github issues #169,#170)\r\n\r\n    - A formating error on the Multisig GUI page was fixed (Github issue #160)\r\n\r\n    - Log messages get id numbers (Github issue #157)\r\n\r\n    - Test section was updated ( Github issues #120 - #127)\r\n",
+                "publishedAt": "2017-07-12T19:40:00Z"
+            },
+            {
+                "name": "New Gui, support for Block version 4",
+                "description": "## This is a new major version release, bringing both new features and bug fixes.\n\nPlease report bugs using the issue tracker at github:\nhttps://github.com/Feathercoin/Feathercoin/issues\n\n### Binaries / installation packages:\n- Mac : attached\n- Windows: atached\n- Linux ( most major distributions): \n  - Download: http://software.opensuse.org/package/feathercoin\n  - Installation instructions Debian/Ubuntu: http://forum.feathercoin.com/topic/8327/guide-feathercoin-wallet-ppa-and-binaries-on-ubuntu-and-debian-linux\n\n### Fixes:\n- Automated build tests fixed - Feathercoin v0.9.6 now includes automated unit tests from Bitcoin v0.9\n- Fixed Miniupnpc > 1.6 - There was a bug in the code that didn\u2019t agree with versions of miniupnpc greater than version 1.6\n- Fixed \u201cAmbiguous Overload\u201d build error from chainparams.cpp when building with C++11 support\n- Fixed buffer overflow bug in Coins.cpp\n- Refreshed MacOS DMG background -updated icon size and position\n- Fixed a build issue with MacOS build and the Multi-Sig QT page\n- Fixed a C++11 build error \u201cC++11 requires a space between literal and identifier\u201d on main.cpp, wallet.cpp, walletmodel.cpp\n\n### Enhancements:\n- Feathercoin-cli manpage added\n  - updated feathercoind, feathercoin-qt, feathercoin.conf manpages\n",
+                "publishedAt": "2017-01-31T16:26:12Z"
+            },
+            {
+                "name": "BIP66 support for 0.9.3 based versions",
+                "description": "This release implements BIP66 compability needed to interoperate with version 0.9.5 and later\n",
+                "publishedAt": "2016-03-07T11:58:22Z"
+            },
+            {
+                "name": "BIP66 support for 0.8.7 based client versions",
+                "description": "This release implements BIP66 compability needed to interoperate with version 0.9.5 and later\n",
+                "publishedAt": "2016-03-07T11:55:36Z"
+            }
+        ],
+        "languages": [
+            "C++",
+            "Assembly",
+            "Shell"
+        ],
+        "data": {
+            "2017-46": {
+                "stars": 88,
+                "users": 193
+            }
+        }
+    },
+    {
+        "owner": "transferdev",
+        "name": "Transfercoin",
+        "id": "MDEwOlJlcG9zaXRvcnk0MDU2MDA1Mg==",
+        "description": "source",
+        "createdAt": "2015-08-11T19:07:01Z",
+        "url": "https://github.com/transferdev/Transfercoin",
+        "homepageUrl": null,
+        "pushedAt": "2017-07-29T03:27:49Z",
+        "releases": [
+            {
+                "name": "V1.2.4 Release",
+                "description": "",
+                "publishedAt": "2017-04-01T19:45:41Z"
+            },
+            {
+                "name": "1.2.3 Windows build environment",
+                "description": "Updated with QT 5.6\nSecp256k1 updated\n",
+                "publishedAt": "2016-04-02T19:11:34Z"
+            },
+            {
+                "name": "1.2.3 Release",
+                "description": "Windows binaries included.\r\n",
+                "publishedAt": "2016-04-02T17:38:49Z"
+            }
+        ],
+        "languages": [
+            "C++",
+            "C",
+            "Python"
+        ],
+        "data": {
+            "2017-46": {
+                "stars": 7,
+                "users": 6
+            }
+        }
+    },
+    {
+        "owner": "KyberNetwork",
+        "name": "smart-contracts",
+        "id": "MDEwOlJlcG9zaXRvcnk5NjAxMTY0Nw==",
+        "description": null,
+        "createdAt": "2017-07-02T08:39:01Z",
+        "url": "https://github.com/KyberNetwork/smart-contracts",
+        "homepageUrl": null,
+        "pushedAt": "2017-11-17T06:55:12Z",
+        "releases": [],
+        "languages": [
+            "JavaScript"
+        ],
+        "data": {
+            "2017-46": {
+                "stars": 25,
+                "users": 11
+            }
+        }
     }
 ]
