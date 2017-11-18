@@ -11,7 +11,7 @@ jQuery(document).ready(function($) {
 
     var fetchJSONdata = function() {
         $.ajax({
-            url: '/assets/json/data.json',
+            url: 'http://api.coindev.local',
             dataType: 'json'
         })
         .done(function(data) {
@@ -81,7 +81,7 @@ jQuery(document).ready(function($) {
             }) : false;
 
         if(repo) {
-            mapToFields(repo);
+            mapToFields(repo,true);
             window.history.pushState(repo, '', '#'+repo.owner+'/'+repo.name);
         } else {
             $fields.find('input').val('');
@@ -156,9 +156,11 @@ jQuery(document).ready(function($) {
                         out += '<b>ERROR: ' + error.type + '</b> ' + error.message;
                     });
                     $output.addClass('alert alert-danger active').html(out);
+                    $output.one('click', hideAlert);
                     return;
                 } else {
                     $output.addClass('alert alert-success active').html('Found data for ' + response[0].owner + '/' + response[0].name);
+                    hideAlert();
                 }
 
                 mapToFields(response[0]);
@@ -173,6 +175,12 @@ jQuery(document).ready(function($) {
             });
     };
 
+    var getJSONLocation = function() {
+        $.get('http://api.coindev.local?location=1').done(function(loc) {
+            $('header h1').after('<div class="alert alert-info active"><small>' + loc + '</small></div>');
+        });
+    };
+
     var resetForm = function(e) {
         $ownerSel.val('new');
         $('.releases').empty();
@@ -180,19 +188,29 @@ jQuery(document).ready(function($) {
         window.history.pushState('', '', '#');
     };
 
-    var mapToFields = function(repo) {
+    var mapToFields = function(repo,reset) {
         var status;
+            reset = reset || false;
 
         $fields.find('input').each(function() {
             var $f = $(this),
                 n = $f.attr('name'),
-                val = repo[n];
+                val = Array.isArray(repo[n]) ? repo[n].join(',') : repo[n];
+
+            $f.removeClass('update');
 
             if(val && $f.attr('type') === 'datetime-local') {
                 val = val.replace(/:\d{2}Z$/, '');
             }
-            if(val) {
-                $f.data('prev', $f.val()).val(val);
+            if(val || reset) {
+                if(!reset) {
+                    $f.data('prev', $f.val());
+                    if(val !== $f.val()) {
+                        console.log(val, $f.val());
+                        $f.addClass('update');
+                    }
+                 }
+                $f.val(val);
             }
         });
 
@@ -214,13 +232,14 @@ jQuery(document).ready(function($) {
     var hideAlert = function(t) {
         t = t || 2000;
         setTimeout(function() {
-            $output.removeClass('alert alert-danger alert-success active');
+            $output.removeClass('alert alert-danger alert-success  alert-info active');
         }, t);
         setTimeout(function() {
             $output.empty();
         }, t + 800);
     };
 
+    getJSONLocation();
     fetchJSONdata();
     fetchFormFields();
 
@@ -230,10 +249,5 @@ jQuery(document).ready(function($) {
     $apiBtn.on('click', apiFetch);
     $repoForm.on('submit', handleForm);
     $repoForm.on('reset', resetForm);
-    // $output.on('click', hideAlert);
-
-
-
-
 
 });

@@ -25,6 +25,11 @@
             text-align:center;
             color:#b4b4b4;
         }
+        .alert {
+            small {
+                font-size:1.8em;
+            }
+        }
         p {
             flex-basis:100%;
             text-align:center;
@@ -60,6 +65,10 @@
 
         hr {
             width:100%;
+        }
+
+        input.update {
+            animation: 400ms pulse forwards;
         }
 
         .newform {
@@ -100,5 +109,16 @@
     &.active {
         opacity:1;
         transition: 400ms opacity;
+    }
+}
+
+@keyframes pulse {
+    from {
+        box-shadow: 0 0 0 #fff;
+    }
+    to {
+        color:dodgerblue;
+        border:1px solid dodgerblue;
+        box-shadow:0 0 5px rgba(23, 109, 193, 0.6);
     }
 }

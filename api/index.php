@@ -31,7 +31,6 @@
 			if($_POST['ownername'] === 'new') {
 				out(addRecords(array($_POST)));
 			} else {
-				// $records = array(getRecord(array('id' => $_POST['id'])));
 				out(updateRecords(array($_POST)));
 			}
 			break;
@@ -39,7 +38,15 @@
 		case 'GET':
 		default:
 			if(isset($_GET['sort'])) {
-				sortJSON($_GET['sort'], isset($_GET['asc']) ? $_GET['asc'] : true);
+				out(sortJSON(JSON_FILE, $_GET['sort'], isset($_GET['asc']) ? $_GET['asc'] : true));
+				break;
+			}
+			if(isset($_GET['location'])) {
+					echo JSON_FILE;
+				break;
+			}
+			if(isset($_GET['pushremote'])) {
+				out(write(fetchJSON(LOCAL_FILE),REMOTE_FILE));
 				break;
 			}
 			out(getRecord(array(

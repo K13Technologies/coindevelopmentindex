@@ -5,6 +5,7 @@ $output->errors = array();
 
 function checkPermissions($file, $mod) {
 
+	if($file === JSON_FILE && JSON_FILE === REMOTE_FILE) return true;
 	// check file permissions for updating file
 	$perms = substr(sprintf('%o', fileperms($file)), -4);
 
