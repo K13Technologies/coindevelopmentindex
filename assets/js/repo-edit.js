@@ -201,6 +201,12 @@ jQuery(document).ready(function($) {
                 val = Array.isArray(repo[n]) ? repo[n].join(',') : repo[n];
 
             $f.removeClass('update');
+            if($f.next('.input-group-addon')[0]) {
+                $f
+                    .addClass('col-sm-9')
+                    .unwrap()
+                    .next('.input-group-addon').remove();
+            }
 
             if(val && $f.attr('type') === 'datetime-local') {
                 val = val.replace(/:\d{2}Z$/, '');
