@@ -239,7 +239,7 @@ jQuery(document).ready(function($) {
             }
         });
 
-        if(repo.releases) {
+        if(repo.releases && repo.releases.length > 0) {
             $('.releases').html('<ul>' +
                 repo.releases.map(function(release) {
                     return '<li><b>' + release.name + '</b> - <em>' +
