@@ -1,3 +1,4 @@
+/* globals JSON */
 jQuery(document).ready(function($) {
     'use strict';
 
@@ -90,8 +91,8 @@ jQuery(document).ready(function($) {
             $repoForm.find('button[type="submit"]').text('Create New JSON Entry');
         }
 
-        $('.reponav.prev').prop('disabled', ($ownerSel.val() == 'new'));
-        $('.reponav.next').prop('disabled', ($ownerSel.val() == repos[repos.length - 1].owner + '/' + repos[repos.length - 1].name));
+        $('.reponav.prev').prop('disabled', ($ownerSel.val() === 'new'));
+        $('.reponav.next').prop('disabled', ($ownerSel.val() === repos[repos.length - 1].owner + '/' + repos[repos.length - 1].name));
 
     };
 
@@ -208,8 +209,10 @@ jQuery(document).ready(function($) {
     };
 
     var mapToFields = function(repo,reset) {
-        var status;
-            reset = reset || false;
+        var status,
+            reset = reset || false,
+            data = '',
+            releases;
 
         $fields.find('input').each(function() {
             var $f = $(this),
@@ -240,14 +243,38 @@ jQuery(document).ready(function($) {
         });
 
         if(repo.releases && repo.releases.length > 0) {
+
+            releases = repo.releases.filter(function(r) {
+                return typeof r.name === 'string';
+            });
             $('.releases').html('<ul>' +
-                repo.releases.map(function(release) {
+                releases.map(function(release) {
                     return '<li><b>' + release.name + '</b> - <em>' +
                             release.publishedAt + '</em></li>';
                 }).join('') + '</ul>')
-                .append('<input type="hidden" value="' + encodeURIComponent(JSON.stringify(repo.releases)) + '" >');
+                .append('<input type="hidden" name="releases" value=\'' +
+                        JSON.stringify(releases) + '\' >');
         } else {
             $('.releases').empty();
+        }
+
+        if(repo.data) {
+            for(var d in repo.data) {
+                if(repo.data.hasOwnProperty(d)) {
+                    data += '<tr>' +
+                                '<td>' + d + '</td>' +
+                                '<td>' + repo.data[d].users + '</td>' +
+                                '<td>' + repo.data[d].stars + '</td>' +
+                            '</tr>';
+                }
+            }
+            $('.data').find('tbody').html(data);
+            $('.data').append('<input type="hidden" name="data" value=\'' +
+                        JSON.stringify(repo.data) + '\' >')
+                .show();
+        } else {
+            $('.data').find('tbody').empty().hide();
+            $('input[name="data"]').remove();
         }
 
         status = $ownerSel.val() === 'new' ? 'Create' : 'Update';

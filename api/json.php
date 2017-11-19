@@ -96,7 +96,9 @@ function updateRecords($records) {
 
 	foreach($records as $record) {
 		$idx = array_search($record->id, array_map(function($repo) { return $repo->id; }, $json));
-		$json[$idx] = (object) array_replace_recursive((array) $json[$idx], (array) $record);
+		$record->releases = json_decode($record->releases);
+		$record->data = json_decode($record->data);
+		$json[$idx] = (object) array_replace((array) $json[$idx], (array) $record);
 		array_push($updated, $json[$idx]);
 	}
 
