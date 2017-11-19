@@ -71,9 +71,28 @@
             animation: 800ms pulse forwards;
         }
 
+        .reponav {
+            background:none;
+            color:#576069;
+            padding:3px;
+            opacity:0.6;
+            transition:300ms opacity;
+            &:first-child {
+                margin-right:10px;
+            }
+            &:last-child {
+                margin-left:10px;
+            }
+            &:not(:disabled):hover{
+                opacity:1;
+            }
+            &:disabled {
+                opacity:0.2;
+            }
+        }
+
         .newform {
-            align-self: flex-end;
-            text-align: right;
+            text-align: center;
         }
 
         [name="remote"] {

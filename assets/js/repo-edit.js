@@ -90,6 +90,9 @@ jQuery(document).ready(function($) {
             $repoForm.find('button[type="submit"]').text('Create New JSON Entry');
         }
 
+        $('.reponav.prev').prop('disabled', ($ownerSel.val() == 'new'));
+        $('.reponav.next').prop('disabled', ($ownerSel.val() == repos[repos.length - 1].owner + '/' + repos[repos.length - 1].name));
+
     };
 
     var handleForm = function(e) {
@@ -176,6 +179,19 @@ jQuery(document).ready(function($) {
             .always(function() {
                 $repoForm.find('input:disabled').prop('disabled', true);
             });
+    };
+
+    var onNavClick = function(e) {
+        var $this = $(e.currentTarget),
+            val = $ownerSel.val(),
+            idx;
+
+        idx = repos.findIndex(function(repo) { return repo.owner + '/' + repo.name === val; });
+
+        if($this.is('.prev') && (idx - 1 > -1)) $ownerSel.val(repos[idx - 1].owner + '/' + repos[idx - 1].name);
+        if($this.is('.next') && (idx + 1 < repos.length)) $ownerSel.val(repos[idx + 1].owner + '/' + repos[idx + 1].name);
+
+        handleOwnerChange();
     };
 
     var getJSONLocation = function() {
@@ -276,6 +292,7 @@ jQuery(document).ready(function($) {
     $ownerSel.on('change', handleOwnerChange);
     $apiBtn.on('click', apiFetch);
     $repoForm.on('click', '.undo', revertField);
+    $repoForm.on('click', '.reponav', onNavClick);
     $repoForm.on('submit', handleForm);
     $repoForm.on('reset', resetForm);
 

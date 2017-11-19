@@ -32,10 +32,13 @@
                         <button name="new" type="reset" class="btn btn-info">New / Clear</button>
                     </div>
                     <div class="form-group col-md-9">
-                        <label for="owner">Owner / Name</label>
-                        <select class="form-control" name="ownername" placeholder="Github Owner">
-                            <!-- data.json repo:owner/repo:name -->
-                        </select>
+                        <div class="input-group">
+                            <button type="button" class="btn btn-sm btn-secondary reponav prev"><i class="fa fa-chevron-left fa-2x" title="Previous"></i></button>
+                            <select class="form-control" name="ownername" placeholder="Github Owner">
+                                <!-- data.json repo:owner/repo:name -->
+                            </select>
+                            <button type="button" class="btn btn-sm btn-secondary reponav next"><i class="fa fa-chevron-right fa-2x" title="Next"></i></button>
+                        </div>
                     </div>
                 </div>
                 <div class="auto-fields">
