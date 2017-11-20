@@ -7,13 +7,10 @@
         "coinname": "",
         "symbol": "",
         "description": "AdEx Core: the smart contracts that power the AdEx Network",
-        "createdAt": "2017-08-11T07:41:02Z",
+        "createdAt": "2017-08-11T07:41",
         "homepageUrl": "https://www.adex.network",
-        "pushedAt": "2017-11-16T12:55:19Z",
-        "languages": [
-            "JavaScript",
-            "Shell"
-        ],
+        "pushedAt": "2017-11-16T12:55",
+        "languages": "JavaScript,Shell",
         "url": "https://github.com/AdExBlockchain/adex-core",
         "releases": [],
         "data": {
@@ -204,17 +201,13 @@
         "id": "MDEwOlJlcG9zaXRvcnkxMTgxOTI3",
         "owner": "bitcoin",
         "name": "bitcoin",
-        "coinname": "",
-        "symbol": "",
+        "coinname": "Bitcoin",
+        "symbol": "BTC",
         "description": "Bitcoin Core integration/staging tree",
-        "createdAt": "2010-12-19T15:16:43Z",
+        "createdAt": "2010-12-19T15:16",
         "homepageUrl": "https://bitcoin.org/en/download",
-        "pushedAt": "2017-11-18T00:52:33Z",
-        "languages": [
-            "C++",
-            "Python",
-            "C"
-        ],
+        "pushedAt": "2017-11-18T00:52",
+        "languages": "C++,Python,C",
         "url": "https://github.com/bitcoin/bitcoin",
         "releases": [
             {
@@ -414,6 +407,22 @@
         }
     },
     {
+        "ownername": "CentraTech/smart-contract",
+        "id": "",
+        "owner": "CentraTech",
+        "name": "smart-contract",
+        "coinname": "",
+        "symbol": "",
+        "description": "",
+        "createdAt": "",
+        "homepageUrl": "",
+        "pushedAt": "",
+        "languages": [
+            ""
+        ],
+        "url": ""
+    },
+    {
         "owner": "CoinBlack",
         "name": "blackcoin",
         "id": "MDEwOlJlcG9zaXRvcnk0MDk2NDkyNg==",
@@ -459,14 +468,10 @@
         "name": "dash",
         "id": "MDEwOlJlcG9zaXRvcnkxOTM1MjQ1MA==",
         "description": "Dash - Reinventing Cryptocurrency",
-        "createdAt": "2014-05-01T17:45:34Z",
+        "createdAt": "2014-05-01T17:45",
         "homepageUrl": "https://www.dash.org",
-        "pushedAt": "2017-11-16T10:09:29Z",
-        "languages": [
-            "C++",
-            "C",
-            "Python"
-        ],
+        "pushedAt": "2017-11-18T16:51",
+        "languages": "C++,C,Python",
         "data": {
             "2017-43": {
                 "stars": 630,
@@ -533,7 +538,10 @@
                 "publishedAt": "2016-06-03T08:16:42Z"
             }
         ],
-        "url": "https://github.com/dashpay/dash"
+        "url": "https://github.com/dashpay/dash",
+        "ownername": "dashpay/dash",
+        "coinname": "Dash",
+        "symbol": "DASH"
     },
     {
         "owner": "digibyte",
@@ -580,6 +588,22 @@
             }
         ],
         "url": "https://github.com/digibyte/digibyte"
+    },
+    {
+        "ownername": "DistrictOx/ethlance",
+        "id": "",
+        "owner": "DistrictOx",
+        "name": "ethlance",
+        "coinname": "",
+        "symbol": "",
+        "description": "",
+        "createdAt": "",
+        "homepageUrl": "",
+        "pushedAt": "",
+        "languages": [
+            ""
+        ],
+        "url": ""
     },
     {
         "owner": "dogecoin",
@@ -663,6 +687,38 @@
         "url": "https://github.com/dogecoin/dogecoin"
     },
     {
+        "ownername": "dzimbeck/BitBay",
+        "id": "",
+        "owner": "dzimbeck",
+        "name": "BitBay",
+        "coinname": "",
+        "symbol": "",
+        "description": "",
+        "createdAt": "",
+        "homepageUrl": "",
+        "pushedAt": "",
+        "languages": [
+            ""
+        ],
+        "url": ""
+    },
+    {
+        "ownername": "EdgelessCasino/Smart-Contracts",
+        "id": "",
+        "owner": "EdgelessCasino",
+        "name": "Smart-Contracts",
+        "coinname": "",
+        "symbol": "",
+        "description": "",
+        "createdAt": "",
+        "homepageUrl": "",
+        "pushedAt": "",
+        "languages": [
+            ""
+        ],
+        "url": ""
+    },
+    {
         "ownername": "eidoo/eth-lightwallet",
         "id": "MDEwOlJlcG9zaXRvcnk3NzU1NjU4NQ==",
         "owner": "eidoo",
@@ -744,14 +800,10 @@
         "name": "eos",
         "id": "MDEwOlJlcG9zaXRvcnk4NzMzNTk4MA==",
         "description": "An open source smart contract platform ",
-        "createdAt": "2017-04-05T17:09:53Z",
+        "createdAt": "2017-04-05T17:09",
         "homepageUrl": "https://eosio.github.io/eos/",
-        "pushedAt": "2017-11-18T02:59:29Z",
-        "languages": [
-            "WebAssembly",
-            "C++",
-            "C"
-        ],
+        "pushedAt": "2017-11-18T20:12",
+        "languages": "WebAssembly,C++,C",
         "data": {
             "2017-43": {
                 "stars": 1295,
@@ -766,33 +818,21 @@
                 "users": 61
             }
         },
-        "releases": [
-            {
-                "name": null,
-                "description": null,
-                "publishedAt": null
-            },
-            {
-                "name": "EOS.IO Dawn v1.0 - Pre-Release ",
-                "description": "<a name=\"top\"></a>\r\n**EOS.IO Dawn 1.0** is the first pre-release of the EOS.IO SDK (Software Development Kit).\r\n\r\nThe Dawn series of EOS.IO software releases represent early alpha-quality software suitable for use by those looking to get a head start on the EOS.IO ecosystem.  \r\n\r\n# Table of Contents\r\n1. [Who This Release is For](#who)\r\n1. [Phase 1 Features Included in this Release](#phase1)\r\n1. [Phase 2 Features Included in this Release](#phase2)\r\n   * [Phase 2 Features Not Included in this Release](#phase2not)\r\n1. [Known Open Issues](#issues)\r\n    * [Benchmarking](#benchmarking)\r\n1. [History of Issues](#history)\r\n\r\n<a name=\"who\"></a>\r\n# Who This Release is For\r\nWhether you are an experienced C++ developer interested in blockchain or a seasoned blockchain expert you are welcome to experiment with the first pre-release. Some familiarity with Linux/C++ helps. \r\n\r\nIf you are unfamiliar with both Linux and C++, please wait for a more end-user friendly release. The current release is for experienced developers. \r\n## \r\nCurrently EOS.IO has been tested on Ubuntu 16.10  and Mac OS Sierra. EOS.IO nodes should be able to run on a minimum hardware requirement of Core i7 CPU, 16GB RAM.\r\n\r\n<a name=\"phase1\"></a>\r\n# Phase 1 Features Included in this Release\r\n\r\nPer the [EOS.IO Roadmap](https://github.com/EOSIO/Documentation/blob/master/Roadmap.md), this release represents Phase 1, the Minimal Viable Testing Environment. \r\n\r\n## Programs\r\n* a standalone node **eosd** that produces blocks and adds them to the blockchain\r\n* a client **eosc** that provides a command line interface\r\n* **eos-walletd** provides a client wallet server\r\n* a utility **launcher** that creates a local testnet \r\n## Scripts\r\n* **build.sh** to install dependencies and build eos\r\n* **eoscpp** for smart contract developers to build contracts\r\n## Example Contracts\r\n* native contracts,\r\n   * native currency\r\n   * staking \r\n   * producer voting \r\n   * code updating \r\n   * permission updating\r\n* example contracts\r\n   * dice\r\n   * exchange\r\n   * simpledb\r\n   * social \r\n## Documentation\r\n* virtual machine API\r\n   * deferred / inline messaging \r\n   * user-local storage for contracts\r\n   * 3 built in database types\r\n* basic developer documentation\r\n   * installation and setup \r\n   * build and deployment\r\n   * tutorial for trying out blockchain commands\r\n   * Doxygen based API reference\r\n\r\n <a name=\"phase2\"></a>\r\n# Phase 2 Features Included in this Release \r\n\r\nIn addition, we are releasing these features of Phase 2 ahead of schedule:\r\n\r\n* functional distributed networks and\r\n   * first complete rewrite of networking code since BitShares 1.0\r\n* virtual machine sandboxing\r\n   * contracts are limited to about 10 ms execution time\r\n   * contracts are rejected if they contain floating point operations\r\n   * contracts are restricted to 64KB of RAM\r\n   * contracts are restricted to reading database tables in scope\r\n\r\n <a name=\"phase2not\"></a>\r\n## Phase 2 Features Not Included in this Release\r\nNot included in this release are these features of Phase 2:\r\n\r\n* resource usage and rate limiting    (Dawn 1.2)\r\n* genesis snapshot of ERC20    (Dawn 1.1)\r\n* inter blockchain communication    (Dawn 2.0)\r\n* these native contracts:\r\n   * producer proxy voting                         (Dawn 1.2)\r\n   * EOS.IO Storage                                    (Dawn 2.0)\r\n   * feature upgrade voting (hard forks) . (Dawn 1.2)\r\n   * stake delegation (renting)                   (Dawn 2.0)\r\n\r\n<a name=\"issues\"></a>\r\n# Known Open Issues \r\n## APIs incomplete\r\nThe APIs are known to be incomplete and are not expected to be stable throughout the 1.x releases. \r\n\r\n1. In v1.0 there is no API exposed for Accounts.\r\n2. P2P code may become unstable when stressed due to lack of rate limiting\r\n     a. work around - keep all producers on a single node\r\n\r\n\r\n<a name=\"benchmarking\"></a>\r\n## Benchmarking \r\n\r\nWe have tools that have enabled us to benchmark the code at over 10,000 TPS per second under certain controlled conditions, but it remains too early for anyone to reliably reproduce benchmarks and/or interpret the results for a number of reasons:\r\n\r\n- you must operate a multi-node network and push transactions to multiple different nodes\r\n- block production algorithm does not currently time-bound generation which means benchmarks do not properly capture \"backlog\" or generation bottlenecks\r\n- the HTTP interface is currently a bottleneck in submitting transactions to the network\r\n- the signature verification is not yet multi-threaded \r\n\r\nThis release is designed to help developers build their applications. It does not provide a benchmarking toolkit.  \r\n\r\n\r\n### Disclaimer\r\n*block.one is a software company and is producing the EOS.IO software as free, open source software. This software may enable those who deploy it to launch a blockchain or decentralized applications with the features described above. block.one will not be launching a public blockchain based on the EOS.IO software. It will be the sole responsibility of third parties and the community and those who wish to become block producers to implement the features and/or provide the services described above as they see fit. block.one does not guarantee that anyone will implement such features or provide such services or that the EOS.IO software will be adopted and deployed in any way.*\r\n\r\n*All statements in this document, other than statements of historical facts, including any statements regarding block.one\u2019s business strategy, plans, prospects, developments and objectives are forward looking statements. These statements are only predictions and reflect block.one\u2019s current beliefs and expectations with respect to future events and are based on assumptions and are subject to risk, uncertainties and change at any time. We operate in a rapidly changing environment. New risks emerge from time to time. Given these risks and uncertainties, you are cautioned not to rely on these forward-looking statements. Actual results, performance or events may differ materially from those contained in the forward-looking statements. Some of the factors that could cause actual results, performance or events to differ materially from the forward-looking statements contained herein include, without limitation: market volatility; continued availability of capital, financing and personnel; product acceptance; the commercial success of any new products or technologies; competition; government regulation and laws; and general economic, market or business conditions. Any forward-looking statement made by block.one speaks only as of the date on which it is made and block.one is under no obligation to, and expressly disclaims any obligation to, update or alter its forward-looking statements, whether as a result of new information, subsequent events or otherwise.*\r\n",
-                "publishedAt": "2017-09-14T19:13:00Z"
-            }
-        ],
-        "url": "https://github.com/EOSIO/eos"
+        "releases": null,
+        "url": "https://github.com/EOSIO/eos",
+        "ownername": "EOSIO/eos",
+        "coinname": "EOS",
+        "symbol": "EOS"
     },
     {
         "owner": "ethereum",
         "name": "go-ethereum",
         "id": "MDEwOlJlcG9zaXRvcnkxNTQ1MjkxOQ==",
         "description": "Official Go implementation of the Ethereum protocol",
-        "createdAt": "2013-12-26T13:05:46Z",
+        "createdAt": "2013-12-26T13:05",
         "homepageUrl": "https://geth.ethereum.org",
-        "pushedAt": "2017-11-18T01:56:04Z",
-        "languages": [
-            "Go",
-            "C",
-            "JavaScript"
-        ],
+        "pushedAt": "2017-11-19T17:23",
+        "languages": "Go,C,JavaScript",
         "data": {
             "2017-43": {
                 "stars": 8384,
@@ -859,7 +899,10 @@
                 "publishedAt": "2017-05-04T11:57:18Z"
             }
         ],
-        "url": "https://github.com/ethereum/go-ethereum"
+        "url": "https://github.com/ethereum/go-ethereum",
+        "ownername": "ethereum/go-ethereum",
+        "coinname": "Ethereum",
+        "symbol": "ETH"
     },
     {
         "owner": "ethereumclassic",
@@ -1016,6 +1059,22 @@
                 "users": 6
             }
         }
+    },
+    {
+        "ownername": "GenesisVision/ico-contracts",
+        "id": "",
+        "owner": "GenesisVision",
+        "name": "ico-contracts",
+        "coinname": "",
+        "symbol": "",
+        "description": "",
+        "createdAt": "",
+        "homepageUrl": "",
+        "pushedAt": "",
+        "languages": [
+            ""
+        ],
+        "url": ""
     },
     {
         "owner": "gnosis",
@@ -1175,6 +1234,22 @@
         "url": "https://github.com/golemfactory/golem"
     },
     {
+        "ownername": "Groestlcoin/groestlcoin",
+        "id": "",
+        "owner": "Groestlcoin",
+        "name": "groestlcoin",
+        "coinname": "",
+        "symbol": "",
+        "description": "",
+        "createdAt": "",
+        "homepageUrl": "",
+        "pushedAt": "",
+        "languages": [
+            ""
+        ],
+        "url": ""
+    },
+    {
         "owner": "Gulden",
         "name": "gulden-official",
         "id": "MDEwOlJlcG9zaXRvcnk0MDY1MzYyMA==",
@@ -1292,15 +1367,11 @@
         "owner": "HcashOrg",
         "name": "Hshare",
         "id": "MDEwOlJlcG9zaXRvcnk5NTczOTQ4NA==",
-        "description": null,
-        "createdAt": "2017-06-29T04:46:02Z",
-        "homepageUrl": null,
-        "pushedAt": "2017-09-20T11:47:56Z",
-        "languages": [
-            "C",
-            "C++",
-            "Python"
-        ],
+        "description": "",
+        "createdAt": "2017-06-29T04:46",
+        "homepageUrl": "",
+        "pushedAt": "2017-09-20T11:47",
+        "languages": "C,C++,Python",
         "data": {
             "2017-43": {
                 "stars": 52,
@@ -1332,7 +1403,10 @@
                 "publishedAt": "2017-06-29T05:11:03Z"
             }
         ],
-        "url": "https://github.com/HcashOrg/Hshare"
+        "url": "https://github.com/HcashOrg/Hshare",
+        "ownername": "HcashOrg/Hshare",
+        "coinname": "",
+        "symbol": ""
     },
     {
         "owner": "hempcoin-project",
@@ -1434,14 +1508,10 @@
         "name": "cardano-sl",
         "id": "MDEwOlJlcG9zaXRvcnk3MDkxMzk5Nw==",
         "description": "Cryptographic currency implementing Ouroboros PoS protocol",
-        "createdAt": "2016-10-14T13:44:38Z",
+        "createdAt": "2016-10-14T13:44",
         "homepageUrl": "",
-        "pushedAt": "2017-11-17T22:15:10Z",
-        "languages": [
-            "Haskell",
-            "PureScript",
-            "Nix"
-        ],
+        "pushedAt": "2017-11-19T20:48",
+        "languages": "Haskell,PureScript,Nix",
         "data": {
             "2017-43": {
                 "stars": 365,
@@ -1458,11 +1528,6 @@
         },
         "releases": [
             {
-                "name": null,
-                "description": null,
-                "publishedAt": null
-            },
-            {
                 "name": "Cardano SL 0.3",
                 "description": "",
                 "publishedAt": "2017-04-23T11:34:13Z"
@@ -1478,7 +1543,10 @@
                 "publishedAt": "2017-01-15T22:10:59Z"
             }
         ],
-        "url": "https://github.com/input-output-hk/cardano-sl"
+        "url": "https://github.com/input-output-hk/cardano-sl",
+        "ownername": "input-output-hk/cardano-sl",
+        "coinname": "",
+        "symbol": ""
     },
     {
         "owner": "iotaledger",
@@ -1563,21 +1631,22 @@
         "owner": "KyberNetwork",
         "name": "smart-contracts",
         "id": "MDEwOlJlcG9zaXRvcnk5NjAxMTY0Nw==",
-        "description": null,
-        "createdAt": "2017-07-02T08:39:01Z",
+        "description": "",
+        "createdAt": "2017-07-02T08:39",
         "url": "https://github.com/KyberNetwork/smart-contracts",
-        "homepageUrl": null,
-        "pushedAt": "2017-11-17T06:55:12Z",
-        "releases": [],
-        "languages": [
-            "JavaScript"
-        ],
+        "homepageUrl": "",
+        "pushedAt": "2017-11-17T06:55",
+        "releases": null,
+        "languages": "JavaScript",
         "data": {
             "2017-46": {
                 "stars": 25,
                 "users": 11
             }
-        }
+        },
+        "ownername": "KyberNetwork/smart-contracts",
+        "coinname": "",
+        "symbol": ""
     },
     {
         "owner": "LiskHQ",
@@ -1664,14 +1733,10 @@
         "name": "litecoin",
         "id": "MDEwOlJlcG9zaXRvcnk0NjQ2MTk4",
         "description": "Litecoin source tree",
-        "createdAt": "2012-06-13T04:18:26Z",
+        "createdAt": "2012-06-13T04:18",
         "homepageUrl": "http://www.litecoin.org",
-        "pushedAt": "2017-10-29T12:55:09Z",
-        "languages": [
-            "C++",
-            "Python",
-            "C"
-        ],
+        "pushedAt": "2017-10-29T12:55",
+        "languages": "C++,Python,C",
         "data": {
             "2017-43": {
                 "stars": 1880,
@@ -1698,7 +1763,10 @@
                 "publishedAt": "2017-01-10T03:38:51Z"
             }
         ],
-        "url": "https://github.com/litecoin-project/litecoin"
+        "url": "https://github.com/litecoin-project/litecoin",
+        "ownername": "litecoin-project/litecoin",
+        "coinname": "Litecoin",
+        "symbol": "LTC"
     },
     {
         "owner": "maidsafe",
@@ -2138,6 +2206,22 @@
         "url": "https://github.com/neo-project/neo"
     },
     {
+        "ownername": "nuls-io/nuls",
+        "id": "",
+        "owner": "nuls-io",
+        "name": "nuls",
+        "coinname": "",
+        "symbol": "",
+        "description": "",
+        "createdAt": "",
+        "homepageUrl": "",
+        "pushedAt": "",
+        "languages": [
+            ""
+        ],
+        "url": ""
+    },
+    {
         "owner": "okcashpro",
         "name": "okcash",
         "id": "MDEwOlJlcG9zaXRvcnk3NTE0OTIwOQ==",
@@ -2265,6 +2349,22 @@
         "url": "https://github.com/openvcash/vcash"
     },
     {
+        "ownername": "OxProjects/contracts",
+        "id": "",
+        "owner": "OxProjects",
+        "name": "contracts",
+        "coinname": "",
+        "symbol": "",
+        "description": "",
+        "createdAt": "",
+        "homepageUrl": "",
+        "pushedAt": "",
+        "languages": [
+            ""
+        ],
+        "url": ""
+    },
+    {
         "owner": "qtumproject",
         "name": "qtum",
         "id": "MDEwOlJlcG9zaXRvcnk4Mzc3NDkwNg==",
@@ -2346,18 +2446,46 @@
         "url": "https://github.com/qtumproject/qtum"
     },
     {
+        "ownername": "raiden-network/raiden",
+        "id": "",
+        "owner": "raiden-network",
+        "name": "raiden",
+        "coinname": "",
+        "symbol": "",
+        "description": "",
+        "createdAt": "",
+        "homepageUrl": "",
+        "pushedAt": "",
+        "languages": [
+            ""
+        ],
+        "url": ""
+    },
+    {
+        "ownername": "ripio/rcn-token",
+        "id": "",
+        "owner": "ripio",
+        "name": "rcn-token",
+        "coinname": "",
+        "symbol": "",
+        "description": "",
+        "createdAt": "",
+        "homepageUrl": "",
+        "pushedAt": "",
+        "languages": [
+            ""
+        ],
+        "url": ""
+    },
+    {
         "owner": "ripple",
         "name": "rippled",
         "id": "MDEwOlJlcG9zaXRvcnkyNzI0MTY3",
         "description": "Decentralized cryptocurrency blockchain daemon implementing the XRP Ledger in C++",
-        "createdAt": "2011-11-07T04:40:15Z",
+        "createdAt": "2011-11-07T04:40",
         "homepageUrl": "https://ripple.com/xrp",
-        "pushedAt": "2017-11-17T23:35:58Z",
-        "languages": [
-            "C++",
-            "C",
-            "Java"
-        ],
+        "pushedAt": "2017-11-17T23:35",
+        "languages": "C++,C,Java",
         "data": {
             "2017-43": {
                 "stars": 1634,
@@ -2424,7 +2552,10 @@
                 "publishedAt": "2017-01-26T01:39:14Z"
             }
         ],
-        "url": "https://github.com/ripple/rippled"
+        "url": "https://github.com/ripple/rippled",
+        "ownername": "ripple/rippled",
+        "coinname": "Ripple",
+        "symbol": "XRP"
     },
     {
         "owner": "RiseVision",
@@ -2772,6 +2903,22 @@
         "url": "https://github.com/stellar/stellar-core"
     },
     {
+        "ownername": "Storj/core",
+        "id": "",
+        "owner": "Storj",
+        "name": "core",
+        "coinname": "",
+        "symbol": "",
+        "description": "",
+        "createdAt": "",
+        "homepageUrl": "",
+        "pushedAt": "",
+        "languages": [
+            ""
+        ],
+        "url": ""
+    },
+    {
         "owner": "stratisproject",
         "name": "StratisBitcoinFullNode",
         "id": "MDEwOlJlcG9zaXRvcnk2NzI3MTI5MA==",
@@ -3110,6 +3257,22 @@
         "url": "https://github.com/viacoin/viacoin"
     },
     {
+        "ownername": "viberate/Contract",
+        "id": "",
+        "owner": "viberate",
+        "name": "Contract",
+        "coinname": "",
+        "symbol": "",
+        "description": "",
+        "createdAt": "",
+        "homepageUrl": "",
+        "pushedAt": "",
+        "languages": [
+            ""
+        ],
+        "url": ""
+    },
+    {
         "owner": "wavesplatform",
         "name": "waves",
         "id": "MDEwOlJlcG9zaXRvcnk1NjQyNjk3NQ==",
@@ -3408,14 +3571,10 @@
         "name": "zen",
         "id": "MDEwOlJlcG9zaXRvcnk5Mzc5ODgxNw==",
         "description": "2.0.10 - TLS integration and more!",
-        "createdAt": "2017-06-08T23:05:59Z",
+        "createdAt": "2017-06-08T23:05",
         "homepageUrl": "https://zensystem.io",
-        "pushedAt": "2017-11-18T02:38:02Z",
-        "languages": [
-            "C++",
-            "Python",
-            "C"
-        ],
+        "pushedAt": "2017-11-18T02:38",
+        "languages": "C++,Python,C",
         "data": {
             "2017-43": {
                 "stars": 51,
@@ -3457,6 +3616,9 @@
                 "publishedAt": "2017-06-12T21:05:14Z"
             }
         ],
-        "url": "https://github.com/ZencashOfficial/zen"
+        "url": "https://github.com/ZencashOfficial/zen",
+        "ownername": "ZencashOfficial/zen",
+        "coinname": "",
+        "symbol": ""
     }
 ]

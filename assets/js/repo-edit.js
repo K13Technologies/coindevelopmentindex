@@ -211,13 +211,17 @@ jQuery(document).ready(function($) {
     var mapToFields = function(repo,reset) {
         var status,
             reset = reset || false,
+            $releases = $('input[name="releases"]'),
+            $data = $('input[name="data"]'),
+            $releasesDiv = $('<div class="col-sm-9"></div>'),
+            $dataDiv = $('<div class="col-sm-9"></div>'),
             data = '',
             releases;
 
         $fields.find('input').each(function() {
             var $f = $(this),
                 n = $f.attr('name'),
-                val = Array.isArray(repo[n]) ? repo[n].join(',') : repo[n];
+                val = repo[n];
 
             $f.removeClass('update');
             if($f.next('.input-group-addon')[0]) {
@@ -227,14 +231,15 @@ jQuery(document).ready(function($) {
                     .next('.input-group-addon').remove();
             }
 
-            if(val && $f.attr('type') === 'datetime-local') {
-                val = val.replace(/:\d{2}Z$/, '');
-            }
             if(val || reset) {
+
+                val = $f.data('stringify') ? JSON.stringify(val) : val;
+                val = $f.data('remove') ? val.replace(new RegExp($f.data('remove'),'g'),'') : val;
+
                 if(!reset) {
                     $f.data('prev', $f.val());
                     if(val !== $f.val()) {
-                        addRevertBtn($f);
+                        if($f.data('revertable')) addRevertBtn($f);
                         $f.addClass('update');
                     }
                  }
@@ -244,21 +249,35 @@ jQuery(document).ready(function($) {
 
         if(repo.releases && repo.releases.length > 0) {
 
-            releases = repo.releases.filter(function(r) {
-                return typeof r.name === 'string';
-            });
-            $('.releases').html('<ul>' +
-                releases.map(function(release) {
+            releases = '<ul>' +
+                repo.releases.map(function(release) {
                     return '<li><b>' + release.name + '</b> - <em>' +
                             release.publishedAt + '</em></li>';
-                }).join('') + '</ul>')
-                .append('<input type="hidden" name="releases" value=\'' +
-                        JSON.stringify(releases) + '\' >');
-        } else {
-            $('.releases').empty();
+                }).join('') + '</ul>';
+
+
+            if(!$releases.hasClass('wrapped')) {
+                $releases
+                    .removeClass('col-sm-9')
+                    .addClass('wrapped')
+                    .wrap($releasesDiv)
+                    .after(releases);
+            } else {
+                $releases.next('ul').replaceWith(releases);
+            }
+
+        } else if($releases.hasClass('wrapped')) {
+            $releases.removeClass('wrapped').addClass('col-sm-9').unwrap().next('ul').remove();
         }
 
         if(repo.data) {
+            data = '<table class="table table-sm data">' +
+                        '<thead>' +
+                            '<th>week</th>' +
+                            '<th>users</th>' +
+                            '<th>stars</th>' +
+                        '</thead>' +
+                        '<tbody>';
             for(var d in repo.data) {
                 if(repo.data.hasOwnProperty(d)) {
                     data += '<tr>' +
@@ -268,13 +287,17 @@ jQuery(document).ready(function($) {
                             '</tr>';
                 }
             }
-            $('.data').find('tbody').html(data);
-            $('.data').append('<input type="hidden" name="data" value=\'' +
-                        JSON.stringify(repo.data) + '\' >')
-                .show();
-        } else {
-            $('.data').find('tbody').empty().hide();
-            $('input[name="data"]').remove();
+            if(!$data.hasClass('wrapped')) {
+                $data
+                    .removeClass('col-sm-9')
+                    .addClass('wrapped')
+                    .wrap($dataDiv)
+                    .after(data);
+            } else {
+                $data.closest('col-sm-9').find('table').replaceWith(data);
+            }
+        } else if($data.hasClass('wrapped')) {
+            $data.removeClass('wrapped').addClass('col-sm-9').unwrap().next('table').remove();
         }
 
         status = $ownerSel.val() === 'new' ? 'Create' : 'Update';
