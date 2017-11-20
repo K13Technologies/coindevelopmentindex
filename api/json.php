@@ -96,6 +96,7 @@ function updateRecords($records) {
 
 	foreach($records as $record) {
 		$idx = array_search($record->id, array_map(function($repo) { return $repo->id; }, $json));
+		$record->languages = is_array($record->languages) ? $record->languages : explode(',', $record->languages);
 		$record->releases = json_decode($record->releases);
 		$record->data = json_decode($record->data);
 		$json[$idx] = (object) array_replace((array) $json[$idx], (array) $record);
@@ -130,7 +131,14 @@ function sortJSON($json, $prop='owner', $asc=true) {
 function write($json, $file) {
 
 	$data_json = json_encode($json);
-	// return file_put_contents($file, json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+
+	if($file === LOCAL_FILE) {
+
+		if(file_put_contents($file, json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES))) {
+			return json_decode(file_get_contents($file))	;
+		}
+	}
+
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, $file);
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($data_json)));
