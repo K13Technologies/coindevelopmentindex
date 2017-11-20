@@ -15,7 +15,7 @@
 
 			if(isset($_POST['githubfetch'])) {
 				// new entry called from repo-edit
-				if($_POST['ownername'] === 'new') {
+				if($_POST['ownername'] === 'new' || $_POST['id'] === '') {
 					$records = fetchGithubData([(object)
 						['owner' => $_POST['owner'],
 							'name' => $_POST['name'] ]

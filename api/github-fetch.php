@@ -149,7 +149,6 @@ QUERY;
 
 	if(DEBUG) {
 		echo '</pre>';
-		file_put_contents(JSON_FILE, json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
 	}
 
 	if($hasErrors) return errorOutput();

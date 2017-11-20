@@ -105,7 +105,7 @@
         }
 
         input ~ .input-group-addon {
-            padding:10px;
+            padding:8px;
             color:darkslateblue;
             border:1px solid darkslateblue;
             transition: 200ms all;
@@ -126,6 +126,10 @@
                     transform: rotate(0);
                 }
             }
+        }
+
+        input[type="datetime-local"] ~ .input-group-addon {
+            padding:10px;
         }
 
         .data {
