@@ -8,7 +8,8 @@ jQuery(document).ready(function($) {
         $fields = $('.auto-fields'),
         $output = $('#output'),
         loco = window.location,
-        repos, fields;
+        repos, fields,
+        $releases, $data;
 
     var fetchJSONdata = function() {
         $.ajax({
@@ -73,7 +74,11 @@ jQuery(document).ready(function($) {
                 $div.append($label).append($el);
                 $fields.append($div);
             });
+
+            $releases = $('input[name="releases"]');
+            $data = $('input[name="data"]');
         });
+
     };
 
     var handleOwnerChange = function(e) {
@@ -203,16 +208,18 @@ jQuery(document).ready(function($) {
 
     var resetForm = function(e) {
         $ownerSel.val('new');
-        $('.releases').empty();
-        $repoForm.find('button[type="submit"]').text('Create New JSON Entry');
+        if($releases.hasClass('wrapped')) {
+            $releases.removeClass('wrapped').addClass('col-sm-9').unwrap().next('ul').remove();
+        }
+        if($data.hasClass('wrapped')) {
+            $data.removeClass('wrapped').addClass('col-sm-9').unwrap().next('table').remove();
+        }
         window.history.pushState('', '', '#');
     };
 
     var mapToFields = function(repo,reset) {
         var status,
             reset = reset || false,
-            $releases = $('input[name="releases"]'),
-            $data = $('input[name="data"]'),
             $releasesDiv = $('<div class="col-sm-9"></div>'),
             $dataDiv = $('<div class="col-sm-9"></div>'),
             data = '',
