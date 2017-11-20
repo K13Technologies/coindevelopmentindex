@@ -45,6 +45,14 @@
 					echo JSON_FILE;
 				break;
 			}
+			if(isset($_GET['pulllocal'])) {
+				if(!checkPermissions(LOCAL_FILE, '0777')) {
+					array_map(function($err){echo $err->type . $err->message;}, errorOutput()->errors);
+					break;
+				}
+				out(write(fetchJSON(REMOTE_FILE),LOCAL_FILE));
+				break;
+			}
 			if(isset($_GET['pushremote'])) {
 				out(write(fetchJSON(LOCAL_FILE),REMOTE_FILE));
 				break;
@@ -56,4 +64,3 @@
 			break;
 
 	}
-
