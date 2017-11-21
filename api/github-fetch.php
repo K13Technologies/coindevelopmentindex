@@ -151,6 +151,6 @@ QUERY;
 		echo '</pre>';
 	}
 
-	if($hasErrors) return errorOutput();
+	// if($hasErrors) return errorOutput();
 	else return $json;
 }

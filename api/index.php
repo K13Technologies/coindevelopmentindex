@@ -13,6 +13,19 @@
 				break;
 			}
 
+			if(isset($_POST['delete'])) {
+				// make sure index matches owner/name
+				$indexed = getRecord(array('index' => $_POST['index']));
+				$named = getRecord(array('owner' => $_POST['owner'], 'name' => $_POST['name']));
+				if($indexed === $named) {
+					out(deleteRecord((int)$_POST['index']));
+				} else {
+					errorLog('DELETERECORD_ERROR', '<br>Could not find a definitive match for deletion.  You may need to pull and edit the JSON file directly, then push to remote.');
+					out(errorOutput());
+				}
+				break;
+			}
+
 			if(isset($_POST['githubfetch'])) {
 				// new entry called from repo-edit
 				if($_POST['ownername'] === 'new' || $_POST['id'] === '') {
@@ -38,7 +51,7 @@
 		case 'GET':
 		default:
 			if(isset($_GET['sort'])) {
-				out(sortJSON(JSON_FILE, $_GET['sort'], isset($_GET['asc']) ? $_GET['asc'] : true));
+				out(sortJSON(fetchJSON(JSON_FILE), $_GET['sort'], isset($_GET['asc']) ? $_GET['asc'] : true));
 				break;
 			}
 			if(isset($_GET['location'])) {
@@ -55,6 +68,15 @@
 			}
 			if(isset($_GET['pushremote'])) {
 				out(write(fetchJSON(LOCAL_FILE),REMOTE_FILE));
+				break;
+			}
+			if(isset($_GET['githubfetchall'])) {
+				if(isset($_GET['tolocal']) && !checkPermissions(LOCAL_FILE, '0777')) {
+					array_map(function($err){echo $err->type . $err->message;}, errorOutput()->errors);
+					break;
+				}
+				out(write(fetchGithubData(fetchJSON(JSON_FILE)),
+						isset($_GET['tolocal']) ? LOCAL_FILE : JSON_FILE));
 				break;
 			}
 			out(getRecord(array(

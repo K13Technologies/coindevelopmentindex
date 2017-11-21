@@ -11,7 +11,19 @@ $json = null;
 function fetchJSON($url=JSON_FILE) {
 	global $json;
 
-	$json = json_decode(file_get_contents($url));
+	$context = null;
+
+	if(isset($_REQUEST['proxy'])) {
+		$c = array(
+	    'http' => array(
+	        'proxy' => 	'http://' . PROXY_SERVER . ':80',
+	        'request_fulluri' => true
+	    )
+		);
+		$context = stream_context_create($c);
+	}
+
+	$json = sortJSON(json_decode(file_get_contents($url, false, $context)));
 
 	if(json_last_error() !== JSON_ERROR_NONE) {
 		throw new Exception('Error reading ' . $url . ' : ' . json_last_error_msg());
@@ -29,6 +41,8 @@ function getRecord($obj) {
 
 	if(isset($id)) {
 		return getRecordById($id);
+	} else if(isset($index)) {
+		return $json[$index];
 	} else if(isset($owner) || isset($name)) {
 		return getRecordByName($owner, $name);
 	} else {
@@ -71,7 +85,9 @@ function addRecords($records) {
 				errorLog('REPO_EXISTS', '<br>Repo ' . $existing->owner . '/' . $existing->name . ' already exists');
 				return errorOutput();
 		}
-		$repo->languages = explode(',', $record->languages);
+		$record->languages = is_array($record->languages) ? $record->languages : explode(',', $record->languages);
+		$record->releases = json_decode($record->releases);
+		$record->data = json_decode($record->data);
 		$repo->ownername = $record->owner . '/' . $record->name;
 		array_push($json, $repo);
 		array_push($added, $repo);
@@ -111,6 +127,22 @@ function updateRecords($records) {
 		return errorOutput();
 	}
 
+}
+
+function deleteRecord($index) {
+		global $json;
+
+	if($json === null) fetchJSON();
+
+	array_splice($json, $index, 1);
+
+	try {
+			write($json, JSON_FILE);
+			return $json;
+		} catch (Exception $e) {
+			errorLog('DELETERECORDS_ERROR', $e->getMessage());
+			return errorOutput();
+		}
 }
 
 function sortJSON($json, $prop='owner', $asc=true) {

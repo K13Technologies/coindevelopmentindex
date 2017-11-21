@@ -7,48 +7,46 @@
         "coinname": "",
         "symbol": "",
         "description": "AdEx Core: the smart contracts that power the AdEx Network",
-        "createdAt": "2017-08-11T07:41",
+        "createdAt": "2017-08-11T07:41:02Z",
         "homepageUrl": "https://www.adex.network",
-        "pushedAt": "2017-11-16T12:55",
-        "languages": "JavaScript,Shell",
+        "pushedAt": "2017-11-16T12:55:19Z",
+        "languages": [
+            "JavaScript",
+            "Shell"
+        ],
         "url": "https://github.com/AdExBlockchain/adex-core",
         "releases": [],
         "data": {
-            "2017-46": {
+            "2017-47": {
                 "stars": 28,
                 "users": 7
             }
         }
     },
     {
+        "ownername": "amjuarez/bytecoin",
+        "id": "MDEwOlJlcG9zaXRvcnkxNzU2MjU0NQ==",
         "owner": "amjuarez",
         "name": "bytecoin",
-        "id": "MDEwOlJlcG9zaXRvcnkxNzU2MjU0NQ==",
+        "coinname": "",
+        "symbol": "",
         "description": "CryptoNote protocol implementation",
-        "createdAt": "2014-03-09T10:47:36Z",
-        "homepageUrl": "bytecoin.org",
-        "pushedAt": "2017-11-13T11:27:47Z",
+        "createdAt": "2014-03-09T10:47",
+        "homepageUrl": "http://bytecoin.org",
+        "pushedAt": "2017-11-13T11:27",
         "languages": [
             "C++",
             "C",
             "CMake"
         ],
+        "url": "https://github.com/amjuarez/bytecoin",
+        "releases": [],
         "data": {
-            "2017-43": {
-                "stars": 209,
-                "users": 6
-            },
-            "2017-44": {
-                "stars": 212,
-                "users": 6
-            },
-            "2017-46": {
-                "stars": 222,
+            "2017-47": {
+                "stars": 226,
                 "users": 6
             }
-        },
-        "releases": [],
-        "url": "https://github.com/amjuarez/bytecoin"
+        }
     },
     {
         "owner": "ArkEcosystem",
@@ -74,6 +72,10 @@
             },
             "2017-46": {
                 "stars": 66,
+                "users": 17
+            },
+            "2017-47": {
+                "stars": 67,
                 "users": 17
             }
         },
@@ -103,7 +105,7 @@
         "description": "Augur back-end (Ethereum contracts)",
         "createdAt": "2014-12-06T05:42:19Z",
         "homepageUrl": "https://www.augur.net",
-        "pushedAt": "2017-11-17T21:23:21Z",
+        "pushedAt": "2017-11-21T02:15:18Z",
         "languages": [
             "Python",
             "TypeScript",
@@ -121,6 +123,10 @@
             "2017-46": {
                 "stars": 278,
                 "users": 24
+            },
+            "2017-47": {
+                "stars": 281,
+                "users": 25
             }
         },
         "releases": [
@@ -153,6 +159,10 @@
             "2017-46": {
                 "stars": 6,
                 "users": 6
+            },
+            "2017-47": {
+                "stars": 6,
+                "users": 8
             }
         },
         "releases": [],
@@ -193,6 +203,10 @@
             "2017-46": {
                 "stars": 3,
                 "users": 10
+            },
+            "2017-47": {
+                "stars": 3,
+                "users": 10
             }
         }
     },
@@ -204,10 +218,14 @@
         "coinname": "Bitcoin",
         "symbol": "BTC",
         "description": "Bitcoin Core integration/staging tree",
-        "createdAt": "2010-12-19T15:16",
+        "createdAt": "2010-12-19T15:16:43Z",
         "homepageUrl": "https://bitcoin.org/en/download",
-        "pushedAt": "2017-11-18T00:52",
-        "languages": "C++,Python,C",
+        "pushedAt": "2017-11-20T23:28:16Z",
+        "languages": [
+            "C++",
+            "Python",
+            "C"
+        ],
         "url": "https://github.com/bitcoin/bitcoin",
         "releases": [
             {
@@ -265,6 +283,10 @@
             "2017-46": {
                 "stars": 19290,
                 "users": 487
+            },
+            "2017-47": {
+                "stars": 19427,
+                "users": 488
             }
         }
     },
@@ -275,7 +297,7 @@
         "description": "Your share in the Decentralized Exchange",
         "createdAt": "2015-10-12T17:36:04Z",
         "homepageUrl": "https://bitshares.org/",
-        "pushedAt": "2017-11-16T11:25:18Z",
+        "pushedAt": "2017-11-20T21:51:24Z",
         "languages": [
             "C++",
             "CMake",
@@ -292,6 +314,10 @@
             },
             "2017-46": {
                 "stars": 423,
+                "users": 14
+            },
+            "2017-47": {
+                "stars": 426,
                 "users": 14
             }
         },
@@ -373,6 +399,10 @@
             "2017-46": {
                 "stars": 86,
                 "users": 9
+            },
+            "2017-47": {
+                "stars": 87,
+                "users": 9
             }
         },
         "releases": [],
@@ -386,7 +416,7 @@
         "createdAt": "2017-07-23T05:59:24Z",
         "url": "https://github.com/BTCGPU/BTCGPU",
         "homepageUrl": "http://bitcoingold.org",
-        "pushedAt": "2017-11-16T09:44:35Z",
+        "pushedAt": "2017-11-20T15:10:56Z",
         "releases": [
             {
                 "name": "Bitcoin Gold 0.15.0.1",
@@ -403,24 +433,33 @@
             "2017-46": {
                 "stars": 372,
                 "users": 77
+            },
+            "2017-47": {
+                "stars": 381,
+                "users": 80
             }
         }
     },
     {
-        "ownername": "CentraTech/smart-contract",
-        "id": "",
         "owner": "CentraTech",
         "name": "smart-contract",
+        "id": "MDEwOlJlcG9zaXRvcnk5NzA4MTY1Mw==",
+        "description": null,
+        "createdAt": "2017-07-13T04:59:25Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-07-16T00:27:55Z",
+        "languages": [],
+        "data": {
+            "2017-47": {
+                "stars": 6,
+                "users": 2
+            }
+        },
+        "releases": [],
+        "url": "https://github.com/CentraTech/smart-contract",
+        "ownername": "CentraTech/smart-contract",
         "coinname": "",
-        "symbol": "",
-        "description": "",
-        "createdAt": "",
-        "homepageUrl": "",
-        "pushedAt": "",
-        "languages": [
-            ""
-        ],
-        "url": ""
+        "symbol": ""
     },
     {
         "owner": "CoinBlack",
@@ -447,6 +486,10 @@
             "2017-46": {
                 "stars": 40,
                 "users": 1
+            },
+            "2017-47": {
+                "stars": 41,
+                "users": 1
             }
         },
         "releases": [
@@ -468,10 +511,14 @@
         "name": "dash",
         "id": "MDEwOlJlcG9zaXRvcnkxOTM1MjQ1MA==",
         "description": "Dash - Reinventing Cryptocurrency",
-        "createdAt": "2014-05-01T17:45",
+        "createdAt": "2014-05-01T17:45:34Z",
         "homepageUrl": "https://www.dash.org",
-        "pushedAt": "2017-11-18T16:51",
-        "languages": "C++,C,Python",
+        "pushedAt": "2017-11-20T20:25:33Z",
+        "languages": [
+            "C++",
+            "C",
+            "Python"
+        ],
         "data": {
             "2017-43": {
                 "stars": 630,
@@ -483,6 +530,10 @@
             },
             "2017-46": {
                 "stars": 669,
+                "users": 5
+            },
+            "2017-47": {
+                "stars": 672,
                 "users": 5
             }
         },
@@ -550,7 +601,7 @@
         "description": "DigiByte Core 6.14.2 - CURRENT",
         "createdAt": "2014-01-12T18:53:08Z",
         "homepageUrl": "http://digibyte.co",
-        "pushedAt": "2017-09-28T14:01:26Z",
+        "pushedAt": "2017-11-18T14:32:56Z",
         "languages": [
             "C++",
             "C",
@@ -568,6 +619,10 @@
             "2017-46": {
                 "stars": 127,
                 "users": 422
+            },
+            "2017-47": {
+                "stars": 127,
+                "users": 424
             }
         },
         "releases": [
@@ -612,7 +667,7 @@
         "description": "very currency",
         "createdAt": "2013-12-06T11:38:05Z",
         "homepageUrl": "",
-        "pushedAt": "2017-10-22T01:00:48Z",
+        "pushedAt": "2017-11-19T22:22:46Z",
         "languages": [
             "C++",
             "C",
@@ -629,6 +684,10 @@
             },
             "2017-46": {
                 "stars": 1401,
+                "users": 156
+            },
+            "2017-47": {
+                "stars": 1404,
                 "users": 156
             }
         },
@@ -688,35 +747,49 @@
     },
     {
         "ownername": "dzimbeck/BitBay",
-        "id": "",
+        "id": "MDEwOlJlcG9zaXRvcnk1NjE5MDgzMQ==",
         "owner": "dzimbeck",
         "name": "BitBay",
         "coinname": "",
         "symbol": "",
-        "description": "",
-        "createdAt": "",
-        "homepageUrl": "",
-        "pushedAt": "",
+        "description": "BitBay Source Code",
+        "createdAt": "2016-04-13T22:41:46Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-11-16T21:08:40Z",
         "languages": [
-            ""
+            "C++",
+            "Python",
+            "Assembly"
         ],
-        "url": ""
+        "url": "https://github.com/dzimbeck/BitBay",
+        "releases": [],
+        "data": {
+            "2017-47": {
+                "stars": 9,
+                "users": 3
+            }
+        }
     },
     {
         "ownername": "EdgelessCasino/Smart-Contracts",
-        "id": "",
+        "id": "MDEwOlJlcG9zaXRvcnk3NjU3MDYwMQ==",
         "owner": "EdgelessCasino",
         "name": "Smart-Contracts",
         "coinname": "",
         "symbol": "",
-        "description": "",
-        "createdAt": "",
+        "description": "Edgeless Token Smart Contracts",
+        "createdAt": "2016-12-15T15:15:31Z",
         "homepageUrl": "",
-        "pushedAt": "",
-        "languages": [
-            ""
-        ],
-        "url": ""
+        "pushedAt": "2017-05-22T10:56:37Z",
+        "languages": [],
+        "url": "https://github.com/EdgelessCasino/Smart-Contracts",
+        "releases": [],
+        "data": {
+            "2017-47": {
+                "stars": 21,
+                "users": 1
+            }
+        }
     },
     {
         "ownername": "eidoo/eth-lightwallet",
@@ -737,6 +810,10 @@
         "releases": [],
         "data": {
             "2017-46": {
+                "stars": 0,
+                "users": 8
+            },
+            "2017-47": {
                 "stars": 0,
                 "users": 8
             }
@@ -763,6 +840,10 @@
                 "users": 2
             },
             "2017-46": {
+                "stars": 6,
+                "users": 2
+            },
+            "2017-47": {
                 "stars": 6,
                 "users": 2
             }
@@ -792,6 +873,10 @@
             "2017-46": {
                 "stars": 8,
                 "users": 1
+            },
+            "2017-47": {
+                "stars": 8,
+                "users": 1
             }
         }
     },
@@ -800,10 +885,14 @@
         "name": "eos",
         "id": "MDEwOlJlcG9zaXRvcnk4NzMzNTk4MA==",
         "description": "An open source smart contract platform ",
-        "createdAt": "2017-04-05T17:09",
+        "createdAt": "2017-04-05T17:09:53Z",
         "homepageUrl": "https://eosio.github.io/eos/",
-        "pushedAt": "2017-11-18T20:12",
-        "languages": "WebAssembly,C++,C",
+        "pushedAt": "2017-11-21T04:12:25Z",
+        "languages": [
+            "WebAssembly",
+            "C++",
+            "C"
+        ],
         "data": {
             "2017-43": {
                 "stars": 1295,
@@ -814,11 +903,26 @@
                 "users": 56
             },
             "2017-46": {
-                "stars": 1418,
+                "stars": 1429,
+                "users": 61
+            },
+            "2017-47": {
+                "stars": 1437,
                 "users": 61
             }
         },
-        "releases": null,
+        "releases": [
+            {
+                "name": null,
+                "description": null,
+                "publishedAt": null
+            },
+            {
+                "name": "EOS.IO Dawn v1.0 - Pre-Release ",
+                "description": "<a name=\"top\"></a>\r\n**EOS.IO Dawn 1.0** is the first pre-release of the EOS.IO SDK (Software Development Kit).\r\n\r\nThe Dawn series of EOS.IO software releases represent early alpha-quality software suitable for use by those looking to get a head start on the EOS.IO ecosystem.  \r\n\r\n# Table of Contents\r\n1. [Who This Release is For](#who)\r\n1. [Phase 1 Features Included in this Release](#phase1)\r\n1. [Phase 2 Features Included in this Release](#phase2)\r\n   * [Phase 2 Features Not Included in this Release](#phase2not)\r\n1. [Known Open Issues](#issues)\r\n    * [Benchmarking](#benchmarking)\r\n1. [History of Issues](#history)\r\n\r\n<a name=\"who\"></a>\r\n# Who This Release is For\r\nWhether you are an experienced C++ developer interested in blockchain or a seasoned blockchain expert you are welcome to experiment with the first pre-release. Some familiarity with Linux/C++ helps. \r\n\r\nIf you are unfamiliar with both Linux and C++, please wait for a more end-user friendly release. The current release is for experienced developers. \r\n## \r\nCurrently EOS.IO has been tested on Ubuntu 16.10  and Mac OS Sierra. EOS.IO nodes should be able to run on a minimum hardware requirement of Core i7 CPU, 16GB RAM.\r\n\r\n<a name=\"phase1\"></a>\r\n# Phase 1 Features Included in this Release\r\n\r\nPer the [EOS.IO Roadmap](https://github.com/EOSIO/Documentation/blob/master/Roadmap.md), this release represents Phase 1, the Minimal Viable Testing Environment. \r\n\r\n## Programs\r\n* a standalone node **eosd** that produces blocks and adds them to the blockchain\r\n* a client **eosc** that provides a command line interface\r\n* **eos-walletd** provides a client wallet server\r\n* a utility **launcher** that creates a local testnet \r\n## Scripts\r\n* **build.sh** to install dependencies and build eos\r\n* **eoscpp** for smart contract developers to build contracts\r\n## Example Contracts\r\n* native contracts,\r\n   * native currency\r\n   * staking \r\n   * producer voting \r\n   * code updating \r\n   * permission updating\r\n* example contracts\r\n   * dice\r\n   * exchange\r\n   * simpledb\r\n   * social \r\n## Documentation\r\n* virtual machine API\r\n   * deferred / inline messaging \r\n   * user-local storage for contracts\r\n   * 3 built in database types\r\n* basic developer documentation\r\n   * installation and setup \r\n   * build and deployment\r\n   * tutorial for trying out blockchain commands\r\n   * Doxygen based API reference\r\n\r\n <a name=\"phase2\"></a>\r\n# Phase 2 Features Included in this Release \r\n\r\nIn addition, we are releasing these features of Phase 2 ahead of schedule:\r\n\r\n* functional distributed networks and\r\n   * first complete rewrite of networking code since BitShares 1.0\r\n* virtual machine sandboxing\r\n   * contracts are limited to about 10 ms execution time\r\n   * contracts are rejected if they contain floating point operations\r\n   * contracts are restricted to 64KB of RAM\r\n   * contracts are restricted to reading database tables in scope\r\n\r\n <a name=\"phase2not\"></a>\r\n## Phase 2 Features Not Included in this Release\r\nNot included in this release are these features of Phase 2:\r\n\r\n* resource usage and rate limiting    (Dawn 1.2)\r\n* genesis snapshot of ERC20    (Dawn 1.1)\r\n* inter blockchain communication    (Dawn 2.0)\r\n* these native contracts:\r\n   * producer proxy voting                         (Dawn 1.2)\r\n   * EOS.IO Storage                                    (Dawn 2.0)\r\n   * feature upgrade voting (hard forks) . (Dawn 1.2)\r\n   * stake delegation (renting)                   (Dawn 2.0)\r\n\r\n<a name=\"issues\"></a>\r\n# Known Open Issues \r\n## APIs incomplete\r\nThe APIs are known to be incomplete and are not expected to be stable throughout the 1.x releases. \r\n\r\n1. In v1.0 there is no API exposed for Accounts.\r\n2. P2P code may become unstable when stressed due to lack of rate limiting\r\n     a. work around - keep all producers on a single node\r\n\r\n\r\n<a name=\"benchmarking\"></a>\r\n## Benchmarking \r\n\r\nWe have tools that have enabled us to benchmark the code at over 10,000 TPS per second under certain controlled conditions, but it remains too early for anyone to reliably reproduce benchmarks and/or interpret the results for a number of reasons:\r\n\r\n- you must operate a multi-node network and push transactions to multiple different nodes\r\n- block production algorithm does not currently time-bound generation which means benchmarks do not properly capture \"backlog\" or generation bottlenecks\r\n- the HTTP interface is currently a bottleneck in submitting transactions to the network\r\n- the signature verification is not yet multi-threaded \r\n\r\nThis release is designed to help developers build their applications. It does not provide a benchmarking toolkit.  \r\n\r\n\r\n### Disclaimer\r\n*block.one is a software company and is producing the EOS.IO software as free, open source software. This software may enable those who deploy it to launch a blockchain or decentralized applications with the features described above. block.one will not be launching a public blockchain based on the EOS.IO software. It will be the sole responsibility of third parties and the community and those who wish to become block producers to implement the features and/or provide the services described above as they see fit. block.one does not guarantee that anyone will implement such features or provide such services or that the EOS.IO software will be adopted and deployed in any way.*\r\n\r\n*All statements in this document, other than statements of historical facts, including any statements regarding block.one\u2019s business strategy, plans, prospects, developments and objectives are forward looking statements. These statements are only predictions and reflect block.one\u2019s current beliefs and expectations with respect to future events and are based on assumptions and are subject to risk, uncertainties and change at any time. We operate in a rapidly changing environment. New risks emerge from time to time. Given these risks and uncertainties, you are cautioned not to rely on these forward-looking statements. Actual results, performance or events may differ materially from those contained in the forward-looking statements. Some of the factors that could cause actual results, performance or events to differ materially from the forward-looking statements contained herein include, without limitation: market volatility; continued availability of capital, financing and personnel; product acceptance; the commercial success of any new products or technologies; competition; government regulation and laws; and general economic, market or business conditions. Any forward-looking statement made by block.one speaks only as of the date on which it is made and block.one is under no obligation to, and expressly disclaims any obligation to, update or alter its forward-looking statements, whether as a result of new information, subsequent events or otherwise.*\r\n",
+                "publishedAt": "2017-09-14T19:13:00Z"
+            }
+        ],
         "url": "https://github.com/EOSIO/eos",
         "ownername": "EOSIO/eos",
         "coinname": "EOS",
@@ -829,10 +933,14 @@
         "name": "go-ethereum",
         "id": "MDEwOlJlcG9zaXRvcnkxNTQ1MjkxOQ==",
         "description": "Official Go implementation of the Ethereum protocol",
-        "createdAt": "2013-12-26T13:05",
+        "createdAt": "2013-12-26T13:05:46Z",
         "homepageUrl": "https://geth.ethereum.org",
-        "pushedAt": "2017-11-19T17:23",
-        "languages": "Go,C,JavaScript",
+        "pushedAt": "2017-11-20T16:39:54Z",
+        "languages": [
+            "Go",
+            "C",
+            "JavaScript"
+        ],
         "data": {
             "2017-43": {
                 "stars": 8384,
@@ -843,7 +951,11 @@
                 "users": 190
             },
             "2017-46": {
-                "stars": 8936,
+                "stars": 8993,
+                "users": 204
+            },
+            "2017-47": {
+                "stars": 9032,
                 "users": 204
             }
         },
@@ -911,7 +1023,7 @@
         "description": "Ethereum Classic Website",
         "createdAt": "2016-07-15T07:43:41Z",
         "homepageUrl": "http://ethereumclassic.github.io",
-        "pushedAt": "2017-11-17T16:09:42Z",
+        "pushedAt": "2017-11-21T06:15:54Z",
         "languages": [
             "HTML"
         ],
@@ -925,12 +1037,19 @@
                 "users": 20
             },
             "2017-46": {
-                "stars": 34,
+                "stars": 35,
+                "users": 22
+            },
+            "2017-47": {
+                "stars": 35,
                 "users": 22
             }
         },
         "releases": [],
-        "url": "https://github.com/ethereumclassic/ethereumclassic.github.io"
+        "url": "https://github.com/ethereumclassic/ethereumclassic.github.io",
+        "ownername": "ethereumclassic/ethereumclassic.github.io",
+        "coinname": "",
+        "symbol": ""
     },
     {
         "owner": "FactomProject",
@@ -957,6 +1076,10 @@
             "2017-46": {
                 "stars": 88,
                 "users": 61
+            },
+            "2017-47": {
+                "stars": 89,
+                "users": 61
             }
         },
         "releases": [],
@@ -970,8 +1093,13 @@
         "createdAt": "2013-10-26T16:52:25Z",
         "url": "https://github.com/FeatherCoin/Feathercoin",
         "homepageUrl": "https://www.feathercoin.com/",
-        "pushedAt": "2017-11-17T20:25:02Z",
+        "pushedAt": "2017-11-20T23:28:39Z",
         "releases": [
+            {
+                "name": "0.9 Bugfixes",
+                "description": "Several bug fixes and increased performance of block chain sync\r\n\r\nFixes:\r\n\r\n- Problem with Static Builds with Windows (issue #155)\r\n- copyright updated (issue #156)\r\n- changes in message displays (issue #157)\r\n- new protocol version number (issue #158)\r\n- changes to unit tests (issue #159)\r\n- fix to format errors on Multisig GUI page (issue #160)\r\n- solo mining not working, getwork borken (issue #166)\r\n- ACP in advisory mode crashes cliend (issue #169)\r\n- ACP enforced config parameter not handled correctly in 0.9.6 (issue #170)\r\n- fix to connections problems for incomming connections from 0.11.x nodes (issue #171)\r\n- fix to gui display problems (# issue #180)\r\n- updates to configure script to fix dependicy detection problems (issue #190)\r\n- RPC dumpwallet issue empty content (issue #236)",
+                "publishedAt": "2017-11-20T18:23:27Z"
+            },
             {
                 "name": "0.9.6.1 Bugfixes for 0.9.6 tree",
                 "description": "This is a bugfix release.\r\n\r\nIssues Fixed:\r\n\r\n    - When a 0.11.x node connects, the connection will be with 'invalid pchMessageStart in 0.9.6 and earlier versions. (Github Issue #171) This has been fixed by implementing pchMessageStartNew constant to allow future 0.11.x nodes to connect.\r\n\r\n    - The configuration parameter 'enfoce checkpoint was not handled correctly in 0.9.6, when set. (Github issues #169,#170)\r\n\r\n    - A formating error on the Multisig GUI page was fixed (Github issue #160)\r\n\r\n    - Log messages get id numbers (Github issue #157)\r\n\r\n    - Test section was updated ( Github issues #120 - #127)\r\n",
@@ -1001,6 +1129,10 @@
         "data": {
             "2017-46": {
                 "stars": 88,
+                "users": 193
+            },
+            "2017-47": {
+                "stars": 89,
                 "users": 193
             }
         }
@@ -1035,6 +1167,10 @@
             "2017-46": {
                 "stars": 18,
                 "users": 3
+            },
+            "2017-47": {
+                "stars": 18,
+                "users": 3
             }
         }
     },
@@ -1057,24 +1193,35 @@
             "2017-46": {
                 "stars": 8,
                 "users": 6
+            },
+            "2017-47": {
+                "stars": 8,
+                "users": 6
             }
         }
     },
     {
         "ownername": "GenesisVision/ico-contracts",
-        "id": "",
+        "id": "MDEwOlJlcG9zaXRvcnk5Njc3MjU5Mw==",
         "owner": "GenesisVision",
         "name": "ico-contracts",
         "coinname": "",
         "symbol": "",
-        "description": "",
-        "createdAt": "",
-        "homepageUrl": "",
-        "pushedAt": "",
+        "description": "Genesis Vision ICO Ethereum Smart contracts",
+        "createdAt": "2017-07-10T12:00:48Z",
+        "homepageUrl": "https://genesis.vision",
+        "pushedAt": "2017-09-11T20:39:21Z",
         "languages": [
-            ""
+            "JavaScript"
         ],
-        "url": ""
+        "url": "https://github.com/GenesisVision/ico-contracts",
+        "releases": [],
+        "data": {
+            "2017-47": {
+                "stars": 7,
+                "users": 7
+            }
+        }
     },
     {
         "owner": "gnosis",
@@ -1083,7 +1230,7 @@
         "description": "Collection of smart contracts for the Gnosis prediction market platform.",
         "createdAt": "2017-05-19T12:38:57Z",
         "homepageUrl": "https://www.gnosis.pm",
-        "pushedAt": "2017-11-08T22:57:41Z",
+        "pushedAt": "2017-11-20T17:58:45Z",
         "languages": [
             "Python",
             "JavaScript",
@@ -1099,6 +1246,10 @@
                 "users": 21
             },
             "2017-46": {
+                "stars": 59,
+                "users": 21
+            },
+            "2017-47": {
                 "stars": 59,
                 "users": 21
             }
@@ -1164,7 +1315,7 @@
         "description": "Golem is creating a global market for computing power.",
         "createdAt": "2015-11-18T17:02:35Z",
         "homepageUrl": "https://golem.network",
-        "pushedAt": "2017-11-17T19:08:41Z",
+        "pushedAt": "2017-11-21T06:30:21Z",
         "languages": [
             "Python",
             "C",
@@ -1181,6 +1332,10 @@
             },
             "2017-46": {
                 "stars": 1694,
+                "users": 38
+            },
+            "2017-47": {
+                "stars": 1702,
                 "users": 38
             }
         },
@@ -1235,19 +1390,39 @@
     },
     {
         "ownername": "Groestlcoin/groestlcoin",
-        "id": "",
+        "id": "MDEwOlJlcG9zaXRvcnkzOTI2MDE5Mw==",
         "owner": "Groestlcoin",
         "name": "groestlcoin",
         "coinname": "",
         "symbol": "",
-        "description": "",
-        "createdAt": "",
-        "homepageUrl": "",
-        "pushedAt": "",
+        "description": "Groestlcoin Core integration/staging tree",
+        "createdAt": "2015-07-17T15:10:36Z",
+        "homepageUrl": "http://groestlcoin.org/downloads",
+        "pushedAt": "2017-07-24T09:32:28Z",
         "languages": [
-            ""
+            "C++",
+            "Python",
+            "C"
         ],
-        "url": ""
+        "url": "https://github.com/Groestlcoin/groestlcoin",
+        "releases": [
+            {
+                "name": "v2.13.3",
+                "description": "v2.13.3\r\n",
+                "publishedAt": "2017-01-28T11:42:42Z"
+            },
+            {
+                "name": "v2.11.0",
+                "description": "v2.11.0\n",
+                "publishedAt": "2015-09-21T11:12:57Z"
+            }
+        ],
+        "data": {
+            "2017-47": {
+                "stars": 6,
+                "users": 3
+            }
+        }
     },
     {
         "owner": "Gulden",
@@ -1272,6 +1447,10 @@
                 "users": 293
             },
             "2017-46": {
+                "stars": 56,
+                "users": 292
+            },
+            "2017-47": {
                 "stars": 56,
                 "users": 292
             }
@@ -1338,7 +1517,7 @@
         "createdAt": "2017-08-10T07:29:52Z",
         "url": "https://github.com/gxchain/gxb-core",
         "homepageUrl": "https://www.gxb.io/",
-        "pushedAt": "2017-11-15T09:59:47Z",
+        "pushedAt": "2017-11-20T03:30:00Z",
         "releases": [
             {
                 "name": "GXB-Core Release v1.0.171031",
@@ -1360,6 +1539,10 @@
             "2017-46": {
                 "stars": 35,
                 "users": 7
+            },
+            "2017-47": {
+                "stars": 36,
+                "users": 7
             }
         }
     },
@@ -1367,11 +1550,15 @@
         "owner": "HcashOrg",
         "name": "Hshare",
         "id": "MDEwOlJlcG9zaXRvcnk5NTczOTQ4NA==",
-        "description": "",
-        "createdAt": "2017-06-29T04:46",
-        "homepageUrl": "",
-        "pushedAt": "2017-09-20T11:47",
-        "languages": "C,C++,Python",
+        "description": null,
+        "createdAt": "2017-06-29T04:46:02Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-09-20T11:47:56Z",
+        "languages": [
+            "C",
+            "C++",
+            "Python"
+        ],
         "data": {
             "2017-43": {
                 "stars": 52,
@@ -1382,7 +1569,11 @@
                 "users": 13
             },
             "2017-46": {
-                "stars": 62,
+                "stars": 63,
+                "users": 13
+            },
+            "2017-47": {
+                "stars": 64,
                 "users": 13
             }
         },
@@ -1433,6 +1624,10 @@
             "2017-46": {
                 "stars": 8,
                 "users": 5
+            },
+            "2017-47": {
+                "stars": 8,
+                "users": 5
             }
         },
         "releases": [
@@ -1468,6 +1663,10 @@
             "2017-46": {
                 "stars": 20,
                 "users": 12
+            },
+            "2017-47": {
+                "stars": 20,
+                "users": 12
             }
         },
         "releases": [],
@@ -1498,20 +1697,31 @@
             "2017-46": {
                 "stars": 22,
                 "users": 1
+            },
+            "2017-47": {
+                "stars": 22,
+                "users": 1
             }
         },
         "releases": [],
-        "url": "https://github.com/infinitecoin/infinitecoin"
+        "url": "https://github.com/infinitecoin/infinitecoin",
+        "ownername": "Infinitecoin/infinitecoin",
+        "coinname": "",
+        "symbol": ""
     },
     {
         "owner": "input-output-hk",
         "name": "cardano-sl",
         "id": "MDEwOlJlcG9zaXRvcnk3MDkxMzk5Nw==",
         "description": "Cryptographic currency implementing Ouroboros PoS protocol",
-        "createdAt": "2016-10-14T13:44",
+        "createdAt": "2016-10-14T13:44:38Z",
         "homepageUrl": "",
-        "pushedAt": "2017-11-19T20:48",
-        "languages": "Haskell,PureScript,Nix",
+        "pushedAt": "2017-11-21T05:28:35Z",
+        "languages": [
+            "Haskell",
+            "PureScript",
+            "Nix"
+        ],
         "data": {
             "2017-43": {
                 "stars": 365,
@@ -1524,9 +1734,18 @@
             "2017-46": {
                 "stars": 414,
                 "users": 53
+            },
+            "2017-47": {
+                "stars": 418,
+                "users": 53
             }
         },
         "releases": [
+            {
+                "name": null,
+                "description": null,
+                "publishedAt": null
+            },
             {
                 "name": "Cardano SL 0.3",
                 "description": "",
@@ -1570,6 +1789,10 @@
             },
             "2017-46": {
                 "stars": 196,
+                "users": 22
+            },
+            "2017-47": {
+                "stars": 200,
                 "users": 22
             }
         },
@@ -1631,15 +1854,21 @@
         "owner": "KyberNetwork",
         "name": "smart-contracts",
         "id": "MDEwOlJlcG9zaXRvcnk5NjAxMTY0Nw==",
-        "description": "",
-        "createdAt": "2017-07-02T08:39",
+        "description": null,
+        "createdAt": "2017-07-02T08:39:01Z",
         "url": "https://github.com/KyberNetwork/smart-contracts",
-        "homepageUrl": "",
-        "pushedAt": "2017-11-17T06:55",
-        "releases": null,
-        "languages": "JavaScript",
+        "homepageUrl": null,
+        "pushedAt": "2017-11-20T11:32:37Z",
+        "releases": [],
+        "languages": [
+            "JavaScript"
+        ],
         "data": {
             "2017-46": {
+                "stars": 25,
+                "users": 11
+            },
+            "2017-47": {
                 "stars": 25,
                 "users": 11
             }
@@ -1655,7 +1884,7 @@
         "description": "\ud83d\udcdf Lisk blockchain application platform",
         "createdAt": "2016-02-01T21:45:35Z",
         "homepageUrl": "https://lisk.io/",
-        "pushedAt": "2017-11-17T21:10:28Z",
+        "pushedAt": "2017-11-20T20:35:20Z",
         "languages": [
             "JavaScript",
             "PLpgSQL"
@@ -1671,6 +1900,10 @@
             },
             "2017-46": {
                 "stars": 1373,
+                "users": 41
+            },
+            "2017-47": {
+                "stars": 1398,
                 "users": 41
             }
         },
@@ -1733,10 +1966,14 @@
         "name": "litecoin",
         "id": "MDEwOlJlcG9zaXRvcnk0NjQ2MTk4",
         "description": "Litecoin source tree",
-        "createdAt": "2012-06-13T04:18",
+        "createdAt": "2012-06-13T04:18:26Z",
         "homepageUrl": "http://www.litecoin.org",
-        "pushedAt": "2017-10-29T12:55",
-        "languages": "C++,Python,C",
+        "pushedAt": "2017-10-29T12:55:09Z",
+        "languages": [
+            "C++",
+            "Python",
+            "C"
+        ],
         "data": {
             "2017-43": {
                 "stars": 1880,
@@ -1748,6 +1985,10 @@
             },
             "2017-46": {
                 "stars": 1939,
+                "users": 11
+            },
+            "2017-47": {
+                "stars": 1959,
                 "users": 11
             }
         },
@@ -1775,7 +2016,7 @@
         "description": "SAFE Network client side rust module(s)",
         "createdAt": "2015-03-11T13:58:08Z",
         "homepageUrl": "",
-        "pushedAt": "2017-11-15T15:43:12Z",
+        "pushedAt": "2017-11-20T16:57:41Z",
         "languages": [
             "Rust"
         ],
@@ -1789,6 +2030,10 @@
                 "users": 24
             },
             "2017-46": {
+                "stars": 100,
+                "users": 24
+            },
+            "2017-47": {
                 "stars": 100,
                 "users": 24
             }
@@ -1815,6 +2060,10 @@
                 "users": 4
             },
             "2017-46": {
+                "stars": 3,
+                "users": 4
+            },
+            "2017-47": {
                 "stars": 3,
                 "users": 4
             }
@@ -1846,6 +2095,10 @@
             },
             "2017-46": {
                 "stars": 111,
+                "users": 426
+            },
+            "2017-47": {
+                "stars": 119,
                 "users": 426
             }
         },
@@ -1905,7 +2158,7 @@
         "description": "Monero: the secure, private, untraceable cryptocurrency",
         "createdAt": "2014-04-30T14:38:28Z",
         "homepageUrl": "https://getmonero.org",
-        "pushedAt": "2017-11-18T00:13:29Z",
+        "pushedAt": "2017-11-20T21:34:25Z",
         "languages": [
             "C++",
             "C",
@@ -1922,6 +2175,10 @@
             },
             "2017-46": {
                 "stars": 1432,
+                "users": 131
+            },
+            "2017-47": {
+                "stars": 1450,
                 "users": 131
             }
         },
@@ -1987,7 +2244,7 @@
         "createdAt": "2016-10-30T07:36:52Z",
         "url": "https://github.com/mvs-org/metaverse",
         "homepageUrl": "https://mvs.org",
-        "pushedAt": "2017-11-17T06:09:28Z",
+        "pushedAt": "2017-11-20T11:49:05Z",
         "releases": [],
         "languages": [
             "C++",
@@ -1997,6 +2254,10 @@
         "data": {
             "2017-46": {
                 "stars": 85,
+                "users": 11
+            },
+            "2017-47": {
+                "stars": 87,
                 "users": 11
             }
         }
@@ -2008,7 +2269,7 @@
         "description": "bitcoin-core 0.13 fork ported for Nav Coin",
         "createdAt": "2017-02-22T04:57:00Z",
         "homepageUrl": "",
-        "pushedAt": "2017-11-18T00:58:43Z",
+        "pushedAt": "2017-11-21T00:06:16Z",
         "languages": [
             "C++",
             "C",
@@ -2025,6 +2286,10 @@
             },
             "2017-46": {
                 "stars": 28,
+                "users": 10
+            },
+            "2017-47": {
+                "stars": 31,
                 "users": 10
             }
         },
@@ -2074,7 +2339,7 @@
         "description": "Blockchain-based marketplace for file storage",
         "createdAt": "2014-10-17T17:50:25Z",
         "homepageUrl": "https://sia.tech",
-        "pushedAt": "2017-11-14T02:32:14Z",
+        "pushedAt": "2017-11-20T00:35:04Z",
         "languages": [
             "Go",
             "Makefile",
@@ -2091,6 +2356,10 @@
             },
             "2017-46": {
                 "stars": 1760,
+                "users": 40
+            },
+            "2017-47": {
+                "stars": 1770,
                 "users": 40
             }
         },
@@ -2172,6 +2441,10 @@
             "2017-46": {
                 "stars": 128,
                 "users": 4
+            },
+            "2017-47": {
+                "stars": 133,
+                "users": 4
             }
         },
         "releases": [],
@@ -2184,7 +2457,7 @@
         "description": "NEO Smart Economy",
         "createdAt": "2015-05-31T17:02:33Z",
         "homepageUrl": "",
-        "pushedAt": "2017-11-17T19:35:51Z",
+        "pushedAt": "2017-11-20T10:07:41Z",
         "languages": [
             "C#"
         ],
@@ -2200,6 +2473,10 @@
             "2017-46": {
                 "stars": 1072,
                 "users": 32
+            },
+            "2017-47": {
+                "stars": 1131,
+                "users": 32
             }
         },
         "releases": [],
@@ -2207,19 +2484,28 @@
     },
     {
         "ownername": "nuls-io/nuls",
-        "id": "",
+        "id": "MDEwOlJlcG9zaXRvcnkxMDUwOTQwNDQ=",
         "owner": "nuls-io",
         "name": "nuls",
         "coinname": "",
         "symbol": "",
-        "description": "",
-        "createdAt": "",
-        "homepageUrl": "",
-        "pushedAt": "",
+        "description": null,
+        "createdAt": "2017-09-28T02:42:23Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-11-21T06:18:25Z",
         "languages": [
-            ""
+            "Java",
+            "Shell",
+            "HTML"
         ],
-        "url": ""
+        "url": "https://github.com/nuls-io/nuls",
+        "releases": [],
+        "data": {
+            "2017-47": {
+                "stars": 24,
+                "users": 5
+            }
+        }
     },
     {
         "owner": "okcashpro",
@@ -2244,6 +2530,10 @@
                 "users": 112
             },
             "2017-46": {
+                "stars": 154,
+                "users": 112
+            },
+            "2017-47": {
                 "stars": 154,
                 "users": 112
             }
@@ -2327,6 +2617,10 @@
             "2017-46": {
                 "stars": 23,
                 "users": 6
+            },
+            "2017-47": {
+                "stars": 24,
+                "users": 6
             }
         },
         "releases": [
@@ -2371,7 +2665,7 @@
         "description": "Beyond the Qtum prototype",
         "createdAt": "2017-03-03T08:17:11Z",
         "homepageUrl": "https://qtum.org",
-        "pushedAt": "2017-11-17T16:01:18Z",
+        "pushedAt": "2017-11-20T15:09:33Z",
         "languages": [
             "C++",
             "Python",
@@ -2388,6 +2682,10 @@
             },
             "2017-46": {
                 "stars": 370,
+                "users": 435
+            },
+            "2017-47": {
+                "stars": 376,
                 "users": 435
             }
         },
@@ -2447,45 +2745,116 @@
     },
     {
         "ownername": "raiden-network/raiden",
-        "id": "",
+        "id": "MDEwOlJlcG9zaXRvcnk1MDY0Njc2Nw==",
         "owner": "raiden-network",
         "name": "raiden",
         "coinname": "",
         "symbol": "",
-        "description": "",
-        "createdAt": "",
-        "homepageUrl": "",
-        "pushedAt": "",
+        "description": "Raiden Network",
+        "createdAt": "2016-01-29T07:40:47Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-11-21T06:35:06Z",
         "languages": [
-            ""
+            "Python",
+            "TypeScript",
+            "HTML"
         ],
-        "url": ""
+        "url": "https://github.com/raiden-network/raiden",
+        "releases": [
+            {
+                "name": null,
+                "description": null,
+                "publishedAt": "2017-10-25T18:50:22Z"
+            },
+            {
+                "name": "Raiden Developer Preview",
+                "description": "",
+                "publishedAt": "2017-09-12T16:30:28Z"
+            },
+            {
+                "name": "",
+                "description": "testing the deploy stage on travis",
+                "publishedAt": "2017-09-10T00:04:29Z"
+            },
+            {
+                "name": "",
+                "description": "Test release to check the deployment stage of travis",
+                "publishedAt": "2017-08-31T13:55:09Z"
+            },
+            {
+                "name": "Raiden PoC 5 - Alternative Channels",
+                "description": "This is our first PoC release on our way towards the [Raiden MVP](https://github.com/raiden-network/raiden/milestone/9) for 2017!\n\nIt's a big one! It contains 28 PRs from 7 different contributors. It's really nice to also see some external contributors trying their hand on raiden.\n\nHere is the breakdown of what has been implemented.\n- Made jsonrpc hex encoding compatible with newer versions of geth:\n  - https://github.com/raiden-network/raiden/pull/291\n  - https://github.com/raiden-network/raiden/pull/343\n- Separated development from production dependencies - https://github.com/raiden-network/raiden/pull/296\n- Channels can now be reopened after closing - https://github.com/raiden-network/raiden/pull/297\n- Unique UDP socket port numbers for the tests - https://github.com/raiden-network/raiden/pull/315\n- Make raiden work for MacOSX - https://github.com/raiden-network/raiden/pull/318\n- The raiden node will now monitor its channels and automatically dispute if there is a discrepancy - https://github.com/raiden-network/raiden/pull/327\n- The client which deploys the registry contract will now keep quiet - https://github.com/raiden-network/raiden/pull/331\n- Fix timing error in the networking protocol of raiden - https://github.com/raiden-network/raiden/pull/332\n- Channels now emit an event when they are deleted - https://github.com/raiden-network/raiden/pull/336\n- Raiden readme changes - https://github.com/raiden-network/raiden/pull/338\n- Fixed RLP dependency error - https://github.com/raiden-network/raiden/pull/339/\n- Fixed Pipy upstream URL location - https://github.com/raiden-network/raiden/pull/342/\n- Fixed Pipy requirements - https://github.com/raiden-network/raiden/pull/349\n- We now reuse TCP ports instead of opening new ones for each new request - https://github.com/raiden-network/raiden/pull/350\n- Raiden can now also work with solc versions >= 0.4.9 - https://github.com/raiden-network/raiden/pull/351\n- The Raiden node now handles messages from outdated partners and messages sent to non-existing channels in a more graceful way - https://github.com/raiden-network/raiden/pull/352\n- General Code refactoring/additions:\n  - https://github.com/raiden-network/raiden/pull/295\n  - https://github.com/raiden-network/raiden/pull/304\n  - https://github.com/raiden-network/raiden/pull/310\n  - https://github.com/raiden-network/raiden/pull/313\n  - https://github.com/raiden-network/raiden/pull/320\n  - https://github.com/raiden-network/raiden/pull/328\n  - https://github.com/raiden-network/raiden/pull/329\n  - https://github.com/raiden-network/raiden/pull/330\n  - https://github.com/raiden-network/raiden/pull/333\n  - https://github.com/raiden-network/raiden/pull/345\n  - https://github.com/raiden-network/raiden/pull/346\n",
+                "publishedAt": "2017-01-27T17:06:13Z"
+            },
+            {
+                "name": "Raiden PoC 4 - El Cabrito",
+                "description": "- Don't swallow errors when talking to the Github API:\n  https://github.com/raiden-network/raiden/pull/283\n- Better specify and improve the channel closing strategy.\n  https://github.com/raiden-network/raiden/pull/276\n- Test that unauthorized token transfers to a channel do not\n  disrupt the netted token balance and the overall channel\n  operation.\n  https://github.com/raiden-network/raiden/pull/284\n\n[Raiden 0.4.0 Pypi link](https://pypi.python.org/pypi/raiden/0.0.4)\n[Raiden 0.4.0 documentation](http://pythonhosted.org/raiden/)\n",
+                "publishedAt": "2016-12-16T22:30:53Z"
+            },
+            {
+                "name": "Raiden PoC-3 (Dark Meta Gecko)",
+                "description": "This is the third Raiden weekly PoC Release on the way to the MVP.          \n- Check for token transfer failure  \n  #279                                                                        \n- Add updated transfer event  \n  #281                                                                        \n- Fix failing unlock test and fix unlock function in smart contract NetttingChannelLibrary\n  #211                                                                        \n- Disallow same lock to be unlocked twice  \n  #211\n",
+                "publishedAt": "2016-12-10T12:55:24Z"
+            },
+            {
+                "name": "Raiden PoC -2",
+                "description": "This is the second Raiden weekly POC Release on the way to the MVP.\n- Includes automated Pypi release for each succesfull release we are making.\n  https://github.com/raiden-network/raiden/pull/272\n- The raiden contracts were re-deployed in the new test network, the Ropsten network\n  https://github.com/raiden-network/raiden/pull/271\n- Process message edge cases that have invalid attributes:\n  https://github.com/raiden-network/raiden/pull/268\n\nPypi link: https://pypi.python.org/pypi/raiden/0.0.2\nDocumentation: http://pythonhosted.org/raiden/genindex.html\n",
+                "publishedAt": "2016-12-02T22:30:52Z"
+            },
+            {
+                "name": "PoC-1",
+                "description": "PoC - 1\n\nThis is the first of a series of weekly raiden releases leading up to our MVP release.\n\nChanges since last Release\n- We now don't panick with repeated out-of-order messages in a channel\n  https://github.com/raiden-network/raiden/pull/267 or with valid messages from unknown senders  https://github.com/raiden-network/raiden/pull/263\n- Fixed python packaging\n  https://github.com/raiden-network/raiden/pull/264\n- Throttling on sending messages: https://github.com/raiden-network/raiden/pull/252\n- Periodic healthcheck of all nodes we are connected to: https://github.com/raiden-network/raiden/pull/242\n- We now use the local ethereum accounts existing in the machine instead of prompting to input the private key: https://github.com/raiden-network/raiden/pull/199\n- Functionality in the client for assets-exchange: https://github.com/raiden-network/raiden/pull/161\n- A lot of internal architecture and protocol PRs got merged:\n  https://github.com/raiden-network/raiden/pull/160\n  https://github.com/raiden-network/raiden/pull/156\n  https://github.com/raiden-network/raiden/pull/151\n  https://github.com/raiden-network/raiden/pull/134\n  https://github.com/raiden-network/raiden/pull/107\n- Raiden messages now have an identifier field:\n  https://github.com/raiden-network/raiden/pull/147\n  https://github.com/raiden-network/raiden/pull/145\n- Raiden smart contracts are now solidity v.4.0 compatibe\n  https://github.com/raiden-network/raiden/pull/136\n- Raiden can now accept an rpc endpoint as URL\n  https://github.com/raiden-network/raiden/pull/116\n- Message sends are now queued\n  https://github.com/raiden-network/raiden/pull/104\n\nAlso a lot of bug fixes, refactoring and other miscellaneous work by our tireless team is included in this release.\n",
+                "publishedAt": "2016-11-25T23:23:28Z"
+            },
+            {
+                "name": "PoC-0",
+                "description": "See https://github.com/raiden-network/raiden/wiki/Raiden-PoC%E2%80%900\n",
+                "publishedAt": "2016-08-06T02:52:17Z"
+            }
+        ],
+        "data": {
+            "2017-47": {
+                "stars": 867,
+                "users": 38
+            }
+        }
     },
     {
         "ownername": "ripio/rcn-token",
-        "id": "",
+        "id": "MDEwOlJlcG9zaXRvcnkxMDQ1MDk0NTA=",
         "owner": "ripio",
         "name": "rcn-token",
         "coinname": "",
         "symbol": "",
-        "description": "",
-        "createdAt": "",
-        "homepageUrl": "",
-        "pushedAt": "",
+        "description": null,
+        "createdAt": "2017-09-22T19:09:30Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-10-24T04:17:40Z",
         "languages": [
-            ""
+            "JavaScript"
         ],
-        "url": ""
+        "url": "https://github.com/ripio/rcn-token",
+        "releases": [],
+        "data": {
+            "2017-47": {
+                "stars": 11,
+                "users": 3
+            }
+        }
     },
     {
         "owner": "ripple",
         "name": "rippled",
         "id": "MDEwOlJlcG9zaXRvcnkyNzI0MTY3",
         "description": "Decentralized cryptocurrency blockchain daemon implementing the XRP Ledger in C++",
-        "createdAt": "2011-11-07T04:40",
+        "createdAt": "2011-11-07T04:40:15Z",
         "homepageUrl": "https://ripple.com/xrp",
-        "pushedAt": "2017-11-17T23:35",
-        "languages": "C++,C,Java",
+        "pushedAt": "2017-11-20T20:45:50Z",
+        "languages": [
+            "C++",
+            "C",
+            "Java"
+        ],
         "data": {
             "2017-43": {
                 "stars": 1634,
@@ -2497,6 +2866,10 @@
             },
             "2017-46": {
                 "stars": 1667,
+                "users": 72
+            },
+            "2017-47": {
+                "stars": 1676,
                 "users": 72
             }
         },
@@ -2581,6 +2954,10 @@
             "2017-46": {
                 "stars": 7,
                 "users": 9
+            },
+            "2017-47": {
+                "stars": 7,
+                "users": 9
             }
         },
         "releases": [],
@@ -2593,7 +2970,7 @@
         "description": "A precious gem for the digital age.",
         "createdAt": "2014-02-10T04:10:49Z",
         "homepageUrl": null,
-        "pushedAt": "2017-11-05T04:21:17Z",
+        "pushedAt": "2017-11-20T02:03:15Z",
         "languages": [
             "C++",
             "Assembly",
@@ -2609,6 +2986,10 @@
                 "users": 3
             },
             "2017-46": {
+                "stars": 16,
+                "users": 5
+            },
+            "2017-47": {
                 "stars": 16,
                 "users": 5
             }
@@ -2664,6 +3045,10 @@
             "2017-46": {
                 "stars": 1,
                 "users": 1
+            },
+            "2017-47": {
+                "stars": 1,
+                "users": 1
             }
         }
     },
@@ -2674,7 +3059,7 @@
         "description": "Skycoin Core and Wallet",
         "createdAt": "2013-12-25T01:50:16Z",
         "homepageUrl": "",
-        "pushedAt": "2017-11-17T01:43:59Z",
+        "pushedAt": "2017-11-20T15:59:51Z",
         "languages": [
             "Go",
             "TypeScript",
@@ -2690,6 +3075,10 @@
                 "users": 32
             },
             "2017-46": {
+                "stars": 225,
+                "users": 32
+            },
+            "2017-47": {
                 "stars": 225,
                 "users": 32
             }
@@ -2763,6 +3152,10 @@
             "2017-46": {
                 "stars": 93,
                 "users": 4
+            },
+            "2017-47": {
+                "stars": 95,
+                "users": 5
             }
         },
         "releases": [],
@@ -2776,7 +3169,7 @@
         "createdAt": "2016-02-22T21:48:48Z",
         "url": "https://github.com/status-im/status-react",
         "homepageUrl": "https://status.im",
-        "pushedAt": "2017-11-17T22:38:14Z",
+        "pushedAt": "2017-11-20T22:55:32Z",
         "releases": [
             {
                 "name": "0.9.4 (alpha)",
@@ -2818,6 +3211,10 @@
             "2017-46": {
                 "stars": 1507,
                 "users": 103
+            },
+            "2017-47": {
+                "stars": 1515,
+                "users": 105
             }
         }
     },
@@ -2828,7 +3225,7 @@
         "description": "stellar-core is the backbone of the Stellar network. It maintains a local copy of the ledger, communicating and staying in sync with other instances of stellar-core on the network. Optionally, stellar-core can store historical records of the ledger and participate in consensus.",
         "createdAt": "2014-11-24T17:11:12Z",
         "homepageUrl": "",
-        "pushedAt": "2017-11-18T01:02:17Z",
+        "pushedAt": "2017-11-21T00:15:48Z",
         "languages": [
             "C++",
             "C",
@@ -2845,6 +3242,10 @@
             },
             "2017-46": {
                 "stars": 587,
+                "users": 46
+            },
+            "2017-47": {
+                "stars": 591,
                 "users": 46
             }
         },
@@ -2904,19 +3305,77 @@
     },
     {
         "ownername": "Storj/core",
-        "id": "",
+        "id": "MDEwOlJlcG9zaXRvcnk1MDkzMzA1MA==",
         "owner": "Storj",
         "name": "core",
         "coinname": "",
         "symbol": "",
-        "description": "",
-        "createdAt": "",
-        "homepageUrl": "",
-        "pushedAt": "",
+        "description": "Implementation of the Storj protocol for Node.js",
+        "createdAt": "2016-02-02T16:10:31Z",
+        "homepageUrl": "https://storj.github.io/core",
+        "pushedAt": "2017-11-14T00:01:30Z",
         "languages": [
-            ""
+            "JavaScript"
         ],
-        "url": ""
+        "url": "https://github.com/Storj/core",
+        "releases": [
+            {
+                "name": "v8.4.2",
+                "description": "- Reverts restify upgrade as it was conflicting with express https://github.com/Storj/core/pull/747",
+                "publishedAt": "2017-10-25T19:21:27Z"
+            },
+            {
+                "name": "v8.4.1",
+                "description": "- Hotfix missing `createJsonClient` https://github.com/Storj/core/pull/746",
+                "publishedAt": "2017-10-25T17:56:23Z"
+            },
+            {
+                "name": "v8.4.0",
+                "description": "- Updates dependencies https://github.com/Storj/core/pull/744\r\n  - leveldown@2.0.0\r\n  - levelup@2.0.0\r\n  - kfs@4.0.0\r\n  - restify@6.2.3\r\n",
+                "publishedAt": "2017-10-25T16:39:27Z"
+            },
+            {
+                "name": "v8.3.1",
+                "description": "- bugfix return statements and callbacks https://github.com/Storj/core/pull/742",
+                "publishedAt": "2017-10-18T17:24:43Z"
+            },
+            {
+                "name": "v8.3.0",
+                "description": "- Adds `requestTimeout` to rpc calls https://github.com/Storj/core/pull/741",
+                "publishedAt": "2017-10-10T21:43:15Z"
+            },
+            {
+                "name": "v8.2.1",
+                "description": "- Update contract count on ALLOC messages https://github.com/Storj/core/pull/739 @littleskunk ",
+                "publishedAt": "2017-10-10T00:24:26Z"
+            },
+            {
+                "name": "v8.2.0",
+                "description": "- Additional round of fixes for disk over allocation https://github.com/Storj/core/pull/736",
+                "publishedAt": "2017-10-05T18:14:28Z"
+            },
+            {
+                "name": "v8.1.0",
+                "description": "- improve farmer logging, paid and unpaid downloads https://github.com/Storj/core/pull/734\r\n- remove _pendingOffers https://github.com/Storj/core/pull/733\r\n\r\nThanks @littleskunk ",
+                "publishedAt": "2017-09-27T17:26:57Z"
+            },
+            {
+                "name": "v7.0.4",
+                "description": "- Bug fix for logging https://github.com/Storj/core/pull/728",
+                "publishedAt": "2017-09-20T15:50:38Z"
+            },
+            {
+                "name": "v8.0.0",
+                "description": "- Added persistent tokens for shard server for SIP6 https://github.com/Storj/core/pull/724\r\n- Fix disk over allocation that leads to farmer crashes https://github.com/Storj/core/pull/730\r\n- Bug fix for logging https://github.com/Storj/core/pull/728\r\n- Deprecated `BridgeClient` and related: `FileMuxer`, `FileDemuxer`, `DecryptStream`, `EncryptStream`, `DataCipherKeyIv`, `DeterministicKeyIv`, `KeyRing`  https://github.com/Storj/core/pull/731",
+                "publishedAt": "2017-09-20T15:48:01Z"
+            }
+        ],
+        "data": {
+            "2017-47": {
+                "stars": 370,
+                "users": 30
+            }
+        }
     },
     {
         "owner": "stratisproject",
@@ -2925,7 +3384,7 @@
         "description": "Bitcoin full node in C#",
         "createdAt": "2016-09-03T04:32:51Z",
         "homepageUrl": "https://stratisplatform.com",
-        "pushedAt": "2017-11-17T21:53:31Z",
+        "pushedAt": "2017-11-20T23:45:16Z",
         "languages": [
             "C#",
             "PowerShell",
@@ -2942,6 +3401,10 @@
             },
             "2017-46": {
                 "stars": 215,
+                "users": 54
+            },
+            "2017-47": {
+                "stars": 219,
                 "users": 54
             }
         },
@@ -2966,7 +3429,7 @@
         "description": "Syscoin2 Core integration/staging tree",
         "createdAt": "2016-02-29T03:47:32Z",
         "homepageUrl": "https://syscoin.org",
-        "pushedAt": "2017-11-18T00:44:49Z",
+        "pushedAt": "2017-11-20T20:28:22Z",
         "languages": [
             "C++",
             "Python",
@@ -2982,6 +3445,10 @@
                 "users": 8
             },
             "2017-46": {
+                "stars": 41,
+                "users": 8
+            },
+            "2017-47": {
                 "stars": 41,
                 "users": 8
             }
@@ -3075,6 +3542,10 @@
             "2017-46": {
                 "stars": 7,
                 "users": 6
+            },
+            "2017-47": {
+                "stars": 7,
+                "users": 6
             }
         }
     },
@@ -3085,7 +3556,7 @@
         "description": "Colder than CGB, Still shinier than BitBar  http://unobtanium.uno",
         "createdAt": "2014-06-18T10:06:00Z",
         "homepageUrl": null,
-        "pushedAt": "2017-11-01T12:19:24Z",
+        "pushedAt": "2017-11-20T00:17:36Z",
         "languages": [
             "C++",
             "Shell",
@@ -3103,6 +3574,10 @@
             "2017-46": {
                 "stars": 10,
                 "users": 9
+            },
+            "2017-47": {
+                "stars": 10,
+                "users": 9
             }
         },
         "releases": [],
@@ -3115,7 +3590,7 @@
         "description": "official source code repository for VERGE cryptocurrency",
         "createdAt": "2016-01-23T04:20:14Z",
         "homepageUrl": "https://VergeCurrency.com",
-        "pushedAt": "2017-11-15T19:36:24Z",
+        "pushedAt": "2017-11-19T01:36:09Z",
         "languages": [
             "C",
             "C++",
@@ -3132,6 +3607,10 @@
             },
             "2017-46": {
                 "stars": 120,
+                "users": 16
+            },
+            "2017-47": {
+                "stars": 123,
                 "users": 16
             }
         },
@@ -3156,7 +3635,7 @@
         "description": "A digital currency with mining decentralisation and ASIC resistance as a key focus",
         "createdAt": "2017-02-07T21:38:35Z",
         "homepageUrl": "https://vertcoin.org",
-        "pushedAt": "2017-11-16T04:40:19Z",
+        "pushedAt": "2017-11-21T02:42:08Z",
         "languages": [
             "C++",
             "C",
@@ -3174,9 +3653,18 @@
             "2017-46": {
                 "stars": 130,
                 "users": 2
+            },
+            "2017-47": {
+                "stars": 133,
+                "users": 2
             }
         },
         "releases": [
+            {
+                "name": null,
+                "description": null,
+                "publishedAt": null
+            },
             {
                 "name": "Mandatory Upgrade - UASF for SegWit starting on 31st May 2017 00:00:00 GMT",
                 "description": "This update implements BIP148 (https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki) which is a \"User Activated Soft Fork\" for Segregated Witness. This update is in response to two large unknown miners blocking SegWit activation on the Vertcoin network (https://vtconline.org/sf.html) despite >95% of nodes being upgraded and a clear desire from the community to upgrade. \r\n\r\nSince over 50% of the network hashrate belongs to the \"attackers\", they will likely not update and not implement UASF, so this update should be treated in the same way as a Hard Fork. Old wallets will continue to follow whichever chain has the most work, and will only reorg to the SegWit chain once it has more work behind it. Thus, any fork will be temporary, but will likely exist for some time. Therefore, *everyone* should upgrade to this new wallet to ensure the stability of the network and reduce the risk of a fork.",
@@ -3235,6 +3723,10 @@
             "2017-46": {
                 "stars": 32,
                 "users": 392
+            },
+            "2017-47": {
+                "stars": 33,
+                "users": 392
             }
         },
         "releases": [
@@ -3258,19 +3750,26 @@
     },
     {
         "ownername": "viberate/Contract",
-        "id": "",
+        "id": "MDEwOlJlcG9zaXRvcnkxMDI0NDQ0OTg=",
         "owner": "viberate",
         "name": "Contract",
         "coinname": "",
         "symbol": "",
-        "description": "",
-        "createdAt": "",
-        "homepageUrl": "",
-        "pushedAt": "",
+        "description": null,
+        "createdAt": "2017-09-05T06:45:07Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-09-07T07:13:52Z",
         "languages": [
-            ""
+            "JavaScript"
         ],
-        "url": ""
+        "url": "https://github.com/viberate/Contract",
+        "releases": [],
+        "data": {
+            "2017-47": {
+                "stars": 0,
+                "users": 1
+            }
+        }
     },
     {
         "owner": "wavesplatform",
@@ -3279,7 +3778,7 @@
         "description": "Waves node application",
         "createdAt": "2016-04-17T08:38:48Z",
         "homepageUrl": "https://wavesplatform.com/",
-        "pushedAt": "2017-11-17T09:56:01Z",
+        "pushedAt": "2017-11-20T15:37:36Z",
         "languages": [
             "Scala",
             "JavaScript",
@@ -3296,6 +3795,10 @@
             },
             "2017-46": {
                 "stars": 277,
+                "users": 34
+            },
+            "2017-47": {
+                "stars": 279,
                 "users": 34
             }
         },
@@ -3378,6 +3881,10 @@
             "2017-46": {
                 "stars": 31,
                 "users": 1
+            },
+            "2017-47": {
+                "stars": 31,
+                "users": 1
             }
         },
         "releases": [
@@ -3444,6 +3951,10 @@
             "2017-46": {
                 "stars": 73,
                 "users": 4
+            },
+            "2017-47": {
+                "stars": 73,
+                "users": 4
             }
         },
         "releases": [
@@ -3492,7 +4003,7 @@
         "description": "Zcash - Internet Money",
         "createdAt": "2014-11-22T03:13:10Z",
         "homepageUrl": "https://z.cash/",
-        "pushedAt": "2017-11-17T23:48:15Z",
+        "pushedAt": "2017-11-21T03:36:35Z",
         "languages": [
             "C++",
             "C",
@@ -3510,9 +4021,18 @@
             "2017-46": {
                 "stars": 2986,
                 "users": 374
+            },
+            "2017-47": {
+                "stars": 2993,
+                "users": 374
             }
         },
         "releases": [
+            {
+                "name": "Zcash 1.0.13",
+                "description": "This release introduces new features, performance improvements and bug fixes.  Our new low memory prover reduces memory usage by 43% when generating a shielded transaction, from 3 GB to 1.7 GB. An experimental feature, payment disclosure, can help services better manage their shielded payments.  We also now fully support the ``z_shieldcoinbase`` RPC call to help miners sweep up and shield their coinbase rewards.\r\n\r\nSummary of the changes included in this release:\r\n\r\n1. Auto-senescence cycle has been reduced from 18 to 16 weeks. (#2733)\r\n2. Low-memory prover reduces JoinSplit creation memory usage from 3 GB to 1.7GB. (#2670, [stats](https://speed.z.cash/timeline/?exe=1&base=1%2B178&ben=memory+createjoinsplit&env=1&revs=50&equid=off&quarts=on&extr=on))\r\n3. Payment disclosure has been added as an experimental feature with new RPC calls ``z_getpaymentdisclosure`` and ``z_validatepaymentdisclosure`` (#2519). This feature enables a sender to prove that a payment was made to a recipient, which can help services better manage their shielded payments. See [the documentation](https://github.com/zcash/zcash/blob/master/doc/payment-disclosure.md) for a full explanation of this new feature.\r\n4. ``z_shieldcoinbase`` is now a fully supported RPC call (#2692). See an explanation of this command [here](https://github.com/zcash/zcash/tree/master/doc/shield-coinbase.md).\r\n5. Libsnark has been brought into the source repository tree. (#2652)\r\n6. Fixed potential shutdown errors have been fixed. (#2555)\r\n7. User interface messages have been cleaned up. (#2548, #2150, #2649)\r\n8. The extended QA tests have been migrated to Zcash. (#2533)\r\n9. A workaround has been implemented in the test ``wallet_protectcoinbase``, which was previously failing on some platforms. (#2698)\r\n10. Benchmarking has been updated with new performance measurements and fixes. (#2645, #2659, #2377, #2687, #2665)\r\n\r\nFor a more complete list of changes, see our [1.0.13](https://github.com/zcash/zcash/milestone/63?closed=1) milestone.",
+                "publishedAt": "2017-11-21T04:05:32Z"
+            },
             {
                 "name": "Zcash 1.0.12",
                 "description": "Today we're announcing the release of Zcash 1.0.12, which includes bug fixes and usability improvements. It also adds a new RPC method ``z_shieldcoinbase`` as an experimental feature, for easily shielding coinbase UTXOs. We encourage mining pools and exchanges to test it out over the next few weeks, and give feedback, before we make it a fully-supported RPC method in an upcoming release.\r\n\r\nSummary of the changes included in this release:\r\n\r\n1. We added ``z_shieldcoinbase`` as an experimental feature. (#2615)\r\n2. We changed the ``importprivkey`` RPC method to return the public address corresponding to the imported key. (#2616)\r\n3. We fixed build issues encountered when using GCC 7. (#2545)\r\n4. We added support for fetching the public network parameters from IPFS. (#2597)\r\n\r\nFor a more complete list of changes, see our [1.0.12](https://github.com/zcash/zcash/milestone/60?closed=1) milestone.",
@@ -3557,11 +4077,6 @@
                 "name": "Zcash 1.0.7",
                 "description": "This release focuses on updating Zcash to be compatible with upstream changes, fixing bugs, and adding alerts, tests, and checkpoints.\r\n\r\n## Upcoming Testnet Upgrade\r\n\r\nThe Zcash testnet will soon be upgraded in order to resolve an issue with the Testnet Founders Reward addresses. This *will not* affect the main Zcash network. Testnet users must upgrade to at least version 1.0.7 by block 53127, as that is when the testnet network changes will take place. Users who do not upgrade may be left on their own chain, contributing to a chain fork.\r\n\r\nSummary of the changes in this release:\r\n\r\n1. Pull in upstream changes related to testing, the RPC interface, as well as others. (#2099, #2100, #2101)\r\n2. Keep a record of alerts sent to mainnet. (#2093)\r\n3. Pause mining during joinsplit creation. (#1932)\r\n4. Fix bug in testnet and update Founder\u2019s Reward addresses. (#2114)\r\n5. Large shielded transactions using the default fee are no longer treated as \"free\" transactions. (#2141)\r\n6. Improve auto-generated manpages. (#2124)\r\n7. Add checkpoint on testnet and mainnet. (#2128, #2126)\r\n\r\nFor a more complete list of changes, see our [1.0.7 milestone](https://github.com/zcash/zcash/milestone/51?closed=1).",
                 "publishedAt": "2017-03-09T04:04:02Z"
-            },
-            {
-                "name": "Zcash 1.0.6",
-                "description": "This release focuses on improving functionality and usability of low-level interfaces used by external software interfacing with Zcash, and on bolstering several security components.\r\n\r\nSummary of the changes in this release:\r\n\r\n1. Users can now mine to a single address by using new zcashd options `-mineraddress` and `-minetolocalwallet` (#1965, #2081)\r\n2. Updated RPC calls `getrawtransaction` and `decoderawtransaction` to display all fields of a JoinSplit. Now includes the zk-proof, ephemeral key, random seed and encrypted ciphertexts (#2054)\r\n3. Updated logging in RPC call `z_sendmany` for the debug categories `zrpc` and `zrpcunsafe` (#2058)\r\n4. Fixed a bug which prevented passing a fee parameter of zero to RPC call `z_sendmany` (#2068)\r\n5. Added build option `--disable-mining` to zcutil/build.sh to allow removal of mining code when compiling (#1836)\r\n6. ZeroMQ notification support has been backported (#2050)\r\n7. Upgraded OpenSSL to 1.1.0d (#2051).  We now also use libsodium\u2019s CSPRNG instead of OpenSSL\u2019s (#1706)\r\n8. Backported and updated UniValue library to replace usage of JSON Spirit library (#1990, #2082)\r\n9. Removed unnecessary exceptions from libsnark (#2080)\r\n10. Added zcashd option flag `-experimentalfeatures` (#2056), fixed a bug in a test (#2078) and updated documentation (#2069, #2077)\r\n\r\nFor a more complete list of changes, see our [1.0.6 milestone](https://github.com/zcash/zcash/milestone/50?closed=1).",
-                "publishedAt": "2017-03-09T04:02:49Z"
             }
         ],
         "url": "https://github.com/zcash/zcash"
@@ -3571,10 +4086,14 @@
         "name": "zen",
         "id": "MDEwOlJlcG9zaXRvcnk5Mzc5ODgxNw==",
         "description": "2.0.10 - TLS integration and more!",
-        "createdAt": "2017-06-08T23:05",
+        "createdAt": "2017-06-08T23:05:59Z",
         "homepageUrl": "https://zensystem.io",
-        "pushedAt": "2017-11-18T02:38",
-        "languages": "C++,Python,C",
+        "pushedAt": "2017-11-18T16:15:04Z",
+        "languages": [
+            "C++",
+            "Python",
+            "C"
+        ],
         "data": {
             "2017-43": {
                 "stars": 51,
@@ -3586,6 +4105,10 @@
             },
             "2017-46": {
                 "stars": 62,
+                "users": 20
+            },
+            "2017-47": {
+                "stars": 63,
                 "users": 20
             }
         },

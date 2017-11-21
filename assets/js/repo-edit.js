@@ -5,6 +5,7 @@ jQuery(document).ready(function($) {
     var $repoForm = $('form[name="repo"]'),
         $ownerSel = $('select[name="ownername"]'),
         $apiBtn = $('button[name="remote"]'),
+        $deleteBtn = $('button[name="delete"]'),
         $fields = $('.auto-fields'),
         $output = $('#output'),
         loco = window.location,
@@ -83,8 +84,9 @@ jQuery(document).ready(function($) {
 
     var handleOwnerChange = function(e) {
 
-        var repo = repos ? repos.find(function(repo) {
-                return repo.owner + '/' + repo.name === $ownerSel.val();
+        var index = getSelectedIndex(),
+            repo = repos ? repos.find(function(repo) {
+                return repo.owner + '/' + repo.name === $ownerSel.val() && repos.indexOf(repo) === index;
             }) : false;
 
         if(repo) {
@@ -187,12 +189,50 @@ jQuery(document).ready(function($) {
             });
     };
 
+    var deleteRecord = function(e) {
+
+        var index = getSelectedIndex(),
+            owner = $('input[name="owner"]').val(),
+            name = $('input[name="name"]').val(),
+            count = 3;
+
+        $output.addClass('alert alert-secondary active').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Deleting ' + owner + '/' + name + ' ...');
+
+        $.post({
+              url: 'http://api.coindev.local',
+              data: { 'delete': true, index: index, owner: owner, name: name }
+            })
+            .done(function(response) {
+                console.log(response);
+
+                var errors = response.errors,
+                    out = '';
+
+                if(errors && errors.length > 0) {
+                    errors.forEach(function(error) {
+                        out += '<b>ERROR: ' + error.type + '</b> ' + error.message;
+                    });
+                    $output.addClass('alert alert-danger active').html(out);
+                    $output.one('click', hideAlert);
+                    return;
+                } else {
+                    if(response.length === repos.length - 1) {
+                        $output.addClass('alert alert-success active').html(owner + '/' + name + ' deleted successfully... Refreshing in <span class="count">' + count + '</span>');
+                        setInterval(function() { count--; $output.find('.count').text(count); if(count === 0) loco.reload(); }, 1000);
+                    } else {
+                        console.warn('Possible deletion error');
+                    }
+                }
+
+            });
+    };
+
     var onNavClick = function(e) {
         var $this = $(e.currentTarget),
             val = $ownerSel.val(),
             idx;
 
-        idx = repos.findIndex(function(repo) { return repo.owner + '/' + repo.name === val; });
+        idx = getSelectedIndex();
 
         if($this.is('.prev') && (idx - 1 > -1)) $ownerSel.val(repos[idx - 1].owner + '/' + repos[idx - 1].name);
         if($this.is('.next') && (idx + 1 < repos.length)) $ownerSel.val(repos[idx + 1].owner + '/' + repos[idx + 1].name);
@@ -204,6 +244,10 @@ jQuery(document).ready(function($) {
         $.get('http://api.coindev.local?location=1').done(function(loc) {
             $('header h1').after('<div class="alert alert-info active"><small>' + loc + '</small><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></div>');
         });
+    };
+
+    var getSelectedIndex = function() {
+        return Array.prototype.slice.call($ownerSel.find('option')).findIndex(function(opt) { return opt.selected }) - 1;
     };
 
     var resetForm = function(e) {
@@ -348,6 +392,7 @@ jQuery(document).ready(function($) {
 
     $ownerSel.on('change', handleOwnerChange);
     $apiBtn.on('click', apiFetch);
+    $deleteBtn.on('click', deleteRecord);
     $repoForm.on('click', '.undo', revertField);
     $repoForm.on('click', '.reponav', onNavClick);
     $repoForm.on('submit', handleForm);
