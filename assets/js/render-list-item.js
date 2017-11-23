@@ -1,4 +1,4 @@
-/* globals HBS */
+/* globals HBS, Handlebars */
 jQuery(document).ready(function($) {
 	'use strict';
 
@@ -30,5 +30,34 @@ jQuery(document).ready(function($) {
 	};
 
 	fetchJSONdata();
+
+	Handlebars.registerHelper('dateFormat', function(d) {
+		var options = { year: 'numeric', month: 'long', day: 'numeric' };
+		return d ? new Date(d).toLocaleDateString('en-US', options) : d;
+	});
+
+	Handlebars.registerHelper('arrayFormat', function(a) {
+		return a.join(', ');
+	});
+
+	Handlebars.registerHelper('latestStarCount', function(data) {
+		var arr;
+		if(data) {
+			arr = Object.keys(data).sort().reverse();
+			return data[arr[0]].stars;
+		} else {
+			return data;
+		}
+	});
+
+	Handlebars.registerHelper('latestUserCount', function(data) {
+		var arr;
+		if(data) {
+			arr = Object.keys(data).sort().reverse();
+			return data[arr[0]].users;
+		} else {
+			return data;
+		}
+	});
 
 });

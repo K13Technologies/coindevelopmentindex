@@ -2,15 +2,15 @@
 	<td class="bold rank"> </td> <!-- ranked by market cap -->
 	<td class="coin-name">
 		<i class="cc {{symbol}}" title="{{symbol}}"></i>
-		<a  href="" target="_blank">{{coinname}}</a>
+		<a href="" target="_blank">{{coinname}} <small>{{symbol}}</small></a>
 	</td>  <!-- name of currency, this will take user to more detailed secondary page -->
-	<td class="url"><a href="{{url}}" target="_blank">{{description}}</a></td>  <!-- library -->
+	<td class="url"><a href="{{url}}" target="_blank">{{ownername}}</a></td>  <!-- library -->
 	<td class="center developers"> </td>  <!-- number of developers -->
-	<td class="homepage-url"><a href="{{homepageUrl}}" target="_blank">{{owner}} / {{name}}</a></td>  <!-- documentation -->
+	<td class="homepage-url"><a href="{{homepageUrl}}" target="_blank">{{description}}</a></td>  <!-- documentation -->
 	<td class="center public-repos"></td>  <!-- number of public repositories -->
-	<td class="stars">{{data.users}}</td>  <!-- starred -->
-	<td class="center mentionable-users"><{{data.users}}/td> <!-- contributors to core repository -->
-	<td class="last-release">{{publishedAt}}</td>  <!-- latest release -->
-	<td class="current-release">{{releases.name}}</td>  <!-- current release -->
-	<td class="languages">{{languages}}</td>  <!-- top languages -->
+	<td class="stars">{{latestStarCount data}}</td>  <!-- starred -->
+	<td class="center mentionable-users">{{latestUserCount data}}</td> <!-- contributors to core repository -->
+	<td class="last-release">{{dateFormat releases.0.publishedAt}}</td>  <!-- latest release -->
+	<td class="current-release">{{releases.0.name}}</td>  <!-- current release -->
+	<td class="languages">{{arrayFormat languages}}</td>  <!-- top languages -->
 </tr>
