@@ -44,6 +44,26 @@
     "data-revertable":true
   },
   {
+    "name": "rank",
+    "type": "number",
+    "min": "1",
+    "disabled": false,
+    "placeholder": "Market Cap Rank",
+    "required": false,
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
+    "name": "team",
+    "type": "number",
+    "min": "0",
+    "disabled": false,
+    "placeholder": "# of Developers",
+    "required": false,
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
   	"name": "description",
   	"type": "text",
     "placeholder": "A description of the repo.",

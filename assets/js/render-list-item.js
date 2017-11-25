@@ -2,7 +2,9 @@
 jQuery(document).ready(function($) {
 	'use strict';
 
-	var template = HBS['list-item'],
+	if(typeof HBS === 'undefined') return false;
+
+	var template =  HBS['list-item'],
 			repos;
 
 	var fetchJSONdata = function() {
