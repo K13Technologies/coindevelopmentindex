@@ -45,6 +45,8 @@ function getRecord($obj) {
 		return $json[$index];
 	} else if(isset($owner) || isset($name)) {
 		return getRecordByName($owner, $name);
+	} else if(isset($symbol)) {
+		return getRecordBySymbol($symbol);
 	} else {
 		return $json;
 	}
@@ -56,6 +58,15 @@ function getRecordById($id) {
 
 	return array_pop(array_filter($json, function($item) use ($id) {
 		if(isset($id)) return $item->id === $id;
+		else return false;
+	}));
+}
+
+function getRecordBySymbol($symbol) {
+	global $json;
+
+	return array_pop(array_filter($json, function($item) use ($symbol) {
+		if(isset($symbol)) return $item->symbol === $symbol;
 		else return false;
 	}));
 }
@@ -146,6 +157,8 @@ function deleteRecord($index) {
 }
 
 function sortJSON($json, $prop='owner', $asc=true) {
+
+	if(!is_array($json)) return $json;
 
 	usort($json, function($a, $b) use($prop,$asc) {
 		if(is_numeric($prop)) {

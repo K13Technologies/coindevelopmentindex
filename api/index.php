@@ -3,6 +3,7 @@
 	include_once('./utils.php');
 	include('./json.php');
 	include('./github-fetch.php');
+	include('./cryptocomp-fetch.php');
 
 	switch($_SERVER['REQUEST_METHOD']) {
 
@@ -37,6 +38,12 @@
 				if($_POST['id'] !== '') {
 					$records = fetchGithubData(getRecord(array('id' => $_POST['id'])));
 				}
+				out($records);
+				break;
+			}
+
+			if(isset($_POST['cryptocompfetch'])) {
+				$records = fetchCryptocompData(getRecord($_POST));
 				out($records);
 				break;
 			}
@@ -77,6 +84,10 @@
 				}
 				out(write(fetchGithubData(fetchJSON(JSON_FILE)),
 						isset($_GET['tolocal']) ? LOCAL_FILE : JSON_FILE));
+				break;
+			}
+			if(isset($_GET['local'])) {
+				out(fetchJSON(LOCAL_FILE));
 				break;
 			}
 			out(getRecord(array(

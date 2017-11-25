@@ -2,9 +2,12 @@
 jQuery(document).ready(function($) {
     'use strict';
 
+    if(!$('form[name="repo"]')[0]) return false;
+
     var $repoForm = $('form[name="repo"]'),
         $ownerSel = $('select[name="ownername"]'),
-        $apiBtn = $('button[name="remote"]'),
+        $githubBtn = $('button[name="github"]'),
+        $cryptoBtn = $('button[name="cryptocomp"]'),
         $deleteBtn = $('button[name="delete"]'),
         $fields = $('.auto-fields'),
         $output = $('#output'),
@@ -143,7 +146,7 @@ jQuery(document).ready(function($) {
             });
     };
 
-    var apiFetch = function(e) {
+    var githubFetch = function(e) {
 
         $repoForm.find('input:disabled').prop('disabled', false);
 
@@ -162,6 +165,51 @@ jQuery(document).ready(function($) {
             .done(function(response) {
 
                 // console.log(response);
+                var errors = response.errors,
+                    out = '';
+
+                if(errors && errors.length > 0) {
+                    errors.forEach(function(error) {
+                        out += '<b>ERROR: ' + error.type + '</b> ' + error.message;
+                    });
+                    $output.addClass('alert alert-danger active').html(out);
+                    $output.one('click', hideAlert);
+                    return;
+                } else {
+                    $output.addClass('alert alert-success active').html('Found data for ' + response[0].owner + '/' + response[0].name);
+                    hideAlert();
+                }
+
+                mapToFields(response[0]);
+
+            })
+            .fail(function(err) {
+                console.log(err);
+                $output.addClass('alert alert-danger active').html(err);
+            })
+            .always(function() {
+                $repoForm.find('input:disabled').prop('disabled', true);
+            });
+    };
+
+
+    var cryptocompFetch = function(e) {
+
+        if($('input[name="symbol"]').val()  === '') {
+            $output.addClass('alert alert-danger active').text('You must provide the symbol for the coin.');
+            hideAlert(3000);
+            return false;
+        }
+
+        $output.addClass('alert alert-secondary active').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Contacting CryptoCompare API...');
+
+        $.post({
+              url: 'http://api.coindev.local',
+              data: $repoForm.serialize() + '&cryptocompfetch=1'
+            })
+            .done(function(response) {
+
+                console.log(response);
                 var errors = response.errors,
                     out = '';
 
@@ -391,7 +439,8 @@ jQuery(document).ready(function($) {
     $ownerSel.focus();
 
     $ownerSel.on('change', handleOwnerChange);
-    $apiBtn.on('click', apiFetch);
+    $githubBtn.on('click', githubFetch);
+    $cryptoBtn.on('click', cryptocompFetch);
     $deleteBtn.on('click', deleteRecord);
     $repoForm.on('click', '.undo', revertField);
     $repoForm.on('click', '.reponav', onNavClick);
