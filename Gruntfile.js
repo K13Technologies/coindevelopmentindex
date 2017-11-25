@@ -225,8 +225,9 @@ module.exports = function(grunt) {
     uglify: {
       options: {
         report: 'min',
-            maxLineLen: 0,
+        maxLineLen: 0,
         preserveComments: /^\/*!/,
+        mangle: false,
         compress: {
           unused: false,
           hoist_funs: false,
