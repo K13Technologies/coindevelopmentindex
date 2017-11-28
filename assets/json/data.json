@@ -4,12 +4,12 @@
         "id": "MDEwOlJlcG9zaXRvcnkxMDAwMDU5MjM=",
         "owner": "AdExBlockchain",
         "name": "adex-core",
-        "coinname": "",
-        "symbol": "",
+        "coinname": "AdEx",
+        "symbol": "ADX",
         "description": "AdEx Core: the smart contracts that power the AdEx Network",
-        "createdAt": "2017-08-11T07:41:02Z",
+        "createdAt": "2017-08-11T07:41",
         "homepageUrl": "https://www.adex.network",
-        "pushedAt": "2017-11-16T12:55:19Z",
+        "pushedAt": "2017-11-16T12:55",
         "languages": [
             "JavaScript",
             "Shell"
@@ -21,15 +21,17 @@
                 "stars": 28,
                 "users": 7
             }
-        }
+        },
+        "rank": "93",
+        "team": ""
     },
     {
         "ownername": "amjuarez/bytecoin",
         "id": "MDEwOlJlcG9zaXRvcnkxNzU2MjU0NQ==",
         "owner": "amjuarez",
         "name": "bytecoin",
-        "coinname": "",
-        "symbol": "",
+        "coinname": "ByteCoin",
+        "symbol": "BCN",
         "description": "CryptoNote protocol implementation",
         "createdAt": "2014-03-09T10:47",
         "homepageUrl": "http://bytecoin.org",
@@ -43,19 +45,21 @@
         "releases": [],
         "data": {
             "2017-47": {
-                "stars": 226,
+                "stars": 228,
                 "users": 6
             }
-        }
+        },
+        "rank": "",
+        "team": ""
     },
     {
         "owner": "ArkEcosystem",
         "name": "ark-node",
         "id": "MDEwOlJlcG9zaXRvcnk3MzQ5NjE3Mw==",
         "description": ":money_with_wings: CryptoCurrency for all",
-        "createdAt": "2016-11-11T17:08:05Z",
+        "createdAt": "2016-11-11T17:08",
         "homepageUrl": "https://ark.io",
-        "pushedAt": "2017-11-09T07:47:58Z",
+        "pushedAt": "2017-11-23T14:48",
         "languages": [
             "JavaScript",
             "PLpgSQL",
@@ -75,8 +79,8 @@
                 "users": 17
             },
             "2017-47": {
-                "stars": 67,
-                "users": 17
+                "stars": 69,
+                "users": 18
             }
         },
         "releases": [
@@ -96,16 +100,21 @@
                 "publishedAt": "2017-02-13T22:26:20Z"
             }
         ],
-        "url": "https://github.com/ArkEcosystem/ark-node"
+        "url": "https://github.com/ArkEcosystem/ark-node",
+        "ownername": "ArkEcosystem/ark-node",
+        "coinname": "ARK",
+        "symbol": "ARK",
+        "rank": "",
+        "team": ""
     },
     {
         "owner": "AugurProject",
         "name": "augur-core",
         "id": "MDEwOlJlcG9zaXRvcnkyNzYyMzgwNg==",
         "description": "Augur back-end (Ethereum contracts)",
-        "createdAt": "2014-12-06T05:42:19Z",
+        "createdAt": "2014-12-06T05:42",
         "homepageUrl": "https://www.augur.net",
-        "pushedAt": "2017-11-21T02:15:18Z",
+        "pushedAt": "2017-11-25T18:06",
         "languages": [
             "Python",
             "TypeScript",
@@ -125,28 +134,40 @@
                 "users": 24
             },
             "2017-47": {
-                "stars": 281,
+                "stars": 284,
                 "users": 25
             }
         },
         "releases": [
+            {
+                "name": null,
+                "description": null,
+                "publishedAt": null
+            },
             {
                 "name": "Working Master Release",
                 "description": "",
                 "publishedAt": "2017-03-30T04:32:20Z"
             }
         ],
-        "url": "https://github.com/AugurProject/augur-core"
+        "url": "https://github.com/AugurProject/augur-core",
+        "ownername": "AugurProject/augur-core",
+        "coinname": "Augur",
+        "symbol": "REP",
+        "rank": "",
+        "team": ""
     },
     {
         "owner": "AventusSystems",
         "name": "aventus-dapp-proposals",
         "id": "MDEwOlJlcG9zaXRvcnkxMDA2MjYyNDI=",
         "description": "Proposals for DApp ideas for the Aventus Protocol DApp Idea Competition",
-        "createdAt": "2017-08-17T16:56:52Z",
+        "createdAt": "2017-08-17T16:56",
         "homepageUrl": "",
-        "pushedAt": "2017-09-03T15:21:05Z",
-        "languages": [],
+        "pushedAt": "2017-09-03T15:21",
+        "languages": [
+            ""
+        ],
         "data": {
             "2017-43": {
                 "stars": 7,
@@ -166,17 +187,20 @@
             }
         },
         "releases": [],
-        "url": "https://github.com/AventusSystems/aventus-dapp-proposals"
+        "url": "https://github.com/AventusSystems/aventus-dapp-proposals",
+        "ownername": "AventusSystems/aventus-dapp-proposals",
+        "coinname": "Aventus",
+        "symbol": "AVT"
     },
     {
         "owner": "BitClubDev",
         "name": "ClubCoin",
         "id": "MDEwOlJlcG9zaXRvcnk0Njc5OTEwMw==",
         "description": "ClubCoin cryptocurrency software",
-        "createdAt": "2015-11-24T15:07:17Z",
+        "createdAt": "2015-11-24T15:07",
         "url": "https://github.com/BitClubDev/ClubCoin",
-        "homepageUrl": null,
-        "pushedAt": "2017-02-21T03:32:07Z",
+        "homepageUrl": "",
+        "pushedAt": "2017-02-21T03:32",
         "releases": [
             {
                 "name": "ClubCoin 1.2.0",
@@ -205,10 +229,13 @@
                 "users": 10
             },
             "2017-47": {
-                "stars": 3,
+                "stars": 5,
                 "users": 10
             }
-        }
+        },
+        "ownername": "BitClubDev/ClubCoin",
+        "coinname": "Clubcoin",
+        "symbol": "CLUB"
     },
     {
         "ownername": "bitcoin/bitcoin",
@@ -220,7 +247,7 @@
         "description": "Bitcoin Core integration/staging tree",
         "createdAt": "2010-12-19T15:16:43Z",
         "homepageUrl": "https://bitcoin.org/en/download",
-        "pushedAt": "2017-11-20T23:28:16Z",
+        "pushedAt": "2017-11-25T21:14:47Z",
         "languages": [
             "C++",
             "Python",
@@ -285,7 +312,7 @@
                 "users": 487
             },
             "2017-47": {
-                "stars": 19427,
+                "stars": 19631,
                 "users": 488
             }
         }
@@ -295,9 +322,9 @@
         "name": "bitshares-core",
         "id": "MDEwOlJlcG9zaXRvcnk0NDEyMzI1Mg==",
         "description": "Your share in the Decentralized Exchange",
-        "createdAt": "2015-10-12T17:36:04Z",
+        "createdAt": "2015-10-12T17:36",
         "homepageUrl": "https://bitshares.org/",
-        "pushedAt": "2017-11-20T21:51:24Z",
+        "pushedAt": "2017-11-25T19:54",
         "languages": [
             "C++",
             "CMake",
@@ -317,7 +344,7 @@
                 "users": 14
             },
             "2017-47": {
-                "stars": 426,
+                "stars": 433,
                 "users": 14
             }
         },
@@ -373,16 +400,21 @@
                 "publishedAt": "2017-03-28T09:36:04Z"
             }
         ],
-        "url": "https://github.com/bitshares/bitshares-core"
+        "url": "https://github.com/bitshares/bitshares-core",
+        "ownername": "bitshares/bitshares-core",
+        "coinname": "Bitshares",
+        "symbol": "BTS",
+        "rank": "",
+        "team": ""
     },
     {
         "owner": "brave-intl",
         "name": "basic-attention-token-crowdsale",
         "id": "MDEwOlJlcG9zaXRvcnk4NTE1MzQ3Mw==",
         "description": "Basic Attention Token",
-        "createdAt": "2017-03-16T04:42:59Z",
+        "createdAt": "2017-03-16T04:42",
         "homepageUrl": "https://basicattentiontoken.org/",
-        "pushedAt": "2017-08-15T00:38:06Z",
+        "pushedAt": "2017-08-15T00:38",
         "languages": [
             "TeX",
             "Makefile"
@@ -401,22 +433,25 @@
                 "users": 9
             },
             "2017-47": {
-                "stars": 87,
+                "stars": 89,
                 "users": 9
             }
         },
         "releases": [],
-        "url": "https://github.com/brave-intl/basic-attention-token-crowdsale"
+        "url": "https://github.com/brave-intl/basic-attention-token-crowdsale",
+        "ownername": "brave-intl/basic-attention-token-crowdsale",
+        "coinname": "Bat",
+        "symbol": "BAT"
     },
     {
         "owner": "BTCGPU",
         "name": "BTCGPU",
         "id": "MDEwOlJlcG9zaXRvcnk5ODA3Nzk2Nw==",
         "description": "Current work on BTCGPU",
-        "createdAt": "2017-07-23T05:59:24Z",
+        "createdAt": "2017-07-23T05:59",
         "url": "https://github.com/BTCGPU/BTCGPU",
         "homepageUrl": "http://bitcoingold.org",
-        "pushedAt": "2017-11-20T15:10:56Z",
+        "pushedAt": "2017-11-21T10:15",
         "releases": [
             {
                 "name": "Bitcoin Gold 0.15.0.1",
@@ -435,20 +470,25 @@
                 "users": 77
             },
             "2017-47": {
-                "stars": 381,
-                "users": 80
+                "stars": 390,
+                "users": 81
             }
-        }
+        },
+        "ownername": "BTCGPU/BTCGPU",
+        "coinname": "Bitcoingold",
+        "symbol": "BTG"
     },
     {
         "owner": "CentraTech",
         "name": "smart-contract",
         "id": "MDEwOlJlcG9zaXRvcnk5NzA4MTY1Mw==",
-        "description": null,
-        "createdAt": "2017-07-13T04:59:25Z",
-        "homepageUrl": null,
-        "pushedAt": "2017-07-16T00:27:55Z",
-        "languages": [],
+        "description": "",
+        "createdAt": "2017-07-13T04:59",
+        "homepageUrl": "",
+        "pushedAt": "2017-07-16T00:27",
+        "languages": [
+            ""
+        ],
         "data": {
             "2017-47": {
                 "stars": 6,
@@ -458,17 +498,17 @@
         "releases": [],
         "url": "https://github.com/CentraTech/smart-contract",
         "ownername": "CentraTech/smart-contract",
-        "coinname": "",
-        "symbol": ""
+        "coinname": "Centra",
+        "symbol": "CTR"
     },
     {
         "owner": "CoinBlack",
         "name": "blackcoin",
         "id": "MDEwOlJlcG9zaXRvcnk0MDk2NDkyNg==",
         "description": "BlackCoin Core integration/staging tree",
-        "createdAt": "2015-08-18T10:08:00Z",
+        "createdAt": "2015-08-18T10:08",
         "homepageUrl": "http://blackcoin.co",
-        "pushedAt": "2017-10-20T13:44:00Z",
+        "pushedAt": "2017-10-20T13:44",
         "languages": [
             "C++",
             "Python",
@@ -504,7 +544,12 @@
                 "publishedAt": "2017-03-29T18:28:24Z"
             }
         ],
-        "url": "https://github.com/CoinBlack/blackcoin"
+        "url": "https://github.com/CoinBlack/blackcoin",
+        "ownername": "CoinBlack/blackcoin",
+        "coinname": "BlackCoin",
+        "symbol": "BLK",
+        "rank": "",
+        "team": ""
     },
     {
         "owner": "dashpay",
@@ -513,7 +558,7 @@
         "description": "Dash - Reinventing Cryptocurrency",
         "createdAt": "2014-05-01T17:45:34Z",
         "homepageUrl": "https://www.dash.org",
-        "pushedAt": "2017-11-20T20:25:33Z",
+        "pushedAt": "2017-11-25T01:33:53Z",
         "languages": [
             "C++",
             "C",
@@ -533,7 +578,7 @@
                 "users": 5
             },
             "2017-47": {
-                "stars": 672,
+                "stars": 685,
                 "users": 5
             }
         },
@@ -599,9 +644,9 @@
         "name": "digibyte",
         "id": "MDEwOlJlcG9zaXRvcnkxNTg0ODM2Mg==",
         "description": "DigiByte Core 6.14.2 - CURRENT",
-        "createdAt": "2014-01-12T18:53:08Z",
+        "createdAt": "2014-01-12T18:53",
         "homepageUrl": "http://digibyte.co",
-        "pushedAt": "2017-11-18T14:32:56Z",
+        "pushedAt": "2017-11-25T21:33",
         "languages": [
             "C++",
             "C",
@@ -621,7 +666,7 @@
                 "users": 422
             },
             "2017-47": {
-                "stars": 127,
+                "stars": 129,
                 "users": 424
             }
         },
@@ -642,15 +687,20 @@
                 "publishedAt": "2014-11-26T07:17:02Z"
             }
         ],
-        "url": "https://github.com/digibyte/digibyte"
+        "url": "https://github.com/digibyte/digibyte",
+        "ownername": "digibyte/digibyte",
+        "coinname": "DigiByte",
+        "symbol": "DGB",
+        "rank": "",
+        "team": ""
     },
     {
         "ownername": "DistrictOx/ethlance",
         "id": "",
         "owner": "DistrictOx",
         "name": "ethlance",
-        "coinname": "",
-        "symbol": "",
+        "coinname": "DistrictOx",
+        "symbol": "DNT",
         "description": "",
         "createdAt": "",
         "homepageUrl": "",
@@ -658,16 +708,18 @@
         "languages": [
             ""
         ],
-        "url": ""
+        "url": "",
+        "releases": null,
+        "data": null
     },
     {
         "owner": "dogecoin",
         "name": "dogecoin",
         "id": "MDEwOlJlcG9zaXRvcnkxNDk4MTM3Ng==",
         "description": "very currency",
-        "createdAt": "2013-12-06T11:38:05Z",
+        "createdAt": "2013-12-06T11:38",
         "homepageUrl": "",
-        "pushedAt": "2017-11-19T22:22:46Z",
+        "pushedAt": "2017-11-19T22:22",
         "languages": [
             "C++",
             "C",
@@ -687,7 +739,7 @@
                 "users": 156
             },
             "2017-47": {
-                "stars": 1404,
+                "stars": 1412,
                 "users": 156
             }
         },
@@ -743,19 +795,24 @@
                 "publishedAt": "2014-10-06T17:01:09Z"
             }
         ],
-        "url": "https://github.com/dogecoin/dogecoin"
+        "url": "https://github.com/dogecoin/dogecoin",
+        "ownername": "dogecoin/dogecoin",
+        "coinname": "Dogecoin",
+        "symbol": "DOGE",
+        "rank": "",
+        "team": ""
     },
     {
         "ownername": "dzimbeck/BitBay",
         "id": "MDEwOlJlcG9zaXRvcnk1NjE5MDgzMQ==",
         "owner": "dzimbeck",
         "name": "BitBay",
-        "coinname": "",
-        "symbol": "",
+        "coinname": "Bitbay",
+        "symbol": "BAY",
         "description": "BitBay Source Code",
-        "createdAt": "2016-04-13T22:41:46Z",
-        "homepageUrl": null,
-        "pushedAt": "2017-11-16T21:08:40Z",
+        "createdAt": "2016-04-13T22:41",
+        "homepageUrl": "",
+        "pushedAt": "2017-11-16T21:08",
         "languages": [
             "C++",
             "Python",
@@ -775,13 +832,15 @@
         "id": "MDEwOlJlcG9zaXRvcnk3NjU3MDYwMQ==",
         "owner": "EdgelessCasino",
         "name": "Smart-Contracts",
-        "coinname": "",
-        "symbol": "",
+        "coinname": "Edgeless",
+        "symbol": "EDG",
         "description": "Edgeless Token Smart Contracts",
-        "createdAt": "2016-12-15T15:15:31Z",
+        "createdAt": "2016-12-15T15:15",
         "homepageUrl": "",
-        "pushedAt": "2017-05-22T10:56:37Z",
-        "languages": [],
+        "pushedAt": "2017-05-22T10:56",
+        "languages": [
+            ""
+        ],
         "url": "https://github.com/EdgelessCasino/Smart-Contracts",
         "releases": [],
         "data": {
@@ -796,12 +855,12 @@
         "id": "MDEwOlJlcG9zaXRvcnk3NzU1NjU4NQ==",
         "owner": "eidoo",
         "name": "eth-lightwallet",
-        "coinname": "",
-        "symbol": "",
+        "coinname": "Eidoo",
+        "symbol": "EDO",
         "description": "Lightweight JS Wallet for Node and the browser ",
-        "createdAt": "2016-12-28T19:35:31Z",
-        "homepageUrl": null,
-        "pushedAt": "2017-11-02T15:32:15Z",
+        "createdAt": "2016-12-28T19:35",
+        "homepageUrl": "",
+        "pushedAt": "2017-11-02T15:32",
         "languages": [
             "JavaScript",
             "HTML"
@@ -824,9 +883,9 @@
         "name": "elastic.github.io",
         "id": "MDEwOlJlcG9zaXRvcnk4Nzk0OTA0Nw==",
         "description": "Elastic Official Website Repository",
-        "createdAt": "2017-04-11T15:15:52Z",
+        "createdAt": "2017-04-11T15:15",
         "homepageUrl": "http://www.elastic.pw",
-        "pushedAt": "2017-10-30T09:32:21Z",
+        "pushedAt": "2017-10-30T09:32",
         "languages": [
             "HTML"
         ],
@@ -849,19 +908,24 @@
             }
         },
         "releases": [],
-        "url": "https://github.com/elastic-coin/elastic.github.io"
+        "url": "https://github.com/elastic-coin/elastic.github.io",
+        "ownername": "elastic-coin/elastic.github.io",
+        "coinname": "Elastic",
+        "symbol": "XEL",
+        "rank": "",
+        "team": ""
     },
     {
         "ownername": "emc2foundation/einsteinium",
         "id": "MDEwOlJlcG9zaXRvcnk5NTk4MzE4Ng==",
         "owner": "emc2foundation",
         "name": "einsteinium",
-        "coinname": "",
-        "symbol": "",
+        "coinname": "Einsteinium",
+        "symbol": "EMC2",
         "description": "Litecoin source tree",
-        "createdAt": "2017-07-01T19:15:43Z",
+        "createdAt": "2017-07-01T19:15",
         "homepageUrl": "http://www.litecoin.org",
-        "pushedAt": "2017-10-21T10:05:48Z",
+        "pushedAt": "2017-10-21T10:05",
         "languages": [
             "C++",
             "Python",
@@ -875,7 +939,7 @@
                 "users": 1
             },
             "2017-47": {
-                "stars": 8,
+                "stars": 9,
                 "users": 1
             }
         }
@@ -887,7 +951,7 @@
         "description": "An open source smart contract platform ",
         "createdAt": "2017-04-05T17:09:53Z",
         "homepageUrl": "https://eosio.github.io/eos/",
-        "pushedAt": "2017-11-21T04:12:25Z",
+        "pushedAt": "2017-11-25T20:36:55Z",
         "languages": [
             "WebAssembly",
             "C++",
@@ -907,8 +971,8 @@
                 "users": 61
             },
             "2017-47": {
-                "stars": 1437,
-                "users": 61
+                "stars": 1475,
+                "users": 62
             }
         },
         "releases": [
@@ -935,7 +999,7 @@
         "description": "Official Go implementation of the Ethereum protocol",
         "createdAt": "2013-12-26T13:05:46Z",
         "homepageUrl": "https://geth.ethereum.org",
-        "pushedAt": "2017-11-20T16:39:54Z",
+        "pushedAt": "2017-11-24T19:42:32Z",
         "languages": [
             "Go",
             "C",
@@ -955,11 +1019,16 @@
                 "users": 204
             },
             "2017-47": {
-                "stars": 9032,
-                "users": 204
+                "stars": 9165,
+                "users": 207
             }
         },
         "releases": [
+            {
+                "name": "Weir (v1.7.3)",
+                "description": "Geth v1.7.3 ([Weir](https://en.wikipedia.org/wiki/Weir)) is a maintenance release to address various issues in our previous releases, most importantly along log filtering and replacement transaction propagation. The release also contains a few developer niceties. **Please see compatibility section below!**\r\n\r\n**New features:**\r\n\r\n * Roll out v2 of the `les` light client protocol (https://github.com/ethereum/go-ethereum/pull/14970, https://github.com/ethereum/go-ethereum/pull/15367, https://github.com/ethereum/go-ethereum/pull/15391).\r\n * Insta-mining, zero CPU, clique based PoA developer mode `--dev` (https://github.com/ethereum/go-ethereum/pull/15323).\r\n * Add API endpoint to list modified accounts between two blocks (https://github.com/ethereum/go-ethereum/pull/15512).\r\n * Gas estimation returns error instead of maxgas if transaction cannot be executed (https://github.com/ethereum/go-ethereum/pull/15477).\r\n * Improve EVM jump destination analysis for worst case scenarios (https://github.com/ethereum/go-ethereum/pull/14582).\r\n * Enforce `application/json` for HTTP RPC requests (https://github.com/ethereum/go-ethereum/pull/15220, https://github.com/ethereum/go-ethereum/pull/15496).\r\n * Private network faucet support Facebook, Twitter and Google+ authentication (https://github.com/ethereum/go-ethereum/pull/15313).\r\n * Support encrypted SSH keys in the Puppeth network manager (https://github.com/ethereum/go-ethereum/pull/15443).\r\n * Introduce docker images containing all Ethereum tools (https://github.com/ethereum/go-ethereum/pull/15467).\r\n * Start shipping Ubuntu Artful Aardvark launchpad packages (https://github.com/ethereum/go-ethereum/pull/15344).\r\n\r\n**Squashed bugs:**\r\n\r\n * Fix log filtering when specifying non-8-multiple starting block number (https://github.com/ethereum/go-ethereum/pull/15489).\r\n * Fix replacement transaction propagation (https://github.com/ethereum/go-ethereum/pull/15343).\r\n * Reduce disk overhead on keystore startup (https://github.com/ethereum/go-ethereum/pull/15526, https://github.com/ethereum/go-ethereum/pull/15527, https://github.com/ethereum/go-ethereum/pull/15529).\r\n * Fix occasional Rinkeby chain split by additional fork selection logic (https://github.com/ethereum/go-ethereum/pull/15470).\r\n * Fix JavaScript tracing to permit working with `Address` types (https://github.com/ethereum/go-ethereum/pull/15297).\r\n * Fix missing commit hash in docker image versions (https://github.com/ethereum/go-ethereum/pull/15458, https://github.com/ethereum/go-ethereum/pull/15464).\r\n\r\n**Compatibility caveats:**\r\n\r\n * All HTTP RPC requests from now on need to have the `Content-Type: application/json` header set on them. Geth v1.7.3 will **refuse** to service requests with no content type headers set (or headers with different content types). This is a security measure to counter a browser CORS circumvention technique.\r\n * Geth v1.7.3 ships with `les/2` light client support, which might have harder time finding light servers initially until the server providers upgrade to v1.7.3 too.\r\n\r\nFor a full rundown of changes, please see the [v1.7.3](https://github.com/ethereum/go-ethereum/milestone/59?closed=1) milestone.\r\n\r\n**As always, binaries and mobile libraries are available on our [download page](https://geth.ethereum.org/downloads/)**.",
+                "publishedAt": "2017-11-21T10:41:22Z"
+            },
             {
                 "name": "Urgent Update (v1.7.2)",
                 "description": "**Geth 1.7.2 is a hotfix release to address a DOS vulnerability in the EVM starting at Byzantium. Please upgrade before block 4_370_000!**\r\n\r\nPre-built binaries should be available shortly at https://geth.ethereum.org/downloads/.",
@@ -1004,11 +1073,6 @@
                 "name": "Nonce, Inc. (v1.6.2)",
                 "description": "**Nuked: Please see https://github.com/ethereum/go-ethereum/releases/tag/v1.6.4.**\r\n\r\nThis is mostly a maintenance release with new features added around transaction handling:\r\n\r\n- Server-side tx nonce assignment works for concurrent RPC calls to sendTransaction (#14516).\r\n- The transaction pool accepts transactions with any gas price (#14442).\r\n- **(potentially breaking change)** Key imports enforce private key length of 32 bytes (#14502). This affects the `personal_importRawKey` RPC method.\r\n\r\nPreviously hidden transaction pool defaults can now be set:\r\n\r\n```\r\n--txpool.pricelimit value    Minimum gas price limit to enforce for acceptance into the pool (default: 1)\r\n--txpool.pricebump value     Price bump percentage to replace an already existing transaction (default: 10)\r\n--txpool.accountslots value  Minimum number of executable transaction slots guaranteed per account (default: 16)\r\n--txpool.globalslots value   Maximum number of executable transaction slots for all accounts (default: 4096)\r\n--txpool.accountqueue value  Maximum number of non-executable transaction slots permitted per account (default: 64)\r\n--txpool.globalqueue value   Maximum number of non-executable transaction slots for all accounts (default: 1024)\r\n--txpool.lifetime value      Maximum amount of time non-executable transaction are queued (default: 3h0m0s)\r\n```\r\n\r\nFor other minor changes in this release, see the [1.6.2 milestone](https://github.com/ethereum/go-ethereum/milestone/49?closed=1).\r\n\r\n**Binaries and mobile libraries are available on our [download page](https://geth.ethereum.org/downloads/).**",
                 "publishedAt": "2017-05-31T09:01:20Z"
-            },
-            {
-                "name": "Deripors of Ohratuu (v1.6.1)",
-                "description": "Geth 1.6.1 is mostly a bugfix release adding various polishes throughout the codebase.\r\n\r\nHighlights of the release are the capability to iterate over a contract's storage entries via the RPC; transitioning [Whisper to protocol v5](https://github.com/ethereum/go-ethereum/wiki/Whisper) along with bundled diagnostics tools; and shorthand connectivity to the Rinkeby test network.\r\n\r\nFor a detailed rundown, please consult the [1.6.1 milestone](https://github.com/ethereum/go-ethereum/milestone/48?closed=1).\r\n\r\n### New features:\r\n\r\n \r\n * `debug_storageRangeAt` RPC supports iterating over contract storage entries (https://github.com/ethereum/go-ethereum/pull/14350).\r\n * Switch Whisper to protocol v5 (https://github.com/ethereum/go-ethereum/pull/14387), ship diagnostic tool (https://github.com/ethereum/go-ethereum/pull/14414).\r\n * Add `--rinkeby` flag to quickly connect to the Rinkeby testnet (https://github.com/ethereum/go-ethereum/pull/14418).\r\n * Support disabling USB hardware wallet lookups (https://github.com/ethereum/go-ethereum/pull/14357).\r\n * GitHub faucet bot protection (https://github.com/ethereum/go-ethereum/pull/14339) and funding tiers (https://github.com/ethereum/go-ethereum/pull/14402).\r\n * Add explicit SSH server key management for `puppeth` (https://github.com/ethereum/go-ethereum/pull/14398).\r\n * `geth init` and `geth removedb` operate on both full and light chains (https://github.com/ethereum/go-ethereum/pull/14412).\r\n\r\n\r\n### Bugfixes and annoyances:\r\n\r\n * Forbid leading zeroes in RPC block numbers (https://github.com/ethereum/go-ethereum/pull/13886).\r\n * Friendly error if the user tries to reinit its chain with an incompatible genesis (https://github.com/ethereum/go-ethereum/pull/14358).\r\n * Return `[]` instead of `null` when listing accounts but none can be found (https://github.com/ethereum/go-ethereum/pull/14374).\r\n * When generating bootnode keys, print and exit, don't start up node (https://github.com/ethereum/go-ethereum/pull/14372).\r\n * Make network IDs uniform uint64 everywhere (https://github.com/ethereum/go-ethereum/pull/14377).\r\n * Fix data race in during native dapp node restarts (https://github.com/ethereum/go-ethereum/pull/14379).\r\n * Support setting flags after sub-commands too (https://github.com/ethereum/go-ethereum/pull/14388, https://github.com/ethereum/go-ethereum/pull/14413).\r\n * Fix `clique` miner ugly error log when starting a new network (https://github.com/ethereum/go-ethereum/pull/14411).\r\n\r\n**Binaries and mobile libraries are available on our [download page](https://geth.ethereum.org/downloads/).**",
-                "publishedAt": "2017-05-04T11:57:18Z"
             }
         ],
         "url": "https://github.com/ethereum/go-ethereum",
@@ -1021,9 +1085,9 @@
         "name": "ethereumclassic.github.io",
         "id": "MDEwOlJlcG9zaXRvcnk2MzQwMjE4Ng==",
         "description": "Ethereum Classic Website",
-        "createdAt": "2016-07-15T07:43:41Z",
+        "createdAt": "2016-07-15T07:43",
         "homepageUrl": "http://ethereumclassic.github.io",
-        "pushedAt": "2017-11-21T06:15:54Z",
+        "pushedAt": "2017-11-25T13:37",
         "languages": [
             "HTML"
         ],
@@ -1048,17 +1112,17 @@
         "releases": [],
         "url": "https://github.com/ethereumclassic/ethereumclassic.github.io",
         "ownername": "ethereumclassic/ethereumclassic.github.io",
-        "coinname": "",
-        "symbol": ""
+        "coinname": "Ethereumclassic",
+        "symbol": "ETC"
     },
     {
         "owner": "FactomProject",
         "name": "factomd",
         "id": "MDEwOlJlcG9zaXRvcnk0MjY2NDA4NA==",
         "description": "Factom Daemon ",
-        "createdAt": "2015-09-17T15:21:26Z",
+        "createdAt": "2015-09-17T15:21",
         "homepageUrl": "",
-        "pushedAt": "2017-11-17T23:37:46Z",
+        "pushedAt": "2017-11-21T20:32",
         "languages": [
             "Go",
             "Shell",
@@ -1078,36 +1142,44 @@
                 "users": 61
             },
             "2017-47": {
-                "stars": 89,
+                "stars": 90,
                 "users": 61
             }
         },
         "releases": [],
-        "url": "https://github.com/FactomProject/factomd"
+        "url": "https://github.com/FactomProject/factomd",
+        "ownername": "FactomProject/factomd",
+        "coinname": "Factom",
+        "symbol": "FCT"
     },
     {
         "owner": "FeatherCoin",
         "name": "Feathercoin",
         "id": "MDEwOlJlcG9zaXRvcnkxMzg4NzEzOA==",
-        "description": null,
-        "createdAt": "2013-10-26T16:52:25Z",
+        "description": "",
+        "createdAt": "2013-10-26T16:52",
         "url": "https://github.com/FeatherCoin/Feathercoin",
         "homepageUrl": "https://www.feathercoin.com/",
-        "pushedAt": "2017-11-20T23:28:39Z",
+        "pushedAt": "2017-11-21T14:32",
         "releases": [
+            {
+                "name": "final 0.9.6.2 bug fix release",
+                "description": "\r\n[Feathercoin-0.9.6.2-prod.tar.gz](https://github.com/FeatherCoin/Feathercoin/files/1499913/Feathercoin-0.9.6.2-prod.tar.gz)\r\nThis is a bug fix release, which also has improved speed of block chain synchronization \r\n\r\nPlease report bugs using the issue tracker at github:\r\n\r\nhttps://github.com/Feathercoin/Feathercoin/issues\r\n\r\nFixes:\r\n\r\n    Problem with Static Builds with Windows (issue #155)\r\n    copyright updated (issue #156)\r\n    changes in message displays (issue #157)\r\n    new protocol version number (issue #158)\r\n    changes to unit tests (issue #159)\r\n    fix to format errors on Multisig GUI page (issue #160)\r\n    solo mining not working, getwork borken (issue #166)\r\n    ACP in advisory mode crashes cliend (issue #169)\r\n    ACP enforced config parameter not handled correctly in 0.9.6 (issue #170)\r\n    fix to connections problems for incomming connections from 0.11.x nodes (issue #171)\r\n    fix to gui display problems (# issue #180)\r\n    updates to configure script to fix dependicy detection problems (issue #190)\r\n    RPC dumpwallet issue empty content (issue #236)\r\n    Zxing header files are required, even if --with-qrcode=no is defined (issue #249)",
+                "publishedAt": "2017-11-21T14:32:36Z"
+            },
             {
                 "name": "0.9 Bugfixes",
                 "description": "Several bug fixes and increased performance of block chain sync\r\n\r\nFixes:\r\n\r\n- Problem with Static Builds with Windows (issue #155)\r\n- copyright updated (issue #156)\r\n- changes in message displays (issue #157)\r\n- new protocol version number (issue #158)\r\n- changes to unit tests (issue #159)\r\n- fix to format errors on Multisig GUI page (issue #160)\r\n- solo mining not working, getwork borken (issue #166)\r\n- ACP in advisory mode crashes cliend (issue #169)\r\n- ACP enforced config parameter not handled correctly in 0.9.6 (issue #170)\r\n- fix to connections problems for incomming connections from 0.11.x nodes (issue #171)\r\n- fix to gui display problems (# issue #180)\r\n- updates to configure script to fix dependicy detection problems (issue #190)\r\n- RPC dumpwallet issue empty content (issue #236)",
                 "publishedAt": "2017-11-20T18:23:27Z"
             },
             {
-                "name": "0.9.6.1 Bugfixes for 0.9.6 tree",
+                "name": "0.9.6.1 Bugfixes for 0.9.6 tree (Outdated)",
                 "description": "This is a bugfix release.\r\n\r\nIssues Fixed:\r\n\r\n    - When a 0.11.x node connects, the connection will be with 'invalid pchMessageStart in 0.9.6 and earlier versions. (Github Issue #171) This has been fixed by implementing pchMessageStartNew constant to allow future 0.11.x nodes to connect.\r\n\r\n    - The configuration parameter 'enfoce checkpoint was not handled correctly in 0.9.6, when set. (Github issues #169,#170)\r\n\r\n    - A formating error on the Multisig GUI page was fixed (Github issue #160)\r\n\r\n    - Log messages get id numbers (Github issue #157)\r\n\r\n    - Test section was updated ( Github issues #120 - #127)\r\n",
                 "publishedAt": "2017-07-12T19:40:00Z"
             },
             {
-                "name": "New Gui, support for Block version 4",
-                "description": "## This is a new major version release, bringing both new features and bug fixes.\n\nPlease report bugs using the issue tracker at github:\nhttps://github.com/Feathercoin/Feathercoin/issues\n\n### Binaries / installation packages:\n- Mac : attached\n- Windows: atached\n- Linux ( most major distributions): \n  - Download: http://software.opensuse.org/package/feathercoin\n  - Installation instructions Debian/Ubuntu: http://forum.feathercoin.com/topic/8327/guide-feathercoin-wallet-ppa-and-binaries-on-ubuntu-and-debian-linux\n\n### Fixes:\n- Automated build tests fixed - Feathercoin v0.9.6 now includes automated unit tests from Bitcoin v0.9\n- Fixed Miniupnpc > 1.6 - There was a bug in the code that didn\u2019t agree with versions of miniupnpc greater than version 1.6\n- Fixed \u201cAmbiguous Overload\u201d build error from chainparams.cpp when building with C++11 support\n- Fixed buffer overflow bug in Coins.cpp\n- Refreshed MacOS DMG background -updated icon size and position\n- Fixed a build issue with MacOS build and the Multi-Sig QT page\n- Fixed a C++11 build error \u201cC++11 requires a space between literal and identifier\u201d on main.cpp, wallet.cpp, walletmodel.cpp\n\n### Enhancements:\n- Feathercoin-cli manpage added\n  - updated feathercoind, feathercoin-qt, feathercoin.conf manpages\n",
+                "name": "New Gui, support for Block version 4 (outdated)",
+                "description": "## This is a new major version release, bringing both new features and bug fixes.\r\n\r\nPlease report bugs using the issue tracker at github:\r\nhttps://github.com/Feathercoin/Feathercoin/issues\r\n\r\n### Binaries / installation packages:\r\n- Mac : attached\r\n- Windows: atached\r\n- Linux ( most major distributions): \r\n  - Download: http://software.opensuse.org/package/feathercoin\r\n  - Installation instructions Debian/Ubuntu: http://forum.feathercoin.com/topic/8327/guide-feathercoin-wallet-ppa-and-binaries-on-ubuntu-and-debian-linux\r\n\r\n### Fixes:\r\n- Automated build tests fixed - Feathercoin v0.9.6 now includes automated unit tests from Bitcoin v0.9\r\n- Fixed Miniupnpc > 1.6 - There was a bug in the code that didn\u2019t agree with versions of miniupnpc greater than version 1.6\r\n- Fixed \u201cAmbiguous Overload\u201d build error from chainparams.cpp when building with C++11 support\r\n- Fixed buffer overflow bug in Coins.cpp\r\n- Refreshed MacOS DMG background -updated icon size and position\r\n- Fixed a build issue with MacOS build and the Multi-Sig QT page\r\n- Fixed a C++11 build error \u201cC++11 requires a space between literal and identifier\u201d on main.cpp, wallet.cpp, walletmodel.cpp\r\n\r\n### Enhancements:\r\n- Feathercoin-cli manpage added\r\n  - updated feathercoind, feathercoin-qt, feathercoin.conf manpages\r\n",
                 "publishedAt": "2017-01-31T16:26:12Z"
             },
             {
@@ -1132,20 +1204,23 @@
                 "users": 193
             },
             "2017-47": {
-                "stars": 89,
+                "stars": 90,
                 "users": 193
             }
-        }
+        },
+        "ownername": "FeatherCoin/Feathercoin",
+        "coinname": "Feathercoin",
+        "symbol": "FTC"
     },
     {
         "owner": "florincoin",
         "name": "florincoin",
         "id": "MDEwOlJlcG9zaXRvcnkyMDkyNDMyOA==",
         "description": "Florin",
-        "createdAt": "2014-06-17T13:28:34Z",
+        "createdAt": "2014-06-17T13:28",
         "url": "https://github.com/florincoin/florincoin",
         "homepageUrl": "http://www.florincoin.org",
-        "pushedAt": "2017-06-26T10:21:38Z",
+        "pushedAt": "2017-06-26T10:21",
         "releases": [
             {
                 "name": "v0.10.4.4",
@@ -1172,17 +1247,20 @@
                 "stars": 18,
                 "users": 3
             }
-        }
+        },
+        "ownername": "florincoin/florincoin",
+        "coinname": "Florincoin",
+        "symbol": "FLO"
     },
     {
         "owner": "gamers-coin",
         "name": "gamecredits",
         "id": "MDEwOlJlcG9zaXRvcnkxNjk2Mjk3Nw==",
         "description": "GameCredits Digital Gaming Crypto Currency Source tree",
-        "createdAt": "2014-02-18T20:40:54Z",
+        "createdAt": "2014-02-18T20:40",
         "url": "https://github.com/gamers-coin/gamecredits",
         "homepageUrl": "http://gamecredits.net",
-        "pushedAt": "2016-10-05T10:38:54Z",
+        "pushedAt": "2016-10-05T10:38",
         "releases": [],
         "languages": [
             "C++",
@@ -1198,19 +1276,22 @@
                 "stars": 8,
                 "users": 6
             }
-        }
+        },
+        "ownername": "gamers-coin/gamecredits",
+        "coinname": "Gamecredits",
+        "symbol": "GAME"
     },
     {
         "ownername": "GenesisVision/ico-contracts",
         "id": "MDEwOlJlcG9zaXRvcnk5Njc3MjU5Mw==",
         "owner": "GenesisVision",
         "name": "ico-contracts",
-        "coinname": "",
-        "symbol": "",
+        "coinname": "Genesisvision",
+        "symbol": "GVT",
         "description": "Genesis Vision ICO Ethereum Smart contracts",
-        "createdAt": "2017-07-10T12:00:48Z",
+        "createdAt": "2017-07-10T12:00",
         "homepageUrl": "https://genesis.vision",
-        "pushedAt": "2017-09-11T20:39:21Z",
+        "pushedAt": "2017-09-11T20:39",
         "languages": [
             "JavaScript"
         ],
@@ -1219,7 +1300,7 @@
         "data": {
             "2017-47": {
                 "stars": 7,
-                "users": 7
+                "users": 6
             }
         }
     },
@@ -1228,9 +1309,9 @@
         "name": "gnosis-contracts",
         "id": "MDEwOlJlcG9zaXRvcnk5MTgwNDM2OQ==",
         "description": "Collection of smart contracts for the Gnosis prediction market platform.",
-        "createdAt": "2017-05-19T12:38:57Z",
+        "createdAt": "2017-05-19T12:38",
         "homepageUrl": "https://www.gnosis.pm",
-        "pushedAt": "2017-11-20T17:58:45Z",
+        "pushedAt": "2017-11-22T23:41",
         "languages": [
             "Python",
             "JavaScript",
@@ -1306,16 +1387,21 @@
                 "publishedAt": "2017-07-03T21:04:06Z"
             }
         ],
-        "url": "https://github.com/gnosis/gnosis-contracts"
+        "url": "https://github.com/gnosis/gnosis-contracts",
+        "ownername": "gnosis/gnosis-contracts",
+        "coinname": "Gnosis",
+        "symbol": "GNO",
+        "rank": "",
+        "team": ""
     },
     {
         "owner": "golemfactory",
         "name": "golem",
         "id": "MDEwOlJlcG9zaXRvcnk0NjQzMzkzNw==",
         "description": "Golem is creating a global market for computing power.",
-        "createdAt": "2015-11-18T17:02:35Z",
+        "createdAt": "2015-11-18T17:02",
         "homepageUrl": "https://golem.network",
-        "pushedAt": "2017-11-21T06:30:21Z",
+        "pushedAt": "2017-11-24T17:25",
         "languages": [
             "Python",
             "C",
@@ -1335,7 +1421,7 @@
                 "users": 38
             },
             "2017-47": {
-                "stars": 1702,
+                "stars": 1719,
                 "users": 38
             }
         },
@@ -1386,19 +1472,22 @@
                 "publishedAt": "2017-03-01T14:27:47Z"
             }
         ],
-        "url": "https://github.com/golemfactory/golem"
+        "url": "https://github.com/golemfactory/golem",
+        "ownername": "golemfactory/golem",
+        "coinname": "Golem",
+        "symbol": "GNT"
     },
     {
         "ownername": "Groestlcoin/groestlcoin",
         "id": "MDEwOlJlcG9zaXRvcnkzOTI2MDE5Mw==",
         "owner": "Groestlcoin",
         "name": "groestlcoin",
-        "coinname": "",
-        "symbol": "",
+        "coinname": "Groestlcoin",
+        "symbol": "GRS",
         "description": "Groestlcoin Core integration/staging tree",
-        "createdAt": "2015-07-17T15:10:36Z",
+        "createdAt": "2015-07-17T15:10",
         "homepageUrl": "http://groestlcoin.org/downloads",
-        "pushedAt": "2017-07-24T09:32:28Z",
+        "pushedAt": "2017-07-24T09:32",
         "languages": [
             "C++",
             "Python",
@@ -1429,9 +1518,9 @@
         "name": "gulden-official",
         "id": "MDEwOlJlcG9zaXRvcnk0MDY1MzYyMA==",
         "description": "The official repository for Gulden core wallet, updated at each release.",
-        "createdAt": "2015-08-13T10:46:44Z",
+        "createdAt": "2015-08-13T10:46",
         "homepageUrl": "https://www.gulden.com",
-        "pushedAt": "2017-10-16T20:38:26Z",
+        "pushedAt": "2017-10-16T20:38",
         "languages": [
             "C++",
             "Python",
@@ -1451,7 +1540,7 @@
                 "users": 292
             },
             "2017-47": {
-                "stars": 56,
+                "stars": 57,
                 "users": 292
             }
         },
@@ -1507,17 +1596,20 @@
                 "publishedAt": "2016-12-23T07:23:47Z"
             }
         ],
-        "url": "https://github.com/Gulden/gulden-official"
+        "url": "https://github.com/Gulden/gulden-official",
+        "ownername": "Gulden/gulden-official",
+        "coinname": "Gulden",
+        "symbol": "NLG"
     },
     {
         "owner": "gxchain",
         "name": "gxb-core",
         "id": "MDEwOlJlcG9zaXRvcnk5OTg5NDYyNw==",
         "description": "GXB-Core",
-        "createdAt": "2017-08-10T07:29:52Z",
+        "createdAt": "2017-08-10T07:29",
         "url": "https://github.com/gxchain/gxb-core",
         "homepageUrl": "https://www.gxb.io/",
-        "pushedAt": "2017-11-20T03:30:00Z",
+        "pushedAt": "2017-11-20T03:30",
         "releases": [
             {
                 "name": "GXB-Core Release v1.0.171031",
@@ -1544,16 +1636,19 @@
                 "stars": 36,
                 "users": 7
             }
-        }
+        },
+        "ownername": "gxchain/gxb-core",
+        "coinname": "Gxshares",
+        "symbol": "GXS"
     },
     {
         "owner": "HcashOrg",
         "name": "Hshare",
         "id": "MDEwOlJlcG9zaXRvcnk5NTczOTQ4NA==",
-        "description": null,
-        "createdAt": "2017-06-29T04:46:02Z",
-        "homepageUrl": null,
-        "pushedAt": "2017-09-20T11:47:56Z",
+        "description": "",
+        "createdAt": "2017-06-29T04:46",
+        "homepageUrl": "",
+        "pushedAt": "2017-09-20T11:47",
         "languages": [
             "C",
             "C++",
@@ -1573,8 +1668,8 @@
                 "users": 13
             },
             "2017-47": {
-                "stars": 64,
-                "users": 13
+                "stars": 65,
+                "users": 14
             }
         },
         "releases": [
@@ -1596,17 +1691,17 @@
         ],
         "url": "https://github.com/HcashOrg/Hshare",
         "ownername": "HcashOrg/Hshare",
-        "coinname": "",
-        "symbol": ""
+        "coinname": "Hshare",
+        "symbol": "HSR"
     },
     {
         "owner": "hempcoin-project",
         "name": "THC",
         "id": "MDEwOlJlcG9zaXRvcnkxNzM4Mjg3OA==",
         "description": "Hempcoin Crypto Currency and Crypto-Stash",
-        "createdAt": "2014-03-03T22:47:02Z",
-        "homepageUrl": null,
-        "pushedAt": "2017-10-29T02:50:45Z",
+        "createdAt": "2014-03-03T22:47",
+        "homepageUrl": "",
+        "pushedAt": "2017-10-29T02:50",
         "languages": [
             "C++",
             "HTML",
@@ -1637,16 +1732,19 @@
                 "publishedAt": "2017-10-14T14:28:01Z"
             }
         ],
-        "url": "https://github.com/hempcoin-project/THC"
+        "url": "https://github.com/hempcoin-project/THC",
+        "ownername": "hempcoin-project/THC",
+        "coinname": "Hempcoin",
+        "symbol": "THC"
     },
     {
         "owner": "iExecBlockchainComputing",
         "name": "rlc-token",
         "id": "MDEwOlJlcG9zaXRvcnk4MzY0OTQ3Nw==",
         "description": "RLC Token for the iEx.ec project",
-        "createdAt": "2017-03-02T07:42:57Z",
-        "homepageUrl": null,
-        "pushedAt": "2017-10-04T12:09:42Z",
+        "createdAt": "2017-03-02T07:42",
+        "homepageUrl": "",
+        "pushedAt": "2017-10-04T12:09",
         "languages": [
             "JavaScript",
             "Shell"
@@ -1670,16 +1768,19 @@
             }
         },
         "releases": [],
-        "url": "https://github.com/iExecBlockchainComputing/rlc-token"
+        "url": "https://github.com/iExecBlockchainComputing/rlc-token",
+        "ownername": "iExecBlockchainComputing/rlc-token",
+        "coinname": "iexec",
+        "symbol": "RLC"
     },
     {
         "owner": "Infinitecoin",
         "name": "infinitecoin",
         "id": "MDEwOlJlcG9zaXRvcnkxMTA2MzMwNw==",
-        "description": null,
-        "createdAt": "2013-06-30T02:17:26Z",
-        "homepageUrl": null,
-        "pushedAt": "2014-05-01T22:48:19Z",
+        "description": "",
+        "createdAt": "2013-06-30T02:17",
+        "homepageUrl": "",
+        "pushedAt": "2014-05-01T22:48",
         "languages": [
             "TypeScript",
             "C++",
@@ -1706,17 +1807,17 @@
         "releases": [],
         "url": "https://github.com/infinitecoin/infinitecoin",
         "ownername": "Infinitecoin/infinitecoin",
-        "coinname": "",
-        "symbol": ""
+        "coinname": "InfiniteCoin",
+        "symbol": "IFC"
     },
     {
         "owner": "input-output-hk",
         "name": "cardano-sl",
         "id": "MDEwOlJlcG9zaXRvcnk3MDkxMzk5Nw==",
         "description": "Cryptographic currency implementing Ouroboros PoS protocol",
-        "createdAt": "2016-10-14T13:44:38Z",
+        "createdAt": "2016-10-14T13:44",
         "homepageUrl": "",
-        "pushedAt": "2017-11-21T05:28:35Z",
+        "pushedAt": "2017-11-25T21:54",
         "languages": [
             "Haskell",
             "PureScript",
@@ -1736,7 +1837,7 @@
                 "users": 53
             },
             "2017-47": {
-                "stars": 418,
+                "stars": 433,
                 "users": 53
             }
         },
@@ -1764,17 +1865,17 @@
         ],
         "url": "https://github.com/input-output-hk/cardano-sl",
         "ownername": "input-output-hk/cardano-sl",
-        "coinname": "",
-        "symbol": ""
+        "coinname": "Cardano",
+        "symbol": "ADA"
     },
     {
         "owner": "iotaledger",
         "name": "iota.lib.js",
         "id": "MDEwOlJlcG9zaXRvcnk2Nzg2MDg2Mg==",
         "description": "IOTA Javascript Library",
-        "createdAt": "2016-09-10T08:49:13Z",
+        "createdAt": "2016-09-10T08:49",
         "homepageUrl": "https://dev.iota.org",
-        "pushedAt": "2017-11-09T22:22:17Z",
+        "pushedAt": "2017-11-25T11:43",
         "languages": [
             "JavaScript"
         ],
@@ -1792,7 +1893,7 @@
                 "users": 22
             },
             "2017-47": {
-                "stars": 200,
+                "stars": 208,
                 "users": 22
             }
         },
@@ -1848,17 +1949,20 @@
                 "publishedAt": "2017-07-07T18:07:28Z"
             }
         ],
-        "url": "https://github.com/iotaledger/iota.lib.js"
+        "url": "https://github.com/iotaledger/iota.lib.js",
+        "ownername": "iotaledger/iota.lib.js",
+        "coinname": "Iota",
+        "symbol": "IOT"
     },
     {
         "owner": "KyberNetwork",
         "name": "smart-contracts",
         "id": "MDEwOlJlcG9zaXRvcnk5NjAxMTY0Nw==",
-        "description": null,
-        "createdAt": "2017-07-02T08:39:01Z",
+        "description": "",
+        "createdAt": "2017-07-02T08:39",
         "url": "https://github.com/KyberNetwork/smart-contracts",
-        "homepageUrl": null,
-        "pushedAt": "2017-11-20T11:32:37Z",
+        "homepageUrl": "",
+        "pushedAt": "2017-11-23T20:59",
         "releases": [],
         "languages": [
             "JavaScript"
@@ -1874,17 +1978,19 @@
             }
         },
         "ownername": "KyberNetwork/smart-contracts",
-        "coinname": "",
-        "symbol": ""
+        "coinname": "Kyber Network",
+        "symbol": "KNC",
+        "rank": "56",
+        "team": ""
     },
     {
         "owner": "LiskHQ",
         "name": "lisk",
         "id": "MDEwOlJlcG9zaXRvcnk1MDg3MzY0MQ==",
         "description": "\ud83d\udcdf Lisk blockchain application platform",
-        "createdAt": "2016-02-01T21:45:35Z",
+        "createdAt": "2016-02-01T21:45",
         "homepageUrl": "https://lisk.io/",
-        "pushedAt": "2017-11-20T20:35:20Z",
+        "pushedAt": "2017-11-25T20:30",
         "languages": [
             "JavaScript",
             "PLpgSQL"
@@ -1903,7 +2009,7 @@
                 "users": 41
             },
             "2017-47": {
-                "stars": 1398,
+                "stars": 1434,
                 "users": 41
             }
         },
@@ -1959,7 +2065,12 @@
                 "publishedAt": "2017-07-05T13:24:34Z"
             }
         ],
-        "url": "https://github.com/LiskHQ/lisk"
+        "url": "https://github.com/LiskHQ/lisk",
+        "ownername": "LiskHQ/lisk",
+        "coinname": "Lisk",
+        "symbol": "LSK",
+        "rank": "19",
+        "team": ""
     },
     {
         "owner": "litecoin-project",
@@ -1988,11 +2099,31 @@
                 "users": 11
             },
             "2017-47": {
-                "stars": 1959,
+                "stars": 1973,
                 "users": 11
             }
         },
         "releases": [
+            {
+                "name": "",
+                "description": "For the release notes please see the git repository:\r\n\r\nhttps://github.com/litecoin-project/litecoin/blob/v0.15.0.1rc1/doc/release-notes-litecoin.md",
+                "publishedAt": "2017-11-22T03:27:45Z"
+            },
+            {
+                "name": "Litecoin Core v0.10.4.0",
+                "description": "For the release notes please see the git repository:\r\n\r\nhttps://github.com/litecoin-project/litecoin/blob/v0.10.4.0/doc/release-notes-litecoin.md",
+                "publishedAt": "2017-11-22T03:22:16Z"
+            },
+            {
+                "name": "Litecoin Core v0.14.2",
+                "description": "For the release notes please see the git repository:\r\n\r\nhttps://github.com/litecoin-project/litecoin/blob/v0.14.2/doc/release-notes-litecoin.md",
+                "publishedAt": "2017-11-22T03:20:44Z"
+            },
+            {
+                "name": "Litecoin Core v0.13.3",
+                "description": "For the release notes please see the git repository:\r\n\r\nhttps://github.com/litecoin-project/litecoin/blob/v0.13.3/doc/release-notes-litecoin.md",
+                "publishedAt": "2017-11-22T03:20:18Z"
+            },
             {
                 "name": "Litecoin Core 0.13.2.1",
                 "description": "For the release notes please see the git repository:\n\nhttps://github.com/litecoin-project/litecoin/blob/v0.13.2.1/doc/release-notes-litecoin.md\n",
@@ -2014,9 +2145,9 @@
         "name": "safe_client_libs",
         "id": "MDEwOlJlcG9zaXRvcnkzMjAyMDUzMw==",
         "description": "SAFE Network client side rust module(s)",
-        "createdAt": "2015-03-11T13:58:08Z",
+        "createdAt": "2015-03-11T13:58",
         "homepageUrl": "",
-        "pushedAt": "2017-11-20T16:57:41Z",
+        "pushedAt": "2017-11-24T16:12",
         "languages": [
             "Rust"
         ],
@@ -2039,17 +2170,22 @@
             }
         },
         "releases": [],
-        "url": "https://github.com/maidsafe/safe_client_libs"
+        "url": "https://github.com/maidsafe/safe_client_libs",
+        "ownername": "maidsafe/safe_client_libs",
+        "coinname": "Maidsafecoin",
+        "symbol": "MAID"
     },
     {
         "owner": "MetalPay",
         "name": "metal-token",
         "id": "MDEwOlJlcG9zaXRvcnk5NDgyMTU1Ng==",
         "description": "Source and audit results of the MTL ERC20 token.",
-        "createdAt": "2017-06-19T21:15:05Z",
-        "homepageUrl": null,
-        "pushedAt": "2017-08-17T15:39:58Z",
-        "languages": [],
+        "createdAt": "2017-06-19T21:15",
+        "homepageUrl": "",
+        "pushedAt": "2017-08-17T15:39",
+        "languages": [
+            ""
+        ],
         "data": {
             "2017-43": {
                 "stars": 3,
@@ -2069,16 +2205,19 @@
             }
         },
         "releases": [],
-        "url": "https://github.com/MetalPay/metal-token"
+        "url": "https://github.com/MetalPay/metal-token",
+        "ownername": "MetalPay/metal-token",
+        "coinname": "Metal",
+        "symbol": "MTL"
     },
     {
         "owner": "monacoinproject",
         "name": "monacoin",
         "id": "MDEwOlJlcG9zaXRvcnkxNTU1ODMzMw==",
-        "description": null,
-        "createdAt": "2013-12-31T23:43:01Z",
-        "homepageUrl": null,
-        "pushedAt": "2017-10-10T08:17:26Z",
+        "description": "",
+        "createdAt": "2013-12-31T23:43",
+        "homepageUrl": "",
+        "pushedAt": "2017-10-10T08:17",
         "languages": [
             "C++",
             "C",
@@ -2098,7 +2237,7 @@
                 "users": 426
             },
             "2017-47": {
-                "stars": 119,
+                "stars": 121,
                 "users": 426
             }
         },
@@ -2149,16 +2288,19 @@
                 "publishedAt": "2015-08-24T06:12:23Z"
             }
         ],
-        "url": "https://github.com/monacoinproject/monacoin"
+        "url": "https://github.com/monacoinproject/monacoin",
+        "ownername": "monacoinproject/monacoin",
+        "coinname": "Monacoin",
+        "symbol": "MONA"
     },
     {
         "owner": "monero-project",
         "name": "monero",
         "id": "MDEwOlJlcG9zaXRvcnkxOTMxNjYxOQ==",
         "description": "Monero: the secure, private, untraceable cryptocurrency",
-        "createdAt": "2014-04-30T14:38:28Z",
+        "createdAt": "2014-04-30T14:38",
         "homepageUrl": "https://getmonero.org",
-        "pushedAt": "2017-11-20T21:34:25Z",
+        "pushedAt": "2017-11-25T21:25",
         "languages": [
             "C++",
             "C",
@@ -2178,8 +2320,8 @@
                 "users": 131
             },
             "2017-47": {
-                "stars": 1450,
-                "users": 131
+                "stars": 1481,
+                "users": 132
             }
         },
         "releases": [
@@ -2234,17 +2376,20 @@
                 "publishedAt": "2016-03-22T07:12:33Z"
             }
         ],
-        "url": "https://github.com/monero-project/monero"
+        "url": "https://github.com/monero-project/monero",
+        "ownername": "monero-project/monero",
+        "coinname": "Monero",
+        "symbol": "XMR"
     },
     {
         "owner": "mvs-org",
         "name": "metaverse",
         "id": "MDEwOlJlcG9zaXRvcnk3MjMzNTg1NQ==",
         "description": "The metaverse blockchain service and command-line tools in C++ 14 implementation",
-        "createdAt": "2016-10-30T07:36:52Z",
+        "createdAt": "2016-10-30T07:36",
         "url": "https://github.com/mvs-org/metaverse",
         "homepageUrl": "https://mvs.org",
-        "pushedAt": "2017-11-20T11:49:05Z",
+        "pushedAt": "2017-11-24T11:09",
         "releases": [],
         "languages": [
             "C++",
@@ -2257,19 +2402,22 @@
                 "users": 11
             },
             "2017-47": {
-                "stars": 87,
+                "stars": 89,
                 "users": 11
             }
-        }
+        },
+        "ownername": "mvs-org/metaverse",
+        "coinname": "Metaverse",
+        "symbol": "ETP"
     },
     {
         "owner": "NAVCoin",
         "name": "navcoin-core",
         "id": "MDEwOlJlcG9zaXRvcnk4Mjc2MjQzNw==",
         "description": "bitcoin-core 0.13 fork ported for Nav Coin",
-        "createdAt": "2017-02-22T04:57:00Z",
+        "createdAt": "2017-02-22T04:57",
         "homepageUrl": "",
-        "pushedAt": "2017-11-21T00:06:16Z",
+        "pushedAt": "2017-11-24T10:10",
         "languages": [
             "C++",
             "C",
@@ -2289,7 +2437,7 @@
                 "users": 10
             },
             "2017-47": {
-                "stars": 31,
+                "stars": 32,
                 "users": 10
             }
         },
@@ -2330,16 +2478,19 @@
                 "publishedAt": "2017-08-20T23:06:06Z"
             }
         ],
-        "url": "https://github.com/NAVCoin/navcoin-core"
+        "url": "https://github.com/NAVCoin/navcoin-core",
+        "ownername": "NAVCoin/navcoin-core",
+        "coinname": "Navcoin",
+        "symbol": "NAV"
     },
     {
         "owner": "NebulousLabs",
         "name": "Sia",
         "id": "MDEwOlJlcG9zaXRvcnkyNTM3MDA3Mg==",
         "description": "Blockchain-based marketplace for file storage",
-        "createdAt": "2014-10-17T17:50:25Z",
+        "createdAt": "2014-10-17T17:50",
         "homepageUrl": "https://sia.tech",
-        "pushedAt": "2017-11-20T00:35:04Z",
+        "pushedAt": "2017-11-25T12:23",
         "languages": [
             "Go",
             "Makefile",
@@ -2359,7 +2510,7 @@
                 "users": 40
             },
             "2017-47": {
-                "stars": 1770,
+                "stars": 1775,
                 "users": 40
             }
         },
@@ -2415,16 +2566,19 @@
                 "publishedAt": "2016-10-25T15:16:30Z"
             }
         ],
-        "url": "https://github.com/NebulousLabs/Sia"
+        "url": "https://github.com/NebulousLabs/Sia",
+        "ownername": "NebulousLabs/Sia",
+        "coinname": "Siacoin",
+        "symbol": "SC"
     },
     {
         "owner": "NemProject",
         "name": "nem.core",
         "id": "MDEwOlJlcG9zaXRvcnkzNDIxNjMzOA==",
         "description": "org.nem.core package",
-        "createdAt": "2015-04-19T17:24:03Z",
+        "createdAt": "2015-04-19T17:24",
         "homepageUrl": "http://nem.io",
-        "pushedAt": "2017-11-06T08:46:55Z",
+        "pushedAt": "2017-11-06T08:46",
         "languages": [
             "Java",
             "Batchfile"
@@ -2443,21 +2597,24 @@
                 "users": 4
             },
             "2017-47": {
-                "stars": 133,
+                "stars": 134,
                 "users": 4
             }
         },
         "releases": [],
-        "url": "https://github.com/NemProject/nem.core"
+        "url": "https://github.com/NemProject/nem.core",
+        "ownername": "NemProject/nem.core",
+        "coinname": "Nem",
+        "symbol": "XEM"
     },
     {
         "owner": "neo-project",
         "name": "neo",
         "id": "MDEwOlJlcG9zaXRvcnkzNjYxMzAzNg==",
         "description": "NEO Smart Economy",
-        "createdAt": "2015-05-31T17:02:33Z",
+        "createdAt": "2015-05-31T17:02",
         "homepageUrl": "",
-        "pushedAt": "2017-11-20T10:07:41Z",
+        "pushedAt": "2017-11-24T07:12",
         "languages": [
             "C#"
         ],
@@ -2475,24 +2632,27 @@
                 "users": 32
             },
             "2017-47": {
-                "stars": 1131,
+                "stars": 1156,
                 "users": 32
             }
         },
         "releases": [],
-        "url": "https://github.com/neo-project/neo"
+        "url": "https://github.com/neo-project/neo",
+        "ownername": "neo-project/neo",
+        "coinname": "Neo",
+        "symbol": "NEO"
     },
     {
         "ownername": "nuls-io/nuls",
         "id": "MDEwOlJlcG9zaXRvcnkxMDUwOTQwNDQ=",
         "owner": "nuls-io",
         "name": "nuls",
-        "coinname": "",
-        "symbol": "",
-        "description": null,
-        "createdAt": "2017-09-28T02:42:23Z",
-        "homepageUrl": null,
-        "pushedAt": "2017-11-21T06:18:25Z",
+        "coinname": "Nuls",
+        "symbol": "NULS",
+        "description": "",
+        "createdAt": "2017-09-28T02:42",
+        "homepageUrl": "",
+        "pushedAt": "2017-11-24T10:15",
         "languages": [
             "Java",
             "Shell",
@@ -2502,7 +2662,7 @@
         "releases": [],
         "data": {
             "2017-47": {
-                "stars": 24,
+                "stars": 27,
                 "users": 5
             }
         }
@@ -2512,9 +2672,9 @@
         "name": "okcash",
         "id": "MDEwOlJlcG9zaXRvcnk3NTE0OTIwOQ==",
         "description": "OKcash (source-code) - OK Core integration/staging tree.",
-        "createdAt": "2016-11-30T03:52:02Z",
+        "createdAt": "2016-11-30T03:52",
         "homepageUrl": "",
-        "pushedAt": "2017-11-09T09:39:21Z",
+        "pushedAt": "2017-11-09T09:39",
         "languages": [
             "C++",
             "JavaScript",
@@ -2534,7 +2694,7 @@
                 "users": 112
             },
             "2017-47": {
-                "stars": 154,
+                "stars": 155,
                 "users": 112
             }
         },
@@ -2590,16 +2750,19 @@
                 "publishedAt": "2016-11-30T08:34:34Z"
             }
         ],
-        "url": "https://github.com/okcashpro/okcash"
+        "url": "https://github.com/okcashpro/okcash",
+        "ownername": "okcashpro/okcash",
+        "coinname": "Okcash",
+        "symbol": "OK"
     },
     {
         "owner": "openvcash",
         "name": "vcash",
         "id": "MDEwOlJlcG9zaXRvcnk3NTQxNTUzMQ==",
         "description": "A decentralized currency for the internet.",
-        "createdAt": "2016-12-02T17:13:31Z",
+        "createdAt": "2016-12-02T17:13",
         "homepageUrl": "https://vcash.info",
-        "pushedAt": "2017-11-01T19:38:17Z",
+        "pushedAt": "2017-11-01T19:38",
         "languages": [
             "C++",
             "C",
@@ -2640,7 +2803,10 @@
                 "publishedAt": "2017-03-27T16:56:24Z"
             }
         ],
-        "url": "https://github.com/openvcash/vcash"
+        "url": "https://github.com/openvcash/vcash",
+        "ownername": "openvcash/vcash",
+        "coinname": "Vcash",
+        "symbol": "XVC"
     },
     {
         "ownername": "OxProjects/contracts",
@@ -2663,9 +2829,9 @@
         "name": "qtum",
         "id": "MDEwOlJlcG9zaXRvcnk4Mzc3NDkwNg==",
         "description": "Beyond the Qtum prototype",
-        "createdAt": "2017-03-03T08:17:11Z",
+        "createdAt": "2017-03-03T08:17",
         "homepageUrl": "https://qtum.org",
-        "pushedAt": "2017-11-20T15:09:33Z",
+        "pushedAt": "2017-11-24T16:10",
         "languages": [
             "C++",
             "Python",
@@ -2685,7 +2851,7 @@
                 "users": 435
             },
             "2017-47": {
-                "stars": 376,
+                "stars": 389,
                 "users": 435
             }
         },
@@ -2741,19 +2907,22 @@
                 "publishedAt": "2017-08-17T18:07:36Z"
             }
         ],
-        "url": "https://github.com/qtumproject/qtum"
+        "url": "https://github.com/qtumproject/qtum",
+        "ownername": "qtumproject/qtum",
+        "coinname": "Qtum",
+        "symbol": "QTUM"
     },
     {
         "ownername": "raiden-network/raiden",
         "id": "MDEwOlJlcG9zaXRvcnk1MDY0Njc2Nw==",
         "owner": "raiden-network",
         "name": "raiden",
-        "coinname": "",
-        "symbol": "",
+        "coinname": "Raidennetwork",
+        "symbol": "RDN",
         "description": "Raiden Network",
-        "createdAt": "2016-01-29T07:40:47Z",
-        "homepageUrl": null,
-        "pushedAt": "2017-11-21T06:35:06Z",
+        "createdAt": "2016-01-29T07:40",
+        "homepageUrl": "",
+        "pushedAt": "2017-11-24T17:21",
         "languages": [
             "Python",
             "TypeScript",
@@ -2814,7 +2983,7 @@
         ],
         "data": {
             "2017-47": {
-                "stars": 867,
+                "stars": 886,
                 "users": 38
             }
         }
@@ -2824,12 +2993,12 @@
         "id": "MDEwOlJlcG9zaXRvcnkxMDQ1MDk0NTA=",
         "owner": "ripio",
         "name": "rcn-token",
-        "coinname": "",
-        "symbol": "",
-        "description": null,
-        "createdAt": "2017-09-22T19:09:30Z",
-        "homepageUrl": null,
-        "pushedAt": "2017-10-24T04:17:40Z",
+        "coinname": "Ripio",
+        "symbol": "RCN",
+        "description": "",
+        "createdAt": "2017-09-22T19:09",
+        "homepageUrl": "",
+        "pushedAt": "2017-10-24T04:17",
         "languages": [
             "JavaScript"
         ],
@@ -2849,7 +3018,7 @@
         "description": "Decentralized cryptocurrency blockchain daemon implementing the XRP Ledger in C++",
         "createdAt": "2011-11-07T04:40:15Z",
         "homepageUrl": "https://ripple.com/xrp",
-        "pushedAt": "2017-11-20T20:45:50Z",
+        "pushedAt": "2017-11-22T22:29:03Z",
         "languages": [
             "C++",
             "C",
@@ -2869,7 +3038,7 @@
                 "users": 72
             },
             "2017-47": {
-                "stars": 1676,
+                "stars": 1680,
                 "users": 72
             }
         },
@@ -2934,10 +3103,10 @@
         "owner": "RiseVision",
         "name": "rise-ts",
         "id": "MDEwOlJlcG9zaXRvcnk5ODQ1MTA3Nw==",
-        "description": null,
-        "createdAt": "2017-07-26T17:56:29Z",
-        "homepageUrl": null,
-        "pushedAt": "2017-09-24T11:48:57Z",
+        "description": "",
+        "createdAt": "2017-07-26T17:56",
+        "homepageUrl": "",
+        "pushedAt": "2017-09-24T11:48",
         "languages": [
             "TypeScript",
             "JavaScript"
@@ -2961,16 +3130,19 @@
             }
         },
         "releases": [],
-        "url": "https://github.com/RiseVision/rise-ts"
+        "url": "https://github.com/RiseVision/rise-ts",
+        "ownername": "RiseVision/rise-ts",
+        "coinname": "Rise",
+        "symbol": "RISE"
     },
     {
         "owner": "rubycoinorg",
         "name": "rubycoin",
         "id": "MDEwOlJlcG9zaXRvcnkxNjY4NDA1OQ==",
         "description": "A precious gem for the digital age.",
-        "createdAt": "2014-02-10T04:10:49Z",
-        "homepageUrl": null,
-        "pushedAt": "2017-11-20T02:03:15Z",
+        "createdAt": "2014-02-10T04:10",
+        "homepageUrl": "",
+        "pushedAt": "2017-11-20T02:03",
         "languages": [
             "C++",
             "Assembly",
@@ -2990,7 +3162,7 @@
                 "users": 5
             },
             "2017-47": {
-                "stars": 16,
+                "stars": 17,
                 "users": 5
             }
         },
@@ -3021,19 +3193,22 @@
                 "publishedAt": "2014-09-22T17:39:51Z"
             }
         ],
-        "url": "https://github.com/rubycoinorg/rubycoin"
+        "url": "https://github.com/rubycoinorg/rubycoin",
+        "ownername": "rubycoinorg/rubycoin",
+        "coinname": "Rubycoin",
+        "symbol": "RBY"
     },
     {
         "ownername": "saluscoin/salus",
         "id": "MDEwOlJlcG9zaXRvcnk0OTYwMjc2Mg==",
         "owner": "saluscoin",
         "name": "salus",
-        "coinname": "",
-        "symbol": "",
-        "description": null,
-        "createdAt": "2016-01-13T21:23:21Z",
-        "homepageUrl": null,
-        "pushedAt": "2016-09-19T14:30:04Z",
+        "coinname": "Salus",
+        "symbol": "SLS",
+        "description": "",
+        "createdAt": "2016-01-13T21:23",
+        "homepageUrl": "",
+        "pushedAt": "2016-09-19T14:30",
         "languages": [
             "C++",
             "Assembly",
@@ -3057,9 +3232,9 @@
         "name": "skycoin",
         "id": "MDEwOlJlcG9zaXRvcnkxNTQyNzgzNQ==",
         "description": "Skycoin Core and Wallet",
-        "createdAt": "2013-12-25T01:50:16Z",
+        "createdAt": "2013-12-25T01:50",
         "homepageUrl": "",
-        "pushedAt": "2017-11-20T15:59:51Z",
+        "pushedAt": "2017-11-25T14:32",
         "languages": [
             "Go",
             "TypeScript",
@@ -3079,8 +3254,8 @@
                 "users": 32
             },
             "2017-47": {
-                "stars": 225,
-                "users": 32
+                "stars": 228,
+                "users": 35
             }
         },
         "releases": [
@@ -3125,16 +3300,19 @@
                 "publishedAt": "2017-07-11T03:47:27Z"
             }
         ],
-        "url": "https://github.com/skycoin/skycoin"
+        "url": "https://github.com/skycoin/skycoin",
+        "ownername": "skycoin/skycoin",
+        "coinname": "Skycoin",
+        "symbol": "SKY"
     },
     {
         "owner": "smartcontractkit",
         "name": "chainlink",
         "id": "MDEwOlJlcG9zaXRvcnk2ODM1MzQzMA==",
         "description": "Easily connect your applications to blockchains",
-        "createdAt": "2016-09-16T04:48:45Z",
+        "createdAt": "2016-09-16T04:48",
         "homepageUrl": "https://chainlink-docs.smartcontract.com",
-        "pushedAt": "2017-11-18T01:15:21Z",
+        "pushedAt": "2017-11-18T01:15",
         "languages": [
             "Ruby",
             "HTML",
@@ -3154,22 +3332,25 @@
                 "users": 4
             },
             "2017-47": {
-                "stars": 95,
+                "stars": 97,
                 "users": 5
             }
         },
         "releases": [],
-        "url": "https://github.com/smartcontractkit/chainlink"
+        "url": "https://github.com/smartcontractkit/chainlink",
+        "ownername": "smartcontractkit/chainlink",
+        "coinname": "Chainlink",
+        "symbol": "LINK"
     },
     {
         "owner": "status-im",
         "name": "status-react",
         "id": "MDEwOlJlcG9zaXRvcnk1MjMwODQ0MQ==",
         "description": "a free (libre) open source, mobile OS for Ethereum",
-        "createdAt": "2016-02-22T21:48:48Z",
+        "createdAt": "2016-02-22T21:48",
         "url": "https://github.com/status-im/status-react",
         "homepageUrl": "https://status.im",
-        "pushedAt": "2017-11-20T22:55:32Z",
+        "pushedAt": "2017-11-25T18:48",
         "releases": [
             {
                 "name": "0.9.4 (alpha)",
@@ -3213,19 +3394,22 @@
                 "users": 103
             },
             "2017-47": {
-                "stars": 1515,
-                "users": 105
+                "stars": 1531,
+                "users": 106
             }
-        }
+        },
+        "ownername": "status-im/status-react",
+        "coinname": "Status",
+        "symbol": "SNT"
     },
     {
         "owner": "stellar",
         "name": "stellar-core",
         "id": "MDEwOlJlcG9zaXRvcnkyNzA4NTgyMQ==",
         "description": "stellar-core is the backbone of the Stellar network. It maintains a local copy of the ledger, communicating and staying in sync with other instances of stellar-core on the network. Optionally, stellar-core can store historical records of the ledger and participate in consensus.",
-        "createdAt": "2014-11-24T17:11:12Z",
+        "createdAt": "2014-11-24T17:11",
         "homepageUrl": "",
-        "pushedAt": "2017-11-21T00:15:48Z",
+        "pushedAt": "2017-11-24T07:15",
         "languages": [
             "C++",
             "C",
@@ -3245,7 +3429,7 @@
                 "users": 46
             },
             "2017-47": {
-                "stars": 591,
+                "stars": 599,
                 "users": 46
             }
         },
@@ -3301,19 +3485,22 @@
                 "publishedAt": "2015-12-05T00:56:09Z"
             }
         ],
-        "url": "https://github.com/stellar/stellar-core"
+        "url": "https://github.com/stellar/stellar-core",
+        "ownername": "stellar/stellar-core",
+        "coinname": "Stellarlumens",
+        "symbol": "XLM"
     },
     {
         "ownername": "Storj/core",
         "id": "MDEwOlJlcG9zaXRvcnk1MDkzMzA1MA==",
         "owner": "Storj",
         "name": "core",
-        "coinname": "",
-        "symbol": "",
+        "coinname": "Storj",
+        "symbol": "STORJ",
         "description": "Implementation of the Storj protocol for Node.js",
-        "createdAt": "2016-02-02T16:10:31Z",
+        "createdAt": "2016-02-02T16:10",
         "homepageUrl": "https://storj.github.io/core",
-        "pushedAt": "2017-11-14T00:01:30Z",
+        "pushedAt": "2017-11-23T23:35",
         "languages": [
             "JavaScript"
         ],
@@ -3372,7 +3559,7 @@
         ],
         "data": {
             "2017-47": {
-                "stars": 370,
+                "stars": 372,
                 "users": 30
             }
         }
@@ -3382,9 +3569,9 @@
         "name": "StratisBitcoinFullNode",
         "id": "MDEwOlJlcG9zaXRvcnk2NzI3MTI5MA==",
         "description": "Bitcoin full node in C#",
-        "createdAt": "2016-09-03T04:32:51Z",
+        "createdAt": "2016-09-03T04:32",
         "homepageUrl": "https://stratisplatform.com",
-        "pushedAt": "2017-11-20T23:45:16Z",
+        "pushedAt": "2017-11-25T21:11",
         "languages": [
             "C#",
             "PowerShell",
@@ -3404,8 +3591,8 @@
                 "users": 54
             },
             "2017-47": {
-                "stars": 219,
-                "users": 54
+                "stars": 223,
+                "users": 55
             }
         },
         "releases": [
@@ -3420,16 +3607,19 @@
                 "publishedAt": "2017-01-19T18:15:55Z"
             }
         ],
-        "url": "https://github.com/stratisproject/StratisBitcoinFullNode"
+        "url": "https://github.com/stratisproject/StratisBitcoinFullNode",
+        "ownername": "stratisproject/StratisBitcoinFullNode",
+        "coinname": "Stratis",
+        "symbol": "STRAT"
     },
     {
         "owner": "syscoin",
         "name": "syscoin2",
         "id": "MDEwOlJlcG9zaXRvcnk1Mjc2MjI3OA==",
         "description": "Syscoin2 Core integration/staging tree",
-        "createdAt": "2016-02-29T03:47:32Z",
+        "createdAt": "2016-02-29T03:47",
         "homepageUrl": "https://syscoin.org",
-        "pushedAt": "2017-11-20T20:28:22Z",
+        "pushedAt": "2017-11-24T23:06",
         "languages": [
             "C++",
             "Python",
@@ -3449,11 +3639,16 @@
                 "users": 8
             },
             "2017-47": {
-                "stars": 41,
+                "stars": 43,
                 "users": 8
             }
         },
         "releases": [
+            {
+                "name": "Syscoin 2.2.0 with V1 Masternodes @ Testnet 1",
+                "description": "# Syscoin 2.2.0 MN Testnet 1 Release Notes\r\n\r\nThis is a NOT a mandatory update but is highly recommended for those who want to test Masternodes on Syscoin. It is not compatible with the current Syscoin Mainnet. Please only install this if you wish to setup and run a Masternode on the Syscoin testnet.\r\n\r\n\r\n\r\nFor more information on how to setup a masternode (currently only for Ubuntu 16.04 LTS users) [see this blog post](https://medium.com/p/e2d370c40b59/).  \r\n\r\n**This release is locked to testnet!**\r\n\r\n## Changes\r\n\r\n1) Support for Syscoin 2.2 core which is a fundamental rewrite of Syscoin and adds new Syscoin services and features\r\n2) Masternodes with bug fixes applied upstream to Dash core\r\n\r\nNote that the install path and Syscoin data directory has been renamed to Syscoincore from Syscoin\r\n\r\nPlease copy the provided syscoin.conf file to your Syscoincore data directory. **If you do not do so you will not be connected to our Masternode network**\r\n",
+                "publishedAt": "2017-11-21T22:47:25Z"
+            },
             {
                 "name": "Syscoin 2.1.6",
                 "description": "\r\n\r\n# Syscoin 2.1.6 Release Notes\r\n\r\nThis is a NOT a mandatory update but is highly recommended.\r\n\r\n## Changes\r\n\r\n1) Support for Blockmarket Desktop 1.1 (downloading Blockmarket Desktop will include 2.1.6 core already)\r\n   - Advanced aliases\r\n   - Bug fixes\r\n   - Pave the way for offchain anchoring in Blockmarket Web\r\n2) General bug fixes\r\n",
@@ -3498,24 +3693,22 @@
                 "name": "Syscoin 2.1 Beta 1",
                 "description": "This is a beta release of Syscoin 2.1 for public testing. For more information [see this blog post](http://syscoin.org/beta-2-1-solving-blockchain-bloat/).  \n\n**The release is locked to testnet!**\n",
                 "publishedAt": "2016-06-28T03:19:47Z"
-            },
-            {
-                "name": "Syscoin 2.0",
-                "description": "Official Syscoin 2.0 wallet. Major milestone for Syscoin development and introduces a large number of new RPC command and features some of which include:\n- All features use blockchain technology\n- Decentralized Marketplace\n- Name Aliases for easier addressing \n- Full Affiliate system for reselling, reseller discounts, and more\n- Private selling\n- Encrypted Messaging\n- Digital Certificates on the blockchain which can be directly sold on the Marketplace\n- Decentralized price pegging\n- Third party arbitrated escrow for secure transactions and buying with confidence\n\nSyscoin 2.0 runs on an entirely different blockchain than previous versions of Syscoin. Only the coin balances from Syscoin 1.0 will transfer to 2.0. Entities such as Aliases, Offers, etc on the original Syscoin blockchain will be discarded. \n\nFor instructions on how to convert from Syscoin 1.x to Syscoin 2.0 please [visit our FAQ](http://syscoin.org/faqs/convert-syscoin-1-0-syscoin-2-0/).\n",
-                "publishedAt": "2016-05-01T16:01:01Z"
             }
         ],
-        "url": "https://github.com/syscoin/syscoin2"
+        "url": "https://github.com/syscoin/syscoin2",
+        "ownername": "syscoin/syscoin2",
+        "coinname": "Syscoin",
+        "symbol": "SYS"
     },
     {
         "owner": "transferdev",
         "name": "Transfercoin",
         "id": "MDEwOlJlcG9zaXRvcnk0MDU2MDA1Mg==",
         "description": "source",
-        "createdAt": "2015-08-11T19:07:01Z",
+        "createdAt": "2015-08-11T19:07",
         "url": "https://github.com/transferdev/Transfercoin",
-        "homepageUrl": null,
-        "pushedAt": "2017-07-29T03:27:49Z",
+        "homepageUrl": "",
+        "pushedAt": "2017-07-29T03:27",
         "releases": [
             {
                 "name": "V1.2.4 Release",
@@ -3547,16 +3740,19 @@
                 "stars": 7,
                 "users": 6
             }
-        }
+        },
+        "ownername": "transferdev/Transfercoin",
+        "coinname": "Transfercoin",
+        "symbol": "TX"
     },
     {
         "owner": "unobtanium-official",
         "name": "Unobtanium",
         "id": "MDEwOlJlcG9zaXRvcnkyMDk1Nzg1MA==",
         "description": "Colder than CGB, Still shinier than BitBar  http://unobtanium.uno",
-        "createdAt": "2014-06-18T10:06:00Z",
-        "homepageUrl": null,
-        "pushedAt": "2017-11-20T00:17:36Z",
+        "createdAt": "2014-06-18T10:06",
+        "homepageUrl": "",
+        "pushedAt": "2017-11-20T00:17",
         "languages": [
             "C++",
             "Shell",
@@ -3581,16 +3777,19 @@
             }
         },
         "releases": [],
-        "url": "https://github.com/unobtanium-official/Unobtanium"
+        "url": "https://github.com/unobtanium-official/Unobtanium",
+        "ownername": "unobtanium-official/Unobtanium",
+        "coinname": "Unobtanium",
+        "symbol": "UNO"
     },
     {
         "owner": "vergecurrency",
         "name": "VERGE",
         "id": "MDEwOlJlcG9zaXRvcnk1MDIyMzEyOA==",
         "description": "official source code repository for VERGE cryptocurrency",
-        "createdAt": "2016-01-23T04:20:14Z",
+        "createdAt": "2016-01-23T04:20",
         "homepageUrl": "https://VergeCurrency.com",
-        "pushedAt": "2017-11-19T01:36:09Z",
+        "pushedAt": "2017-11-22T01:17",
         "languages": [
             "C",
             "C++",
@@ -3610,8 +3809,8 @@
                 "users": 16
             },
             "2017-47": {
-                "stars": 123,
-                "users": 16
+                "stars": 127,
+                "users": 17
             }
         },
         "releases": [
@@ -3626,16 +3825,19 @@
                 "publishedAt": "2017-06-11T03:42:28Z"
             }
         ],
-        "url": "https://github.com/vergecurrency/VERGE"
+        "url": "https://github.com/vergecurrency/VERGE",
+        "ownername": "vergecurrency/VERGE",
+        "coinname": "Verge",
+        "symbol": "XVG"
     },
     {
         "owner": "vertcoin",
         "name": "vertcoin",
         "id": "MDEwOlJlcG9zaXRvcnk4MTI1NzAxOQ==",
         "description": "A digital currency with mining decentralisation and ASIC resistance as a key focus",
-        "createdAt": "2017-02-07T21:38:35Z",
+        "createdAt": "2017-02-07T21:38",
         "homepageUrl": "https://vertcoin.org",
-        "pushedAt": "2017-11-21T02:42:08Z",
+        "pushedAt": "2017-11-21T14:54",
         "languages": [
             "C++",
             "C",
@@ -3655,15 +3857,15 @@
                 "users": 2
             },
             "2017-47": {
-                "stars": 133,
-                "users": 2
+                "stars": 140,
+                "users": 3
             }
         },
         "releases": [
             {
-                "name": null,
-                "description": null,
-                "publishedAt": null
+                "name": "0.12.0~RC2 ",
+                "description": "Second release candidate for Vertcoin Core 0.12.0. Over the previous RC, this version contains fixes for installation on OS X and a bug fix for reopening newly created wallets. This version is based off of upstream Bitcoin Core 0.15.1/0.15.2. To see a major list of changes, check the change logs from Bitcoin Core 0.13.2 (which v0.11 was based on) to 0.15.1.\r\n\r\nThis version of Vertcoin Core requires a new version of P2Pool to work that can be found on this branch: https://github.com/vertcoin/p2pool-vtc/commits/vardiff\r\n\r\nAs always, be sure to **back up your wallet.dat** _before_ running this new version, just in case.\r\n\r\nThis update contains no forks, so upgrading is optional.",
+                "publishedAt": "2017-11-21T14:54:49Z"
             },
             {
                 "name": "Mandatory Upgrade - UASF for SegWit starting on 31st May 2017 00:00:00 GMT",
@@ -3696,16 +3898,19 @@
                 "publishedAt": "2017-02-25T20:24:27Z"
             }
         ],
-        "url": "https://github.com/vertcoin/vertcoin"
+        "url": "https://github.com/vertcoin/vertcoin",
+        "ownername": "vertcoin/vertcoin",
+        "coinname": "Vertcoin",
+        "symbol": "VTC"
     },
     {
         "owner": "viacoin",
         "name": "viacoin",
         "id": "MDEwOlJlcG9zaXRvcnk5MTg4MTI2Mw==",
         "description": "Viacoin Core integration/staging tree",
-        "createdAt": "2017-05-20T10:16:53Z",
-        "homepageUrl": null,
-        "pushedAt": "2017-08-06T02:11:35Z",
+        "createdAt": "2017-05-20T10:16",
+        "homepageUrl": "",
+        "pushedAt": "2017-08-06T02:11",
         "languages": [
             "C++",
             "Python",
@@ -3746,19 +3951,22 @@
                 "publishedAt": "2017-05-22T20:04:27Z"
             }
         ],
-        "url": "https://github.com/viacoin/viacoin"
+        "url": "https://github.com/viacoin/viacoin",
+        "ownername": "viacoin/viacoin",
+        "coinname": "Viacoin",
+        "symbol": "VIA"
     },
     {
         "ownername": "viberate/Contract",
         "id": "MDEwOlJlcG9zaXRvcnkxMDI0NDQ0OTg=",
         "owner": "viberate",
         "name": "Contract",
-        "coinname": "",
-        "symbol": "",
-        "description": null,
-        "createdAt": "2017-09-05T06:45:07Z",
-        "homepageUrl": null,
-        "pushedAt": "2017-09-07T07:13:52Z",
+        "coinname": "Viberate",
+        "symbol": "VIB",
+        "description": "",
+        "createdAt": "2017-09-05T06:45",
+        "homepageUrl": "",
+        "pushedAt": "2017-09-07T07:13",
         "languages": [
             "JavaScript"
         ],
@@ -3776,9 +3984,9 @@
         "name": "waves",
         "id": "MDEwOlJlcG9zaXRvcnk1NjQyNjk3NQ==",
         "description": "Waves node application",
-        "createdAt": "2016-04-17T08:38:48Z",
+        "createdAt": "2016-04-17T08:38",
         "homepageUrl": "https://wavesplatform.com/",
-        "pushedAt": "2017-11-20T15:37:36Z",
+        "pushedAt": "2017-11-24T15:33",
         "languages": [
             "Scala",
             "JavaScript",
@@ -3798,7 +4006,7 @@
                 "users": 34
             },
             "2017-47": {
-                "stars": 279,
+                "stars": 285,
                 "users": 34
             }
         },
@@ -3854,16 +4062,19 @@
                 "publishedAt": "2017-08-17T15:21:44Z"
             }
         ],
-        "url": "https://github.com/wavesplatform/Waves"
+        "url": "https://github.com/wavesplatform/Waves",
+        "ownername": "wavesplatform/waves",
+        "coinname": "Waves",
+        "symbol": "WAVES"
     },
     {
         "owner": "xdn-project",
         "name": "digitalnote",
         "id": "MDEwOlJlcG9zaXRvcnkzNjk4ODEyOA==",
         "description": "DigitalNote XDN (duckNote, DarkNote) is a private cryptocurrency with ecrypted messages and deposits",
-        "createdAt": "2015-06-06T17:06:48Z",
+        "createdAt": "2015-06-06T17:06",
         "homepageUrl": "http://digitalnote.org",
-        "pushedAt": "2017-08-18T15:28:16Z",
+        "pushedAt": "2017-08-18T15:28",
         "languages": [
             "C++",
             "C",
@@ -3883,7 +4094,7 @@
                 "users": 1
             },
             "2017-47": {
-                "stars": 31,
+                "stars": 32,
                 "users": 1
             }
         },
@@ -3924,16 +4135,19 @@
                 "publishedAt": "2016-05-13T17:43:49Z"
             }
         ],
-        "url": "https://github.com/xdn-project/digitalnote"
+        "url": "https://github.com/xdn-project/digitalnote",
+        "ownername": "xdn-project/digitalnote",
+        "coinname": "Digitalnote",
+        "symbol": "XDN"
     },
     {
         "owner": "z-classic",
         "name": "zclassic",
         "id": "MDEwOlJlcG9zaXRvcnk3MjkwMjQ5OQ==",
         "description": "Zclassic is financial freedom.",
-        "createdAt": "2016-11-05T03:22:38Z",
+        "createdAt": "2016-11-05T03:22",
         "homepageUrl": "https://www.reddit.com/r/ZClassic/",
-        "pushedAt": "2017-11-10T18:25:10Z",
+        "pushedAt": "2017-11-10T18:25",
         "languages": [
             "C++",
             "C",
@@ -3994,16 +4208,19 @@
                 "publishedAt": "2016-11-20T03:52:56Z"
             }
         ],
-        "url": "https://github.com/z-classic/zclassic"
+        "url": "https://github.com/z-classic/zclassic",
+        "ownername": "z-classic/zclassic",
+        "coinname": "Zclassic",
+        "symbol": "ZCL"
     },
     {
         "owner": "zcash",
         "name": "zcash",
         "id": "MDEwOlJlcG9zaXRvcnkyNjk4NzA0OQ==",
         "description": "Zcash - Internet Money",
-        "createdAt": "2014-11-22T03:13:10Z",
+        "createdAt": "2014-11-22T03:13",
         "homepageUrl": "https://z.cash/",
-        "pushedAt": "2017-11-21T03:36:35Z",
+        "pushedAt": "2017-11-25T21:54",
         "languages": [
             "C++",
             "C",
@@ -4023,8 +4240,8 @@
                 "users": 374
             },
             "2017-47": {
-                "stars": 2993,
-                "users": 374
+                "stars": 3007,
+                "users": 375
             }
         },
         "releases": [
@@ -4079,16 +4296,19 @@
                 "publishedAt": "2017-03-09T04:04:02Z"
             }
         ],
-        "url": "https://github.com/zcash/zcash"
+        "url": "https://github.com/zcash/zcash",
+        "ownername": "zcash/zcash",
+        "coinname": "Zcash",
+        "symbol": "ZEC"
     },
     {
         "owner": "ZencashOfficial",
         "name": "zen",
         "id": "MDEwOlJlcG9zaXRvcnk5Mzc5ODgxNw==",
         "description": "2.0.10 - TLS integration and more!",
-        "createdAt": "2017-06-08T23:05:59Z",
+        "createdAt": "2017-06-08T23:05",
         "homepageUrl": "https://zensystem.io",
-        "pushedAt": "2017-11-18T16:15:04Z",
+        "pushedAt": "2017-11-18T16:15",
         "languages": [
             "C++",
             "Python",
@@ -4141,7 +4361,7 @@
         ],
         "url": "https://github.com/ZencashOfficial/zen",
         "ownername": "ZencashOfficial/zen",
-        "coinname": "",
-        "symbol": ""
+        "coinname": "Zencash",
+        "symbol": "ZEN"
     }
 ]
