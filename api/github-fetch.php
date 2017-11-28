@@ -4,8 +4,6 @@ include_once('./json.php');
 include_once('./utils.php');
 include('./token.php');
 
-define('DEBUG', $_REQUEST['debug']);
-
 if(DEBUG) {
 	$json = fetchJSON(JSON_FILE);
 	if(!checkPermissions(JSON_FILE, '0777')) {

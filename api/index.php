@@ -3,6 +3,8 @@
 	include_once('./utils.php');
 	include('./json.php');
 	include('./github-fetch.php');
+	include('./cryptocomp-fetch.php');
+	include('./coinmarket-fetch.php');
 
 	switch($_SERVER['REQUEST_METHOD']) {
 
@@ -41,6 +43,18 @@
 				break;
 			}
 
+			if(isset($_POST['cryptocompfetch'])) {
+				$records = fetchCryptoCompData(getRecord($_POST));
+				out($records);
+				break;
+			}
+
+			if(isset($_POST['coinmarketfetch'])) {
+				$records = fetchCoinMarketData(getRecord($_POST));
+				out($records);
+				break;
+			}
+
 			if($_POST['ownername'] === 'new') {
 				out(addRecords(array(json_decode(json_encode($_POST)))));
 			} else {
@@ -75,8 +89,7 @@
 					array_map(function($err){echo $err->type . $err->message;}, errorOutput()->errors);
 					break;
 				}
-				out(write(fetchGithubData(fetchJSON(JSON_FILE)),
-						isset($_GET['tolocal']) ? LOCAL_FILE : JSON_FILE));
+				out(write(fetchGithubData(fetchJSON()), JSON_FILE));
 				break;
 			}
 			out(getRecord(array(

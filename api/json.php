@@ -3,8 +3,10 @@ include_once('./token.php');
 
 define('REMOTE_FILE', 'https://api.myjson.com/bins/909wb');
 define('LOCAL_FILE', dirname($_SERVER['DOCUMENT_ROOT']) . '/assets/json/data.json');
-define('JSON_FILE', REMOTE_FILE);
-define('COIN_LIST', 'https://min-api.cryptocompare.com/data/all/coinlist');
+
+define('JSON_FILE', isset($_REQUEST['local']) ? LOCAL_FILE : REMOTE_FILE);
+
+define('DEBUG', $_REQUEST['debug']);
 
 $json = null;
 
