@@ -6,38 +6,38 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <title>Edit Repository</title>
+    <title>Edit Coin</title>
     <meta name="Title" content="Larry's Cryptocoin Development Index | Tracking Cryptocoin Core Software Development">
     <meta name="description" content="Tracking Cryptocurrency software development. We track Bitcoin, Altcoin and ERC-20 token core software development progress.">
     <meta name="keywords" content="cryptocurrency, virtual coins, ERC-20 tokens, Altcoins, Bitcoin, development index, software tracking, development teams">
     <meta name="robots" content="index, follow">
 
-    <link rel="stylesheet" href="//coindev.local/assets/css/coindevelopmentindex.css">
+    <link rel="stylesheet" href="/assets/css/coindevelopmentindex.css">
 
 </head>
 <body>
 
-    <div class="repo-form wrapper">
+    <div class="coin-form wrapper">
 
         <header>
-            <h1>repo edit</h1>
-            <p>Select a coin repository to edit, or update from Github API.</p>
-            <p>Or create a new repo by entering the <b>owner</b> and <b>name</b> of the repo to fetch from Github API.</p>
+            <h1>coin edit</h1>
+            <p>Select a coin to edit, or update from the APIs below.</p>
+            <p>Or create a new coin by entering the <b>owner</b> and <b>name</b> of the repo to fetch from Github API.</p>
         </header>
 
         <section>
-            <form name="repo" class="form-horizontal">
+            <form name="coin" class="form-horizontal">
                 <div class="form-row">
                     <div class="col-md-3 form-group newform">
-                        <button name="new" type="reset" class="btn btn-info">New / Clear</button>
+                        <button name="new" type="reset" class="btn btn-info">New Coin</button>
                     </div>
                     <div class="form-group col-md-9">
                         <div class="input-group">
-                            <button type="button" class="btn btn-sm btn-secondary reponav prev"><i class="fa fa-chevron-left fa-2x" title="Previous"></i></button>
+                            <button type="button" class="btn btn-sm btn-secondary coinnav prev"><i class="fa fa-chevron-left fa-2x" title="Previous"></i></button>
                             <select class="form-control" name="ownername" placeholder="Github Owner">
-                                <!-- data.json repo:owner/repo:name -->
+                                <!-- data.json coin:owner/coin:name -->
                             </select>
-                            <button type="button" class="btn btn-sm btn-secondary reponav next"><i class="fa fa-chevron-right fa-2x" title="Next"></i></button>
+                            <button type="button" class="btn btn-sm btn-secondary coinnav next"><i class="fa fa-chevron-right fa-2x" title="Next"></i></button>
                         </div>
                     </div>
                 </div>
@@ -49,18 +49,21 @@
 
                 </div>
                 <div class="form-row">
-                    <div class="col-md-2 form-group">
-                        <button name="delete" type="button" class="btn btn-block btn-danger">Delete</button>
+                    <div class="col-md-9 offset-md-3 form-group">
+                        <button name="github" type="button" class="btn btn-block btn-outline-success">Fetch from Github API</button>
                     </div>
-                    <div class="col-md-9 offset-md-1 form-group input-group">
-                        <button name="remote" type="button" class="btn btn-block btn-success">Fetch from Github API</button>
-                        <span class="input-group-addon">
-                            proxy<input type="checkbox" name="proxy">
-                        </span>
+                    <!-- <div class="col-md-9 offset-md-3 form-group">
+                        <button name="cryptocomp" type="button" class="btn btn-block btn-outline-success">Fetch from CryptoCompare API</button>
+                    </div> -->
+                    <div class="col-md-9 offset-md-3 form-group">
+                        <button name="coinmarket" type="button" class="btn btn-block btn-outline-success">Fetch from CoinMarketCap API</button>
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="col-md-9 offset-md-3 form-group">
+                    <div class="col-md-2 form-group">
+                        <button name="delete" type="button" class="btn btn-block btn-danger">Delete</button>
+                    </div>
+                    <div class="col-md-9 offset-md-1 form-group">
                         <button name="local" type="submit" class="btn btn-block btn-primary">Create New JSON Entry</button>
                     </div>
                 </div>

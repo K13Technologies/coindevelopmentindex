@@ -2,7 +2,7 @@
 
 include_once('./json.php');
 include_once('./utils.php');
-include('./token.php');
+include_once('./token.php');
 
 if(DEBUG) {
 	$json = fetchJSON(JSON_FILE);
@@ -150,5 +150,5 @@ QUERY;
 	}
 
 	// if($hasErrors) return errorOutput();
-	else return $json;
+	return $json;
 }

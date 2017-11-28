@@ -49,6 +49,5 @@ function fetchCryptoCompData($json) {
 		echo '</pre>';
 	}
 
-	// if($hasErrors) return errorOutput();
-	else return $ret;
+	return $ret;
 }

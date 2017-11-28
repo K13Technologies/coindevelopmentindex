@@ -92,6 +92,10 @@
 				out(write(fetchGithubData(fetchJSON()), JSON_FILE));
 				break;
 			}
+			if(isset($_GET['local'])) {
+				out(fetchJSON(LOCAL_FILE));
+				break;
+			}
 			out(getRecord(array(
 				'owner' => $_GET['owner'],
 				'name' => $_GET['name']

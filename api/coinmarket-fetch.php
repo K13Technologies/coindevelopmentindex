@@ -19,7 +19,6 @@ if(DEBUG) {
 	fetchCoinMarketData($json);
 }
 
-
 function fetchCoinMarketData($json) {
 
 	$ret = array();

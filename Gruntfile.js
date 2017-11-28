@@ -9,6 +9,7 @@ module.exports = function(grunt) {
   var buildPathJSON = "build/assets/json/";
   var buildPathFONT = "build/assets/fonts/";
   var buildPathJS = "build/assets/js/";
+  var buildPathHBS = "build/assets/js/templates/";
 
   ////////////////////////////////////////////
   // INIT
@@ -26,7 +27,7 @@ module.exports = function(grunt) {
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     watch: {
       html: {
-        files: ['*.html'],
+        files: ['**/*.html'],
         tasks: ['build'],
         options: {
           livereload: true
@@ -42,6 +43,13 @@ module.exports = function(grunt) {
       js: {
         files: ['<%= assetdir %>js/**/*.js'],
         tasks: ['import:js','uglify:js'],
+        options: {
+          livereload: true
+        }
+      },
+      hbs: {
+        files: ['<%= assetdir %>hbs/**/*.hbs'],
+        tasks: ['handlebars'],
         options: {
           livereload: true
         }
@@ -100,7 +108,7 @@ module.exports = function(grunt) {
         files: {
           expand: true,
           cwd: './',
-          src: ['*.html'],
+          src: ['**/*.html', '!node_modules/**', '!build/**', '!assets/**'],
           dest: buildPathHTML,
           ext: '.html'
         }
@@ -195,7 +203,6 @@ module.exports = function(grunt) {
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     // IMAGE MIN
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
-
     imagemin: {
         options: {
             optimizationLevel: 3,
@@ -218,8 +225,9 @@ module.exports = function(grunt) {
     uglify: {
       options: {
         report: 'min',
-            maxLineLen: 0,
+        maxLineLen: 0,
         preserveComments: /^\/*!/,
+        mangle: false,
         compress: {
           unused: false,
           hoist_funs: false,
@@ -234,6 +242,7 @@ module.exports = function(grunt) {
             'node_modules/underscore/underscore-min.js',
             'node_modules/tether/dist/js/tether.min.js',
             'node_modules/bootstrap-beta/dist/js/bootstrap.min.js',
+            'node_modules/handlebars/dist/handlebars.runtime.min.js',
             // '<%= assetdir %>vendor/gh3-master/gh3.min.js',
             '<%= assetdir %>js/**/*.js',
             '!<%= assetdir %>js/vendor/*.js',
@@ -241,7 +250,30 @@ module.exports = function(grunt) {
           dest: '<%= buildPathJS %><%= dist %>.js',
         }]
       }
+    },
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // HANDLEBARS - PRECOMPILE TEMPLATES
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    handlebars: {
+      options: {
+        namespace: 'HBS',
+        processName: function(filePath) {
+          var arr = filePath.split('/');
+            return arr[arr.length - 1].replace(/\.hbs$/, '');
+          }
+      },
+      files: {
+        expand: true,
+        cwd: '<%= assetdir %>hbs/',
+        src: ['**/*.hbs'],
+        dest: buildPathHBS,
+          rename: function(dest, src) {
+            return buildPathHBS + src.replace(/hbs$/, 'js');
+        }
+      }
     }
+
   };
 
   // Project configuration.
@@ -256,6 +288,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-handlebars');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
@@ -264,6 +297,6 @@ module.exports = function(grunt) {
   grunt.registerTask('css', ['sass', 'cssmin', 'concat']);
   grunt.registerTask('js', ['import:js', 'uglify:js']);
   grunt.registerTask('cleanup', ['clean:builddir']);
-  grunt.registerTask('build', ['css', 'js', 'htmlmin', 'copy', 'clean:tmpdir', 'imagemin']);
+  grunt.registerTask('build', ['cleanup', 'css', 'js', 'handlebars', 'htmlmin', 'copy', 'clean:tmpdir', 'imagemin']);
 
 };

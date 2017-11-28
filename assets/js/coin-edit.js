@@ -1,38 +1,40 @@
-/* globals JSON */
 jQuery(document).ready(function($) {
     'use strict';
 
-    var $repoForm = $('form[name="repo"]'),
+    if(!$('form[name="coin"]')[0]) return false;
+
+    var $coinForm = $('form[name="coin"]'),
         $ownerSel = $('select[name="ownername"]'),
-        $apiBtn = $('button[name="remote"]'),
+        $githubBtn = $('button[name="github"]'),
+        $cryptoBtn = $('button[name="cryptocomp"]'),
+        $coinmarketBtn = $('button[name="coinmarket"]'),
         $deleteBtn = $('button[name="delete"]'),
         $fields = $('.auto-fields'),
         $output = $('#output'),
         loco = window.location,
-        repos, fields,
+        coins, fields,
         $releases, $data;
 
     var fetchJSONdata = function() {
         $.ajax({
-            url: 'http://api.coindev.local',
+            url: 'http://api.coindev.local' + loco.search,
             dataType: 'json'
         })
         .done(function(data) {
 
-            // TODO: sort array by owner
-            repos = data;
+            coins = data;
 
-            repos.map(function(repo) {
-                var selected = (loco.hash.slice(1) === repo.owner + '/' + repo.name),
+            coins.map(function(coin) {
+                var selected = (loco.hash.slice(1) === coin.owner + '/' + coin.name),
                     $opt;
 
-                $opt = $('<option value="' + repo.owner + '/' + repo.name + '" ' + '>' +
-                        repo.owner + ' / ' + repo.name + '</option>')
+                $opt = $('<option value="' + coin.owner + '/' + coin.name + '" ' + '>' +
+                        coin.owner + ' / ' + coin.name + '</option>')
                     .prop('selected', selected)
                     .appendTo($ownerSel);
             });
 
-            $ownerSel.prepend('<option value="new">Create new repo...</option>');
+            $ownerSel.prepend('<option value="new">Create new coin...</option>');
             $('header .alert').find('i.fa-spinner').remove();
 
             handleOwnerChange();
@@ -85,39 +87,35 @@ jQuery(document).ready(function($) {
     var handleOwnerChange = function(e) {
 
         var index = getSelectedIndex(),
-            repo = repos ? repos.find(function(repo) {
-                return repo.owner + '/' + repo.name === $ownerSel.val() && repos.indexOf(repo) === index;
+            coin = coins ? coins.find(function(coin) {
+                return coin.owner + '/' + coin.name === $ownerSel.val() && coins.indexOf(coin) === index;
             }) : false;
 
-        if(repo) {
-            mapToFields(repo,true);
-            window.history.pushState(repo, '', '#'+repo.owner+'/'+repo.name);
+        if(coin) {
+            mapToFields(coin,true);
+            window.history.pushState(coin, '', '#'+coin.owner+'/'+coin.name);
         } else {
             $fields.find('input').val('');
             window.history.pushState('', '', '#');
-            $repoForm.find('button[type="submit"]').text('Create New JSON Entry');
+            $coinForm.find('button[type="submit"]').text('Create New JSON Entry');
         }
 
-        $('.reponav.prev').prop('disabled', ($ownerSel.val() === 'new'));
-        $('.reponav.next').prop('disabled', ($ownerSel.val() === repos[repos.length - 1].owner + '/' + repos[repos.length - 1].name));
+        $('.coinnav.prev').prop('disabled', ($ownerSel.val() === 'new'));
+        $('.coinnav.next').prop('disabled', ($ownerSel.val() === coins[coins.length - 1].owner + '/' + coins[coins.length - 1].name));
 
     };
 
     var handleForm = function(e) {
 
-        var data;
-
         e.preventDefault();
 
-        $repoForm.find('input:disabled').prop('disabled', false);
-
-        data = $repoForm.serialize();
+        $coinForm.find('input:disabled').prop('disabled', false);
 
         $output.addClass('alert alert-secondary active').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Sending JSON...');
 
         $.post({
-              url: 'http://api.coindev.local',
-              data: data
+              url: 'http://api.coindev.local' + loco.search,
+              data: $coinForm.serialize()
             })
             .done(function(response) {
                 var errors = response.errors,
@@ -139,16 +137,16 @@ jQuery(document).ready(function($) {
                 $output.addClass('alert alert-danger active').html(err);
             })
             .always(function() {
-                $repoForm.find('input:disabled').prop('disabled', true);
+                $coinForm.find('input:disabled').prop('disabled', true);
             });
     };
 
-    var apiFetch = function(e) {
+    var githubFetch = function(e) {
 
-        $repoForm.find('input:disabled').prop('disabled', false);
+        $coinForm.find('input:disabled').prop('disabled', false);
 
         if($('input[name="owner"]').val() === '' || $('input[name="name"]').val()  === '') {
-            $output.addClass('alert alert-danger active').text('You must provide the owner and name for repo.');
+            $output.addClass('alert alert-danger active').text('You must provide the owner and name for coin.');
             hideAlert(3000);
             return false;
         }
@@ -156,12 +154,56 @@ jQuery(document).ready(function($) {
         $output.addClass('alert alert-secondary active').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Contacting Github API...');
 
         $.post({
-              url: 'http://api.coindev.local',
-              data: $repoForm.serialize() + '&githubfetch=1'
+              url: 'http://api.coindev.local' + loco.search,
+              data: $coinForm.serialize() + '&githubfetch=1'
             })
             .done(function(response) {
 
                 // console.log(response);
+                var errors = response.errors,
+                    out = '';
+
+                if(errors && errors.length > 0) {
+                    errors.forEach(function(error) {
+                        out += '<b>ERROR: ' + error.type + '</b> ' + error.message;
+                    });
+                    $output.addClass('alert alert-danger active').html(out);
+                    $output.one('click', hideAlert);
+                    return;
+                } else {
+                    $output.addClass('alert alert-success active').html('Found data for ' + response[0].owner + '/' + response[0].name);
+                    mapToFields(response[0]);
+                    hideAlert();
+                }
+
+            })
+            .fail(function(err) {
+                console.log(err);
+                $output.addClass('alert alert-danger active').html(err);
+            })
+            .always(function() {
+                $coinForm.find('input:disabled').prop('disabled', true);
+            });
+    };
+
+
+    var cryptocompFetch = function(e) {
+
+        if($('input[name="symbol"]').val()  === '') {
+            $output.addClass('alert alert-danger active').text('You must provide the symbol for the coin.');
+            hideAlert(3000);
+            return false;
+        }
+
+        $output.addClass('alert alert-secondary active').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Contacting CryptoCompare API...');
+
+        $.post({
+              url: 'http://api.coindev.local' + loco.search,
+              data: $coinForm.serialize() + '&cryptocompfetch=1'
+            })
+            .done(function(response) {
+
+                console.log(response);
                 var errors = response.errors,
                     out = '';
 
@@ -185,7 +227,51 @@ jQuery(document).ready(function($) {
                 $output.addClass('alert alert-danger active').html(err);
             })
             .always(function() {
-                $repoForm.find('input:disabled').prop('disabled', true);
+                $coinForm.find('input:disabled').prop('disabled', true);
+            });
+    };
+
+    var coinmarketFetch = function(e) {
+
+        if($('input[name="symbol"]').val()  === '') {
+            $output.addClass('alert alert-danger active').text('You must provide the symbol for the coin.');
+            hideAlert(3000);
+            return false;
+        }
+
+        $output.addClass('alert alert-secondary active').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Contacting CoinMarketCap API...');
+
+        $.post({
+              url: 'http://api.coindev.local' + loco.search,
+              data: $coinForm.serialize() + '&coinmarketfetch=1'
+            })
+            .done(function(response) {
+
+                console.log(response);
+                var errors = response.errors,
+                    out = '';
+
+                if(errors && errors.length > 0) {
+                    errors.forEach(function(error) {
+                        out += '<b>ERROR: ' + error.type + '</b> ' + error.message;
+                    });
+                    $output.addClass('alert alert-danger active').html(out);
+                    $output.one('click', hideAlert);
+                    return;
+                } else {
+                    $output.addClass('alert alert-success active').html('Found data for ' + response[0].coinname + ' (' + response[0].symbol + ')');
+                    mapToFields(response[0]);
+                    hideAlert();
+                }
+
+
+            })
+            .fail(function(err) {
+                console.log(err);
+                $output.addClass('alert alert-danger active').html(err);
+            })
+            .always(function() {
+                $coinForm.find('input:disabled').prop('disabled', true);
             });
     };
 
@@ -199,7 +285,7 @@ jQuery(document).ready(function($) {
         $output.addClass('alert alert-secondary active').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Deleting ' + owner + '/' + name + ' ...');
 
         $.post({
-              url: 'http://api.coindev.local',
+              url: 'http://api.coindev.local' + loco.search,
               data: { 'delete': true, index: index, owner: owner, name: name }
             })
             .done(function(response) {
@@ -216,7 +302,7 @@ jQuery(document).ready(function($) {
                     $output.one('click', hideAlert);
                     return;
                 } else {
-                    if(response.length === repos.length - 1) {
+                    if(response.length === coins.length - 1) {
                         $output.addClass('alert alert-success active').html(owner + '/' + name + ' deleted successfully... Refreshing in <span class="count">' + count + '</span>');
                         setInterval(function() { count--; $output.find('.count').text(count); if(count === 0) loco.reload(); }, 1000);
                     } else {
@@ -229,20 +315,22 @@ jQuery(document).ready(function($) {
 
     var onNavClick = function(e) {
         var $this = $(e.currentTarget),
-            val = $ownerSel.val(),
-            idx;
+            idx = getSelectedIndex();
 
-        idx = getSelectedIndex();
-
-        if($this.is('.prev') && (idx - 1 > -1)) $ownerSel.val(repos[idx - 1].owner + '/' + repos[idx - 1].name);
-        if($this.is('.next') && (idx + 1 < repos.length)) $ownerSel.val(repos[idx + 1].owner + '/' + repos[idx + 1].name);
+        if($this.is('.prev') && (idx - 1 > -1)) {
+            $ownerSel.val(coins[idx - 1].owner + '/' + coins[idx - 1].name);
+        }
+        if($this.is('.next') && (idx + 1 < coins.length)) {
+            $ownerSel.val(coins[idx + 1].owner + '/' + coins[idx + 1].name);
+        }
 
         handleOwnerChange();
     };
 
     var getJSONLocation = function() {
-        $.get('http://api.coindev.local?location=1').done(function(loc) {
-            $('header h1').after('<div class="alert alert-info active"><small>' + loc + '</small><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></div>');
+        $.get('http://api.coindev.local?location=1&' + loco.search.substring(1)).done(function(loc) {
+            $('header h1').after('<div class="alert alert-info active"><small>' + loc +
+                '</small><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></div>');
         });
     };
 
@@ -261,7 +349,8 @@ jQuery(document).ready(function($) {
         window.history.pushState('', '', '#');
     };
 
-    var mapToFields = function(repo,reset) {
+    var mapToFields = function(coin,reset) {
+
         var status,
             reset = reset || false,
             $releasesDiv = $('<div class="col-sm-9"></div>'),
@@ -272,7 +361,7 @@ jQuery(document).ready(function($) {
         $fields.find('input').each(function() {
             var $f = $(this),
                 n = $f.attr('name'),
-                val = repo[n];
+                val = coin[n];
 
             $f.removeClass('update');
             if($f.next('.input-group-addon')[0]) {
@@ -298,10 +387,10 @@ jQuery(document).ready(function($) {
             }
         });
 
-        if(repo.releases && repo.releases.length > 0) {
+        if(coin.releases && coin.releases.length > 0) {
 
-            releases = '<ul>' +
-                repo.releases.map(function(release) {
+            releases = '<ul class="releases">' +
+                coin.releases.map(function(release) {
                     return '<li><b>' + release.name + '</b> - <em>' +
                             release.publishedAt + '</em></li>';
                 }).join('') + '</ul>';
@@ -314,14 +403,14 @@ jQuery(document).ready(function($) {
                     .wrap($releasesDiv)
                     .after(releases);
             } else {
-                $releases.next('ul').replaceWith(releases);
+                $('ul.releases').replaceWith(releases);
             }
 
-        } else if($releases.hasClass('wrapped')) {
+        } else if($releases.hasClass('wrapped') && reset) {
             $releases.removeClass('wrapped').addClass('col-sm-9').unwrap().next('ul').remove();
         }
 
-        if(repo.data) {
+        if(coin.data) {
             data = '<table class="table table-sm data">' +
                         '<thead>' +
                             '<th>week</th>' +
@@ -329,15 +418,17 @@ jQuery(document).ready(function($) {
                             '<th>stars</th>' +
                         '</thead>' +
                         '<tbody>';
-            for(var d in repo.data) {
-                if(repo.data.hasOwnProperty(d)) {
+            for(var d in coin.data) {
+                if(coin.data.hasOwnProperty(d)) {
                     data += '<tr>' +
                                 '<td>' + d + '</td>' +
-                                '<td>' + repo.data[d].users + '</td>' +
-                                '<td>' + repo.data[d].stars + '</td>' +
+                                '<td>' + coin.data[d].users + '</td>' +
+                                '<td>' + coin.data[d].stars + '</td>' +
                             '</tr>';
                 }
             }
+            data +=     '</tbody>' +
+                    '</table>';
             if(!$data.hasClass('wrapped')) {
                 $data
                     .removeClass('col-sm-9')
@@ -345,15 +436,15 @@ jQuery(document).ready(function($) {
                     .wrap($dataDiv)
                     .after(data);
             } else {
-                $data.closest('col-sm-9').find('table').replaceWith(data);
+                $('table.data').replaceWith(data);
             }
-        } else if($data.hasClass('wrapped')) {
+        } else if($data.hasClass('wrapped') && reset) {
             $data.removeClass('wrapped').addClass('col-sm-9').unwrap().next('table').remove();
         }
 
         status = $ownerSel.val() === 'new' ? 'Create' : 'Update';
 
-        $repoForm.find('button[type="submit"]').text(status + ' ' + repo.owner + ' / ' + repo.name + ' JSON');
+        $coinForm.find('button[type="submit"]').text(status + ' ' + $ownerSel.val() + ' JSON');
     };
 
     var addRevertBtn = function($input) {
@@ -391,11 +482,13 @@ jQuery(document).ready(function($) {
     $ownerSel.focus();
 
     $ownerSel.on('change', handleOwnerChange);
-    $apiBtn.on('click', apiFetch);
+    $githubBtn.on('click', githubFetch);
+    $cryptoBtn.on('click', cryptocompFetch);
+    $coinmarketBtn.on('click', coinmarketFetch);
     $deleteBtn.on('click', deleteRecord);
-    $repoForm.on('click', '.undo', revertField);
-    $repoForm.on('click', '.reponav', onNavClick);
-    $repoForm.on('submit', handleForm);
-    $repoForm.on('reset', resetForm);
+    $coinForm.on('click', '.undo', revertField);
+    $coinForm.on('click', '.coinnav', onNavClick);
+    $coinForm.on('submit', handleForm);
+    $coinForm.on('reset', resetForm);
 
 });
