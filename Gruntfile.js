@@ -56,7 +56,10 @@ module.exports = function(grunt) {
       },
       json: {
         files: ['<%= assetdir %>json/**/*.json'],
-        tasks: ['copy:buildJSON']
+        tasks: ['copy:buildJSON'],
+        options: {
+          livereload: true
+        }
       }
     },
 
