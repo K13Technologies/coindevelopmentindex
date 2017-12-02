@@ -31,7 +31,7 @@ function fetchGithubData($json) {
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 		'Authorization:Bearer ' . GITHUB_TOKEN));
 
-	if($_REQUEST['proxy']) {
+	if(PROXY) {
 		curl_setopt($ch, CURLOPT_PROXY, PROXY_SERVER);
 		curl_setopt($ch, CURLOPT_PROXYPORT, '80');
 	}

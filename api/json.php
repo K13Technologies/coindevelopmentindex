@@ -7,6 +7,7 @@ define('LOCAL_FILE', dirname($_SERVER['DOCUMENT_ROOT']) . '/assets/json/data.jso
 define('JSON_FILE', isset($_REQUEST['local']) ? LOCAL_FILE : REMOTE_FILE);
 
 define('DEBUG', $_REQUEST['debug']);
+define('PROXY', $_REQUEST['proxy']);
 
 $json = null;
 
@@ -15,10 +16,10 @@ function fetchJSON($url=JSON_FILE) {
 
 	$context = null;
 
-	if(isset($_REQUEST['proxy'])) {
+	if(PROXY) {
 		$c = array(
 	    'http' => array(
-	        'proxy' => 	'http://' . PROXY_SERVER . ':80',
+	        'proxy' => 	PROXY_SERVER . ':80',
 	        'request_fulluri' => true
 	    )
 		);
