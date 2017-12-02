@@ -30,7 +30,7 @@
   	"type": "text",
   	"disabled": false,
     "placeholder": "Official Coin Name",
-    "required": false,
+    "required": true,
     "data-stringify":false,
     "data-revertable":true
   },
@@ -39,7 +39,7 @@
   	"type": "text",
   	"placeholder": "XYZ",
   	"disabled": false,
-    "required": false,
+    "required": true,
     "data-stringify":false,
     "data-revertable":true
   },

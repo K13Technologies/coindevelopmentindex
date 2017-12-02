@@ -258,12 +258,15 @@ jQuery(document).ready(function($) {
                     $output.addClass('alert alert-danger active').html(out);
                     $output.one('click', hideAlert);
                     return;
-                } else {
+                }
+                if(response.length > 0) {
                     $output.addClass('alert alert-success active').html('Found data for ' + response[0].coinname + ' (' + response[0].symbol + ')');
                     mapToFields(response[0]);
                     hideAlert();
+                } else {
+                    $output.addClass('alert alert-danger active').text('Could not find data for ' + $('input[name="symbol"]').val());
+                    hideAlert(4000);
                 }
-
 
             })
             .fail(function(err) {
