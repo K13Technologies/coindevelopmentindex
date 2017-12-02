@@ -37,13 +37,15 @@ function fetchCoinMarketData($json) {
 			return $item->symbol === $coin->symbol;
 		}));
 
-		$record->coinname = $record->name;
+		if($record) {
+			$record->coinname = $record->name;
 
-		// prevent override of repo.id, repo.name
-		unset($record->id);
-		unset($record->name);
+			// prevent override of repo.id, repo.name
+			unset($record->id);
+			unset($record->name);
 
-		array_push($ret, $record);
+			array_push($ret, $record);
+		}
 
 		if(DEBUG) {
 			echo '<br><br>';
