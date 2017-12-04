@@ -44,6 +44,15 @@
     "data-revertable":true
   },
   {
+    "name": "type",
+    "type": "text",
+    "placeholder": "Bitcoin, Altcoin, etc",
+    "disabled": false,
+    "required": false,
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
     "name": "rank",
     "type": "number",
     "min": "1",
@@ -59,6 +68,20 @@
     "min": "0",
     "disabled": false,
     "placeholder": "# of Developers",
+    "required": false,
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
+    "type": "select",
+    "options": [
+      "Alpha",
+      "Beta",
+      "Commercial"
+    ],
+    "name": "blockchain",
+    "disabled": false,
+    "placeholder": "Alpha, Beta, Commercial",
     "required": false,
     "data-stringify":false,
     "data-revertable":true

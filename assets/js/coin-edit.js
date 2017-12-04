@@ -1,3 +1,4 @@
+/* globals JSON */
 jQuery(document).ready(function($) {
     'use strict';
 
@@ -67,6 +68,12 @@ jQuery(document).ready(function($) {
                             case 'disabled':
                             case 'required':
                                 $el.prop(a, field[a]);
+                                break;
+                            case 'options':
+                                $el = $('<select class="form-control col-sm-9"></select>');
+                                $el.append(field[a].map(function(opt) {
+                                        return '<option value="' + opt + '">' + opt + '</option>';
+                                    }).join(''));
                                 break;
                             default:
                                 $el.attr(a, field[a]);
@@ -239,7 +246,8 @@ jQuery(document).ready(function($) {
             return false;
         }
 
-        $output.addClass('alert alert-secondary active').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Contacting CoinMarketCap API...');
+        $output.addClass('alert alert-secondary active')
+            .html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Contacting CoinMarketCap API...');
 
         $.post({
               url: 'http://api.coindev.local' + loco.search,
@@ -361,25 +369,31 @@ jQuery(document).ready(function($) {
             data = '',
             releases;
 
-        $fields.find('input').each(function() {
+        $fields.find('input, select').each(function() {
             var $f = $(this),
                 n = $f.attr('name'),
                 val = coin[n];
 
-            $f.removeClass('update');
-            if($f.next('.input-group-addon')[0]) {
-                $f
-                    .addClass('col-sm-9')
-                    .unwrap()
-                    .next('.input-group-addon').remove();
+            if(reset) {
+
+                $f.removeClass('update');
+                if($f.next('.input-group-addon')[0]) {
+                    $f
+                        .addClass('col-sm-9')
+                        .unwrap()
+                        .next('.input-group-addon').remove();
+                }
             }
+
+
 
             if(val || reset) {
 
                 val = $f.data('stringify') ? JSON.stringify(val) : val;
                 val = $f.data('remove') ? val.replace(new RegExp($f.data('remove'),'g'),'') : val;
 
-                if(!reset) {
+                // don't overwrite already updated fields
+                if(!reset && val !== $f.data('prev')) {
                     $f.data('prev', $f.val());
                     if(val !== $f.val()) {
                         if($f.data('revertable')) addRevertBtn($f);
@@ -418,6 +432,7 @@ jQuery(document).ready(function($) {
                         '<thead>' +
                             '<th>week</th>' +
                             '<th>users</th>' +
+                            '<th>forks</th>' +
                             '<th>stars</th>' +
                         '</thead>' +
                         '<tbody>';
@@ -425,8 +440,9 @@ jQuery(document).ready(function($) {
                 if(coin.data.hasOwnProperty(d)) {
                     data += '<tr>' +
                                 '<td>' + d + '</td>' +
-                                '<td>' + coin.data[d].users + '</td>' +
-                                '<td>' + coin.data[d].stars + '</td>' +
+                                '<td>' + (coin.data[d].users || '') + '</td>' +
+                                '<td>' + (coin.data[d].forks || '') + '</td>' +
+                                '<td>' + (coin.data[d].stars || '') + '</td>' +
                             '</tr>';
                 }
             }

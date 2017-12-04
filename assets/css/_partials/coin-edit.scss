@@ -160,6 +160,10 @@
 
     }
 
+    .fa-spinner {
+        float:right;
+    }
+
 }
 
 #output {
@@ -174,9 +178,6 @@
     }
 }
 
-.fa-spinner {
-    float:right;
-}
 
 @keyframes pulse {
     0% {
