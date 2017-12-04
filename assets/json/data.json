@@ -7,9 +7,9 @@
         "coinname": "AdEx",
         "symbol": "ADX",
         "description": "AdEx Core: the smart contracts that power the AdEx Network",
-        "createdAt": "2017-08-11T07:41",
+        "createdAt": "2017-08-11T07:41:02Z",
         "homepageUrl": "https://www.adex.network",
-        "pushedAt": "2017-11-16T12:55",
+        "pushedAt": "2017-12-01T16:07:22Z",
         "languages": [
             "JavaScript",
             "Shell"
@@ -20,9 +20,14 @@
             "2017-47": {
                 "stars": 28,
                 "users": 7
+            },
+            "2017-48": {
+                "stars": 28,
+                "users": 7,
+                "forks": 8
             }
         },
-        "rank": "93",
+        "rank": "92",
         "team": ""
     },
     {
@@ -30,12 +35,12 @@
         "id": "MDEwOlJlcG9zaXRvcnkxNzU2MjU0NQ==",
         "owner": "amjuarez",
         "name": "bytecoin",
-        "coinname": "ByteCoin",
+        "coinname": "Bytecoin",
         "symbol": "BCN",
         "description": "CryptoNote protocol implementation",
-        "createdAt": "2014-03-09T10:47",
-        "homepageUrl": "http://bytecoin.org",
-        "pushedAt": "2017-11-13T11:27",
+        "createdAt": "2014-03-09T10:47:36Z",
+        "homepageUrl": "bytecoin.org",
+        "pushedAt": "2017-11-13T11:27:47Z",
         "languages": [
             "C++",
             "C",
@@ -47,9 +52,14 @@
             "2017-47": {
                 "stars": 228,
                 "users": 6
+            },
+            "2017-48": {
+                "stars": 238,
+                "users": 6,
+                "forks": 142
             }
         },
-        "rank": "",
+        "rank": "32",
         "team": ""
     },
     {
@@ -57,9 +67,9 @@
         "name": "ark-node",
         "id": "MDEwOlJlcG9zaXRvcnk3MzQ5NjE3Mw==",
         "description": ":money_with_wings: CryptoCurrency for all",
-        "createdAt": "2016-11-11T17:08",
+        "createdAt": "2016-11-11T17:08:05Z",
         "homepageUrl": "https://ark.io",
-        "pushedAt": "2017-11-23T14:48",
+        "pushedAt": "2017-12-03T19:58:02Z",
         "languages": [
             "JavaScript",
             "PLpgSQL",
@@ -81,6 +91,11 @@
             "2017-47": {
                 "stars": 69,
                 "users": 18
+            },
+            "2017-48": {
+                "stars": 75,
+                "users": 18,
+                "forks": 55
             }
         },
         "releases": [
@@ -102,9 +117,9 @@
         ],
         "url": "https://github.com/ArkEcosystem/ark-node",
         "ownername": "ArkEcosystem/ark-node",
-        "coinname": "ARK",
+        "coinname": "Ark",
         "symbol": "ARK",
-        "rank": "",
+        "rank": "29",
         "team": ""
     },
     {
@@ -112,9 +127,9 @@
         "name": "augur-core",
         "id": "MDEwOlJlcG9zaXRvcnkyNzYyMzgwNg==",
         "description": "Augur back-end (Ethereum contracts)",
-        "createdAt": "2014-12-06T05:42",
+        "createdAt": "2014-12-06T05:42:19Z",
         "homepageUrl": "https://www.augur.net",
-        "pushedAt": "2017-11-25T18:06",
+        "pushedAt": "2017-12-02T20:33:11Z",
         "languages": [
             "Python",
             "TypeScript",
@@ -136,6 +151,11 @@
             "2017-47": {
                 "stars": 284,
                 "users": 25
+            },
+            "2017-48": {
+                "stars": 289,
+                "users": 25,
+                "forks": 63
             }
         },
         "releases": [
@@ -154,7 +174,7 @@
         "ownername": "AugurProject/augur-core",
         "coinname": "Augur",
         "symbol": "REP",
-        "rank": "",
+        "rank": "30",
         "team": ""
     },
     {
@@ -162,12 +182,10 @@
         "name": "aventus-dapp-proposals",
         "id": "MDEwOlJlcG9zaXRvcnkxMDA2MjYyNDI=",
         "description": "Proposals for DApp ideas for the Aventus Protocol DApp Idea Competition",
-        "createdAt": "2017-08-17T16:56",
+        "createdAt": "2017-08-17T16:56:52Z",
         "homepageUrl": "",
-        "pushedAt": "2017-09-03T15:21",
-        "languages": [
-            ""
-        ],
+        "pushedAt": "2017-09-03T15:21:05Z",
+        "languages": [],
         "data": {
             "2017-43": {
                 "stars": 7,
@@ -184,6 +202,11 @@
             "2017-47": {
                 "stars": 6,
                 "users": 8
+            },
+            "2017-48": {
+                "stars": 6,
+                "users": 8,
+                "forks": 3
             }
         },
         "releases": [],
@@ -197,10 +220,10 @@
         "name": "ClubCoin",
         "id": "MDEwOlJlcG9zaXRvcnk0Njc5OTEwMw==",
         "description": "ClubCoin cryptocurrency software",
-        "createdAt": "2015-11-24T15:07",
+        "createdAt": "2015-11-24T15:07:17Z",
         "url": "https://github.com/BitClubDev/ClubCoin",
-        "homepageUrl": "",
-        "pushedAt": "2017-02-21T03:32",
+        "homepageUrl": null,
+        "pushedAt": "2017-02-21T03:32:07Z",
         "releases": [
             {
                 "name": "ClubCoin 1.2.0",
@@ -231,6 +254,11 @@
             "2017-47": {
                 "stars": 5,
                 "users": 10
+            },
+            "2017-48": {
+                "stars": 6,
+                "users": 10,
+                "forks": 8
             }
         },
         "ownername": "BitClubDev/ClubCoin",
@@ -245,9 +273,9 @@
         "coinname": "Bitcoin",
         "symbol": "BTC",
         "description": "Bitcoin Core integration/staging tree",
-        "createdAt": "2010-12-19T15:16:43Z",
+        "createdAt": "2010-12-19T15:16",
         "homepageUrl": "https://bitcoin.org/en/download",
-        "pushedAt": "2017-11-25T21:14:47Z",
+        "pushedAt": "2017-12-02T22:19",
         "languages": [
             "C++",
             "Python",
@@ -314,17 +342,26 @@
             "2017-47": {
                 "stars": 19631,
                 "users": 488
+            },
+            "2017-48": {
+                "stars": 20245,
+                "users": 492,
+                "forks": 8041
             }
-        }
+        },
+        "rank": "1",
+        "type": "",
+        "team": "",
+        "blockchain": "Commercial"
     },
     {
         "owner": "bitshares",
         "name": "bitshares-core",
         "id": "MDEwOlJlcG9zaXRvcnk0NDEyMzI1Mg==",
         "description": "Your share in the Decentralized Exchange",
-        "createdAt": "2015-10-12T17:36",
+        "createdAt": "2015-10-12T17:36:04Z",
         "homepageUrl": "https://bitshares.org/",
-        "pushedAt": "2017-11-25T19:54",
+        "pushedAt": "2017-11-30T22:17:02Z",
         "languages": [
             "C++",
             "CMake",
@@ -346,6 +383,11 @@
             "2017-47": {
                 "stars": 433,
                 "users": 14
+            },
+            "2017-48": {
+                "stars": 445,
+                "users": 14,
+                "forks": 175
             }
         },
         "releases": [
@@ -402,9 +444,9 @@
         ],
         "url": "https://github.com/bitshares/bitshares-core",
         "ownername": "bitshares/bitshares-core",
-        "coinname": "Bitshares",
+        "coinname": "BitShares",
         "symbol": "BTS",
-        "rank": "",
+        "rank": "31",
         "team": ""
     },
     {
@@ -412,9 +454,9 @@
         "name": "basic-attention-token-crowdsale",
         "id": "MDEwOlJlcG9zaXRvcnk4NTE1MzQ3Mw==",
         "description": "Basic Attention Token",
-        "createdAt": "2017-03-16T04:42",
+        "createdAt": "2017-03-16T04:42:59Z",
         "homepageUrl": "https://basicattentiontoken.org/",
-        "pushedAt": "2017-08-15T00:38",
+        "pushedAt": "2017-08-15T00:38:06Z",
         "languages": [
             "TeX",
             "Makefile"
@@ -435,27 +477,33 @@
             "2017-47": {
                 "stars": 89,
                 "users": 9
+            },
+            "2017-48": {
+                "stars": 91,
+                "users": 9,
+                "forks": 29
             }
         },
         "releases": [],
         "url": "https://github.com/brave-intl/basic-attention-token-crowdsale",
         "ownername": "brave-intl/basic-attention-token-crowdsale",
-        "coinname": "Bat",
-        "symbol": "BAT"
+        "coinname": "Basic Attention Token",
+        "symbol": "BAT",
+        "rank": "56"
     },
     {
         "owner": "BTCGPU",
         "name": "BTCGPU",
         "id": "MDEwOlJlcG9zaXRvcnk5ODA3Nzk2Nw==",
         "description": "Current work on BTCGPU",
-        "createdAt": "2017-07-23T05:59",
+        "createdAt": "2017-07-23T05:59:24Z",
         "url": "https://github.com/BTCGPU/BTCGPU",
         "homepageUrl": "http://bitcoingold.org",
-        "pushedAt": "2017-11-21T10:15",
+        "pushedAt": "2017-12-03T09:10:20Z",
         "releases": [
             {
                 "name": "Bitcoin Gold 0.15.0.1",
-                "description": "This is the precompiled release of Bitcoin Gold\r\n\r\n* Windows 64bits\r\n* Linux 64bits\r\n* macOS coming soon.\r\n\r\n```\r\nSHA-256 checksum:\r\n53e01dd7366e87fb920645b29541f8487f6f9eec233cbb43032c60c0398fc9fa  bitcoingold-0.15.0-win64-setup.exe\r\n25d7bf0deb125ecf5b50925a1c58e98c4b0b0a524470379c952f6b9310e97cfe  bitcoingold-0.15.0-x86_64-pc-linux-gnu.zip\r\n```",
+                "description": "This is the precompiled release of Bitcoin Gold\r\n\r\n* Windows 64bits\r\n* Linux 64bits\r\n* macOS coming soon.\r\n\r\nChecksum\r\n\r\n```\r\n-----BEGIN PGP SIGNED MESSAGE-----\r\nHash: SHA256\r\n\r\nSHA-256 checksum:\r\n53e01dd7366e87fb920645b29541f8487f6f9eec233cbb43032c60c0398fc9fa  bitcoingold-0.15.0-win64-setup.exe\r\n25d7bf0deb125ecf5b50925a1c58e98c4b0b0a524470379c952f6b9310e97cfe  bitcoingold-0.15.0-x86_64-pc-linux-gnu.zip\r\n-----BEGIN PGP SIGNATURE-----\r\n\r\niQIyBAEBCAAdFiEEAuzX8hq+qItCcMsqOO4S61l7T8AFAlogYxIACgkQOO4S61l7\r\nT8ABxw/3QKzre2WQD0etsyztA2My424sH9g5gPmdqBiMxqcYsbQ8dZr1UXlLCp8i\r\naISzI4jn+xVLEQehTCMYpdDGAyOWj9dBP16U4UQBBnYa/XtJQZY55NozRlXUv+QE\r\ntmMM5Hb7h2WfYdiFELzvc/RiigbBij6rvjtLQXu6dgRE+fIueOVEysJ6ZoxH1IkW\r\ncP0aFR3dSK0YGsKBkl7WrUB1DRDqKSgar4K+BYGvnddmWUqetn1pWcd7N9cSH/1u\r\nsv/Z4Gzhgmj9ZO7nceBi/92LCoBrm214tCX96Tw56qgBOI9eXY/OXD0Z8rBrNqKA\r\nBGtnOCug4BUkpeS8vTVRaz8uZjwFXGgv5yOBALNldBrAsSJ6q3eRYzoTRFEhHwtM\r\nFcQk55zYOZt4YYJRkn4gn3xcb7mtmOM4rWj/STg1KIL/Hdlx9+BCzHbSYXasoWsS\r\nj3+kiPL4Xh5RwMuO0QCoHgqnvx8PKUSsjj/3SE2tINZe3HDUeTvyjT/DWh2QpWQ1\r\nMoXpHZevF+GHV9vCz8xj5ljj6vOqDhL6mtTgUNDlpYlpASmnQWp7wi70rfMvYh9s\r\n5Exm+VZA7TK/6MVWnDxCRgE46jy/LYx6aEPAYP1/CGqYykiga64cj01Bv/8hzM4n\r\nBhwlgkWz9OYPTGawlFJPGwFq5DQpoVQ6n4lBSUNRVII1O+Ezow==\r\n=Ygm3\r\n-----END PGP SIGNATURE-----\r\n```",
                 "publishedAt": "2017-11-12T19:43:50Z"
             }
         ],
@@ -472,27 +520,36 @@
             "2017-47": {
                 "stars": 390,
                 "users": 81
+            },
+            "2017-48": {
+                "stars": 415,
+                "users": 82,
+                "forks": 174
             }
         },
         "ownername": "BTCGPU/BTCGPU",
-        "coinname": "Bitcoingold",
-        "symbol": "BTG"
+        "coinname": "Bitcoin Gold",
+        "symbol": "BTG",
+        "rank": "7"
     },
     {
         "owner": "CentraTech",
         "name": "smart-contract",
         "id": "MDEwOlJlcG9zaXRvcnk5NzA4MTY1Mw==",
-        "description": "",
-        "createdAt": "2017-07-13T04:59",
-        "homepageUrl": "",
-        "pushedAt": "2017-07-16T00:27",
-        "languages": [
-            ""
-        ],
+        "description": null,
+        "createdAt": "2017-07-13T04:59:25Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-07-16T00:27:55Z",
+        "languages": [],
         "data": {
             "2017-47": {
                 "stars": 6,
                 "users": 2
+            },
+            "2017-48": {
+                "stars": 7,
+                "users": 2,
+                "forks": 1
             }
         },
         "releases": [],
@@ -506,9 +563,9 @@
         "name": "blackcoin",
         "id": "MDEwOlJlcG9zaXRvcnk0MDk2NDkyNg==",
         "description": "BlackCoin Core integration/staging tree",
-        "createdAt": "2015-08-18T10:08",
+        "createdAt": "2015-08-18T10:08:00Z",
         "homepageUrl": "http://blackcoin.co",
-        "pushedAt": "2017-10-20T13:44",
+        "pushedAt": "2017-10-20T13:44:00Z",
         "languages": [
             "C++",
             "Python",
@@ -530,6 +587,11 @@
             "2017-47": {
                 "stars": 41,
                 "users": 1
+            },
+            "2017-48": {
+                "stars": 42,
+                "users": 1,
+                "forks": 30
             }
         },
         "releases": [
@@ -558,7 +620,7 @@
         "description": "Dash - Reinventing Cryptocurrency",
         "createdAt": "2014-05-01T17:45:34Z",
         "homepageUrl": "https://www.dash.org",
-        "pushedAt": "2017-11-25T01:33:53Z",
+        "pushedAt": "2017-12-03T06:16:53Z",
         "languages": [
             "C++",
             "C",
@@ -580,6 +642,11 @@
             "2017-47": {
                 "stars": 685,
                 "users": 5
+            },
+            "2017-48": {
+                "stars": 716,
+                "users": 5,
+                "forks": 417
             }
         },
         "releases": [
@@ -637,16 +704,17 @@
         "url": "https://github.com/dashpay/dash",
         "ownername": "dashpay/dash",
         "coinname": "Dash",
-        "symbol": "DASH"
+        "symbol": "DASH",
+        "rank": "5"
     },
     {
         "owner": "digibyte",
         "name": "digibyte",
         "id": "MDEwOlJlcG9zaXRvcnkxNTg0ODM2Mg==",
         "description": "DigiByte Core 6.14.2 - CURRENT",
-        "createdAt": "2014-01-12T18:53",
+        "createdAt": "2014-01-12T18:53:08Z",
         "homepageUrl": "http://digibyte.co",
-        "pushedAt": "2017-11-25T21:33",
+        "pushedAt": "2017-11-26T01:35:52Z",
         "languages": [
             "C++",
             "C",
@@ -668,6 +736,11 @@
             "2017-47": {
                 "stars": 129,
                 "users": 424
+            },
+            "2017-48": {
+                "stars": 129,
+                "users": 424,
+                "forks": 62
             }
         },
         "releases": [
@@ -691,7 +764,7 @@
         "ownername": "digibyte/digibyte",
         "coinname": "DigiByte",
         "symbol": "DGB",
-        "rank": "",
+        "rank": "69",
         "team": ""
     },
     {
@@ -717,9 +790,9 @@
         "name": "dogecoin",
         "id": "MDEwOlJlcG9zaXRvcnkxNDk4MTM3Ng==",
         "description": "very currency",
-        "createdAt": "2013-12-06T11:38",
+        "createdAt": "2013-12-06T11:38:05Z",
         "homepageUrl": "",
-        "pushedAt": "2017-11-19T22:22",
+        "pushedAt": "2017-11-27T00:25:20Z",
         "languages": [
             "C++",
             "C",
@@ -741,6 +814,11 @@
             "2017-47": {
                 "stars": 1412,
                 "users": 156
+            },
+            "2017-48": {
+                "stars": 1429,
+                "users": 156,
+                "forks": 575
             }
         },
         "releases": [
@@ -799,7 +877,7 @@
         "ownername": "dogecoin/dogecoin",
         "coinname": "Dogecoin",
         "symbol": "DOGE",
-        "rank": "",
+        "rank": "43",
         "team": ""
     },
     {
@@ -807,12 +885,12 @@
         "id": "MDEwOlJlcG9zaXRvcnk1NjE5MDgzMQ==",
         "owner": "dzimbeck",
         "name": "BitBay",
-        "coinname": "Bitbay",
+        "coinname": "BitBay",
         "symbol": "BAY",
         "description": "BitBay Source Code",
-        "createdAt": "2016-04-13T22:41",
-        "homepageUrl": "",
-        "pushedAt": "2017-11-16T21:08",
+        "createdAt": "2016-04-13T22:41:46Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-11-16T21:08:40Z",
         "languages": [
             "C++",
             "Python",
@@ -824,8 +902,14 @@
             "2017-47": {
                 "stars": 9,
                 "users": 3
+            },
+            "2017-48": {
+                "stars": 10,
+                "users": 3,
+                "forks": 9
             }
-        }
+        },
+        "rank": "97"
     },
     {
         "ownername": "EdgelessCasino/Smart-Contracts",
@@ -835,20 +919,24 @@
         "coinname": "Edgeless",
         "symbol": "EDG",
         "description": "Edgeless Token Smart Contracts",
-        "createdAt": "2016-12-15T15:15",
+        "createdAt": "2016-12-15T15:15:31Z",
         "homepageUrl": "",
-        "pushedAt": "2017-05-22T10:56",
-        "languages": [
-            ""
-        ],
+        "pushedAt": "2017-05-22T10:56:37Z",
+        "languages": [],
         "url": "https://github.com/EdgelessCasino/Smart-Contracts",
         "releases": [],
         "data": {
             "2017-47": {
                 "stars": 21,
                 "users": 1
+            },
+            "2017-48": {
+                "stars": 22,
+                "users": 1,
+                "forks": 5
             }
-        }
+        },
+        "rank": "86"
     },
     {
         "ownername": "eidoo/eth-lightwallet",
@@ -858,9 +946,9 @@
         "coinname": "Eidoo",
         "symbol": "EDO",
         "description": "Lightweight JS Wallet for Node and the browser ",
-        "createdAt": "2016-12-28T19:35",
-        "homepageUrl": "",
-        "pushedAt": "2017-11-02T15:32",
+        "createdAt": "2016-12-28T19:35:31Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-11-02T15:32:15Z",
         "languages": [
             "JavaScript",
             "HTML"
@@ -875,6 +963,11 @@
             "2017-47": {
                 "stars": 0,
                 "users": 8
+            },
+            "2017-48": {
+                "stars": 0,
+                "users": 8,
+                "forks": 3
             }
         }
     },
@@ -883,9 +976,9 @@
         "name": "elastic.github.io",
         "id": "MDEwOlJlcG9zaXRvcnk4Nzk0OTA0Nw==",
         "description": "Elastic Official Website Repository",
-        "createdAt": "2017-04-11T15:15",
+        "createdAt": "2017-04-11T15:15:52Z",
         "homepageUrl": "http://www.elastic.pw",
-        "pushedAt": "2017-10-30T09:32",
+        "pushedAt": "2017-10-30T09:32:21Z",
         "languages": [
             "HTML"
         ],
@@ -905,6 +998,11 @@
             "2017-47": {
                 "stars": 6,
                 "users": 2
+            },
+            "2017-48": {
+                "stars": 6,
+                "users": 2,
+                "forks": 3
             }
         },
         "releases": [],
@@ -923,9 +1021,9 @@
         "coinname": "Einsteinium",
         "symbol": "EMC2",
         "description": "Litecoin source tree",
-        "createdAt": "2017-07-01T19:15",
+        "createdAt": "2017-07-01T19:15:43Z",
         "homepageUrl": "http://www.litecoin.org",
-        "pushedAt": "2017-10-21T10:05",
+        "pushedAt": "2017-10-21T10:05:48Z",
         "languages": [
             "C++",
             "Python",
@@ -941,8 +1039,14 @@
             "2017-47": {
                 "stars": 9,
                 "users": 1
+            },
+            "2017-48": {
+                "stars": 14,
+                "users": 1,
+                "forks": 3
             }
-        }
+        },
+        "rank": "51"
     },
     {
         "owner": "EOSIO",
@@ -951,7 +1055,7 @@
         "description": "An open source smart contract platform ",
         "createdAt": "2017-04-05T17:09:53Z",
         "homepageUrl": "https://eosio.github.io/eos/",
-        "pushedAt": "2017-11-25T20:36:55Z",
+        "pushedAt": "2017-12-02T06:12:06Z",
         "languages": [
             "WebAssembly",
             "C++",
@@ -973,13 +1077,23 @@
             "2017-47": {
                 "stars": 1475,
                 "users": 62
+            },
+            "2017-48": {
+                "stars": 1580,
+                "users": 62,
+                "forks": 339
             }
         },
         "releases": [
             {
-                "name": null,
-                "description": null,
-                "publishedAt": null
+                "name": "STAT-2017-11-30",
+                "description": "",
+                "publishedAt": "2017-12-01T00:09:51Z"
+            },
+            {
+                "name": "STAT-2017-11-25",
+                "description": "",
+                "publishedAt": "2017-11-26T00:36:17Z"
             },
             {
                 "name": "EOS.IO Dawn v1.0 - Pre-Release ",
@@ -990,7 +1104,8 @@
         "url": "https://github.com/EOSIO/eos",
         "ownername": "EOSIO/eos",
         "coinname": "EOS",
-        "symbol": "EOS"
+        "symbol": "EOS",
+        "rank": "14"
     },
     {
         "owner": "ethereum",
@@ -999,7 +1114,7 @@
         "description": "Official Go implementation of the Ethereum protocol",
         "createdAt": "2013-12-26T13:05:46Z",
         "homepageUrl": "https://geth.ethereum.org",
-        "pushedAt": "2017-11-24T19:42:32Z",
+        "pushedAt": "2017-12-02T21:47:15Z",
         "languages": [
             "Go",
             "C",
@@ -1021,6 +1136,11 @@
             "2017-47": {
                 "stars": 9165,
                 "users": 207
+            },
+            "2017-48": {
+                "stars": 9447,
+                "users": 209,
+                "forks": 2800
             }
         },
         "releases": [
@@ -1078,16 +1198,17 @@
         "url": "https://github.com/ethereum/go-ethereum",
         "ownername": "ethereum/go-ethereum",
         "coinname": "Ethereum",
-        "symbol": "ETH"
+        "symbol": "ETH",
+        "rank": "2"
     },
     {
         "owner": "ethereumclassic",
         "name": "ethereumclassic.github.io",
         "id": "MDEwOlJlcG9zaXRvcnk2MzQwMjE4Ng==",
         "description": "Ethereum Classic Website",
-        "createdAt": "2016-07-15T07:43",
+        "createdAt": "2016-07-15T07:43:41Z",
         "homepageUrl": "http://ethereumclassic.github.io",
-        "pushedAt": "2017-11-25T13:37",
+        "pushedAt": "2017-12-02T20:59:10Z",
         "languages": [
             "HTML"
         ],
@@ -1107,22 +1228,28 @@
             "2017-47": {
                 "stars": 35,
                 "users": 22
+            },
+            "2017-48": {
+                "stars": 34,
+                "users": 22,
+                "forks": 53
             }
         },
         "releases": [],
         "url": "https://github.com/ethereumclassic/ethereumclassic.github.io",
         "ownername": "ethereumclassic/ethereumclassic.github.io",
-        "coinname": "Ethereumclassic",
-        "symbol": "ETC"
+        "coinname": "Ethereum Classic",
+        "symbol": "ETC",
+        "rank": "11"
     },
     {
         "owner": "FactomProject",
         "name": "factomd",
         "id": "MDEwOlJlcG9zaXRvcnk0MjY2NDA4NA==",
         "description": "Factom Daemon ",
-        "createdAt": "2015-09-17T15:21",
+        "createdAt": "2015-09-17T15:21:26Z",
         "homepageUrl": "",
-        "pushedAt": "2017-11-21T20:32",
+        "pushedAt": "2017-12-02T23:32:55Z",
         "languages": [
             "Go",
             "Shell",
@@ -1144,23 +1271,29 @@
             "2017-47": {
                 "stars": 90,
                 "users": 61
+            },
+            "2017-48": {
+                "stars": 91,
+                "users": 61,
+                "forks": 25
             }
         },
         "releases": [],
         "url": "https://github.com/FactomProject/factomd",
         "ownername": "FactomProject/factomd",
         "coinname": "Factom",
-        "symbol": "FCT"
+        "symbol": "FCT",
+        "rank": "50"
     },
     {
         "owner": "FeatherCoin",
         "name": "Feathercoin",
         "id": "MDEwOlJlcG9zaXRvcnkxMzg4NzEzOA==",
-        "description": "",
-        "createdAt": "2013-10-26T16:52",
+        "description": null,
+        "createdAt": "2013-10-26T16:52:25Z",
         "url": "https://github.com/FeatherCoin/Feathercoin",
         "homepageUrl": "https://www.feathercoin.com/",
-        "pushedAt": "2017-11-21T14:32",
+        "pushedAt": "2017-11-21T14:32:36Z",
         "releases": [
             {
                 "name": "final 0.9.6.2 bug fix release",
@@ -1171,11 +1304,6 @@
                 "name": "0.9 Bugfixes",
                 "description": "Several bug fixes and increased performance of block chain sync\r\n\r\nFixes:\r\n\r\n- Problem with Static Builds with Windows (issue #155)\r\n- copyright updated (issue #156)\r\n- changes in message displays (issue #157)\r\n- new protocol version number (issue #158)\r\n- changes to unit tests (issue #159)\r\n- fix to format errors on Multisig GUI page (issue #160)\r\n- solo mining not working, getwork borken (issue #166)\r\n- ACP in advisory mode crashes cliend (issue #169)\r\n- ACP enforced config parameter not handled correctly in 0.9.6 (issue #170)\r\n- fix to connections problems for incomming connections from 0.11.x nodes (issue #171)\r\n- fix to gui display problems (# issue #180)\r\n- updates to configure script to fix dependicy detection problems (issue #190)\r\n- RPC dumpwallet issue empty content (issue #236)",
                 "publishedAt": "2017-11-20T18:23:27Z"
-            },
-            {
-                "name": "0.9.6.1 Bugfixes for 0.9.6 tree (Outdated)",
-                "description": "This is a bugfix release.\r\n\r\nIssues Fixed:\r\n\r\n    - When a 0.11.x node connects, the connection will be with 'invalid pchMessageStart in 0.9.6 and earlier versions. (Github Issue #171) This has been fixed by implementing pchMessageStartNew constant to allow future 0.11.x nodes to connect.\r\n\r\n    - The configuration parameter 'enfoce checkpoint was not handled correctly in 0.9.6, when set. (Github issues #169,#170)\r\n\r\n    - A formating error on the Multisig GUI page was fixed (Github issue #160)\r\n\r\n    - Log messages get id numbers (Github issue #157)\r\n\r\n    - Test section was updated ( Github issues #120 - #127)\r\n",
-                "publishedAt": "2017-07-12T19:40:00Z"
             },
             {
                 "name": "New Gui, support for Block version 4 (outdated)",
@@ -1206,6 +1334,11 @@
             "2017-47": {
                 "stars": 90,
                 "users": 193
+            },
+            "2017-48": {
+                "stars": 91,
+                "users": 193,
+                "forks": 79
             }
         },
         "ownername": "FeatherCoin/Feathercoin",
@@ -1217,10 +1350,10 @@
         "name": "florincoin",
         "id": "MDEwOlJlcG9zaXRvcnkyMDkyNDMyOA==",
         "description": "Florin",
-        "createdAt": "2014-06-17T13:28",
+        "createdAt": "2014-06-17T13:28:34Z",
         "url": "https://github.com/florincoin/florincoin",
         "homepageUrl": "http://www.florincoin.org",
-        "pushedAt": "2017-06-26T10:21",
+        "pushedAt": "2017-06-26T10:21:38Z",
         "releases": [
             {
                 "name": "v0.10.4.4",
@@ -1246,6 +1379,11 @@
             "2017-47": {
                 "stars": 18,
                 "users": 3
+            },
+            "2017-48": {
+                "stars": 18,
+                "users": 3,
+                "forks": 14
             }
         },
         "ownername": "florincoin/florincoin",
@@ -1257,10 +1395,10 @@
         "name": "gamecredits",
         "id": "MDEwOlJlcG9zaXRvcnkxNjk2Mjk3Nw==",
         "description": "GameCredits Digital Gaming Crypto Currency Source tree",
-        "createdAt": "2014-02-18T20:40",
+        "createdAt": "2014-02-18T20:40:54Z",
         "url": "https://github.com/gamers-coin/gamecredits",
         "homepageUrl": "http://gamecredits.net",
-        "pushedAt": "2016-10-05T10:38",
+        "pushedAt": "2016-10-05T10:38:54Z",
         "releases": [],
         "languages": [
             "C++",
@@ -1275,11 +1413,17 @@
             "2017-47": {
                 "stars": 8,
                 "users": 6
+            },
+            "2017-48": {
+                "stars": 8,
+                "users": 6,
+                "forks": 9
             }
         },
         "ownername": "gamers-coin/gamecredits",
-        "coinname": "Gamecredits",
-        "symbol": "GAME"
+        "coinname": "GameCredits",
+        "symbol": "GAME",
+        "rank": "67"
     },
     {
         "ownername": "GenesisVision/ico-contracts",
@@ -1289,9 +1433,9 @@
         "coinname": "Genesisvision",
         "symbol": "GVT",
         "description": "Genesis Vision ICO Ethereum Smart contracts",
-        "createdAt": "2017-07-10T12:00",
+        "createdAt": "2017-07-10T12:00:48Z",
         "homepageUrl": "https://genesis.vision",
-        "pushedAt": "2017-09-11T20:39",
+        "pushedAt": "2017-09-11T20:39:21Z",
         "languages": [
             "JavaScript"
         ],
@@ -1301,6 +1445,11 @@
             "2017-47": {
                 "stars": 7,
                 "users": 6
+            },
+            "2017-48": {
+                "stars": 7,
+                "users": 6,
+                "forks": 2
             }
         }
     },
@@ -1309,9 +1458,9 @@
         "name": "gnosis-contracts",
         "id": "MDEwOlJlcG9zaXRvcnk5MTgwNDM2OQ==",
         "description": "Collection of smart contracts for the Gnosis prediction market platform.",
-        "createdAt": "2017-05-19T12:38",
+        "createdAt": "2017-05-19T12:38:57Z",
         "homepageUrl": "https://www.gnosis.pm",
-        "pushedAt": "2017-11-22T23:41",
+        "pushedAt": "2017-11-22T23:41:22Z",
         "languages": [
             "Python",
             "JavaScript",
@@ -1333,6 +1482,11 @@
             "2017-47": {
                 "stars": 59,
                 "users": 21
+            },
+            "2017-48": {
+                "stars": 63,
+                "users": 21,
+                "forks": 18
             }
         },
         "releases": [
@@ -1391,7 +1545,7 @@
         "ownername": "gnosis/gnosis-contracts",
         "coinname": "Gnosis",
         "symbol": "GNO",
-        "rank": "",
+        "rank": "68",
         "team": ""
     },
     {
@@ -1399,9 +1553,9 @@
         "name": "golem",
         "id": "MDEwOlJlcG9zaXRvcnk0NjQzMzkzNw==",
         "description": "Golem is creating a global market for computing power.",
-        "createdAt": "2015-11-18T17:02",
+        "createdAt": "2015-11-18T17:02:35Z",
         "homepageUrl": "https://golem.network",
-        "pushedAt": "2017-11-24T17:25",
+        "pushedAt": "2017-12-01T20:49:09Z",
         "languages": [
             "Python",
             "C",
@@ -1423,9 +1577,19 @@
             "2017-47": {
                 "stars": 1719,
                 "users": 38
+            },
+            "2017-48": {
+                "stars": 1760,
+                "users": 38,
+                "forks": 162
             }
         },
         "releases": [
+            {
+                "name": "0.9.1",
+                "description": "BUGFIXES\r\n- Docker switched from start to restart (two instance being created at once problem)\r\n- Typo in MessageSubtaskResultAccepted fixed\r\n- Bugfixing in registering payments\r\n- Undefined port handle fix\r\n\r\nIMPROVEMENTS\r\n- DataBuffer refactor and optimization\r\n- Cleanup of HyperG manager code and Peerkeeper code\r\n- Elaborated logs about Docker issues\r\n- Small improvements in Windows installer \r\n\r\nFEATURES\r\n- Collect statistics about why tasks are not supported\r\n",
+                "publishedAt": "2017-11-28T15:11:29Z"
+            },
             {
                 "name": "0.9.0",
                 "description": "**IMPORTANT**: Golem for Windows will be now installed in 64bit location. Kindly run **uninstall** before you use the new installer.\r\nIf you encounter any errors please let us know on testers channel at chat.golem.network or write an email to tech@golem.network\r\n\r\nCHANGELOG: \r\n\r\nGETH:\r\n\r\n* Byzantium fork compatibility (geth 1.7.2)\r\n* Support for using external geth via http\r\n\r\nPROTOCOL:\r\n\r\n* File exchange added to task handshake (connection problems can be detected earlier)\r\n* Different signing mechanism for messages (optimization)\r\n* Incoming message buffer optimizations\r\n* Remove_peer_by_id method fixed\r\n* Limited number of task headers by requestor kept by Golem\r\n* Golem nodes connect now only to one bootstrap\r\n* Fixed a bug causing sending of old tasks\r\n* Small bugs in p2p2 Kademlia\u2019s protocol fixed\r\n\r\nRESOURCES:\r\n\r\n* HyperG peer discovery disabled\r\n\r\nCORE:\r\n\r\n* Benchmark scores moved from config files to database\r\n* Payment matching bugs fixed\r\n* Fixed bug that may cause TaskComputer to note the same tasks two times\r\n* Golem version visible in logs\r\n\r\nCLI:\r\n\r\n* Small improvements and bugfixing (with help and showing version)\r\n\r\nOLD GUI:\r\n\r\n* Old QT-based interface finally removed\r\n\r\nELECTRON (GUI):\r\n\r\n* High Sierra compatibility\r\n* Developer mode (detailed information about tasks/stats/peers)\r\n* Debug mode (Connection problems will be reported in log file on golem default log folder as gui.log)\r\n* Currency indicator re-designed (new animation / USD currency option)\r\n* Onboarding screen refurbished\r\n* Preview viewer bug solved\r\n* Preview indexing bug solved\r\n* Task duplication issue fixed\r\n* Crashing while updating hardware preset is fixed\r\n* Minor changes",
@@ -1475,7 +1639,8 @@
         "url": "https://github.com/golemfactory/golem",
         "ownername": "golemfactory/golem",
         "coinname": "Golem",
-        "symbol": "GNT"
+        "symbol": "GNT",
+        "rank": "39"
     },
     {
         "ownername": "Groestlcoin/groestlcoin",
@@ -1485,9 +1650,9 @@
         "coinname": "Groestlcoin",
         "symbol": "GRS",
         "description": "Groestlcoin Core integration/staging tree",
-        "createdAt": "2015-07-17T15:10",
+        "createdAt": "2015-07-17T15:10:36Z",
         "homepageUrl": "http://groestlcoin.org/downloads",
-        "pushedAt": "2017-07-24T09:32",
+        "pushedAt": "2017-07-24T09:32:28Z",
         "languages": [
             "C++",
             "Python",
@@ -1510,17 +1675,23 @@
             "2017-47": {
                 "stars": 6,
                 "users": 3
+            },
+            "2017-48": {
+                "stars": 6,
+                "users": 3,
+                "forks": 4
             }
-        }
+        },
+        "rank": "98"
     },
     {
         "owner": "Gulden",
         "name": "gulden-official",
         "id": "MDEwOlJlcG9zaXRvcnk0MDY1MzYyMA==",
         "description": "The official repository for Gulden core wallet, updated at each release.",
-        "createdAt": "2015-08-13T10:46",
+        "createdAt": "2015-08-13T10:46:44Z",
         "homepageUrl": "https://www.gulden.com",
-        "pushedAt": "2017-10-16T20:38",
+        "pushedAt": "2017-11-29T08:26:16Z",
         "languages": [
             "C++",
             "Python",
@@ -1542,9 +1713,19 @@
             "2017-47": {
                 "stars": 57,
                 "users": 292
+            },
+            "2017-48": {
+                "stars": 57,
+                "users": 292,
+                "forks": 14
             }
         },
         "releases": [
+            {
+                "name": "v1.6.4.7",
+                "description": "Final release in 1.6.x series - contains a fix to city hash that is required for final 2.0 testing. No other important changes, only testers need upgrade.",
+                "publishedAt": "2017-11-29T08:22:45Z"
+            },
             {
                 "name": "1.6.4.6",
                 "description": "RPC - Fix an issue introduced in 1.6.4.3 which can cause users running with \"-disablewallet\" to experience RPC freezes when calling certain RPC commands.",
@@ -1589,11 +1770,6 @@
                 "name": "1.6.3.1",
                 "description": "Minor bugfix release - fix a potential intermittent crash that some users may be experiencing.\n",
                 "publishedAt": "2016-12-26T14:25:24Z"
-            },
-            {
-                "name": "",
-                "description": "Very minor RPC improvements and bug fixes.\r\n",
-                "publishedAt": "2016-12-23T07:23:47Z"
             }
         ],
         "url": "https://github.com/Gulden/gulden-official",
@@ -1606,10 +1782,10 @@
         "name": "gxb-core",
         "id": "MDEwOlJlcG9zaXRvcnk5OTg5NDYyNw==",
         "description": "GXB-Core",
-        "createdAt": "2017-08-10T07:29",
+        "createdAt": "2017-08-10T07:29:52Z",
         "url": "https://github.com/gxchain/gxb-core",
         "homepageUrl": "https://www.gxb.io/",
-        "pushedAt": "2017-11-20T03:30",
+        "pushedAt": "2017-11-27T13:33:53Z",
         "releases": [
             {
                 "name": "GXB-Core Release v1.0.171031",
@@ -1635,20 +1811,26 @@
             "2017-47": {
                 "stars": 36,
                 "users": 7
+            },
+            "2017-48": {
+                "stars": 37,
+                "users": 7,
+                "forks": 8
             }
         },
         "ownername": "gxchain/gxb-core",
-        "coinname": "Gxshares",
-        "symbol": "GXS"
+        "coinname": "GXShares",
+        "symbol": "GXS",
+        "rank": "73"
     },
     {
         "owner": "HcashOrg",
         "name": "Hshare",
         "id": "MDEwOlJlcG9zaXRvcnk5NTczOTQ4NA==",
-        "description": "",
-        "createdAt": "2017-06-29T04:46",
-        "homepageUrl": "",
-        "pushedAt": "2017-09-20T11:47",
+        "description": null,
+        "createdAt": "2017-06-29T04:46:02Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-09-20T11:47:56Z",
         "languages": [
             "C",
             "C++",
@@ -1670,6 +1852,11 @@
             "2017-47": {
                 "stars": 65,
                 "users": 14
+            },
+            "2017-48": {
+                "stars": 73,
+                "users": 14,
+                "forks": 21
             }
         },
         "releases": [
@@ -1692,16 +1879,17 @@
         "url": "https://github.com/HcashOrg/Hshare",
         "ownername": "HcashOrg/Hshare",
         "coinname": "Hshare",
-        "symbol": "HSR"
+        "symbol": "HSR",
+        "rank": "22"
     },
     {
         "owner": "hempcoin-project",
         "name": "THC",
         "id": "MDEwOlJlcG9zaXRvcnkxNzM4Mjg3OA==",
         "description": "Hempcoin Crypto Currency and Crypto-Stash",
-        "createdAt": "2014-03-03T22:47",
-        "homepageUrl": "",
-        "pushedAt": "2017-10-29T02:50",
+        "createdAt": "2014-03-03T22:47:02Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-10-29T02:50:45Z",
         "languages": [
             "C++",
             "HTML",
@@ -1723,6 +1911,11 @@
             "2017-47": {
                 "stars": 8,
                 "users": 5
+            },
+            "2017-48": {
+                "stars": 8,
+                "users": 5,
+                "forks": 10
             }
         },
         "releases": [
@@ -1742,9 +1935,9 @@
         "name": "rlc-token",
         "id": "MDEwOlJlcG9zaXRvcnk4MzY0OTQ3Nw==",
         "description": "RLC Token for the iEx.ec project",
-        "createdAt": "2017-03-02T07:42",
-        "homepageUrl": "",
-        "pushedAt": "2017-10-04T12:09",
+        "createdAt": "2017-03-02T07:42:57Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-10-04T12:09:42Z",
         "languages": [
             "JavaScript",
             "Shell"
@@ -1765,6 +1958,11 @@
             "2017-47": {
                 "stars": 20,
                 "users": 12
+            },
+            "2017-48": {
+                "stars": 20,
+                "users": 12,
+                "forks": 8
             }
         },
         "releases": [],
@@ -1777,10 +1975,10 @@
         "owner": "Infinitecoin",
         "name": "infinitecoin",
         "id": "MDEwOlJlcG9zaXRvcnkxMTA2MzMwNw==",
-        "description": "",
-        "createdAt": "2013-06-30T02:17",
-        "homepageUrl": "",
-        "pushedAt": "2014-05-01T22:48",
+        "description": null,
+        "createdAt": "2013-06-30T02:17:26Z",
+        "homepageUrl": null,
+        "pushedAt": "2014-05-01T22:48:19Z",
         "languages": [
             "TypeScript",
             "C++",
@@ -1802,6 +2000,11 @@
             "2017-47": {
                 "stars": 22,
                 "users": 1
+            },
+            "2017-48": {
+                "stars": 22,
+                "users": 1,
+                "forks": 19
             }
         },
         "releases": [],
@@ -1815,9 +2018,9 @@
         "name": "cardano-sl",
         "id": "MDEwOlJlcG9zaXRvcnk3MDkxMzk5Nw==",
         "description": "Cryptographic currency implementing Ouroboros PoS protocol",
-        "createdAt": "2016-10-14T13:44",
+        "createdAt": "2016-10-14T13:44:38Z",
         "homepageUrl": "",
-        "pushedAt": "2017-11-25T21:54",
+        "pushedAt": "2017-12-03T21:22:11Z",
         "languages": [
             "Haskell",
             "PureScript",
@@ -1839,6 +2042,11 @@
             "2017-47": {
                 "stars": 433,
                 "users": 53
+            },
+            "2017-48": {
+                "stars": 556,
+                "users": 56,
+                "forks": 68
             }
         },
         "releases": [
@@ -1866,16 +2074,17 @@
         "url": "https://github.com/input-output-hk/cardano-sl",
         "ownername": "input-output-hk/cardano-sl",
         "coinname": "Cardano",
-        "symbol": "ADA"
+        "symbol": "ADA",
+        "rank": "9"
     },
     {
         "owner": "iotaledger",
         "name": "iota.lib.js",
         "id": "MDEwOlJlcG9zaXRvcnk2Nzg2MDg2Mg==",
         "description": "IOTA Javascript Library",
-        "createdAt": "2016-09-10T08:49",
+        "createdAt": "2016-09-10T08:49:13Z",
         "homepageUrl": "https://dev.iota.org",
-        "pushedAt": "2017-11-25T11:43",
+        "pushedAt": "2017-12-03T18:44:06Z",
         "languages": [
             "JavaScript"
         ],
@@ -1895,6 +2104,11 @@
             "2017-47": {
                 "stars": 208,
                 "users": 22
+            },
+            "2017-48": {
+                "stars": 243,
+                "users": 22,
+                "forks": 92
             }
         },
         "releases": [
@@ -1958,11 +2172,11 @@
         "owner": "KyberNetwork",
         "name": "smart-contracts",
         "id": "MDEwOlJlcG9zaXRvcnk5NjAxMTY0Nw==",
-        "description": "",
-        "createdAt": "2017-07-02T08:39",
+        "description": null,
+        "createdAt": "2017-07-02T08:39:01Z",
         "url": "https://github.com/KyberNetwork/smart-contracts",
-        "homepageUrl": "",
-        "pushedAt": "2017-11-23T20:59",
+        "homepageUrl": null,
+        "pushedAt": "2017-11-28T18:41:18Z",
         "releases": [],
         "languages": [
             "JavaScript"
@@ -1975,12 +2189,17 @@
             "2017-47": {
                 "stars": 25,
                 "users": 11
+            },
+            "2017-48": {
+                "stars": 27,
+                "users": 11,
+                "forks": 10
             }
         },
         "ownername": "KyberNetwork/smart-contracts",
         "coinname": "Kyber Network",
         "symbol": "KNC",
-        "rank": "56",
+        "rank": "61",
         "team": ""
     },
     {
@@ -1988,9 +2207,9 @@
         "name": "lisk",
         "id": "MDEwOlJlcG9zaXRvcnk1MDg3MzY0MQ==",
         "description": "\ud83d\udcdf Lisk blockchain application platform",
-        "createdAt": "2016-02-01T21:45",
+        "createdAt": "2016-02-01T21:45:35Z",
         "homepageUrl": "https://lisk.io/",
-        "pushedAt": "2017-11-25T20:30",
+        "pushedAt": "2017-12-03T20:08:16Z",
         "languages": [
             "JavaScript",
             "PLpgSQL"
@@ -2011,6 +2230,11 @@
             "2017-47": {
                 "stars": 1434,
                 "users": 41
+            },
+            "2017-48": {
+                "stars": 1458,
+                "users": 42,
+                "forks": 188
             }
         },
         "releases": [
@@ -2069,7 +2293,7 @@
         "ownername": "LiskHQ/lisk",
         "coinname": "Lisk",
         "symbol": "LSK",
-        "rank": "19",
+        "rank": "20",
         "team": ""
     },
     {
@@ -2101,6 +2325,11 @@
             "2017-47": {
                 "stars": 1973,
                 "users": 11
+            },
+            "2017-48": {
+                "stars": 2035,
+                "users": 11,
+                "forks": 1226
             }
         },
         "releases": [
@@ -2138,16 +2367,17 @@
         "url": "https://github.com/litecoin-project/litecoin",
         "ownername": "litecoin-project/litecoin",
         "coinname": "Litecoin",
-        "symbol": "LTC"
+        "symbol": "LTC",
+        "rank": "6"
     },
     {
         "owner": "maidsafe",
         "name": "safe_client_libs",
         "id": "MDEwOlJlcG9zaXRvcnkzMjAyMDUzMw==",
         "description": "SAFE Network client side rust module(s)",
-        "createdAt": "2015-03-11T13:58",
+        "createdAt": "2015-03-11T13:58:08Z",
         "homepageUrl": "",
-        "pushedAt": "2017-11-24T16:12",
+        "pushedAt": "2017-12-01T10:39:57Z",
         "languages": [
             "Rust"
         ],
@@ -2167,25 +2397,29 @@
             "2017-47": {
                 "stars": 100,
                 "users": 24
+            },
+            "2017-48": {
+                "stars": 100,
+                "users": 24,
+                "forks": 46
             }
         },
         "releases": [],
         "url": "https://github.com/maidsafe/safe_client_libs",
         "ownername": "maidsafe/safe_client_libs",
-        "coinname": "Maidsafecoin",
-        "symbol": "MAID"
+        "coinname": "MaidSafeCoin",
+        "symbol": "MAID",
+        "rank": "45"
     },
     {
         "owner": "MetalPay",
         "name": "metal-token",
         "id": "MDEwOlJlcG9zaXRvcnk5NDgyMTU1Ng==",
         "description": "Source and audit results of the MTL ERC20 token.",
-        "createdAt": "2017-06-19T21:15",
-        "homepageUrl": "",
-        "pushedAt": "2017-08-17T15:39",
-        "languages": [
-            ""
-        ],
+        "createdAt": "2017-06-19T21:15:05Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-08-17T15:39:58Z",
+        "languages": [],
         "data": {
             "2017-43": {
                 "stars": 3,
@@ -2202,22 +2436,28 @@
             "2017-47": {
                 "stars": 3,
                 "users": 4
+            },
+            "2017-48": {
+                "stars": 3,
+                "users": 4,
+                "forks": 2
             }
         },
         "releases": [],
         "url": "https://github.com/MetalPay/metal-token",
         "ownername": "MetalPay/metal-token",
         "coinname": "Metal",
-        "symbol": "MTL"
+        "symbol": "MTL",
+        "rank": "71"
     },
     {
         "owner": "monacoinproject",
         "name": "monacoin",
         "id": "MDEwOlJlcG9zaXRvcnkxNTU1ODMzMw==",
-        "description": "",
-        "createdAt": "2013-12-31T23:43",
-        "homepageUrl": "",
-        "pushedAt": "2017-10-10T08:17",
+        "description": null,
+        "createdAt": "2013-12-31T23:43:01Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-10-10T08:17:26Z",
         "languages": [
             "C++",
             "C",
@@ -2239,6 +2479,11 @@
             "2017-47": {
                 "stars": 121,
                 "users": 426
+            },
+            "2017-48": {
+                "stars": 132,
+                "users": 426,
+                "forks": 37
             }
         },
         "releases": [
@@ -2290,17 +2535,18 @@
         ],
         "url": "https://github.com/monacoinproject/monacoin",
         "ownername": "monacoinproject/monacoin",
-        "coinname": "Monacoin",
-        "symbol": "MONA"
+        "coinname": "MonaCoin",
+        "symbol": "MONA",
+        "rank": "28"
     },
     {
         "owner": "monero-project",
         "name": "monero",
         "id": "MDEwOlJlcG9zaXRvcnkxOTMxNjYxOQ==",
         "description": "Monero: the secure, private, untraceable cryptocurrency",
-        "createdAt": "2014-04-30T14:38",
+        "createdAt": "2014-04-30T14:38:28Z",
         "homepageUrl": "https://getmonero.org",
-        "pushedAt": "2017-11-25T21:25",
+        "pushedAt": "2017-12-03T20:21:32Z",
         "languages": [
             "C++",
             "C",
@@ -2322,6 +2568,11 @@
             "2017-47": {
                 "stars": 1481,
                 "users": 132
+            },
+            "2017-48": {
+                "stars": 1549,
+                "users": 136,
+                "forks": 617
             }
         },
         "releases": [
@@ -2379,17 +2630,18 @@
         "url": "https://github.com/monero-project/monero",
         "ownername": "monero-project/monero",
         "coinname": "Monero",
-        "symbol": "XMR"
+        "symbol": "XMR",
+        "rank": "10"
     },
     {
         "owner": "mvs-org",
         "name": "metaverse",
         "id": "MDEwOlJlcG9zaXRvcnk3MjMzNTg1NQ==",
         "description": "The metaverse blockchain service and command-line tools in C++ 14 implementation",
-        "createdAt": "2016-10-30T07:36",
+        "createdAt": "2016-10-30T07:36:52Z",
         "url": "https://github.com/mvs-org/metaverse",
         "homepageUrl": "https://mvs.org",
-        "pushedAt": "2017-11-24T11:09",
+        "pushedAt": "2017-12-01T20:33:08Z",
         "releases": [],
         "languages": [
             "C++",
@@ -2404,20 +2656,26 @@
             "2017-47": {
                 "stars": 89,
                 "users": 11
+            },
+            "2017-48": {
+                "stars": 91,
+                "users": 11,
+                "forks": 34
             }
         },
         "ownername": "mvs-org/metaverse",
-        "coinname": "Metaverse",
-        "symbol": "ETP"
+        "coinname": "Metaverse ETP",
+        "symbol": "ETP",
+        "rank": "79"
     },
     {
         "owner": "NAVCoin",
         "name": "navcoin-core",
         "id": "MDEwOlJlcG9zaXRvcnk4Mjc2MjQzNw==",
         "description": "bitcoin-core 0.13 fork ported for Nav Coin",
-        "createdAt": "2017-02-22T04:57",
+        "createdAt": "2017-02-22T04:57:00Z",
         "homepageUrl": "",
-        "pushedAt": "2017-11-24T10:10",
+        "pushedAt": "2017-12-03T22:08:13Z",
         "languages": [
             "C++",
             "C",
@@ -2439,12 +2697,17 @@
             "2017-47": {
                 "stars": 32,
                 "users": 10
+            },
+            "2017-48": {
+                "stars": 33,
+                "users": 10,
+                "forks": 11
             }
         },
         "releases": [
             {
                 "name": "Nav Community Fund Vote + Hotfix",
-                "description": "This version enables the network vote on implementing the Nav Coin Community Fund into the consensus model and fixes a bug where orphaned transactions could be selected for staking crashing the daemon.\r\n\r\n## SHA256 Hashes\r\n\r\n### navcoin-4.0.6-win64.zip\r\ncdc7cee7550077ae600d4ec84532e20b109d510f0b8447d3d5262ccd454b93fd\r\n\r\n### navcoin-4.0.6-win32.zip\r\nb74687cb6c90f4be30b13fc87d96411b6bedda9af44f2941da9a2484f1671134\r\n\r\n### navcoin-4.0.6-win64-setup.exe\r\n635d818a32d5c02c03757d7589348d810c6061f94261edb2267b4ca0516c51ec\r\n\r\n### navcoin-4.0.6-win32-setup.exe\r\n9069160243b0b367d582a59522bab1e28e2428f78ae460b1ad2c58e8ff967406\r\n\r\n### navcoin-4.0.6-osx64.tar.gz\r\nbec1738499039cfb1e6c8afe84d5e84f17841d67ff0a9bdaaa1d6f7af879aded\r\n\r\n### navcoin-4.0.6-osx.dmg\r\ne4bbf4f2b2697427fad989d7d05356e79e00deaebd1447edc147fb2b9b69acf1\r\n\r\n### navcoin-4.0.6-x86_64-linux-gnu.tar.gz\r\n8362afa25a989a1fceac08630823360c2a77c07f7384ed9220ff0cefb58b84d7\r\n\r\n### navcoin-4.0.6-i686-pc-linux-gnu.tar.gz\r\n310d1bbcdb3f32e004bb7ecdc4b9ba1144898e8354999d68e083c5e9882f37db\r\n\r\n### navcoin-4.0.6-aarch64-linux-gnu.tar.gz\r\na418e8c0db81229009d768972da3c6867f5b63ad305024227cdda8e4e772c2bc\r\n\r\n### navcoin-4.0.6-arm-linux-gnueabihf.tar.gz\r\nb685cdbefdecc685b14f4551bcc56e320089d687240ce6ad4079fc72746e584b",
+                "description": "This version enables the network vote on implementing the Nav Coin Community Fund into the consensus model and fixes a bug where orphaned transactions could be selected for staking crashing the daemon.\r\n\r\n## SHA256 Hashes\r\n\r\n### navcoin-4.0.6-win64.zip\r\ncdc7cee7550077ae600d4ec84532e20b109d510f0b8447d3d5262ccd454b93fd\r\n\r\n### navcoin-4.0.6-win32.zip\r\nb74687cb6c90f4be30b13fc87d96411b6bedda9af44f2941da9a2484f1671134\r\n\r\n### navcoin-4.0.6-win64-setup.exe\r\n635d818a32d5c02c03757d7589348d810c6061f94261edb2267b4ca0516c51ec\r\n\r\n### navcoin-4.0.6-win32-setup.exe\r\n9069160243b0b367d582a59522bab1e28e2428f78ae460b1ad2c58e8ff967406\r\n\r\n### navcoin-4.0.6-osx64.tar.gz\r\nbec1738499039cfb1e6c8afe84d5e84f17841d67ff0a9bdaaa1d6f7af879aded\r\n\r\n### navcoin-4.0.6-osx.dmg\r\ne4bbf4f2b2697427fad989d7d05356e79e00deaebd1447edc147fb2b9b69acf1\r\n\r\n### navcoin-4.0.6-x86_64-linux-gnu.tar.gz\r\naf39e3fa2f8ff49fe4a01e979a841f5bb787bf027fe977104afc6b3e86117d2b\r\n\r\n### navcoin-4.0.6-i686-pc-linux-gnu.tar.gz\r\n310d1bbcdb3f32e004bb7ecdc4b9ba1144898e8354999d68e083c5e9882f37db\r\n\r\n### navcoin-4.0.6-aarch64-linux-gnu.tar.gz\r\na418e8c0db81229009d768972da3c6867f5b63ad305024227cdda8e4e772c2bc\r\n\r\n### navcoin-4.0.6-arm-linux-gnueabihf.tar.gz\r\nb685cdbefdecc685b14f4551bcc56e320089d687240ce6ad4079fc72746e584b",
                 "publishedAt": "2017-10-12T22:30:55Z"
             },
             {
@@ -2480,17 +2743,18 @@
         ],
         "url": "https://github.com/NAVCoin/navcoin-core",
         "ownername": "NAVCoin/navcoin-core",
-        "coinname": "Navcoin",
-        "symbol": "NAV"
+        "coinname": "NAV Coin",
+        "symbol": "NAV",
+        "rank": "96"
     },
     {
         "owner": "NebulousLabs",
         "name": "Sia",
         "id": "MDEwOlJlcG9zaXRvcnkyNTM3MDA3Mg==",
         "description": "Blockchain-based marketplace for file storage",
-        "createdAt": "2014-10-17T17:50",
+        "createdAt": "2014-10-17T17:50:25Z",
         "homepageUrl": "https://sia.tech",
-        "pushedAt": "2017-11-25T12:23",
+        "pushedAt": "2017-12-03T18:48:45Z",
         "languages": [
             "Go",
             "Makefile",
@@ -2512,6 +2776,11 @@
             "2017-47": {
                 "stars": 1775,
                 "users": 40
+            },
+            "2017-48": {
+                "stars": 1809,
+                "users": 40,
+                "forks": 245
             }
         },
         "releases": [
@@ -2569,16 +2838,17 @@
         "url": "https://github.com/NebulousLabs/Sia",
         "ownername": "NebulousLabs/Sia",
         "coinname": "Siacoin",
-        "symbol": "SC"
+        "symbol": "SC",
+        "rank": "42"
     },
     {
         "owner": "NemProject",
         "name": "nem.core",
         "id": "MDEwOlJlcG9zaXRvcnkzNDIxNjMzOA==",
         "description": "org.nem.core package",
-        "createdAt": "2015-04-19T17:24",
+        "createdAt": "2015-04-19T17:24:03Z",
         "homepageUrl": "http://nem.io",
-        "pushedAt": "2017-11-06T08:46",
+        "pushedAt": "2017-11-06T08:46:55Z",
         "languages": [
             "Java",
             "Batchfile"
@@ -2599,22 +2869,28 @@
             "2017-47": {
                 "stars": 134,
                 "users": 4
+            },
+            "2017-48": {
+                "stars": 136,
+                "users": 4,
+                "forks": 42
             }
         },
         "releases": [],
         "url": "https://github.com/NemProject/nem.core",
         "ownername": "NemProject/nem.core",
-        "coinname": "Nem",
-        "symbol": "XEM"
+        "coinname": "NEM",
+        "symbol": "XEM",
+        "rank": "12"
     },
     {
         "owner": "neo-project",
         "name": "neo",
         "id": "MDEwOlJlcG9zaXRvcnkzNjYxMzAzNg==",
         "description": "NEO Smart Economy",
-        "createdAt": "2015-05-31T17:02",
+        "createdAt": "2015-05-31T17:02:33Z",
         "homepageUrl": "",
-        "pushedAt": "2017-11-24T07:12",
+        "pushedAt": "2017-12-03T01:13:59Z",
         "languages": [
             "C#"
         ],
@@ -2634,13 +2910,19 @@
             "2017-47": {
                 "stars": 1156,
                 "users": 32
+            },
+            "2017-48": {
+                "stars": 1195,
+                "users": 32,
+                "forks": 382
             }
         },
         "releases": [],
         "url": "https://github.com/neo-project/neo",
         "ownername": "neo-project/neo",
-        "coinname": "Neo",
-        "symbol": "NEO"
+        "coinname": "NEO",
+        "symbol": "NEO",
+        "rank": "13"
     },
     {
         "ownername": "nuls-io/nuls",
@@ -2649,10 +2931,10 @@
         "name": "nuls",
         "coinname": "Nuls",
         "symbol": "NULS",
-        "description": "",
-        "createdAt": "2017-09-28T02:42",
-        "homepageUrl": "",
-        "pushedAt": "2017-11-24T10:15",
+        "description": null,
+        "createdAt": "2017-09-28T02:42:23Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-12-01T10:29:01Z",
         "languages": [
             "Java",
             "Shell",
@@ -2664,6 +2946,11 @@
             "2017-47": {
                 "stars": 27,
                 "users": 5
+            },
+            "2017-48": {
+                "stars": 32,
+                "users": 5,
+                "forks": 6
             }
         }
     },
@@ -2672,9 +2959,9 @@
         "name": "okcash",
         "id": "MDEwOlJlcG9zaXRvcnk3NTE0OTIwOQ==",
         "description": "OKcash (source-code) - OK Core integration/staging tree.",
-        "createdAt": "2016-11-30T03:52",
+        "createdAt": "2016-11-30T03:52:02Z",
         "homepageUrl": "",
-        "pushedAt": "2017-11-09T09:39",
+        "pushedAt": "2017-11-09T09:39:21Z",
         "languages": [
             "C++",
             "JavaScript",
@@ -2696,6 +2983,11 @@
             "2017-47": {
                 "stars": 155,
                 "users": 112
+            },
+            "2017-48": {
+                "stars": 155,
+                "users": 112,
+                "forks": 146
             }
         },
         "releases": [
@@ -2760,9 +3052,9 @@
         "name": "vcash",
         "id": "MDEwOlJlcG9zaXRvcnk3NTQxNTUzMQ==",
         "description": "A decentralized currency for the internet.",
-        "createdAt": "2016-12-02T17:13",
+        "createdAt": "2016-12-02T17:13:31Z",
         "homepageUrl": "https://vcash.info",
-        "pushedAt": "2017-11-01T19:38",
+        "pushedAt": "2017-11-01T19:38:17Z",
         "languages": [
             "C++",
             "C",
@@ -2784,6 +3076,11 @@
             "2017-47": {
                 "stars": 24,
                 "users": 6
+            },
+            "2017-48": {
+                "stars": 24,
+                "users": 6,
+                "forks": 24
             }
         },
         "releases": [
@@ -2828,10 +3125,10 @@
         "owner": "qtumproject",
         "name": "qtum",
         "id": "MDEwOlJlcG9zaXRvcnk4Mzc3NDkwNg==",
-        "description": "Beyond the Qtum prototype",
-        "createdAt": "2017-03-03T08:17",
+        "description": "Qtum Core Wallet",
+        "createdAt": "2017-03-03T08:17:11Z",
         "homepageUrl": "https://qtum.org",
-        "pushedAt": "2017-11-24T16:10",
+        "pushedAt": "2017-12-02T11:25:51Z",
         "languages": [
             "C++",
             "Python",
@@ -2853,9 +3150,19 @@
             "2017-47": {
                 "stars": 389,
                 "users": 435
+            },
+            "2017-48": {
+                "stars": 408,
+                "users": 435,
+                "forks": 85
             }
         },
         "releases": [
+            {
+                "name": "Mainnet Ignition v1.1.3 - Qtum QRC Token Support (Important Bug Fix!)",
+                "description": "About Qtum and Mainnet Ignition\r\n-------------------------------\r\n\r\nQtum is a decentralized blockchain project built on Bitcoin's UTXO model, with support for Ethereum Virtual Machine based smart contracts, and secured by a proof of stake consensus model. It achieves this through the revolutionary Account Abstraction Layer which allows the EVM to communicate with Qtum's Bitcoin-like UTXO blockchain. For more general information about Qtum as well as links to join our community, go to https://qtum.org\r\n\r\nWelcome to the Qtum Ignition Main Network. This is the main network where the tokens hold value and should be guarded very carefully. There will be a testnet setup soon for developers, in the meantime you can use `-regtest` mode for testing needs. We will announce details about the token swap from QTUM ERC20 coins to QTUM mainnet tokens soon, watch our [website](https://qtum.org) for details about that.  \r\n\r\nThe major features implemented in Qtum Ignition include:\r\n\r\n1. The Ethereum Virtual Machine, which allows for compatibility with most existing Solidity based smart contracts.\r\n2. The Smart Staking Protocol is complete, which is an optimized Proof of Stake implementation designed for a smart contract platform (however, smart contracts can not participate in staking yet).\r\n3. An early and basic smart contract GUI has been implemented that can be used for creating contracts, sending data and Qtum to them, and checking their status by executing them locally. This functionality is similar to Mist's UI right now, but it is still an early version. We will be working on this more to improve it. \r\n4. Regtest mode, which is ideal for developers who wish to create their own private blockchain. It is tuned specifically to make development easier. It will stake blocks automatically every 30 seconds, and can generate proof-of-work blocks instantly as needed.\r\n5. The Decentralized Governance Protocol is completely implemented and functional, which allows certain network parameters to be modified without a fork.\r\n\r\nFor more technical information for how to start developing with Qtum please read the [Guide](https://github.com/qtumproject/qtum/blob/master/doc/sparknet-guide.md) and also see this tutorial for deploying a simple [faucet smart contract](http://earlz.net/view/2017/06/30/2144/the-qtum-sparknet-faucet) (it hasn't yet been updated for Mainnet for obvious reasons, but all the instructions are the same and you can try them in regtest mode)\r\n\r\nNote: Qtum Core is considered beta software. We make no warranties or guarantees of its security or stability.\r\n\r\nUpdate History\r\n--------------\r\n\r\n* v1.1.3 - Highly recommended update\r\n    * Fixed a bug that caused contact addresses to show in receive token address dropdown\r\n* v1.1.2 - Optional update, but recommended if using QRC tokens\r\n    * Fixed a bug with token transactions where the transaction ID displayed was incorrect in the Qt wallet\r\n    * Allow adding 0 balance addresses as the token receiver in the Qt wallet\r\n* v1.1.1: When sending to contracts, the sender address is now the default change address to reduce confusion; fix -salvagewallet so it works with token transactions\r\n* v1.1.0: Add GUI support Qtum QRC tokens, allowing full management of tokens on the Qtum blockchain from the Qt wallet\r\n    * Sending to a contract no longer requires ABI data, allowing easy participation in simple crowdsale contracts\r\n* v1.0.4: Fix bug where certain circumstances when staking could cause the displayed balance to be inaccurate until completely redownloading the blockchain.\r\n* v1.0.3: Fix staker bug that reported false messages; slightly increases staking performance; optimize staker parameters; fix white send button in GUI\r\n* v1.0.2: Various UI fixes, minor gas overflow consensus fix, per-txout exploit fix, testnet mode setup and functioning\r\n* v1.0.1: Fixed network magic bytes and minimum version to ensure the main network does not conflict with the Skynet network\r\n* v1.0: Initial release\r\n\r\nReindex Required When Upgrading from v1.0.1\r\n----------------------------------------------\r\n\r\nWhen you first start the Qtum 1.0.2 GUI wallet after using Qtum v1.0.1 it will prompt you that it must reindex the database. This is normal and is a result of switching our internal database format from per-transaction to per-txout. If you use `qtumd -daemon` it will silently fail to start. You need to use `qtumd -daemon -reindex` in this case. \r\n\r\nQtum Documentation and Usage Resources\r\n---------------\r\n\r\nBasic usage resources:\r\n\r\n* [Official Qtum Usage Guide](https://github.com/qtumproject/qtum/wiki/Qtum-Wallet-Tutorial)\r\n* [Unofficial Qtum staking tutorial](https://steemit.com/qtum/@cryptominder/qtum-staking-tutorial-using-qtum-qt)\r\n* [Unofficial Qtum staking tutorial on Raspberry Pi](https://steemit.com/qtum/@cryptominder/qtum-staking-tutorial-using-qtumd-on-a-raspberry-pi-3)\r\n* [Unofficial guide for keeping your wallet safe](https://steemit.com/qtum/@cryptominder/encrypting-backing-up-and-restoring-your-qtum-wallet)\r\n* [Block explorer](https://explorer.qtum.org)\r\n* [Unofficial block explorer](https://qtumexplorer.io/)\r\n* [Unofficial Raspberry Pi Web UI](https://github.com/rpiwalletui/qtum-ui)\r\n\r\nDevelopment resources:\r\n\r\n* [Deploying a custom token to Qtum](https://blog.qtum.org/qtum-custom-token-walkthrough-467d725fa27d)\r\n* [Early example faucet contract](http://earlz.net/view/2017/06/30/2144/the-qtum-sparknet-faucet)\r\n* [Unofficial Qtum Hello World tutorial](https://steemit.com/qtum/@cryptominder/quantum-qtum-blockchain-developer-tutorial-hello-world)\r\n\r\nGeneral Info about Qtum:\r\n\r\n* [Mainnet event AMA](https://www.reddit.com/r/Qtum/comments/6zs8t0/official_qtum_ama_thread_starts_at_10pm_beijing/)\r\n* [Qtum's PoS vs CASPER](https://www.reddit.com/r/Qtum/comments/788oa5/qtums_pos_vs_casper_and_the_nothingatstake_problem/)\r\n* [Technical article explaining Qtum's PoS model in depth](http://earlz.net/view/2017/07/27/1904/the-missing-explanation-of-proof-of-stake-version)\r\n* [Unofficial What is Qtum article](https://storeofvalue.github.io/posts/what-is-qtum-without-the-bullshit/)\r\n\r\nQuickstart\r\n----------\r\n\r\nThe easiest way to get started with Qtum is to simply download the binaries below. To give a brief breakdown of the different versions available: \r\n\r\n#### Windows\r\n\r\n* [qtum-0.14.9-win64.zip](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.3/qtum-0.14.9-win64.zip) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 machines using Windows.\r\n* [qtum-0.14.9-win64-setup-unsigned.exe](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.3/qtum-0.14.9-win64-setup-unsigned.exe) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 machines using Windows. This includes an installer and will install Qtum system wide.\r\n* [qtum-0.14.9-win32.zip](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.3/qtum-0.14.9-win32.zip) - A version of Qtum-Qt, qtumd, and qtum-cli built for 32bit x86 machines using Windows. If you have an older Windows computer and don't care about installing Qtum system-wide, \r\n* [qtum-0.14.9-win32-setup-unsigned.exe](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.3/qtum-0.14.9-win32-setup-unsigned.exe) - A version of Qtum-Qt, qtumd, and qtum-cli built for 32bit x86 machines using Windows. This includes an installer and will install Qtum system wide. If you have an older Windows computer and want to install Qtum then this is for you.\r\n\r\n#### OSX\r\n\r\n* [qtum-0.14.9-osx64.tar.gz](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.3/qtum-0.14.9-osx64.tar.gz) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 machines using OSX. If you use a modern Mac and want development tools, this is what you want; we do not support older 32bit or PowerPC based Macs.\r\n* [qtum-0.14.9-osx-unsigned.dmg](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.3/qtum-0.14.9-osx-unsigned.dmg) - A version of Qtum-Qt built for 64bit x86 machines using OSX in a .DMG installable format. If you use a modern Mac and aren't a developer, this is what you want; we do not support older 32bit or PowerPC based Macs.\r\n\r\n#### Linux\r\n\r\n* [qtum-0.14.9-i686-pc-linux-gnu.tar.gz](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.3/qtum-0.14.9-i686-pc-linux-gnu.tar.gz) - A version of Qtum-Qt, qtumd, and qtum-cli built for 32bit x86 PC platforms running Linux. This is probably what you want for older computers running Linux\r\n* [qtum-0.14.9-x86_64-linux-gnu.tar.gz](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.3/qtum-0.14.9-x86_64-linux-gnu.tar.gz) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 PC platforms running Linux. This is probably what you want for any modern PC or server running Linux\r\n* [qtum-0.14.9-arm-linux-gnueabihf.tar.gz](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.3/qtum-0.14.9-arm-linux-gnueabihf.tar.gz) - A version of qtumd and qtum-cli built for 32bit ARM platforms using Linux. This includes the Raspberry Pi and many of it's clones\r\n* [qtum-0.14.9-aarch64-linux-gnu.tar.gz](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.3/qtum-0.14.9-aarch64-linux-gnu.tar.gz) - A version of qtumd and qtum-cli built for 64bit ARM platforms using Linux\r\n\r\nBelow in the full list of binaries, there are also versions that include debug symbols. These are useful for developers, but will run slower and are significantly larger to download. \r\n\r\n#### Build Qtum Core\r\n\r\nIf you want to build it from source, it's recommended to follow the specific [\"build\" documentation](https://github.com/qtumproject/qtum/tree/testnet-2/doc) for your platform. But mostly it boils down to the following:\r\n\r\n1. Clone the qtum source code and cd into `qtum`\r\n\r\n        git clone --recursive https://github.com/qtumproject/qtum.git\r\n        cd qtum\r\n\r\n\r\n2.  Build qtum-core:\r\n\r\n    Configure and build the headless qtum binaries as well as the GUI (if Qt is found).\r\n\r\n    You can disable the GUI build by passing `--without-gui` to configure.\r\n\r\n        ./autogen.sh\r\n        ./configure\r\n        make\r\n\r\n3.  It is recommended to build and run the unit tests to ensure everything is working correctly:\r\n\r\n        make check\r\n\r\n\r\nIf you encounter an error like:\r\n\r\n> make[2]: *** No rule to make target \u2018cpp-ethereum/utils/libscrypt/b64.c\u2019, needed by \u2018cpp-ethereum/utils/libscrypt/libbitcoinconsensus_la-b64.lo\u2019.  Stop.\r\n\r\nThen you did not checkout the cpp-ethereum submodule for Qtum. To do that, simply:\r\n\r\n    cd qtum\r\n    git submodule update --init --recursive\r\n\r\nValidate and Reproduce Binaries\r\n---------------------------------\r\n\r\nQtum uses a tool called Gitian to make reproducible builds that can be verified by anyone. Instructions on setting up a Gitian VM and building Qtum are provided [in doc/gitian-building.md](https://github.com/qtumproject/qtum/blob/master/doc/gitian-building.md)\r\n\r\nCommunity Resources\r\n---------\r\n\r\nMake sure to check out these resources as well for more information and to keep up to date with all the latest news about Qtum. At least 1 developer is always around, so if you're developing on Qtum and need help, we'd love to welcome you to our community.  \r\n\r\n* [/r/Qtum on Reddit](https://www.reddit.com/r/Qtum/)\r\n* [Qtum Telegram Group](https://t.me/joinchat/D5oBaw29NeOdpw6qqqf2lw)\r\n* [@QtumOfficial on Twitter](https://mobile.twitter.com/qtumofficial)\r\n* [Qtum on Facebook](https://www.facebook.com/QtumOfficial/)\r\n* [Qtum Forum](https://forum.qtum.org/)\r\n* [Qtum.org](https://qtum.org/en/)\r\n\r\n\r\nQtum Smart Contract Limitations\r\n-----------\r\n\r\n* EVM smart contracts can not receive coins from or send coins to any address type other than pay-to-pubkeyhash (starts with Q) addresses. This is due to a limitation in the EVM\r\n* Contracts are not allowed to create contracts with an initial endowment of coins. The contract must first be created, and then be sent coins in a separate transaction. Humans are also not allowed to create contracts with an initial endowment of coins.\r\n* Although all of the infrastructure is present, Qtum Core does not currently parse Solidity event data. You must parse this yourself using either `searchlogs` or `-record-log-opcodes` features.\r\n* It is not possible to send a contract coins without also executing the contract. This is also the case of Ethereum. This was promised in earlier discussions and technically does work, but due to lack of time for testing this feature was disabled. We hope to reenable this feature with release of the x86 virtual machine in 2018.\r\n* In Qtum there can be multiple addresses used to create a proof-of-stake block. However, the EVM can only see the first output using the `coinbase` operation in Solidity (this address is also the one registered for the continuous staker rewards after 500 blocks). \r\n\r\nHash Validation\r\n----------------\r\n\r\n```\r\n-----BEGIN PGP SIGNED MESSAGE-----\r\nHash: SHA512\r\n\r\nIf you would like to validate that the binaries you download are exactly the same as those provided and built by the Qtum team, then you can compare your binaries to the following sha256sum hashes:\r\n\r\n73598fba4975982a7884d41228eec9a9152256284cf9b2d596680924d84a5ad4  qtum-0.14.9-osx-unsigned.dmg\r\n45a6a3306957a9bc1fe029e6883892b8db4b4f7772309317ce071f43b6e26692  qtum-0.14.9-osx-unsigned.tar.gz\r\n26d38eb7f0530c19e2b741e37badb2ad727a27988e33477513b780cd4dab83b9  qtum-0.14.9-osx64.tar.gz\r\nc3bc06f157b841b570ae6d9a101df457018f659b54668c8f8312aad9ac890ce5  src/qtum-0.14.9.tar.gz\r\n8989d503b96677036ec0b77471aa244f054fe1cdceaf4308adec9ae9ae100c9e  qtum-osx-0.14-res.yml\r\n\r\nb2b921ede8d3ddcb116f74afa22fc4c03b25deccb6b229cfd87727dde4f98098  qtum-0.14.9-aarch64-linux-gnu-debug.tar.gz \r\n28dca1df9b3fef1e2efcea5e3e3bdb4fd12c44cf2daf906e2f11a3c5680b3ec0  qtum-0.14.9-aarch64-linux-gnu.tar.gz \r\n5177e144f19070102634462d4b7b0ec4aac0170c6340f859469e5594f976eff9  qtum-0.14.9-arm-linux-gnueabihf-debug.tar.gz \r\nca8a9f5212d874a008598dbd33af458c9f021ec9d5543ad47070dd195d4f1d26  qtum-0.14.9-arm-linux-gnueabihf.tar.gz \r\n35dc10292e941a9ec7f9c3163956d0e44b5d24d1bbe6ddc77727eb04059f136e  qtum-0.14.9-i686-pc-linux-gnu-debug.tar.gz \r\n15a018c5a7935ebb9e5df43c6df35ab305da225ff7aff0bc2d2b8fd56277b7a6  qtum-0.14.9-i686-pc-linux-gnu.tar.gz \r\n215a0dc89761317905df1b1abc292728d06acfbfad6a739f8c2dd2d947324c13  qtum-0.14.9-x86_64-linux-gnu-debug.tar.gz \r\nda14fb65a4309ef7e0bd4c93d0cdd156d01e9f4774db481b46103275a8a19ce0  qtum-0.14.9-x86_64-linux-gnu.tar.gz \r\nc3bc06f157b841b570ae6d9a101df457018f659b54668c8f8312aad9ac890ce5  src/qtum-0.14.9.tar.gz \r\n5d45dd739ed7cce060d06ef29c9c5f641db5c034331b07142a475cf7ec5ba1ca  qtum-linux-0.14-res.yml \r\n\r\n226859486a1c521d9f2a3361da5c6efe3223be162406d774edcefeeb8474f7af  qtum-0.14.9-win-unsigned.tar.gz\r\n03d2d9ebdad88c0523d751be0cd71b040ef8e4d1af88dfb7dd6bf84f3860b76c  qtum-0.14.9-win32-debug.zip\r\n7a4033e3f153c559b677ff7908e1b882b289fa4e8e36a17845bc9eab3f176cd0  qtum-0.14.9-win32-setup-unsigned.exe\r\n37eded1f20a41e20767d0dfdd24a7f1b57fa21de8be4ea047130ff7e5ef7b695  qtum-0.14.9-win32.zip\r\nbf4d24f8b010b4bb229c71805621435e8feabb7d0e385f9184657bb595438d94  qtum-0.14.9-win64-debug.zip\r\nb7ba60cdfd1094656aee15ec34c489f3b2f73a95bb4ea82e7b6f303917d305a9  qtum-0.14.9-win64-setup-unsigned.exe\r\nf93823de377b33d820d1039ce6087e5882ed09919d010120d16ccd2ed4ed604a  qtum-0.14.9-win64.zip\r\nc019236d7d46fab2035cc37550b8cb5978b45ca96e46fae81de9e49de56c5a38  src/qtum-0.14.9.tar.gz\r\n57a021244316250aa036b40f6915f3c99fa1cd89d8ff417912ff5a91ef0005e7  qtum-win-0.14-res.yml\r\n\r\nIn addition, as of the time of this writing, VirusTotal detects 2 false positives on all 32-bit Windows files, and 2 false positives on all 64-bit Windows files. Both 32-bit and 64-bit have false positives  labeled \"HEUR:Trojan.Win32.Generic\" from Kaspersky and ZoneAlarm. Only 32-bit has another false positive labeled \"Trojan/Win32.AGeneric\" from Antiy-AVL.\r\n\r\ninstaller win32: https://www.virustotal.com/#/file/37eded1f20a41e20767d0dfdd24a7f1b57fa21de8be4ea047130ff7e5ef7b695/detection\r\n\r\ninstaller win64 https://www.virustotal.com/#/file/b7ba60cdfd1094656aee15ec34c489f3b2f73a95bb4ea82e7b6f303917d305a9/detection\r\n\r\nzip win32 https://www.virustotal.com/#/file/37eded1f20a41e20767d0dfdd24a7f1b57fa21de8be4ea047130ff7e5ef7b695/detection\r\n\r\nzip win64 https://www.virustotal.com/#/file/f93823de377b33d820d1039ce6087e5882ed09919d010120d16ccd2ed4ed604a/detection\r\n\r\nYou can validate this message is from Earlz at https://keybase.io/verify\r\n-----BEGIN PGP SIGNATURE-----\r\nVersion: Keybase OpenPGP v2.0.76\r\nComment: https://keybase.io/crypto\r\n\r\nwsFcBAABCgAGBQJaHfwnAAoJEAKXMK2l7Ra+hQAQAKMOrso6XyPm/33GnbUsASem\r\npCqeo+47tGHKAYQEHWQvMQwxLyPAQRRJjRk4Iz1TlgV5pgf9n/eaSWXPotwD7ZwM\r\nj60wAWKoxDsUgu+wls5Pmq/iD++i3DVGy7WyH5M0oWOWf8st60CxWhn3dKyEE/b2\r\nnw8gz4AQqOgn0NQNicJWrVGEZAyY8EDhNIfHIkEpH9sxov+uedxZy4++B/hhaUj1\r\nZsmp2bius+31fUHpedIloCvX4liX+ZCuJf6WsC7Gm7nUApFJMhqkBvH6XkjS8G5S\r\nQq9AdDgm1IZHpyDVww/bUu7RmLpmWBDW3I8wnSAr24z8x2WVzbR+/CIdJQHOOH8U\r\np2EbjCVH44RoROLwqXZQztX92AxpyKnwLeIPgPRlRXBGii8pPK81sPMthloIZsUR\r\nL/PgqHBh0J7md+C4WC+S2jTZPr/XC+7Gs5JpisLVlK3tSlJU8+6tC1zkv6ir5dXB\r\nX2Uuq/xtt6OQDOSbuNfbNJy88921Ab/apjwhF8W9vXIe3F1bEWpe/Wy76UiTSvQG\r\nAGRu+Ic13Xot4+lVJNYLY0aYPm9rijXMArm5zEbCCdk4h+Hx+v0E3GWNUz8ZCHVC\r\nNn64RJWp8gdXxaj2ahBG9Np8CWKwwoEcaQ1IeOGTDza9T5INm9z6pI9PJIHp+zv9\r\nfrtx4BpzzzCoJK6ybXiM\r\n=9nc/\r\n-----END PGP SIGNATURE-----\r\n\r\n```",
+                "publishedAt": "2017-11-29T00:55:06Z"
+            },
             {
                 "name": "Mainnet Ignition v1.1.2 - Qtum QRC Token Support (bugfixes)",
                 "description": "About Qtum and Mainnet Ignition\r\n-------------------------------\r\n\r\nQtum is a decentralized blockchain project built on Bitcoin's UTXO model, with support for Ethereum Virtual Machine based smart contracts, and secured by a proof of stake consensus model. It achieves this through the revolutionary Account Abstraction Layer which allows the EVM to communicate with Qtum's Bitcoin-like UTXO blockchain. For more general information about Qtum as well as links to join our community, go to https://qtum.org\r\n\r\nWelcome to the Qtum Ignition Main Network. This is the main network where the tokens hold value and should be guarded very carefully. There will be a testnet setup soon for developers, in the meantime you can use `-regtest` mode for testing needs. We will announce details about the token swap from QTUM ERC20 coins to QTUM mainnet tokens soon, watch our [website](https://qtum.org) for details about that.  \r\n\r\nThe major features implemented in Qtum Ignition include:\r\n\r\n1. The Ethereum Virtual Machine, which allows for compatibility with most existing Solidity based smart contracts.\r\n2. The Smart Staking Protocol is complete, which is an optimized Proof of Stake implementation designed for a smart contract platform (however, smart contracts can not participate in staking yet).\r\n3. An early and basic smart contract GUI has been implemented that can be used for creating contracts, sending data and Qtum to them, and checking their status by executing them locally. This functionality is similar to Mist's UI right now, but it is still an early version. We will be working on this more to improve it. \r\n4. Regtest mode, which is ideal for developers who wish to create their own private blockchain. It is tuned specifically to make development easier. It will stake blocks automatically every 30 seconds, and can generate proof-of-work blocks instantly as needed.\r\n5. The Decentralized Governance Protocol is completely implemented and functional, which allows certain network parameters to be modified without a fork.\r\n\r\nFor more technical information for how to start developing with Qtum please read the [Guide](https://github.com/qtumproject/qtum/blob/master/doc/sparknet-guide.md) and also see this tutorial for deploying a simple [faucet smart contract](http://earlz.net/view/2017/06/30/2144/the-qtum-sparknet-faucet) (it hasn't yet been updated for Mainnet for obvious reasons, but all the instructions are the same and you can try them in regtest mode)\r\n\r\nNote: Qtum Core is considered beta software. We make no warranties or guarantees of its security or stability.\r\n\r\nUpdate History\r\n--------------\r\n\r\n* v1.1.2 - Optional update, but recommended if using QRC tokens\r\n    * Fixed a bug with token transactions where the transaction ID displayed was incorrect in the Qt wallet\r\n    * Allow adding 0 balance addresses as the token receiver in the Qt wallet\r\n* v1.1.1: When sending to contracts, the sender address is now the default change address to reduce confusion; fix -salvagewallet so it works with token transactions\r\n* v1.1.0: Add GUI support Qtum QRC tokens, allowing full management of tokens on the Qtum blockchain from the Qt wallet\r\n    * Sending to a contract no longer requires ABI data, allowing easy participation in simple crowdsale contracts\r\n* v1.0.4: Fix bug where certain circumstances when staking could cause the displayed balance to be inaccurate until completely redownloading the blockchain.\r\n* v1.0.3: Fix staker bug that reported false messages; slightly increases staking performance; optimize staker parameters; fix white send button in GUI\r\n* v1.0.2: Various UI fixes, minor gas overflow consensus fix, per-txout exploit fix, testnet mode setup and functioning\r\n* v1.0.1: Fixed network magic bytes and minimum version to ensure the main network does not conflict with the Skynet network\r\n* v1.0: Initial release\r\n\r\nReindex Required When Upgrading from v1.0.1\r\n----------------------------------------------\r\n\r\nWhen you first start the Qtum 1.0.2 GUI wallet after using Qtum v1.0.1 it will prompt you that it must reindex the database. This is normal and is a result of switching our internal database format from per-transaction to per-txout. If you use `qtumd -daemon` it will silently fail to start. You need to use `qtumd -daemon -reindex` in this case. \r\n\r\nQtum Documentation and Usage Resources\r\n---------------\r\n\r\nBasic usage resources:\r\n\r\n* [Official Qtum Usage Guide](https://github.com/qtumproject/qtum/wiki/Qtum-Wallet-Tutorial)\r\n* [Unofficial Qtum staking tutorial](https://steemit.com/qtum/@cryptominder/qtum-staking-tutorial-using-qtum-qt)\r\n* [Unofficial Qtum staking tutorial on Raspberry Pi](https://steemit.com/qtum/@cryptominder/qtum-staking-tutorial-using-qtumd-on-a-raspberry-pi-3)\r\n* [Unofficial guide for keeping your wallet safe](https://steemit.com/qtum/@cryptominder/encrypting-backing-up-and-restoring-your-qtum-wallet)\r\n* [Block explorer](https://explorer.qtum.org)\r\n* [Unofficial block explorer](https://qtumexplorer.io/)\r\n\r\nDevelopment resources:\r\n\r\n* [Deploying a custom token to Qtum](https://blog.qtum.org/qtum-custom-token-walkthrough-467d725fa27d)\r\n* [Early example faucet contract](http://earlz.net/view/2017/06/30/2144/the-qtum-sparknet-faucet)\r\n* [Unofficial Qtum Hello World tutorial](https://steemit.com/qtum/@cryptominder/quantum-qtum-blockchain-developer-tutorial-hello-world)\r\n\r\nGeneral Info about Qtum:\r\n\r\n* [Mainnet event AMA](https://www.reddit.com/r/Qtum/comments/6zs8t0/official_qtum_ama_thread_starts_at_10pm_beijing/)\r\n* [Qtum's PoS vs CASPER](https://www.reddit.com/r/Qtum/comments/788oa5/qtums_pos_vs_casper_and_the_nothingatstake_problem/)\r\n* [Technical article explaining Qtum's PoS model in depth](http://earlz.net/view/2017/07/27/1904/the-missing-explanation-of-proof-of-stake-version)\r\n* [Unofficial What is Qtum article](https://storeofvalue.github.io/posts/what-is-qtum-without-the-bullshit/)\r\n\r\nQuickstart\r\n----------\r\n\r\nThe easiest way to get started with Qtum is to simply download the binaries below. To give a brief breakdown of the different versions available: \r\n\r\n#### Windows\r\n\r\n* [qtum-0.14.8-win64.zip](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.2/qtum-0.14.8-win64.zip) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 machines using Windows.\r\n* [qtum-0.14.8-win64-setup-unsigned.exe](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.2/qtum-0.14.8-win64-setup-unsigned.exe) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 machines using Windows. This includes an installer and will install Qtum system wide.\r\n* [qtum-0.14.8-win32.zip](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.2/qtum-0.14.8-win32.zip) - A version of Qtum-Qt, qtumd, and qtum-cli built for 32bit x86 machines using Windows. If you have an older Windows computer and don't care about installing Qtum system-wide, \r\n* [qtum-0.14.8-win32-setup-unsigned.exe](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.2/qtum-0.14.8-win32-setup-unsigned.exe) - A version of Qtum-Qt, qtumd, and qtum-cli built for 32bit x86 machines using Windows. This includes an installer and will install Qtum system wide. If you have an older Windows computer and want to install Qtum then this is for you.\r\n\r\n#### OSX\r\n\r\n* [qtum-0.14.8-osx64.tar.gz](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.2/qtum-0.14.8-osx64.tar.gz) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 machines using OSX. If you use a modern Mac and want development tools, this is what you want; we do not support older 32bit or PowerPC based Macs.\r\n* [qtum-0.14.8-osx-unsigned.dmg](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.2/qtum-0.14.8-osx-unsigned.dmg) - A version of Qtum-Qt built for 64bit x86 machines using OSX in a .DMG installable format. If you use a modern Mac and aren't a developer, this is what you want; we do not support older 32bit or PowerPC based Macs.\r\n\r\n#### Linux\r\n\r\n* [qtum-0.14.8-i686-pc-linux-gnu.tar.gz](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.2/qtum-0.14.8-i686-pc-linux-gnu.tar.gz) - A version of Qtum-Qt, qtumd, and qtum-cli built for 32bit x86 PC platforms running Linux. This is probably what you want for older computers running Linux\r\n* [qtum-0.14.8-x86_64-linux-gnu.tar.gz](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.2/qtum-0.14.8-x86_64-linux-gnu.tar.gz) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 PC platforms running Linux. This is probably what you want for any modern PC or server running Linux\r\n* [qtum-0.14.8-arm-linux-gnueabihf.tar.gz](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.2/qtum-0.14.8-arm-linux-gnueabihf.tar.gz) - A version of qtumd and qtum-cli built for 32bit ARM platforms using Linux. This includes the Raspberry Pi and many of it's clones\r\n* [qtum-0.14.8-aarch64-linux-gnu.tar.gz](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.1.2/qtum-0.14.8-aarch64-linux-gnu.tar.gz) - A version of qtumd and qtum-cli built for 64bit ARM platforms using Linux\r\n\r\nBelow in the full list of binaries, there are also versions that include debug symbols. These are useful for developers, but will run slower and are significantly larger to download. \r\n\r\n#### Build Qtum Core\r\n\r\nIf you want to build it from source, it's recommended to follow the specific [\"build\" documentation](https://github.com/qtumproject/qtum/tree/testnet-2/doc) for your platform. But mostly it boils down to the following:\r\n\r\n1. Clone the qtum source code and cd into `qtum`\r\n\r\n        git clone --recursive https://github.com/qtumproject/qtum.git\r\n        cd qtum\r\n\r\n\r\n2.  Build qtum-core:\r\n\r\n    Configure and build the headless qtum binaries as well as the GUI (if Qt is found).\r\n\r\n    You can disable the GUI build by passing `--without-gui` to configure.\r\n\r\n        ./autogen.sh\r\n        ./configure\r\n        make\r\n\r\n3.  It is recommended to build and run the unit tests to ensure everything is working correctly:\r\n\r\n        make check\r\n\r\n\r\nIf you encounter an error like:\r\n\r\n> make[2]: *** No rule to make target \u2018cpp-ethereum/utils/libscrypt/b64.c\u2019, needed by \u2018cpp-ethereum/utils/libscrypt/libbitcoinconsensus_la-b64.lo\u2019.  Stop.\r\n\r\nThen you did not checkout the cpp-ethereum submodule for Qtum. To do that, simply:\r\n\r\n    cd qtum\r\n    git submodule update --init --recursive\r\n\r\nValidate and Reproduce Binaries\r\n---------------------------------\r\n\r\nQtum uses a tool called Gitian to make reproducible builds that can be verified by anyone. Instructions on setting up a Gitian VM and building Qtum are provided [in doc/gitian-building.md](https://github.com/qtumproject/qtum/blob/master/doc/gitian-building.md)\r\n\r\nCommunity Resources\r\n---------\r\n\r\nMake sure to check out these resources as well for more information and to keep up to date with all the latest news about Qtum. At least 1 developer is always around, so if you're developing on Qtum and need help, we'd love to welcome you to our community.  \r\n\r\n* [/r/Qtum on Reddit](https://www.reddit.com/r/Qtum/)\r\n* [Qtum Telegram Group](https://t.me/joinchat/D5oBaw29NeOdpw6qqqf2lw)\r\n* [@QtumOfficial on Twitter](https://mobile.twitter.com/qtumofficial)\r\n* [Qtum on Facebook](https://www.facebook.com/QtumOfficial/)\r\n* [Qtum Forum](https://forum.qtum.org/)\r\n* [Qtum.org](https://qtum.org/en/)\r\n\r\n\r\nQtum Smart Contract Limitations\r\n-----------\r\n\r\n* EVM smart contracts can not receive coins from or send coins to any address type other than pay-to-pubkeyhash (starts with Q) addresses. This is due to a limitation in the EVM\r\n* Contracts are not allowed to create contracts with an initial endowment of coins. The contract must first be created, and then be sent coins in a separate transaction. Humans are also not allowed to create contracts with an initial endowment of coins.\r\n* Although all of the infrastructure is present, Qtum Core does not currently parse Solidity event data. You must parse this yourself using either `searchlogs` or `-record-log-opcodes` features.\r\n* It is not possible to send a contract coins without also executing the contract. This is also the case of Ethereum. This was promised in earlier discussions and technically does work, but due to lack of time for testing this feature was disabled. We hope to reenable this feature with release of the x86 virtual machine in 2018.\r\n* In Qtum there can be multiple addresses used to create a proof-of-stake block. However, the EVM can only see the first output using the `coinbase` operation in Solidity (this address is also the one registered for the continuous staker rewards after 500 blocks). \r\n\r\nHash Validation\r\n----------------\r\n\r\n```\r\n-----BEGIN PGP SIGNED MESSAGE-----\r\nHash: SHA512\r\n\r\nIf you would like to validate that the binaries you download are exactly the same as those provided and built by the Qtum team, then you can compare your binaries to the following sha256sum hashes:\r\n\r\n8b3154f78567b0656e65a27035a97d97a800744dacefae0c6cc286c6866e34a4  qtum-0.14.8-osx-unsigned.dmg\r\nc855987b4bb16a333622a1f5b185573c780512789997f9c628a8c06bfae26eb1  qtum-0.14.8-osx-unsigned.tar.gz\r\n10f4c5574ca900e2134dca9ac8880d5ae0f82ec08c4f9aea88da3937c7a08edb  qtum-0.14.8-osx64.tar.gz\r\nedfd26416545caea73c73c62e6326690fa5a239fcbe66300bd42cdf010dd0cb8  src/qtum-0.14.8.tar.gz\r\n1887a60f01571c1156028dd9b7c3316c387517d7177bdb2d870c0458ac28781d  qtum-osx-0.14-res.yml\r\n\r\n1683f03a3448862cae1bcb0069e06b3b7c9805c90e7d43f64b28b78f2d243cb1  qtum-0.14.8-aarch64-linux-gnu-debug.tar.gz \r\n3ea7fd8a049ac5e6fb86e75944ccd5bf0dec62ae7cbc0caaa92d6e28b7233d5f  qtum-0.14.8-aarch64-linux-gnu.tar.gz \r\n5ef4a469aedd210cdf855155e6f389aacd890ee2cd9309682f01f9a6e60c62c2  qtum-0.14.8-arm-linux-gnueabihf-debug.tar.gz \r\nfe60a3c82116c98fa25bb6dc203ff6211c26bb4977fa4d3df5290a42b9ecc446  qtum-0.14.8-arm-linux-gnueabihf.tar.gz \r\n49b7c64c7b3efa598980feb5442823871208de41a57caf4b124639d4962e4270  qtum-0.14.8-i686-pc-linux-gnu-debug.tar.gz \r\n86151f07bebcc044780a1b8f7035d4fe344d4f330040b9b6f55bee5f95434974  qtum-0.14.8-i686-pc-linux-gnu.tar.gz \r\nf0ec5d129183bb94d4a06b411b648d0948e55eb1b4c1b117afcde4fd75d2aaed  qtum-0.14.8-x86_64-linux-gnu-debug.tar.gz \r\na94a5e61473eb83a90e34bae29b1d44af8ed966cac09003148778aa63a46e081  qtum-0.14.8-x86_64-linux-gnu.tar.gz \r\nedfd26416545caea73c73c62e6326690fa5a239fcbe66300bd42cdf010dd0cb8  src/qtum-0.14.8.tar.gz \r\ne940134ac98546638fac8f6a3dc5b006ef1a9ed8f1255e1457f4ffd0e6e10de3  qtum-linux-0.14-res.yml \r\n\r\n274c4653cacf2c9519d0fed6e60e121649ad9311570c4300349c1639926f2433  qtum-0.14.8-win-unsigned.tar.gz\r\n9f910b6f6116eba4530ff86461d9b692725bddce19d3732632d1e25a55e07d29  qtum-0.14.8-win32-debug.zip\r\n2c79d901f503ed110ce46453e1ca06db2a62d266fcbf847e33b102dacfeaa6c5  qtum-0.14.8-win32-setup-unsigned.exe\r\n93ffe9cce42ba2aa104249f5b20de17e9fa95c36f68b8909aefb071151f9be46  qtum-0.14.8-win32.zip\r\n9ba4aad9dfd38db2a853b1f30b683db8b701b665b3d3776e9a377483dad29919  qtum-0.14.8-win64-debug.zip\r\n8f3b4c4e138b81b7bc91cf213dd29a311cc3ca5999b5b80b95a0373b8746ce90  qtum-0.14.8-win64-setup-unsigned.exe\r\n61ea512e630bc9a8783488188460ab176d5ec967d8def2438b9ecc3dccf58d13  qtum-0.14.8-win64.zip\r\na7d1d7a038b3b85f48de56c4f283bf0eb0ee621c6d5d53f3584c0f7398e32fcd  src/qtum-0.14.8.tar.gz\r\nce46c4471d174d7983dcff15d2a289ca6111bc6709d8cd16f0e700ad110ff5dc  qtum-win-0.14-res.yml\r\n\r\nIn addition, as of the time of this writing, VirusTotal detects 2 false positives on all of the windows files. These false positives are labeled \"HEUR:Trojan.Win32.Generic\" and are from Kaspersky and ZoneAlarm.\r\n\r\ninstaller win32: https://www.virustotal.com/#/file/2c79d901f503ed110ce46453e1ca06db2a62d266fcbf847e33b102dacfeaa6c5/detection\r\n\r\ninstaller win64 https://www.virustotal.com/#/file/8f3b4c4e138b81b7bc91cf213dd29a311cc3ca5999b5b80b95a0373b8746ce90/detection\r\n\r\nzip win32 https://www.virustotal.com/#/file/93ffe9cce42ba2aa104249f5b20de17e9fa95c36f68b8909aefb071151f9be46/detection\r\n\r\nzip win64 https://www.virustotal.com/#/file/61ea512e630bc9a8783488188460ab176d5ec967d8def2438b9ecc3dccf58d13/detection\r\n\r\nYou can validate this message is from Earlz at https://keybase.io/verify\r\n-----BEGIN PGP SIGNATURE-----\r\nVersion: Keybase OpenPGP v2.0.76\r\nComment: https://keybase.io/crypto\r\n\r\nwsFcBAABCgAGBQJaDiJ5AAoJEAKXMK2l7Ra+Li4P/0qO2DWNtsch85NYA6V6Jer5\r\nxQPGqIrU1cd0FA6LhVXzuGAYuSBwGTcu4IOgkjV9Z86aGA2/4N95cn5H+ZROqFaP\r\n2cmxah+YgxfjLSPu0Wmn9hrfBL8a71ggc7zEOOoaRz6H9u6Utj94iazMDx1Mb5SD\r\n5fxmIxCLajbDduHqQTz9wVJUnXL3FWD5WAQ454yIzTRAxXdZ3SD9BcGwiX3zQ4VM\r\n82pcOgjxnP3FvS20rTFIyViXGAN0CcrXtZa+Co32cpBufKim+LvVgHUm0maa0kKz\r\nkwPbs8TYssnVP/IIGr3TkdtY+nAbqQvVzcjVlA7A1L6jobe41LCyGuYtDPGh0Dsi\r\nyb2ba+g0SX+vyUyJJHkZrFfwIimgLPpAfGAA2/KuJj+YYK/LBw4Z9T1h/6yQWPWW\r\nN8p9jQtG/nTFXue5xAiksYtIxWwtnKkNEtMIeddfn9Vox2emqEXEDEoqTbTYHkKa\r\n/JnK40mkyJ1C52PD53avqUpQeTydAmzWU3f5sQB3S2iSvU4aaEW6wt4OeYNFMARH\r\nW6CNn2L+oXJz1Uf7biQefaq1hvP80bJiecNb+KAAr3OMtUJWv5oiFsZIttAp0qmn\r\nM3LLPQn5vsoWlI5WQ/kLSu4hT9JUfGAOmkeByh1MIE8oH/1mxEgr5L/ORFBHTzZw\r\nuUJSvqQmmG6COhcIkqrz\r\n=eBNe\r\n-----END PGP SIGNATURE-----\r\n```",
@@ -2900,29 +3207,26 @@
                 "name": "Skynet Release v1.2",
                 "description": "Qtum is a decentralized blockchain project built on Bitcoin's UTXO model, but with support for Ethereum Virtual Machine based smart contracts. It achieves this through the revolutionary Account Abstraction Layer. For more general information about Qtum as well as links to join our community, go to https://qtum.org\r\n\r\nWelcome to Qtum Skynet, the second public testnet for the Qtum blockchain. The previous testnet was named Sparknet. The testnet is only for testing, as such, its tokens hold no value and production applications should not yet be created on the testnet blockchain. All tokens aqcuired during the testnet will cease to exist when the mainnet is released which actually has tokens which hold value. The purpose of the public testnet is to allow developers to begin testing and developing applications, allow early adopters to see a preview of how the network will behave, and for the Qtum development team to run several load tests which are not directly comparable when done on a private and controlled network. \r\n\r\nQtum Skynet will ideally have the same consensus features and parameters as the Qtum mainnet. We do not intend to add new consensus features during this period and the Skynet testnet should be a very realistic preview of how the mainnet network will function and behave. We will be added new non-consensus features such as new RPC commands, GUI features, and of course bug fixes and other things that make Qtum easier to use without modifying the blockchain protocol.\r\n\r\nThe major features and improvements implemented in Skynet include:\r\n\r\n1. The Decentralized Governance Protocol is completely implemented and functional\r\n2. The Smart Staking Protocol is complete to our specifications (Sparknet was missing a feature called MPoS which makes attacks more expensive to execute)\r\n3. A very early and basic smart contract GUI has been implemented that can be used for creating contracts, sending data and Qtum to them, and checking their status by executing them locally\r\n4. A great number of bug fixes and various improvements, including a bug fix to a performance problem which caused Sparknet nodes to sync extremely slowly as the blockchain grew larger\r\n5. All Solidity operations for smart contracts behave as expected now. The only compatibility break is contracts are not allowed to create contracts with an initial endowment of coins. The contract must first be created and then sent coins in a separate transaction.\r\n\r\nFor more technical information for how to start developing with Qtum Skynet please read the [Guide](https://github.com/qtumproject/qtum/blob/testnet-2/doc/sparknet-guide.md) and also see this tutorial for deploying a simple [faucet smart contract](http://earlz.net/view/2017/06/30/2144/the-qtum-sparknet-faucet) (it hasn't yet been updated for Skynet, but all the instructions are the same)\r\n\r\nUpgrading from Skynet v1.1 and below\r\n-------------------------------------------\r\n\r\nIn Skynet v1.2 a change was made which requires reindexing the blockchain. This can be done by using the command line argument `-reindex` when running either Qtumd or Qtum-Qt. Instructions for using command line arguments with a program:\r\n\r\n* [Windows](https://superuser.com/questions/747684/how-can-i-run-an-application-with-arguments-from-windows-explorer)\r\n* [OSX](https://superuser.com/a/116237)\r\n\r\nAlternatively, you can also follow the instructions below to delete the blockchain (but keep the `wallet.dat` file if you received any testnet Qtum) which will also accomplish the chain being reindexed.\r\n\r\nDeleting the Sparknet blockchain\r\n--------------------------------\r\n\r\nIf you downloaded the Sparknet wallet and ran it at some point, then most likely you have a copy of the Sparknet blockchain on your computer. There is no value in keeping this and it is safe to delete. You simply need to delete the data directory you chose when you first ran Qtum. If you're not sure, then it is probably in the default location. This location depends on platform:\r\n\r\n* On Linux: `~/.qtum`\r\n* On OSX: `~/Library/Application Support/Qtum`\r\n* On Windows: `%APPDATA%\\Qtum` (copy and paste this into your Explorer address bar and it'll take you there)\r\n\r\nIf you get an error about \"unknown genesis block\" or something similar, then this is the problem and you need to delete the old blockchain.\r\n\r\nQuickstart\r\n----------\r\n\r\nThe easiest way to get started with Qtum is to simply download the binaries below. To give a brief breakdown of the different versions available: \r\n\r\n#### Windows\r\n\r\n* [qtum-0.14.2-win32.zip](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.2/qtum-0.14.2-win32.zip) - A version of Qtum-Qt, qtumd, and qtum-cli built for 32bit x86 machines using Windows. If you have an older Windows computer and don't care about installing Qtum system-wide, then this is for you. \r\n* [qtum-0.14.2-win64.zip](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.2/qtum-0.14.2-win64.zip) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 machines using Windows. If you have a modern Windows computer and don't care about installing Qtum system-wide, then this is for you. \r\n* [qtum-0.14.2-win32-setup-unsigned.exe](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.2/qtum-0.14.2-win32-setup-unsigned.exe) - A version of Qtum-Qt, qtumd, and qtum-cli built for 32bit x86 machines using Windows. This includes an installer and will install Qtum system wide. If you have an older Windows computer and want to install Qtum then this is for you.\r\n* [qtum-0.14.2-win64-setup-unsigned.exe](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.2/qtum-0.14.2-win64-setup-unsigned.exe) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 machines using Windows. This includes an installer and will install Qtum system wide. If you have a modern Windows computer and want to install Qtum then this is for you.\r\n\r\n#### OSX\r\n\r\n* [qtum-0.14.2-osx64.tar.gz](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.2/qtum-0.14.2-osx64.tar.gz) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 machines using OSX. If you use a modern Mac and want development tools, this is what you want; we do not support older 32bit or PowerPC based Macs.\r\n* [qtum-0.14.2-osx-unsigned.dmg](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.2/qtum-0.14.2-osx-unsigned.dmg) - A version of Qtum-Qt built for 64bit x86 machines using OSX in a .DMG installable format. If you use a modern Mac and aren't a developer, this is what you want; we do not support older 32bit or PowerPC based Macs.\r\n\r\n#### Linux\r\n\r\n* [qtum-0.14.2-i686-pc-linux-gnu.tar.gz](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.2/qtum-0.14.2-i686-pc-linux-gnu.tar.gz) - A version of Qtum-Qt, qtumd, and qtum-cli built for 32bit x86 PC platforms running Linux. This is probably what you want for older computers running Linux\r\n* [qtum-0.14.2-x86_64-linux-gnu.tar.gz](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.2/qtum-0.14.2-x86_64-linux-gnu.tar.gz) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 PC platforms running Linux. This is probably what you want for any modern PC or server running Linux\r\n* [qtum-0.14.2-arm-linux-gnueabihf.tar.gz](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.2/qtum-0.14.2-arm-linux-gnueabihf.tar.gz) - A version of qtumd and qtum-cli built for 32bit ARM platforms using Linux. This includes the Raspberry Pi and many of it's clones\r\n* [qtum-0.14.2-aarch64-linux-gnu.tar.gz](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.2/qtum-0.14.2-aarch64-linux-gnu.tar.gz) - A version of qtumd and qtum-cli built for 64bit ARM platforms using Linux\r\n\r\nBelow in the full list of binaries, there are also versions that include debug symbols. These are useful for developers, but will run slower and are significantly larger to download. \r\n\r\n\r\n#### Build Qtum Core\r\n\r\nIf you want to build it from source, it's recommended to follow the specific [\"build\" documentation](https://github.com/qtumproject/qtum/tree/testnet-2/doc) for your platform. But mostly it boils down to the following:\r\n\r\n1. Clone the qtum source code and cd into `qtum`\r\n\r\n        git clone --recursive https://github.com/qtumproject/qtum.git\r\n        cd qtum\r\n\r\n\r\n2.  Build qtum-core:\r\n\r\n    Configure and build the headless qtum binaries as well as the GUI (if Qt is found).\r\n\r\n    You can disable the GUI build by passing `--without-gui` to configure.\r\n\r\n        ./autogen.sh\r\n        ./configure\r\n        make\r\n\r\n3.  It is recommended to build and run the unit tests to ensure everything is working correctly:\r\n\r\n        make check\r\n\r\n\r\nIf you encounter an error like:\r\n\r\n> make[2]: *** No rule to make target \u2018cpp-ethereum/utils/libscrypt/b64.c\u2019, needed by \u2018cpp-ethereum/utils/libscrypt/libbitcoinconsensus_la-b64.lo\u2019.  Stop.\r\n\r\nThen you did not checkout the cpp-ethereum submodule for Qtum. To do that, simply:\r\n\r\n    cd qtum\r\n    git submodule update --init --recursive\r\n\r\n\r\nResources\r\n---------\r\n\r\nMake sure to check out these resources as well for more information and to keep up to date with all the latest news about Qtum. At least 1 developer is always around, so if you're developing on Qtum and need help, we'd love to welcome you to our community.  \r\n\r\n* [/r/Qtum on Reddit](https://www.reddit.com/r/Qtum/)\r\n* [Qtum.org](https://qtum.org/en/)\r\n* [Slack chat room](https://qtumslack.herokuapp.com/)\r\n* [@QtumOfficial on Twitter](https://mobile.twitter.com/qtumofficial)\r\n* [Qtum on Facebook](https://www.facebook.com/QtumOfficial/)\r\n* [Qtum Forum](https://forum.qtum.org/)\r\n* Block explorer for Skynet (Coming soon!)\r\n* Faucet for Skynet (Coming soon! Ask in our community in the meantime)\r\n\r\nUpdate History\r\n--------------\r\n\r\n* v1.2: Fixed several minor consensus bugs and fixed some major staking bugs, as well as improved the GUI\r\n* v1.1: Fixed a consensus-critical bug with how contract funds were managed in Skynet v1.0\r\n* v1.0: Initial release",
                 "publishedAt": "2017-08-26T18:56:34Z"
-            },
-            {
-                "name": "Skynet Release v1.1",
-                "description": "Qtum is a decentralized blockchain project built on Bitcoin's UTXO model, but with support for Ethereum Virtual Machine based smart contracts. It achieves this through the revolutionary Account Abstraction Layer. For more general information about Qtum as well as links to join our community, go to https://qtum.org\r\n\r\nWelcome to Qtum Skynet, the second public testnet for the Qtum blockchain. The previous testnet was named Sparknet. The testnet is only for testing, as such, its tokens hold no value and production applications should not yet be created on the testnet blockchain. All tokens aqcuired during the testnet will cease to exist when the mainnet is released which actually has tokens which hold value. The purpose of the public testnet is to allow developers to begin testing and developing applications, allow early adopters to see a preview of how the network will behave, and for the Qtum development team to run several load tests which are not directly comparable when done on a private and controlled network. \r\n\r\nQtum Skynet will ideally have the same consensus features and parameters as the Qtum mainnet. We do not intend to add new consensus features during this period and the Skynet testnet should be a very realistic preview of how the mainnet network will function and behave. We will be added new non-consensus features such as new RPC commands, GUI features, and of course bug fixes and other things that make Qtum easier to use without modifying the blockchain protocol.\r\n\r\nThe major features and improvements implemented in Skynet include:\r\n\r\n1. The Decentralized Governance Protocol is completely implemented and functional\r\n2. The Smart Staking Protocol is complete to our specifications (Sparknet was missing a feature called MPoS which makes attacks more expensive to execute)\r\n3. A very early and basic smart contract GUI has been implemented that can be used for creating contracts, sending data and Qtum to them, and checking their status by executing them locally\r\n4. A great number of bug fixes and various improvements, including a bug fix to a performance problem which caused Sparknet nodes to sync extremely slowly as the blockchain grew larger\r\n5. All Solidity operations for smart contracts behave as expected now. The only compatibility break is contracts are not allowed to create contracts with an initial endowment of coins. The contract must first be created and then sent coins in a separate transaction.\r\n\r\nFor more technical information for how to start developing with Qtum Skynet please read the [Guide](https://github.com/qtumproject/qtum/blob/testnet-2/doc/sparknet-guide.md) and also see this tutorial for deploying a simple [faucet smart contract](http://earlz.net/view/2017/06/30/2144/the-qtum-sparknet-faucet) (it hasn't yet been updated for Skynet, but all the instructions are the same)\r\n\r\nDeleting the Sparknet blockchain\r\n--------------------------------\r\n\r\nIf you downloaded the Sparknet wallet and ran it at some point, then most likely you have a copy of the Sparknet blockchain on your computer. There is no value in keeping this and it is safe to delete. You simply need to delete the data directory you chose when you first ran Qtum. If you're not sure, then it is probably in the default location. This location depends on platform:\r\n\r\n* On Linux: `~/.qtum`\r\n* On OSX: `~/Library/Application Support/Qtum`\r\n* On Windows: `%APPDATA%\\Qtum` (copy and paste this into your Explorer address bar and it'll take you there)\r\n\r\nIf you get an error about \"unknown genesis block\" or something similar, then this is the problem and you need to delete the old blockchain.\r\n\r\nQuickstart\r\n----------\r\n\r\nThe easiest way to get started with Qtum is to simply download the binaries below. To give a brief breakdown of the different versions available: \r\n\r\n#### Windows\r\n\r\n* [qtum-0.14.0-win32.zip](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.1/qtum-0.14.0-win32.zip) - A version of Qtum-Qt, qtumd, and qtum-cli built for 32bit x86 machines using Windows. If you have an older Windows computer and don't care about installing Qtum system-wide, then this is for you. \r\n* [qtum-0.14.0-win64.zip](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.1/qtum-0.14.0-win64.zip) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 machines using Windows. If you have a modern Windows computer and don't care about installing Qtum system-wide, then this is for you. \r\n* [qtum-0.14.0-win32-setup-unsigned.exe](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.1/qtum-0.14.0-win32-setup-unsigned.exe) - A version of Qtum-Qt, qtumd, and qtum-cli built for 32bit x86 machines using Windows. This includes an installer and will install Qtum system wide. If you have an older Windows computer and want to install Qtum then this is for you.\r\n* [qtum-0.14.0-win64-setup-unsigned.exe](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.1/qtum-0.14.0-win64-setup-unsigned.exe) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 machines using Windows. This includes an installer and will install Qtum system wide. If you have a modern Windows computer and want to install Qtum then this is for you.\r\n\r\n#### OSX\r\n\r\n* [qtum-0.14.0-osx64.tar.gz](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.1/qtum-0.14.0-osx64.tar.gz) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 machines using OSX. If you use a modern Mac and want development tools, this is what you want; we do not support older 32bit or PowerPC based Macs.\r\n* [qtum-0.14.0-osx-unsigned.dmg](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.1/qtum-0.14.0-osx-unsigned.dmg) - A version of Qtum-Qt built for 64bit x86 machines using OSX in a .DMG installable format. If you use a modern Mac and aren't a developer, this is what you want; we do not support older 32bit or PowerPC based Macs.\r\n\r\n#### Linux\r\n\r\n* [qtum-0.14.0-i686-pc-linux-gnu.tar.gz](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.1/qtum-0.14.0-i686-pc-linux-gnu.tar.gz) - A version of Qtum-Qt, qtumd, and qtum-cli built for 32bit x86 PC platforms running Linux. This is probably what you want for older computers running Linux\r\n* [qtum-0.14.0-x86_64-linux-gnu.tar.gz](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.1/qtum-0.14.0-x86_64-linux-gnu.tar.gz) - A version of Qtum-Qt, qtumd, and qtum-cli built for 64bit x86 PC platforms running Linux. This is probably what you want for any modern PC or server running Linux\r\n* [qtum-0.14.0-arm-linux-gnueabihf.tar.gz](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.1/qtum-0.14.0-arm-linux-gnueabihf.tar.gz) - A version of qtumd and qtum-cli built for 32bit ARM platforms using Linux. This includes the Raspberry Pi and many of it's clones\r\n* [qtum-0.14.0-aarch64-linux-gnu.tar.gz](https://github.com/qtumproject/qtum/releases/download/testnet-skynet-v1.1/qtum-0.14.0-aarch64-linux-gnu.tar.gz) - A version of qtumd and qtum-cli built for 64bit ARM platforms using Linux\r\n\r\nBelow in the full list of binaries, there are also versions that include debug symbols. These are useful for developers, but will run slower and are significantly larger to download. \r\n\r\n\r\n#### Build Qtum Core\r\n\r\nIf you want to build it from source, it's recommended to follow the specific [\"build\" documentation](https://github.com/qtumproject/qtum/tree/testnet-2/doc) for your platform. But mostly it boils down to the following:\r\n\r\n1. Clone the qtum source code and cd into `qtum`\r\n\r\n        git clone --recursive https://github.com/qtumproject/qtum.git\r\n        cd qtum\r\n\r\n\r\n2.  Build qtum-core:\r\n\r\n    Configure and build the headless qtum binaries as well as the GUI (if Qt is found).\r\n\r\n    You can disable the GUI build by passing `--without-gui` to configure.\r\n\r\n        ./autogen.sh\r\n        ./configure\r\n        make\r\n\r\n3.  It is recommended to build and run the unit tests to ensure everything is working correctly:\r\n\r\n        make check\r\n\r\n\r\nIf you encounter an error like:\r\n\r\n> make[2]: *** No rule to make target \u2018cpp-ethereum/utils/libscrypt/b64.c\u2019, needed by \u2018cpp-ethereum/utils/libscrypt/libbitcoinconsensus_la-b64.lo\u2019.  Stop.\r\n\r\nThen you did not checkout the cpp-ethereum submodule for Qtum. To do that, simply:\r\n\r\n    cd qtum\r\n    git submodule update --init --recursive\r\n\r\n\r\nResources\r\n---------\r\n\r\nMake sure to check out these resources as well for more information and to keep up to date with all the latest news about Qtum. At least 1 developer is always around, so if you're developing on Qtum and need help, we'd love to welcome you to our community.  \r\n\r\n* [/r/Qtum on Reddit](https://www.reddit.com/r/Qtum/)\r\n* [Qtum.org](https://qtum.org/en/)\r\n* [Slack chat room](https://qtumslack.herokuapp.com/)\r\n* [@QtumOfficial on Twitter](https://mobile.twitter.com/qtumofficial)\r\n* [Qtum on Facebook](https://www.facebook.com/QtumOfficial/)\r\n* [Qtum Forum](https://forum.qtum.org/)\r\n* Block explorer for Skynet (Coming soon!)\r\n* Faucet for Skynet (Coming soon! Ask in our community in the meantime)\r\n\r\nUpdate History\r\n--------------\r\n\r\n* v1.1: Fixed a consensus-critical bug with how contract funds were managed in Skynet v1.0\r\n* v1.0: Initial release",
-                "publishedAt": "2017-08-17T18:07:36Z"
             }
         ],
         "url": "https://github.com/qtumproject/qtum",
         "ownername": "qtumproject/qtum",
         "coinname": "Qtum",
-        "symbol": "QTUM"
+        "symbol": "QTUM",
+        "rank": "16",
+        "team": ""
     },
     {
         "ownername": "raiden-network/raiden",
         "id": "MDEwOlJlcG9zaXRvcnk1MDY0Njc2Nw==",
         "owner": "raiden-network",
         "name": "raiden",
-        "coinname": "Raidennetwork",
+        "coinname": "Raiden Network Token",
         "symbol": "RDN",
         "description": "Raiden Network",
-        "createdAt": "2016-01-29T07:40",
-        "homepageUrl": "",
-        "pushedAt": "2017-11-24T17:21",
+        "createdAt": "2016-01-29T07:40:47Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-12-03T11:48:45Z",
         "languages": [
             "Python",
             "TypeScript",
@@ -2985,8 +3289,14 @@
             "2017-47": {
                 "stars": 886,
                 "users": 38
+            },
+            "2017-48": {
+                "stars": 933,
+                "users": 38,
+                "forks": 169
             }
-        }
+        },
+        "rank": "53"
     },
     {
         "ownername": "ripio/rcn-token",
@@ -2995,10 +3305,10 @@
         "name": "rcn-token",
         "coinname": "Ripio",
         "symbol": "RCN",
-        "description": "",
-        "createdAt": "2017-09-22T19:09",
-        "homepageUrl": "",
-        "pushedAt": "2017-10-24T04:17",
+        "description": null,
+        "createdAt": "2017-09-22T19:09:30Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-10-24T04:17:40Z",
         "languages": [
             "JavaScript"
         ],
@@ -3008,6 +3318,11 @@
             "2017-47": {
                 "stars": 11,
                 "users": 3
+            },
+            "2017-48": {
+                "stars": 12,
+                "users": 3,
+                "forks": 2
             }
         }
     },
@@ -3018,11 +3333,11 @@
         "description": "Decentralized cryptocurrency blockchain daemon implementing the XRP Ledger in C++",
         "createdAt": "2011-11-07T04:40:15Z",
         "homepageUrl": "https://ripple.com/xrp",
-        "pushedAt": "2017-11-22T22:29:03Z",
+        "pushedAt": "2017-12-02T21:47:19Z",
         "languages": [
             "C++",
             "C",
-            "Java"
+            "Objective-C"
         ],
         "data": {
             "2017-43": {
@@ -3040,9 +3355,19 @@
             "2017-47": {
                 "stars": 1680,
                 "users": 72
+            },
+            "2017-48": {
+                "stars": 1701,
+                "users": 72,
+                "forks": 471
             }
         },
         "releases": [
+            {
+                "name": "rippled Version 0.80.1",
+                "description": "The `rippled` 0.80.1 release provides several enhancements in support of published validator lists and corrects several bugs.\r\n\r\n**New and Updated Features**\r\n\r\n- Allow including validator manifests in published list ([#2278](https://github.com/ripple/rippled/issues/2278))\r\n- Add validator list RPC commands ([#2242](https://github.com/ripple/rippled/issues/2242))\r\n- Support [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication) when querying published list sites and use Windows system root certificates ([#2275](https://github.com/ripple/rippled/issues/2275))\r\n- Grow TxQ expected size quickly, shrink slowly ([#2235](https://github.com/ripple/rippled/issues/2235))\r\n\r\n**Bug Fixes**\r\n\r\n- Make consensus quorum unreachable if validator list expires ([#2240](https://github.com/ripple/rippled/issues/2240))\r\n- Properly use ledger hash to break ties when determing working ledger for consensus ([#2257](https://github.com/ripple/rippled/issues/2257))\r\n- Explictly use std::deque for missing node handler in SHAMap code ([#2252](https://github.com/ripple/rippled/issues/2252))\r\n- Verify validator token manifest matches private key ([#2268](https://github.com/ripple/rippled/issues/2268))\r\n",
+                "publishedAt": "2017-12-01T14:01:36Z"
+            },
             {
                 "name": "rippled Version 0.70.2",
                 "description": "The `rippled` 0.70.2 release corrects an emergent behavior which causes large numbers of transactions to get stuck in different nodes' open ledgers without being passed on to validators, resulting in a spike in the open ledger fee on those nodes.\r\n\r\n**New and Updated Features**\r\n\r\nThis release has no new features.\r\n\r\n**Bug Fixes**\r\n\r\n- Recent fee rises and TxQ issues ([#2215](https://github.com/ripple/rippled/issues/2215))",
@@ -3087,26 +3412,22 @@
                 "name": "rippled Version 0.50.0",
                 "description": "The `rippled` 0.50.0 release includes **TickSize**, which allows gateways to set a \"tick size\" for assets they issue to to help promote faster price discovery and deeper liquidity, as well as reduce transaction spam and ledger churn on RCL. Ripple expects TickSize to be enabled via an Amendment called **TickSize** on Tuesday, 2017-02-21. This feature underlines Ripple\u2019s continued support to improving RCL and making it even better suited for settlement of global payments.\n\nYou can [update to the new version](https://ripple.com/build/rippled-setup/#updating-rippled) on Red Hat Enterprise Linux 7 or CentOS 7 using yum. For other platforms, please [compile the new version from source](https://wiki.ripple.com/Rippled_build_instructions).\n\n**New and Updated Features**\n\n**Problem & Solution**\n\nCurrently, offers on RCL can differ by as little as one part in a quadrillion. This means that there is essentially no value to placing an offer early, as an offer placed later at a microscopically better price gets priority over it. The **TickSize** Amendment solves this problem by introducing a minimum tick size that a price must move for an offer to be considered to be at a better price. The tick size is controlled by the issuers of the assets involved.\n\nWhen you place a buy offer, the amount of currency you will buy is respected. When you place a sell offer, the amount of currency you will sell is respected. If a tick size is in force, the other side of the offer will be rounded (in your favor) such that the ratio is rounded to the tick size before the offer is placed on the books.\n\n**TickSize** does not affect the size of an offer. A trader can still trade microscopic amounts of an asset. It just affects the prices (ratio of in to out) at which offers can be placed on the books. For asset pairs with XRP, the tick size imposed, if any, is the tick size of the issuer of the non-XRP asset. For asset pairs without XRP, the tick size imposed, if any, is the smaller of the two issuer's configured tick sizes.\n\nThe tick size is imposed by rounding the offer quality down to the nearest tick and recomputing the non-critical side of the offer. For a buy, the amount offered is rounded down. For a sell, the amount charged is rounded up.\n\n**Effects of TickSize Change**\n\nThis change lets issuers quantize the exchange rates of offers to use a specified number of significant digits. Gateways must enable a TickSize on their account for this feature to benefit them. A single AccountSet transaction may set a \"TickSize\" parameter. Legal values are 0 and 3-15 inclusive. Zero removes the setting. 3-15 allow that many decimal digits of precision in the pricing of offers for assets issued by this account. It will still be possible to place an offer to buy or sell any amount of an asset and the offer will still keep that amount as exactly as it does now. If an offer involves two assets that each have a tick size, the smaller number of significant figures (larger ticks) controls.\n\n**Benefits of TickSize Change**\n\nThe primary expected benefits of the TickSize amendment is the reduction of bots fighting over the tip of the order book, which means:\n- Quicker price discovery\n- Traders can't be outbid by a microscopic amount\n- More offers left on the books\n- A reduction in offer creation and cancellation spam\n\nWe also expect larger tick sizes to benefit market makers in the following ways:\n- They increase the delta between the fair market value and the trade price, ultimately reducing spreads\n- They prevent market makers from consuming each other's offers due to slight changes in perceived fair market value, which promotes liquidity\n- They promote faster price discovery since traders have to adjust their prices in financially distinct increments\n- They reduce transaction spam by reducing fighting over the tip of the order book and reducing the need to change offers due to slight price changes\n- They reduce ledger churn and metadata sizes by reducing the number of indexes each order book must have\n- They allow the order book as presented to traders to better reflect the actual book since these presentations are inevitably aggregated into ticks\n\n**Hardened TLS configuration**\n\nThis release updates the default TLS configuration for `rippled`. The new release supports only 2048-bit DH parameters and defines a new default set of modern ciphers to use, removing support for ciphers and hash functions that are no longer considered secure.\n\nServer administrators who wish to have different settings can configure custom global and per-port cipher suites in the configuration file using the ssl_ciphers directive.\n\n## 0.50.0 Change Log\n- Remove websocketpp support [(#1910)](https://github.com/ripple/rippled/pull/1910)\n- Increase OpenSSL requirements & harden default TLS cipher suites [(#1913)](https://github.com/ripple/rippled/pull/1913)\n- Move test support sources out of ripple directory [(#1916)](https://github.com/ripple/rippled/pull/1916)\n- Enhance ledger header RPC commands [(#1918)](https://github.com/ripple/rippled/pull/1918)\n- Add support for tick sizes [(#1922)](https://github.com/ripple/rippled/pull/1922)\n- Port discrepancy-test.coffee to c++ [(#1930)](https://github.com/ripple/rippled/pull/1930)\n- Remove redundant call to clearNeedNetworkLedger [(#1931)](https://github.com/ripple/rippled/pull/1931)\n- Port freeze-test.coffee to C++ unit test. [(#1934)](https://github.com/ripple/rippled/pull/1934)\n- Fix CMake docs target to work if BOOST_ROOT is not set [(#1937)](https://github.com/ripple/rippled/pull/1937)\n- Improve setup for account_tx paging test [(#1942)](https://github.com/ripple/rippled/pull/1942)\n- Eliminate npm tests [(#1943)](https://github.com/ripple/rippled/pull/1943)\n- Port uniport js test to cpp [(#1944)](https://github.com/ripple/rippled/pull/1944)\n- Enable amendments in genesis ledger [(#1944)](https://github.com/ripple/rippled/pull/1944)\n- Trim ledger data in Discrepancy_test [(#1948)](https://github.com/ripple/rippled/pull/1948)\n- Add \"current_ledger\" field to \"fee\" result [(#1949)](https://github.com/ripple/rippled/pull/1949)\n- Cleanup unit test support code [(#1953)](https://github.com/ripple/rippled/pull/1953)\n- Add ledger save / load tests [(#1955)](https://github.com/ripple/rippled/pull/1955)\n- Remove unused websocket files [(#1957)](https://github.com/ripple/rippled/pull/1957)\n- Update RPC handler role/usage [(#1966)](https://github.com/ripple/rippled/pull/1966)\n\n**Bug Fixes**\n- Validator's manifest not forwarded beyond directly connected peers [(#1919)](https://github.com/ripple/rippled/pull/1919)\n",
                 "publishedAt": "2017-01-27T18:15:48Z"
-            },
-            {
-                "name": "rippled Version 0.33.0-hf1",
-                "description": "Ripple has released `rippled` version 0.33.0-hf1, which fixes a JSON parsing issue in all `rippled` servers. Ripple recommends upgrading to 0.33.0-hf1 only if server operators are experiencing a `jsonInvalid` error response to client requests.\n\nThere are no new or updated features in the 0.33.0-hf1 release.\n\n**Bug Fixes**\n- Fix a JSON parsing issue that can fail to parse valid JSON requests when the data received by the server is broken up into more than one contiguous buffer. [(#1863)](https://github.com/ripple/rippled/commit/69b47890e69cea46c403e6354742c3653f125c6f)\n",
-                "publishedAt": "2017-01-26T01:39:14Z"
             }
         ],
         "url": "https://github.com/ripple/rippled",
         "ownername": "ripple/rippled",
         "coinname": "Ripple",
-        "symbol": "XRP"
+        "symbol": "XRP",
+        "rank": "4"
     },
     {
         "owner": "RiseVision",
         "name": "rise-ts",
         "id": "MDEwOlJlcG9zaXRvcnk5ODQ1MTA3Nw==",
-        "description": "",
-        "createdAt": "2017-07-26T17:56",
-        "homepageUrl": "",
-        "pushedAt": "2017-09-24T11:48",
+        "description": null,
+        "createdAt": "2017-07-26T17:56:29Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-09-24T11:48:57Z",
         "languages": [
             "TypeScript",
             "JavaScript"
@@ -3127,6 +3448,11 @@
             "2017-47": {
                 "stars": 7,
                 "users": 9
+            },
+            "2017-48": {
+                "stars": 7,
+                "users": 9,
+                "forks": 2
             }
         },
         "releases": [],
@@ -3140,9 +3466,9 @@
         "name": "rubycoin",
         "id": "MDEwOlJlcG9zaXRvcnkxNjY4NDA1OQ==",
         "description": "A precious gem for the digital age.",
-        "createdAt": "2014-02-10T04:10",
-        "homepageUrl": "",
-        "pushedAt": "2017-11-20T02:03",
+        "createdAt": "2014-02-10T04:10:49Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-11-20T02:03:15Z",
         "languages": [
             "C++",
             "Assembly",
@@ -3164,6 +3490,11 @@
             "2017-47": {
                 "stars": 17,
                 "users": 5
+            },
+            "2017-48": {
+                "stars": 17,
+                "users": 5,
+                "forks": 16
             }
         },
         "releases": [
@@ -3205,10 +3536,10 @@
         "name": "salus",
         "coinname": "Salus",
         "symbol": "SLS",
-        "description": "",
-        "createdAt": "2016-01-13T21:23",
-        "homepageUrl": "",
-        "pushedAt": "2016-09-19T14:30",
+        "description": null,
+        "createdAt": "2016-01-13T21:23:21Z",
+        "homepageUrl": null,
+        "pushedAt": "2016-09-19T14:30:04Z",
         "languages": [
             "C++",
             "Assembly",
@@ -3224,6 +3555,11 @@
             "2017-47": {
                 "stars": 1,
                 "users": 1
+            },
+            "2017-48": {
+                "stars": 1,
+                "users": 1,
+                "forks": 3
             }
         }
     },
@@ -3232,9 +3568,9 @@
         "name": "skycoin",
         "id": "MDEwOlJlcG9zaXRvcnkxNTQyNzgzNQ==",
         "description": "Skycoin Core and Wallet",
-        "createdAt": "2013-12-25T01:50",
+        "createdAt": "2013-12-25T01:50:16Z",
         "homepageUrl": "",
-        "pushedAt": "2017-11-25T14:32",
+        "pushedAt": "2017-12-03T16:55:14Z",
         "languages": [
             "Go",
             "TypeScript",
@@ -3256,6 +3592,11 @@
             "2017-47": {
                 "stars": 228,
                 "users": 35
+            },
+            "2017-48": {
+                "stars": 238,
+                "users": 38,
+                "forks": 107
             }
         },
         "releases": [
@@ -3310,9 +3651,9 @@
         "name": "chainlink",
         "id": "MDEwOlJlcG9zaXRvcnk2ODM1MzQzMA==",
         "description": "Easily connect your applications to blockchains",
-        "createdAt": "2016-09-16T04:48",
+        "createdAt": "2016-09-16T04:48:45Z",
         "homepageUrl": "https://chainlink-docs.smartcontract.com",
-        "pushedAt": "2017-11-18T01:15",
+        "pushedAt": "2017-11-18T01:15:21Z",
         "languages": [
             "Ruby",
             "HTML",
@@ -3334,23 +3675,29 @@
             "2017-47": {
                 "stars": 97,
                 "users": 5
+            },
+            "2017-48": {
+                "stars": 105,
+                "users": 5,
+                "forks": 14
             }
         },
         "releases": [],
         "url": "https://github.com/smartcontractkit/chainlink",
         "ownername": "smartcontractkit/chainlink",
-        "coinname": "Chainlink",
-        "symbol": "LINK"
+        "coinname": "ChainLink",
+        "symbol": "LINK",
+        "rank": "90"
     },
     {
         "owner": "status-im",
         "name": "status-react",
         "id": "MDEwOlJlcG9zaXRvcnk1MjMwODQ0MQ==",
         "description": "a free (libre) open source, mobile OS for Ethereum",
-        "createdAt": "2016-02-22T21:48",
+        "createdAt": "2016-02-22T21:48:48Z",
         "url": "https://github.com/status-im/status-react",
         "homepageUrl": "https://status.im",
-        "pushedAt": "2017-11-25T18:48",
+        "pushedAt": "2017-12-03T08:13:27Z",
         "releases": [
             {
                 "name": "0.9.4 (alpha)",
@@ -3396,20 +3743,26 @@
             "2017-47": {
                 "stars": 1531,
                 "users": 106
+            },
+            "2017-48": {
+                "stars": 1563,
+                "users": 110,
+                "forks": 354
             }
         },
         "ownername": "status-im/status-react",
         "coinname": "Status",
-        "symbol": "SNT"
+        "symbol": "SNT",
+        "rank": "40"
     },
     {
         "owner": "stellar",
         "name": "stellar-core",
         "id": "MDEwOlJlcG9zaXRvcnkyNzA4NTgyMQ==",
         "description": "stellar-core is the backbone of the Stellar network. It maintains a local copy of the ledger, communicating and staying in sync with other instances of stellar-core on the network. Optionally, stellar-core can store historical records of the ledger and participate in consensus.",
-        "createdAt": "2014-11-24T17:11",
+        "createdAt": "2014-11-24T17:11:12Z",
         "homepageUrl": "",
-        "pushedAt": "2017-11-24T07:15",
+        "pushedAt": "2017-12-03T02:42:09Z",
         "languages": [
             "C++",
             "C",
@@ -3431,6 +3784,11 @@
             "2017-47": {
                 "stars": 599,
                 "users": 46
+            },
+            "2017-48": {
+                "stars": 620,
+                "users": 46,
+                "forks": 189
             }
         },
         "releases": [
@@ -3487,8 +3845,9 @@
         ],
         "url": "https://github.com/stellar/stellar-core",
         "ownername": "stellar/stellar-core",
-        "coinname": "Stellarlumens",
-        "symbol": "XLM"
+        "coinname": "Stellar Lumens",
+        "symbol": "XLM",
+        "rank": "15"
     },
     {
         "ownername": "Storj/core",
@@ -3498,9 +3857,9 @@
         "coinname": "Storj",
         "symbol": "STORJ",
         "description": "Implementation of the Storj protocol for Node.js",
-        "createdAt": "2016-02-02T16:10",
+        "createdAt": "2016-02-02T16:10:31Z",
         "homepageUrl": "https://storj.github.io/core",
-        "pushedAt": "2017-11-23T23:35",
+        "pushedAt": "2017-11-23T23:35:42Z",
         "languages": [
             "JavaScript"
         ],
@@ -3561,17 +3920,23 @@
             "2017-47": {
                 "stars": 372,
                 "users": 30
+            },
+            "2017-48": {
+                "stars": 375,
+                "users": 30,
+                "forks": 90
             }
-        }
+        },
+        "rank": "85"
     },
     {
         "owner": "stratisproject",
         "name": "StratisBitcoinFullNode",
         "id": "MDEwOlJlcG9zaXRvcnk2NzI3MTI5MA==",
         "description": "Bitcoin full node in C#",
-        "createdAt": "2016-09-03T04:32",
+        "createdAt": "2016-09-03T04:32:51Z",
         "homepageUrl": "https://stratisplatform.com",
-        "pushedAt": "2017-11-25T21:11",
+        "pushedAt": "2017-12-03T18:24:09Z",
         "languages": [
             "C#",
             "PowerShell",
@@ -3593,6 +3958,11 @@
             "2017-47": {
                 "stars": 223,
                 "users": 55
+            },
+            "2017-48": {
+                "stars": 233,
+                "users": 57,
+                "forks": 98
             }
         },
         "releases": [
@@ -3610,16 +3980,17 @@
         "url": "https://github.com/stratisproject/StratisBitcoinFullNode",
         "ownername": "stratisproject/StratisBitcoinFullNode",
         "coinname": "Stratis",
-        "symbol": "STRAT"
+        "symbol": "STRAT",
+        "rank": "24"
     },
     {
         "owner": "syscoin",
         "name": "syscoin2",
         "id": "MDEwOlJlcG9zaXRvcnk1Mjc2MjI3OA==",
         "description": "Syscoin2 Core integration/staging tree",
-        "createdAt": "2016-02-29T03:47",
+        "createdAt": "2016-02-29T03:47:32Z",
         "homepageUrl": "https://syscoin.org",
-        "pushedAt": "2017-11-24T23:06",
+        "pushedAt": "2017-12-02T17:46:59Z",
         "languages": [
             "C++",
             "Python",
@@ -3641,9 +4012,19 @@
             "2017-47": {
                 "stars": 43,
                 "users": 8
+            },
+            "2017-48": {
+                "stars": 43,
+                "users": 8,
+                "forks": 8
             }
         },
         "releases": [
+            {
+                "name": "Syscoin 2.2.0 with V1 Masternodes @ Testnet 2",
+                "description": "# Syscoin 2.2.0 MN Testnet 2 Release Notes\r\n\r\nThis is a mandatory update for Testnet 1 users. It is not compatible with the current Syscoin Mainnet. Please only install this if you wish to setup and run a Masternode on the Syscoin testnet. Please clear your syscoin data directory before starting. This is a forking testnet so previous version blockchain will not work.\r\n\r\n\r\n\r\nFor more information on how to setup a masternode (currently only for Ubuntu 16.04 LTS users) [see this blog post](https://medium.com/p/e2d370c40b59/).  The only difference is you will notice that the tutorial now omits the step \"git checkout 349de28\", so if you have cloned already for testnet1 you can just do a \"git pull\" in the syscoin2 directory to get the latest code and run and start your masternode.\r\n\r\nPlease also re-pull the sentinel code, goto your sentinel directory and type \"git pull\" or if that fails delete it and reclone sentinel and follow tutorial for setting up sentinel again.\r\n\r\n**This release is locked to testnet!**\r\n\r\n## Changes\r\n\r\n1) Fees are split between masternodes and miners\r\n2) Seniority based masternode payments (longer term nodes get more ROI, based on a idea of bond system)\r\n3) Governance system allows people to create proposals and get funded during a super block.\r\n\r\nNote that the install path and Syscoin data directory has been renamed to Syscoincore from Syscoin\r\n\r\nPlease copy the provided syscoin.conf file to your Syscoincore data directory. **If you do not do so you will not be connected to our Masternode network**\r\n",
+                "publishedAt": "2017-12-02T00:27:17Z"
+            },
             {
                 "name": "Syscoin 2.2.0 with V1 Masternodes @ Testnet 1",
                 "description": "# Syscoin 2.2.0 MN Testnet 1 Release Notes\r\n\r\nThis is a NOT a mandatory update but is highly recommended for those who want to test Masternodes on Syscoin. It is not compatible with the current Syscoin Mainnet. Please only install this if you wish to setup and run a Masternode on the Syscoin testnet.\r\n\r\n\r\n\r\nFor more information on how to setup a masternode (currently only for Ubuntu 16.04 LTS users) [see this blog post](https://medium.com/p/e2d370c40b59/).  \r\n\r\n**This release is locked to testnet!**\r\n\r\n## Changes\r\n\r\n1) Support for Syscoin 2.2 core which is a fundamental rewrite of Syscoin and adds new Syscoin services and features\r\n2) Masternodes with bug fixes applied upstream to Dash core\r\n\r\nNote that the install path and Syscoin data directory has been renamed to Syscoincore from Syscoin\r\n\r\nPlease copy the provided syscoin.conf file to your Syscoincore data directory. **If you do not do so you will not be connected to our Masternode network**\r\n",
@@ -3688,27 +4069,23 @@
                 "name": "Syscoin 2.1 Beta 2",
                 "description": "This is a beta release of Syscoin 2.1 for public testing. For more information [see this blog post](http://syscoin.org/updated-public-beta-released-major-bugs-fixed-new-features-added/).  \n\n**The release is locked to testnet!**\n",
                 "publishedAt": "2016-07-22T05:14:07Z"
-            },
-            {
-                "name": "Syscoin 2.1 Beta 1",
-                "description": "This is a beta release of Syscoin 2.1 for public testing. For more information [see this blog post](http://syscoin.org/beta-2-1-solving-blockchain-bloat/).  \n\n**The release is locked to testnet!**\n",
-                "publishedAt": "2016-06-28T03:19:47Z"
             }
         ],
         "url": "https://github.com/syscoin/syscoin2",
         "ownername": "syscoin/syscoin2",
         "coinname": "Syscoin",
-        "symbol": "SYS"
+        "symbol": "SYS",
+        "rank": "55"
     },
     {
         "owner": "transferdev",
         "name": "Transfercoin",
         "id": "MDEwOlJlcG9zaXRvcnk0MDU2MDA1Mg==",
         "description": "source",
-        "createdAt": "2015-08-11T19:07",
+        "createdAt": "2015-08-11T19:07:01Z",
         "url": "https://github.com/transferdev/Transfercoin",
-        "homepageUrl": "",
-        "pushedAt": "2017-07-29T03:27",
+        "homepageUrl": null,
+        "pushedAt": "2017-07-29T03:27:49Z",
         "releases": [
             {
                 "name": "V1.2.4 Release",
@@ -3739,6 +4116,11 @@
             "2017-47": {
                 "stars": 7,
                 "users": 6
+            },
+            "2017-48": {
+                "stars": 7,
+                "users": 6,
+                "forks": 26
             }
         },
         "ownername": "transferdev/Transfercoin",
@@ -3750,9 +4132,9 @@
         "name": "Unobtanium",
         "id": "MDEwOlJlcG9zaXRvcnkyMDk1Nzg1MA==",
         "description": "Colder than CGB, Still shinier than BitBar  http://unobtanium.uno",
-        "createdAt": "2014-06-18T10:06",
-        "homepageUrl": "",
-        "pushedAt": "2017-11-20T00:17",
+        "createdAt": "2014-06-18T10:06:00Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-11-20T00:17:36Z",
         "languages": [
             "C++",
             "Shell",
@@ -3774,6 +4156,11 @@
             "2017-47": {
                 "stars": 10,
                 "users": 9
+            },
+            "2017-48": {
+                "stars": 10,
+                "users": 9,
+                "forks": 14
             }
         },
         "releases": [],
@@ -3787,9 +4174,9 @@
         "name": "VERGE",
         "id": "MDEwOlJlcG9zaXRvcnk1MDIyMzEyOA==",
         "description": "official source code repository for VERGE cryptocurrency",
-        "createdAt": "2016-01-23T04:20",
+        "createdAt": "2016-01-23T04:20:14Z",
         "homepageUrl": "https://VergeCurrency.com",
-        "pushedAt": "2017-11-22T01:17",
+        "pushedAt": "2017-12-01T12:33:41Z",
         "languages": [
             "C",
             "C++",
@@ -3811,6 +4198,11 @@
             "2017-47": {
                 "stars": 127,
                 "users": 17
+            },
+            "2017-48": {
+                "stars": 131,
+                "users": 17,
+                "forks": 54
             }
         },
         "releases": [
@@ -3828,20 +4220,21 @@
         "url": "https://github.com/vergecurrency/VERGE",
         "ownername": "vergecurrency/VERGE",
         "coinname": "Verge",
-        "symbol": "XVG"
+        "symbol": "XVG",
+        "rank": "81"
     },
     {
         "owner": "vertcoin",
         "name": "vertcoin",
         "id": "MDEwOlJlcG9zaXRvcnk4MTI1NzAxOQ==",
         "description": "A digital currency with mining decentralisation and ASIC resistance as a key focus",
-        "createdAt": "2017-02-07T21:38",
+        "createdAt": "2017-02-07T21:38:35Z",
         "homepageUrl": "https://vertcoin.org",
-        "pushedAt": "2017-11-21T14:54",
+        "pushedAt": "2017-12-03T05:33:13Z",
         "languages": [
             "C++",
-            "C",
-            "Python"
+            "Python",
+            "C"
         ],
         "data": {
             "2017-43": {
@@ -3859,9 +4252,19 @@
             "2017-47": {
                 "stars": 140,
                 "users": 3
+            },
+            "2017-48": {
+                "stars": 158,
+                "users": 3,
+                "forks": 43
             }
         },
         "releases": [
+            {
+                "name": "0.12.0",
+                "description": "This is the first release of Vertcoin Core 0.12.0. Over the release candidate the only change in this version are some additional DNS seeds. \r\n\r\nAs always, remember to **backup your wallet** before upgrading. \r\n\r\nParticularly interesting/fun in this release are the inclusion of the new `vtc1` prefixed pay-to-witness-pubkey-hash (p2wpkh) bech32 addresses which will become the default in the future. You can generate these from the debug window console (Help -> Debug Window -> Console) by using the `addwitnessaddress` command with a p2pkh address from your wallet. e.g. `addwitnessaddress VqC5JZZbiuVM5eZ7rcyMeBD3GnJebveeGX false` -> `vtc1q564855umf73meq4l8svzwdrgeu2lgyrha09pvh`. 0.12.0 wallets and the LN wallet [Lit](https://github.com/mit-dci/lit) can send to this type of address as normal. You can also generate a backwards compatible p2wpkh address using `addwitnessaddress VqC5JZZbiuVM5eZ7rcyMeBD3GnJebveeGX` -> `3N5SQsujvwWh3DVjVJpU9bfy22W9UGCkYw`. This is the same type of \"segwit address\" that the Ledger app generates and is embedded inside a pay-to-script-hash (p2sh) address. \r\n\r\nBackend developers should be aware that this version contains non-backwards-compatible changes to the RPC interface. Developers should ensure compliance with the changes before deploying this upgrade in production systems.\r\n\r\nI have included signatures for each of the binaries, signed with my [pgp key](http://keyserver.ubuntu.com:11371/pks/lookup?op=vindex&fingerprint=on&search=0x04E9BCFB4E777CA3). ",
+                "publishedAt": "2017-12-03T00:41:10Z"
+            },
             {
                 "name": "0.12.0~RC2 ",
                 "description": "Second release candidate for Vertcoin Core 0.12.0. Over the previous RC, this version contains fixes for installation on OS X and a bug fix for reopening newly created wallets. This version is based off of upstream Bitcoin Core 0.15.1/0.15.2. To see a major list of changes, check the change logs from Bitcoin Core 0.13.2 (which v0.11 was based on) to 0.15.1.\r\n\r\nThis version of Vertcoin Core requires a new version of P2Pool to work that can be found on this branch: https://github.com/vertcoin/p2pool-vtc/commits/vardiff\r\n\r\nAs always, be sure to **back up your wallet.dat** _before_ running this new version, just in case.\r\n\r\nThis update contains no forks, so upgrading is optional.",
@@ -3901,16 +4304,17 @@
         "url": "https://github.com/vertcoin/vertcoin",
         "ownername": "vertcoin/vertcoin",
         "coinname": "Vertcoin",
-        "symbol": "VTC"
+        "symbol": "VTC",
+        "rank": "34"
     },
     {
         "owner": "viacoin",
         "name": "viacoin",
         "id": "MDEwOlJlcG9zaXRvcnk5MTg4MTI2Mw==",
         "description": "Viacoin Core integration/staging tree",
-        "createdAt": "2017-05-20T10:16",
-        "homepageUrl": "",
-        "pushedAt": "2017-08-06T02:11",
+        "createdAt": "2017-05-20T10:16:53Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-08-06T02:11:35Z",
         "languages": [
             "C++",
             "Python",
@@ -3932,6 +4336,11 @@
             "2017-47": {
                 "stars": 33,
                 "users": 392
+            },
+            "2017-48": {
+                "stars": 33,
+                "users": 392,
+                "forks": 10
             }
         },
         "releases": [
@@ -3963,10 +4372,10 @@
         "name": "Contract",
         "coinname": "Viberate",
         "symbol": "VIB",
-        "description": "",
-        "createdAt": "2017-09-05T06:45",
-        "homepageUrl": "",
-        "pushedAt": "2017-09-07T07:13",
+        "description": null,
+        "createdAt": "2017-09-05T06:45:07Z",
+        "homepageUrl": null,
+        "pushedAt": "2017-09-07T07:13:52Z",
         "languages": [
             "JavaScript"
         ],
@@ -3976,6 +4385,11 @@
             "2017-47": {
                 "stars": 0,
                 "users": 1
+            },
+            "2017-48": {
+                "stars": 0,
+                "users": 1,
+                "forks": 1
             }
         }
     },
@@ -3984,9 +4398,9 @@
         "name": "waves",
         "id": "MDEwOlJlcG9zaXRvcnk1NjQyNjk3NQ==",
         "description": "Waves node application",
-        "createdAt": "2016-04-17T08:38",
+        "createdAt": "2016-04-17T08:38:48Z",
         "homepageUrl": "https://wavesplatform.com/",
-        "pushedAt": "2017-11-24T15:33",
+        "pushedAt": "2017-12-02T10:31:35Z",
         "languages": [
             "Scala",
             "JavaScript",
@@ -4008,6 +4422,11 @@
             "2017-47": {
                 "stars": 285,
                 "users": 34
+            },
+            "2017-48": {
+                "stars": 293,
+                "users": 34,
+                "forks": 81
             }
         },
         "releases": [
@@ -4065,16 +4484,17 @@
         "url": "https://github.com/wavesplatform/Waves",
         "ownername": "wavesplatform/waves",
         "coinname": "Waves",
-        "symbol": "WAVES"
+        "symbol": "WAVES",
+        "rank": "23"
     },
     {
         "owner": "xdn-project",
         "name": "digitalnote",
         "id": "MDEwOlJlcG9zaXRvcnkzNjk4ODEyOA==",
         "description": "DigitalNote XDN (duckNote, DarkNote) is a private cryptocurrency with ecrypted messages and deposits",
-        "createdAt": "2015-06-06T17:06",
+        "createdAt": "2015-06-06T17:06:48Z",
         "homepageUrl": "http://digitalnote.org",
-        "pushedAt": "2017-08-18T15:28",
+        "pushedAt": "2017-08-18T15:28:16Z",
         "languages": [
             "C++",
             "C",
@@ -4096,6 +4516,11 @@
             "2017-47": {
                 "stars": 32,
                 "users": 1
+            },
+            "2017-48": {
+                "stars": 32,
+                "users": 1,
+                "forks": 26
             }
         },
         "releases": [
@@ -4145,9 +4570,9 @@
         "name": "zclassic",
         "id": "MDEwOlJlcG9zaXRvcnk3MjkwMjQ5OQ==",
         "description": "Zclassic is financial freedom.",
-        "createdAt": "2016-11-05T03:22",
+        "createdAt": "2016-11-05T03:22:38Z",
         "homepageUrl": "https://www.reddit.com/r/ZClassic/",
-        "pushedAt": "2017-11-10T18:25",
+        "pushedAt": "2017-11-10T18:25:10Z",
         "languages": [
             "C++",
             "C",
@@ -4169,6 +4594,11 @@
             "2017-47": {
                 "stars": 73,
                 "users": 4
+            },
+            "2017-48": {
+                "stars": 74,
+                "users": 4,
+                "forks": 32
             }
         },
         "releases": [
@@ -4218,9 +4648,9 @@
         "name": "zcash",
         "id": "MDEwOlJlcG9zaXRvcnkyNjk4NzA0OQ==",
         "description": "Zcash - Internet Money",
-        "createdAt": "2014-11-22T03:13",
+        "createdAt": "2014-11-22T03:13:10Z",
         "homepageUrl": "https://z.cash/",
-        "pushedAt": "2017-11-25T21:54",
+        "pushedAt": "2017-12-01T14:11:29Z",
         "languages": [
             "C++",
             "C",
@@ -4242,6 +4672,11 @@
             "2017-47": {
                 "stars": 3007,
                 "users": 375
+            },
+            "2017-48": {
+                "stars": 3043,
+                "users": 375,
+                "forks": 643
             }
         },
         "releases": [
@@ -4299,16 +4734,17 @@
         "url": "https://github.com/zcash/zcash",
         "ownername": "zcash/zcash",
         "coinname": "Zcash",
-        "symbol": "ZEC"
+        "symbol": "ZEC",
+        "rank": "19"
     },
     {
         "owner": "ZencashOfficial",
         "name": "zen",
         "id": "MDEwOlJlcG9zaXRvcnk5Mzc5ODgxNw==",
         "description": "2.0.10 - TLS integration and more!",
-        "createdAt": "2017-06-08T23:05",
+        "createdAt": "2017-06-08T23:05:59Z",
         "homepageUrl": "https://zensystem.io",
-        "pushedAt": "2017-11-18T16:15",
+        "pushedAt": "2017-12-03T22:19:32Z",
         "languages": [
             "C++",
             "Python",
@@ -4330,6 +4766,11 @@
             "2017-47": {
                 "stars": 63,
                 "users": 20
+            },
+            "2017-48": {
+                "stars": 67,
+                "users": 20,
+                "forks": 27
             }
         },
         "releases": [
@@ -4361,7 +4802,8 @@
         ],
         "url": "https://github.com/ZencashOfficial/zen",
         "ownername": "ZencashOfficial/zen",
-        "coinname": "Zencash",
-        "symbol": "ZEN"
+        "coinname": "ZenCash",
+        "symbol": "ZEN",
+        "rank": "93"
     }
 ]
