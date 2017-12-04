@@ -2,14 +2,15 @@
 	<td class="bold rank">{{rank}}</td> <!-- ranked by market cap -->
 	<td class="coin-name">
 		<i class="cc {{symbol}}" title="{{symbol}}"></i>
-		<a href="" target="_blank">{{coinname}} <small>{{symbol}}</small></a>
+		<small>{{symbol}}</small><br>
+		{{coinname}}
 	</td>  <!-- name of currency, this will take user to more detailed secondary page -->
-	<td class="url"><a href="{{url}}" target="_blank">{{ownername}}</a></td>  <!-- library -->
+	<td class="type">{{type}}</td>  <!-- coin type -->
 	<td class="center developers">{{teamsize}}</td>  <!-- number of developers -->
 	<td class="homepage-url"><a href="{{homepageUrl}}" target="_blank">{{description}}</a></td>  <!-- documentation -->
 	<td class="center public-repos"></td>  <!-- number of public repositories -->
-	<td class="stars">{{latestStarCount data}}</td>  <!-- starred -->
-	<td class="center mentionable-users">{{latestUserCount data}}</td> <!-- contributors to core repository -->
+	<td class="stars">{{latestStars data}}</td>  <!-- starred -->
+	<td class="center mentionable-users">{{latestUsers data}}</td> <!-- contributors to core repository -->
 	<td class="last-release">{{dateFormat releases.0.publishedAt}}</td>  <!-- latest release -->
 	<td class="current-release">{{releases.0.name}}</td>  <!-- current release -->
 	<td class="languages">{{arrayFormat languages}}</td>  <!-- top languages -->

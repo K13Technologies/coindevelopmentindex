@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
 	if(typeof HBS === 'undefined') return false;
 
 	var template =  HBS['list-item'],
-			repos;
+			coins;
 
 	var fetchJSONdata = function() {
 
@@ -15,9 +15,11 @@ jQuery(document).ready(function($) {
     })
     .done(function(data) {
 
-        repos = data;
+        coins = data.sort(function(a,b) {
+        	return a.rank ? a.rank - b.rank : 1;
+        });
 
-			  var list = repos.reduce(function(prev,curr) {
+			  var list = coins.reduce(function(prev,curr) {
 			        	var html = template(curr);
 			        	return prev + html;
 			        },'');
@@ -42,7 +44,7 @@ jQuery(document).ready(function($) {
 		return a.join(', ');
 	});
 
-	Handlebars.registerHelper('latestStarCount', function(data) {
+	Handlebars.registerHelper('latestStars', function(data) {
 		var arr;
 		if(data) {
 			arr = Object.keys(data).sort().reverse();
@@ -52,7 +54,7 @@ jQuery(document).ready(function($) {
 		}
 	});
 
-	Handlebars.registerHelper('latestUserCount', function(data) {
+	Handlebars.registerHelper('latestUsers', function(data) {
 		var arr;
 		if(data) {
 			arr = Object.keys(data).sort().reverse();
