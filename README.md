@@ -26,4 +26,6 @@ grunt
 - Prior to deployment, run grunt build task to output production ready files
 ```
 grunt build
+
+- A JSON list of all cryptocurrency symbols and names (1507) https://github.com/crypti/cryptocurrencies
 ```
