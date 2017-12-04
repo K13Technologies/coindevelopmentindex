@@ -68,6 +68,9 @@ query {
 	  stargazers {
 	    totalCount
 	  }
+	  forks {
+	    totalCount
+	  }
 	  languages (first: 3, orderBy: { field: SIZE, direction: DESC }) {
 	    edges {
 	      node {
@@ -138,6 +141,7 @@ QUERY;
 		$repo->data->{date('Y-W')} = new stdClass();
 		$repo->data->{date('Y-W')}->stars = $response->stargazers->totalCount;
 		$repo->data->{date('Y-W')}->users = $response->mentionableUsers->totalCount;
+		$repo->data->{date('Y-W')}->forks = $response->forks->totalCount;
 
 		if(DEBUG) echo json_encode($repo, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 

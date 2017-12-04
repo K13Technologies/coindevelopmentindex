@@ -89,7 +89,15 @@
 					array_map(function($err){echo $err->type . $err->message;}, errorOutput()->errors);
 					break;
 				}
-				out(write(fetchGithubData(fetchJSON()), JSON_FILE));
+				out(write(fetchGithubData(fetchJSON()), isset($_GET['tolocal']) ? LOCAL_FILE : JSON_FILE));
+				break;
+			}
+			if(isset($_GET['coinmarketfetchall'])) {
+				if(isset($_GET['tolocal']) && !checkPermissions(LOCAL_FILE, '0777')) {
+					array_map(function($err){echo $err->type . $err->message;}, errorOutput()->errors);
+					break;
+				}
+				out(write(fetchCoinMarketData(fetchJSON()), isset($_GET['tolocal']) ? LOCAL_FILE : JSON_FILE));
 				break;
 			}
 			if(isset($_GET['local'])) {

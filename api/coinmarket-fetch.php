@@ -21,8 +21,6 @@ if(DEBUG) {
 
 function fetchCoinMarketData($json) {
 
-	$ret = array();
-
 	$coins = fetchJSON(COINMARKET_LIST);
 
 	if(DEBUG) echo '<pre>';
@@ -38,13 +36,10 @@ function fetchCoinMarketData($json) {
 		}));
 
 		if($record) {
-			$record->coinname = $record->name;
 
-			// prevent override of repo.id, repo.name
-			unset($record->id);
-			unset($record->name);
+			$coin->coinname = $record->name;
+			$coin->rank = $record->rank;
 
-			array_push($ret, $record);
 		}
 
 		if(DEBUG) {
@@ -60,5 +55,5 @@ function fetchCoinMarketData($json) {
 		echo '</pre>';
 	}
 
-	return $ret;
+	return $json;
 }

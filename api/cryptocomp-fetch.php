@@ -5,6 +5,7 @@ include_once('./utils.php');
 include_once('./token.php');
 
 define('CRYPTOCOMP_LIST', 'https://min-api.cryptocompare.com/data/all/coinlist');
+define('CRYPTOCOMP_STATS', 'https://www.cryptocompare.com/api/data/socialstats');
 
 if(DEBUG) {
 	$json = fetchJSON(JSON_FILE);
@@ -22,8 +23,6 @@ if(DEBUG) {
 
 function fetchCryptoCompData($json) {
 
-	$ret = array();
-
 	$coins = (array) fetchJSON(CRYPTOCOMP_LIST)->Data;
 
 	if(DEBUG) echo '<pre>';
@@ -34,7 +33,14 @@ function fetchCryptoCompData($json) {
 
 	foreach($json as &$coin) {
 
-		array_push($ret, $coins[$coin->symbol]);
+		$record = array_pop(array_filter($coins, function($item) use($coin) {
+			return $item->Symbol === $coin->symbol;
+		}));
+
+		if($record) {
+			$stats = fetchJSON(CRYPTOCOMP_STATS . '?id=' . $record->Id);
+			return $stats;
+		}
 
 		if(DEBUG) {
 			echo '<br><br>';
