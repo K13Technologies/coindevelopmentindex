@@ -45,6 +45,12 @@ jQuery(document).ready(function($) {
                                 } \
                               } \
                             } \
+                            mentionableUsers { \
+                                totalCount \
+                            } \
+                            forks { \
+                                totalCount \
+                            } \
                             stargazers { \
                                 totalCount \
                             } \
