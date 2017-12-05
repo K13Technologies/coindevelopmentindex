@@ -33,7 +33,6 @@ jQuery(document).ready(function($) {
 		        	var html = template(curr);
 		        	return prev + html;
 		        },'');
-
 		  $('#coin-list tbody').html(list);
 
 	};
@@ -51,22 +50,42 @@ jQuery(document).ready(function($) {
 
 		coins.sort(function(a,b) {
 
-			var nA, nB, arr;
+			var nA, nB, arrA, arrB;
 
 			if(prop.split('.')[0] === 'latest') {
-				if(a.data) {
-					arr = Object.keys(a.data).sort().reverse();
-					nA = a.data[arr[0]][prop.split('.')[1]];
+
+				if(prop.split('.')[1] === 'release') {
+					nA = a.releases[0] ? a.releases[0].publishedAt : null;
+					nB = b.releases[0] ? b.releases[0].publishedAt : null;
+				} else {
+					if(a.data) {
+						arrA = Object.keys(a.data).sort().reverse();
+						nA = a.data[arrA[0]][prop.split('.')[1]];
+					} else {
+						nA = null;
+					}
+					if(b.data) {
+						arrB = Object.keys(b.data).sort().reverse();
+						nB = b.data[arrB[0]][prop.split('.')[1]];
+					} else {
+						nB = null;
+					}
 				}
-				if(a.data) {
-					arr = Object.keys(b.data).sort().reverse();
-					nB = b.data[arr[0]][prop.split('.')[1]];
-				}
+
 			} else {
-				nA = 'string' === typeof a[prop] ? a[prop].toLowerCase() : a[prop];
-				nB = 'string' === typeof b[prop] ? b[prop].toLowerCase() : b[prop];
+
+				if(!a[prop]) { return 1; }
+				if(!b[prop]) { return -1; }
+
+				nA = isNaN(a[prop]) ? a[prop].toLowerCase() : parseFloat(a[prop]);
+				nB = isNaN(b[prop]) ? b[prop].toLowerCase() : parseFloat(b[prop]);
+
 			}
-			if(nA === nB) return 0;
+
+			if(nA === null) { return 1; }
+			if(nB === null) { return -1; }
+
+			if(nA === nB) { return 0; }
 			return nA < nB ? -1 * abs : 1 * abs;
 		});
 
