@@ -169,6 +169,8 @@
 #output {
     padding:1em;
     font-size:0.8rem;
+    min-height:4em;
+    margin-bottom:1em;
     opacity:0;
     transition: 400ms opacity;
 

@@ -75,6 +75,7 @@
   {
     "type": "select",
     "options": [
+      "",
       "Alpha",
       "Beta",
       "Commercial"
