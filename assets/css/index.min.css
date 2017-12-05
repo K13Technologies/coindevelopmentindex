@@ -1,3 +1,3 @@
-#coin-list th h2{font-size:16px;line-height:1.3}#coin-list th[data-prop]{cursor:pointer}#coin-list td{font-size:16px}#coin-list .symbol,#coin-list .last-release{white-space:nowrap}
+#coin-list th h2{font-size:16px;line-height:1.3}#coin-list th[data-prop]{cursor:pointer}#coin-list th[data-prop] .sortable{display:flex;justify-content:space-between;align-items:center}#coin-list th[data-prop] i.fa{margin-right:0.5em;opacity:0.4}#coin-list th[data-prop].sorted{background:#f0f0f0}#coin-list th[data-prop].sorted i.fa{opacity:1}#coin-list td{font-size:16px}#coin-list .symbol,#coin-list .last-release{white-space:nowrap}
 
 /*# sourceMappingURL=index.min.css.map */

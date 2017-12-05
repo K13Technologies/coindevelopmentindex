@@ -5,6 +5,7 @@ jQuery(document).ready(function($) {
 	if(typeof HBS === 'undefined') return false;
 
 	var template =  HBS['list-item'],
+			$hdgs = $('th[data-prop]'),
 			coins;
 
 	var fetchJSONdata = function() {
@@ -15,11 +16,11 @@ jQuery(document).ready(function($) {
     })
     .done(function(data) {
 
-        coins = data.sort(function(a,b) {
-        	return a.rank ? a.rank - b.rank : 1;
+    		coins = data;
+        renderTableView(coins, function() {
+      		$('[data-prop="rank"]').click();
         });
 
-        renderTableView(coins);
     })
     .fail(function(err) {
     	console.log(err);
@@ -27,13 +28,24 @@ jQuery(document).ready(function($) {
     });
 	};
 
-	var renderTableView = function(coins) {
+	var renderTableView = function(coins, cb) {
 
 		  var list = coins.reduce(function(prev,curr) {
 		        	var html = template(curr);
 		        	return prev + html;
 		        },'');
 		  $('#coin-list tbody').html(list);
+
+		  return cb && cb();
+
+	};
+
+	var addSortIcons = function() {
+		var icon = '<i class="fa fa-sort"></i>';
+
+		$hdgs.each(function() {
+			$(this).prepend(icon).wrapInner('<div class="sortable"></div>');
+		});
 
 	};
 
@@ -89,12 +101,17 @@ jQuery(document).ready(function($) {
 			return nA < nB ? -1 * abs : 1 * abs;
 		});
 
+		$hdgs.removeClass('sorted')
+			.find('i.fa').removeClass('fa-sort-asc fa-sort-desc');
+		$hdg.addClass('sorted')
+			.find('i.fa').addClass(asc ? 'fa-sort-asc' : 'fa-sort-desc');
 
 		renderTableView(coins);
 
 	};
 
 	fetchJSONdata();
+	addSortIcons();
 
 	$('#coin-list').on('click', 'th', onTableHeadClicked);
 

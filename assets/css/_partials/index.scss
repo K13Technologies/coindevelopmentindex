@@ -6,6 +6,24 @@
 		}
 		&[data-prop] {
 			cursor:pointer;
+
+			.sortable {
+				display:flex;
+				justify-content:space-between;
+				align-items:center;
+			}
+
+			i.fa {
+				margin-right:0.5em;
+				opacity:0.4;
+			}
+
+			&.sorted {
+				background:#f0f0f0;
+				i.fa {
+					opacity:1;
+				}
+			}
 		}
 	}
 
