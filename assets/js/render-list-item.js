@@ -6,26 +6,37 @@ jQuery(document).ready(function($) {
 
 	var template =  HBS['list-item'],
 			$hdgs = $('th[data-prop]'),
-			coins;
+			fields, coins;
 
 	var fetchJSONdata = function() {
 
-    $.ajax({
+    return $.ajax({
         url: 'https://api.myjson.com/bins/909wb',
         dataType: 'json'
     })
-    .done(function(data) {
+	};
 
-    		coins = data;
-        renderTableView(coins, function() {
-      		$('[data-prop="rank"]').click();
-        });
+	var fetchFormFields = function() {
 
-    })
-    .fail(function(err) {
-    	console.log(err);
+		return	$.ajax({
+				url: '/assets/json/form-fields.json',
+	      dataType: 'json'
+			});
+	};
 
-    });
+	var renderNullChars = function(coins) {
+
+		coins.forEach(function(coin) {
+			var c, f;
+			for(c in coin) {
+				f = fields.find(function(field) { return field.name === c; });
+				if(f && !coin[c] && f['null-char']) {
+					coin[c] = f['null-char'];
+				}
+			}
+		});
+
+		return coins;
 	};
 
 	var renderTableView = function(coins, cb) {
@@ -41,7 +52,7 @@ jQuery(document).ready(function($) {
 	};
 
 	var addSortIcons = function() {
-		var icon = '<i class="fa fa-sort"></i>';
+		var icon = '<i class="fa fa-sort fa-2x"></i>';
 
 		$hdgs.each(function() {
 			$(this).prepend(icon).wrapInner('<div class="sortable"></div>');
@@ -110,7 +121,22 @@ jQuery(document).ready(function($) {
 
 	};
 
-	fetchJSONdata();
+	fetchFormFields()
+		.then(function(data) {
+			fields = data;
+			return fetchJSONdata();
+		})
+		.then(function(data) {
+  		coins = data;
+  		coins = renderNullChars(coins);
+      renderTableView(coins, function() {
+    		$('[data-prop="rank"]').click();
+      });
+		})
+		.catch(function(err) {
+			console.error(err);
+		});
+
 	addSortIcons();
 
 	$('#coin-list').on('click', 'th', onTableHeadClicked);
@@ -129,6 +155,16 @@ jQuery(document).ready(function($) {
 		if(data) {
 			arr = Object.keys(data).sort().reverse();
 			return data[arr[0]].stars;
+		} else {
+			return data;
+		}
+	});
+
+	Handlebars.registerHelper('latestForks', function(data) {
+		var p, arr;
+		if(data) {
+			arr = Object.keys(data).sort().reverse();
+			return data[arr[0]].forks;
 		} else {
 			return data;
 		}

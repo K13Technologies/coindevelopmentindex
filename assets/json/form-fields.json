@@ -62,6 +62,7 @@
     "name": "rank",
     "type": "number",
     "min": "1",
+    "null-char": "-",
     "disabled": false,
     "placeholder": "Market Cap Rank",
     "required": false,
@@ -72,6 +73,7 @@
     "name": "team",
     "type": "number",
     "min": "0",
+    "null-char": "-",
     "disabled": false,
     "placeholder": "# of Developers",
     "required": false,
@@ -105,6 +107,7 @@
   {
   	"name": "createdAt",
   	"type": "datetime-local",
+    "null-char": "-",
   	"disabled": false,
     "required": false,
     "data-stringify":false,
@@ -123,6 +126,7 @@
   {
   	"name": "pushedAt",
   	"type": "datetime-local",
+    "null-char": "-",
   	"disabled": false,
     "required": false,
     "data-stringify":false,
