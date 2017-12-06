@@ -45,8 +45,14 @@
   },
   {
     "name": "type",
-    "type": "text",
+    "type": "select",
     "placeholder": "Bitcoin, Altcoin, etc",
+    "options": [
+      "",
+      "Bitcoin",
+      "Altcoin",
+      "ERC-20 Token"
+    ],
     "disabled": false,
     "required": false,
     "data-stringify":false,
