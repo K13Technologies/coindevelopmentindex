@@ -1,5 +1,6 @@
 #coin-list {
 	th {
+		padding-bottom:1.2em;
 		h2 {
 			font-size:16px;
 			line-height:1.3;
@@ -15,7 +16,7 @@
 			}
 
 			i.fa {
-				margin-bottom:-1.2em;
+				margin-bottom:-1.55em;
 				font-size:1.2em;
 				opacity:0.2;
 			}
@@ -43,9 +44,45 @@
 		}
 	}
 
-	.symbol,
-	.release {
-		white-space: nowrap;
+}
+
+[data-prop="symbol"],
+[data-prop="release"] {
+	white-space: nowrap;
+}
+
+[data-prop="blockchain"],
+[data-prop="team"],
+[data-prop="volatility"],
+[data-prop$="release"],
+[data-prop$="users"],
+[data-prop$="forks"] {
+	display:none;
+}
+
+@media only screen and (min-width:900px) {
+
+	[data-prop="blockchain"],
+	[data-prop="team"] {
+		display:table-cell;
+	}
+
+}
+
+@media only screen and (min-width:1200px) {
+
+	[data-prop$="users"],
+	[data-prop$="forks"] {
+		display:table-cell;
+	}
+
+}
+
+@media only screen and (min-width:1500px) {
+
+	[data-prop="volatility"],
+	[data-prop$="release"] {
+		display:table-cell;
 	}
 
 }
