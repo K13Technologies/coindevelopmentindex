@@ -137,7 +137,7 @@ jQuery(document).ready(function($) {
                 } else {
                     $output.addClass('alert alert-success active').html(response[0].owner + '/' + response[0].name + ' updated successfully... Refreshing in <span class="count">' + count + '</span>');
                     window.history.pushState(response[0], '', '#'+response[0].owner+'/'+response[0].name);
-                    setInterval(function() { count--; $output.find('.count').text(count); if(count === 0) loco.reload(); }, 1000);
+                    setInterval(function() { count--; $output.find('.count').text(count); if(count === 0) loco.reload(); }, 500);
                 }
             })
             .fail(function(err) {
