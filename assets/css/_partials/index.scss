@@ -13,13 +13,10 @@ $grey-lt: #f5f5f5;
 		&:focus {
 			outline: 1px dotted;
 		}
-
 	}
-	&:after {
-    content: "\f002";
-    display:inline-block;
+
+	i.fa {
     color:$grey-md;
-    font-size:2em;
     transform: translate(-150%, 5px);
 	}
 }

@@ -13,7 +13,7 @@ jQuery(document).ready(function($) {
     return $.ajax({
         url: 'https://api.myjson.com/bins/909wb',
         dataType: 'json'
-    })
+    });
 	};
 
 	var fetchFormFields = function() {
@@ -61,13 +61,16 @@ jQuery(document).ready(function($) {
 	};
 
 	var onCoinSearched = function(e) {
-		var s = $('[name="search"]').val(),
+		var $s = $('[name="search"]'),
+				$icn = $('#coin-search').find('.fa'),
 				res = coins
 								.filter(function(coin) {
-									var regexp = new RegExp(s, 'ig');
+									var regexp = new RegExp($s.val(), 'ig');
 									return regexp.test(coin.coinname) || regexp.test(coin.symbol);
 								});
-
+		$icn
+			.removeClass('fa-search').addClass('fa-close')
+			.one('click', function(e) { $s.val(''); renderTableView(coins); });
 		renderTableView(res);
 	};
 
