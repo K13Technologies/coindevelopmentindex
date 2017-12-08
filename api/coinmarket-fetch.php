@@ -37,8 +37,12 @@ function fetchCoinMarketData($json) {
 
 		if($record) {
 
+			// to track changes, we put this into a data object
+			// in the coin with the key of YEAR-WEEK# (e.g. 2017-24)
+			if(!is_object($coin->data)) { $coin->data = new stdClass(); }
+			if(!is_object($coin->data->{date('Y-W')})) { $coin->data->{date('Y-W')} = new stdClass(); }
 			$coin->coinname = $record->name;
-			$coin->rank = $record->rank;
+			$coin->data->{date('Y-W')}->rank = intval($record->rank);
 
 		}
 

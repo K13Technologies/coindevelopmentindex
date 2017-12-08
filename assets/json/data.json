@@ -24,9 +24,7 @@
         ],
         "data": {
             "2017-49": {
-                "stars": 226,
-                "users": 14,
-                "forks": 51
+                "rank": "72"
             }
         },
         "rank": "84",
@@ -125,6 +123,9 @@
                 "stars": 75,
                 "users": 18,
                 "forks": 55
+            },
+            "2017-49": {
+                "rank": "33"
             }
         },
         "releases": [
@@ -189,9 +190,7 @@
                 "forks": 63
             },
             "2017-49": {
-                "stars": 291,
-                "users": 25,
-                "forks": 63
+                "rank": "39"
             }
         },
         "releases": [
@@ -397,9 +396,7 @@
                 "forks": 8041
             },
             "2017-49": {
-                "stars": 20697,
-                "users": 493,
-                "forks": 8155
+                "rank": "1"
             }
         },
         "rank": "1",
@@ -441,6 +438,9 @@
                 "stars": 445,
                 "users": 14,
                 "forks": 175
+            },
+            "2017-49": {
+                "rank": "32"
             }
         },
         "releases": [
@@ -537,6 +537,9 @@
                 "stars": 91,
                 "users": 9,
                 "forks": 29
+            },
+            "2017-49": {
+                "rank": "59"
             }
         },
         "releases": [],
@@ -583,6 +586,9 @@
                 "stars": 415,
                 "users": 82,
                 "forks": 174
+            },
+            "2017-49": {
+                "rank": "8"
             }
         },
         "ownername": "BTCGPU/BTCGPU",
@@ -716,6 +722,9 @@
                 "stars": 716,
                 "users": 5,
                 "forks": 417
+            },
+            "2017-49": {
+                "rank": "7"
             }
         },
         "releases": [
@@ -813,6 +822,9 @@
                 "stars": 129,
                 "users": 424,
                 "forks": 62
+            },
+            "2017-49": {
+                "rank": "71"
             }
         },
         "releases": [
@@ -905,6 +917,9 @@
                 "stars": 1429,
                 "users": 156,
                 "forks": 575
+            },
+            "2017-49": {
+                "rank": "40"
             }
         },
         "releases": [
@@ -1027,6 +1042,9 @@
                 "stars": 22,
                 "users": 1,
                 "forks": 5
+            },
+            "2017-49": {
+                "rank": "91"
             }
         },
         "rank": "86",
@@ -1146,6 +1164,9 @@
                 "stars": 14,
                 "users": 1,
                 "forks": 3
+            },
+            "2017-49": {
+                "rank": "31"
             }
         },
         "rank": "51",
@@ -1187,6 +1208,9 @@
                 "stars": 1580,
                 "users": 62,
                 "forks": 339
+            },
+            "2017-49": {
+                "rank": "15"
             }
         },
         "releases": [
@@ -1249,6 +1273,9 @@
                 "stars": 9447,
                 "users": 209,
                 "forks": 2800
+            },
+            "2017-49": {
+                "rank": "2"
             }
         },
         "releases": [
@@ -1344,6 +1371,9 @@
                 "stars": 34,
                 "users": 22,
                 "forks": 53
+            },
+            "2017-49": {
+                "rank": "12"
             }
         },
         "releases": [],
@@ -1390,6 +1420,9 @@
                 "stars": 91,
                 "users": 61,
                 "forks": 25
+            },
+            "2017-49": {
+                "rank": "56"
             }
         },
         "releases": [],
@@ -1543,6 +1576,9 @@
                 "stars": 8,
                 "users": 6,
                 "forks": 9
+            },
+            "2017-49": {
+                "rank": "74"
             }
         },
         "ownername": "gamers-coin/gamecredits",
@@ -1619,6 +1655,9 @@
                 "stars": 63,
                 "users": 21,
                 "forks": 18
+            },
+            "2017-49": {
+                "rank": "73"
             }
         },
         "releases": [
@@ -1716,6 +1755,9 @@
                 "stars": 1760,
                 "users": 38,
                 "forks": 162
+            },
+            "2017-49": {
+                "rank": "46"
             }
         },
         "releases": [
@@ -1960,6 +2002,9 @@
                 "stars": 37,
                 "users": 7,
                 "forks": 8
+            },
+            "2017-49": {
+                "rank": "86"
             }
         },
         "ownername": "gxchain/gxb-core",
@@ -2004,6 +2049,9 @@
                 "stars": 73,
                 "users": 14,
                 "forks": 21
+            },
+            "2017-49": {
+                "rank": "27"
             }
         },
         "releases": [
@@ -2209,6 +2257,9 @@
                 "stars": 556,
                 "users": 56,
                 "forks": 68
+            },
+            "2017-49": {
+                "rank": "11"
             }
         },
         "releases": [
@@ -2363,6 +2414,9 @@
                 "stars": 27,
                 "users": 11,
                 "forks": 10
+            },
+            "2017-49": {
+                "rank": "57"
             }
         },
         "ownername": "KyberNetwork/smart-contracts",
@@ -2395,9 +2449,7 @@
         "releases": [],
         "data": {
             "2017-49": {
-                "stars": 464,
-                "users": 19,
-                "forks": 186
+                "rank": "79"
             }
         }
     },
@@ -2434,6 +2486,9 @@
                 "stars": 1458,
                 "users": 42,
                 "forks": 188
+            },
+            "2017-49": {
+                "rank": "18"
             }
         },
         "releases": [
@@ -2531,6 +2586,9 @@
                 "stars": 2035,
                 "users": 11,
                 "forks": 1226
+            },
+            "2017-49": {
+                "rank": "6"
             }
         },
         "releases": [
@@ -2606,6 +2664,9 @@
                 "stars": 100,
                 "users": 24,
                 "forks": 46
+            },
+            "2017-49": {
+                "rank": "47"
             }
         },
         "releases": [],
@@ -2650,6 +2711,9 @@
                 "stars": 3,
                 "users": 4,
                 "forks": 2
+            },
+            "2017-49": {
+                "rank": "85"
             }
         },
         "releases": [],
@@ -2696,6 +2760,9 @@
                 "stars": 132,
                 "users": 426,
                 "forks": 37
+            },
+            "2017-49": {
+                "rank": "22"
             }
         },
         "releases": [
@@ -2788,6 +2855,9 @@
                 "stars": 1549,
                 "users": 136,
                 "forks": 617
+            },
+            "2017-49": {
+                "rank": "9"
             }
         },
         "releases": [
@@ -2907,6 +2977,9 @@
                 "stars": 91,
                 "users": 11,
                 "forks": 34
+            },
+            "2017-49": {
+                "rank": "93"
             }
         },
         "ownername": "mvs-org/metaverse",
@@ -2987,6 +3060,9 @@
                 "stars": 33,
                 "users": 10,
                 "forks": 11
+            },
+            "2017-49": {
+                "rank": "83"
             }
         },
         "releases": [
@@ -3069,6 +3145,9 @@
                 "stars": 1809,
                 "users": 40,
                 "forks": 245
+            },
+            "2017-49": {
+                "rank": "45"
             }
         },
         "releases": [
@@ -3165,6 +3244,9 @@
                 "stars": 136,
                 "users": 4,
                 "forks": 42
+            },
+            "2017-49": {
+                "rank": "10"
             }
         },
         "releases": [],
@@ -3209,6 +3291,9 @@
                 "stars": 1195,
                 "users": 32,
                 "forks": 382
+            },
+            "2017-49": {
+                "rank": "14"
             }
         },
         "releases": [],
@@ -3357,7 +3442,7 @@
         "id": "MDEwOlJlcG9zaXRvcnkxMDc5MzA4ODg=",
         "owner": "omisego",
         "name": "airdrop",
-        "coinname": "Omisego",
+        "coinname": "OmiseGO",
         "symbol": "OMG",
         "type": "ERC-20 Token",
         "rank": "",
@@ -3375,9 +3460,7 @@
         "releases": [],
         "data": {
             "2017-49": {
-                "stars": 21,
-                "users": 7,
-                "forks": 8
+                "rank": "23"
             }
         }
     },
@@ -3477,6 +3560,9 @@
                 "stars": 408,
                 "users": 435,
                 "forks": 85
+            },
+            "2017-49": {
+                "rank": "19"
             }
         },
         "releases": [
@@ -3618,6 +3704,9 @@
                 "stars": 933,
                 "users": 38,
                 "forks": 169
+            },
+            "2017-49": {
+                "rank": "66"
             }
         },
         "rank": "53",
@@ -3691,6 +3780,9 @@
                 "stars": 1701,
                 "users": 72,
                 "forks": 471
+            },
+            "2017-49": {
+                "rank": "5"
             }
         },
         "releases": [
@@ -3943,6 +4035,9 @@
                 "stars": 238,
                 "users": 38,
                 "forks": 107
+            },
+            "2017-49": {
+                "rank": "81"
             }
         },
         "releases": [
@@ -4030,6 +4125,9 @@
                 "stars": 105,
                 "users": 5,
                 "forks": 14
+            },
+            "2017-49": {
+                "rank": "92"
             }
         },
         "releases": [],
@@ -4101,6 +4199,9 @@
                 "stars": 1563,
                 "users": 110,
                 "forks": 354
+            },
+            "2017-49": {
+                "rank": "51"
             }
         },
         "ownername": "status-im/status-react",
@@ -4145,6 +4246,9 @@
                 "stars": 620,
                 "users": 46,
                 "forks": 189
+            },
+            "2017-49": {
+                "rank": "13"
             }
         },
         "releases": [
@@ -4284,6 +4388,9 @@
                 "stars": 375,
                 "users": 30,
                 "forks": 90
+            },
+            "2017-49": {
+                "rank": "87"
             }
         },
         "rank": "85",
@@ -4325,6 +4432,9 @@
                 "stars": 233,
                 "users": 57,
                 "forks": 98
+            },
+            "2017-49": {
+                "rank": "21"
             }
         },
         "releases": [
@@ -4382,6 +4492,9 @@
                 "stars": 43,
                 "users": 8,
                 "forks": 8
+            },
+            "2017-49": {
+                "rank": "54"
             }
         },
         "releases": [
@@ -4608,6 +4721,9 @@
                 "stars": 131,
                 "users": 17,
                 "forks": 54
+            },
+            "2017-49": {
+                "rank": "77"
             }
         },
         "releases": [
@@ -4665,6 +4781,9 @@
                 "stars": 158,
                 "users": 3,
                 "forks": 43
+            },
+            "2017-49": {
+                "rank": "35"
             }
         },
         "releases": [
@@ -4846,6 +4965,9 @@
                 "stars": 293,
                 "users": 34,
                 "forks": 81
+            },
+            "2017-49": {
+                "rank": "25"
             }
         },
         "releases": [
@@ -5143,6 +5265,9 @@
                 "stars": 3043,
                 "users": 375,
                 "forks": 643
+            },
+            "2017-49": {
+                "rank": "20"
             }
         },
         "releases": [
@@ -5283,7 +5408,7 @@
         "id": "MDEwOlJlcG9zaXRvcnkxMDI5OTE0NTQ=",
         "owner": "zquestz",
         "name": "bitcoincash",
-        "coinname": "Bitcoin Cash",
+        "coinname": "BitConnect",
         "symbol": "BCC",
         "type": "Altcoin",
         "rank": "3",
@@ -5302,9 +5427,7 @@
         "releases": [],
         "data": {
             "2017-49": {
-                "stars": 9,
-                "users": 17,
-                "forks": 7
+                "rank": "16"
             }
         }
     }

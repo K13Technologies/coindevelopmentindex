@@ -144,7 +144,7 @@ jQuery(document).ready(function($) {
   		coins = data;
   		coins = renderNullChars(coins);
       renderTableView(coins, function() {
-    		$('[data-prop="rank"]').click();
+    		$('[data-prop="latest.rank"]').click();
       });
       $('input[list="coins"]').after('<datalist id="coins">' +
       		coins.reduce(function(prev,curr) {
@@ -168,6 +168,16 @@ jQuery(document).ready(function($) {
 
 	Handlebars.registerHelper('arrayFormat', function(a) {
 		return a.join(', ');
+	});
+
+	Handlebars.registerHelper('latestRank', function(data) {
+		var arr;
+		if(data) {
+			arr = Object.keys(data).sort().reverse();
+			return data[arr[0]].rank;
+		} else {
+			return data;
+		}
 	});
 
 	Handlebars.registerHelper('latestStars', function(data) {

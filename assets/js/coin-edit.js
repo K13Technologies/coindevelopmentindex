@@ -58,6 +58,8 @@ jQuery(document).ready(function($) {
                     $label = $('<label class="col-sm-3"></label>'),
                     a;
 
+                if(!field.type) return;
+
                 for(a in field) {
                     if(field.hasOwnProperty(a)) {
                         switch(a) {
@@ -431,6 +433,7 @@ jQuery(document).ready(function($) {
             data = '<table class="table table-sm data">' +
                         '<thead>' +
                             '<th>week</th>' +
+                            '<th>rank</th>' +
                             '<th>users</th>' +
                             '<th>forks</th>' +
                             '<th>stars</th>' +
@@ -440,6 +443,7 @@ jQuery(document).ready(function($) {
                 if(coin.data.hasOwnProperty(d)) {
                     data += '<tr>' +
                                 '<td>' + d + '</td>' +
+                                '<td>' + (coin.data[d].rank || '') + '</td>' +
                                 '<td>' + (coin.data[d].users || '') + '</td>' +
                                 '<td>' + (coin.data[d].forks || '') + '</td>' +
                                 '<td>' + (coin.data[d].stars || '') + '</td>' +

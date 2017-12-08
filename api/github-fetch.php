@@ -138,7 +138,7 @@ QUERY;
 		// to track changes, we put this into a data object
 		// in the repo with the key of YEAR-WEEK# (e.g. 2017-24)
 		if(!is_object($repo->data)) { $repo->data = new stdClass(); }
-		$repo->data->{date('Y-W')} = new stdClass();
+		if(!is_object($repo->data->{date('Y-W')})) { $repo->data->{date('Y-W')} = new stdClass(); }
 		$repo->data->{date('Y-W')}->stars = $response->stargazers->totalCount;
 		$repo->data->{date('Y-W')}->users = $response->mentionableUsers->totalCount;
 		$repo->data->{date('Y-W')}->forks = $response->forks->totalCount;
