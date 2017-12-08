@@ -6,9 +6,9 @@
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
+    // height: 100vh;
     max-width: 1600px;
-    margin: 0 auto;
-    padding-bottom: 5em;
+    margin: 0 auto 2em;
 
     header {
         width:40em;
@@ -95,9 +95,10 @@
             text-align: center;
         }
 
-        [name="remote"] {
-            border-top-right-radius:0;
-            border-bottom-right-radius:0;
+        .auto-fields {
+            max-height:70vh;
+            overflow-y:auto;
+            overflow-x:hidden;
         }
 
         .input-group {
@@ -128,7 +129,7 @@
             }
         }
 
-        input[type="datetime-local"] ~ .input-group-addon {
+        input[type='datetime-local'] + .input-group-addon {
             padding:10px;
         }
 
