@@ -1,4 +1,9 @@
 #coin-list {
+
+	$grey-dk: #d3d3d3;
+	$grey-md: #dcdcdc;
+	$grey-lt: #f5f5f5;
+
 	th {
 		padding-bottom:1.2em;
 		h2 {
@@ -12,7 +17,7 @@
 				display:flex;
 				flex-flow:column-reverse;
 				justify-content:space-between;
-				align-items:center;
+				// align-items:flex-start;
 			}
 
 			i.fa {
@@ -27,26 +32,65 @@
 					opacity:0.7;
 				}
 			}
+
+			&[data-prop='rank'] {
+				width:56px;
+			}
+			&[data-prop='rank'],
+			&[data-prop='coinname'],
+			&[data-prop='symbol'],
+			&[data-prop='type'],
+			&[data-prop='trend'] {
+				text-align:left;
+				background:$grey-dk;
+			}
+			&[data-prop='blockchain'],
+			&[data-prop='team'],
+			&[data-prop$='users'] {
+				text-align:left;
+				background:$grey-md;
+			}
+			&[data-prop='team'],
+			&[data-prop$='users'],
+			&[data-prop$='forks'],
+			&[data-prop$='stars'] {
+				width:10em;
+				transform:translateX(-33.333%);
+			}
+			&[data-prop$='forks'],
+			&[data-prop$='stars'] {
+				background:$grey-lt;
+			}
+			&[data-prop='volatility'],
+			&[data-prop$='release'] {
+
+			}
+
 		}
+
 	}
 
 	td {
 		font-size:16px;
-
-		&.symbol {
+		&[data-prop='symbol'] {
 			font-size:12px;
 		}
-		&.team {
-			transform:translateX(-33.333%);
+		&[data-prop='team'],
+		&[data-prop$='users'],
+		&[data-prop$='forks'],
+		&[data-prop$='stars'] {
+			width:10em;
+			transform:translateX(-60%);
 		}
-		&.users {
-			transform:translateX(-25%);
-		}
+
 	}
 
 }
+[data-prop='coinname'] {
+	width:8em;
+}
 
-[data-prop='symbol'],
+// [data-prop='symbol'],
 [data-prop='release'] {
 	white-space: nowrap;
 }
