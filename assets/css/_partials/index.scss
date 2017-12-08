@@ -46,24 +46,24 @@
 
 }
 
-[data-prop="symbol"],
-[data-prop="release"] {
+[data-prop='symbol'],
+[data-prop='release'] {
 	white-space: nowrap;
 }
 
-[data-prop="blockchain"],
-[data-prop="team"],
-[data-prop="volatility"],
-[data-prop$="release"],
-[data-prop$="users"],
-[data-prop$="forks"] {
+[data-prop='blockchain'],
+[data-prop='team'],
+[data-prop='volatility'],
+[data-prop$='release'],
+[data-prop$='users'],
+[data-prop$='forks'] {
 	display:none;
 }
 
 @media only screen and (min-width:900px) {
 
-	[data-prop="blockchain"],
-	[data-prop="team"] {
+	[data-prop='blockchain'],
+	[data-prop='team'] {
 		display:table-cell;
 	}
 
@@ -71,8 +71,8 @@
 
 @media only screen and (min-width:1200px) {
 
-	[data-prop$="users"],
-	[data-prop$="forks"] {
+	[data-prop$='users'],
+	[data-prop$='forks'] {
 		display:table-cell;
 	}
 
@@ -80,8 +80,8 @@
 
 @media only screen and (min-width:1500px) {
 
-	[data-prop="volatility"],
-	[data-prop$="release"] {
+	[data-prop='volatility'],
+	[data-prop$='release'] {
 		display:table-cell;
 	}
 

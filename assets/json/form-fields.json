@@ -12,7 +12,7 @@
   	"type": "text",
   	"disabled": false,
     "placeholder": "repo-owner",
-    "required": true,
+    "required": false,
     "data-stringify":false,
     "data-revertable":true
   },
@@ -21,7 +21,7 @@
   	"type": "text",
   	"disabled": false,
     "placeholder": "repo-name",
-    "required": true,
+    "required": false,
     "data-stringify":false,
     "data-revertable":true
   },
