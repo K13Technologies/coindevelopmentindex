@@ -60,6 +60,17 @@ jQuery(document).ready(function($) {
 
 	};
 
+	var onCoinSearched = function(e) {
+		var s = $('[name="search"]').val(),
+				res = coins
+								.filter(function(coin) {
+									var regexp = new RegExp(s, 'ig');
+									return regexp.test(coin.coinname) || regexp.test(coin.symbol);
+								});
+
+		renderTableView(res);
+	};
+
 	var onTableHeadClicked = function(e) {
 
 		var $hdg = $(this),
@@ -132,6 +143,11 @@ jQuery(document).ready(function($) {
       renderTableView(coins, function() {
     		$('[data-prop="rank"]').click();
       });
+      $('input[list="coins"]').after('<datalist id="coins">' +
+      		coins.reduce(function(prev,curr) {
+      			return prev + '<option value="' + curr.coinname + '  (' + curr.symbol + ')">';
+      		},'')
+  		);
 		})
 		.catch(function(err) {
 			console.error(err);
@@ -139,6 +155,7 @@ jQuery(document).ready(function($) {
 
 	addSortIcons();
 
+	$('#coin-search').on('keyup', onCoinSearched);
 	$('#coin-list').on('click', 'th', onTableHeadClicked);
 
 	Handlebars.registerHelper('dateFormat', function(d) {
