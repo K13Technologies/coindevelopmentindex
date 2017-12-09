@@ -93,9 +93,7 @@ module.exports = function(grunt) {
           '<%= assetdir %>css/cryptocoins.min.css': [
             '<%= assetdir %>vendor/cryptocoins-master/webfont/cryptocoins.css',
             '<%= assetdir %>vendor/cryptocoins-master/webfont/cryptocoins-colors.css',
-          ],
-          '<%= assetdir %>css/footer-distributed.min.css': '<%= assetdir %>css/footer-distributed.css',
-          '<%= assetdir %>css/jumbotron.min.css': '<%= assetdir %>css/jumbotron.css'
+          ]
         }
       }
     },
@@ -246,7 +244,6 @@ module.exports = function(grunt) {
             'node_modules/tether/dist/js/tether.min.js',
             'node_modules/bootstrap-beta/dist/js/bootstrap.min.js',
             'node_modules/handlebars/dist/handlebars.runtime.min.js',
-            // '<%= assetdir %>vendor/gh3-master/gh3.min.js',
             '<%= assetdir %>js/**/*.js',
             '!<%= assetdir %>js/vendor/*.js',
           ],
