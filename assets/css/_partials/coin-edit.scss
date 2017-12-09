@@ -16,6 +16,8 @@
         flex-flow:row wrap;
         justify-content:center;
         align-items:center;
+        padding:0;
+        background:#fff;
         > * {
             flex:1 1 auto;
         }
@@ -23,6 +25,7 @@
             font-size:5em;
             font-weight:300;
             text-align:center;
+            margin:0;
             color:#b4b4b4;
         }
         .alert {
