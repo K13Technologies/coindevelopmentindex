@@ -70,7 +70,7 @@ jQuery(document).ready(function($) {
 								});
 		$icn
 			.removeClass('fa-search').addClass('fa-close')
-			.one('click', function(e) { $s.val(''); renderTableView(coins); });
+			.one('click', function(e) { $s.val(''); $icn.removeClass('fa-close').addClass('fa-search'); renderTableView(coins); });
 		renderTableView(res);
 	};
 
