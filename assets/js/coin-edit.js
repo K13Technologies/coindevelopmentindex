@@ -29,8 +29,8 @@ jQuery(document).ready(function($) {
                 var selected = (loco.hash.slice(1) === coin.owner + '/' + coin.name),
                     $opt;
 
-                $opt = $('<option value="' + coin.owner + '/' + coin.name + '" ' + '>' +
-                        coin.owner + ' / ' + coin.name + '</option>')
+                $opt = $('<option value="' + coin.symbol + '" >' +
+                        coin.coinname + ' (' + coin.symbol + ')</option>')
                     .prop('selected', selected)
                     .appendTo($ownerSel);
             });
@@ -97,12 +97,12 @@ jQuery(document).ready(function($) {
 
         var index = getSelectedIndex(),
             coin = coins ? coins.find(function(coin) {
-                return coin.owner + '/' + coin.name === $ownerSel.val() && coins.indexOf(coin) === index;
+                return coin.symbol === $ownerSel.val() && coins.indexOf(coin) === index;
             }) : false;
 
         if(coin) {
             mapToFields(coin,true);
-            window.history.pushState(coin, '', '#'+coin.owner+'/'+coin.name);
+            window.history.pushState(coin, '', '#'+coin.symbol);
         } else {
             $fields.find('input').val('');
             window.history.pushState('', '', '#');
@@ -110,7 +110,7 @@ jQuery(document).ready(function($) {
         }
 
         $('.coinnav.prev').prop('disabled', ($ownerSel.val() === 'new'));
-        $('.coinnav.next').prop('disabled', ($ownerSel.val() === coins[coins.length - 1].owner + '/' + coins[coins.length - 1].name));
+        $('.coinnav.next').prop('disabled', ($ownerSel.val() === coins[coins.length - 1].symbol));
 
     };
 
@@ -137,8 +137,8 @@ jQuery(document).ready(function($) {
                     $output.addClass('alert alert-danger active').html(out);
                     return;
                 } else {
-                    $output.addClass('alert alert-success active').html(response[0].owner + '/' + response[0].name + ' updated successfully... Refreshing in <span class="count">' + count + '</span>');
-                    window.history.pushState(response[0], '', '#'+response[0].owner+'/'+response[0].name);
+                    $output.addClass('alert alert-success active').html(response[0].coinname + ' (' + response[0].symbol + ' updated successfully... Refreshing in <span class="count">' + count + '</span>');
+                    window.history.pushState(response[0], '', '#' + response[0].symbol);
                     setInterval(function() { count--; $output.find('.count').text(count); if(count === 0) loco.reload(); }, 500);
                 }
             })
@@ -291,15 +291,15 @@ jQuery(document).ready(function($) {
     var deleteRecord = function(e) {
 
         var index = getSelectedIndex(),
-            owner = $('input[name="owner"]').val(),
-            name = $('input[name="name"]').val(),
+            coinname = $('input[name="coinname"]').val(),
+            symbol = $('input[name="symbol"]').val(),
             count = 3;
 
-        $output.addClass('alert alert-secondary active').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Deleting ' + owner + '/' + name + ' ...');
+        $output.addClass('alert alert-secondary active').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Deleting ' + coinname + '/' + name + ' ...');
 
         $.post({
               url: 'http://api.coindev.local' + loco.search,
-              data: { 'delete': true, index: index, owner: owner, name: name }
+              data: { 'delete': true, index: index, coinname: coinname, symbol: symbol }
             })
             .done(function(response) {
                 console.log(response);
@@ -331,10 +331,10 @@ jQuery(document).ready(function($) {
             idx = getSelectedIndex();
 
         if($this.is('.prev') && (idx - 1 > -1)) {
-            $ownerSel.val(coins[idx - 1].owner + '/' + coins[idx - 1].name);
+            $ownerSel.val(coins[idx - 1].symbol);
         }
         if($this.is('.next') && (idx + 1 < coins.length)) {
-            $ownerSel.val(coins[idx + 1].owner + '/' + coins[idx + 1].name);
+            $ownerSel.val(coins[idx + 1].symbol);
         }
 
         handleOwnerChange();
@@ -354,11 +354,12 @@ jQuery(document).ready(function($) {
     var resetForm = function(e) {
         $ownerSel.val('new');
         if($releases.hasClass('wrapped')) {
-            $releases.removeClass('wrapped').addClass('col-sm-9').unwrap().next('ul').remove();
+            $releases.val('').removeClass('wrapped').addClass('col-sm-9').unwrap().next('ul').remove();
         }
         if($data.hasClass('wrapped')) {
-            $data.removeClass('wrapped').addClass('col-sm-9').unwrap().next('table').remove();
+            $data.val('').removeClass('wrapped').addClass('col-sm-9').unwrap().next('table').remove();
         }
+        handleOwnerChange();
         window.history.pushState('', '', '#');
     };
 
