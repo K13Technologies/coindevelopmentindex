@@ -52,10 +52,10 @@ jQuery(document).ready(function($) {
 	};
 
 	var addSortIcons = function() {
-		var icon = '<i class="fa fa-sort fa-2x"></i>';
+		var icons = '<i class="fa fa-arrow-down"></i><i class="fa fa-arrow-up"></i>';
 
 		$hdgs.each(function() {
-			$(this).prepend(icon).wrapInner('<div class="sortable"></div>');
+			$(this).prepend(icons).wrapInner('<div class="sortable"></div>');
 		});
 
 	};
@@ -126,10 +126,8 @@ jQuery(document).ready(function($) {
 			return nA < nB ? -1 * abs : 1 * abs;
 		});
 
-		$hdgs.removeClass('sorted')
-			.find('i.fa').removeClass('fa-sort-asc fa-sort-desc');
-		$hdg.addClass('sorted')
-			.find('i.fa').addClass(asc ? 'fa-sort-asc' : 'fa-sort-desc');
+		$hdgs.removeClass('sorted asc desc');
+		$hdg.addClass('sorted').addClass(asc ? 'asc' : 'desc');
 
 		renderTableView(coins);
 

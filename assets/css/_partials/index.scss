@@ -6,7 +6,7 @@ $grey-lt: #f5f5f5;
 
 	input {
 		width:30em;
-		padding:1em;
+		padding:0.8em;
 		padding-right:3em;
 		font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 
@@ -24,7 +24,7 @@ $grey-lt: #f5f5f5;
 #coin-list {
 
 	th {
-		padding-bottom:1.2em;
+
 		h2 {
 			font-size:16px;
 			line-height:1.3;
@@ -34,28 +34,42 @@ $grey-lt: #f5f5f5;
 
 			.sortable {
 				display:flex;
-				flex-flow:column-reverse;
+				flex-flow:row nowrap;
 				justify-content:space-between;
-				// align-items:flex-start;
-			}
+				align-items:center;
 
-			i.fa {
-				margin-bottom:-1.55em;
-				font-size:1.2em;
-				opacity:0.2;
+				h2 {
+					margin-left:0.2em;
+				}
 			}
 
 			&.sorted {
 				background:#f0f0f0;
-				i.fa {
+
+				&.asc i.fa-arrow-up {
 					opacity:0.7;
 				}
+				&.desc i.fa-arrow-down {
+					opacity:0.7;
+				}
+			}
+
+			i.fa {
+				font-size:0.8em;
+				opacity:0.3;
+			}
+
+			i.fa-arrow-up {
+				transform: translate(-3px, -6px);
+			}
+			i.fa-arrow-down {
+				transform: translate(3px, 6px);
 			}
 
 			&[data-prop='rank'] {
 				width:56px;
 			}
-			&[data-prop='rank'],
+			&[data-prop$='rank'],
 			&[data-prop='coinname'],
 			&[data-prop='symbol'],
 			&[data-prop='type'],
@@ -68,13 +82,6 @@ $grey-lt: #f5f5f5;
 			&[data-prop$='users'] {
 				text-align:left;
 				background:$grey-md;
-			}
-			&[data-prop='team'],
-			&[data-prop$='users'],
-			&[data-prop$='forks'],
-			&[data-prop$='stars'] {
-				width:10em;
-				transform:translateX(-33.333%);
 			}
 			&[data-prop$='forks'],
 			&[data-prop$='stars'] {
@@ -93,20 +100,21 @@ $grey-lt: #f5f5f5;
 		font-size:16px;
 		&[data-prop='symbol'] {
 			font-size:12px;
+			padding-left:0;
+		}
+		&[data-prop='coinname'] {
+			width:8em;
 		}
 		&[data-prop='team'],
 		&[data-prop$='users'],
 		&[data-prop$='forks'],
 		&[data-prop$='stars'] {
 			width:10em;
-			transform:translateX(-60%);
+			transform:translateX(-33.333%);
 		}
 
 	}
 
-}
-[data-prop='coinname'] {
-	width:8em;
 }
 
 // [data-prop='symbol'],
@@ -119,7 +127,8 @@ $grey-lt: #f5f5f5;
 [data-prop='volatility'],
 [data-prop$='release'],
 [data-prop$='users'],
-[data-prop$='forks'] {
+[data-prop$='forks'],
+[data-prop$='stars'] {
 	display:none;
 }
 
@@ -135,7 +144,8 @@ $grey-lt: #f5f5f5;
 @media only screen and (min-width:1200px) {
 
 	[data-prop$='users'],
-	[data-prop$='forks'] {
+	[data-prop$='forks'],
+	[data-prop$='stars'] {
 		display:table-cell;
 	}
 
