@@ -99,6 +99,7 @@ function addRecords($records) {
 				errorLog('REPO_EXISTS', '<br>Repo ' . $existing->owner . '/' . $existing->name . ' already exists');
 				return errorOutput();
 		}
+		$record->dateAdded = date('c');
 		$record->languages = is_array($record->languages) ? $record->languages : explode(',', $record->languages);
 		$record->releases = json_decode($record->releases);
 		$record->data = json_decode($record->data);
