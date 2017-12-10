@@ -24,6 +24,7 @@
 #coin-list {
 
 	th {
+		padding-bottom:0.2em;
 
 		h2 {
 			font-size:1rem;
@@ -57,6 +58,7 @@
 			i.fa {
 				font-size:0.8em;
 				opacity:0.3;
+				display:none;
 			}
 
 			i.fa-arrow-up {
@@ -97,9 +99,9 @@
 	}
 
 	td {
-		font-size:16px;
+		font-size:1em;
 		&[data-prop='symbol'] {
-			font-size:12px;
+			font-size:0.75em;
 			padding-left:0;
 		}
 		&[data-prop='coinname'] {
@@ -130,6 +132,17 @@
 [data-prop$='forks'],
 [data-prop$='stars'] {
 	display:none;
+}
+
+@media only screen and (min-width:600px) {
+
+	#coin-list {
+		th[data-prop] {
+			i.fa {
+				display:block;
+			}
+		}
+	}
 }
 
 @media only screen and (min-width:900px) {

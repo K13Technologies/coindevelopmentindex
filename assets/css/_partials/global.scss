@@ -63,3 +63,9 @@ header {
 		max-width:26em;
 	}
 }
+
+@media only screen and (max-width:900px) {
+	html {
+		font-size: calc( 12px + (16 - 12) * (100vw - 300px) / (900 - 300) );
+	}
+}
