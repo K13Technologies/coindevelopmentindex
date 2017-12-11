@@ -23,15 +23,16 @@ nav {
 	}
 
 	.navbar-brand {
-		flex-basis:50px;
+		flex:0 0 50px;
+		max-width:50px;
 		overflow:hidden;
 
 		&:link,
 		&:active,
 		&:visited {
 			color:#fff;
-			font-weight:100;
-			letter-spacing:0.8px;
+			font-weight:300;
+			// letter-spacing:0.8px;
 		}
 
 		img {
@@ -40,8 +41,10 @@ nav {
 	}
 
 	&.show .navbar-brand {
-			flex-basis:500px;
-			transition: flex-basis 1800ms steps(22, end);
+			flex-grow:1;
+			flex-basis:18em;
+			max-width:100%;
+			transition: max-width 1800ms steps(22, end);
 	}
 
 }
