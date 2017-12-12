@@ -8,6 +8,7 @@ jQuery(document).ready(function($) {
 			$hdgs = $('th[data-prop]'),
 			START = 0,
 			PER_PAGE = 25,
+			ACTIVE_PAGE = 1,
 			prop, asc;
 
 	var renderTableView = function(coins) {
@@ -21,6 +22,8 @@ jQuery(document).ready(function($) {
 		        	return prev + html;
 		        },'');
 		  $('#coin-list tbody').html(list);
+
+		  buildPagination();
 
 		  return cb && cb();
 
@@ -78,14 +81,60 @@ jQuery(document).ready(function($) {
 
 	};
 
+	var buildPagination = function() {
+
+		var pgs = Math.ceil(Coins.list().length / PER_PAGE),
+				str = '', i;
+
+		for(i = 1; i <= pgs; i++) {
+			str += '<a class="pg-' + i + (i === ACTIVE_PAGE ? ' active' : '') + '" href="#">' + i + '</a>';
+		}
+
+		$('.pg-tools').find('.pgs').empty().html(str);
+
+	};
+
+	var onPaginationClicked = function(e) {
+
+		var nav = e.currentTarget.className.replace(/\-\d/, ''),
+				pg;
+
+		e.preventDefault();
+
+		switch(nav) {
+
+			case 'prev' :
+				START = Math.max(START - PER_PAGE, 0);
+				ACTIVE_PAGE--;
+				break;
+
+			case 'next' :
+				START = Math.min(START + PER_PAGE, Coins.list().length);
+				ACTIVE_PAGE++;
+				break;
+
+			case 'pg' :
+				pg = parseInt(/\-(\d+)/.exec(e.currentTarget.className)[1],10);
+				ACTIVE_PAGE = pg;
+				START = (ACTIVE_PAGE - 1) * PER_PAGE;
+				break;
+		}
+
+		renderTableView(Coins.list());
+
+	};
+
 
 	Coins.init(function() {
 
 		addSortIcons();
+		buildPagination();
 
 		$('#coin-search').on('keyup', onCoinSearched);
 		$('#search-type').on('change', onCoinSearched);
 		$('#coin-list').on('click', 'th', onTableHeadClicked);
+		$('.pg-tools').on('click', 'a', onPaginationClicked);
+
 
 		renderTableView(Coins.list(), function() {
 			$('[data-prop="latest.rank"]').click();
@@ -106,7 +155,56 @@ jQuery(document).ready(function($) {
 		var arr;
 		if(data) {
 			arr = Object.keys(data).sort().reverse();
-			return data[arr[0]].rank;
+			return data[arr[0]].rank ? '#' + data[arr[0]].rank : '-';
+		} else {
+			return data;
+		}
+	});
+
+	Handlebars.registerHelper('trending', function(data) {
+		var x = 0, y = 0, xy = 0, x2 = 0, arr, chg;
+
+		if(data) {
+			// arr = Object.keys(data).sort();
+			// arr.forEach(function(wk) {
+			// 	var week = parseInt(wk.split('-')[1],10),
+			// 			rank = data[wk].rank ? parseInt(data[wk].rank,10) : 0,
+			// 			wr = week * rank,
+			// 			ws = week * week;
+
+			// 			x += week;
+			// 			y += rank;
+			// 			xy += wr;
+			// 			x2 += ws;
+			// });
+
+			// trend = ((arr.length * xy) - (x * y)) / ((arr.length * x2) - (x * x));
+
+			// return trend > 1 ? 'Rising' : 'Falling';
+			//
+			arr = Object.keys(data).sort().reverse();
+			if(!data[arr[1]].rank || !data[arr[0]].rank) return '';
+
+			chg = data[arr[1]].rank - data[arr[0]].rank;
+			if(chg === 0) return '-';
+
+			return chg > 0 ? 'Rising' : 'Falling';
+
+		} else {
+			return data;
+		}
+	});
+
+	Handlebars.registerHelper('changeRank', function(data) {
+		var arr, chg;
+		if(data) {
+			arr = Object.keys(data).sort().reverse();
+			if(!data[arr[1]].rank || !data[arr[0]].rank) return '';
+
+			chg = data[arr[1]].rank - data[arr[0]].rank;
+			if(chg === 0) return '';
+
+			return chg > 0 ? '(+' + chg + ')' : '(' + chg + ')';
 		} else {
 			return data;
 		}

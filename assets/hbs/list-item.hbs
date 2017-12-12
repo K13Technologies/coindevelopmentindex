@@ -1,14 +1,14 @@
 <tr id="{{symbol}}">
-	<td class="bold rank" data-prop="latest.rank">{{latestRank data}}</td> <!-- ranked by market cap -->
+	<td class="rank text-right bold" data-prop="latest.rank">{{latestRank data}}</td> <!-- ranked by market cap -->
 	<td class="coinname" data-prop="coinname">{{coinname}}</td>  <!-- name of currency, this will take user to more detailed secondary page -->
 	<td class="symbol" data-prop="symbol"><!-- <i class="cc {{symbol}}" title="{{symbol}}"></i> --> {{symbol}}</td>
-	<td class="type" data-prop="type">{{type}}</td>  <!-- coin type -->
-	<td class="trend" data-prop="trend">{{trend}}</td>
-	<td class="blockchain" data-prop="blockchain">{{blockchain}}</td>  <!-- blockchain -->
-	<td class="text-right team" data-prop="team">{{team}}</td>  <!-- developer team -->
-	<td class="text-right users" data-prop="latest.users">{{latestUsers data}}</td> <!-- contributors to core repository -->
-	<td class="text-right forks" data-prop="latest.forks">{{latestForks data}}</td>  <!-- forks -->
-	<td class="text-right stars" data-prop="latest.stars">{{latestStars data}}</td>  <!-- starred -->
+	<td class="type tdpad" data-prop="type">{{type}}</td>  <!-- coin type -->
+	<td class="trend" data-prop="trend">{{trending data}} <span class="rank-change">{{changeRank data}}</span></td>
+	<td class="volatility text-right" data-prop="volatility">{{volatility}}</td>
+	<td class="blockchain tdpad" data-prop="blockchain">{{blockchain}}</td>  <!-- blockchain -->
+	<td class="team text-right"  data-prop="team">{{team}}</td>  <!-- developer team -->
+	<td class="forks text-right " data-prop="latest.forks">{{latestForks data}}</td>  <!-- forks -->
+	<td class="users text-right " data-prop="latest.users">{{latestUsers data}}</td> <!-- contributors to core repository -->
+	<td class="stars text-right " data-prop="latest.stars">{{latestStars data}}</td>  <!-- starred -->
 	<!-- <td class="release" data-prop="latest.release">{{dateFormat releases.0.publishedAt}}</td> --> <!-- latest release -->
-	<td class="volatility" data-prop="volatility">{{volatility}}</td>
 </tr>

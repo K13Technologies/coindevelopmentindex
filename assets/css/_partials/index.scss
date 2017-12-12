@@ -91,6 +91,7 @@
 
 	th {
 		padding-bottom:0.2em;
+		text-align:left;
 
 		h2 {
 			font-size:1rem;
@@ -134,28 +135,27 @@
 				transform: translate(3px, 6px);
 			}
 
-			&[data-prop='rank'] {
-				width:56px;
+			&[data-prop$='rank'] {
+				width:4em;
 			}
 			&[data-prop$='rank'],
 			&[data-prop='coinname'],
 			&[data-prop='symbol'],
 			&[data-prop='type'],
-			&[data-prop='trend'] {
-				text-align:left;
+			&[data-prop='trend'],
+			&[data-prop='volatility'] {
 				background:$grey-dk;
 			}
 			&[data-prop='blockchain'],
-			&[data-prop='team'],
-			&[data-prop$='users'] {
+			&[data-prop='team'] {
 				text-align:left;
 				background:$grey-md;
 			}
 			&[data-prop$='forks'],
+			&[data-prop$='users'],
 			&[data-prop$='stars'] {
 				background:$grey-lt;
 			}
-			&[data-prop='volatility'],
 			&[data-prop$='release'] {
 
 			}
@@ -166,38 +166,69 @@
 
 	td {
 		font-size:1em;
+
+		&.tdpad {
+			padding-left:3em;
+		}
+		.rank-change {
+			font-size:0.9em;
+			color:$grey-dk;
+		}
+		&[data-prop$='rank'] {
+			width:4em;
+		}
 		&[data-prop='symbol'] {
 			font-size:0.75em;
 			padding-left:0;
+			vertical-align:middle;
 		}
 		&[data-prop='coinname'] {
 			width:8em;
 		}
+		&[data-prop$='trend'] {
+			padding-left:1.7em;
+		}
+		&[data-prop$='rank'],
 		&[data-prop='team'],
-		&[data-prop$='users'],
-		&[data-prop$='forks'],
-		&[data-prop$='stars'] {
+		&[data-prop$='users'] {
+		// &[data-prop$='forks'],
+		// &[data-prop$='stars'] {
 			width:10em;
 			transform:translateX(-33.333%);
 		}
 
 	}
+}
 
-	tfoot {
+.pg-tools,
+.pgs {
+	display:flex;
+	flex-flow:row nowrap;
+	justify-content:center;
+	align-items:center;
 
-		.pg-tools {
-			display:flex;
-			flex-flow:row nowrap;
-			justify-content:center;
-			align-items:center;
+	a {
+		display:block;
+		width:24px;
+		height:24px;
+		padding:0.3em;
+		margin:0 1em 1em;
+		text-align:center;
+		line-height:0.8;
 
-			a {
-				display:block;
-			}
+		&.prev,
+		&.next {
+			font-size:2em;
+			padding:0.2em;
+		}
+
+		&.active {
+			border:1px solid $acc-purple;
+			border-radius:50%;
 		}
 	}
-
 }
+
 
 // [data-prop='symbol'],
 [data-prop='release'] {
@@ -206,7 +237,6 @@
 
 [data-prop='blockchain'],
 [data-prop='team'],
-[data-prop='volatility'],
 [data-prop$='release'],
 [data-prop$='users'],
 [data-prop$='forks'],
@@ -239,15 +269,6 @@
 	[data-prop$='users'],
 	[data-prop$='forks'],
 	[data-prop$='stars'] {
-		display:table-cell;
-	}
-
-}
-
-@media only screen and (min-width:1500px) {
-
-	[data-prop='volatility'],
-	[data-prop$='release'] {
 		display:table-cell;
 	}
 
