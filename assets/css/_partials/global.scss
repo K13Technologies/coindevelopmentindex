@@ -117,9 +117,17 @@ footer {
 	}
 
 	.footer-center {
+
+		display:flex;
 		flex-flow:row wrap;
 		justify-content:flex-start;
 		padding:0 3em;
+
+		@media only screen and (max-width:700px){
+			order:-1;
+			flex-basis:100%;
+			margin-bottom:3em;
+		}
 
 		h5,
 		p {
@@ -127,8 +135,7 @@ footer {
 		}
 
 		h5 {
-			height:48px;
-			line-height:2.25;
+			margin:0.5em 0 1em;
 			opacity:1;
 		}
 
