@@ -106,6 +106,10 @@ footer {
 
 	.footer-left {
 
+		@media only screen and (max-width:700px){
+			padding:0 3em;
+		}
+
 		h4 {
 			font-weight:700;
 			opacity:1;
@@ -124,7 +128,7 @@ footer {
 		padding:0 3em;
 
 		@media only screen and (max-width:700px){
-			order:-1;
+			order:-2;
 			flex-basis:100%;
 			margin-bottom:3em;
 		}
@@ -156,6 +160,20 @@ footer {
 		flex:0 1 2em;
 		justify-content:flex-start;
 		align-items:flex-end;
+
+		@media only screen and (max-width:600px){
+			order:-1;
+			flex-basis:100%;
+			flex-flow:row nowrap;
+			justify-content:center;
+			margin-bottom:3em;
+
+			a {
+				padding:0 1.5em !important;
+				font-size:2em;
+			}
+
+		}
 
 		a {
 			padding:0.2em;
