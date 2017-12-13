@@ -158,10 +158,25 @@ footer {
 }
 
 .container {
+	max-width: $ctr-wd-xs;
+
+	@media only screen and (min-width:500px) {
+		max-width: $ctr-wd-sm;
+		padding:0 3rem;
+	}
+
+	@media only screen and (min-width:900px) {
+		max-width: $ctr-wd-md;
+	}
+
+	@media only screen and (min-width:1180px) {
+		max-width: $ctr-wd-lg;
+	}
 
 	@media only screen and (min-width:1500px) {
-		max-width:1380px;
+		max-width: $ctr-wd-xl;
 	}
+
 }
 
 @media only screen and (max-width:900px) {

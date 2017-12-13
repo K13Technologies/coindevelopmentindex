@@ -235,6 +235,7 @@
 	white-space: nowrap;
 }
 
+[data-prop='type'],
 [data-prop='blockchain'],
 [data-prop='team'],
 [data-prop$='release'],
@@ -253,9 +254,19 @@
 			}
 		}
 	}
+
+
 }
 
-@media only screen and (min-width:900px) {
+@media only screen and (min-width:770px) {
+
+	[data-prop='type'] {
+		display:table-cell;
+	}
+
+}
+
+@media only screen and (min-width:1180px) {
 
 	[data-prop='blockchain'],
 	[data-prop='team'] {
@@ -264,7 +275,7 @@
 
 }
 
-@media only screen and (min-width:1200px) {
+@media only screen and (min-width:1500px) {
 
 	[data-prop$='users'],
 	[data-prop$='forks'],
