@@ -9,6 +9,7 @@
 
 	#coin-search {
 		flex:1 0 100%;
+		overflow:hidden;
 		white-space:nowrap;
 
 		input {
@@ -74,7 +75,7 @@
 	}
 
 	#error-report {
-		margin-bottom:0.333em;
+		margin-bottom:0.5em;
 
 		a:link,
 		a:active,
