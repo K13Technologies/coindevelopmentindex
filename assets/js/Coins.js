@@ -4,6 +4,7 @@ var Coins = (function($) {
 	'use strict';
 
 	var coinfile = 'https://api.myjson.com/bins/909wb',
+	// var coinfile = '/assets/json/data.json',
 			fieldsfile = '/assets/json/form-fields.json',
 			initialized = false,
 			coins, results, fields;
@@ -146,7 +147,12 @@ var Coins = (function($) {
 	};
 
 	var find = function(criteria) {
-
+		return coins
+						.find(function(coin) {
+							for(var prop in criteria) {
+								if(criteria[prop] === coin[prop]) { return true; }
+							}
+						});
 	};
 
 	var parseNullChars = function() {
@@ -173,6 +179,7 @@ var Coins = (function($) {
 		sort: sort,
 		list: list,
 		search: search,
+		find: find,
 		reset: reset
 	};
 
