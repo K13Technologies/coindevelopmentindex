@@ -146,6 +146,14 @@
     "data-revertable":true
   },
   {
+    "name": "wallet",
+    "type": "text",
+    "disabled": false,
+    "required": false,
+    "data-stringify":false,
+    "data-revertable":false
+  },
+  {
     "name": "releases",
     "type": "hidden",
     "disabled": false,
@@ -159,10 +167,10 @@
     "disabled": false,
     "required": false,
     "heading": {
-      "rank": "Risk Index Ranking",
-      "users": "Github Developer Contributors",
-      "forks": "Github Repo Forks",
-      "stars": "Github Repo Stars"
+      "latest.rank": "Risk Index Ranking",
+      "latest.users": "Github Developer Contributors",
+      "latest.forks": "Github Repo Forks",
+      "latest.stars": "Github Repo Stars"
     },
     "data-stringify":true,
     "data-revertable":false
