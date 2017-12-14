@@ -160,7 +160,7 @@ function deleteRecord($index) {
 		}
 }
 
-function sortJSON($json, $prop='owner', $asc=true) {
+function sortJSON($json, $prop='coinname', $asc=true) {
 
 	if(!is_array($json)) return $json;
 
