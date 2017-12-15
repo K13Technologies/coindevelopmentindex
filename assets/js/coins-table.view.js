@@ -183,6 +183,7 @@ jQuery(document).ready(function($) {
 			// return trend > 1 ? 'Rising' : 'Falling';
 			//
 			arr = Object.keys(data).sort().reverse();
+			if(!data[arr[1]] || !data[arr[0]]) return '';
 			if(!data[arr[1]].rank || !data[arr[0]].rank) return '';
 
 			chg = data[arr[1]].rank - data[arr[0]].rank;
@@ -199,6 +200,7 @@ jQuery(document).ready(function($) {
 		var arr, chg;
 		if(data) {
 			arr = Object.keys(data).sort().reverse();
+			if(!data[arr[1]] || !data[arr[0]]) return '';
 			if(!data[arr[1]].rank || !data[arr[0]].rank) return '';
 
 			chg = data[arr[1]].rank - data[arr[0]].rank;
