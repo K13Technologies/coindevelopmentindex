@@ -26,7 +26,7 @@ jQuery(document).ready(function($) {
             coins = data;
 
             coins.map(function(coin) {
-                var selected = (loco.hash.slice(1) === coin.owner + '/' + coin.name),
+                var selected = (loco.hash.slice(1) === coin.symbol),
                     $opt;
 
                 $opt = $('<option value="' + coin.symbol + '" >' +
@@ -208,7 +208,7 @@ jQuery(document).ready(function($) {
 
         $.post({
               url: 'http://api.coindev.local' + loco.search,
-              data: $coinForm.serialize() + '&cryptocompfetch=1'
+              data: $coinForm.serialize() + '&cryptocompfetch=price'
             })
             .done(function(response) {
 
