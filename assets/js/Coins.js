@@ -6,6 +6,7 @@ var Coins = (function($) {
 	var coinfile = 'https://api.myjson.com/bins/909wb',
 	// var coinfile = '/assets/json/data.json',
 			fieldsfile = '/assets/json/form-fields.json',
+			rateAPI = 'https://min-api.cryptocompare.com/data/price',
 			initialized = false,
 			coins, results, fields;
 
@@ -155,6 +156,23 @@ var Coins = (function($) {
 						});
 	};
 
+	var price = function(coin, to) {
+		var url = rateAPI + '?fsym=' + coin.symbol + '&tsyms=' + to,
+				cb = 'function' === typeof arguments[arguments.length - 1] ?
+							arguments[arguments.length - 1] : false;
+
+		// if(coin.exchanges && coin.exchanges.length > 0) {
+		// 	url += '&e=' + coin.exchanges.join(',');
+		// } else {
+		// 	url += '&e=CCCAGG';
+		// }
+
+		return $.get(url).done(function(data) {
+			coin.price[to] = data[to];
+			return cb && cb(coin);
+		});
+	};
+
 	var parseNullChars = function() {
 
 		getFields()
@@ -180,6 +198,7 @@ var Coins = (function($) {
 		list: list,
 		search: search,
 		find: find,
+		price: price,
 		reset: reset
 	};
 

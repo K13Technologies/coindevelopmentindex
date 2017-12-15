@@ -154,6 +154,14 @@
     "data-revertable":false
   },
   {
+    "name": "qrcode",
+    "type": "text",
+    "disabled": false,
+    "required": false,
+    "data-stringify":false,
+    "data-revertable":false
+  },
+  {
     "name": "releases",
     "type": "hidden",
     "disabled": false,

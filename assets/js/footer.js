@@ -3,55 +3,65 @@ jQuery(document).ready(function($) {
 	'use strict';
 
 	var $footer = $('footer'),
-			$copy = $footer.find('.copyright-year');
+			$copy = $footer.find('.copyright-year'),
+			DONATE_AMT = 3;
 
-	/* globals Coins */
+	/* globals HBS,Coins */
 	var onDonateLinkClicked = function(e) {
+
+		if(typeof HBS === 'undefined') { return false; }
 
 		var sym = $(e.currentTarget).closest('[class|="donate"]')[0]
 									.className.replace(/donate\-/, '').toUpperCase(),
 				coin = Coins.find({ symbol: sym }),
-				rate = $(e.currentTarget).prev('.rate').text().replace(/\scoins/,''),
-				svg = '/assets/img/qr/wallet-' + sym + '.svg',
-				url = '/modals/donate-modal.html';
+				template = HBS['donate-modal'],
+				$modal;
 
 		e.preventDefault();
+
 		$('.donate-modal').remove();
 
-		$.get(url, function(html) {
+		Coins.price(coin, 'USD', function(coinPrice) {
 
-			var $modal = $(html);
-
-			$modal.find('.modal-title').html(coin.coinname + ' Wallet');
-			$modal.find('.qrcode').html('<img src="' + svg + '">');
-			$modal.find('.exchrate').html('US$3 Equals: <strong>' + [rate, coin.coinname, '(' + coin.symbol + ')'].join(' ') + '</strong>');
-			$modal.find('.hashid').val(coin.wallet);
+			$modal = $(template(coinPrice));
 
 			$modal.appendTo('body').modal();
 
-			$modal.on('click', '.copyhash', onWalletCopyClicked);
+			$modal.on('click', onWalletModalClicked);
 
 		});
 
+
 	};
 
-	var onWalletCopyClicked = function(e) {
+	var onWalletModalClicked = function(e) {
 
-		var hash = document.querySelector('.hashid');
+		var hash = document.querySelector('.hashid'),
+				$target = $(e.target);
 
-	  try {
-	  	hash.select();
-	    var successful = document.execCommand('copy');
-	    $('.copied').addClass( successful ? 'show' : 'error');
-	  } catch(err) {
-	    console.error('Unable to copy to clipboard');
+  	hash.select();
+
+		if($target.is('.copyhash')) {
+
+		  try {
+		    var successful = document.execCommand('copy');
+		    $('.copied').addClass( successful ? 'show' : 'error');
+		    setTimeout(function() { $('.copied').removeClass('show error'); }, 2000);
+		  } catch(err) {
+		    console.error('Unable to copy to clipboard');
+		  }
+
+		  window.getSelection().removeAllRanges();
 	  }
 
-	  window.getSelection().removeAllRanges();
 	};
 
 	$copy.text(new Date().getFullYear());
 
 	$footer.on('click', '[class|="donate"] a', onDonateLinkClicked);
+
+	Handlebars.registerHelper('donation', function(p) {
+		return (DONATE_AMT / p).toFixed(4);
+	});
 
 });
