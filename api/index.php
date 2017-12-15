@@ -44,7 +44,12 @@
 			}
 
 			if(isset($_POST['cryptocompfetch'])) {
-				$records = fetchCryptoCompData(getRecord($_POST));
+				if($_POST['cryptocompfetch'] === 'data') {
+					$records = fetchCryptoCompData(getRecord($_POST));
+				}
+				if($_POST['cryptocompfetch'] === 'price') {
+					$records = fetchCryptoCompPrice(getRecord($_POST));
+				}
 				out($records);
 				break;
 			}
@@ -85,19 +90,32 @@
 				break;
 			}
 			if(isset($_GET['githubfetchall'])) {
-				if(isset($_GET['tolocal']) && !checkPermissions(LOCAL_FILE, '0777')) {
+				if(isset($_GET['local']) && !checkPermissions(LOCAL_FILE, '0777')) {
 					array_map(function($err){echo $err->type . $err->message;}, errorOutput()->errors);
 					break;
 				}
-				out(write(fetchGithubData(fetchJSON()), isset($_GET['tolocal']) ? LOCAL_FILE : JSON_FILE));
+				out(write(fetchGithubData(fetchJSON()), isset($_GET['local']) ? LOCAL_FILE : JSON_FILE));
 				break;
 			}
 			if(isset($_GET['coinmarketfetchall'])) {
-				if(isset($_GET['tolocal']) && !checkPermissions(LOCAL_FILE, '0777')) {
+				if(isset($_GET['local']) && !checkPermissions(LOCAL_FILE, '0777')) {
 					array_map(function($err){echo $err->type . $err->message;}, errorOutput()->errors);
 					break;
 				}
-				out(write(fetchCoinMarketData(fetchJSON()), isset($_GET['tolocal']) ? LOCAL_FILE : JSON_FILE));
+				out(write(fetchCoinMarketData(fetchJSON()), isset($_GET['local']) ? LOCAL_FILE : JSON_FILE));
+				break;
+			}
+			if(isset($_GET['cryptocompfetchall'])) {
+				if(isset($_GET['local']) && !checkPermissions(LOCAL_FILE, '0777')) {
+					array_map(function($err){echo $err->type . $err->message;}, errorOutput()->errors);
+					break;
+				}
+				if($_GET['cryptocompfetchall'] === 'data') {
+					out(write(fetchCryptoCompData(fetchJSON()), isset($_GET['local']) ? LOCAL_FILE : JSON_FILE));
+				}
+				if($_GET['cryptocompfetchall'] === 'price') {
+					out(write(fetchCryptoCompPrice(fetchJSON()), isset($_GET['local']) ? LOCAL_FILE : JSON_FILE));
+				}
 				break;
 			}
 			if(isset($_GET['local'])) {
