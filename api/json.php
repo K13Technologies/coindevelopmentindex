@@ -93,19 +93,19 @@ function addRecords($records) {
 	$added = array();
 
 	foreach($records as $record) {
-		$repo = (object) $record;
-		$existing = getRecordByName($repo->owner, $repo->name);
+		$coin = (object) $record;
+		$existing = getRecordBySymbol($coin->symbol);
 		if($existing) {
-				errorLog('REPO_EXISTS', '<br>Repo ' . $existing->owner . '/' . $existing->name . ' already exists');
+				errorLog('COIN_EXISTS', '<br>Coin ' . $existing->coinname . ' (' . $existing->symbol . ') already exists');
 				return errorOutput();
 		}
 		$record->dateAdded = date('c');
 		$record->languages = is_array($record->languages) ? $record->languages : explode(',', $record->languages);
 		$record->releases = json_decode($record->releases);
 		$record->data = json_decode($record->data);
-		$repo->ownername = $record->owner . '/' . $record->name;
-		array_push($json, $repo);
-		array_push($added, $repo);
+		$coin->ownername = $record->owner . '/' . $record->name;
+		array_push($json, $coin);
+		array_push($added, $coin);
 	}
 
 	try {
@@ -126,7 +126,7 @@ function updateRecords($records) {
 	$updated = array();
 
 	foreach($records as $record) {
-		$idx = array_search($record->id, array_map(function($repo) { return $repo->id; }, $json));
+		$idx = array_search($record->id, array_map(function($coin) { return $coin->id; }, $json));
 		$record->languages = is_array($record->languages) ? $record->languages : explode(',', $record->languages);
 		$record->releases = json_decode($record->releases);
 		$record->data = json_decode($record->data);
