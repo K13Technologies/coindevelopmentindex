@@ -212,6 +212,30 @@ jQuery(document).ready(function($) {
 		}
 	});
 
+
+	Handlebars.registerHelper('volatility', function(data) {
+		var arr, week, sum, avg;
+		if(data) {
+			arr = Object.keys(data).sort().reverse();
+			if(!data[arr[0]].volatility) return '';
+
+			week = $.map(data[arr[0]].volatility, function(val, idx) {
+				return val;
+			});
+
+			sum = week.reduce(function(prev,curr) {
+				return prev + curr;
+			}, 0);
+
+			avg = sum / week.length;
+
+			return isNaN(avg) ? '' : avg.toFixed(2) + '%';
+
+		} else {
+			return data;
+		}
+	});
+
 	Handlebars.registerHelper('latestStars', function(data) {
 		var arr;
 		if(data) {

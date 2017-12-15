@@ -197,6 +197,9 @@
 			width:10em;
 			transform:translateX(-33.333%);
 		}
+		&[data-prop='volatility'] {
+			transform:translateX(-15%);
+		}
 
 	}
 }
