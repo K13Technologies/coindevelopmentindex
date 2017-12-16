@@ -59,6 +59,8 @@ jQuery(document).ready(function($) {
 				}));
 			});
 
+		START = 0;
+
 		renderTableView(Coins.search({
 			regexp: $s.val(),
 			type: $t.val()
