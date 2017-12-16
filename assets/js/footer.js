@@ -1,4 +1,5 @@
 /*! FOOTER */
+/* globals HBS,Coins */
 jQuery(document).ready(function($) {
 	'use strict';
 
@@ -6,13 +7,26 @@ jQuery(document).ready(function($) {
 			$copy = $footer.find('.copyright-year'),
 			DONATE_AMT = 3;
 
-	/* globals HBS,Coins */
+	var initLinks = function() {
+		var template = HBS['donate-links'];
+
+		Coins.init(function() {
+			Coins.price(Coins.filter({ wallet: 'NOT_NULL', qrcode: 'NOT_NULL' }), 'USD', function(coins) {
+				$footer.find('.footer-center').html(template({
+					coins: coins,
+					DONATE_AMT: DONATE_AMT.toFixed(2)
+				}));
+			});
+		});
+
+	};
+
 	var onDonateLinkClicked = function(e) {
 
 		if(typeof HBS === 'undefined') { return false; }
 
 		var sym = $(e.currentTarget).closest('[class|="donate"]')[0]
-									.className.replace(/donate\-/, '').toUpperCase(),
+									.className.replace(/donate\-/, ''),
 				coin = Coins.find({ symbol: sym }),
 				template = HBS['donate-modal'],
 				$modal;
@@ -21,9 +35,9 @@ jQuery(document).ready(function($) {
 
 		$('.donate-modal').remove();
 
-		Coins.price(coin, 'USD', function(coinPrice) {
+		Coins.price([coin], 'USD', function(coinPrice) {
 
-			$modal = $(template(coinPrice));
+			$modal = $(template(coinPrice[0]));
 
 			$modal.appendTo('body').modal();
 
@@ -55,6 +69,9 @@ jQuery(document).ready(function($) {
 	  }
 
 	};
+
+	initLinks();
+	setInterval(initLinks, 1000*60*2);
 
 	$copy.text(new Date().getFullYear());
 

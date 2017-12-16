@@ -6,7 +6,7 @@ var Coins = (function($) {
 	var coinfile = 'https://api.myjson.com/bins/909wb',
 	// var coinfile = '/assets/json/data.json',
 			fieldsfile = '/assets/json/form-fields.json',
-			rateAPI = 'https://min-api.cryptocompare.com/data/price',
+			rateAPI = 'https://min-api.cryptocompare.com/data/pricemulti',
 			initialized = false,
 			coins, results, fields;
 
@@ -156,8 +156,25 @@ var Coins = (function($) {
 						});
 	};
 
-	var price = function(coin, to) {
-		var url = rateAPI + '?fsym=' + coin.symbol + '&tsyms=' + to,
+	var filter = function(criteria) {
+		return coins
+						.filter(function(coin) {
+							var ret = true;
+							for(var prop in criteria) {
+								if(criteria[prop] === 'NOT_NULL') {
+									if(!coin[prop]) { ret = false; }
+									if((_.isString(coin[prop]) || _.isArray(coin[prop])) && _.isEmpty(coin[prop])) { ret = false; }
+								} else {
+									if(criteria[prop] !== coin[prop]) { ret = false; }
+								}
+							}
+							return ret;
+						});
+	};
+
+	var price = function(coins, to) {
+		var syms = coins.map(function(coin) { return coin.symbol; }),
+				url = rateAPI + '?fsyms=' + syms.join(',') + '&tsyms=' + to,
 				cb = 'function' === typeof arguments[arguments.length - 1] ?
 							arguments[arguments.length - 1] : false;
 
@@ -168,8 +185,10 @@ var Coins = (function($) {
 		// }
 
 		return $.get(url).done(function(data) {
-			coin.price[to] = data[to];
-			return cb && cb(coin);
+			return cb && cb(coins.map(function(coin) {
+				coin.price[to] = data[coin.symbol][to];
+				return coin;
+			}));
 		});
 	};
 
@@ -198,6 +217,7 @@ var Coins = (function($) {
 		list: list,
 		search: search,
 		find: find,
+		filter: filter,
 		price: price,
 		reset: reset
 	};

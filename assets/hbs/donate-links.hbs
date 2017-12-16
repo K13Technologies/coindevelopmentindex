@@ -1,0 +1,9 @@
+<h5>Donations are always appreciated!</h5>
+<p>A US$ {{DONATE_AMT}} donation is equal to:</p>
+
+{{#each coins}}
+<div class="donate-{{symbol}}">
+	<span class="rate">{{donation price.USD}} coins</span>
+	<a href="#">{{coinname}} ({{symbol}})</a>
+</div>
+{{/each}}
