@@ -44,6 +44,12 @@ function fetchCoinMarketData($json) {
 			$coin->coinname = $record->name;
 			$coin->data->{date('Y-W')}->rank = intval($record->rank);
 
+		} else {
+
+			if(is_object($coin->data->{date('Y-W')})) {
+				unset($coin->data->{date('Y-W')}->rank);
+			}
+
 		}
 
 		if(DEBUG) {
