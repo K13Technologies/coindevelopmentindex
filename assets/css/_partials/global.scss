@@ -113,8 +113,14 @@ footer {
 		}
 
 		h4 {
+			display:flex;
+			align-items:center;
 			font-weight:700;
 			opacity:1;
+
+			img {
+				margin-right:0.2em;
+			}
 		}
 
 		a {
@@ -144,6 +150,7 @@ footer {
 		a:active,
 		a:visited {
 			color: $link-blue;
+			text-decoration:none;
 		}
 
 		h5 {
@@ -158,16 +165,15 @@ footer {
 			.rate {
 				display:block;
 			}
-			a {
-				text-decoration:underline;
-			}
 		}
 	}
 
 	.footer-right {
-		flex:0 1 2em;
-		justify-content:flex-start;
-		align-items:flex-end;
+		display:flex;
+		flex-flow: row wrap;
+		justify-content:space-around;
+		align-items:center;
+		flex:0 1 8em;
 
 		@media only screen and (max-width:600px){
 			order:-1;
@@ -181,6 +187,11 @@ footer {
 				font-size:2em;
 			}
 
+		}
+
+		h5 {
+			text-align:center;
+			flex:1 1 100%;
 		}
 
 		a {
