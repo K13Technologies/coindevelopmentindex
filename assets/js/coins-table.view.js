@@ -8,7 +8,6 @@ jQuery(document).ready(function($) {
 			$hdgs = $('th[data-prop]'),
 			START = 0,
 			PER_PAGE = 25,
-			ACTIVE_PAGE = 1,
 			prop, asc;
 
 	var renderTableView = function(coins) {
@@ -79,50 +78,57 @@ jQuery(document).ready(function($) {
 		$hdgs.removeClass('sorted asc desc');
 		$hdg.addClass('sorted').addClass(asc ? 'asc' : 'desc');
 
+		// reset pagination
+		START = 0;
+
 		renderTableView(Coins.sort(prop, asc).list());
 
 	};
 
 	var buildPagination = function() {
 
-		var pgs = Math.ceil(Coins.list().length / PER_PAGE),
-				str = '', i;
+		// var pgs = Math.ceil(Coins.list().length / PER_PAGE),
+		// 		str = '', i;
 
-		for(i = 1; i <= pgs; i++) {
-			str += '<a class="pg-' + i + (i === ACTIVE_PAGE ? ' active' : '') + '" href="#">' + i + '</a>';
-		}
+		// for(i = 1; i <= pgs; i++) {
+		// 	str += '<a class="pg-' + i + (i === ACTIVE_PAGE ? ' active' : '') + '" href="#">' + i + '</a>';
+		// }
+
+		var str = 'Showing ' + (START + 1) + '&mdash;' + Math.min((START + PER_PAGE), Coins.list().length) + ' of ' + Coins.list().length;
 
 		$('.pg-tools').find('.pgs').empty().html(str);
+		$('.pg-tools').addClass('initialized');
+
+		$('.prev').toggleClass('disabled', START === 0);
+		$('.next').toggleClass('disabled', START + PER_PAGE > Coins.list().length);
 
 	};
 
 	var onPaginationClicked = function(e) {
 
-		var nav = e.currentTarget.className.replace(/\-\d/, ''),
-				pg;
+		var nav = e.currentTarget.className.replace(/\-\d/, '');
 
 		e.preventDefault();
+
+		if($(e.currentTarget).is('.disabled')) return false;
 
 		switch(nav) {
 
 			case 'prev' :
 				START = Math.max(START - PER_PAGE, 0);
-				ACTIVE_PAGE--;
 				break;
 
 			case 'next' :
 				START = Math.min(START + PER_PAGE, Coins.list().length);
-				ACTIVE_PAGE++;
 				break;
 
-			case 'pg' :
-				pg = parseInt(/\-(\d+)/.exec(e.currentTarget.className)[1],10);
-				ACTIVE_PAGE = pg;
-				START = (ACTIVE_PAGE - 1) * PER_PAGE;
-				break;
 		}
 
 		renderTableView(Coins.list());
+
+		$('html, body').animate({
+			scrollTop: $('#coin-list').offset().top - $('#coin-list thead').height() - 10
+		}, 400);
 
 	};
 

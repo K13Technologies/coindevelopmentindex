@@ -202,34 +202,40 @@
 		}
 
 	}
+
+	tbody tr {
+		transition: 100ms opacity;
+	}
 }
 
-.pg-tools,
-.pgs {
+.pg-tools {
+
 	display:flex;
 	flex-flow:row nowrap;
 	justify-content:center;
 	align-items:center;
+	color:$grey-dk;
+	visibility:hidden;
+
+	&.initialized {
+		visibility:visible;
+	}
 
 	a {
 		display:block;
-		width:24px;
-		height:24px;
-		padding:0.3em;
-		margin:0 1em 1em;
+		margin:0 1em;
 		text-align:center;
-		line-height:0.8;
 
 		&.prev,
 		&.next {
 			font-size:2em;
 			padding:0.2em;
+
+			&.disabled {
+				color:$grey-md;
+			}
 		}
 
-		&.active {
-			border:1px solid $acc-purple;
-			border-radius:50%;
-		}
 	}
 }
 
