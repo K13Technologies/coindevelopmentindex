@@ -3,6 +3,8 @@
 jQuery(document).ready(function($) {
 	'use strict';
 
+	if(typeof HBS === 'undefined') { return false; }
+
 	var $footer = $('footer'),
 			$copy = $footer.find('.copyright-year'),
 			DONATE_AMT = 3;
@@ -22,8 +24,6 @@ jQuery(document).ready(function($) {
 	};
 
 	var onDonateLinkClicked = function(e) {
-
-		if(typeof HBS === 'undefined') { return false; }
 
 		var sym = $(e.currentTarget).closest('[class|="donate"]')[0]
 									.className.replace(/donate\-/, ''),
