@@ -140,6 +140,12 @@ footer {
 			flex-basis:100%;
 		}
 
+		a:link,
+		a:active,
+		a:visited {
+			color: $link-blue;
+		}
+
 		h5 {
 			margin:0.5em 0 1em;
 			opacity:1;
@@ -214,6 +220,10 @@ footer {
 	.modal-body {
 		padding:3em;
 		text-align:center;
+
+		.qrcode {
+			margin-bottom:2em;
+		}
 	}
 
 	.modal-footer {
