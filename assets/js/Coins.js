@@ -132,9 +132,10 @@ var Coins = (function($) {
 	var search = function(search) {
 		results = coins
 						.filter(function(coin) {
-							var regexp = new RegExp(search.regexp, 'ig');
+							var regexp = new RegExp(search.regexp, 'ig'),
+									tregexp = new RegExp(search.type, 'ig');
 
-							if(search.type !== 'All' && coin.type !== search.type) {
+							if(search.type !== 'All' && !tregexp.test(coin.type)) {
 								return false;
 							}
 							return regexp.test(coin.coinname) || regexp.test(coin.symbol);
