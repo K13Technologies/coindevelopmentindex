@@ -8,6 +8,7 @@ var Coins = (function($) {
 			fieldsfile = '/assets/json/form-fields.json',
 			rateAPI = 'https://min-api.cryptocompare.com/data/pricemulti',
 			initialized = false,
+			currSort = 'latest.rank',
 			coins, results, fields;
 
 	var getCoins = function() {
@@ -59,7 +60,7 @@ var Coins = (function($) {
 
 	var sort = function(prop, asc) {
 
-		prop = prop || 'latest.rank';
+		currSort = prop || currSort;
 		asc = typeof asc !== 'undefined' ? asc : true;
 
 		coins.sort(sorter);
@@ -69,15 +70,15 @@ var Coins = (function($) {
 
 			var nA, nB, arrA, arrB;
 
-			if(prop.split('.')[0] === 'latest') {
+			if(currSort.split('.')[0] === 'latest') {
 
-				if(prop.split('.')[1] === 'release') {
+				if(currSort.split('.')[1] === 'release') {
 					nA = a.releases[0] ? a.releases[0].publishedAt : null;
 					nB = b.releases[0] ? b.releases[0].publishedAt : null;
 				} else {
 					if(a.data) {
 						arrA = Object.keys(a.data).sort().reverse();
-						nA = a.data[arrA[0]][prop.split('.')[1]];
+						nA = a.data[arrA[0]][currSort.split('.')[1]];
 						if(nA) {
 							nA = $.isNumeric(nA) ? parseFloat(nA) : nA.toLowerCase();
 						} else {
@@ -88,7 +89,7 @@ var Coins = (function($) {
 					}
 					if(b.data) {
 						arrB = Object.keys(b.data).sort().reverse();
-						nB = b.data[arrB[0]][prop.split('.')[1]];
+						nB = b.data[arrB[0]][currSort.split('.')[1]];
 						if(nB) {
 							nB = $.isNumeric(nB) ? parseFloat(nB) : nB.toLowerCase();
 						} else {
@@ -101,11 +102,11 @@ var Coins = (function($) {
 
 			} else {
 
-				if(!a[prop]) { return 1; }
-				if(!b[prop]) { return -1; }
+				if(!a[currSort]) { return 1; }
+				if(!b[currSort]) { return -1; }
 
-				nA = $.isNumeric(a[prop]) ? parseFloat(a[prop]) : a[prop].toLowerCase();
-				nB = $.isNumeric(b[prop]) ? parseFloat(b[prop]) : b[prop].toLowerCase();
+				nA = $.isNumeric(a[currSort]) ? parseFloat(a[currSort]) : a[currSort].toLowerCase();
+				nB = $.isNumeric(b[currSort]) ? parseFloat(b[currSort]) : b[currSort].toLowerCase();
 
 			}
 

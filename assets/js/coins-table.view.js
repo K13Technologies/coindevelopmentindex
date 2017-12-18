@@ -33,6 +33,8 @@ jQuery(document).ready(function($) {
 			$(this).prepend(icons).wrapInner('<div class="sortable"></div>');
 		});
 
+		$('.coin-list').on('floatThead', onTheadFloated);
+
 		$('.coin-list').floatThead({
 			position: 'fixed',
 			top: 70
@@ -42,9 +44,18 @@ jQuery(document).ready(function($) {
 
 	};
 
+	var onTheadFloated = function(e, isFloated, $container) {
+
+			$('.tools').toggleClass('floated', isFloated);
+
+			$('#coin-search input').attr('placeholder', isFloated ? 'Search for cryptocoin' : 'Search for cryptocoin (e.g. Bitcoin or BTC)');
+
+	};
+
 	var onCoinSearched = function(e) {
 		var $s = $('[name="search"]'),
-				$icn = $('#coin-search').find('.fa'),
+				$searchdiv = $('#coin-search'),
+				$icn = $searchdiv.find('.fa'),
 				$t = $('[name="cointype"]:checked');
 
 		if($s.val().length === 0 && $t.val() === 'All') {
@@ -52,15 +63,20 @@ jQuery(document).ready(function($) {
 			return renderTableView(Coins.reset().list());
 		}
 
+		$searchdiv.addClass('searched');
+		scrollTableTop();
+
 		$icn
 			.removeClass($s.val() ? 'fa-search' : '').addClass($s.val() ? 'fa-close' : '')
 			.one('click', function(e) {
 				$s.val('');
+				$searchdiv.removeClass('searched');
 				$icn.removeClass('fa-close').addClass('fa-search');
 				renderTableView(Coins.reset().search({
 					regexp: $s.val(),
 					type: $t.val()
 				}));
+				scrollTableTop();
 			});
 
 		START = 0;
@@ -72,6 +88,16 @@ jQuery(document).ready(function($) {
 
 		buildPagination();
 
+	};
+
+	var onSearchIconClicked = function(e) {
+
+		$('#coin-search').toggleClass('expanded', !$('#coin-search').is('.searched'));
+		$('nav').toggleClass('show', !$('#coin-search').is('.expanded'));
+
+		if($('#coin-search').is('.expanded')) {
+			$('#coin-search').find('input').focus();
+		}
 	};
 
 	var onTableHeadClicked = function(e) {
@@ -107,8 +133,14 @@ jQuery(document).ready(function($) {
 								Math.min((START + PER_PAGE), Coins.list().length) +
 									' of ' + Coins.list().length;
 
+		if(Coins.list().length === 0) {
+			str = 'No results';
+		}
+
 		$('.pg-tools').find('.pgs').empty().html(str);
-		$('.pg-tools').addClass('initialized');
+		$('.pg-tools')
+			.addClass('initialized')
+			.toggleClass('noresults', Coins.list().length === 0);
 
 		$('.prev').toggleClass('disabled', START === 0);
 		$('.next').toggleClass('disabled', START + PER_PAGE > Coins.list().length);
@@ -153,15 +185,27 @@ jQuery(document).ready(function($) {
 				case 3 :
 					break;
 				case 4 :
-					$('html, body').animate({
-						scrollTop: $('.coin-list tbody').offset().top - 72 - 65
-					}, 400);
+					scrollTableTop();
 					clearInterval(timer);
 					break;
 			}
 			i++;
 		}, 200);
 
+	};
+
+	var scrollTableTop = function() {
+
+		var tableTop = $('.coin-list tbody').offset().top
+												- $('nav')[0].offsetHeight
+												- $('.coin-list thead')[0].offsetHeight
+												+ 6;
+
+		if(window.scrollY <= tableTop) { return false; }
+
+		$('html, body').animate({
+					scrollTop: tableTop
+				}, 400);
 	};
 
 
@@ -172,10 +216,11 @@ jQuery(document).ready(function($) {
 
 		$('#coin-search').on('keyup', onCoinSearched);
 		$('#search-type').on('change', onCoinSearched);
+		$('#coin-search i.fa').on('click', onSearchIconClicked);
 		$('.coin-list').on('click', 'th', onTableHeadClicked);
 		$('.pg-tools').on('click', 'a', onPaginationClicked);
 
-		renderTableView(Coins.sort('latest.rank', true).list(), function() {
+		renderTableView(Coins.sort().list(), function() {
 			$('[data-prop="latest.rank"]').trigger('click');
 		});
 
