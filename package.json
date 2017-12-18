@@ -29,6 +29,7 @@
   "homepage": "https://github.com/PatchChat/coindevindex-website#readme",
   "dependencies": {
     "bootstrap-beta": "^4.0.0-beta",
+    "floatthead": "^2.0.3",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
     "popper.js": "^1.13.0",

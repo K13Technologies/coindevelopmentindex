@@ -244,6 +244,7 @@ module.exports = function(grunt) {
             'node_modules/tether/dist/js/tether.min.js',
             'node_modules/bootstrap-beta/dist/js/bootstrap.min.js',
             'node_modules/handlebars/dist/handlebars.runtime.min.js',
+            'node_modules/floatthead/dist/jquery.floatThead.min.js',
             '<%= assetdir %>js/**/*.js',
             '!<%= assetdir %>js/vendor/*.js',
           ],

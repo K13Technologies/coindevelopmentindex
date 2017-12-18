@@ -20,9 +20,7 @@ jQuery(document).ready(function($) {
 		        	var html = template(curr);
 		        	return prev + html;
 		        },'');
-		  $('#coin-list tbody').html(list);
-
-		  buildPagination();
+		  $('.coin-list tbody').html(list);
 
 		  return cb && cb();
 
@@ -34,6 +32,13 @@ jQuery(document).ready(function($) {
 		$hdgs.each(function() {
 			$(this).prepend(icons).wrapInner('<div class="sortable"></div>');
 		});
+
+		$('.coin-list').floatThead({
+			position: 'fixed',
+			top: 70
+		});
+
+		$('.coin-list thead').addClass('initialized');
 
 	};
 
@@ -64,6 +69,9 @@ jQuery(document).ready(function($) {
 			regexp: $s.val(),
 			type: $t.val()
 		}));
+
+		buildPagination();
+
 	};
 
 	var onTableHeadClicked = function(e) {
@@ -80,6 +88,7 @@ jQuery(document).ready(function($) {
 
 		// reset pagination
 		START = 0;
+		buildPagination();
 
 		renderTableView(Coins.sort(prop, asc).list());
 
@@ -94,7 +103,9 @@ jQuery(document).ready(function($) {
 		// 	str += '<a class="pg-' + i + (i === ACTIVE_PAGE ? ' active' : '') + '" href="#">' + i + '</a>';
 		// }
 
-		var str = 'Showing ' + (START + 1) + '&mdash;' + Math.min((START + PER_PAGE), Coins.list().length) + ' of ' + Coins.list().length;
+		var str = 'Showing ' + (START + 1) + '&mdash;' +
+								Math.min((START + PER_PAGE), Coins.list().length) +
+									' of ' + Coins.list().length;
 
 		$('.pg-tools').find('.pgs').empty().html(str);
 		$('.pg-tools').addClass('initialized');
@@ -106,11 +117,13 @@ jQuery(document).ready(function($) {
 
 	var onPaginationClicked = function(e) {
 
-		var nav = e.currentTarget.className.replace(/\-\d/, '');
+		var nav = e.currentTarget.className.replace(/\-\d/, ''),
+				$pgs = $('.pgs'),
+				i = 0, timer;
 
 		e.preventDefault();
 
-		if($(e.currentTarget).is('.disabled')) return false;
+		if($(e.currentTarget).is('.disabled')) { return false; }
 
 		switch(nav) {
 
@@ -126,9 +139,28 @@ jQuery(document).ready(function($) {
 
 		renderTableView(Coins.list());
 
-		$('html, body').animate({
-			scrollTop: $('#coin-list').offset().top - $('#coin-list thead').height() - 10
-		}, 400);
+		timer = setInterval(function() {
+			switch(i) {
+				case 0 :
+					$pgs.addClass('hide');
+					break;
+				case 1 :
+		  		buildPagination();
+		  		break;
+	  		case 2 :
+					$pgs.removeClass('hide');
+					break;
+				case 3 :
+					break;
+				case 4 :
+					$('html, body').animate({
+						scrollTop: $('.coin-list tbody').offset().top - 72 - 65
+					}, 400);
+					clearInterval(timer);
+					break;
+			}
+			i++;
+		}, 200);
 
 	};
 
@@ -140,12 +172,11 @@ jQuery(document).ready(function($) {
 
 		$('#coin-search').on('keyup', onCoinSearched);
 		$('#search-type').on('change', onCoinSearched);
-		$('#coin-list').on('click', 'th', onTableHeadClicked);
+		$('.coin-list').on('click', 'th', onTableHeadClicked);
 		$('.pg-tools').on('click', 'a', onPaginationClicked);
 
-
-		renderTableView(Coins.list(), function() {
-			$('[data-prop="latest.rank"]').click();
+		renderTableView(Coins.sort('latest.rank', true).list(), function() {
+			$('[data-prop="latest.rank"]').trigger('click');
 		});
 
 	});
