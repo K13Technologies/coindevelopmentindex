@@ -9,6 +9,7 @@ define('CRYPTOCOMP_STATS', 'https://www.cryptocompare.com/api/data/socialstats')
 define('CRYPTOCOMP_PRICE', 'https://min-api.cryptocompare.com/data/pricemultifull');
 
 if(DEBUG) {
+	echo '*******DEBUG MODE*********<br>';
 	$json = fetchJSON(JSON_FILE);
 	if(!checkPermissions(JSON_FILE, '0777')) {
 		$error = errorOutput()->errors[0];
@@ -18,7 +19,8 @@ if(DEBUG) {
 		echo '</div>';
 		die;
 	}
-	fetchCryptoCompData($json);
+	if($_GET['service'] === 'data') fetchCryptoCompData($json);
+	if($_GET['service'] === 'price') fetchCryptoCompPrice($json);
 }
 
 
@@ -81,19 +83,23 @@ function fetchCryptoCompPrice($json) {
 
 			$prices = fetchJSON(CRYPTOCOMP_PRICE . '?fsyms=' . implode(',', $syms) . '&tsyms=USD');
 
-			for($j = $pointer; $j < $i; $j++) {
+			for($j = $pointer; $j <= $i; $j++) {
 
 				if(!is_object($json[$j]->price)) { $json[$j]->price = new stdClass(); }
 				$json[$j]->price->USD = $prices->RAW->{$json[$j]->symbol}->USD->PRICE;
 
 				if(!is_object($json[$j]->data)) { $json[$j]->data = new stdClass(); }
 				if(!is_object($json[$j]->data->{date('Y-W')})) { $json[$j]->data->{date('Y-W')} = new stdClass(); }
-				if(!is_array($json[$j]->data->{date('Y-W')}->volatility)) { $json[$j]->data->{date('Y-W')}->volatility = array(); }
-				$json[$j]->data->{date('Y-W')}->volatility[date('w')] = $prices->RAW->{$json[$j]->symbol}->USD->CHANGEPCTDAY;
+				if(!is_object($json[$j]->data->{date('Y-W')}->volatility)) { $json[$j]->data->{date('Y-W')}->volatility = new stdClass(); }
+				if(is_object($prices->RAW->{$json[$j]->symbol})) {
+					$json[$j]->data->{date('Y-W')}->volatility->{date('w')} = $prices->RAW->{$json[$j]->symbol}->USD->CHANGEPCTDAY;
+				}
 
 				if(DEBUG) {
 					echo '<br><br>';
-					var_dump($json[$j]);
+					echo $json[$j]->coinname . ' (' . $json[$j]->symbol . ')<br>';
+					echo $prices->RAW->{$json[$j]->symbol}->USD->CHANGEPCTDAY;
+					// var_dump($prices->RAW->{$json[$j]->symbol});
 					ob_flush();
 					flush();
 				}
@@ -102,13 +108,14 @@ function fetchCryptoCompPrice($json) {
 
 			// reset
 			$syms = array();
-			$pointer = $i;
+			$pointer = $i + 1;
 
 		}
 
 	}
 
 	if(DEBUG) {
+		// echo json_encode($json, JSON_PRETTY_PRINT);
 		echo '</pre>';
 	}
 
