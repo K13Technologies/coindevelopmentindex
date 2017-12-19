@@ -35,16 +35,11 @@ jQuery(document).ready(function($) {
 
 		$('.donate-modal').remove();
 
-		Coins.price([coin], 'USD', function(coinPrice) {
+		$modal = $(template(coin));
 
-			$modal = $(template(coinPrice[0]));
+		$modal.appendTo('body').modal();
 
-			$modal.appendTo('body').modal();
-
-			$modal.on('click', onWalletModalClicked);
-
-		});
-
+		$modal.on('click', onWalletModalClicked);
 
 	};
 

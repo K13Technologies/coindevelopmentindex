@@ -218,7 +218,9 @@
 		// &[data-prop$='forks'],
 		// &[data-prop$='stars'] {
 			width:10em;
-			transform:translateX(-33.333%);
+			@media screen and (min-width:500px) {
+				transform:translateX(-33.333%);
+			}
 		}
 		&[data-prop='volatility'] {
 			transform:translateX(-15%);
@@ -365,7 +367,7 @@
 
 @media only screen and (min-width:600px) {
 
-	#coin-list {
+	.coin-list {
 		th[data-prop] {
 			i.fa {
 				display:block;

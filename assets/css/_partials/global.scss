@@ -55,7 +55,7 @@ nav {
 	}
 
 	&.show .navbar-brand {
-			flex:1 1 18em;
+			flex:1 0 auto;
 			max-width: calc(100vw - 8em);
 	}
 
@@ -148,6 +148,7 @@ footer {
 			margin-bottom:3em;
 			padding:0;
 			text-align:center;
+			justify-content:center;
 		}
 
 		h5,
@@ -167,8 +168,8 @@ footer {
 		}
 
 		[class*='donate'] {
-			padding-right:2em;
-			padding-bottom:1em;
+			min-width:14em;
+			padding:0 1em 1em 0;
 
 			.rate {
 				display:block;
