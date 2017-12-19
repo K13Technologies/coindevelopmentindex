@@ -33,24 +33,23 @@ jQuery(document).ready(function($) {
 			$(this).prepend(icons).wrapInner('<div class="sortable"></div>');
 		});
 
-		$('.coin-list').on('floatThead', onTheadFloated);
+		// $('.coin-list').on('floatThead', onTheadFloated);
 
 		$('.coin-list').floatThead({
-			position: 'fixed',
-			top: 70
+			position: 'auto',
+			top: function() { return $('nav').outerHeight(); },
+			autoReflow: true
 		});
 
 		$('.coin-list thead').addClass('initialized');
 
 	};
 
-	var onTheadFloated = function(e, isFloated, $container) {
+	// var onTheadFloated = function(e, isFloated, $container) {
 
-			$('.tools').toggleClass('floated', isFloated);
+	// 		$('.tools').toggleClass('floated', isFloated);
 
-			$('#coin-search input').attr('placeholder', isFloated ? 'Search for cryptocoin' : 'Search for cryptocoin (e.g. Bitcoin or BTC)');
-
-	};
+	// };
 
 	var onCoinSearched = function(e) {
 		var $s = $('[name="search"]'),
@@ -92,11 +91,19 @@ jQuery(document).ready(function($) {
 
 	var onSearchIconClicked = function(e) {
 
-		$('#coin-search').toggleClass('expanded', !$('#coin-search').is('.searched'));
-		$('nav').toggleClass('show', !$('#coin-search').is('.expanded'));
+		$('.tools').toggleClass('expanded', !$('#coin-search').is('.searched'));
+		$('nav').toggleClass('show', !$('.tools').is('.expanded'));
 
-		if($('#coin-search').is('.expanded')) {
+		if($('.tools').is('.expanded')) {
 			$('#coin-search').find('input').focus();
+			$(document).on('click.tools', function(e) {
+				if($(e.target).is('#coin-search i.fa')) {
+					return false;
+				}
+				$(document).off('click.tools');
+				$('.tools').removeClass('expanded');
+				$(window).trigger('scroll');
+			});
 		}
 	};
 

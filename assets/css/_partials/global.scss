@@ -6,6 +6,10 @@ body {
 	font-family: AvenirNext,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto, "Helvetica Neue",Arial,sans-serif;
 }
 
+:focus {
+	outline: 1px dotted !important;
+}
+
 nav,
 header {
 	background-image: linear-gradient(to right, $hdr-blue, $hdr-green);
@@ -14,7 +18,7 @@ header {
 
 nav {
 	$nav: &;
-	height:72px;
+	// height:72px;
 	border-bottom:1px solid rgba(255,255,255,0.4);
 
 	.navbar-nav {
@@ -24,8 +28,12 @@ nav {
 	}
 
 	.navbar-brand {
+		display:inline-flex;
+		align-items:center;
 		flex:0 0 50px;
 		max-width:50px;
+		max-height:50px;
+		white-space:normal;
 		overflow:hidden;
 
 		&:link,
@@ -39,13 +47,16 @@ nav {
 		img {
 			margin-right:1em;
 		}
+
+		@media screen and (min-width:450px) {
+			white-space:nowrap;
+			transition: max-width 1800ms steps(22, end);
+		}
 	}
 
 	&.show .navbar-brand {
-			flex-grow:1;
-			flex-basis:18em;
-			max-width:100%;
-			transition: max-width 1800ms steps(22, end);
+			flex:1 1 18em;
+			max-width: calc(100vw - 8em);
 	}
 
 }
@@ -108,11 +119,6 @@ footer {
 	.footer-left {
 		max-width:32em;
 
-
-		@media only screen and (max-width:700px){
-			padding:0 3em;
-		}
-
 		h4 {
 			display:flex;
 			align-items:center;
@@ -140,6 +146,8 @@ footer {
 			order:-2;
 			flex-basis:100%;
 			margin-bottom:3em;
+			padding:0;
+			text-align:center;
 		}
 
 		h5,
@@ -181,6 +189,10 @@ footer {
 			flex-flow:row nowrap;
 			justify-content:center;
 			margin-bottom:3em;
+
+			h5 {
+				margin-bottom:0;
+			}
 
 			a {
 				padding:0 1.5em !important;
