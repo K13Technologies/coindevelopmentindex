@@ -6,8 +6,8 @@ define('LOCAL_FILE', dirname($_SERVER['DOCUMENT_ROOT']) . '/assets/json/data.jso
 
 define('JSON_FILE', isset($_REQUEST['local']) ? LOCAL_FILE : REMOTE_FILE);
 
-define('DEBUG', $_REQUEST['debug']);
-define('PROXY', $_REQUEST['proxy']);
+define('DEBUG', isset($_REQUEST['debug']) ? $_REQUEST['debug'] : false);
+define('PROXY', isset($_REQUEST['proxy']) ? $_REQUEST['proxy'] : false);
 
 $json = null;
 

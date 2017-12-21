@@ -69,6 +69,7 @@
 
 		case 'GET':
 		default:
+
 			if(isset($_GET['sort'])) {
 				out(sortJSON(fetchJSON(JSON_FILE), $_GET['sort'], isset($_GET['asc']) ? $_GET['asc'] : true));
 				break;
@@ -123,8 +124,8 @@
 				break;
 			}
 			out(getRecord(array(
-				'owner' => $_GET['owner'],
-				'name' => $_GET['name']
+				'coinname' => isset($_GET['coinname']) ? $_GET['coinname'] : null,
+				'symbol' => isset($_GET['symbol']) ? $_GET['symbol'] : null
 			)));
 			break;
 
