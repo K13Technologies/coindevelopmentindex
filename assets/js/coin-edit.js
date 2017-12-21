@@ -121,7 +121,7 @@ jQuery(document).ready(function($) {
                 } else {
                     $output.addClass('alert alert-success active').html(response[0].coinname + ' (' + response[0].symbol + ' updated successfully... Refreshing in <span class="count">' + count + '</span>');
                     window.history.pushState(response[0], '', '#' + response[0].symbol);
-                    // setInterval(function() { count--; $output.find('.count').text(count); if(count === 0) loco.reload(); }, 500);
+                    setInterval(function() { count--; $output.find('.count').text(count); if(count === 0) loco.reload(); }, 500);
                 }
             })
             .fail(function(err) {
