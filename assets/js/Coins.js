@@ -8,6 +8,8 @@ var Coins = (function($) {
 			fieldsfile = '/assets/json/form-fields.json',
 			rateAPI = 'https://min-api.cryptocompare.com/data/pricemulti',
 			initialized = false,
+			complete = false,
+			callbacks = [],
 			currSort = 'latest.rank',
 			coins, results, fields;
 
@@ -33,19 +35,29 @@ var Coins = (function($) {
 	};
 
 	var init = function(cb) {
-		if(initialized) {
+		callbacks.push(cb);
+		if(complete) {
+			processCallbacks();
+		} else if(initialized) {
 			return initialized;
 		} else {
-			initialized =  getCoins()
-							.then(function(data) {
-								coins = data;
-								return getFields();
-							})
-							.then(function(data2) {
-								fields = data2;
-								cb && cb();
-							});
-			return initialized;
+			initialized = getCoins()
+					.then(function(data) {
+						coins = data;
+						return getFields();
+					})
+					.then(function(data2) {
+						fields = data2;
+						complete = true;
+
+						processCallbacks();
+					});
+		}
+	};
+
+	var processCallbacks = function() {
+		while(callbacks.length > 0) {
+			callbacks.shift()();
 		}
 	};
 
