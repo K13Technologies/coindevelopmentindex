@@ -47,6 +47,7 @@
     "grunt-contrib-imagemin": "^2.0.1",
     "grunt-contrib-uglify": "^3.1.0",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-html-build": "^0.7.1",
     "grunt-import": "^1.0.3",
     "grunt-sass": "^2.0.0"
   }

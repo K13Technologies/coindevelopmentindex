@@ -108,11 +108,39 @@ module.exports = function(grunt) {
         },
         files: {
           expand: true,
-          cwd: './',
-          src: ['**/*.html', '!node_modules/**', '!build/**', '!assets/**'],
+          cwd: buildPathHTML,
+          src: '**/*.html',
           dest: buildPathHTML,
           ext: '.html'
         }
+    },
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // HTMLBUILD
+    //////////////////////////////////////////////////////////////////////////////////////////
+    htmlbuild: {
+      dist: {
+        src: ['**/*.html', '!node_modules/**', '!build/**', '!assets/**'],
+        dest: buildPathHTML,
+        options: {
+          basePath: true,
+          // scripts: {
+          //     templates: { '/assets/js/templates/*.js' }
+          // },
+          sections: {
+              head: '<%= assetdir %>templates/layout/head.html',
+              layout: {
+                header: '<%= assetdir %>templates/layout/header.html',
+                footer: '<%= assetdir %>templates/layout/footer.html'
+              }
+          },
+          data: {
+              // Data to pass to templates
+              version: "1.0",
+              title: "test",
+          }
+        }
+      }
     },
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -156,7 +184,7 @@ module.exports = function(grunt) {
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     clean : {
       builddir: {
-        src: ['build/assets/']
+        src: ['build/']
       },
       tmpdir: {
         src: ['build/**/tmp/']
@@ -283,6 +311,7 @@ module.exports = function(grunt) {
   // Load plugins
   grunt.loadNpmTasks('grunt-import');
   grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-html-build');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -298,6 +327,6 @@ module.exports = function(grunt) {
   grunt.registerTask('css', ['sass', 'cssmin', 'concat']);
   grunt.registerTask('js', ['import:js', 'uglify:js']);
   grunt.registerTask('cleanup', ['clean:builddir']);
-  grunt.registerTask('build', ['cleanup', 'css', 'js', 'handlebars', 'htmlmin', 'copy', 'clean:tmpdir', 'imagemin']);
+  grunt.registerTask('build', ['cleanup', 'css', 'js', 'handlebars', 'htmlbuild', 'htmlmin', 'copy', 'clean:tmpdir', 'imagemin']);
 
 };
