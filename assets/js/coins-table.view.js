@@ -2,7 +2,7 @@
 jQuery(document).ready(function($) {
 	'use strict';
 
-	if(typeof HBS === 'undefined') return false;
+	if(typeof HBS === 'undefined' || !$('.coin-list')[0]) return false;
 
 	var template = HBS['list-item'],
 			$hdgs = $('th[data-prop]'),
