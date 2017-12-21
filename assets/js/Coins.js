@@ -12,16 +12,13 @@ var Coins = (function($) {
 			coins, results, fields;
 
 	var getCoins = function() {
-
 		if(coins) {
+			// already fetched
 			return new Promise(function(resolve, reject) {
 				resolve(coins);
 			});
 		} else {
-			return $.ajax({
-				url: coinfile,
-				dataType: 'json'
-			});
+			return $.getJSON(coinfile);
 		}
 	};
 
@@ -31,27 +28,25 @@ var Coins = (function($) {
 				resolve(fields);
 			});
 		} else {
-			return $.ajax({
-				url: fieldsfile,
-				dataType: 'json'
-			});
+			return $.getJSON(fieldsfile);
 		}
 	};
 
 	var init = function(cb) {
-		return getFields()
+		if(initialized) {
+			return initialized;
+		} else {
+			initialized =  getCoins()
 							.then(function(data) {
-								fields = data;
-								return getCoins();
+								coins = data;
+								return getFields();
 							})
 							.then(function(data2) {
-								coins = data2;
-								initialized = true;
-								cb && cb({
-									coins: coins,
-									fields: fields
-								});
+								fields = data2;
+								cb && cb();
 							});
+			return initialized;
+		}
 	};
 
 	var file = function() {
@@ -129,6 +124,10 @@ var Coins = (function($) {
 		return results ? results.slice(start, end) : coins.slice(start, end);
 
 	};
+
+	var listFields = function() {
+		return fields;
+	}
 
 	var search = function(search) {
 		results = coins
@@ -215,6 +214,7 @@ var Coins = (function($) {
 
 	return {
 		init: init,
+		fields: listFields,
 		sort: sort,
 		list: list,
 		search: search,
