@@ -1,5 +1,6 @@
 /*! COINS */
 
+/* globals R */
 var Coins = (function($) {
 	'use strict';
 
@@ -79,62 +80,163 @@ var Coins = (function($) {
 
 	var sort = function(prop, asc) {
 
+		var sorter,
+				propArr,
+				sortFn = function(a,b) {
+
+					if(a === null) { return 1; }
+					if(b === null) { return -1; }
+
+					if(a === b) { return 0; }
+					return a < b ? -1 * (asc ? 1 : -1) : 1 * (asc ? 1 : -1);
+
+				},
+				sorters = {
+
+					'default': function(a,b) {
+
+						var nA, nB;
+
+						if(!a[currSort]) { return 1; }
+						if(!b[currSort]) { return -1; }
+
+						nA = $.isNumeric(a[currSort]) ? parseFloat(a[currSort]) : a[currSort].toLowerCase();
+						nB = $.isNumeric(b[currSort]) ? parseFloat(b[currSort]) : b[currSort].toLowerCase();
+
+						return sortFn(nA,nB);
+
+					},
+					latest: {
+						'default': function(a,b) {
+
+							var nA, nB, arrA, arrB;
+
+							if(a.data) {
+								arrA = Object.keys(a.data).sort().reverse();
+								nA = a.data[arrA[0]][currSort.split('.')[1]];
+								if(nA) {
+									nA = $.isNumeric(nA) ? parseFloat(nA) : nA.toLowerCase();
+								} else {
+									nA = null;
+								}
+							} else {
+								nA = null;
+							}
+							if(b.data) {
+								arrB = Object.keys(b.data).sort().reverse();
+								nB = b.data[arrB[0]][currSort.split('.')[1]];
+								if(nB) {
+									nB = $.isNumeric(nB) ? parseFloat(nB) : nB.toLowerCase();
+								} else {
+									nB = null;
+								}
+							} else {
+								nB = null;
+							}
+
+							return sortFn(nA,nB);
+						},
+						releases: function(a,b) {
+
+							var nA, nB;
+
+							nA = a.releases[0] ? a.releases[0].publishedAt : null;
+							nB = b.releases[0] ? b.releases[0].publishedAt : null;
+
+							return sortFn(nA,nB);
+						}
+					},
+					trend: function(a,b) {
+							var nA = true, nB = true, arrA, arrB;
+
+							if(a.data) {
+								arrA = Object.keys(a.data).sort().reverse();
+								if(!a.data[arrA[1]] || !a.data[arrA[0]]) nA = null;
+								if(!nA || !a.data[arrA[1]].rank || !a.data[arrA[0]].rank) nA = null;
+								if(nA) nA = a.data[arrA[0]].rank - a.data[arrA[1]].rank;
+							} else {
+								nA = null;
+							}
+							if(b.data) {
+								arrB = Object.keys(b.data).sort().reverse();
+								if(!b.data[arrB[1]] || !b.data[arrB[0]]) nB = null;
+								if(!nB || !b.data[arrB[1]].rank || !b.data[arrB[0]].rank) nB = null;
+								if(nB) nB = b.data[arrB[0]].rank - b.data[arrB[1]].rank;
+							} else {
+								nB = null;
+							}
+
+							return sortFn(nA,nB);
+					},
+					volatility: function(a,b) {
+							var nA, nB, arrA, arrB, sumA, sumB;
+
+							if(a.data) {
+								arrA = Object.keys(a.data).sort().reverse();
+								nA = a.data[arrA[0]].volatility;
+								if(nA) {
+									sumA = $.map(a.data[arrA[0]].volatility, function(val, idx) {
+													return val;
+												})
+												.reduce(function(prev,curr) {
+													return prev + curr;
+												}, 0);
+									nA =  sumA / $.makeArray(a.data[arrA[0]].volatility).length;
+								} else {
+									nA = null;
+								}
+							} else {
+								nA = null;
+							}
+							if(b.data) {
+								arrB = Object.keys(b.data).sort().reverse();
+								nB = b.data[arrB[0]].volatility;
+								if(nB) {
+									sumB = $.map(b.data[arrB[0]].volatility, function(val, idx) {
+													return val;
+												})
+												.reduce(function(prev,curr) {
+													return prev + curr;
+												}, 0);
+									nB = sumB / $.makeArray(b.data[arrB[0]].volatility).length;
+								} else {
+									nB = null;
+								}
+							} else {
+								nB = null;
+							}
+
+							return sortFn(nA,nB);
+					}
+				};
+
 		currSort = prop || currSort;
+		propArr = currSort.split('.').length > 1 ? currSort.split('.') : false;
 		asc = typeof asc !== 'undefined' ? asc : true;
+
+		if(propArr) {
+			sorter = sorters[propArr[0]][propArr[1]] ?
+								sorters[propArr[0]][propArr[1]] :
+								sorters[propArr[0]]['default'];
+		} else {
+			sorter = sorters[currSort] ?
+								sorters[currSort] :
+								sorters['default'];
+		}
+
+		// var ascSorter, sortByProp;
+
+		// ascSorter = asc ? R.ascend(R.path(currSort.split('.'))) : R.descend(R.path(currSort.split('.')));
+
+		// sortByProp = R.sortWith([
+		// 	ascSorter,
+		// 	R.ascend(R.path(['latest', 'rank']))
+		// ]);
+
+		// sortByProp(coins);
 
 		coins.sort(sorter);
 		if(results) results.sort(sorter);
-
-		function sorter(a,b) {
-
-			var nA, nB, arrA, arrB;
-
-			if(currSort.split('.')[0] === 'latest') {
-
-				if(currSort.split('.')[1] === 'release') {
-					nA = a.releases[0] ? a.releases[0].publishedAt : null;
-					nB = b.releases[0] ? b.releases[0].publishedAt : null;
-				} else {
-					if(a.data) {
-						arrA = Object.keys(a.data).sort().reverse();
-						nA = a.data[arrA[0]][currSort.split('.')[1]];
-						if(nA) {
-							nA = $.isNumeric(nA) ? parseFloat(nA) : nA.toLowerCase();
-						} else {
-							nA = null;
-						}
-					} else {
-						nA = null;
-					}
-					if(b.data) {
-						arrB = Object.keys(b.data).sort().reverse();
-						nB = b.data[arrB[0]][currSort.split('.')[1]];
-						if(nB) {
-							nB = $.isNumeric(nB) ? parseFloat(nB) : nB.toLowerCase();
-						} else {
-							nB = null;
-						}
-					} else {
-						nB = null;
-					}
-				}
-
-			} else {
-
-				if(!a[currSort]) { return 1; }
-				if(!b[currSort]) { return -1; }
-
-				nA = $.isNumeric(a[currSort]) ? parseFloat(a[currSort]) : a[currSort].toLowerCase();
-				nB = $.isNumeric(b[currSort]) ? parseFloat(b[currSort]) : b[currSort].toLowerCase();
-
-			}
-
-			if(nA === null) { return 1; }
-			if(nB === null) { return -1; }
-
-			if(nA === nB) { return 0; }
-			return nA < nB ? -1 * (asc ? 1 : -1) : 1 * (asc ? 1 : -1);
-		}
 
 		return Coins;
 
