@@ -6,9 +6,7 @@ jQuery(document).ready(function($) {
 
     var $coinForm = $('form[name="coin"]'),
         $coinSel = $('select#coin'),
-        $githubBtn = $('button[name="github"]'),
-        $cryptoBtn = $('button[name="cryptocomp"]'),
-        $coinmarketBtn = $('button[name="coinmarket"]'),
+        $apiBtns = $('button[data-endpoint]'),
         $deleteBtn = $('button[name="delete"]'),
         $fields = $('.auto-fields'),
         $output = $('#output'),
@@ -98,16 +96,15 @@ jQuery(document).ready(function($) {
 
     var handleForm = function(e) {
 
+        var status = $coinSel.val() === 'new' ? 'created' : 'updated';
+
         e.preventDefault();
 
         $coinForm.find('input:disabled').prop('disabled', false);
 
         $output.addClass('alert alert-secondary active').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Sending JSON...');
 
-        $.post({
-              url: 'http://api.coindev.local' + loco.search,
-              data: $coinForm.serialize()
-            })
+        Coins.update($coinForm.serializeArray())
             .done(function(response) {
                 var errors = response.errors,
                     out = '', count = 3;
@@ -119,94 +116,54 @@ jQuery(document).ready(function($) {
                     $output.addClass('alert alert-danger active').html(out);
                     return;
                 } else {
-                    $output.addClass('alert alert-success active').html(response[0].coinname + ' (' + response[0].symbol + ' updated successfully... Refreshing in <span class="count">' + count + '</span>');
+                    $output.addClass('alert alert-success active').html(
+                        response[0].coinname + ' (' + response[0].symbol + ') ' +
+                            status + ' successfully... Refreshing in <span class="count">' + count + '</span>');
                     window.history.pushState(response[0], '', '#' + response[0].symbol);
                     setInterval(function() { count--; $output.find('.count').text(count); if(count === 0) loco.reload(); }, 500);
                 }
             })
             .fail(function(err) {
-                $output.addClass('alert alert-danger active').html(err);
+                $output.addClass('alert alert-danger active').html(err.responseText);
             })
             .always(function() {
                 $coinForm.find('input:disabled').prop('disabled', true);
             });
     };
 
-    var githubFetch = function(e) {
+    var apiFetch = function(e) {
 
-        $coinForm.find('input:disabled').prop('disabled', false);
+        var service = $(this).text(),
+            endpoint = $(this).data('endpoint'),
+            reqs = $(this).data('reqs').split(','),
+            invalid = reqs.reduce(function(prev, curr) {
+                return prev +
+                        ($('input[name="' + curr + '"]').val() === '' ? 'You must provide the ' + curr + ' for the coin.<br>' : '');
+            }, '');
 
-        if($('input[name="owner"]').val() === '' || $('input[name="name"]').val()  === '') {
-            $output.addClass('alert alert-danger active').text('You must provide the owner and name for coin.');
+        if(invalid.length > 0) {
+            $output.addClass('alert alert-danger active').html(invalid);
             hideAlert(3000);
             return false;
         }
 
-        $output.addClass('alert alert-secondary active').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Contacting Github API...');
+        $output.addClass('alert alert-secondary active').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Contacting ' + service + '...');
 
-        $.post({
-              url: 'http://api.coindev.local' + loco.search,
-              data: $coinForm.serialize() + '&githubfetch=1'
-            })
+        Coins.fetch($coinForm.serializeArray(), endpoint)
             .done(function(response) {
-
-                // console.log(response);
-                var errors = response.errors,
-                    out = '';
-
-                if(errors && errors.length > 0) {
-                    errors.forEach(function(error) {
-                        out += '<b>ERROR: ' + error.type + '</b> ' + error.message;
-                    });
-                    $output.addClass('alert alert-danger active').html(out);
-                    $output.one('click', hideAlert);
-                    return;
-                } else {
-                    $output.addClass('alert alert-success active').html('Found data for ' + response[0].owner + '/' + response[0].name);
-                    mapToFields(response[0]);
-                    hideAlert();
-                }
-
-            })
-            .fail(function(err) {
-                console.log(err);
-                $output.addClass('alert alert-danger active').html(err);
-            })
-            .always(function() {
-                $coinForm.find('input:disabled').prop('disabled', true);
-            });
-    };
-
-
-    var cryptocompFetch = function(e) {
-
-        if($('input[name="symbol"]').val()  === '') {
-            $output.addClass('alert alert-danger active').text('You must provide the symbol for the coin.');
-            hideAlert(3000);
-            return false;
-        }
-
-        $output.addClass('alert alert-secondary active').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Contacting CryptoCompare API...');
-
-        $.post({
-              url: 'http://api.coindev.local' + loco.search,
-              data: $coinForm.serialize() + '&cryptocompfetch=price'
-            })
-            .done(function(response) {
-
                 console.log(response);
                 var errors = response.errors,
                     out = '';
 
                 if(errors && errors.length > 0) {
                     errors.forEach(function(error) {
-                        out += '<b>ERROR: ' + error.type + '</b> ' + error.message;
+                        out += '<b>ERROR: ' + error.type + '</b> ' + error.message + '<br>';
                     });
                     $output.addClass('alert alert-danger active').html(out);
                     $output.one('click', hideAlert);
                     return;
                 } else {
-                    $output.addClass('alert alert-success active').html('Found data for ' + response[0].owner + '/' + response[0].name);
+                    $output.addClass('alert alert-success active').html('Found data for ' + response[0].coinname + ' (' + response[0].symbol + ')');
                     hideAlert();
                 }
 
@@ -214,56 +171,7 @@ jQuery(document).ready(function($) {
 
             })
             .fail(function(err) {
-                console.log(err);
-                $output.addClass('alert alert-danger active').html(err);
-            })
-            .always(function() {
-                $coinForm.find('input:disabled').prop('disabled', true);
-            });
-    };
-
-    var coinmarketFetch = function(e) {
-
-        if($('input[name="symbol"]').val()  === '') {
-            $output.addClass('alert alert-danger active').text('You must provide the symbol for the coin.');
-            hideAlert(3000);
-            return false;
-        }
-
-        $output.addClass('alert alert-secondary active')
-            .html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Contacting CoinMarketCap API...');
-
-        $.post({
-              url: 'http://api.coindev.local' + loco.search,
-              data: $coinForm.serialize() + '&coinmarketfetch=1'
-            })
-            .done(function(response) {
-
-                console.log(response);
-                var errors = response.errors,
-                    out = '';
-
-                if(errors && errors.length > 0) {
-                    errors.forEach(function(error) {
-                        out += '<b>ERROR: ' + error.type + '</b> ' + error.message;
-                    });
-                    $output.addClass('alert alert-danger active').html(out);
-                    $output.one('click', hideAlert);
-                    return;
-                }
-                if(response.length > 0) {
-                    $output.addClass('alert alert-success active').html('Found data for ' + response[0].coinname + ' (' + response[0].symbol + ')');
-                    mapToFields(response[0]);
-                    hideAlert();
-                } else {
-                    $output.addClass('alert alert-danger active').text('Could not find data for ' + $('input[name="symbol"]').val());
-                    hideAlert(4000);
-                }
-
-            })
-            .fail(function(err) {
-                console.log(err);
-                $output.addClass('alert alert-danger active').html(err);
+                $output.addClass('alert alert-danger active').html(err.responseText);
             })
             .always(function() {
                 $coinForm.find('input:disabled').prop('disabled', true);
@@ -291,7 +199,7 @@ jQuery(document).ready(function($) {
 
                 if(errors && errors.length > 0) {
                     errors.forEach(function(error) {
-                        out += '<b>ERROR: ' + error.type + '</b> ' + error.message;
+                        out += '<b>ERROR: ' + error.type + '</b> ' + error.message + '<br>';
                     });
                     $output.addClass('alert alert-danger active').html(out);
                     $output.one('click', hideAlert);
@@ -492,9 +400,7 @@ jQuery(document).ready(function($) {
         $coinSel.focus();
 
         $coinSel.on('change', handleOwnerChange);
-        $githubBtn.on('click', githubFetch);
-        $cryptoBtn.on('click', cryptocompFetch);
-        $coinmarketBtn.on('click', coinmarketFetch);
+        $apiBtns.on('click', apiFetch);
         $deleteBtn.on('click', deleteRecord);
         $coinForm.on('click', '.undo', revertField);
         $coinForm.on('click', '.coinnav', onNavClick);

@@ -3,15 +3,21 @@
 var Coins = (function($) {
 	'use strict';
 
-	var coinfile = 'https://api.myjson.com/bins/909wb',
-	// var coinfile = '/assets/json/data.json',
-			fieldsfile = '/assets/json/form-fields.json',
-			rateAPI = 'https://min-api.cryptocompare.com/data/pricemulti',
-			initialized = false,
-			complete = false,
-			callbacks = [],
-			currSort = 'latest.rank',
-			coins, results, fields;
+	var params = window.location.search.slice(1).split('&')
+				.reduce(function(prev,curr) {
+					var param = curr.split('=');
+					prev[param[0]] = param[1] ? param[1] : true;
+					return prev;
+				}, {}),
+	coinfile = params.local ? '/assets/json/data.json' : 'https://api.myjson.com/bins/909wb',
+	fieldsfile = '/assets/json/form-fields.json',
+	coinAPI = 'http://api.coindev.local',
+	rateAPI = 'https://min-api.cryptocompare.com/data/pricemulti',
+	initialized = false,
+	complete = false,
+	callbacks = [],
+	currSort = 'latest.rank',
+	coins, results, fields;
 
 	var getCoins = function() {
 		if(coins) {
@@ -20,7 +26,7 @@ var Coins = (function($) {
 				resolve(coins);
 			});
 		} else {
-			return $.getJSON(coinfile);
+			return $.getJSON(coinfile, params);
 		}
 	};
 
@@ -30,12 +36,17 @@ var Coins = (function($) {
 				resolve(fields);
 			});
 		} else {
-			return $.getJSON(fieldsfile);
+			return $.getJSON(fieldsfile, params);
 		}
 	};
 
-	var init = function(cb) {
+	var init = function(q) {
+
+		var cb = 'function' === typeof arguments[arguments.length - 1] ?
+					arguments[arguments.length - 1] : false;
+
 		callbacks.push(cb);
+
 		if(complete) {
 			processCallbacks();
 		} else if(initialized) {
@@ -139,7 +150,7 @@ var Coins = (function($) {
 
 	var listFields = function() {
 		return fields;
-	}
+	};
 
 	var search = function(search) {
 		results = coins
@@ -183,6 +194,34 @@ var Coins = (function($) {
 							}
 							return ret;
 						});
+	};
+
+	var update = function(coin) {
+
+		var data =  Object.keys(params)
+												.filter(function(key) { return key.length > 0; })
+												.map(function(key) { return { name: key, value: params[key] } })
+
+      return $.post({
+          url: coinAPI,
+          data: coin.concat(data)
+        });
+	};
+
+	var fetch = function(coin, endpoint) {
+
+		var data =  Object.keys(params)
+												.filter(function(key) { return key.length > 0; })
+												.map(function(key) { return { name: key, value: params[key] }; })
+												.concat([{
+													name: endpoint,
+													value: /=/.test(endpoint) ? endpoint.split('=')[1] : true
+												}]);
+
+      return $.post({
+          url: coinAPI,
+          data: coin.concat(data)
+        });
 	};
 
 	var price = function(coins, to) {
@@ -230,8 +269,10 @@ var Coins = (function($) {
 		sort: sort,
 		list: list,
 		search: search,
+		fetch: fetch,
 		find: find,
 		filter: filter,
+		update: update,
 		price: price,
 		reset: reset
 	};
