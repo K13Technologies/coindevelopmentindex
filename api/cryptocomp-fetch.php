@@ -11,6 +11,7 @@ define('CRYPTOCOMP_PRICE', 'https://min-api.cryptocompare.com/data/pricemultiful
 if(DEBUG) {
 	echo '*******DEBUG MODE*********<br>';
 	$json = fetchJSON(JSON_FILE);
+	if(errorOutput()->errors) var_dump(errorOutput()->errors);
 	if(!checkPermissions(JSON_FILE, '0777')) {
 		$error = errorOutput()->errors[0];
 		echo '<div style="font-family:sans-serif">';
@@ -27,6 +28,8 @@ if(DEBUG) {
 function fetchCryptoCompData($json) {
 
 	$coins = (array) fetchJSON(CRYPTOCOMP_LIST)->Data;
+
+	if(errorOutput()->errors) return errorOutput();
 
 	if(DEBUG) echo '<pre>';
 
@@ -82,6 +85,8 @@ function fetchCryptoCompPrice($json) {
 		if($i % 10 === 0 || $i === count($json) - 1) {
 
 			$prices = fetchJSON(CRYPTOCOMP_PRICE . '?fsyms=' . implode(',', $syms) . '&tsyms=USD');
+
+			if(errorOutput()->errors) return errorOutput();
 
 			for($j = $pointer; $j <= $i; $j++) {
 

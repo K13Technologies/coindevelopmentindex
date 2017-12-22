@@ -5,7 +5,9 @@ include_once('./utils.php');
 include_once('./token.php');
 
 if(DEBUG) {
+	echo '*******DEBUG MODE*********<br>';
 	$json = fetchJSON(JSON_FILE);
+	if(errorOutput()->errors) var_dump(errorOutput()->errors);
 	if(!checkPermissions(JSON_FILE, '0777')) {
 		$error = errorOutput()->errors[0];
 		echo '<div style="font-family:sans-serif">';
@@ -153,6 +155,7 @@ QUERY;
 		echo '</pre>';
 	}
 
-	// if($hasErrors) return errorOutput();
+	// only return errors if it is a single fetch
+	if(count($json) === 1 && $hasErrors) return errorOutput();
 	return $json;
 }

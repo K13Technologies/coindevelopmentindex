@@ -7,7 +7,9 @@ include_once('./token.php');
 define('COINMARKET_LIST', 'https://api.coinmarketcap.com/v1/ticker/');
 
 if(DEBUG) {
+	echo '*******DEBUG MODE*********<br>';
 	$json = fetchJSON(JSON_FILE);
+	if(errorOutput()->errors) var_dump(errorOutput()->errors);
 	if(!checkPermissions(JSON_FILE, '0777')) {
 		$error = errorOutput()->errors[0];
 		echo '<div style="font-family:sans-serif">';
@@ -22,6 +24,8 @@ if(DEBUG) {
 function fetchCoinMarketData($json) {
 
 	$coins = fetchJSON(COINMARKET_LIST);
+
+	if(errorOutput()->errors) return errorOutput();
 
 	if(DEBUG) echo '<pre>';
 
