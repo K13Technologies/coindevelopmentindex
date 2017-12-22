@@ -95,7 +95,7 @@
 					array_map(function($err){echo $err->type . $err->message;}, errorOutput()->errors);
 					break;
 				}
-				out(write(fetchGithubData(fetchJSON()), isset($_GET['local']) ? LOCAL_FILE : JSON_FILE));
+				out(write(fetchGithubData(fetchJSON(), true), isset($_GET['local']) ? LOCAL_FILE : JSON_FILE));
 				break;
 			}
 			if(isset($_GET['coinmarketfetchall'])) {
@@ -124,6 +124,10 @@
 				break;
 			}
 			if(isset($_GET['backup'])) {
+				if(!checkPermissions(dirname(LOCAL_FILE), '0777')) {
+					array_map(function($err){echo $err->type . $err->message;}, errorOutput()->errors);
+					break;
+				}
 				out(backup(JSON_FILE));
 				break;
 			}

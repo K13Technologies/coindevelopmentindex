@@ -50,6 +50,7 @@ jQuery(document).ready(function($) {
                                 .text(field[a])
                                 .css('font-weight', field.required ? 'bold' : '');
                         case 'disabled':
+                            $el.attr('data-disabled', field[a]);
                         case 'required':
                             $el.prop(a, field[a]);
                             break;
@@ -147,6 +148,8 @@ jQuery(document).ready(function($) {
             return false;
         }
 
+        $coinForm.find('[data-disabled="true"]').prop('disabled', false);
+
         $output.addClass('alert alert-secondary active').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Contacting ' + service + '...');
 
         Coins.fetch($coinForm.serializeArray(), endpoint)
@@ -174,7 +177,7 @@ jQuery(document).ready(function($) {
                 $output.addClass('alert alert-danger active').html(err.responseText);
             })
             .always(function() {
-                $coinForm.find('input:disabled').prop('disabled', true);
+                $coinForm.find('[data-disabled="true"]').prop('disabled', true);
             });
     };
 

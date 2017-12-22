@@ -19,7 +19,7 @@ if(DEBUG) {
 	fetchGithubData($json);
 }
 
-function fetchGithubData($json) {
+function fetchGithubData($json, $bulk=false) {
 
 	$hasErrors = false;
 
@@ -110,12 +110,33 @@ QUERY;
 			continue;
 		}
 
-		$repo->id = $response->id;
-		$repo->description = $response->description;
-		$repo->createdAt = $response->createdAt;
-		$repo->url = $response->url;
-		$repo->homepageUrl = $response->homepageUrl;
-		$repo->pushedAt = $response->pushedAt;
+		// only set these if we're in coin-edit so that
+		// they can be reverted if necessary,  prevent
+		// overwriting of manually entered data
+		if(!$bulk) {
+			$repo->id = $response->id;
+			$repo->description = $response->description;
+			$repo->createdAt = $response->createdAt;
+			$repo->url = $response->url;
+			$repo->homepageUrl = $response->homepageUrl;
+			$repo->pushedAt = $response->pushedAt;
+
+			$langs = array();
+			if(count($response->languages->edges) > 0) :
+				foreach($response->languages->edges as $obj) {
+					$langs[] = $obj->node->name;
+				}
+			endif;
+			$repo->languages = $langs;
+		}
+
+		// to track changes, we put this into a data object
+		// in the repo with the key of YEAR-WEEK# (e.g. 2017-24)
+		if(!is_object($repo->data)) { $repo->data = new stdClass(); }
+		if(!is_object($repo->data->{date('Y-W')})) { $repo->data->{date('Y-W')} = new stdClass(); }
+		$repo->data->{date('Y-W')}->stars = $response->stargazers->totalCount;
+		$repo->data->{date('Y-W')}->users = $response->mentionableUsers->totalCount;
+		$repo->data->{date('Y-W')}->forks = $response->forks->totalCount;
 
 		$releases = array();
 		if(count($response->releases->edges) > 0) :
@@ -129,22 +150,6 @@ QUERY;
 		endif;
 		$repo->releases = array_reverse($releases);
 
-		$langs = array();
-		if(count($response->languages->edges) > 0) :
-			foreach($response->languages->edges as $obj) {
-				$langs[] = $obj->node->name;
-			}
-		endif;
-		$repo->languages = $langs;
-
-		// to track changes, we put this into a data object
-		// in the repo with the key of YEAR-WEEK# (e.g. 2017-24)
-		if(!is_object($repo->data)) { $repo->data = new stdClass(); }
-		if(!is_object($repo->data->{date('Y-W')})) { $repo->data->{date('Y-W')} = new stdClass(); }
-		$repo->data->{date('Y-W')}->stars = $response->stargazers->totalCount;
-		$repo->data->{date('Y-W')}->users = $response->mentionableUsers->totalCount;
-		$repo->data->{date('Y-W')}->forks = $response->forks->totalCount;
-
 		if(DEBUG) echo json_encode($repo, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 
 	}
@@ -156,6 +161,6 @@ QUERY;
 	}
 
 	// only return errors if it is a single fetch
-	if(count($json) === 1 && $hasErrors) return errorOutput();
+	if(!$bulk && $hasErrors) return errorOutput();
 	return $json;
 }
