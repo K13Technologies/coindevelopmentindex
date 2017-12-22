@@ -277,7 +277,7 @@ jQuery(document).ready(function($) {
 			if(!data[arr[1]] || !data[arr[0]]) return '';
 			if(!data[arr[1]].rank || !data[arr[0]].rank) return '';
 
-			chg = data[arr[1]].rank - data[arr[0]].rank;
+			chg = data[arr[0]].rank - data[arr[1]].rank;
 			if(chg === 0) return '-';
 
 			return chg > 0 ? 'Rising' : 'Falling';
@@ -294,18 +294,83 @@ jQuery(document).ready(function($) {
 			if(!data[arr[1]] || !data[arr[0]]) return '';
 			if(!data[arr[1]].rank || !data[arr[0]].rank) return '';
 
-			chg = data[arr[1]].rank - data[arr[0]].rank;
+			chg = data[arr[0]].rank - data[arr[1]].rank;
 			if(chg === 0) return '';
 
-			return chg > 0 ? '(+' + chg + ')' : '(' + chg + ')';
+			return new Handlebars.SafeString(
+				'<span class="vs ' +
+						(chg > 0 ? 'text-success"> (+' + chg + ')' : 'text-danger"> (' + chg + ')') +
+						'</span>'
+				);
 		} else {
 			return data;
 		}
 	});
 
+	Handlebars.registerHelper('changeUsers', function(data) {
+		var arr, chg;
+		if(data) {
+			arr = Object.keys(data).sort().reverse();
+			if(!data[arr[1]] || !data[arr[0]]) return '';
+			if(!data[arr[1]].users || !data[arr[0]].users) return '';
+
+			chg = data[arr[0]].users - data[arr[1]].users;
+			if(chg === 0) return '';
+
+			return new Handlebars.SafeString(
+						'<span class="vs ' +
+						(chg > 0 ? 'text-success"> (+' + chg + ')' : 'text-danger"> (' + chg + ')') +
+						'</span>'
+				);
+		} else {
+			return data;
+		}
+	});
+
+	Handlebars.registerHelper('changeForks', function(data) {
+		var arr, chg;
+		if(data) {
+			arr = Object.keys(data).sort().reverse();
+			if(!data[arr[1]] || !data[arr[0]]) return '';
+			if(!data[arr[1]].forks || !data[arr[0]].forks) return '';
+
+			chg = data[arr[0]].forks - data[arr[1]].forks;
+			if(chg === 0) return '';
+
+			return new Handlebars.SafeString(
+				'<span class="vs ' +
+						(chg > 0 ? 'text-success"> (+' + chg + ')' : 'text-danger"> (' + chg + ')') +
+						'</span>'
+				);
+		} else {
+			return data;
+		}
+	});
+
+	Handlebars.registerHelper('changeStars', function(data) {
+		var arr, chg;
+		if(data) {
+			arr = Object.keys(data).sort().reverse();
+			if(!data[arr[1]] || !data[arr[0]]) return '';
+			if(!data[arr[1]].stars || !data[arr[0]].stars) return '';
+
+			chg = data[arr[0]].stars - data[arr[1]].stars;
+			if(chg === 0) return '';
+
+			return new Handlebars.SafeString(
+				'<span class="vs ' +
+						(chg > 0 ? 'text-success"> (+' + chg + ')' : 'text-danger"> (' + chg + ')') +
+						'</span>'
+				);
+		} else {
+			return data;
+		}
+	});
 
 	Handlebars.registerHelper('volatility', function(data) {
-		var arr, week, sum, avg;
+
+		var arr, week, sum, avg, vs, sign, vssign, color;
+
 		if(data) {
 			arr = Object.keys(data).sort().reverse();
 			if(!data[arr[0]].volatility) return '';
@@ -320,7 +385,27 @@ jQuery(document).ready(function($) {
 
 			avg = sum / week.length;
 
-			return isNaN(avg) ? '' : avg.toFixed(2) + '%';
+			if(isNaN(avg)) return '';
+
+			sign = avg > 0 ? '+' : '';
+
+			vs = avg / Coins.indexAvg('volatility');
+
+			if(vs > 0) {
+				vssign = '+';
+				color = 'text-success';
+			} else if (vs < 0) {
+				vssign = '';
+				color = 'text-danger';
+			} else {
+				vssign = '';
+				color = 'text-secondary';
+			}
+
+			return new Handlebars.SafeString(
+				'<span>'  + sign + avg.toFixed(2) + '%</span> '
+					+ '<span class="vs ' + color + '">(' + vssign + vs.toFixed(2) + '%)</span>'
+			);
 
 		} else {
 			return data;

@@ -17,6 +17,7 @@ var Coins = (function($) {
 	complete = false,
 	callbacks = [],
 	currSort = 'latest.rank',
+	indexAvgs = {},
 	coins, results, fields;
 
 	var getCoins = function() {
@@ -244,6 +245,49 @@ var Coins = (function($) {
 		});
 	};
 
+	var indexAvg = function(field) {
+
+		var arr, week, sum, avg, idxSum;
+
+		if(indexAvgs[field]) return indexAvgs[field];
+
+		idxSum = coins.reduce(function(prev,curr) {
+
+			var data = curr.data,
+					dataArr;
+
+			if(data) {
+
+				arr = Object.keys(data).sort().reverse();
+
+				if(!data[arr[0]][field]) return prev;
+
+				dataArr = $.isPlainObject(data[arr[0]][field]) ?
+									$.map(data[arr[0]][field], function(val, idx) {
+										return val;
+									})
+									: [data[arr[0]][field]];
+
+				sum = dataArr.reduce(function(prev,curr) {
+					return prev + ($.isNumeric(curr) ? curr : 0);
+				}, 0);
+
+				avg = sum / dataArr.length;
+
+				if(!$.isNumeric(avg)) return prev;
+				return prev + avg;
+			}
+
+			return prev;
+
+		}, 0);
+
+ 		indexAvgs[field] = idxSum / coins.length;
+
+		return idxSum;
+
+	};
+
 	var parseNullChars = function() {
 
 		getFields()
@@ -272,6 +316,7 @@ var Coins = (function($) {
 		fetch: fetch,
 		find: find,
 		filter: filter,
+		indexAvg: indexAvg,
 		update: update,
 		price: price,
 		reset: reset

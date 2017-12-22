@@ -105,14 +105,31 @@
 	th {
 		padding-bottom:0.2em;
 		text-align:left;
+		vertical-align:top !important;
 
 		@media screen and (max-width:600px) {
 			padding-right:0;
 		}
 
+		span {
+			display:inline-block;
+			width:100%;
+			text-align:center;
+
+			&.vs {
+				color:rgba(0,0,0,0.6);
+				font-size:0.7em;
+				font-weight:normal;
+			}
+		}
+
 		h2 {
+			display:flex;
+			align-items:flex-end;
 			font-size:1rem;
 			line-height:1.3;
+			min-height:2.5em;
+			margin-bottom:0;
 
 			@media screen and (max-width:600px) {
 				font-size:0.9rem;
@@ -123,13 +140,14 @@
 		}
 
 		.sortable {
-			display:flex;
-			flex-flow:row nowrap;
-			justify-content:space-between;
-			align-items:center;
+			position:relative;
+			// display:flex;
+			// flex-flow:row wrap;
+			// justify-content:space-between;
+			// align-items:center;
 
 			h2 {
-				margin-left:0.2em;
+				padding-left:20px;
 			}
 		}
 
@@ -137,6 +155,8 @@
 			font-size:0.8em;
 			opacity:0.3;
 			display:none;
+			position:absolute;
+			top:40%;
 		}
 
 		i.fa-arrow-up {
@@ -182,14 +202,24 @@
 
 	td {
 		font-size:1em;
+		padding:0.5em;
 
 		&.tdpad {
 			padding-left:3em;
 		}
 		.rank-change {
 			font-size:0.9em;
-			color:$grey-dk;
 		}
+
+		span {
+			display:inline-block;
+
+			&.vs {
+				color:$grey-dk;
+				font-size:0.8em;
+			}
+		}
+
 		&[data-prop$='rank'] {
 			width:4em;
 		}
@@ -212,17 +242,24 @@
 			text-align:right;
 			padding-left:1.7em;
 		}
-		&[data-prop$='trend'],
+		&[data-prop$='rank'],
 		&[data-prop='team'],
 		&[data-prop$='users'] {
 		// &[data-prop$='forks'],
 		// &[data-prop$='stars'] {
-			width:10em;
+			// width:10em;
 			@media screen and (min-width:500px) {
 				transform:translateX(-33.333%);
 			}
 		}
+		&[data-prop$='trend'] {
+			@media screen and (min-width:500px) {
+				transform:translateX(-15%);
+			}
+		}
 		&[data-prop='volatility'] {
+			display:flex;
+			flex-flow: column nowrap;
 			transform:translateX(-15%);
 		}
 
