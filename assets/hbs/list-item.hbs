@@ -6,8 +6,8 @@
 	<td class="volatility text-right" data-prop="volatility">{{volatility data}}</td> <!-- average of price change over current week -->
 	<td class="blockchain tdpad" data-prop="blockchain">{{blockchain}}</td>  <!-- blockchain -->
 	<td class="team text-right"  data-prop="team">{{team}}</td>  <!-- developer team -->
-	<td class="forks text-right " data-prop="latest.forks">{{latestForks data}} {{changeForks data}}</td>  <!-- forks -->
-	<td class="users text-right " data-prop="latest.users">{{latestUsers data}} {{changeUsers data}}</td> <!-- contributors to core repository -->
-	<td class="stars text-right " data-prop="latest.stars">{{latestStars data}} {{changeStars data}}</td>  <!-- starred -->
+	<td class="forks text-right " data-prop="latest.forks"><span>{{latestForks data}}</span><br>{{changeForks data}}</td>  <!-- forks -->
+	<td class="users text-right " data-prop="latest.users"><span>{{latestUsers data}}</span><br>{{changeUsers data}}</td> <!-- contributors to core repository -->
+	<td class="stars text-right " data-prop="latest.stars"><span>{{latestStars data}}</span><br>{{changeStars data}}</td>  <!-- starred -->
 	<!-- <td class="release" data-prop="latest.release">{{dateFormat releases.0.publishedAt}}</td> --> <!-- latest release -->
 </tr>

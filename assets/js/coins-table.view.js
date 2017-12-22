@@ -314,12 +314,12 @@ jQuery(document).ready(function($) {
 			if(!data[arr[1]] || !data[arr[0]]) return '';
 			if(!data[arr[1]].users || !data[arr[0]].users) return '';
 
-			chg = data[arr[0]].users - data[arr[1]].users;
+			chg = (data[arr[0]].users - data[arr[1]].users) / data[arr[1]].users * 100;
 			if(chg === 0) return '';
 
 			return new Handlebars.SafeString(
 						'<span class="vs ' +
-						(chg > 0 ? 'text-success"> (+' + chg + ')' : 'text-danger"> (' + chg + ')') +
+						(chg > 0 ? 'text-success"> (+' + chg.toFixed(2) + '%)' : 'text-danger"> (' + chg.toFixed(2) + '%)') +
 						'</span>'
 				);
 		} else {
@@ -334,12 +334,12 @@ jQuery(document).ready(function($) {
 			if(!data[arr[1]] || !data[arr[0]]) return '';
 			if(!data[arr[1]].forks || !data[arr[0]].forks) return '';
 
-			chg = data[arr[0]].forks - data[arr[1]].forks;
+			chg = (data[arr[0]].forks - data[arr[1]].forks) / data[arr[1]].forks * 100;
 			if(chg === 0) return '';
 
 			return new Handlebars.SafeString(
 				'<span class="vs ' +
-						(chg > 0 ? 'text-success"> (+' + chg + ')' : 'text-danger"> (' + chg + ')') +
+						(chg > 0 ? 'text-success"> (+' + chg.toFixed(2) + '%)' : 'text-danger"> (' + chg.toFixed(2) + '%)') +
 						'</span>'
 				);
 		} else {
@@ -354,12 +354,12 @@ jQuery(document).ready(function($) {
 			if(!data[arr[1]] || !data[arr[0]]) return '';
 			if(!data[arr[1]].stars || !data[arr[0]].stars) return '';
 
-			chg = data[arr[0]].stars - data[arr[1]].stars;
+			chg = (data[arr[0]].stars - data[arr[1]].stars) / data[arr[1]].stars * 100;
 			if(chg === 0) return '';
 
 			return new Handlebars.SafeString(
 				'<span class="vs ' +
-						(chg > 0 ? 'text-success"> (+' + chg + ')' : 'text-danger"> (' + chg + ')') +
+						(chg > 0 ? 'text-success"> (+' + chg.toFixed(2) + '%)' : 'text-danger"> (' + chg.toFixed(2) + '%)') +
 						'</span>'
 				);
 		} else {

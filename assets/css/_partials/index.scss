@@ -252,6 +252,16 @@
 				transform:translateX(-33.333%);
 			}
 		}
+		// &[data-prop$='forks'],
+		// &[data-prop$='users'],
+		// &[data-prop$='stars'] {
+		// 	display:flex;
+		// 	flex-flow: column nowrap;
+
+		// 	span {
+		// 		display:block;
+		// 	}
+		// }
 		&[data-prop$='trend'] {
 			@media screen and (min-width:500px) {
 				transform:translateX(-15%);
