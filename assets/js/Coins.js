@@ -153,7 +153,7 @@ var Coins = (function($) {
 								arrA = Object.keys(a.data).sort().reverse();
 								if(!a.data[arrA[1]] || !a.data[arrA[0]]) nA = null;
 								if(!nA || !a.data[arrA[1]].rank || !a.data[arrA[0]].rank) nA = null;
-								if(nA) nA = a.data[arrA[0]].rank - a.data[arrA[1]].rank;
+								if(nA) nA = a.data[arrA[1]].rank - a.data[arrA[0]].rank;
 							} else {
 								nA = null;
 							}
@@ -161,7 +161,7 @@ var Coins = (function($) {
 								arrB = Object.keys(b.data).sort().reverse();
 								if(!b.data[arrB[1]] || !b.data[arrB[0]]) nB = null;
 								if(!nB || !b.data[arrB[1]].rank || !b.data[arrB[0]].rank) nB = null;
-								if(nB) nB = b.data[arrB[0]].rank - b.data[arrB[1]].rank;
+								if(nB) nB = b.data[arrB[1]].rank - b.data[arrB[0]].rank;
 							} else {
 								nB = null;
 							}

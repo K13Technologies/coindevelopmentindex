@@ -277,7 +277,7 @@ jQuery(document).ready(function($) {
 			if(!data[arr[1]] || !data[arr[0]]) return '';
 			if(!data[arr[1]].rank || !data[arr[0]].rank) return '';
 
-			chg = data[arr[0]].rank - data[arr[1]].rank;
+			chg = data[arr[1]].rank - data[arr[0]].rank;
 			if(chg === 0) return '-';
 
 			return chg > 0 ? 'Rising' : 'Falling';
@@ -294,7 +294,7 @@ jQuery(document).ready(function($) {
 			if(!data[arr[1]] || !data[arr[0]]) return '';
 			if(!data[arr[1]].rank || !data[arr[0]].rank) return '';
 
-			chg = data[arr[0]].rank - data[arr[1]].rank;
+			chg = data[arr[1]].rank - data[arr[0]].rank;
 			if(chg === 0) return '';
 
 			return new Handlebars.SafeString(
