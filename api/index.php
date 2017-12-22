@@ -123,6 +123,10 @@
 				out(fetchJSON(LOCAL_FILE));
 				break;
 			}
+			if(isset($_GET['backup'])) {
+				out(backup(JSON_FILE));
+				break;
+			}
 			out(getRecord(array(
 				'coinname' => isset($_GET['coinname']) ? $_GET['coinname'] : null,
 				'symbol' => isset($_GET['symbol']) ? $_GET['symbol'] : null
