@@ -404,7 +404,7 @@ jQuery(document).ready(function($) {
 			}
 
 			return new Handlebars.SafeString(
-				'<span>'  + sign + avg.toFixed(2) + '%</span> '
+				'<span>'  + sign + avg.toFixed(2) + '%</span><br>'
 					+ '<span class="vs ' + color + '">(' + vssign + vs.toFixed(2) + '%)</span>'
 			);
 

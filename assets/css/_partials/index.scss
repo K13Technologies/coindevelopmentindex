@@ -262,17 +262,12 @@
 		// 		display:block;
 		// 	}
 		// }
+		&[data-prop='volatility'],
 		&[data-prop$='trend'] {
 			@media screen and (min-width:500px) {
 				transform:translateX(-15%);
 			}
 		}
-		&[data-prop='volatility'] {
-			display:flex;
-			flex-flow: column nowrap;
-			transform:translateX(-15%);
-		}
-
 	}
 
 	tbody tr {
