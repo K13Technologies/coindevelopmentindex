@@ -243,7 +243,7 @@ function write($json, $file) {
 function backup() {
 	global $json;
 
-	$file = dirname(LOCAL_FILE) . DIRECTORY_SEPARATOR . 'data.' . date('Ymd') . '.backup.json';
+	$file = dirname(LOCAL_FILE) . DIRECTORY_SEPARATOR . 'backup' . DIRECTORY_SEPARATOR . 'data.' . date('Ymd') . '.backup.json';
 
 	if($json === null) fetchJSON();
 	if(errorOutput()->errors) return errorOutput();

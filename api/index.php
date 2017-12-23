@@ -87,7 +87,8 @@
 				break;
 			}
 			if(isset($_GET['pushremote'])) {
-				out(write(fetchJSON(LOCAL_FILE),REMOTE_FILE));
+				$file = dirname(LOCAL_FILE) . DIRECTORY_SEPARATOR . 'backup'  . DIRECTORY_SEPARATOR . $_GET['pushremote'];
+				out(write(fetchJSON($file), REMOTE_FILE));
 				break;
 			}
 			if(isset($_GET['githubfetchall'])) {
@@ -124,7 +125,7 @@
 				break;
 			}
 			if(isset($_GET['backup'])) {
-				if(!checkPermissions(dirname(LOCAL_FILE), '0777')) {
+				if(!checkPermissions(dirname(LOCAL_FILE) . DIRECTORY_SEPARATOR . 'backup', '0777')) {
 					array_map(function($err){echo $err->type . $err->message;}, errorOutput()->errors);
 					break;
 				}
