@@ -75,6 +75,7 @@ jQuery(document).ready(function($) {
 					regexp: $s.val(),
 					type: $t.val()
 				}));
+				buildPagination();
 				scrollTableTop();
 			});
 
@@ -136,9 +137,9 @@ jQuery(document).ready(function($) {
 		// 	str += '<a class="pg-' + i + (i === ACTIVE_PAGE ? ' active' : '') + '" href="#">' + i + '</a>';
 		// }
 
-		var str = 'Showing ' + (START + 1) + '&mdash;' +
+		var str = '<span class="text-dark">Showing ' + (START + 1) + ' &mdash; ' +
 								Math.min((START + PER_PAGE), Coins.list().length) +
-									' of ' + Coins.list().length;
+									'</span> of ' + Coins.list().length;
 
 		if(Coins.list().length === 0) {
 			str = 'No results';
