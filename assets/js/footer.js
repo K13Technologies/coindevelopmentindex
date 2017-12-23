@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
 
 	var $footer = $('footer'),
 			$copy = $footer.find('.copyright-year'),
-			DONATE_AMT = 3;
+			DONATE_AMT = 5.00;
 
 	var initLinks = function() {
 		var template = HBS['donate-links'];
