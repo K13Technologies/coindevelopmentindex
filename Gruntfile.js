@@ -9,6 +9,7 @@ module.exports = function(grunt) {
   var buildPathJSON = "build/assets/json/";
   var buildPathFONT = "build/assets/fonts/";
   var buildPathJS = "build/assets/js/";
+  var buildPathHBS = "build/assets/js/templates/";
 
   ////////////////////////////////////////////
   // INIT
@@ -26,7 +27,7 @@ module.exports = function(grunt) {
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     watch: {
       html: {
-        files: ['*.html'],
+        files: ['**/*.html'],
         tasks: ['build'],
         options: {
           livereload: true
@@ -46,9 +47,19 @@ module.exports = function(grunt) {
           livereload: true
         }
       },
+      hbs: {
+        files: ['<%= assetdir %>hbs/**/*.hbs'],
+        tasks: ['handlebars'],
+        options: {
+          livereload: true
+        }
+      },
       json: {
         files: ['<%= assetdir %>json/**/*.json'],
-        tasks: ['copy:buildJSON']
+        tasks: ['copy:buildJSON'],
+        options: {
+          livereload: true
+        }
       }
     },
 
@@ -82,9 +93,7 @@ module.exports = function(grunt) {
           '<%= assetdir %>css/cryptocoins.min.css': [
             '<%= assetdir %>vendor/cryptocoins-master/webfont/cryptocoins.css',
             '<%= assetdir %>vendor/cryptocoins-master/webfont/cryptocoins-colors.css',
-          ],
-          '<%= assetdir %>css/footer-distributed.min.css': '<%= assetdir %>css/footer-distributed.css',
-          '<%= assetdir %>css/jumbotron.min.css': '<%= assetdir %>css/jumbotron.css'
+          ]
         }
       }
     },
@@ -99,11 +108,39 @@ module.exports = function(grunt) {
         },
         files: {
           expand: true,
-          cwd: './',
-          src: ['*.html'],
+          cwd: buildPathHTML,
+          src: '**/*.html',
           dest: buildPathHTML,
           ext: '.html'
         }
+    },
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // HTMLBUILD
+    //////////////////////////////////////////////////////////////////////////////////////////
+    htmlbuild: {
+      dist: {
+        src: ['**/*.html', '!node_modules/**', '!build/**', '!assets/**'],
+        dest: buildPathHTML,
+        options: {
+          basePath: true,
+          // scripts: {
+          //     templates: { '/assets/js/templates/*.js' }
+          // },
+          sections: {
+              head: '<%= assetdir %>templates/layout/head.html',
+              layout: {
+                header: '<%= assetdir %>templates/layout/header.html',
+                footer: '<%= assetdir %>templates/layout/footer.html'
+              }
+          },
+          data: {
+              // Data to pass to templates
+              version: "1.0",
+              title: "test",
+          }
+        }
+      }
     },
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -115,7 +152,7 @@ module.exports = function(grunt) {
           separator: grunt.util.linefeed,
         },
         src: [
-            'node_modules/bootstrap-v4-dev/dist/css/bootstrap.min.css',
+            'node_modules/bootstrap-beta/dist/css/bootstrap.min.css',
             'node_modules/font-awesome/css/font-awesome.min.css',
             '<%= assetdir %>css/*.min.css',
           ],
@@ -147,7 +184,7 @@ module.exports = function(grunt) {
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     clean : {
       builddir: {
-        src: ['build/assets/']
+        src: ['build/']
       },
       tmpdir: {
         src: ['build/**/tmp/']
@@ -195,7 +232,6 @@ module.exports = function(grunt) {
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     // IMAGE MIN
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
-
     imagemin: {
         options: {
             optimizationLevel: 3,
@@ -218,8 +254,9 @@ module.exports = function(grunt) {
     uglify: {
       options: {
         report: 'min',
-            maxLineLen: 0,
+        maxLineLen: 0,
         preserveComments: /^\/*!/,
+        mangle: false,
         compress: {
           unused: false,
           hoist_funs: false,
@@ -229,18 +266,43 @@ module.exports = function(grunt) {
       js: {
         files: [{
           src: [
+            'node_modules/popper.js/dist/umd/popper.min.js',
             'node_modules/jquery/dist/jquery.min.js',
             'node_modules/underscore/underscore-min.js',
             'node_modules/tether/dist/js/tether.min.js',
-            'node_modules/bootstrap-v4-dev/dist/js/bootstrap.min.js',
-            // '<%= assetdir %>vendor/gh3-master/gh3.min.js',
+            'node_modules/bootstrap-beta/dist/js/bootstrap.min.js',
+            'node_modules/handlebars/dist/handlebars.runtime.min.js',
+            'node_modules/floatthead/dist/jquery.floatThead.min.js',
             '<%= assetdir %>js/**/*.js',
             '!<%= assetdir %>js/vendor/*.js',
           ],
           dest: '<%= buildPathJS %><%= dist %>.js',
         }]
       }
+    },
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // HANDLEBARS - PRECOMPILE TEMPLATES
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    handlebars: {
+      options: {
+        namespace: 'HBS',
+        processName: function(filePath) {
+          var arr = filePath.split('/');
+            return arr[arr.length - 1].replace(/\.hbs$/, '');
+          }
+      },
+      files: {
+        expand: true,
+        cwd: '<%= assetdir %>hbs/',
+        src: ['**/*.hbs'],
+        dest: buildPathHBS,
+          rename: function(dest, src) {
+            return buildPathHBS + src.replace(/hbs$/, 'js');
+        }
+      }
     }
+
   };
 
   // Project configuration.
@@ -249,12 +311,14 @@ module.exports = function(grunt) {
   // Load plugins
   grunt.loadNpmTasks('grunt-import');
   grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-html-build');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-handlebars');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
@@ -263,6 +327,6 @@ module.exports = function(grunt) {
   grunt.registerTask('css', ['sass', 'cssmin', 'concat']);
   grunt.registerTask('js', ['import:js', 'uglify:js']);
   grunt.registerTask('cleanup', ['clean:builddir']);
-  grunt.registerTask('build', ['css', 'js', 'htmlmin', 'copy', 'clean:tmpdir', 'imagemin']);
+  grunt.registerTask('build', ['cleanup', 'css', 'js', 'handlebars', 'htmlbuild', 'htmlmin', 'copy', 'clean:tmpdir', 'imagemin']);
 
 };

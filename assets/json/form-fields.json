@@ -1,0 +1,206 @@
+[
+	{
+  	"name": "id",
+  	"type": "text",
+  	"disabled": true,
+    "required": false,
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
+  	"name": "owner",
+  	"type": "text",
+  	"disabled": false,
+    "placeholder": "repo-owner",
+    "required": false,
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
+  	"name": "name",
+  	"type": "text",
+  	"disabled": false,
+    "placeholder": "repo-name",
+    "required": false,
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
+  	"name": "coinname",
+  	"type": "text",
+  	"disabled": false,
+    "placeholder": "Official Coin Name",
+    "heading": "Name of Cryptocurrency",
+    "required": true,
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
+  	"name": "symbol",
+  	"type": "text",
+  	"placeholder": "XYZ",
+  	"disabled": false,
+    "required": true,
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
+    "type": "select",
+    "placeholder": "Bitcoin, Altcoin, etc",
+    "options": [
+      "",
+      "Bitcoin",
+      "Altcoin",
+      "ERC-20 Token",
+      "Omni Token",
+      "Nxt Token",
+      "NEO Token",
+      "Counterparty Token",
+      "Waves Token",
+      "Qtum Token",
+      "BitShares Token",
+      "NuBits Token",
+      "Ubiq Token",
+      "NEM Token",
+      "Burst Token",
+      "Ethereum Classic Token"
+    ],
+    "name": "type",
+    "disabled": false,
+    "required": false,
+    "heading": "Type of Cryptocurrency",
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
+    "name": "team",
+    "type": "number",
+    "min": "0",
+    "null-char": "-",
+    "heading": "Development Team Size",
+    "disabled": false,
+    "placeholder": "# of Developers",
+    "required": false,
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
+    "type": "select",
+    "options": [
+      "",
+      "Alpha",
+      "Beta",
+      "Commercial"
+    ],
+    "name": "blockchain",
+    "disabled": false,
+    "placeholder": "Alpha, Beta, Commercial",
+    "required": false,
+    "heading": "Blockchain Development",
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
+  	"name": "description",
+  	"type": "text",
+    "placeholder": "A description of the repo.",
+  	"disabled": false,
+    "required": false,
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
+  	"name": "createdAt",
+  	"type": "datetime-local",
+    "null-char": "-",
+  	"disabled": false,
+    "required": false,
+    "data-stringify":false,
+    "data-revertable":true,
+    "data-remove":":\\d{2}Z$"
+  },
+  {
+  	"name": "homepageUrl",
+  	"type": "url",
+  	"placeholder": "https://example.org/en/download",
+  	"disabled": false,
+    "required": false,
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
+  	"name": "pushedAt",
+  	"type": "datetime-local",
+    "null-char": "-",
+  	"disabled": false,
+    "required": false,
+    "data-stringify":false,
+    "data-revertable":true,
+    "data-remove":":\\d{2}Z$"
+  },
+  {
+  	"name": "languages",
+  	"type": "text",
+  	"placeholder": "Comma, Sep, Langs",
+  	"disabled": false,
+    "required": false,
+    "data-stringify":true,
+    "data-revertable":true,
+    "data-remove":"[\\[\\]\"]+"
+  },
+  {
+    "name": "url",
+    "type": "url",
+    "placeholder": "https://github.com/owner/name",
+    "disabled": false,
+    "required": false,
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
+    "name": "wallet",
+    "type": "text",
+    "disabled": false,
+    "required": false,
+    "data-stringify":false,
+    "data-revertable":false
+  },
+  {
+    "name": "qrcode",
+    "type": "text",
+    "disabled": false,
+    "required": false,
+    "data-stringify":false,
+    "data-revertable":false
+  },
+  {
+    "name": "releases",
+    "type": "hidden",
+    "disabled": false,
+    "required": false,
+    "data-stringify":true,
+    "data-revertable":false
+  },
+  {
+    "name": "data",
+    "type": "hidden",
+    "disabled": false,
+    "required": false,
+    "heading": {
+      "latest.rank": "Risk Index Ranking",
+      "latest.users": "Github Developer Contributors",
+      "latest.forks": "Github Repo Forks",
+      "latest.stars": "Github Repo Stars"
+    },
+    "data-stringify":true,
+    "data-revertable":false
+  },
+  {
+    "name": "trend",
+    "heading": "Index Trending"
+  },
+  {
+    "name": "volatility",
+    "heading": "Price Volatility"
+  }
+]

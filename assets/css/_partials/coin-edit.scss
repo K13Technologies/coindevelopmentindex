@@ -1,0 +1,212 @@
+/*! COIN-EDIT */
+
+.coin-form {
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    // height: 100vh;
+    max-width: 1600px;
+    margin: 0 auto 2em;
+
+    header {
+        width:40em;
+        display:flex;
+        flex-flow:row wrap;
+        justify-content:center;
+        align-items:center;
+        padding:0;
+        background:#fff;
+        > * {
+            flex:1 1 auto;
+        }
+        h1 {
+            font-size:5em;
+            font-weight:300;
+            text-align:center;
+            margin:0;
+            color:#b4b4b4;
+        }
+        .alert {
+            small {
+                font-size:1.8em;
+            }
+        }
+        p {
+            flex-basis:100%;
+            text-align:center;
+            color:#333;
+        }
+    }
+
+    section {
+        width:40em;
+    }
+
+    form {
+
+        display: flex;
+        flex-flow:column nowrap;
+        justify-content: space-between;
+
+
+        .form-row {
+            display:flex;
+
+            .form-group:first-child {
+                padding-left:0;
+            }
+            .form-group:last-child {
+                padding-right:0;
+            }
+        }
+
+        ul {
+            padding-left: 0.333em;
+        }
+
+        hr {
+            width:100%;
+        }
+
+        .update {
+            animation: 800ms pulse forwards;
+        }
+
+        .coinnav {
+            background:none;
+            color:#576069;
+            padding:3px;
+            opacity:0.6;
+            transition:300ms opacity;
+            &:first-child {
+                margin-right:10px;
+            }
+            &:last-child {
+                margin-left:10px;
+            }
+            &:not(:disabled):hover{
+                opacity:1;
+            }
+            &:disabled {
+                opacity:0.2;
+            }
+        }
+
+        .newform {
+            text-align: center;
+        }
+
+        .auto-fields {
+            max-height:70vh;
+            overflow-y:auto;
+            overflow-x:hidden;
+            padding-right:1em;
+        }
+
+        .input-group {
+            padding:0;
+        }
+
+        input ~ .input-group-addon {
+            padding:8px;
+            color:darkslateblue;
+            border:1px solid darkslateblue;
+            transition: 200ms all;
+            box-shadow:
+                0 0 5px rgba(255, 255, 255, 0.6),
+                0 0 5px rgba(23, 109, 193, 0.2);
+
+            i {
+                transform: rotate(359deg);
+                transition: 800ms transform;
+            }
+
+            &:hover {
+                color:dodgerblue;
+                background-color:#fff;
+
+                i {
+                    transform: rotate(0);
+                }
+            }
+        }
+
+        input[type='datetime-local'] + .input-group-addon {
+            padding:10px;
+        }
+
+        .data {
+            text-align:center;
+
+            th {
+                border-top:0;
+            }
+        }
+
+        button ~ .input-group-addon {
+            display: flex;
+            flex-direction: column;
+            font-size:0.8em;
+            color:rgba(255,255,255,0.4);
+            background:darkgreen;
+            padding-top:0;
+            height: 100%;
+            input {
+                margin:0 auto;
+            }
+        }
+
+        ::placeholder {
+            font-style:italic;
+            color:#ccc;
+        }
+
+    }
+
+    .fa-spinner {
+        float:right;
+    }
+
+}
+
+#output {
+    padding:1em;
+    font-size:0.8rem;
+    min-height:4em;
+    margin-bottom:1em;
+    opacity:0;
+    transition: 400ms opacity;
+
+    &.active {
+        opacity:1;
+        transition: 400ms opacity;
+    }
+}
+
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 #fff;
+    }
+    50% {
+        color:dodgerblue;
+        border:1px solid dodgerblue;
+        background-clip: content-box;
+        box-shadow:
+            0 0 5px rgba(23, 109, 193, 0.6);
+    }
+    75% {
+         box-shadow:
+            0 0 5px rgba(255, 255, 255, 0.6),
+            0 0 10px rgba(23, 109, 193, 0.6);
+    }
+    100% {
+        color:darkslateblue;
+        border:1px solid darkslateblue;
+         box-shadow:
+            0 0 5px rgba(255, 255, 255, 0.6),
+            0 0 5px rgba(23, 109, 193, 0.2);
+    }
+}

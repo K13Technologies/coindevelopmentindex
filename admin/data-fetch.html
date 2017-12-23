@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <title>Github API GraphQL</title>
+    <meta name="Title" content="Larry's Cryptocoin Development Index | Tracking Cryptocoin Core Software Development">
+    <meta name="description" content="Tracking Cryptocurrency software development. We track Bitcoin, Altcoin and ERC-20 token core software development progress.">
+    <meta name="keywords" content="cryptocurrency, virtual coins, ERC-20 tokens, Altcoins, Bitcoin, development index, software tracking, development teams">
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="assets/css/coindevelopmentindex.css">
+
+    <style>
+
+    </style>
+
+</head>
+<body>
+
+    <div class="token-form wrapper">
+
+        <header>
+            <h1>github api</h1>
+            <p>with GraphQL</p>
+            <p>You can obtain a Personal Access Token from <a href="https://github.com/settings/tokens" target="_blank">GitHub</a>.<br><br>Request the following scopes:<br><em>repo (all), read:org, read:public_key, read:repo_hook, user (all), read:gpg_key</em></p>
+        </header>
+
+        <section>
+            <div id="output">
+
+            </div>
+            <form name="token">
+                <div class="form-group">
+                    <label for="bearer">Authorization </label>
+                    <input class="form-control" type="text" id="bearer" placeholder="3adf9edb0eac..."
+                        value="">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="owner">Owner / Name</label>
+                        <select class="form-control" type="text" id="owner" placeholder="Github Owner">
+                            <!-- data.json repo:owner/repo:name -->
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Call API</button>
+            </form>
+        </section>
+
+        <section class="row">
+            <div  id="output" role="tablist" aria-multiselectable="true">
+              <div class="card">
+                <div class="card-header" role="tab" id="dataHdg">
+                    <a data-toggle="collapse" data-parent="#output" href="#datajson" aria-expanded="true" aria-controls="datajson">
+                      CURRENT DATA
+                    </a>
+                </div>
+                <div id="datajson" class="collapse show" role="tabpanel" aria-labelledby="dataHdg">
+                    <!-- data.json -->
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" role="tab" id="queryHdg">
+                    <a data-toggle="collapse" data-parent="#output" href="#queryjson" aria-expanded="true" aria-controls="queryjson" contenteditable="true">
+                      API QUERY
+                    </a>
+                </div>
+                <div id="queryjson" class="collapse show" role="tabpanel" aria-labelledby="queryHdg" contenteditable="true">
+                    <!-- data-fetch.js -->
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" role="tab" id="apiHdg">
+                    <a data-toggle="collapse" data-parent="#output" href="#apijson" aria-expanded="true" aria-controls="apijson">
+                      API RESPONSE
+                    </a>
+                </div>
+                <div id="apijson" class="collapse show" role="tabpanel" aria-labelledby="apiHdg">
+                    <!-- api.github.com/graphql -->
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Minified build js -->
+    <script src="assets/js/coindevelopmentindex.js"></script>
+
+</body>
+</html>

@@ -54,5 +54,8 @@ node_modules
 # Ignore build folder
 build
 
+# Ignore backup folder
+assets/json/backup
+
 # Don't push github authorization
 api/token.php

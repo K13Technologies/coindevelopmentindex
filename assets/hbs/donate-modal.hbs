@@ -1,0 +1,23 @@
+<div class="modal donate-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{coinname}} Wallet</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="qrcode">
+          <img src="/assets/img/qr/{{qrcode}}" >
+        </div>
+        <div class="exchrate">USD 5.00 Equals: <strong>{{donation price.USD}} {{coinname}} ({{symbol}})</div>
+      </div>
+      <div class="modal-footer">
+        <div class="copyhash">Copy Wallet Address</div>
+        <div class="copied">Copied to Clipboard</div>
+        <input readonly class="hashid" value="{{wallet}}">
+      </div>
+    </div>
+  </div>
+</div>

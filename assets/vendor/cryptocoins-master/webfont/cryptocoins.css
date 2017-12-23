@@ -509,6 +509,7 @@
   content: "\E07A";
 }
 
+.cc.LSK::before,
 .cc.LISK::before {
   content: "\E07B";
 }
