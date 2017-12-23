@@ -7,7 +7,7 @@ var Coins = (function($) {
 	var params = window.location.search.slice(1).split('&')
 				.reduce(function(prev,curr) {
 					var param = curr.split('=');
-					prev[param[0]] = param[1] ? param[1] : true;
+					if(param[0]) prev[param[0]] = param[1] ? param[1] : true;
 					return prev;
 				}, {}),
 	coinfile = params.local ? '/assets/json/data.json' : 'https://api.myjson.com/bins/909wb',
