@@ -138,17 +138,17 @@ QUERY;
 		$repo->data->{date('Y-W')}->users = $response->mentionableUsers->totalCount;
 		$repo->data->{date('Y-W')}->forks = $response->forks->totalCount;
 
-		$releases = array();
-		if(count($response->releases->edges) > 0) :
-			foreach($response->releases->edges as $obj) {
-				$release = new stdClass();
-				$release->name = $obj->node->name;
-				$release->description = $obj->node->description;
-				$release->publishedAt = $obj->node->publishedAt;
-				$releases[] = $release;
-			}
-		endif;
-		$repo->releases = array_reverse($releases);
+		// $releases = array();
+		// if(count($response->releases->edges) > 0) :
+		// 	foreach($response->releases->edges as $obj) {
+		// 		$release = new stdClass();
+		// 		$release->name = $obj->node->name;
+		// 		$release->description = $obj->node->description;
+		// 		$release->publishedAt = $obj->node->publishedAt;
+		// 		$releases[] = $release;
+		// 	}
+		// endif;
+		// $repo->releases = array_reverse($releases);
 
 		if(DEBUG) echo json_encode($repo, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 
