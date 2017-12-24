@@ -225,6 +225,7 @@ module.exports = function(grunt) {
           { src:'BingSiteAuth.xml', dest:'build/BingSiteAuth.xml' },
           { src:'sitemap.xml', dest:'build/sitemap.xml' },
           { src:'favicon.ico', dest:'build/favicon.ico' },
+          { src: 'sitemaps/**', dest: buildPathHTML }
         ]
       }
     },
