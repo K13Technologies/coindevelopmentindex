@@ -54,6 +54,10 @@ node_modules
 # Ignore build folder
 build
 
+# Ignore generated css
+assets/css/*.min.css
+assets/css/*.map
+
 # Ignore backup folder
 assets/json/backup
 
