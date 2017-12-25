@@ -36,7 +36,7 @@ jQuery(document).ready(function($) {
 		// $('.coin-list').on('floatThead', onTheadFloated);
 
 		$('.coin-list').floatThead({
-			position: 'auto',
+			position: 'absolute',
 			top: function() { return $('nav').outerHeight(); },
 			autoReflow: true
 		});

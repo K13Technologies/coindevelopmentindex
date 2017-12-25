@@ -91,6 +91,9 @@
 	}
 }
 
+.floatThead-wrapper {
+	overflow-x:auto;
+}
 
 .coin-list {
 
@@ -329,13 +332,14 @@
 	white-space: nowrap;
 }
 
-[data-prop='type'],
-[data-prop='blockchain'],
-[data-prop='team'],
-[data-prop$='release'],
-[data-prop$='users'],
-[data-prop$='forks'],
-[data-prop$='stars'] {
+[data-prop='type'] {
+// [data-prop='type'],
+// [data-prop='blockchain'],
+// [data-prop='team'],
+// [data-prop$='release'],
+// [data-prop$='users'],
+// [data-prop$='forks'],
+// [data-prop$='stars'] {
 	display:none;
 }
 
@@ -428,21 +432,21 @@
 
 }
 
-@media only screen and (min-width:1180px) {
+// @media only screen and (min-width:1180px) {
 
-	[data-prop='blockchain'],
-	[data-prop='team'] {
-		display:table-cell;
-	}
+// 	[data-prop='blockchain'],
+// 	[data-prop='team'] {
+// 		display:table-cell;
+// 	}
 
-}
+// }
 
-@media only screen and (min-width:1500px) {
+// @media only screen and (min-width:1500px) {
 
-	[data-prop$='users'],
-	[data-prop$='forks'],
-	[data-prop$='stars'] {
-		display:table-cell;
-	}
+// 	[data-prop$='users'],
+// 	[data-prop$='forks'],
+// 	[data-prop$='stars'] {
+// 		display:table-cell;
+// 	}
 
-}
+// }
