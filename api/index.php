@@ -18,7 +18,7 @@
 			if(isset($_POST['delete'])) {
 				// make sure index matches owner/name
 				$indexed = getRecord(array('index' => $_POST['index']));
-				$named = getRecord(array('owner' => $_POST['owner'], 'name' => $_POST['name']));
+				$named = getRecord(array('coinname' => $_POST['coinname'], 'symbol' => $_POST['symbol']));
 				if($indexed === $named) {
 					out(deleteRecord((int)$_POST['index']));
 				} else {
@@ -30,7 +30,7 @@
 
 			if(isset($_POST['githubfetch'])) {
 				// new entry called from repo-edit
-				if($_POST['ownername'] === 'new' || $_POST['id'] === '') {
+				if($_POST['new']) {
 					$records = fetchGithubData([(object)
 						['owner' => $_POST['owner'],
 							'name' => $_POST['name'] ]
@@ -60,7 +60,7 @@
 				break;
 			}
 
-			if($_POST['ownername'] === 'new') {
+			if($_POST['new']) {
 				out(addRecords(array(json_decode(json_encode($_POST)))));
 			} else {
 				out(updateRecords(array(json_decode(json_encode($_POST)))));

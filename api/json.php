@@ -107,20 +107,33 @@ function addRecords($records) {
 	if($json === null) fetchJSON();
 	if(errorOutput()->errors) return errorOutput();
 
+	$fields = array_map(function($field) {
+							return $field->name;
+						}, fetchJSON(FIELDS_FILE));
+
 	$added = array();
 
 	foreach($records as $record) {
+
 		$coin = (object) $record;
+
 		$existing = getRecordBySymbol($coin->symbol);
 		if($existing) {
 				errorLog('COIN_EXISTS', '<br>Coin ' . $existing->coinname . ' (' . $existing->symbol . ') already exists');
 				return errorOutput();
 		}
-		$record->dateAdded = date('c');
-		$record->languages = is_array($record->languages) ? $record->languages : explode(',', $record->languages);
-		$record->releases = json_decode($record->releases);
-		$record->data = json_decode($record->data);
-		$coin->ownername = $record->owner . '/' . $record->name;
+
+		$coin->dateAdded = date('c');
+		$coin->languages = is_array($record->languages) ? $record->languages : explode(',', $record->languages);
+		$coin->releases = json_decode($record->releases);
+		$coin->data = json_decode($record->data);
+
+		foreach($coin as $key => $val) {
+			if(!in_array($key, $fields)) {
+				unset($coin->{$key});
+			}
+		}
+
 		array_push($json, $coin);
 		array_push($added, $coin);
 	}

@@ -97,15 +97,21 @@ jQuery(document).ready(function($) {
 
     var handleForm = function(e) {
 
-        var status = $coinSel.val() === 'new' ? 'created' : 'updated';
+        var status = $coinSel.val() === 'new' ? 'created' : 'updated',
+            coin;
 
         e.preventDefault();
 
         $coinForm.find('input:disabled').prop('disabled', false);
+        coin = $coinForm.serializeArray();
+
+        if($coinSel.val() === 'new') {
+            coin.push({ name: "new", value: true });
+        }
 
         $output.addClass('alert alert-secondary active').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Sending JSON...');
 
-        Coins.update($coinForm.serializeArray())
+        Coins.update(coin)
             .done(function(response) {
                 var errors = response.errors,
                     out = '', count = 3;
@@ -140,7 +146,8 @@ jQuery(document).ready(function($) {
             invalid = reqs.reduce(function(prev, curr) {
                 return prev +
                         ($('input[name="' + curr + '"]').val() === '' ? 'You must provide the ' + curr + ' for the coin.<br>' : '');
-            }, '');
+            }, ''),
+            coin;
 
         if(invalid.length > 0) {
             $output.addClass('alert alert-danger active').html(invalid);
@@ -148,13 +155,17 @@ jQuery(document).ready(function($) {
             return false;
         }
 
-        $coinForm.find('[data-disabled="true"]').prop('disabled', false);
+        $coinForm.find('input:disabled').prop('disabled', false);
+        coin = $coinForm.serializeArray();
+
+        if($coinSel.val() === 'new') {
+            coin.push({ name: "new", value: true });
+        }
 
         $output.addClass('alert alert-secondary active').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Contacting ' + service + '...');
 
-        Coins.fetch($coinForm.serializeArray(), endpoint)
+        Coins.fetch(coin, endpoint)
             .done(function(response) {
-                console.log(response);
                 var errors = response.errors,
                     out = '';
 
@@ -188,6 +199,8 @@ jQuery(document).ready(function($) {
             symbol = $('input[name="symbol"]').val(),
             count = 3;
 
+        e.preventDefault();
+
         $output.addClass('alert alert-secondary active').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Deleting ' + coinname + '/' + name + ' ...');
 
         $.post({
@@ -195,7 +208,6 @@ jQuery(document).ready(function($) {
               data: { 'delete': true, index: index, coinname: coinname, symbol: symbol }
             })
             .done(function(response) {
-                console.log(response);
 
                 var errors = response.errors,
                     out = '';
@@ -209,7 +221,7 @@ jQuery(document).ready(function($) {
                     return;
                 } else {
                     if(response.length === Coins.list().length - 1) {
-                        $output.addClass('alert alert-success active').html(owner + '/' + name + ' deleted successfully... Refreshing in <span class="count">' + count + '</span>');
+                        $output.addClass('alert alert-success active').html(coinname + ' (' + symbol + ') deleted successfully... Refreshing in <span class="count">' + count + '</span>');
                         setInterval(function() { count--; $output.find('.count').text(count); if(count === 0) loco.reload(); }, 1000);
                     } else {
                         console.warn('Possible deletion error');
