@@ -1,14 +1,25 @@
 <?php
-include_once('./token.php');
+include_once('token.php');
 
-define('REMOTE_FILE', 'https://api.myjson.com/bins/909wb');
-define('LOCAL_FILE', dirname($_SERVER['DOCUMENT_ROOT']) . '/assets/json/data.json');
-
-define('JSON_FILE', isset($_REQUEST['local']) ? LOCAL_FILE : REMOTE_FILE);
-define('FIELDS_FILE', dirname($_SERVER['DOCUMENT_ROOT']) . '/assets/json/form-fields.json');
-
+define('DEVELOPMENT', @preg_match('/(api\.)?coindev\.local/', $_SERVER['SERVER_NAME']));
 define('DEBUG', isset($_REQUEST['debug']));
 define('PROXY', isset($_REQUEST['proxy']));
+
+if(DEVELOPMENT) {
+	define('FS_ROOT', dirname($_SERVER['DOCUMENT_ROOT']));
+} else {
+	define('FS_ROOT', $_SERVER['DOCUMENT_ROOT'] !== '' ? $_SERVER['DOCUMENT_ROOT'] : '/var/www/coindevelopmentindex.tech/html');
+}
+
+define('REMOTE_FILE', 'https://api.coindevelopmentindex.tech');
+define('LOCAL_FILE', FS_ROOT . '/assets/json/data.json');
+define('FIELDS_FILE', FS_ROOT . '/assets/json/form-fields.json');
+
+if(DEVELOPMENT) {
+	define('JSON_FILE', isset($_REQUEST['local']) ? LOCAL_FILE : REMOTE_FILE);
+} else {
+	define('JSON_FILE', LOCAL_FILE);
+}
 
 $json = null;
 
@@ -29,19 +40,23 @@ function fetchJSON($url=JSON_FILE) {
 
 	try {
 		$data = @file_get_contents($url, false, $context);
-		if(!$data || $data->Response === 'Error') {
+		if(!$data) {
 			errorLog('FETCH_JSON_ERROR',
 				isset($data->Message) ? $data->Message : 'Possible network error.  You may need to add the <pre style="display:inline;padding:5px;background:#fff">?proxy</pre> flag to your url if you are on VPN.');
+			$return = false;
+		} else {
+			$return = sortJSON(json_decode($data));
 		}
-		$return = sortJSON(json_decode($data));
 		if($url === JSON_FILE) {
 			$json = $return;
 		}
 		if(json_last_error() !== JSON_ERROR_NONE) {
 			errorLog('FETCH_JSON_ERROR','Error reading ' . $url . ' : ' . json_last_error_msg());
+			$return = false;
 		}
 	} catch (Exception $e) {
 		errorLog('FETCH_JSON_ERROR', $e->getMessage());
+		$return = false;
 	}
 
 	return $return;
@@ -75,30 +90,36 @@ function getRecord($obj) {
 function getRecordById($id) {
 	global $json;
 
-	return array_pop(array_filter($json, function($item) use ($id) {
+	$arr = array_filter($json, function($item) use ($id) {
 		if(isset($id)) return $item->id === $id;
 		else return false;
-	}));
+	});
+
+	return array_pop($arr);
 }
 
 function getRecordBySymbol($symbol) {
 	global $json;
 
-	return array_pop(array_filter($json, function($item) use ($symbol) {
+	$arr = array_filter($json, function($item) use ($symbol) {
 		if(isset($symbol)) return $item->symbol === $symbol;
 		else return false;
-	}));
+	});
+
+	return array_pop($arr);
 }
 
 function getRecordByName($owner, $name) {
 	global $json;
 
-	return array_pop(array_filter($json, function($item) use ($owner,$name) {
+	$arr = array_filter($json, function($item) use ($owner,$name) {
 		if(isset($owner) && isset($name)) return $item->owner === $owner && $item->name === $name;
 		elseif(isset($owner)) return $item->owner === $owner;
 		elseif(isset($name)) return $item->name === $name;
 		else return false;
-	}));
+	});
+
+	return array_pop($arr);
 }
 
 function addRecords($records) {
@@ -165,7 +186,7 @@ function updateRecords($records) {
 		$idx = array_search($record->symbol, array_map(function($coin) { return $coin->symbol; }, $json));
 
 		$record->languages = is_array($record->languages) ? $record->languages : explode(',', $record->languages);
-		$record->releases = json_decode($record->releases);
+		// $record->releases = json_decode($record->releases);
 		$record->data = json_decode($record->data);
 
 		foreach($record as $key => $val) {
@@ -212,12 +233,12 @@ function sortJSON($json, $prop='coinname', $asc=true) {
 	if(!is_array($json)) return $json;
 
 	usort($json, function($a, $b) use($prop,$asc) {
-		if(is_numeric($prop)) {
+		if(@is_numeric($a->$prop)) {
 			if($a->$prop === $b->$prop) return 0;
 			if($asc) return $a->$prop > $b->$prop ? 1 : -1;
 			else return $a->$prop < $b->$prop ? 1 : -1;
 		}
-		else return $asc ? strcasecmp($a->$prop, $b->$prop) : strcasecmp($b->$prop, $a->$prop);
+		else return $asc ? @strcasecmp($a->$prop, $b->$prop) : @strcasecmp($b->$prop, $a->$prop);
 	});
 
 	return $json;
@@ -230,7 +251,7 @@ function write($json, $file) {
 
 	if($file === LOCAL_FILE) {
 
-		if(file_put_contents($file, json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES))) {
+		if(file_put_contents($file, json_encode($json))) {
 			return json_decode(file_get_contents($file));
 		}
 	}
@@ -261,7 +282,7 @@ function backup() {
 	if($json === null) fetchJSON();
 	if(errorOutput()->errors) return errorOutput();
 
-	if(@file_put_contents($file, json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES))) {
+	if(file_put_contents($file, json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES))) {
 		return json_decode(file_get_contents($file));
 	} else {
 		errorLog('BACKUP_JSON_ERROR', 'Unable to create ' . $file);

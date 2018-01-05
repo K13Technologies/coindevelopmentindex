@@ -1,4 +1,32 @@
 [
+  {
+    "name": "coinname",
+    "type": "text",
+    "disabled": false,
+    "placeholder": "Official Coin Name",
+    "heading": "Name of Cryptocurrency",
+    "required": true,
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
+    "name": "symbol",
+    "type": "text",
+    "placeholder": "XYZ",
+    "disabled": false,
+    "required": true,
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
+    "name": "contact",
+    "type": "email",
+    "placeholder": "contact@example.org",
+    "disabled": false,
+    "required": false,
+    "data-stringify":false,
+    "data-revertable":true
+  },
 	{
   	"name": "id",
   	"type": "text",
@@ -22,25 +50,6 @@
   	"disabled": false,
     "placeholder": "repo-name",
     "required": false,
-    "data-stringify":false,
-    "data-revertable":true
-  },
-  {
-  	"name": "coinname",
-  	"type": "text",
-  	"disabled": false,
-    "placeholder": "Official Coin Name",
-    "heading": "Name of Cryptocurrency",
-    "required": true,
-    "data-stringify":false,
-    "data-revertable":true
-  },
-  {
-  	"name": "symbol",
-  	"type": "text",
-  	"placeholder": "XYZ",
-  	"disabled": false,
-    "required": true,
     "data-stringify":false,
     "data-revertable":true
   },

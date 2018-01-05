@@ -195,40 +195,41 @@ jQuery(document).ready(function($) {
     var deleteRecord = function(e) {
 
         var index = getSelectedIndex(),
-            coinname = $('input[name="coinname"]').val(),
-            symbol = $('input[name="symbol"]').val(),
+            coin = Coins.find({
+                coinname: $('input[name="coinname"]').val(),
+                symbol: $('input[name="symbol"]').val()
+            }),
             count = 3;
 
         e.preventDefault();
 
-        $output.addClass('alert alert-secondary active').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Deleting ' + coinname + '/' + name + ' ...');
+        if(window.confirm('Are you sure you want to DELETE ' + coin.coinname + ' (' + coin.symbol + ') ?')) {
 
-        $.post({
-              url: 'http://api.coindev.local' + loco.search,
-              data: { 'delete': true, index: index, coinname: coinname, symbol: symbol }
-            })
-            .done(function(response) {
+            $output.addClass('alert alert-warning active').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Deleting ' + coin.coinname + ' (' + coin.symbol + ') ...');
 
-                var errors = response.errors,
-                    out = '';
+            Coins.deleteCoin(coin, index)
+                .done(function(response) {
 
-                if(errors && errors.length > 0) {
-                    errors.forEach(function(error) {
-                        out += '<b>ERROR: ' + error.type + '</b> ' + error.message + '<br>';
-                    });
-                    $output.addClass('alert alert-danger active').html(out);
-                    $output.one('click', hideAlert);
-                    return;
-                } else {
-                    if(response.length === Coins.list().length - 1) {
-                        $output.addClass('alert alert-success active').html(coinname + ' (' + symbol + ') deleted successfully... Refreshing in <span class="count">' + count + '</span>');
-                        setInterval(function() { count--; $output.find('.count').text(count); if(count === 0) loco.reload(); }, 1000);
+                    var errors = response.errors,
+                        out = '';
+
+                    if(errors && errors.length > 0) {
+                        errors.forEach(function(error) {
+                            out += '<b>ERROR: ' + error.type + '</b> ' + error.message + '<br>';
+                        });
+                        $output.addClass('alert alert-danger active').html(out);
+                        $output.one('click', hideAlert);
+                        return;
                     } else {
-                        console.warn('Possible deletion error');
+                        if(response.length === Coins.list().length - 1) {
+                            $output.addClass('alert alert-success active').html(coin.coinname + ' (' + coin.symbol + ') deleted successfully... Refreshing in <span class="count">' + count + '</span>');
+                            setInterval(function() { count--; $output.find('.count').text(count); if(count === 0) loco.reload(); }, 1000);
+                        } else {
+                            $output.addClass('alert alert-danger active').html('Possible deletion error... you may need to double check ' + Coins.file());
+                        }
                     }
-                }
-
-            });
+                });
+        }
     };
 
     var onNavClick = function(e) {
@@ -246,7 +247,7 @@ jQuery(document).ready(function($) {
     };
 
     var getJSONLocation = function() {
-        $.get('http://api.coindev.local?location=1&' + loco.search.substring(1)).done(function(loc) {
+        Coins.file().done(function(loc) {
             $('header h1').after('<div class="alert alert-info active"><small>' + loc +
                 '</small><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></div>');
         });
@@ -312,50 +313,50 @@ jQuery(document).ready(function($) {
             }
         });
 
-        if(coin.releases && coin.releases.length > 0) {
+        // if(coin.releases && coin.releases.length > 0) {
 
-            releases = '<ul class="releases">' +
-                coin.releases.map(function(release) {
-                    return '<li><b>' + release.name + '</b> - <em>' +
-                            release.publishedAt + '</em></li>';
-                }).join('') + '</ul>';
+        //     releases = '<ul class="releases">' +
+        //         coin.releases.map(function(release) {
+        //             return '<li><b>' + release.name + '</b> - <em>' +
+        //                     release.publishedAt + '</em></li>';
+        //         }).join('') + '</ul>';
 
 
-            if(!$releases.hasClass('wrapped')) {
-                $releases
-                    .removeClass('col-sm-9')
-                    .addClass('wrapped')
-                    .wrap($releasesDiv)
-                    .after(releases);
-            } else {
-                $('ul.releases').replaceWith(releases);
-            }
+        //     if(!$releases.hasClass('wrapped')) {
+        //         $releases
+        //             .removeClass('col-sm-9')
+        //             .addClass('wrapped')
+        //             .wrap($releasesDiv)
+        //             .after(releases);
+        //     } else {
+        //         $('ul.releases').replaceWith(releases);
+        //     }
 
-        } else if($releases.hasClass('wrapped') && reset) {
-            $releases.removeClass('wrapped').addClass('col-sm-9').unwrap().next('ul').remove();
-        }
+        // } else if($releases.hasClass('wrapped') && reset) {
+        //     $releases.removeClass('wrapped').addClass('col-sm-9').unwrap().next('ul').remove();
+        // }
 
         if(coin.data) {
             data = '<table class="table table-sm data">' +
                         '<thead>' +
-                            '<th>week</th>' +
+                            '<th>day</th>' +
                             '<th>rank</th>' +
+                            '<th>volatility</th>' +
                             '<th>users</th>' +
                             '<th>forks</th>' +
                             '<th>stars</th>' +
                         '</thead>' +
                         '<tbody>';
-            for(var d in coin.data) {
-                if(coin.data.hasOwnProperty(d)) {
-                    data += '<tr>' +
-                                '<td>' + d + '</td>' +
-                                '<td>' + (coin.data[d].rank || '') + '</td>' +
-                                '<td>' + (coin.data[d].users || '') + '</td>' +
-                                '<td>' + (coin.data[d].forks || '') + '</td>' +
-                                '<td>' + (coin.data[d].stars || '') + '</td>' +
-                            '</tr>';
-                }
-            }
+            coin.data.forEach(function(day) {
+                data += '<tr>' +
+                            '<td>' + (day.date || '') + '</td>' +
+                            '<td>' + (day.rank || '') + '</td>' +
+                            '<td>' + (day.volatility ? day.volatility.toFixed(2) + '%' : '') + '</td>' +
+                            '<td>' + (day.users || '') + '</td>' +
+                            '<td>' + (day.forks || '') + '</td>' +
+                            '<td>' + (day.stars || '') + '</td>' +
+                        '</tr>';
+            });
             data +=     '</tbody>' +
                     '</table>';
             if(!$data.hasClass('wrapped')) {

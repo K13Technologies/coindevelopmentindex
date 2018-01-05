@@ -1,12 +1,13 @@
 <?php
 
-include_once('./json.php');
-include_once('./utils.php');
-include_once('./token.php');
+include_once('json.php');
+include_once('coin.php');
+include_once('utils.php');
+include_once('token.php');
 
 if(DEBUG) {
 	echo '*******DEBUG MODE*********<br>';
-	$json = fetchJSON(JSON_FILE);
+	$json = array_slice(fetchJSON(JSON_FILE), 0, 10);
 	if(errorOutput()->errors) var_dump(errorOutput()->errors);
 	if(!checkPermissions(JSON_FILE, '0777')) {
 		$error = errorOutput()->errors[0];
@@ -44,11 +45,14 @@ function fetchGithubData($json, $bulk=false) {
 		$json = array($json);
 	}
 
-	foreach($json as &$repo) {
+	foreach($json as &$coin) {
+
+		if(!isset($coin->owner) || !isset($coin->name)) continue;
+		if(strlen($coin->owner) === 0 || strlen($coin->name) === 0) continue;
 
 		$query = <<<QUERY
 query {
-	repository(owner:"{$repo->owner}", name:"{$repo->name}") {
+	repository(owner:"{$coin->owner}", name:"{$coin->name}") {
 		id
 	  description
 	  createdAt
@@ -90,15 +94,15 @@ QUERY;
 
 		if(DEBUG) {
 			echo '<br><br>';
-			echo '<b>Updating ' . $repo->owner . '/' . $repo->name . '</b>';
+			echo '<b>Updating ' . $coin->owner . '/' . $coin->name . '</b>';
 			echo '<br>';
 		}
 
 		$raw = json_decode(curl_exec($ch));
-		$errors = $raw->errors;
+		$errors = isset($raw->errors) ? $raw->errors : false;
 		$response = $raw->data->repository;
 
-		if(isset($errors) && count($errors) > 0) {
+		if($errors && count($errors) > 0) {
 			$hasErrors = true;
 			foreach($errors as $error) {
 				errorLog($error->type, $error->message);
@@ -114,12 +118,12 @@ QUERY;
 		// they can be reverted if necessary,  prevent
 		// overwriting of manually entered data
 		if(!$bulk) {
-			$repo->id = $response->id;
-			$repo->description = $response->description;
-			$repo->createdAt = $response->createdAt;
-			$repo->url = $response->url;
-			$repo->homepageUrl = $response->homepageUrl;
-			$repo->pushedAt = $response->pushedAt;
+			$coin->id = $response->id;
+			$coin->description = $response->description;
+			$coin->createdAt = $response->createdAt;
+			$coin->url = $response->url;
+			$coin->homepageUrl = $response->homepageUrl;
+			$coin->pushedAt = $response->pushedAt;
 
 			$langs = array();
 			if(count($response->languages->edges) > 0) :
@@ -127,17 +131,17 @@ QUERY;
 					$langs[] = $obj->node->name;
 				}
 			endif;
-			$repo->languages = $langs;
+			$coin->languages = $langs;
 		}
 
-		// to track changes, we put this into a data object
-		// in the repo with the key of YEAR-WEEK# (e.g. 2017-24)
-		if(!is_object($repo->data)) { $repo->data = new stdClass(); }
-		if(!is_object($repo->data->{date('Y-W')})) { $repo->data->{date('Y-W')} = new stdClass(); }
-		$repo->data->{date('Y-W')}->stars = $response->stargazers->totalCount;
-		$repo->data->{date('Y-W')}->users = $response->mentionableUsers->totalCount;
-		$repo->data->{date('Y-W')}->forks = $response->forks->totalCount;
+		$currData = getTodaysData($coin);
+		$currData->stars = $response->stargazers->totalCount;
+		$currData->users = $response->mentionableUsers->totalCount;
+		$currData->forks = $response->forks->totalCount;
 
+		// $coin = setTodaysData($coin, $currData);
+
+		// var_dump(setTodaysData($coin, $currData));
 		// $releases = array();
 		// if(count($response->releases->edges) > 0) :
 		// 	foreach($response->releases->edges as $obj) {
@@ -148,9 +152,9 @@ QUERY;
 		// 		$releases[] = $release;
 		// 	}
 		// endif;
-		// $repo->releases = array_reverse($releases);
+		// $coin->releases = array_reverse($releases);
 
-		if(DEBUG) echo json_encode($repo, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+		if(DEBUG) echo json_encode($coin, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 
 	}
 

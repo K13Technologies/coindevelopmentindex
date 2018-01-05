@@ -8,12 +8,9 @@ jQuery(document).ready(function($) {
         $output = $('#output'),
         repos, query;
 
-    $.ajax({
-        url: '//coindev.local/assets/json/data.json',
-        dataType: 'json'
-    })
-    .done(function(data) {
-        repos = data;
+    Coins.init(function() {
+
+        repos = Coins.list();
 
         $ownerSel.html(repos.map(function(repo) {
             return '<option value="' + repo.owner + '/' + repo.name + '">' + repo.owner + ' / ' + repo.name + '</option>';

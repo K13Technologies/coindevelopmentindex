@@ -63,3 +63,7 @@ assets/json/backup
 
 # Don't push github authorization
 api/token.php
+
+# Ignore sftp config
+.ftppass
+sftpCache.json

@@ -10,9 +10,10 @@ var Coins = (function($) {
 					if(param[0]) prev[param[0]] = param[1] ? param[1] : true;
 					return prev;
 				}, {}),
-	coinfile = params.local ? '/assets/json/data.json' : 'https://api.myjson.com/bins/909wb',
-	fieldsfile = '/assets/json/form-fields.json',
-	coinAPI = 'http://api.coindev.local',
+	// coinfile = params.local ? '/assets/json/data.json' : 'https://api.coindevelopmentindex.tech',
+	coinfile = 'https://api.coindevelopmentindex.tech',
+	fieldsfile = 'https://api.coindevelopmentindex.tech/fields',
+	coinAPI = 'https://api.coindevelopmentindex.tech',
 	rateAPI = 'https://min-api.cryptocompare.com/data/pricemulti',
 	initialized = false,
 	complete = false,
@@ -20,6 +21,10 @@ var Coins = (function($) {
 	currSort = 'latest.rank',
 	indexAvgs = {},
 	coins, results, fields;
+
+	var isAdminSite = function() {
+		return /(api\.)?coindev(elopmentindex)?\.(tech|local)\/admin/.test(window.location);
+	};
 
 	var getCoins = function() {
 		if(coins) {
@@ -75,7 +80,11 @@ var Coins = (function($) {
 	};
 
 	var file = function() {
-		return coinfile;
+		var data =  Object.keys(params)
+												.filter(function(key) { return key.length > 0; })
+												.map(function(key) { return { name: key, value: params[key] } });
+
+		return $.get(coinAPI + '?location', data);
 	};
 
 	var sort = function(prop, asc) {
@@ -109,11 +118,10 @@ var Coins = (function($) {
 					latest: {
 						'default': function(a,b) {
 
-							var nA, nB, arrA, arrB;
+							var nA, nB;
 
 							if(a.data) {
-								arrA = Object.keys(a.data).sort().reverse();
-								nA = a.data[arrA[0]][currSort.split('.')[1]];
+								nA = a.data[0][currSort.split('.')[1]];
 								if(nA) {
 									nA = $.isNumeric(nA) ? parseFloat(nA) : nA.toLowerCase();
 								} else {
@@ -123,8 +131,7 @@ var Coins = (function($) {
 								nA = null;
 							}
 							if(b.data) {
-								arrB = Object.keys(b.data).sort().reverse();
-								nB = b.data[arrB[0]][currSort.split('.')[1]];
+								nB = b.data[0][currSort.split('.')[1]];
 								if(nB) {
 									nB = $.isNumeric(nB) ? parseFloat(nB) : nB.toLowerCase();
 								} else {
@@ -147,21 +154,19 @@ var Coins = (function($) {
 						}
 					},
 					trend: function(a,b) {
-							var nA = true, nB = true, arrA, arrB;
+							var nA = true, nB = true;
 
 							if(a.data) {
-								arrA = Object.keys(a.data).sort().reverse();
-								if(!a.data[arrA[1]] || !a.data[arrA[0]]) nA = null;
-								if(!nA || !a.data[arrA[1]].rank || !a.data[arrA[0]].rank) nA = null;
-								if(nA) nA = a.data[arrA[1]].rank - a.data[arrA[0]].rank;
+								if(!a.data[1] || !a.data[0]) nA = null;
+								if(!nA || !a.data[1].rank || !a.data[0].rank) nA = null;
+								if(nA) nA = a.data[1].rank - a.data[0].rank;
 							} else {
 								nA = null;
 							}
 							if(b.data) {
-								arrB = Object.keys(b.data).sort().reverse();
-								if(!b.data[arrB[1]] || !b.data[arrB[0]]) nB = null;
-								if(!nB || !b.data[arrB[1]].rank || !b.data[arrB[0]].rank) nB = null;
-								if(nB) nB = b.data[arrB[1]].rank - b.data[arrB[0]].rank;
+								if(!b.data[1] || !b.data[0]) nB = null;
+								if(!nB || !b.data[1].rank || !b.data[0].rank) nB = null;
+								if(nB) nB = b.data[1].rank - b.data[0].rank;
 							} else {
 								nB = null;
 							}
@@ -169,19 +174,18 @@ var Coins = (function($) {
 							return sortFn(nA,nB);
 					},
 					volatility: function(a,b) {
-							var nA, nB, arrA, arrB, sumA, sumB;
+							var nA, nB, sumA, sumB;
 
 							if(a.data) {
-								arrA = Object.keys(a.data).sort().reverse();
-								nA = a.data[arrA[0]].volatility;
+								nA = a.data[0].volatility;
 								if(nA) {
-									sumA = $.map(a.data[arrA[0]].volatility, function(val, idx) {
-													return val;
+									sumA = $.map(a.data, function(val, idx) {
+													return val.volatility;
 												})
 												.reduce(function(prev,curr) {
 													return prev + curr;
 												}, 0);
-									nA =  sumA / $.makeArray(a.data[arrA[0]].volatility).length;
+									nA =  sumA / a.data.length;
 								} else {
 									nA = null;
 								}
@@ -189,16 +193,15 @@ var Coins = (function($) {
 								nA = null;
 							}
 							if(b.data) {
-								arrB = Object.keys(b.data).sort().reverse();
-								nB = b.data[arrB[0]].volatility;
+								nB = b.data[0].volatility;
 								if(nB) {
-									sumB = $.map(b.data[arrB[0]].volatility, function(val, idx) {
-													return val;
+									sumB = $.map(b.data, function(val, idx) {
+													return val.volatility;
 												})
 												.reduce(function(prev,curr) {
 													return prev + curr;
 												}, 0);
-									nB = sumB / $.makeArray(b.data[arrB[0]].volatility).length;
+									nB = sumB / b.data.length;
 								} else {
 									nB = null;
 								}
@@ -303,12 +306,20 @@ var Coins = (function($) {
 
 		var data =  Object.keys(params)
 												.filter(function(key) { return key.length > 0; })
-												.map(function(key) { return { name: key, value: params[key] } })
+												.map(function(key) { return { name: key, value: params[key] }; });
 
-      return $.post({
+      return isAdminSite() && $.post({
           url: coinAPI,
           data: coin.concat(data)
         });
+	};
+
+	var deleteCoin = function(coin, index) {
+
+			return isAdminSite() && $.post({
+	      url: coinAPI,
+	      data: { 'delete': true, index: index, coinname: coin.coinname, symbol: coin.symbol }
+	    });
 	};
 
 	var fetch = function(coin, endpoint) {
@@ -321,7 +332,7 @@ var Coins = (function($) {
 													value: /=/.test(endpoint) ? endpoint.split('=')[1] : true
 												}]);
 
-      return $.post({
+      return isAdminSite() && $.post({
           url: coinAPI,
           data: coin.concat(data)
         });
@@ -349,33 +360,23 @@ var Coins = (function($) {
 
 	var indexAvg = function(field) {
 
-		var arr, week, sum, avg, idxSum;
+		var sum, avg, idxSum;
 
 		if(indexAvgs[field]) return indexAvgs[field];
 
 		idxSum = coins.reduce(function(prev,curr) {
 
-			var data = curr.data,
-					dataArr;
+			var data = curr.data;
 
 			if(data) {
 
-				arr = Object.keys(data).sort().reverse();
+				if(!data[0][field]) return prev;
 
-				if(!data[arr[0]][field]) return prev;
-
-				dataArr = $.isPlainObject(data[arr[0]][field]) ?
-									$.map(data[arr[0]][field], function(val, idx) {
-										return val;
-									})
-									: [data[arr[0]][field]];
-
-				sum = dataArr.reduce(function(prev,curr) {
-					return prev + ($.isNumeric(curr) ? curr : 0);
+				sum = data.reduce(function(prev,curr) {
+					return prev + ($.isNumeric(curr[field]) ? curr[field] : 0);
 				}, 0);
 
-				avg = sum / dataArr.length;
-
+				avg = sum / data.length;
 				if(!$.isNumeric(avg)) return prev;
 				return prev + avg;
 			}
@@ -386,7 +387,7 @@ var Coins = (function($) {
 
  		indexAvgs[field] = idxSum / coins.length;
 
-		return idxSum;
+		return indexAvgs[field];
 
 	};
 
@@ -416,10 +417,12 @@ var Coins = (function($) {
 		list: list,
 		search: search,
 		fetch: fetch,
+		file: file,
 		find: find,
 		filter: filter,
 		indexAvg: indexAvg,
 		update: update,
+		deleteCoin: deleteCoin,
 		price: price,
 		reset: reset
 	};

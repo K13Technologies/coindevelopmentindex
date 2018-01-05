@@ -1,10 +1,16 @@
 <?php
 
-	include_once('./utils.php');
-	include('./json.php');
-	include('./github-fetch.php');
-	include('./cryptocomp-fetch.php');
-	include('./coinmarket-fetch.php');
+	include_once('utils.php');
+	include('json.php');
+	include('github-fetch.php');
+	include('cryptocomp-fetch.php');
+	include('coinmarket-fetch.php');
+
+	// if not an HTTP request just spit out json and die...
+	if(!isset($_SERVER['REQUEST_METHOD'])) {
+			out(getRecord(array()));
+			die;
+	}
 
 	switch($_SERVER['REQUEST_METHOD']) {
 
@@ -30,14 +36,15 @@
 
 			if(isset($_POST['githubfetch'])) {
 				// new entry called from repo-edit
-				if($_POST['new']) {
+				if(isset($_POST['new'])) {
 					$records = fetchGithubData([(object)
 						['owner' => $_POST['owner'],
 							'name' => $_POST['name'] ]
 					]);
 				}
-				if($_POST['id'] !== '') {
-					$records = fetchGithubData(getRecord(array('id' => $_POST['id'])));
+				if($_POST['owner'] !== '' && $_POST['name'] !== '') {
+					$records = fetchGithubData(getRecord(array('owner' => $_POST['owner'],
+																											'name' => $_POST['name'])));
 				}
 				out($records);
 				break;
@@ -60,7 +67,7 @@
 				break;
 			}
 
-			if($_POST['new']) {
+			if(isset($_POST['new'])) {
 				out(addRecords(array(json_decode(json_encode($_POST)))));
 			} else {
 				out(updateRecords(array(json_decode(json_encode($_POST)))));
@@ -75,7 +82,8 @@
 				break;
 			}
 			if(isset($_GET['location'])) {
-					echo JSON_FILE;
+					if(JSON_FILE === LOCAL_FILE) echo $_SERVER['HTTP_HOST'] . str_replace($_SERVER['DOCUMENT_ROOT'], '', JSON_FILE);
+					else echo JSON_FILE;
 				break;
 			}
 			if(isset($_GET['pulllocal'])) {
@@ -87,8 +95,13 @@
 				break;
 			}
 			if(isset($_GET['pushremote'])) {
-				$file = dirname(LOCAL_FILE) . DIRECTORY_SEPARATOR . 'backup'  . DIRECTORY_SEPARATOR . $_GET['pushremote'];
+				$file = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'backup'  . DIRECTORY_SEPARATOR . $_GET['pushremote'];
 				out(write(fetchJSON($file), REMOTE_FILE));
+				break;
+			}
+			if(isset($_GET['restore'])) {
+				$file = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'assets/json/backup'  . DIRECTORY_SEPARATOR . $_GET['restore'];
+				out(write(fetchJSON($file), LOCAL_FILE));
 				break;
 			}
 			if(isset($_GET['githubfetchall'])) {
@@ -126,16 +139,19 @@
 			}
 			if(isset($_GET['backup'])) {
 				if(!checkPermissions(dirname(LOCAL_FILE) . DIRECTORY_SEPARATOR . 'backup', '0777')) {
-					array_map(function($err){echo $err->type . $err->message;}, errorOutput()->errors);
+					array_map(function($err){echo $err->type . $err->message . PHP_EOL;}, errorOutput()->errors);
 					break;
 				}
 				out(backup(JSON_FILE));
 				break;
 			}
-			out(getRecord(array(
-				'coinname' => isset($_GET['coinname']) ? $_GET['coinname'] : null,
-				'symbol' => isset($_GET['symbol']) ? $_GET['symbol'] : null
-			)));
+
+			$find = array();
+
+			if(isset($_GET['coinname'])) array_push($find, $_GET['coinname']);
+			if(isset($_GET['symbol'])) array_push($find, $_GET['symbol']);
+
+			out(getRecord($find));
 			break;
 
 	}

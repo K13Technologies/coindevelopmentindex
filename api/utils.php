@@ -32,7 +32,7 @@ function errorLog($type, $message) {
 	$error->type = $type;
 	$error->message = $message;
 
-	array_push($output->errors, $error);
+	array_unshift($output->errors, $error);
 
 }
 
@@ -41,5 +41,19 @@ function errorOutput() {
 	global $output;
 
 	return $output;
+
+}
+
+function logFile($log, $msgs) {
+
+	$file = fopen($log, 'a');
+
+	$txt = implode('', array_map(function($msg) {
+		return PHP_EOL . date('[M d H:i:s] ') . $msg;
+	}, $msgs));
+
+	fwrite($file, $txt);
+
+	fclose($file);
 
 }

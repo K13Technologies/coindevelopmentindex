@@ -1,8 +1,9 @@
 <?php
 
-include_once('./json.php');
-include_once('./utils.php');
-include_once('./token.php');
+include_once('json.php');
+include_once('coin.php');
+include_once('utils.php');
+include_once('token.php');
 
 define('CRYPTOCOMP_LIST', 'https://min-api.cryptocompare.com/data/all/coinlist');
 define('CRYPTOCOMP_STATS', 'https://www.cryptocompare.com/api/data/socialstats');
@@ -10,7 +11,7 @@ define('CRYPTOCOMP_PRICE', 'https://min-api.cryptocompare.com/data/pricemultiful
 
 if(DEBUG) {
 	echo '*******DEBUG MODE*********<br>';
-	$json = fetchJSON(JSON_FILE);
+	$json = array_slice(fetchJSON(JSON_FILE), 0, 15);
 	if(errorOutput()->errors) var_dump(errorOutput()->errors);
 	if(!checkPermissions(JSON_FILE, '0777')) {
 		$error = errorOutput()->errors[0];
@@ -86,18 +87,12 @@ function fetchCryptoCompPrice($json) {
 
 			$prices = fetchJSON(CRYPTOCOMP_PRICE . '?fsyms=' . implode(',', $syms) . '&tsyms=USD');
 
-			if(errorOutput()->errors) return errorOutput();
-
 			for($j = $pointer; $j <= $i; $j++) {
 
-				if(!is_object($json[$j]->price)) { $json[$j]->price = new stdClass(); }
-				$json[$j]->price->USD = $prices->RAW->{$json[$j]->symbol}->USD->PRICE;
-
-				if(!is_object($json[$j]->data)) { $json[$j]->data = new stdClass(); }
-				if(!is_object($json[$j]->data->{date('Y-W')})) { $json[$j]->data->{date('Y-W')} = new stdClass(); }
-				if(!is_object($json[$j]->data->{date('Y-W')}->volatility)) { $json[$j]->data->{date('Y-W')}->volatility = new stdClass(); }
 				if(is_object($prices->RAW->{$json[$j]->symbol})) {
-					$json[$j]->data->{date('Y-W')}->volatility->{date('w')} = $prices->RAW->{$json[$j]->symbol}->USD->CHANGEPCTDAY;
+					$currData = getTodaysData($json[$j]);
+					$currData->volatility = $prices->RAW->{$json[$j]->symbol}->USD->CHANGEPCTDAY;
+					$currData->price = $prices->RAW->{$json[$j]->symbol}->USD->PRICE;
 				}
 
 				if(DEBUG) {

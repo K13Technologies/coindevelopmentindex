@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
 
   var date = grunt.template.today('yyyymmdd');
+  var admin = "admin";
   var dist = "coindevelopmentindex";
   var assetdir = "./assets/";
   var buildPathHTML  = "build/";
@@ -17,6 +18,7 @@ module.exports = function(grunt) {
 
   var initObj = {
     assetdir: assetdir,
+    admin: admin,
     dist: dist,
     buildPathCSS: buildPathCSS,
     buildPathJS: buildPathJS,
@@ -161,30 +163,11 @@ module.exports = function(grunt) {
     },
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // IMPORT FOR JS
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////
-    import: {
-      js: {
-        options: {
-          footer: 'var endofline="%file_name%";' // added onto js files to insure commented code at the end of the files isn't dropped
-        },
-        files: [{
-          expand: true,
-          cwd: '<%= assetdir %>js/_source/',
-          src: ['*.js'],
-          dest: '<%= assetdir %>js/',
-          ext: '.js'
-        }]
-      },
-    },
-
-
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////
     // CLEAN - DELETES FILES
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     clean : {
       builddir: {
-        src: ['build/']
+        src: ['build/*', '!build/sftp-config.json']
       },
       tmpdir: {
         src: ['build/**/tmp/']
@@ -250,6 +233,24 @@ module.exports = function(grunt) {
     },
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // IMPORT FOR JS
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    import: {
+      js: {
+        options: {
+
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= assetdir %>js/',
+          src: ['*.js'],
+          dest: 'build/tmp/js/',
+          ext: '.js'
+        }]
+      },
+    },
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
     // UGLIFY - MINIFY JS FILES
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     uglify: {
@@ -274,10 +275,15 @@ module.exports = function(grunt) {
             'node_modules/bootstrap-beta/dist/js/bootstrap.min.js',
             'node_modules/handlebars/dist/handlebars.runtime.min.js',
             'node_modules/floatthead/dist/jquery.floatThead.min.js',
-            '<%= assetdir %>js/**/*.js',
-            '!<%= assetdir %>js/vendor/*.js',
+            'build/tmp/js/production.js'
           ],
           dest: '<%= buildPathJS %><%= dist %>.js',
+        },
+        {
+          src: [
+            'build/tmp/js/admin.js'
+          ],
+          dest: '<%= buildPathJS %><%= dist %>-<%= admin %>.js',
         }]
       }
     },
@@ -302,6 +308,38 @@ module.exports = function(grunt) {
             return buildPathHBS + src.replace(/hbs$/, 'js');
         }
       }
+    },
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // SFTP-DEPLOY - UPLOAD TO SERVER
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    'sftp-deploy': {
+      build: {
+        auth: {
+          host: 'coindevelopmentindex.tech',
+          port: 22,
+          authKey: 'coindevelopementindex.tech'
+        },
+        cache: 'sftpCache.json',
+        src: buildPathHTML,
+        dest: '/var/www/coindevelopmentindex.com/html/',
+        exclusions: [buildPathHTML + '**/.DS_Store'],
+        concurrency: 4,
+        progress: true
+      },
+      api: {
+        auth: {
+          host: 'coindevelopmentindex.tech',
+          port: 22,
+          authKey: 'coindevelopementindex.tech'
+        },
+        cache: 'sftpCache.json',
+        src: 'api/',
+        dest: '/var/www/coindevelopmentindex.com/html/',
+        exclusions: [buildPathHTML + '**/.DS_Store'],
+        concurrency: 4,
+        progress: true
+      }
     }
 
   };
@@ -322,12 +360,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-handlebars');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-sftp-deploy');
 
   // Default task(s).
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('css', ['sass', 'cssmin', 'concat']);
   grunt.registerTask('js', ['import:js', 'uglify:js']);
   grunt.registerTask('cleanup', ['clean:builddir']);
+  grunt.registerTask('upload', ['sftp-deploy']);
   grunt.registerTask('build', ['cleanup', 'css', 'js', 'handlebars', 'htmlbuild', 'htmlmin', 'copy', 'clean:tmpdir', 'imagemin']);
 
 };

@@ -41,6 +41,10 @@ jQuery(document).ready(function($) {
 			autoReflow: true
 		});
 
+		// $('th[data-prop="volatility"] .vs').text(
+		// 	$('th[data-prop="volatility"] .vs').text()
+		// 		.replace(/Avg\)/, 'Avg: ' + Coins.indexAvg('volatility').toFixed(2) + '%)'));
+
 		$('.coin-list thead').addClass('initialized');
 
 	};
@@ -244,17 +248,15 @@ jQuery(document).ready(function($) {
 	});
 
 	Handlebars.registerHelper('latestRank', function(data) {
-		var arr;
 		if(data) {
-			arr = Object.keys(data).sort().reverse();
-			return data[arr[0]].rank ? '#' + data[arr[0]].rank : '-';
+			return data[0].rank ? '#' + data[0].rank : '-';
 		} else {
 			return data;
 		}
 	});
 
 	Handlebars.registerHelper('trending', function(data) {
-		var x = 0, y = 0, xy = 0, x2 = 0, arr, chg;
+		var x = 0, y = 0, xy = 0, x2 = 0, chg;
 
 		if(data) {
 			// arr = Object.keys(data).sort();
@@ -274,11 +276,10 @@ jQuery(document).ready(function($) {
 
 			// return trend > 1 ? 'Rising' : 'Falling';
 			//
-			arr = Object.keys(data).sort().reverse();
-			if(!data[arr[1]] || !data[arr[0]]) return '';
-			if(!data[arr[1]].rank || !data[arr[0]].rank) return '';
+			if(!data[0] || !data[1]) return '';
+			if(!data[0].rank || !data[1].rank) return '';
 
-			chg = data[arr[1]].rank - data[arr[0]].rank;
+			chg = data[1].rank - data[0].rank;
 			if(chg === 0) return '-';
 
 			return chg > 0 ? 'Rising' : 'Falling';
@@ -289,13 +290,12 @@ jQuery(document).ready(function($) {
 	});
 
 	Handlebars.registerHelper('changeRank', function(data) {
-		var arr, chg;
+		var chg;
 		if(data) {
-			arr = Object.keys(data).sort().reverse();
-			if(!data[arr[1]] || !data[arr[0]]) return '';
-			if(!data[arr[1]].rank || !data[arr[0]].rank) return '';
+			if(!data[0]) return '';
+			if(!data[0].rank || !data[data.length - 1].rank) return '';
 
-			chg = data[arr[1]].rank - data[arr[0]].rank;
+			chg = data[data.length - 1].rank - data[0].rank;
 			if(chg === 0) return '';
 
 			return new Handlebars.SafeString(
@@ -309,13 +309,12 @@ jQuery(document).ready(function($) {
 	});
 
 	Handlebars.registerHelper('changeUsers', function(data) {
-		var arr, chg;
+		var chg;
 		if(data) {
-			arr = Object.keys(data).sort().reverse();
-			if(!data[arr[1]] || !data[arr[0]]) return '';
-			if(!data[arr[1]].users || !data[arr[0]].users) return '';
+			if(!data[0]) return '';
+			if(!data[0].users) return '';
 
-			chg = (data[arr[0]].users - data[arr[1]].users) / data[arr[1]].users * 100;
+			chg = (data[0].users - data[data.length - 1].users) / data[data.length - 1].users * 100;
 			if(chg === 0) return '';
 
 			return new Handlebars.SafeString(
@@ -329,13 +328,12 @@ jQuery(document).ready(function($) {
 	});
 
 	Handlebars.registerHelper('changeForks', function(data) {
-		var arr, chg;
+		var chg;
 		if(data) {
-			arr = Object.keys(data).sort().reverse();
-			if(!data[arr[1]] || !data[arr[0]]) return '';
-			if(!data[arr[1]].forks || !data[arr[0]].forks) return '';
+			if(!data[0]) return '';
+			if(!data[0].forks) return '';
 
-			chg = (data[arr[0]].forks - data[arr[1]].forks) / data[arr[1]].forks * 100;
+			chg = (data[0].forks - data[data.length - 1].forks) / data[data.length - 1].forks * 100;
 			if(chg === 0) return '';
 
 			return new Handlebars.SafeString(
@@ -349,13 +347,12 @@ jQuery(document).ready(function($) {
 	});
 
 	Handlebars.registerHelper('changeStars', function(data) {
-		var arr, chg;
+		var chg;
 		if(data) {
-			arr = Object.keys(data).sort().reverse();
-			if(!data[arr[1]] || !data[arr[0]]) return '';
-			if(!data[arr[1]].stars || !data[arr[0]].stars) return '';
+			if(!data[0]) return '';
+			if(!data[0].stars) return '';
 
-			chg = (data[arr[0]].stars - data[arr[1]].stars) / data[arr[1]].stars * 100;
+			chg = (data[0].stars - data[data.length - 1].stars) / data[data.length - 1].stars * 100;
 			if(chg === 0) return '';
 
 			return new Handlebars.SafeString(
@@ -370,21 +367,17 @@ jQuery(document).ready(function($) {
 
 	Handlebars.registerHelper('volatility', function(data) {
 
-		var arr, week, sum, avg, vs, sign, vssign, color;
+		var sum, avg, vs, sign, vssign, color;
 
 		if(data) {
-			arr = Object.keys(data).sort().reverse();
-			if(!data[arr[0]].volatility) return '';
+			if(!data[0]) return '';
+			if(!data[0].volatility) return '';
 
-			week = $.map(data[arr[0]].volatility, function(val, idx) {
-				return val;
-			});
-
-			sum = week.reduce(function(prev,curr) {
-				return prev + curr;
+			sum = data.reduce(function(prev,curr) {
+				return prev + curr.volatility;
 			}, 0);
 
-			avg = sum / week.length;
+			avg = sum / data.length;
 
 			if(isNaN(avg)) return '';
 
@@ -414,30 +407,24 @@ jQuery(document).ready(function($) {
 	});
 
 	Handlebars.registerHelper('latestStars', function(data) {
-		var arr;
 		if(data) {
-			arr = Object.keys(data).sort().reverse();
-			return data[arr[0]].stars;
+			return data[0].stars;
 		} else {
 			return data;
 		}
 	});
 
 	Handlebars.registerHelper('latestForks', function(data) {
-		var arr;
 		if(data) {
-			arr = Object.keys(data).sort().reverse();
-			return data[arr[0]].forks;
+			return data[0].forks;
 		} else {
 			return data;
 		}
 	});
 
 	Handlebars.registerHelper('latestUsers', function(data) {
-		var arr;
 		if(data) {
-			arr = Object.keys(data).sort().reverse();
-			return data[arr[0]].users;
+			return data[0].users;
 		} else {
 			return data;
 		}
