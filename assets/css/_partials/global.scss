@@ -99,7 +99,7 @@ footer {
 	}
 
 	[class*='footer'] {
-		flex:1 1 16em;
+		flex:1 1 14em;
 		display:flex;
 		flex-flow:column nowrap;
 		justify-content:space-around;
@@ -180,36 +180,59 @@ footer {
 	.footer-right {
 		display:flex;
 		flex-flow: row wrap;
-		justify-content:space-around;
+		justify-content:flex-start;
 		align-items:center;
-		flex:0 1 8em;
-
-		@media only screen and (max-width:600px){
-			order:-1;
-			flex-basis:100%;
-			flex-flow:row nowrap;
-			justify-content:center;
-			margin-bottom:3em;
-
-			h5 {
-				margin-bottom:0;
-			}
-
-			a {
-				padding:0 1.5em !important;
-				font-size:2em;
-			}
-
-		}
+		flex:0 1 10em;
 
 		h5 {
-			text-align:center;
 			flex:1 1 100%;
+			margin-bottom:1em;
 		}
 
 		a {
 			padding:0.2em;
+		}
+
+		i.fa {
+			color:#fff;
 			font-size:1.5em;
+			margin:0 0.5em 1em 0;
+		}
+
+		.telegram {
+			align-self:flex-start;
+			font-size:1.2em;
+
+			a:link,
+			a:active,
+			a:visited {
+				color: $link-blue;
+				text-decoration:none;
+				font-weight:300;
+			}
+
+			i.fa {
+				margin-right:0.5em;
+			}
+
+			img {
+				margin-left:0.5em;
+				transform: translateY(-2px);
+			}
+		}
+
+		@media only screen and (max-width:600px) {
+			order:-1;
+			flex-basis:100%;
+			justify-content:center;
+
+			h5 {
+				text-align:center;
+			}
+
+			.telegram {
+				margin-right:1.5em;
+			}
 		}
 	}
 }
