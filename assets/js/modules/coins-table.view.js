@@ -241,6 +241,10 @@ jQuery(document).ready(function($) {
 		addSortIcons();
 		buildPagination();
 
+		if(window.innerWidth < 600) {
+			$('#coin-search input').attr('placeholder', 'Search index');
+		}
+
 		$('#coin-search').on('keyup', onCoinSearched);
 		$('#search-type').on('change', onCoinSearched);
 		$('#coin-search i.fa').on('click', onSearchIconClicked);
