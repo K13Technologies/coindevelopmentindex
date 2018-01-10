@@ -213,7 +213,7 @@ jQuery(document).ready(function($) {
 												- $('.coin-list thead')[0].offsetHeight
 												+ 6;
 
-		if(window.scrollY <= tableTop) { return false; }
+		if(window.scrollY <= tableTop && window.innerWidth > 600) { return false; }
 
 		$('html, body').animate({
 					scrollTop: tableTop
