@@ -13,7 +13,7 @@ jQuery(document).ready(function($) {
 			timeout = setTimeout(function() {
 				timeout = null;
 
-				$nav.toggleClass('show', window.scrollY > ($header[0].offsetHeight / 2) && !$('.tools').is('.expanded'));
+				$nav.toggleClass('show', window.innerWidth > 600 && window.scrollY > ($header[0].offsetHeight / 2) && !$('.tools').is('.expanded'));
 
 			 }, 66);
 		}
