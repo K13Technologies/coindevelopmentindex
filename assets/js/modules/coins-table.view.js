@@ -276,33 +276,38 @@ jQuery(document).ready(function($) {
 	});
 
 	Handlebars.registerHelper('trending', function(data) {
-		var x = 0, y = 0, xy = 0, x2 = 0, chg;
+
+		var x = 0, y = 0, xy = 0, x2 = 0, i = 0, mod = '', trend;
 
 		if(data) {
-			// arr = Object.keys(data).sort();
-			// arr.forEach(function(wk) {
-			// 	var week = parseInt(wk.split('-')[1],10),
-			// 			rank = data[wk].rank ? parseInt(data[wk].rank,10) : 0,
-			// 			wr = week * rank,
-			// 			ws = week * week;
+			data.forEach(function(d) {
+				var day = new Date(d.date).getTime()/1000/60/60/24,
+						rank = d.rank ? parseInt(d.rank,10) : null,
+						wr = day * rank,
+						ws = day * day;
 
-			// 			x += week;
-			// 			y += rank;
-			// 			xy += wr;
-			// 			x2 += ws;
-			// });
+					if(rank) {
+						x += day;
+						y += rank;
+						xy += wr;
+						x2 += ws;
+						i++;
+					}
+			});
 
-			// trend = ((arr.length * xy) - (x * y)) / ((arr.length * x2) - (x * x));
+			trend = -((i * xy) - (x * y)) / ((i * x2) - (x * x)).toFixed(10);
 
-			// return trend > 1 ? 'Rising' : 'Falling';
-			//
-			if(!data[0] || !data[1]) return '';
-			if(!data[0].rank || !data[1].rank) return '';
-
-			chg = data[1].rank - data[0].rank;
-			if(chg === 0) return '-';
-
-			return chg > 0 ? 'Rising' : 'Falling';
+			// negative trend = higher rank (lower number)
+			if(trend === 0) return '-';
+			if(trend > 1) mod = 'rising';
+			if(trend > 2.5) mod = 'rising2';
+			if(trend > 5) mod = 'rising3';
+			if(trend < -1) mod = 'falling';
+			if(trend < -2.5) mod = 'falling2';
+			if(trend < -5) mod = 'falling3';
+			return new Handlebars.SafeString(
+				'<span class="trending ' + mod + '">' + (trend > 0 ? 'Rising' : 'Falling') + '</span>'
+			);
 
 		} else {
 			return data;
@@ -310,12 +315,24 @@ jQuery(document).ready(function($) {
 	});
 
 	Handlebars.registerHelper('changeRank', function(data) {
-		var chg;
-		if(data) {
-			if(!data[0]) return '';
-			if(!data[0].rank || !data[data.length - 1].rank) return '';
+		var d1, d2, chg;
 
-			chg = data[data.length - 1].rank - data[0].rank;
+		if(data && data.length) {
+
+			d1 = data.find(function(a) {
+				return a.rank && a.rank !== '';
+			});
+
+			d2 = data.reverse().find(function(a) {
+				return a.rank && a.rank !== '';
+			});
+
+			data.reverse();
+
+			if('undefined' === typeof d1 || 'undefined' === typeof d2) return '';
+			if('undefined' === typeof d1.rank || 'undefined' === typeof d2.rank) return '';
+
+			chg = d2.rank - d1.rank;
 			if(chg === 0) return '';
 
 			return new Handlebars.SafeString(

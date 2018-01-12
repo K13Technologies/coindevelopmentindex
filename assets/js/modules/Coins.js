@@ -154,23 +154,46 @@ var Coins = (function($) {
 						}
 					},
 					trend: function(a,b) {
-							var nA = true, nB = true;
+							var nA = null, nB = null, iA = 0, iB = 0,
+									xA = 0, yA = 0, xyA = 0, x2A = 0,
+									xB = 0, yB = 0, xyB = 0, x2B = 0;
 
-							if(a.data) {
-								if(!a.data[1] || !a.data[0]) nA = null;
-								if(!nA || !a.data[1].rank || !a.data[0].rank) nA = null;
-								if(nA) nA = a.data[1].rank - a.data[0].rank;
-							} else {
-								nA = null;
-							}
-							if(b.data) {
-								if(!b.data[1] || !b.data[0]) nB = null;
-								if(!nB || !b.data[1].rank || !b.data[0].rank) nB = null;
-								if(nB) nB = b.data[1].rank - b.data[0].rank;
-							} else {
-								nB = null;
-							}
+							if(a.data && a.data.some(function(d) { return d.rank })) {
+								a.data.forEach(function(d) {
+									var day = new Date(d.date).getTime()/1000/60/60/24,
+											rank = d.rank ? parseInt(d.rank,10) : null,
+											wr = day * rank,
+											ws = day * day;
 
+										if(rank) {
+											xA += day;
+											yA += rank;
+											xyA += wr;
+											x2A += ws;
+											iA++;
+										}
+								});
+								nA = -((iA * xyA) - (xA * yA)) / ((iA * x2A) - (xA * xA));
+								if(Number.isNaN(nA)) nA = null;
+							}
+							if(b.data && b.data.some(function(d) { return d.rank })) {
+								b.data.forEach(function(d) {
+									var day = new Date(d.date).getTime()/1000/60/60/24,
+											rank = d.rank ? parseInt(d.rank,10) : null,
+											wr = day * rank,
+											ws = day * day;
+
+										if(rank) {
+											xB += day;
+											yB += rank;
+											xyB += wr;
+											x2B += ws;
+											iB++;
+										}
+								});
+								nB = -((iB * xyB) - (xB * yB)) / ((iB * x2B) - (xB * xB));
+								if(Number.isNaN(nB)) nB = null;
+							}
 							return sortFn(nA,nB);
 					},
 					volatility: function(a,b) {

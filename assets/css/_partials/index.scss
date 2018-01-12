@@ -244,6 +244,17 @@
 		&[data-prop$='trend'] {
 			text-align:right;
 			padding-left:1.7em;
+
+			.trending {
+				font-weight:100;
+			}
+			.rising { font-weight:500; /* color:#7ACCCC  */}
+			.rising2 { font-weight:700; /* color:#21A0A0  */}
+			.rising3	 { font-weight:700; color:#28a745 }
+			.falling { font-weight:500; /* color:#F2ECA9  */}
+			.falling2 { font-weight:700; /* color:#FFCC00 */ }
+			.falling3	 { font-weight:700; color:#E53D00 }
+
 		}
 		&[data-prop$='rank'],
 		&[data-prop='team'],
