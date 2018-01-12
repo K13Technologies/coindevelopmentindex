@@ -346,8 +346,8 @@ jQuery(document).ready(function($) {
 	Handlebars.registerHelper('changeUsers', function(data) {
 		var chg;
 		if(data) {
-			if(!data[0]) return '';
-			if(!data[0].users) return '';
+			if(!data[0] || !data[data.length - 1]) return '';
+			if(!data[0].users || !data[data.length - 1].users) return '';
 
 			chg = (data[0].users - data[data.length - 1].users) / data[data.length - 1].users * 100;
 			if(chg === 0) return '';
@@ -365,8 +365,8 @@ jQuery(document).ready(function($) {
 	Handlebars.registerHelper('changeForks', function(data) {
 		var chg;
 		if(data) {
-			if(!data[0]) return '';
-			if(!data[0].forks) return '';
+			if(!data[0] || !data[data.length - 1]) return '';
+			if(!data[0].forks || !data[data.length - 1].forks) return '';
 
 			chg = (data[0].forks - data[data.length - 1].forks) / data[data.length - 1].forks * 100;
 			if(chg === 0) return '';
@@ -384,8 +384,8 @@ jQuery(document).ready(function($) {
 	Handlebars.registerHelper('changeStars', function(data) {
 		var chg;
 		if(data) {
-			if(!data[0]) return '';
-			if(!data[0].stars) return '';
+			if(!data[0] || !data[data.length - 1]) return '';
+			if(!data[0].stars || !data[data.length - 1].stars) return '';
 
 			chg = (data[0].stars - data[data.length - 1].stars) / data[data.length - 1].stars * 100;
 			if(chg === 0) return '';
