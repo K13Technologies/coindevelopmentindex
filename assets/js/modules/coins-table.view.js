@@ -409,7 +409,7 @@ jQuery(document).ready(function($) {
 			if(!data[0].volatility) return '';
 
 			sum = data.reduce(function(prev,curr) {
-				return prev + curr.volatility;
+				return prev + (curr.volatility ? curr.volatility : 0);
 			}, 0);
 
 			avg = sum / data.length;

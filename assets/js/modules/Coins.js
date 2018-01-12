@@ -199,35 +199,21 @@ var Coins = (function($) {
 					volatility: function(a,b) {
 							var nA, nB, sumA, sumB;
 
-							if(a.data) {
-								nA = a.data[0].volatility;
-								if(nA) {
-									sumA = $.map(a.data, function(val, idx) {
-													return val.volatility;
-												})
-												.reduce(function(prev,curr) {
-													return prev + curr;
-												}, 0);
-									nA =  sumA / a.data.length;
-								} else {
-									nA = null;
-								}
+							if(a.data && a.data[0].volatility) {
+								sumA = a.data.reduce(function(prev,curr) {
+												return prev + (curr.volatility ? curr.volatility : 0);
+											}, 0);
+								nA =  sumA / a.data.length;
+								if(Number.isNaN(nA)) nA = null;
 							} else {
 								nA = null;
 							}
-							if(b.data) {
-								nB = b.data[0].volatility;
-								if(nB) {
-									sumB = $.map(b.data, function(val, idx) {
-													return val.volatility;
-												})
-												.reduce(function(prev,curr) {
-													return prev + curr;
-												}, 0);
-									nB = sumB / b.data.length;
-								} else {
-									nB = null;
-								}
+							if(b.data && a.data[0].volatility) {
+								sumB = b.data.reduce(function(prev,curr) {
+												return prev + (curr.volatility ? curr.volatility : 0);
+											}, 0);
+								nB = sumB / b.data.length;
+								if(Number.isNaN(nB)) nB = null;
 							} else {
 								nB = null;
 							}
