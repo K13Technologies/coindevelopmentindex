@@ -158,7 +158,7 @@ var Coins = (function($) {
 									xA = 0, yA = 0, xyA = 0, x2A = 0,
 									xB = 0, yB = 0, xyB = 0, x2B = 0;
 
-							if(a.data && a.data.some(function(d) { return d.rank })) {
+							if(a.data && a.data[0].rank) {
 								a.data.forEach(function(d) {
 									var day = new Date(d.date).getTime()/1000/60/60/24,
 											rank = d.rank ? parseInt(d.rank,10) : null,
@@ -173,10 +173,10 @@ var Coins = (function($) {
 											iA++;
 										}
 								});
-								nA = -((iA * xyA) - (xA * yA)) / ((iA * x2A) - (xA * xA));
+								nA = -((iA * xyA) - (xA * yA)) / ((iA * x2A) - (xA * xA)) * iA;
 								if(Number.isNaN(nA)) nA = null;
 							}
-							if(b.data && b.data.some(function(d) { return d.rank })) {
+							if(b.data && b.data[0].rank) {
 								b.data.forEach(function(d) {
 									var day = new Date(d.date).getTime()/1000/60/60/24,
 											rank = d.rank ? parseInt(d.rank,10) : null,
@@ -191,7 +191,7 @@ var Coins = (function($) {
 											iB++;
 										}
 								});
-								nB = -((iB * xyB) - (xB * yB)) / ((iB * x2B) - (xB * xB));
+								nB = -((iB * xyB) - (xB * yB)) / ((iB * x2B) - (xB * xB)) * iB;
 								if(Number.isNaN(nB)) nB = null;
 							}
 							return sortFn(nA,nB);

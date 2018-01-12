@@ -279,7 +279,7 @@ jQuery(document).ready(function($) {
 
 		var x = 0, y = 0, xy = 0, x2 = 0, i = 0, mod = '', trend;
 
-		if(data) {
+		if(data && data[0].rank) {
 			data.forEach(function(d) {
 				var day = new Date(d.date).getTime()/1000/60/60/24,
 						rank = d.rank ? parseInt(d.rank,10) : null,
@@ -299,18 +299,18 @@ jQuery(document).ready(function($) {
 
 			// negative trend = higher rank (lower number)
 			if(trend === 0) return '-';
-			if(trend > 1) mod = 'rising';
-			if(trend > 2.5) mod = 'rising2';
-			if(trend > 5) mod = 'rising3';
-			if(trend < -1) mod = 'falling';
-			if(trend < -2.5) mod = 'falling2';
-			if(trend < -5) mod = 'falling3';
+			if(i >= 5 && trend > 1) mod = 'rising';
+			if(i >= 5 && trend > 2.5) mod = 'rising2';
+			if(i >= 5 && trend > 5) mod = 'rising3';
+			if(i >= 5 && trend < -1) mod = 'falling';
+			if(i >= 5 && trend < -2.5) mod = 'falling2';
+			if(i >= 5 && trend < -5) mod = 'falling3';
 			return new Handlebars.SafeString(
 				'<span class="trending ' + mod + '">' + (trend > 0 ? 'Rising' : 'Falling') + '</span>'
 			);
 
 		} else {
-			return data;
+			return '';
 		}
 	});
 
@@ -319,9 +319,7 @@ jQuery(document).ready(function($) {
 
 		if(data && data.length) {
 
-			d1 = data.find(function(a) {
-				return a.rank && a.rank !== '';
-			});
+			d1 = data[0];
 
 			d2 = data.reverse().find(function(a) {
 				return a.rank && a.rank !== '';
