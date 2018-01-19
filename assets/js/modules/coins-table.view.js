@@ -315,6 +315,7 @@ jQuery(document).ready(function($) {
 	});
 
 	Handlebars.registerHelper('changeRank', function(data) {
+
 		var d1, d2, chg;
 
 		if(data && data.length) {

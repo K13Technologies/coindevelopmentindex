@@ -1,5 +1,7 @@
 <?php
 
+define('LOG_FILE', '/var/log/coindevelopmentindex/update.log');
+
 $output = new stdClass();
 $output->errors = array();
 
@@ -48,12 +50,20 @@ function logFile($log, $msgs) {
 
 	$file = fopen($log, 'a');
 
-	$txt = implode('', array_map(function($msg) {
-		return PHP_EOL . date('[M d H:i:s] ') . $msg;
-	}, $msgs));
+	if($file) {
+		$txt = implode('', array_map(function($msg) {
+			return PHP_EOL . date('[M d H:i:s] ') . $msg;
+		}, $msgs));
 
-	fwrite($file, $txt);
+		fwrite($file, $txt);
 
-	fclose($file);
+		fclose($file);
+	}
+
+}
+
+function logView($log=LOG_FILE) {
+
+	return file_get_contents($log);
 
 }

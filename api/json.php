@@ -1,5 +1,6 @@
 <?php
 include_once('token.php');
+include_once('coin.php');
 
 define('DEVELOPMENT', @preg_match('/(api\.)?coindev\.local/', $_SERVER['SERVER_NAME']));
 define('DEBUG', isset($_REQUEST['debug']));
@@ -13,6 +14,7 @@ if(DEVELOPMENT) {
 
 define('REMOTE_FILE', 'https://api.coindevelopmentindex.tech');
 define('LOCAL_FILE', FS_ROOT . '/assets/json/data.json');
+define('ARCHIVE_FILE', FS_ROOT . '/assets/json/data.archive.json');
 define('FIELDS_FILE', FS_ROOT . '/assets/json/form-fields.json');
 
 if(DEVELOPMENT) {
@@ -212,7 +214,7 @@ function updateRecords($records) {
 }
 
 function deleteRecord($index) {
-		global $json;
+	global $json;
 
 	if($json === null) fetchJSON();
 	if(errorOutput()->errors) return errorOutput();
@@ -245,13 +247,13 @@ function sortJSON($json, $prop='coinname', $asc=true) {
 
 }
 
-function write($json, $file) {
+function write($json, $file, $flags=0) {
 
-	$data_json = json_encode($json);
+	$data_json = json_encode($json, $flags);
 
-	if($file === LOCAL_FILE) {
+	if($file === LOCAL_FILE || DEVELOPMENT) {
 
-		if(file_put_contents($file, json_encode($json))) {
+		if(file_put_contents($file, $data_json)) {
 			return json_decode(file_get_contents($file));
 		}
 	}
@@ -274,10 +276,54 @@ function write($json, $file) {
 	return $reponse;
 }
 
+function archive() {
+	// global $json;
+
+	$data = new stdClass();
+	$data->current = array();
+
+	// if($json === null)
+	$json = fetchJSON();
+	if(errorOutput()->errors) return errorOutput();
+
+	$jsonarchive = fetchJSON(ARCHIVE_FILE);
+	if(errorOutput()->errors) return errorOutput();
+
+	foreach($json as $coin) {
+
+		$idx = array_search($coin->symbol, array_map(function($c) { return $c->symbol; }, $jsonarchive));
+
+		$cdata = archiveData($coin);
+
+		$cdata->archive->coinname = $coin->coinname;
+		$cdata->archive->symbol = $coin->symbol;
+
+		if($idx !== false) {
+			foreach(array_reverse($cdata->archive->data) as $day) {
+				if(array_search($day->date, array_map(function($d) { return $d->date; }, $jsonarchive[$idx]->data)) === false) {
+					array_unshift($jsonarchive[$idx]->data, $day);
+				}
+			}
+		} else {
+			array_push($jsonarchive, $cdata->archive);
+		}
+
+		array_push($data->current, $cdata->current);
+
+	}
+
+	$data->archive = $jsonarchive;
+
+	return $data;
+
+}
+
 function backup() {
 	global $json;
 
-	$file = dirname(LOCAL_FILE) . DIRECTORY_SEPARATOR . 'backup' . DIRECTORY_SEPARATOR . 'data.' . date('Ymd') . '.backup.json';
+	$filename = DEVELOPMENT ? 'data.' . date('Ymd') . '.backup.json' : 'backup';
+
+	$file = dirname(LOCAL_FILE) . DIRECTORY_SEPARATOR . 'backup' . DIRECTORY_SEPARATOR . $filename;
 
 	if($json === null) fetchJSON();
 	if(errorOutput()->errors) return errorOutput();

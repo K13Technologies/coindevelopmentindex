@@ -33,5 +33,5 @@
 	} else {
 		$msgs = array('UPDATE_COMPLETE: No errors reported');
 	}
-	logFile('/var/log/coindevelopmentindex/update.log', array_merge($results, $msgs));
+	logFile(LOG_FILE, array_merge($results, $msgs));
 

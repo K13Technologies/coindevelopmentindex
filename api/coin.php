@@ -26,3 +26,20 @@ function getTodaysData($coin) {
 
 	return $currDate;
 }
+
+function archiveData($coin) {
+
+	$return = new stdClass();
+	$archive = new stdClass();
+	$archive->data = array();
+
+	while(count($coin->data) > 7) {
+		array_unshift($archive->data, array_pop($coin->data));
+	}
+
+	$return->current = $coin;
+	$return->archive = $archive;
+
+	return $return;
+
+}

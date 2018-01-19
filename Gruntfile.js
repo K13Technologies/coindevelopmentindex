@@ -1,22 +1,25 @@
 module.exports = function(grunt) {
 
-  var date = grunt.template.today('yyyymmdd');
-  var admin = "admin";
-  var dist = "coindevelopmentindex";
-  var assetdir = "./assets/";
-  var buildPathHTML  = "build/";
-  var buildPathCSS  = "build/assets/css/";
-  var buildPathIMG  = "build/assets/img/";
-  var buildPathJSON = "build/assets/json/";
-  var buildPathFONT = "build/assets/fonts/";
-  var buildPathJS = "build/assets/js/";
-  var buildPathHBS = "build/assets/js/templates/";
+  var date          = grunt.template.today('yyyymmdd'),
+      environment   = grunt.option('env') || 'DEVELOPMENT',
+      admin         = 'admin',
+      dist          = 'coindevelopmentindex',
+      assetdir      = './assets/',
+      buildPathHTML = 'build/',
+      buildPathCSS  = 'build/assets/css/',
+      buildPathIMG  = 'build/assets/img/',
+      buildPathJSON = 'build/assets/json/',
+      buildPathFONT = 'build/assets/fonts/',
+      buildPathJS   = 'build/assets/js/',
+      buildPathHBS  = 'build/assets/js/templates/';
+
 
   ////////////////////////////////////////////
   // INIT
   ////////////////////////////////////////////
 
   var initObj = {
+    environment: environment,
     assetdir: assetdir,
     admin: admin,
     dist: dist,
@@ -138,8 +141,7 @@ module.exports = function(grunt) {
           },
           data: {
               // Data to pass to templates
-              version: "1.0",
-              title: "test",
+              environment: environment
           }
         }
       }

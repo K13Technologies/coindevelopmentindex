@@ -44,6 +44,10 @@ scss-lint-report.xml
 # grunt-contrib-sass cache
 .sass-cache
 
+# Ignore generated css
+*.min.css
+*.css.map
+
 # Jekyll metadata
 docs/.jekyll-metadata
 
@@ -53,10 +57,6 @@ node_modules
 
 # Ignore build folder
 build
-
-# Ignore generated css
-assets/css/*.min.css
-assets/css/*.map
 
 # Ignore backup folder
 assets/json/backup

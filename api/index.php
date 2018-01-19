@@ -16,7 +16,7 @@
 
 		case 'POST':
 
-			if(!checkPermissions(JSON_FILE, '0777')) {
+			if(!checkPermissions(JSON_FILE, '0755')) {
 				out(errorOutput());
 				break;
 			}
@@ -87,11 +87,11 @@
 				break;
 			}
 			if(isset($_GET['pulllocal'])) {
-				if(!checkPermissions(LOCAL_FILE, '0777')) {
+				if(!checkPermissions(LOCAL_FILE, '0775')) {
 					array_map(function($err){echo $err->type . $err->message;}, errorOutput()->errors);
 					break;
 				}
-				out(write(fetchJSON(REMOTE_FILE),LOCAL_FILE));
+				out(write(fetchJSON(REMOTE_FILE),LOCAL_FILE, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
 				break;
 			}
 			if(isset($_GET['pushremote'])) {
@@ -105,7 +105,7 @@
 				break;
 			}
 			if(isset($_GET['githubfetchall'])) {
-				if(isset($_GET['local']) && !checkPermissions(LOCAL_FILE, '0777')) {
+				if(isset($_GET['local']) && !checkPermissions(LOCAL_FILE, '0755')) {
 					array_map(function($err){echo $err->type . $err->message;}, errorOutput()->errors);
 					break;
 				}
@@ -113,7 +113,7 @@
 				break;
 			}
 			if(isset($_GET['coinmarketfetchall'])) {
-				if(isset($_GET['local']) && !checkPermissions(LOCAL_FILE, '0777')) {
+				if(isset($_GET['local']) && !checkPermissions(LOCAL_FILE, '0755')) {
 					array_map(function($err){echo $err->type . $err->message;}, errorOutput()->errors);
 					break;
 				}
@@ -121,7 +121,7 @@
 				break;
 			}
 			if(isset($_GET['cryptocompfetchall'])) {
-				if(isset($_GET['local']) && !checkPermissions(LOCAL_FILE, '0777')) {
+				if(isset($_GET['local']) && !checkPermissions(LOCAL_FILE, '0755')) {
 					array_map(function($err){echo $err->type . $err->message;}, errorOutput()->errors);
 					break;
 				}
@@ -133,16 +133,28 @@
 				}
 				break;
 			}
-			if(isset($_GET['local'])) {
-				out(fetchJSON(LOCAL_FILE));
-				break;
-			}
-			if(isset($_GET['backup'])) {
-				if(!checkPermissions(dirname(LOCAL_FILE) . DIRECTORY_SEPARATOR . 'backup', '0777')) {
+			if(isset($_GET['archive'])) {
+				if(!checkPermissions(ARCHIVE_FILE, '0777')) {
 					array_map(function($err){echo $err->type . $err->message . PHP_EOL;}, errorOutput()->errors);
 					break;
 				}
-				out(backup(JSON_FILE));
+				out(write(archive()->archive, ARCHIVE_FILE));
+				break;
+			}
+			if(isset($_GET['logs'])) {
+				print('<pre>' . logView() . '</pre>');
+				break;
+			}
+			if(isset($_GET['backup'])) {
+				if(!checkPermissions(dirname(LOCAL_FILE) . DIRECTORY_SEPARATOR . 'backup', '0755')) {
+					array_map(function($err){echo $err->type . $err->message . PHP_EOL;}, errorOutput()->errors);
+					break;
+				}
+				out(backup());
+				break;
+			}
+			if(isset($_GET['local'])) {
+				out(fetchJSON(LOCAL_FILE));
 				break;
 			}
 
