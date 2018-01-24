@@ -342,6 +342,7 @@ jQuery(document).ready(function($) {
                             '<th>day</th>' +
                             '<th>rank</th>' +
                             '<th>volatility</th>' +
+                            '<th>price USD</th>' +
                             '<th>users</th>' +
                             '<th>forks</th>' +
                             '<th>stars</th>' +
@@ -352,6 +353,7 @@ jQuery(document).ready(function($) {
                             '<td>' + (day.date || '') + '</td>' +
                             '<td>' + (day.rank || '') + '</td>' +
                             '<td>' + (day.volatility ? day.volatility.toFixed(2) + '%' : '') + '</td>' +
+                            '<td>' + (day.price ? parseFloat(day.price).toFixed(4) : '') + '</td>' +
                             '<td>' + (day.users || '') + '</td>' +
                             '<td>' + (day.forks || '') + '</td>' +
                             '<td>' + (day.stars || '') + '</td>' +

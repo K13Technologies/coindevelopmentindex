@@ -325,7 +325,7 @@ module.exports = function(grunt) {
         cache: 'sftpCache.json',
         src: buildPathHTML,
         dest: '/var/www/coindevelopmentindex.com/html/',
-        exclusions: [buildPathHTML + '**/.DS_Store'],
+        exclusions: [buildPathHTML + '**/.DS_Store', 'sftp-config.json'],
         concurrency: 4,
         progress: true
       },
@@ -338,7 +338,7 @@ module.exports = function(grunt) {
         cache: 'sftpCache.json',
         src: 'api/',
         dest: '/var/www/coindevelopmentindex.com/html/',
-        exclusions: [buildPathHTML + '**/.DS_Store'],
+        exclusions: [buildPathHTML + '**/.DS_Store', 'sftp-config.json'],
         concurrency: 4,
         progress: true
       }

@@ -251,29 +251,71 @@ function write($json, $file, $flags=0) {
 
 	$data_json = json_encode($json, $flags);
 
-	if($file === LOCAL_FILE || DEVELOPMENT) {
+	if(file_put_contents($file, $data_json)) {
 
-		if(file_put_contents($file, $data_json)) {
-			return json_decode(file_get_contents($file));
+		return json_decode(file_get_contents($file));
+
+	} else {
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $file);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($data_json)));
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+		curl_setopt($ch, CURLOPT_POSTFIELDS,$data_json);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+		if(PROXY) {
+			curl_setopt($ch, CURLOPT_PROXY, PROXY_SERVER);
+			curl_setopt($ch, CURLOPT_PROXYPORT, '80');
+
 		}
+
+		$reponse = curl_exec($ch);
+		curl_close($ch);
+
+		return $reponse;
+
+	}
+}
+
+function archive($file=JSON_FILE) {
+
+	$data = new stdClass();
+	$data->current = array();
+
+	$json = fetchJSON($file);
+	if(errorOutput()->errors) return errorOutput();
+
+	$jsonarchive = fetchJSON(ARCHIVE_FILE);
+	if(errorOutput()->errors) return errorOutput();
+
+	foreach($json as $coin) {
+
+		$idx = array_search($coin->symbol, array_map(function($c) { return $c->symbol; }, $jsonarchive));
+
+		$cdata = archiveData($coin);
+
+		$cdata->archive->coinname = $coin->coinname;
+		$cdata->archive->symbol = $coin->symbol;
+
+		if($idx !== false) {
+			foreach(array_reverse($cdata->archive->data) as $day) {
+				if(array_search($day->date, array_map(function($d) { return $d->date; }, $jsonarchive[$idx]->data)) === false) {
+					array_unshift($jsonarchive[$idx]->data, $day);
+				}
+			}
+		} else {
+			array_push($jsonarchive, $cdata->archive);
+		}
+
+		array_push($data->current, $cdata->current);
+
 	}
 
-	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, $file);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($data_json)));
-	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
-	curl_setopt($ch, CURLOPT_POSTFIELDS,$data_json);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	$data->archive = $jsonarchive;
 
-	if(PROXY) {
-		curl_setopt($ch, CURLOPT_PROXY, PROXY_SERVER);
-		curl_setopt($ch, CURLOPT_PROXYPORT, '80');
-	}
+	return $data;
 
-	$reponse = curl_exec($ch);
-	curl_close($ch);
-
-	return $reponse;
 }
 
 function archive() {

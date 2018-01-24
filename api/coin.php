@@ -27,18 +27,40 @@ function getTodaysData($coin) {
 	return $currDate;
 }
 
+function setTodaysData($data, $val, $key, $type='float') {
+
+	if(is_null($val)) {
+		if(isset($data->{$key})) unset($data->{$key});
+		return $data;
+	}
+
+	$hr = ceil( (int) date('G') / 4 );
+
+	if($type === 'int') {
+		$cma = intval((intval($data->{$key}) + (intval($val) * ($hr - 1))) / $hr);
+	} else {
+		$cma = round(floatval((floatval($data->{$key}) + (floatval($val) * ($hr - 1))) / $hr), 10);
+	}
+
+	$data->{$key} = $cma;
+
+	return $data;
+
+}
+
 function archiveData($coin) {
 
 	$return = new stdClass();
-	$archive = new stdClass();
-	$archive->data = array();
+	$return->archive = new stdClass();
+	$return->archive->data = array();
 
-	while(count($coin->data) > 7) {
-		array_unshift($archive->data, array_pop($coin->data));
+	for($i = 0; $i < count($coin->data); $i++) {
+		if(strtotime($coin->data[$i]) < strtotime('- 7 days', date('Y-m-d'))) {
+			array_push($return->$archive->data, array_splice($coin->data, $i));
+		}
 	}
 
 	$return->current = $coin;
-	$return->archive = $archive;
 
 	return $return;
 

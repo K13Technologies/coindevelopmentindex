@@ -39,18 +39,8 @@ function fetchCoinMarketData($json) {
 		});
 
 		$record = array_pop($arr);
-
-		if($record) {
-
-			$currData = getTodaysData($coin);
-			$currData->rank = intval($record->rank);
-
-		} else {
-
-			$currData = getTodaysData($coin);
-			unset($currData->rank);
-
-		}
+		$currData = getTodaysData($coin);
+		$currData = setTodaysData($currData, $record ? intval($record->rank) : null, 'rank', 'int');
 
 		if(DEBUG) {
 			echo '<br><br>';

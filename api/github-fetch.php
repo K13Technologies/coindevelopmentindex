@@ -99,6 +99,9 @@ QUERY;
 		}
 
 		$raw = json_decode(curl_exec($ch));
+
+		if(!$raw) { continue; }
+
 		$errors = isset($raw->errors) ? $raw->errors : false;
 		$response = $raw->data->repository;
 
@@ -135,13 +138,10 @@ QUERY;
 		}
 
 		$currData = getTodaysData($coin);
-		$currData->stars = $response->stargazers->totalCount;
-		$currData->users = $response->mentionableUsers->totalCount;
-		$currData->forks = $response->forks->totalCount;
+		$currData = setTodaysData($currData, $response->stargazers->totalCount, 'stars', 'int');
+		$currData = setTodaysData($currData, $response->mentionableUsers->totalCount, 'users', 'int');
+		$currData = setTodaysData($currData, $response->forks->totalCount, 'forks', 'int');
 
-		// $coin = setTodaysData($coin, $currData);
-
-		// var_dump(setTodaysData($coin, $currData));
 		// $releases = array();
 		// if(count($response->releases->edges) > 0) :
 		// 	foreach($response->releases->edges as $obj) {

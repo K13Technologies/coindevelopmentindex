@@ -91,8 +91,8 @@ function fetchCryptoCompPrice($json) {
 
 				if(is_object($prices->RAW->{$json[$j]->symbol})) {
 					$currData = getTodaysData($json[$j]);
-					$currData->volatility = $prices->RAW->{$json[$j]->symbol}->USD->CHANGEPCTDAY;
-					$currData->price = $prices->RAW->{$json[$j]->symbol}->USD->PRICE;
+					$currData = setTodaysData($currData, $prices->RAW->{$json[$j]->symbol}->USD->CHANGEPCTDAY, 'volatility');
+					$currData = setTodaysData($currData, floatval($prices->RAW->{$json[$j]->symbol}->USD->PRICE), 'price');
 				}
 
 				if(DEBUG) {
