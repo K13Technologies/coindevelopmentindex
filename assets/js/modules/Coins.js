@@ -337,7 +337,7 @@ var Coins = (function($) {
 												.filter(function(key) { return key.length > 0; })
 												.map(function(key) { return { name: key, value: params[key] }; })
 												.concat([{
-													name: endpoint,
+													name: /=/.test(endpoint) ? endpoint.split('=')[0] : endpoint,
 													value: /=/.test(endpoint) ? endpoint.split('=')[1] : true
 												}]);
 

@@ -34,6 +34,8 @@ function setTodaysData($data, $val, $key, $type='float') {
 		return $data;
 	}
 
+	if(!isset($data->{$key})) { $data->{$key} = $val; }
+
 	$hr = ceil( (int) date('G') / 4 );
 
 	if($type === 'int') {
@@ -55,8 +57,8 @@ function archiveData($coin) {
 	$return->archive->data = array();
 
 	for($i = 0; $i < count($coin->data); $i++) {
-		if(strtotime($coin->data[$i]) < strtotime('- 7 days', date('Y-m-d'))) {
-			array_push($return->$archive->data, array_splice($coin->data, $i));
+		if(strtotime($coin->data[$i]->date) < strtotime('- 7 days')) {
+			array_push($return->archive->data, array_splice($coin->data, $i));
 		}
 	}
 

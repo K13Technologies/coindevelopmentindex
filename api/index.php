@@ -16,7 +16,7 @@
 
 		case 'POST':
 
-			if(!checkPermissions(JSON_FILE, '0755')) {
+			if(!checkPermissions(JSON_FILE, '0664')) {
 				out(errorOutput());
 				break;
 			}
@@ -87,7 +87,7 @@
 				break;
 			}
 			if(isset($_GET['pulllocal'])) {
-				if(!checkPermissions(LOCAL_FILE, '0775')) {
+				if(!checkPermissions(LOCAL_FILE, '0664')) {
 					array_map(function($err){echo $err->type . $err->message;}, errorOutput()->errors);
 					break;
 				}
@@ -105,7 +105,7 @@
 				break;
 			}
 			if(isset($_GET['githubfetchall'])) {
-				if(isset($_GET['local']) && !checkPermissions(LOCAL_FILE, '0755')) {
+				if(isset($_GET['local']) && !checkPermissions(LOCAL_FILE, '0664')) {
 					array_map(function($err){echo $err->type . $err->message;}, errorOutput()->errors);
 					break;
 				}
@@ -113,7 +113,7 @@
 				break;
 			}
 			if(isset($_GET['coinmarketfetchall'])) {
-				if(isset($_GET['local']) && !checkPermissions(LOCAL_FILE, '0755')) {
+				if(isset($_GET['local']) && !checkPermissions(LOCAL_FILE, '0664')) {
 					array_map(function($err){echo $err->type . $err->message;}, errorOutput()->errors);
 					break;
 				}
@@ -121,7 +121,7 @@
 				break;
 			}
 			if(isset($_GET['cryptocompfetchall'])) {
-				if(isset($_GET['local']) && !checkPermissions(LOCAL_FILE, '0755')) {
+				if(isset($_GET['local']) && !checkPermissions(LOCAL_FILE, '0664')) {
 					array_map(function($err){echo $err->type . $err->message;}, errorOutput()->errors);
 					break;
 				}
@@ -146,7 +146,7 @@
 				break;
 			}
 			if(isset($_GET['backup'])) {
-				if(!checkPermissions(dirname(LOCAL_FILE) . DIRECTORY_SEPARATOR . 'backup', '0755')) {
+				if(!checkPermissions(dirname(LOCAL_FILE) . DIRECTORY_SEPARATOR . 'backup', '0664')) {
 					array_map(function($err){echo $err->type . $err->message . PHP_EOL;}, errorOutput()->errors);
 					break;
 				}

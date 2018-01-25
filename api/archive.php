@@ -7,7 +7,7 @@ include('json.php');
 
 $json = fetchJSON();
 
-if(!checkPermissions(ARCHIVE_FILE, '0775')) {
+if(!checkPermissions(ARCHIVE_FILE, '0664')) {
 
 	$msgs = array_map(function($error) {
 					return  PHP_EOL . $error->type . ': ' . $error->message;

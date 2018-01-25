@@ -13,7 +13,7 @@ if(DEBUG) {
 	echo '*******DEBUG MODE*********<br>';
 	$json = array_slice(fetchJSON(JSON_FILE), 0, 15);
 	if(errorOutput()->errors) var_dump(errorOutput()->errors);
-	if(!checkPermissions(JSON_FILE, '0777')) {
+	if(!checkPermissions(JSON_FILE, '0664')) {
 		$error = errorOutput()->errors[0];
 		echo '<div style="font-family:sans-serif">';
 		echo '<b style="color:darkred;">ERROR: ' . $error->type . '</b>';
