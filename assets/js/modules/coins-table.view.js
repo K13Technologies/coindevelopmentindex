@@ -419,7 +419,7 @@ jQuery(document).ready(function($) {
 
 			sign = avg > 0 ? '+' : '';
 
-			vs = avg / Coins.indexAvg('volatility');
+			vs = avg - Coins.indexAvg('volatility');
 
 			if(vs > 0) {
 				vssign = '+';

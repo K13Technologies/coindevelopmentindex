@@ -44,7 +44,7 @@ function fetchJSON($url=JSON_FILE) {
 		$data = @file_get_contents($url, false, $context);
 		if(!$data) {
 			errorLog('FETCH_JSON_ERROR',
-				isset($data->Message) ? $data->Message : 'Possible network error.  You may need to add the <pre style="display:inline;padding:5px;background:#fff">?proxy</pre> flag to your url if you are on VPN.');
+				isset($data->Message) ? $data->Message : 'Error with file_get_contents. Could not fetch file: ' . $url);
 			$return = false;
 		} else {
 			$return = sortJSON(json_decode($data));
@@ -299,56 +299,21 @@ function archive($file=JSON_FILE) {
 		$cdata->archive->symbol = $coin->symbol;
 
 		if($idx !== false) {
-			foreach(array_reverse($cdata->archive->data) as $day) {
+			foreach($cdata->archive->data as $day) {
 				if(array_search($day->date, array_map(function($d) { return $d->date; }, $jsonarchive[$idx]->data)) === false) {
-					array_unshift($jsonarchive[$idx]->data, $day);
+					array_push($jsonarchive[$idx]->data, $day);
 				}
 			}
+			usort($jsonarchive[$idx]->data, function($a, $b) {
+				return strcmp($b->date, $a->date);
+			});
 		} else {
+			usort($cdata->archive, function($a, $b) {
+				return strcmp($b->date, $a->date);
+			});
 			array_push($jsonarchive, $cdata->archive);
 		}
 
-		array_push($data->current, $cdata->current);
-
-	}
-
-	$data->archive = $jsonarchive;
-
-	return $data;
-
-}
-
-function archive() {
-	// global $json;
-
-	$data = new stdClass();
-	$data->current = array();
-
-	// if($json === null)
-	$json = fetchJSON();
-	if(errorOutput()->errors) return errorOutput();
-
-	$jsonarchive = fetchJSON(ARCHIVE_FILE);
-	if(errorOutput()->errors) return errorOutput();
-
-	foreach($json as $coin) {
-
-		$idx = array_search($coin->symbol, array_map(function($c) { return $c->symbol; }, $jsonarchive));
-
-		$cdata = archiveData($coin);
-
-		$cdata->archive->coinname = $coin->coinname;
-		$cdata->archive->symbol = $coin->symbol;
-
-		if($idx !== false) {
-			foreach(array_reverse($cdata->archive->data) as $day) {
-				if(array_search($day->date, array_map(function($d) { return $d->date; }, $jsonarchive[$idx]->data)) === false) {
-					array_unshift($jsonarchive[$idx]->data, $day);
-				}
-			}
-		} else {
-			array_push($jsonarchive, $cdata->archive);
-		}
 
 		array_push($data->current, $cdata->current);
 

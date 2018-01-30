@@ -5,8 +5,6 @@ set_include_path('/var/www/coindevelopmentindex.tech/html/');
 include_once('utils.php');
 include('json.php');
 
-$json = fetchJSON();
-
 if(!checkPermissions(ARCHIVE_FILE, '0664')) {
 
 	$msgs = array_map(function($error) {
