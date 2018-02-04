@@ -5,7 +5,7 @@ include_once('coin.php');
 include_once('utils.php');
 include_once('token.php');
 
-define('COINMARKET_LIST', 'https://api.coinmarketcap.com/v1/ticker/');
+define('COINMARKET_LIST', 'https://api.coinmarketcap.com/v1/ticker/?limit=0');
 
 if(DEBUG) {
 	echo '*******DEBUG MODE*********<br>';
@@ -41,6 +41,8 @@ function fetchCoinMarketData($json) {
 		$record = array_pop($arr);
 		$currData = getTodaysData($coin);
 		$currData = setTodaysData($currData, $record ? intval($record->rank) : null, 'rank', 'int');
+		$currData = setTodaysData($currData, $record ? floatval($record->percent_change_24h) : null, 'volatility');
+		$currData = setTodaysData($currData, $record ? floatval($record->price_usd) : null, 'price');
 
 		if(DEBUG) {
 			echo '<br><br>';

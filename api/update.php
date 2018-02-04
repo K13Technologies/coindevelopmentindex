@@ -17,8 +17,8 @@
 	if(!errorOutput()->errors) { array_push($results, 'COINMARKET_UPDATE: No errors reported'); }
 	$json = fetchGithubData($json, true);
 	if(!errorOutput()->errors) { array_push($results, 'GITHUB_UPDATE: No errors reported'); }
-	$json = fetchCryptoCompPrice($json);
-	if(!errorOutput()->errors) { array_push($results, 'CRYPTOCOMPARE_UPDATE: No errors reported'); }
+	// $json = fetchCryptoCompPrice($json);
+	// if(!errorOutput()->errors) { array_push($results, 'CRYPTOCOMPARE_UPDATE: No errors reported'); }
 
 	if(count(errorOutput()->errors) > 0) {
 		errorLog('UPDATE_ERROR',  'Coin count: Was ' . $check . ' coins.  Now ' . count($json) . ' coins');
