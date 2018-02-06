@@ -20,7 +20,7 @@
 	// $json = fetchCryptoCompPrice($json);
 	// if(!errorOutput()->errors) { array_push($results, 'CRYPTOCOMPARE_UPDATE: No errors reported'); }
 
-	if(count(errorOutput()->errors) > 0) {
+	if(count(errorOutput()->errors) > 0 && $check !== count($json)) {
 		errorLog('UPDATE_ERROR',  'Coin count: Was ' . $check . ' coins.  Now ' . count($json) . ' coins');
 	} else {
 		write($json, JSON_FILE);
