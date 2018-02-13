@@ -361,6 +361,7 @@ var Coins = (function($) {
 
 		return $.get(url).done(function(data) {
 			return cb && cb(coins.map(function(coin) {
+				if(!coin.price) coin.price = {};
 				coin.price[to] = data[coin.symbol][to];
 				return coin;
 			}));
