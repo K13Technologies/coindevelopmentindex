@@ -208,7 +208,7 @@ var Coins = (function($) {
 							} else {
 								nA = null;
 							}
-							if(b.data && a.data[0].volatility) {
+							if(b.data && b.data[0].volatility) {
 								sumB = b.data.reduce(function(prev,curr) {
 												return prev + (curr.volatility ? curr.volatility : 0);
 											}, 0);
