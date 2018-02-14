@@ -33,42 +33,77 @@ jQuery(document).ready(function($) {
 
     var onFieldsLoaded = function() {
 
-        Coins.fields().forEach(function(field) {
+        var $tabs = $('<ul id="categoryTab" class="nav nav-tabs" role="tablist">'),
+            $tab = $('<li class="nav-item">'),
+            $ctr = $('<div class="tab-content" id="categoryTabContent">'),
+            $panel,
+            fields = Coins.fields().reduce(function(obj, f) {
+                        if(!obj[f.group])  {
+                            obj[f.group] = [];
+                        }
+                        obj[f.group].push(f);
+                        return obj;
+                    },{});
 
-            var $div = $('<div class="form-group form-row"></div>'),
-                $el = $('<input class="form-control col-sm-9" />'),
-                $label = $('<label class="col-sm-3"></label>'),
-                a;
+        Object.keys(fields).forEach(function(cat) {
 
-            if(!field.type) return;
+            $tabs.append($tab.clone().html('<a class="nav-link" id="' + cat +
+                '-tab" data-toggle="tab" href="#' + cat +
+                '" role="tab" aria-controls="' + cat +
+                '" aria-selected="false">' + cat + '</a>'));
 
-            for(a in field) {
-                if(field.hasOwnProperty(a)) {
-                    switch(a) {
-                        case 'name':
-                            $label.attr('for', field[a])
-                                .text(field[a])
-                                .css('font-weight', field.required ? 'bold' : '');
-                        case 'disabled':
-                            $el.attr('data-disabled', field[a]);
-                        case 'required':
-                            $el.prop(a, field[a]);
-                            break;
-                        case 'options':
-                            $el = $('<select class="form-control col-sm-9"></select>');
-                            $el.append(field[a].map(function(opt) {
-                                    return '<option value="' + opt + '">' + opt + '</option>';
-                                }).join(''));
-                            break;
-                        default:
-                            $el.attr(a, field[a]);
-                            break;
+            $panel = $('<div class="tab-pane fade" role="tabpanel">').attr({
+                         id: cat,
+                        'aria-labelledby': cat + '-tab'
+                     }).appendTo($ctr);
+
+            fields[cat].sort(function(a,b) {
+
+                return a.name.localeCompare(b.name);
+
+            }).forEach(function(field) {
+
+                var $div = $('<div class="form-group form-row"></div>'),
+                    $el = $('<input class="form-control col-sm-9" />'),
+                    $label = $('<label class="col-sm-3"></label>'),
+                    a;
+
+                if(!field.type) return;
+
+                for(a in field) {
+                    if(field.hasOwnProperty(a)) {
+                        switch(a) {
+                            case 'name':
+                                $label.attr('for', field[a])
+                                    .text(field[a])
+                                    .css('font-weight', field.required ? 'bold' : '');
+                            case 'disabled':
+                                $el.attr('data-disabled', field[a]);
+                            case 'required':
+                                $el.prop(a, field[a]);
+                                break;
+                            case 'options':
+                                $el = $('<select class="form-control col-sm-9"></select>');
+                                $el.append(field[a].map(function(opt) {
+                                        return '<option value="' + opt + '">' + opt + '</option>';
+                                    }).join(''));
+                                break;
+                            default:
+                                $el.attr(a, field[a]);
+                                break;
+                        }
                     }
                 }
-            }
-            $div.append($label).append($el);
-            $fields.append($div);
+                $div.append($label).append($el);
+                $panel.append($div);
+
+            });
+
         });
+
+        $fields.append($tabs).append($ctr);
+
+        $tabs.find('li.nav-item a').first().click();
 
         $releases = $('input[name="releases"]');
         $data = $('input[name="data"]');
@@ -385,6 +420,20 @@ jQuery(document).ready(function($) {
         $input.after('<span class="undo input-group-addon"><i class="fa fa-undo" title="Revert Update"></i></span>');
     };
 
+    var toggleRevert = function(e) {
+        var $grp = $(e.target).closest('.input-group'),
+            $input = $grp.find('input');
+
+        if(!$input.data('curr')) {
+            $input.data('curr', $input.val());
+        }
+        if($input.val() === $input.data('prev')) {
+            $input.val($input.data('curr'));
+        } else {
+            $input.val($input.data('prev'));
+        }
+    };
+
     var revertField = function(e) {
         var $grp = $(e.target).closest('.input-group'),
             $input = $grp.find('input');
@@ -420,6 +469,7 @@ jQuery(document).ready(function($) {
         $coinSel.on('change', handleOwnerChange);
         $apiBtns.on('click', apiFetch);
         $deleteBtn.on('click', deleteRecord);
+        $coinForm.on('mouseenter mouseleave', '.undo', toggleRevert);
         $coinForm.on('click', '.undo', revertField);
         $coinForm.on('click', '.coinnav', onNavClick);
         $coinForm.on('submit', handleForm);

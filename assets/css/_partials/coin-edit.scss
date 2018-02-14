@@ -99,10 +99,16 @@
         }
 
         .auto-fields {
-            max-height:70vh;
-            overflow-y:auto;
-            overflow-x:hidden;
-            padding-right:1em;
+
+            .nav-item a:focus {
+                outline:none !important;
+            }
+            .tab-content {
+                padding: 3em 1em;
+                height:70vh;
+                overflow-y:auto;
+                overflow-x:hidden;
+            }
         }
 
         .input-group {

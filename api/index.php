@@ -67,6 +67,12 @@
 				break;
 			}
 
+			if(isset($_POST['csvupdate'])) {
+				$records = array(getCSVrecord($_POST['symbol'], fetchCSV()));
+				out($records);
+				break;
+			}
+
 			if(isset($_POST['new'])) {
 				out(addRecords(array(json_decode(json_encode($_POST)))));
 			} else {
@@ -77,6 +83,10 @@
 		case 'GET':
 		default:
 
+			if(isset($_GET['fields'])) {
+				out(fetchJSON(FIELDS_FILE));
+				break;
+			}
 			if(isset($_GET['sort'])) {
 				out(sortJSON(fetchJSON(JSON_FILE), $_GET['sort'], isset($_GET['asc']) ? $_GET['asc'] : true));
 				break;

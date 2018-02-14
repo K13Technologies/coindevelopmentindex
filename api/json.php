@@ -16,6 +16,7 @@ define('REMOTE_FILE', 'https://api.coindevelopmentindex.tech');
 define('LOCAL_FILE', FS_ROOT . '/assets/json/data.json');
 define('ARCHIVE_FILE', FS_ROOT . '/assets/json/data.archive.json');
 define('FIELDS_FILE', FS_ROOT . '/assets/json/form-fields.json');
+define('CSV_FILE', FS_ROOT . '/assets/json/coin_data_2018.csv');
 
 if(DEVELOPMENT) {
 	define('JSON_FILE', isset($_REQUEST['local']) ? LOCAL_FILE : REMOTE_FILE);
@@ -63,6 +64,36 @@ function fetchJSON($url=JSON_FILE) {
 
 	return $return;
 
+}
+
+function fetchCSV($file=CSV_FILE) {
+
+	$array = array_map('str_getcsv', file($file));
+
+	$header = array_shift($array);
+
+	array_walk($array, '_combine_array', $header);
+
+	return $array;
+
+}
+
+function _combine_array(&$row, $key, $header) {
+	array_walk($row, '_convert_utf8');
+  $row = (object) array_combine($header, $row);
+}
+
+function _convert_utf8(&$str) {
+	$str = mb_convert_encoding($str, 'UTF-8', 'UTF-8');
+}
+
+function getCSVrecord($sym, $arr) {
+
+	$records = array_filter($arr, function($item) use($sym) {
+		return $item->symbol === $sym;
+	});
+
+	return array_pop($records);
 }
 
 function getRecord($obj) {

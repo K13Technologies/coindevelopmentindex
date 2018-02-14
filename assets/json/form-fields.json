@@ -1,6 +1,7 @@
 [
   {
     "name": "coinname",
+    "group": "general",
     "type": "text",
     "disabled": false,
     "placeholder": "Official Coin Name",
@@ -11,6 +12,7 @@
   },
   {
     "name": "symbol",
+    "group": "general",
     "type": "text",
     "placeholder": "XYZ",
     "disabled": false,
@@ -20,6 +22,7 @@
   },
   {
     "name": "contact",
+    "group": "contact",
     "type": "email",
     "placeholder": "contact@example.org",
     "disabled": false,
@@ -29,6 +32,7 @@
   },
 	{
   	"name": "id",
+    "group": "developer",
   	"type": "text",
   	"disabled": true,
     "required": false,
@@ -37,6 +41,7 @@
   },
   {
   	"name": "owner",
+    "group": "developer",
   	"type": "text",
   	"disabled": false,
     "placeholder": "repo-owner",
@@ -46,6 +51,7 @@
   },
   {
   	"name": "name",
+    "group": "developer",
   	"type": "text",
   	"disabled": false,
     "placeholder": "repo-name",
@@ -55,6 +61,7 @@
   },
   {
     "type": "select",
+    "group": "general",
     "placeholder": "Bitcoin, Altcoin, etc",
     "options": [
       "",
@@ -83,6 +90,7 @@
   },
   {
     "name": "team",
+    "group": "developer",
     "type": "number",
     "min": "0",
     "null-char": "-",
@@ -95,6 +103,7 @@
   },
   {
     "type": "select",
+    "group": "general",
     "options": [
       "",
       "Alpha",
@@ -111,6 +120,7 @@
   },
   {
   	"name": "description",
+    "group": "developer",
   	"type": "text",
     "placeholder": "A description of the repo.",
   	"disabled": false,
@@ -120,6 +130,7 @@
   },
   {
   	"name": "createdAt",
+    "group": "developer",
   	"type": "datetime-local",
     "null-char": "-",
   	"disabled": false,
@@ -130,6 +141,7 @@
   },
   {
   	"name": "homepageUrl",
+    "group": "contact",
   	"type": "url",
   	"placeholder": "https://example.org/en/download",
   	"disabled": false,
@@ -139,6 +151,7 @@
   },
   {
   	"name": "pushedAt",
+    "group": "developer",
   	"type": "datetime-local",
     "null-char": "-",
   	"disabled": false,
@@ -149,6 +162,7 @@
   },
   {
   	"name": "languages",
+    "group": "developer",
   	"type": "text",
   	"placeholder": "Comma, Sep, Langs",
   	"disabled": false,
@@ -159,6 +173,7 @@
   },
   {
     "name": "url",
+    "group": "developer",
     "type": "url",
     "placeholder": "https://github.com/owner/name",
     "disabled": false,
@@ -168,6 +183,7 @@
   },
   {
     "name": "wallet",
+    "group": "admin",
     "type": "text",
     "disabled": false,
     "required": false,
@@ -176,6 +192,7 @@
   },
   {
     "name": "qrcode",
+    "group": "admin",
     "type": "text",
     "disabled": false,
     "required": false,
@@ -184,6 +201,7 @@
   },
   {
     "name": "releases",
+    "group": "developer",
     "type": "hidden",
     "disabled": false,
     "required": false,
@@ -192,6 +210,7 @@
   },
   {
     "name": "data",
+    "group": "data",
     "type": "hidden",
     "disabled": false,
     "required": false,
@@ -206,10 +225,100 @@
   },
   {
     "name": "trend",
+    "group": "data",
     "heading": "Index Trending"
   },
   {
     "name": "volatility",
+    "group": "data",
     "heading": "Price Volatility"
+  },
+  {
+    "name": "company",
+    "group": "contact",
+    "type": "text",
+    "disabled": false,
+    "required": false,
+    "heading": "Legal Company Name"
+  },
+  {
+    "name": "icoraise",
+    "group": "general",
+    "type": "number",
+    "step": "0.1",
+    "disabled": false,
+    "required": false,
+    "heading": "ICO Raise (MM)"
+  },
+  {
+    "type": "select",
+    "group": "general",
+    "options": [
+      "",
+      "Adult",
+      "Advertising and Marketing",
+      "Banking",
+      "Business Services",
+      "Cryptocurrency",
+      "Cyber Security",
+      "Dapp Services",
+      "Data Storage",
+      "Data and Analytics",
+      "Distributed Computing",
+      "Electronics",
+      "Energy",
+      "Entertainment",
+      "Exchange",
+      "Financial Services",
+      "Fund Management Tools",
+      "Funding Platform",
+      "Gambling",
+      "Gaming",
+      "Health and Medical",
+      "Identity",
+      "Information (Other)",
+      "Insurance",
+      "IoT",
+      "Legal Services",
+      "Logistics",
+      "Managed Funds",
+      "Marketing and Advertising",
+      "Online Marketplaces",
+      "Payment Processing",
+      "Prediction Markets",
+      "Real Estate",
+      "Search Engine",
+      "Smart Contract Platform",
+      "Social Networks",
+      "Virtual Reality"
+    ],
+    "name": "classification",
+    "disabled": false,
+    "required": false,
+    "heading": "Classification"
+  },
+  {
+    "name": "country",
+    "group": "contact",
+    "type": "text",
+    "disabled": false,
+    "required": false,
+    "heading": "Country"
+  },
+  {
+    "name": "city",
+    "group": "contact",
+    "type": "text",
+    "disabled": false,
+    "required": false,
+    "heading": "City"
+  },
+  {
+    "name": "foundedOn",
+    "group": "general",
+    "type": "text",
+    "disabled": false,
+    "required": false,
+    "heading": "Year Founded"
   }
 ]

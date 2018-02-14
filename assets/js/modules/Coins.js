@@ -10,9 +10,9 @@ var Coins = (function($) {
 					if(param[0]) prev[param[0]] = param[1] ? param[1] : true;
 					return prev;
 				}, {}),
-	// coinfile = params.local ? '/assets/json/data.json' : 'https://api.coindevelopmentindex.tech',
-	coinfile = 'https://api.coindevelopmentindex.tech',
-	fieldsfile = 'https://api.coindevelopmentindex.tech/fields',
+	coinfile = params.local ? 'http://api.coindev.local' : 'https://api.coindevelopmentindex.tech',
+	// coinfile = 'https://api.coindevelopmentindex.tech',
+	fieldsfile = coinfile + '?fields',
 	coinAPI = 'https://api.coindevelopmentindex.tech',
 	rateAPI = 'https://min-api.cryptocompare.com/data/pricemulti',
 	initialized = false,
@@ -84,7 +84,7 @@ var Coins = (function($) {
 												.filter(function(key) { return key.length > 0; })
 												.map(function(key) { return { name: key, value: params[key] } });
 
-		return $.get(coinAPI + '?location', data);
+		return $.get(coinfile + '?location', data);
 	};
 
 	var sort = function(prop, asc) {
