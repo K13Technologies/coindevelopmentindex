@@ -40,7 +40,7 @@ function fetchCoinMarketData($json) {
 
 		$record = array_pop($arr);
 		$currData = getTodaysData($coin);
-		$currData = setTodaysData($currData, $record ? intval($record->rank) : null, 'rank', 'int');
+		$currData = setTodaysData($currData, $record ? intval($record->rank) : null, 'rank', 'int', false);
 		$currData = setTodaysData($currData, $record ? floatval($record->percent_change_24h) : null, 'volatility');
 		$currData = setTodaysData($currData, $record ? floatval($record->price_usd) : null, 'price');
 

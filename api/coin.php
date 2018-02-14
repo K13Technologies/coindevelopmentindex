@@ -27,7 +27,7 @@ function getTodaysData($coin) {
 	return $currDate;
 }
 
-function setTodaysData($data, $val, $key, $type='float') {
+function setTodaysData($data, $val, $key, $type='float', $avg=true) {
 
 	if(is_null($val)) {
 		if(isset($data->{$key})) unset($data->{$key});
@@ -38,10 +38,14 @@ function setTodaysData($data, $val, $key, $type='float') {
 
 	$hr = max(ceil( (int) date('G') / 4 ), 1);
 
-	if($type === 'int') {
-		$cma = intval((intval($data->{$key}) + (intval($val) * ($hr - 1))) / $hr);
+	if($avg) {
+		if($type === 'int') {
+			$cma = intval((intval($data->{$key}) + (intval($val) * ($hr - 1))) / $hr);
+		} else {
+			$cma = round(floatval((floatval($data->{$key}) + (floatval($val) * ($hr - 1))) / $hr), 10);
+		}
 	} else {
-		$cma = round(floatval((floatval($data->{$key}) + (floatval($val) * ($hr - 1))) / $hr), 10);
+		$cma = $type === 'int' ? intval($val) : floatval($val);
 	}
 
 	$data->{$key} = $cma;

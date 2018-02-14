@@ -64,7 +64,7 @@ jQuery(document).ready(function($) {
 
 		if($s.val().length === 0 && $t.val() === 'All') {
 			$icn.removeClass('fa-close').addClass('fa-search');
-			return renderTableView(Coins.reset().list());
+			return renderTableView(Coins.reset().list(), buildPagination);
 		}
 
 		$searchdiv.addClass('searched');
