@@ -96,6 +96,10 @@
 					else echo JSON_FILE;
 				break;
 			}
+			if(isset($_GET['filemtime'])) {
+				echo date('M d, Y H:i:s T', filemtime(JSON_FILE));
+				break;
+			}
 			if(isset($_GET['pulllocal'])) {
 				if(!checkPermissions(LOCAL_FILE, '0664')) {
 					array_map(function($err){echo $err->type . $err->message;}, errorOutput()->errors);

@@ -208,6 +208,24 @@ jQuery(document).ready(function($) {
 
 	};
 
+	var reportDataStatus = function() {
+		var $status = $('#data-status'),
+				hasLength = Coins.list().length > 100,
+				hasData = Coins.list()[0].data && Coins.list()[0].data.length > 0,
+				stat = 'error',
+				mtime;
+
+		Coins.file('filemtime')
+			.then(function(t) {
+				mtime = t;
+				if(hasLength && hasData) {
+					stat = 'operational';
+				}
+				$status.html('<i class="' + stat + '"></i> Risk index ' + stat + ', last updated ' + mtime);
+			});
+		
+	};
+
 	var onWindowScrolled = function(e) {
 		if(!timeout) {
 			timeout = setTimeout(function() {
@@ -238,6 +256,7 @@ jQuery(document).ready(function($) {
 
 	Coins.init(function() {
 
+		reportDataStatus();
 		addSortIcons();
 		buildPagination();
 

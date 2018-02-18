@@ -8,6 +8,7 @@
 	flex-flow:row wrap;
 	align-items:flex-end;
 	justify-content:space-between;
+	padding-bottom:0.5em;
 
 	#coin-search {
 		flex:1 0 100%;
@@ -87,6 +88,26 @@
 		}
 		a:hover {
 			text-decoration:underline;
+		}
+	}
+}
+
+#data-status {
+	color:#666;
+	font-size:0.666rem;
+
+	i {
+		width: 4px;
+    height: 4px;
+    display: inline-block;
+    border-radius: 50%;
+    transform: translateY(-1px);
+		
+		&.operational {
+    	background: green;
+		}
+		&.error {
+    	background: red;
 		}
 	}
 }

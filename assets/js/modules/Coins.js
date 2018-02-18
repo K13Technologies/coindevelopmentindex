@@ -79,12 +79,14 @@ var Coins = (function($) {
 		}
 	};
 
-	var file = function() {
+	var file = function(query) {
 		var data =  Object.keys(params)
 												.filter(function(key) { return key.length > 0; })
-												.map(function(key) { return { name: key, value: params[key] } });
+												.map(function(key) { return { name: key, value: params[key] }; });
+		
+		query = query || 'location';
 
-		return $.get(coinfile + '?location', data);
+		return $.get(coinfile + '?' + query, data);
 	};
 
 	var sort = function(prop, asc) {
