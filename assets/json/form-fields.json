@@ -6,6 +6,7 @@
     "disabled": false,
     "placeholder": "Official Coin Name",
     "heading": "Name of Cryptocurrency",
+    "order":0,
     "required": true,
     "data-stringify":false,
     "data-revertable":true
@@ -17,239 +18,9 @@
     "placeholder": "XYZ",
     "disabled": false,
     "required": true,
+    "order":1,
     "data-stringify":false,
     "data-revertable":true
-  },
-  {
-    "name": "contact",
-    "group": "contact",
-    "type": "email",
-    "placeholder": "contact@example.org",
-    "disabled": false,
-    "required": false,
-    "data-stringify":false,
-    "data-revertable":true
-  },
-	{
-  	"name": "id",
-    "group": "developer",
-  	"type": "text",
-  	"disabled": true,
-    "required": false,
-    "data-stringify":false,
-    "data-revertable":true
-  },
-  {
-  	"name": "owner",
-    "group": "developer",
-  	"type": "text",
-  	"disabled": false,
-    "placeholder": "repo-owner",
-    "required": false,
-    "data-stringify":false,
-    "data-revertable":true
-  },
-  {
-  	"name": "name",
-    "group": "developer",
-  	"type": "text",
-  	"disabled": false,
-    "placeholder": "repo-name",
-    "required": false,
-    "data-stringify":false,
-    "data-revertable":true
-  },
-  {
-    "type": "select",
-    "group": "general",
-    "placeholder": "Bitcoin, Altcoin, etc",
-    "options": [
-      "",
-      "Bitcoin",
-      "Altcoin",
-      "ERC-20 Token",
-      "Ardor Token",
-      "BitShares Token",
-      "Burst Token",
-      "Counterparty Token",
-      "Ethereum Classic Token",
-      "NEM Token",
-      "NEO Token",
-      "NuBits Token",
-      "Nxt Token",
-      "Omni Token",
-      "Qtum Token",
-      "Ubiq Token",
-      "Waves Token"
-    ],
-    "name": "type",
-    "disabled": false,
-    "required": false,
-    "heading": "Type of Cryptocurrency",
-    "data-stringify":false,
-    "data-revertable":true
-  },
-  {
-    "name": "team",
-    "group": "developer",
-    "type": "number",
-    "min": "0",
-    "null-char": "-",
-    "heading": "Development Team Size",
-    "disabled": false,
-    "placeholder": "# of Developers",
-    "required": false,
-    "data-stringify":false,
-    "data-revertable":true
-  },
-  {
-    "type": "select",
-    "group": "general",
-    "options": [
-      "",
-      "Alpha",
-      "Beta",
-      "Commercial"
-    ],
-    "name": "blockchain",
-    "disabled": false,
-    "placeholder": "Alpha, Beta, Commercial",
-    "required": false,
-    "heading": "Blockchain Development",
-    "data-stringify":false,
-    "data-revertable":true
-  },
-  {
-  	"name": "description",
-    "group": "developer",
-  	"type": "text",
-    "placeholder": "A description of the repo.",
-    "disabled": false,
-    "required": false,
-    "data-stringify":false,
-    "data-revertable":true
-  },
-  {
-  	"name": "createdAt",
-    "group": "developer",
-  	"type": "datetime-local",
-    "null-char": "-",
-    "disabled": false,
-    "required": false,
-    "data-stringify":false,
-    "data-revertable":true,
-    "data-remove":":\\d{2}Z$"
-  },
-  {
-  	"name": "homepageUrl",
-    "group": "contact",
-  	"type": "url",
-  	"placeholder": "https://example.org/en/download",
-  	"disabled": false,
-    "required": false,
-    "data-stringify":false,
-    "data-revertable":true
-  },
-  {
-  	"name": "pushedAt",
-    "group": "developer",
-  	"type": "datetime-local",
-    "null-char": "-",
-    "disabled": false,
-    "required": false,
-    "data-stringify":false,
-    "data-revertable":true,
-    "data-remove":":\\d{2}Z$"
-  },
-  {
-  	"name": "languages",
-    "group": "developer",
-  	"type": "text",
-  	"placeholder": "Comma, Sep, Langs",
-  	"disabled": false,
-    "required": false,
-    "data-stringify":true,
-    "data-revertable":true,
-    "data-remove":"[\\[\\]\"]+"
-  },
-  {
-    "name": "url",
-    "group": "developer",
-    "type": "url",
-    "placeholder": "https://github.com/owner/name",
-    "disabled": false,
-    "required": false,
-    "data-stringify":false,
-    "data-revertable":true
-  },
-  {
-    "name": "wallet",
-    "group": "admin",
-    "type": "text",
-    "disabled": false,
-    "required": false,
-    "data-stringify":false,
-    "data-revertable":false
-  },
-  {
-    "name": "qrcode",
-    "group": "admin",
-    "type": "text",
-    "disabled": false,
-    "required": false,
-    "data-stringify":false,
-    "data-revertable":false
-  },
-  {
-    "name": "releases",
-    "group": "developer",
-    "type": "hidden",
-    "disabled": false,
-    "required": false,
-    "data-stringify":true,
-    "data-revertable":false
-  },
-  {
-    "name": "data",
-    "group": "data",
-    "type": "hidden",
-    "disabled": false,
-    "required": false,
-    "heading": {
-      "latest.rank": "Risk Index Ranking",
-      "latest.users": "Github Developer Contributors",
-      "latest.forks": "Github Repo Forks",
-      "latest.stars": "Github Repo Stars"
-    },
-    "data-stringify":true,
-    "data-revertable":false
-  },
-  {
-    "name": "trend",
-    "group": "data",
-    "heading": "Index Trending"
-  },
-  {
-    "name": "volatility",
-    "group": "data",
-    "heading": "Price Volatility"
-  },
-  {
-    "name": "company",
-    "group": "contact",
-    "type": "text",
-    "disabled": false,
-    "required": false,
-    "heading": "Legal Company Name"
-  },
-  {
-    "name": "icoraise",
-    "group": "general",
-    "type": "number",
-    "step": "0.1",
-    "disabled": false,
-    "required": false,
-    "heading": "ICO Raise (MM)"
   },
   {
     "type": "select",
@@ -294,17 +65,87 @@
       "Virtual Reality"
     ],
     "name": "classification",
+    "order":2,
     "disabled": false,
     "required": false,
     "heading": "Classification"
+  },  
+  {
+    "type": "select",
+    "group": "general",
+    "placeholder": "Bitcoin, Altcoin, etc",
+    "options": [
+      "",
+      "Bitcoin",
+      "Altcoin",
+      "ERC-20 Token",
+      "Ardor Token",
+      "BitShares Token",
+      "Burst Token",
+      "Counterparty Token",
+      "Ethereum Classic Token",
+      "NEM Token",
+      "NEO Token",
+      "NuBits Token",
+      "Nxt Token",
+      "Omni Token",
+      "Qtum Token",
+      "Ubiq Token",
+      "Waves Token"
+    ],
+    "name": "type",
+    "disabled": false,
+    "required": false,
+    "order":2,
+    "heading": "Type of Cryptocurrency",
+    "data-stringify":false,
+    "data-revertable":true
   },
   {
-    "name": "country",
+    "type": "select",
+    "group": "general",
+    "options": [
+      "",
+      "Alpha",
+      "Beta",
+      "Commercial"
+    ],
+    "name": "blockchain",
+    "disabled": false,
+    "placeholder": "Alpha, Beta, Commercial",
+    "required": false,
+    "order":3,
+    "heading": "Blockchain Development",
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
+    "name": "foundedOn",
+    "group": "general",
+    "type": "text",
+    "disabled": false,
+    "order":4,
+    "required": false,
+    "heading": "Year Founded"
+  },
+  {
+    "name": "icoraise",
+    "group": "general",
+    "type": "number",
+    "step": "0.1",
+    "disabled": false,
+    "required": false,
+    "order":5,
+    "heading": "ICO Raise (MM)"
+  },
+  {
+    "name": "company",
     "group": "contact",
     "type": "text",
     "disabled": false,
     "required": false,
-    "heading": "Country"
+    "order":0,
+    "heading": "Legal Company Name"
   },
   {
     "name": "city",
@@ -312,14 +153,195 @@
     "type": "text",
     "disabled": false,
     "required": false,
+    "order":1,
     "heading": "City"
-  },
+  },  
   {
-    "name": "foundedOn",
-    "group": "general",
+    "name": "country",
+    "group": "contact",
     "type": "text",
     "disabled": false,
     "required": false,
-    "heading": "Year Founded"
+    "order":2,
+    "heading": "Country"
+  },
+  {
+    "name": "homepageUrl",
+    "group": "contact",
+    "type": "url",
+    "label": "Coin Homepage URL",
+    "placeholder": "https://example.org/en/download",
+    "disabled": false,
+    "required": false,
+    "order":3,
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
+    "name": "contact",
+    "group": "contact",
+    "type": "email",
+    "placeholder": "contact@example.org",
+    "disabled": false,
+    "required": false,
+    "order":4,
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
+  	"name": "owner",
+    "group": "developer",
+  	"type": "text",
+    "label": "Repo Owner",
+  	"disabled": false,
+    "placeholder": "repo-owner",
+    "required": false,
+    "order":0,
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
+  	"name": "name",
+    "group": "developer",
+  	"type": "text",
+    "label": "Repo Name",
+  	"disabled": false,
+    "placeholder": "repo-name",
+    "required": false,
+    "order":1,
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
+    "name": "id",
+    "group": "developer",
+    "type": "text",
+    "label": "Github API ID",
+    "disabled": true,
+    "required": false,
+    "order":3,
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
+    "name": "team",
+    "group": "developer",
+    "type": "number",
+    "min": "0",
+    "null-char": "-",
+    "heading": "Development Team Size",
+    "disabled": false,
+    "placeholder": "# of Developers",
+    "required": false,
+    "order":4,
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
+  	"name": "description",
+    "group": "developer",
+  	"type": "text",
+    "placeholder": "A description of the repo.",
+    "disabled": false,
+    "required": false,
+    "order":4,
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
+  	"name": "createdAt",
+    "group": "developer",
+  	"type": "datetime-local",
+    "label": "Repo Created At",
+    "null-char": "-",
+    "disabled": false,
+    "required": false,
+    "order":5,
+    "data-stringify":false,
+    "data-revertable":true,
+    "data-remove":":\\d{2}Z$"
+  },
+  {
+  	"name": "pushedAt",
+    "group": "developer",
+  	"type": "datetime-local",
+    "label": "Last Code Pushed At",
+    "null-char": "-",
+    "disabled": false,
+    "required": false,
+    "order":6,
+    "data-stringify":false,
+    "data-revertable":true,
+    "data-remove":":\\d{2}Z$"
+  },
+  {
+  	"name": "languages",
+    "group": "developer",
+  	"type": "text",
+  	"placeholder": "Comma, Sep, Langs",
+  	"disabled": false,
+    "required": false,
+    "order":7,
+    "data-stringify":true,
+    "data-revertable":true,
+    "data-remove":"[\\[\\]\"]+"
+  },
+  {
+    "name": "url",
+    "group": "developer",
+    "type": "url",
+    "label": "Github URL",
+    "placeholder": "https://github.com/owner/name",
+    "disabled": false,
+    "order":2,
+    "required": false,
+    "data-stringify":false,
+    "data-revertable":true
+  },
+  {
+    "name": "wallet",
+    "group": "admin",
+    "type": "text",
+    "label": "Our Wallet Address",
+    "disabled": false,
+    "required": false,
+    "data-stringify":false,
+    "data-revertable":false
+  },
+  {
+    "name": "qrcode",
+    "group": "admin",
+    "type": "text",
+    "label": "QR Code SVG",
+    "disabled": false,
+    "required": false,
+    "data-stringify":false,
+    "data-revertable":false
+  },
+  {
+    "name": "data",
+    "group": "data",
+    "type": "hidden",
+    "disabled": false,
+    "required": false,
+    "label": " ",
+    "heading": {
+      "latest.rank": "Risk Index Ranking",
+      "latest.users": "Github Developer Contributors",
+      "latest.forks": "Github Repo Forks",
+      "latest.stars": "Github Repo Stars"
+    },
+    "data-stringify":true,
+    "data-revertable":false
+  },
+  {
+    "name": "trend",
+    "group": "data",
+    "heading": "Index Trending"
+  },
+  {
+    "name": "volatility",
+    "group": "data",
+    "heading": "Price Volatility"
   }
 ]

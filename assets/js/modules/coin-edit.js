@@ -37,15 +37,26 @@ jQuery(document).ready(function($) {
             $tab = $('<li class="nav-item">'),
             $ctr = $('<div class="tab-content" id="categoryTabContent">'),
             $panel,
-            fields = Coins.fields().reduce(function(obj, f) {
-                        if(!obj[f.group])  {
-                            obj[f.group] = [];
-                        }
-                        obj[f.group].push(f);
-                        return obj;
-                    },{});
+            tabs = ['general', 'contact', 'developer', 'data', 'admin'],
+            tabsort = function(a,b) {
+                            var nA = null, nB = null;
+                            if(tabs.includes(a)) { nA = tabs.indexOf(a); }
+                            if(tabs.includes(b)) { nB = tabs.indexOf(b); }
+                            if(nA === null) { return 1; }
+                            if(nB === null) { return -1; }
+                            if(nA === nB) { return 0; }
+                            return nA < nB ? -1  : 1;
+                        },
+            fields = Coins.fields()
+                        .reduce(function(obj, f) {
+                            if(!obj[f.group])  {
+                                obj[f.group] = [];
+                            }
+                            obj[f.group].push(f);
+                            return obj;
+                        },{});
 
-        Object.keys(fields).forEach(function(cat) {
+        Object.keys(fields).sort(tabsort).forEach(function(cat) {
 
             $tabs.append($tab.clone().html('<a class="nav-link" id="' + cat +
                 '-tab" data-toggle="tab" href="#' + cat +
@@ -59,13 +70,15 @@ jQuery(document).ready(function($) {
 
             fields[cat].sort(function(a,b) {
 
-                return a.name.localeCompare(b.name);
+                return (typeof a.order === 'number' && typeof b.order === 'number') ?
+                    a.order - b.order :
+                    a.name.localeCompare(b.name);
 
             }).forEach(function(field) {
 
                 var $div = $('<div class="form-group form-row"></div>'),
-                    $el = $('<input class="form-control col-sm-9" />'),
-                    $label = $('<label class="col-sm-3"></label>'),
+                    $el = $('<input class="form-control col-sm-8" />'),
+                    $label = $('<label class="col-sm-4"></label>'),
                     a;
 
                 if(!field.type) return;
@@ -74,16 +87,14 @@ jQuery(document).ready(function($) {
                     if(field.hasOwnProperty(a)) {
                         switch(a) {
                             case 'name':
-                                $label.attr('for', field[a])
-                                    .text(field[a])
-                                    .css('font-weight', field.required ? 'bold' : '');
+                                $label.attr('for', field[a]);
                             case 'disabled':
                                 $el.attr('data-disabled', field[a]);
                             case 'required':
                                 $el.prop(a, field[a]);
                                 break;
                             case 'options':
-                                $el = $('<select class="form-control col-sm-9"></select>');
+                                $el = $('<select class="form-control col-sm-8"></select>');
                                 $el.append(field[a].map(function(opt) {
                                         return '<option value="' + opt + '">' + opt + '</option>';
                                     }).join(''));
@@ -94,6 +105,10 @@ jQuery(document).ready(function($) {
                         }
                     }
                 }
+                $label
+                    .text(field.label || field.heading || field.name[0].toUpperCase() + field.name.slice(1))
+                    .css('font-weight', field.required ? 'bold' : '');
+
                 $div.append($label).append($el);
                 $panel.append($div);
 
@@ -105,7 +120,7 @@ jQuery(document).ready(function($) {
 
         $tabs.find('li.nav-item a').first().click();
 
-        $releases = $('input[name="releases"]');
+        // $releases = $('input[name="releases"]');
         $data = $('input[name="data"]');
 
     };
@@ -308,8 +323,8 @@ jQuery(document).ready(function($) {
 
         var status,
             reset = reset || false,
-            $releasesDiv = $('<div class="col-sm-9"></div>'),
-            $dataDiv = $('<div class="col-sm-9"></div>'),
+            // $releasesDiv = $('<div class="col-sm-9"></div>'),
+            $dataDiv = $('<div class="col-sm-12"></div>'),
             data = '',
             releases;
 
@@ -398,7 +413,7 @@ jQuery(document).ready(function($) {
                     '</table>';
             if(!$data.hasClass('wrapped')) {
                 $data
-                    .removeClass('col-sm-9')
+                    .removeClass('col-sm-12')
                     .addClass('wrapped')
                     .wrap($dataDiv)
                     .after(data);
@@ -406,7 +421,7 @@ jQuery(document).ready(function($) {
                 $('table.data').replaceWith(data);
             }
         } else if($data.hasClass('wrapped') && reset) {
-            $data.removeClass('wrapped').addClass('col-sm-9').unwrap().next('table').remove();
+            $data.removeClass('wrapped').addClass('col-sm-12').unwrap().next('table').remove();
         }
 
         status = $coinSel.val() === 'new' ? 'Create' : 'Update';

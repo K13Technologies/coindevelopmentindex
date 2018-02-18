@@ -11,7 +11,8 @@
     margin: 0 auto 2em;
 
     header {
-        width:40em;
+        width:48em;
+        max-width:90%;
         display:flex;
         flex-flow:row wrap;
         justify-content:center;
@@ -41,7 +42,8 @@
     }
 
     section {
-        width:40em;
+        width:48em;
+        max-width:90%;
     }
 
     form {
@@ -113,6 +115,11 @@
 
         .input-group {
             padding:0;
+        }
+
+        label {
+            align-self:center;
+            margin-bottom:0;
         }
 
         input ~ .input-group-addon {
