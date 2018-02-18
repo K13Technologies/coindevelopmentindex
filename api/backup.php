@@ -14,7 +14,7 @@
 		backup();
 		if(errorOutput()->errors) {
 			$msgs = array_map(function($error) {
-							return  PHP_EOL . $error->type . ': ' . $error->message;
+							return  $error->type . ': ' . $error->message;
 						}, errorOutput()->errors);
 		} else {
 			$msgs = array('BACKUP_COMPLETE: No errors reported');

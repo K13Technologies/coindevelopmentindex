@@ -33,7 +33,7 @@ if(!checkPermissions(ARCHIVE_FILE, '0664')) {
 
 	if(errorOutput()->errors) {
 		$msgs = array_map(function($error) {
-						return  PHP_EOL . $error->type . ': ' . $error->message;
+						return  $error->type . ': ' . $error->message;
 					}, errorOutput()->errors);
 	} else {
 		$msgs = array('ARCHIVE_COMPLETE: No errors reported');
