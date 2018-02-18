@@ -309,11 +309,11 @@ jQuery(document).ready(function($) {
 
     var resetForm = function(e) {
         $coinSel.val('new');
-        if($releases.hasClass('wrapped')) {
-            $releases.val('').removeClass('wrapped').addClass('col-sm-9').unwrap().next('ul').remove();
-        }
+        // if($releases.hasClass('wrapped')) {
+        //     $releases.val('').removeClass('wrapped').addClass('col-sm-12').unwrap().next('ul').remove();
+        // }
         if($data.hasClass('wrapped')) {
-            $data.val('').removeClass('wrapped').addClass('col-sm-9').unwrap().next('table').remove();
+            $data.val('').removeClass('wrapped').addClass('col-sm-12').unwrap().next('table').remove();
         }
         handleOwnerChange();
         window.history.pushState('', '', '#');
@@ -338,7 +338,7 @@ jQuery(document).ready(function($) {
                 $f.removeClass('update');
                 if($f.next('.input-group-addon')[0]) {
                     $f
-                        .addClass('col-sm-9')
+                        .addClass('col-sm-8')
                         .unwrap()
                         .next('.input-group-addon').remove();
                 }
@@ -430,8 +430,8 @@ jQuery(document).ready(function($) {
     };
 
     var addRevertBtn = function($input) {
-        var $grp = $('<div class="input-group col-sm-9"></div>');
-        $input.removeClass('col-sm-9').wrap($grp);
+        var $grp = $('<div class="input-group col-sm-8"></div>');
+        $input.removeClass('col-sm-8').wrap($grp);
         $input.after('<span class="undo input-group-addon"><i class="fa fa-undo" title="Revert Update"></i></span>');
     };
 
@@ -456,7 +456,7 @@ jQuery(document).ready(function($) {
         $input
             .val($input.data('prev'))
             .removeClass('update')
-            .addClass('col-sm-9')
+            .addClass('col-sm-8')
             .unwrap()
             .next('.input-group-addon').remove();
     };
