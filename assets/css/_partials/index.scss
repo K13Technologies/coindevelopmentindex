@@ -258,8 +258,15 @@
 			}
 
 			[data-prop='symbol'] {
-				font-size:0.75em;
+				font-size:0.8em;
 				padding-left:0;
+			}
+		}
+		&[data-prop='type'] {
+			padding-bottom:0;
+			span {
+				font-size:0.8em;
+				color:#666;
 			}
 		}
 		&[data-prop$='trend'] {
@@ -364,7 +371,6 @@
 	white-space: nowrap;
 }
 
-[data-prop='type'] {
 // [data-prop='type'],
 // [data-prop='blockchain'],
 // [data-prop='team'],
@@ -372,8 +378,8 @@
 // [data-prop$='users'],
 // [data-prop$='forks'],
 // [data-prop$='stars'] {
-	display:none;
-}
+	// display:none;
+// }
 
 @media screen and (max-width:600px) {
 
@@ -456,13 +462,13 @@
 
 }
 
-@media only screen and (min-width:770px) {
+// @media only screen and (min-width:770px) {
 
-	[data-prop='type'] {
-		display:table-cell;
-	}
+// 	[data-prop='type'] {
+// 		display:table-cell;
+// 	}
 
-}
+// }
 
 // @media only screen and (min-width:1180px) {
 
