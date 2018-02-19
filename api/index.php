@@ -114,7 +114,8 @@
 				break;
 			}
 			if(isset($_GET['restore'])) {
-				$file = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'assets/json/backup'  . DIRECTORY_SEPARATOR . $_GET['restore'];
+				$backup = strlen($_GET['restore']) > 0 ? $_GET['restore'] : 'backup';
+				$file = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'assets/json/backup'  . DIRECTORY_SEPARATOR . $backup;
 				out(write(fetchJSON($file), LOCAL_FILE));
 				break;
 			}
