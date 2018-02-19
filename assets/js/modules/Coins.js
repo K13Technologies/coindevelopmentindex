@@ -300,9 +300,12 @@ var Coins = (function($) {
 	var find = function(criteria) {
 		return coins
 						.find(function(coin) {
+							var match;
 							for(var prop in criteria) {
-								if(criteria[prop] === coin[prop]) { return true; }
+								if(criteria[prop] === coin[prop]) { match = true; }
+								else { match = false; }
 							}
+							return match;
 						});
 	};
 
