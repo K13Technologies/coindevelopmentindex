@@ -23,10 +23,10 @@
 
 			if(isset($_POST['delete'])) {
 				// make sure index matches owner/name
-				$indexed = getRecord(array('index' => $_POST['index']));
+				$indexed = getRecord(array('index' => intval($_POST['index'])));
 				$named = getRecord(array('coinname' => $_POST['coinname'], 'symbol' => $_POST['symbol']));
 				if($indexed === $named) {
-					out(deleteRecord((int)$_POST['index']));
+					out(deleteRecord(intval($_POST['index'])));
 				} else {
 					errorLog('DELETERECORD_ERROR', '<br>Could not find a definitive match for deletion.  You may need to pull and edit the JSON file directly, then push to remote.');
 					out(errorOutput());
