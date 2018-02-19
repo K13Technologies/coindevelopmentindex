@@ -145,6 +145,15 @@ var Coins = (function($) {
 
 							return sortFn(nA,nB);
 						},
+						classification: function(a,b) {
+							var nA, nB;
+
+							nA = a.classification ? a.classification : a.type;
+							nB = b.classification ? b.classification : b.type;
+
+							return sortFn(nA,nB);
+
+						},
 						releases: function(a,b) {
 
 							var nA, nB;
