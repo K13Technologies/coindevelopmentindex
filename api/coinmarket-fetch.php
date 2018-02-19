@@ -38,17 +38,25 @@ function fetchCoinMarketData($json) {
 			return $item->symbol === $coin->symbol;
 		});
 
-		$record = array_pop($arr);
-		$currData = getTodaysData($coin);
-		$currData = setTodaysData($currData, $record ? intval($record->rank) : null, 'rank', 'int', false);
-		$currData = setTodaysData($currData, $record ? floatval($record->percent_change_24h) : null, 'volatility');
-		$currData = setTodaysData($currData, $record ? floatval($record->price_usd) : null, 'price');
+		if(count($arr) > 0) {
 
-		if(DEBUG) {
-			echo '<br><br>';
-			var_dump($record);
-			ob_flush();
-			flush();
+			$record = array_pop($arr);
+			$currData = getTodaysData($coin);
+			$currData = setTodaysData($currData, $record ? intval($record->rank) : null, 'rank', 'int', false);
+			$currData = setTodaysData($currData, $record ? floatval($record->percent_change_24h) : null, 'volatility');
+			$currData = setTodaysData($currData, $record ? floatval($record->price_usd) : null, 'price');
+
+			if(DEBUG) {
+				echo '<br><br>';
+				var_dump($record);
+				ob_flush();
+				flush();
+			}
+
+		} else {
+
+			errorLog('NOT_FOUND', 'Could not find CoinMarket API data for ' . $coin->symbol);
+			
 		}
 
 	}
