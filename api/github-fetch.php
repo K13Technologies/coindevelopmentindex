@@ -17,7 +17,7 @@ if(DEBUG) {
 		echo '</div>';
 		die;
 	}
-	fetchGithubData($json);
+	fetchGithubData($json,true);
 }
 
 function fetchGithubData($json, $bulk=false) {
@@ -47,18 +47,26 @@ function fetchGithubData($json, $bulk=false) {
 
 	foreach($json as &$coin) {
 
+		$qinfo = '';
+		$mon = date('Y-m-d') . 'T00:00:00+00:00';
 		if(!isset($coin->owner) || !isset($coin->name)) continue;
 		if(strlen($coin->owner) === 0 || strlen($coin->name) === 0) continue;
 
-		$query = <<<QUERY
-query {
-	repository(owner:"{$coin->owner}", name:"{$coin->name}") {
+		if(!$bulk) {
+
+			$qinfo = <<<QINFO
 		id
 	  description
 	  createdAt
 	  url
 	  homepageUrl
-	  pushedAt
+	  languages (first: 3, orderBy: { field: SIZE, direction: DESC }) {
+	    edges {
+	      node {
+	        name
+	      }
+	    }
+	  }
 	  releases (last: 10) {
 	    edges {
 	      node {
@@ -68,6 +76,16 @@ query {
 	      }
 	    }
 	  }
+QINFO;
+
+		}
+
+		$query = <<<QUERY
+query {
+	repository(owner:"{$coin->owner}", name:"{$coin->name}") {
+		$qinfo
+	  pushedAt
+	  forkCount
 	  mentionableUsers {
 	    totalCount
 	  }
@@ -77,13 +95,15 @@ query {
 	  forks {
 	    totalCount
 	  }
-	  languages (first: 3, orderBy: { field: SIZE, direction: DESC }) {
-	    edges {
-	      node {
-	        name
-	      }
-	    }
-	  }
+	  defaultBranchRef {
+      target {
+        ...on Commit {
+          history(since: "$mon") {
+            totalCount
+          }
+        }
+      }
+    }
 	}
 }
 QUERY;
@@ -141,7 +161,10 @@ QUERY;
 		$currData = setTodaysData($currData, $response->stargazers->totalCount, 'stars', 'int');
 		$currData = setTodaysData($currData, $response->mentionableUsers->totalCount, 'users', 'int');
 		$currData = setTodaysData($currData, $response->forks->totalCount, 'forks', 'int');
+		$currData = setTodaysData($currData, $response->defaultBranchRef->target->history->totalCount, 'commits', 'int',false);
 
+		$coin->pushedAt = $response->pushedAt;
+		
 		// $releases = array();
 		// if(count($response->releases->edges) > 0) :
 		// 	foreach($response->releases->edges as $obj) {

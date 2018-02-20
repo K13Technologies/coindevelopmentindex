@@ -395,6 +395,7 @@ jQuery(document).ready(function($) {
                             '<th>price USD</th>' +
                             '<th>users</th>' +
                             '<th>forks</th>' +
+                            '<th>commits</th>' +
                             '<th>stars</th>' +
                         '</thead>' +
                         '<tbody>';
@@ -406,6 +407,7 @@ jQuery(document).ready(function($) {
                             '<td>' + (day.price ? parseFloat(day.price).toFixed(4) : '') + '</td>' +
                             '<td>' + (day.users || '') + '</td>' +
                             '<td>' + (day.forks || '') + '</td>' +
+                            '<td>' + (day.commits || '') + '</td>' +
                             '<td>' + (day.stars || '') + '</td>' +
                         '</tr>';
             });

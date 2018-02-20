@@ -27,6 +27,7 @@
 	}
 
 	if(errorOutput()->errors) {
+		errorLog('UPDATE_COMPLETE',  'Completed with ' . count(errorOutput()->errors) . ' errors');
 		$msgs = array_map(function($error) {
 						return  $error->type . ': ' . $error->message;
 					}, errorOutput()->errors);
