@@ -122,7 +122,7 @@ var Coins = (function($) {
 
 							var nA, nB;
 
-							if(a.data.length) {
+							if(a.data && a.data.length) {
 								nA = a.data[0][currSort.split('.')[1]];
 								if(nA) {
 									nA = $.isNumeric(nA) ? parseFloat(nA) : nA.toLowerCase();
@@ -132,7 +132,7 @@ var Coins = (function($) {
 							} else {
 								nA = null;
 							}
-							if(b.data.length) {
+							if(b.data && b.data.length) {
 								nB = b.data[0][currSort.split('.')[1]];
 								if(nB) {
 									nB = $.isNumeric(nB) ? parseFloat(nB) : nB.toLowerCase();
@@ -169,7 +169,7 @@ var Coins = (function($) {
 									xA = 0, yA = 0, xyA = 0, x2A = 0,
 									xB = 0, yB = 0, xyB = 0, x2B = 0;
 
-							if(a.data.length && a.data[0].rank) {
+							if(a.data && a.data.length && a.data[0].rank) {
 								a.data.forEach(function(d) {
 									var day = new Date(d.date).getTime()/1000/60/60/24,
 											rank = d.rank ? parseInt(d.rank,10) : null,
@@ -187,7 +187,7 @@ var Coins = (function($) {
 								nA = -((iA * xyA) - (xA * yA)) / ((iA * x2A) - (xA * xA)) * iA;
 								if(Number.isNaN(nA)) nA = null;
 							}
-							if(b.data.length && b.data[0].rank) {
+							if(b.data && b.data.length && b.data[0].rank) {
 								b.data.forEach(function(d) {
 									var day = new Date(d.date).getTime()/1000/60/60/24,
 											rank = d.rank ? parseInt(d.rank,10) : null,
@@ -210,7 +210,7 @@ var Coins = (function($) {
 					volatility: function(a,b) {
 							var nA, nB, sumA, sumB;
 
-							if(a.data.length && a.data[0].volatility) {
+							if(a.data && a.data.length && a.data[0].volatility) {
 								sumA = a.data.reduce(function(prev,curr) {
 												return prev + (curr.volatility ? curr.volatility : 0);
 											}, 0);
@@ -219,7 +219,7 @@ var Coins = (function($) {
 							} else {
 								nA = null;
 							}
-							if(b.data.length && b.data[0].volatility) {
+							if(b.data && b.data.length && b.data[0].volatility) {
 								sumB = b.data.reduce(function(prev,curr) {
 												return prev + (curr.volatility ? curr.volatility : 0);
 											}, 0);
@@ -392,7 +392,7 @@ var Coins = (function($) {
 
 			var data = curr.data;
 
-			if(data.length) {
+			if(data && data.length) {
 
 				if(!data[0][field]) return prev;
 
