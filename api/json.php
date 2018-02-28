@@ -96,7 +96,7 @@ function getCSVrecord($sym, $arr) {
 	return array_pop($records);
 }
 
-function getRecord($obj) {
+function getRecord($obj, $full=false) {
 	global $json;
 
 	if($json === null) fetchJSON();
@@ -108,19 +108,19 @@ function getRecord($obj) {
 		return $json[$index];
 	}
 	if(isset($symbol)) {
-		return getRecordBySymbol($symbol);
+		return getRecordBySymbol($symbol, $full);
 	}
 	if(isset($id)) {
-		return getRecordById($id);
+		return getRecordById($id, $full);
 	}
 	if(isset($owner) || isset($name)) {
-		return getRecordByName($owner, $name);
+		return getRecordByName($owner, $name, $full);
 	}
 	return $json;
 
 }
 
-function getRecordById($id) {
+function getRecordById($id, $full=false) {
 	global $json;
 
 	$arr = array_filter($json, function($item) use ($id) {
@@ -128,10 +128,14 @@ function getRecordById($id) {
 		else return false;
 	});
 
-	return array_pop($arr);
+	$record = array_pop($arr);
+
+	if($full) {
+		$devdata = fetchJSON(DEV_FILE);
+	}
 }
 
-function getRecordBySymbol($symbol) {
+function getRecordBySymbol($symbol, $full=false) {
 	global $json;
 
 	$arr = array_filter($json, function($item) use ($symbol) {
@@ -142,7 +146,7 @@ function getRecordBySymbol($symbol) {
 	return array_pop($arr);
 }
 
-function getRecordByName($owner, $name) {
+function getRecordByName($owner, $name, $full=false) {
 	global $json;
 
 	$arr = array_filter($json, function($item) use ($owner,$name) {
@@ -179,8 +183,8 @@ function addRecords($records) {
 
 		$coin->dateAdded = date('c');
 		$coin->languages = is_array($record->languages) ? $record->languages : explode(',', $record->languages);
-		$coin->releases = json_decode($record->releases);
-		$coin->data = json_decode($record->data);
+		// $coin->releases = json_decode($record->releases);
+		$coin->data = isset($record->data) ? json_decode($record->data) : array();
 
 		foreach($coin as $key => $val) {
 			if(!in_array($key, $fields)) {
