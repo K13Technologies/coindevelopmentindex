@@ -68,7 +68,7 @@
 			}
 
 			if(isset($_POST['csvupdate'])) {
-				$records = array(getCSVrecord($_POST['symbol'], fetchCSV()));
+				$records = array(getCSVrecord($_POST['symbol'], fetchCSV(CSV_FILE)));
 				out($records);
 				break;
 			}
@@ -175,10 +175,11 @@
 
 			$find = array();
 
-			if(isset($_GET['coinname'])) array_push($find, $_GET['coinname']);
-			if(isset($_GET['symbol'])) array_push($find, $_GET['symbol']);
+			if(isset($_GET['coinname'])) $find['coinname'] = $_GET['coinname'];
+			if(isset($_GET['symbol'])) $find['symbol'] = $_GET['symbol'];
+			$full = isset($_GET['detail']);
 
-			out(getRecord($find));
+			out(getRecord($find, $full));
 			break;
 
 	}
