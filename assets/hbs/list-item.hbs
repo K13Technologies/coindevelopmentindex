@@ -1,19 +1,45 @@
-<tr id="{{symbol}}">
-	<td class="rank text-right bold" data-prop="latest.rank">{{latestRank data}}</td> <!-- ranked by market cap -->
-	<td class="coinname" data-prop="coinname"><div>{{coinname}}</div><div class="symbol" data-prop="symbol">{{symbol}}</div></td>
+<tr id="{{coinname}}">
+	<td class="rank text-right bold" data-prop="latest.rank">
+		{{latest data prop="rank" prefix="#"}}<br>
+		{{trending data prop="rank" inverse=true}}{{change data prop="rank" inverse=true}}
+	</td> <!-- ranked by market cap -->
+	<td class="coinname" data-prop="coinname">
+		<div>{{coinname}}</div>
+		<div class="symbol" data-prop="symbol">{{symbol}}</div>
+		<span>{{blockchain}}</span>
+	</td> <!-- coin name, symbol, blockchain dev status -->
 	<td class="type tdpad" data-prop="type">
 		{{#if classification}}
-			{{classification}}<br><span>({{type}})</span>
+			{{classification}}<br><span>{{type}}</span>
 		{{else}}
 			{{type}}
 		{{/if}}
 	</td>  <!-- coin type -->
-	<td class="trend" data-prop="trend">{{trending data}}<br><span class="rank-change">{{changeRank data}}</span></td> <!-- rank change week over week -->
-	<td class="volatility text-right" data-prop="volatility">{{volatility data}}</td> <!-- average of price change over current week -->
-	<td class="blockchain tdpad" data-prop="blockchain">{{blockchain}}</td>  <!-- blockchain -->
-	<td class="team text-right"  data-prop="team">{{team}}</td>  <!-- developer team -->
-	<td class="forks text-right " data-prop="latest.forks"><span>{{latestForks data}}</span><br>{{changeForks data}}</td>  <!-- forks -->
-	<td class="users text-right " data-prop="latest.users"><span>{{latestUsers data}}</span><br>{{changeUsers data}}</td> <!-- contributors to core repository -->
-	<td class="stars text-right " data-prop="latest.stars"><span>{{latestStars data}}</span><br>{{changeStars data}}</td>  <!-- starred -->
+	<td class="price text-right" data-prop="latest.price">
+		{{latest data prop="price" prec="dynamic"}}<br>
+		{{trending data prop="price"}}
+		{{change data prop="price" prec="2" unit="%" icon=true}}
+	</td> <!-- price and change over yesterday -->
+	<td class="volatility text-right" data-prop="volatility">
+		{{volatility data}}<br>
+		{{vsindex data prop="volatility" calcfield="price" type="volatility" prec="2" inverse=true nonull=true}}
+	</td> <!-- average of price change over current week -->
+	<td class="team text-right"  data-prop="team">{{helpus team coin=coinname}}</td>  <!-- developer team -->
+	<td class="commits text-right " data-prop="all.commits">
+		{{all data prop="commits"}}<br>
+		{{vsindex data prop="commits" type="sum" trim=true nonull=true}}
+	</td>  <!-- commits -->
+	<td class="forks text-right " data-prop="latest.forks">
+		{{latest data prop="forks"}}<br>
+		{{vsindex data prop="chg" calcfield="forks" type="chg" trim=true nonull=true}}
+	</td>  <!-- forks -->
+	<td class="users text-right " data-prop="latest.users">
+		{{latest data prop="users"}}<br>
+		{{vsindex data prop="users" type="latest" trim=true nonull=true}}
+	</td> <!-- contributors to core repository -->
+	<td class="stars text-right " data-prop="latest.stars">
+		{{latest data prop="stars"}}<br>
+		{{vsindex data prop="chg" calcfield="stars" type="chg" trim=true nonull=true}}
+	</td>  <!-- starred -->
 	<!-- <td class="release" data-prop="latest.release">{{dateFormat releases.0.publishedAt}}</td> --> <!-- latest release -->
 </tr>

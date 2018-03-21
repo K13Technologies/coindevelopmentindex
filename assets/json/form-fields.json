@@ -69,7 +69,7 @@
     "disabled": false,
     "required": false,
     "heading": "Classification"
-  },  
+  },
   {
     "type": "select",
     "group": "general",
@@ -90,6 +90,7 @@
       "Nxt Token",
       "Omni Token",
       "Qtum Token",
+      "ST-20 Token",
       "Ubiq Token",
       "Waves Token"
     ],
@@ -155,7 +156,7 @@
     "required": false,
     "order":1,
     "heading": "City"
-  },  
+  },
   {
     "name": "country",
     "group": "contact",

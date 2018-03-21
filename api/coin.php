@@ -54,14 +54,14 @@ function setTodaysData($data, $val, $key, $type='float', $avg=true) {
 
 }
 
-function archiveData($coin) {
+function archiveData($coin, $time='-14 days') {
 
 	$return = new stdClass();
 	$return->archive = new stdClass();
 	$return->archive->data = array();
 
 	for($i = 0; $i < count($coin->data); $i++) {
-		if(strtotime($coin->data[$i]->date) < strtotime('- 7 days')) {
+		if(strtotime($coin->data[$i]->date) < strtotime($time)) {
 			$return->archive->data = array_merge($return->archive->data, array_splice($coin->data, $i, 1));
 		}
 	}

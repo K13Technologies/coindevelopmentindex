@@ -102,7 +102,7 @@
     display: inline-block;
     border-radius: 50%;
     transform: translateY(-1px);
-		
+
 		&.operational {
     	background: green;
 		}
@@ -135,16 +135,14 @@
 			padding-right:0;
 		}
 
-		span {
+		.vs {
 			display:inline-block;
 			width:100%;
 			text-align:center;
-
-			&.vs {
-				color:rgba(0,0,0,0.6);
-				font-size:0.7em;
-				font-weight:normal;
-			}
+			color:rgba(0,0,0,0.6);
+			font-size:0.7em;
+			font-weight:normal;
+			white-space:nowrap;
 		}
 
 		h2 {
@@ -200,23 +198,28 @@
 				opacity:0.7;
 			}
 		}
-
+		&[data-prop$='commits'] {
+			// width: 8em;
+		}
 		&[data-prop$='rank'],
 		&[data-prop='coinname'],
-		&[data-prop='classification'],
-		&[data-prop='trend'],
-		&[data-prop='volatility'] {
+		&[data-prop='classification'] {
 			background:$grey-dk;
+		}
+		&[data-prop$='price'],
+		&[data-prop='volatility'] {
+			background:$grey-md;
 		}
 		&[data-prop='blockchain'],
 		&[data-prop='team'] {
 			text-align:left;
-			background:$grey-md;
+			background:$grey-lt;
 		}
+		&[data-prop$='commits'],
 		&[data-prop$='forks'],
 		&[data-prop$='users'],
 		&[data-prop$='stars'] {
-			background:$grey-lt;
+			background:$grey-vlt;
 		}
 		&[data-prop$='release'] {
 
@@ -231,10 +234,6 @@
 		&.tdpad {
 			padding-left:3em;
 		}
-		.rank-change {
-			font-size:0.9em;
-		}
-
 		span {
 			display:inline-block;
 
@@ -250,8 +249,17 @@
 		&[data-prop='coinname'] {
 			width:12em;
 			display:flex;
+			flex-flow: row wrap;
 			justify-content:space-between;
 			align-items:center;
+			padding-bottom:0;
+
+			span {
+				flex-basis:100%;
+				font-size:0.8em;
+				color:#666;
+				margin-top:0.5em;
+			}
 
 			@media screen and (max-width:600px) {
 				width:10em;
@@ -269,29 +277,76 @@
 				color:#666;
 			}
 		}
-		&[data-prop$='trend'] {
-			text-align:right;
-			padding-left:1.7em;
+		&[data-prop$='price'] {
+			.fa {
+				font-size:1.1em;
 
-			.trending {
-				font-weight:100;
+				&.fa-level-up {
+					transform:rotate(45deg);
+				}
+				&.fa-level-down {
+					transform:rotate(-45deg);
+				}
 			}
-			.rising { font-weight:500; /* color:#7ACCCC  */}
-			.rising2 { font-weight:700; /* color:#21A0A0  */}
-			.rising3	 { font-weight:700; color:#28a745 }
-			.falling { font-weight:500; /* color:#F2ECA9  */}
-			.falling2 { font-weight:700; /* color:#FFCC00 */ }
-			.falling3	 { font-weight:700; color:#E53D00 }
-
 		}
 		&[data-prop$='rank'],
+		&[data-prop$='price'] {
+
+			span {
+				font-weight:normal;
+				text-align:right;
+				padding-left:0.2em;
+
+				&.trending {
+					font-weight:100;
+					float: left;
+					padding: 0.2em 0 0 2em;
+				}
+				&.rising { font-weight:500; /* color:#7ACCCC  */}
+				&.rising2 { font-weight:700; /* color:#21A0A0  */}
+				&.rising3	 { font-weight:700; color:#28a745 }
+				&.falling { font-weight:500; /* color:#F2ECA9  */}
+				&.falling2 { font-weight:700; /* color:#FFCC00 */ }
+				&.falling3	 { font-weight:700; color:#E53D00 }
+			}
+
+		}
+		&[data-prop$='price'] {
+
+			span.trending {
+				padding-left:0.5em;
+			}
+			&:before {
+				content: "$";
+				float: left;
+				margin-left: 0.5em;
+				color: #999;
+			}
+		}
+		&[data-prop='volatility'] {
+			&:before {
+				content: "%";
+				float: right;
+				margin-left: 0.2em;
+				color: #999;
+			}
+		}
+		&[data-prop$='commits'] {
+			// width: 8em;
+		}
 		&[data-prop='team'],
+		&[data-prop$='commits'],
 		&[data-prop$='users'] {
-		// &[data-prop$='forks'],
-		// &[data-prop$='stars'] {
 			// width:10em;
 			@media screen and (min-width:500px) {
 				transform:translateX(-33.333%);
+			}
+		}
+		&[data-prop$='rank'],
+		&[data-prop$='forks'],
+		&[data-prop$='stars'] {
+			@media screen and (min-width:500px) {
+				transform:translateX(-15%);
 			}
 		}
 		// &[data-prop$='forks'],

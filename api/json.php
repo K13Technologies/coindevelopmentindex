@@ -15,6 +15,7 @@ if(DEVELOPMENT) {
 define('REMOTE_FILE', 'https://api.coindevelopmentindex.tech');
 define('LOCAL_FILE', FS_ROOT . '/assets/json/data.json');
 define('ARCHIVE_FILE', FS_ROOT . '/assets/json/data.archive.json');
+define('DEV_FILE', FS_ROOT . '/assets/json/data.dev.json');
 define('FIELDS_FILE', FS_ROOT . '/assets/json/form-fields.json');
 define('CSV_FILE', FS_ROOT . '/assets/json/coin_data_2018.csv');
 
@@ -96,7 +97,7 @@ function getCSVrecord($sym, $arr) {
 	return array_pop($records);
 }
 
-function getRecord($obj) {
+function getRecord($obj, $full=false) {
 	global $json;
 
 	if($json === null) fetchJSON();
@@ -108,19 +109,19 @@ function getRecord($obj) {
 		return $json[$index];
 	}
 	if(isset($symbol)) {
-		return getRecordBySymbol($symbol);
+		return getRecordBySymbol($symbol, $full);
 	}
 	if(isset($id)) {
-		return getRecordById($id);
+		return getRecordById($id, $full);
 	}
 	if(isset($owner) || isset($name)) {
-		return getRecordByName($owner, $name);
+		return getRecordByName($owner, $name, $full);
 	}
 	return $json;
 
 }
 
-function getRecordById($id) {
+function getRecordById($id, $full=false) {
 	global $json;
 
 	$arr = array_filter($json, function($item) use ($id) {
@@ -128,10 +129,14 @@ function getRecordById($id) {
 		else return false;
 	});
 
-	return array_pop($arr);
+	$record = array_pop($arr);
+
+	if($full) {
+		$devdata = fetchJSON(DEV_FILE);
+	}
 }
 
-function getRecordBySymbol($symbol) {
+function getRecordBySymbol($symbol, $full=false) {
 	global $json;
 
 	$arr = array_filter($json, function($item) use ($symbol) {
@@ -142,7 +147,7 @@ function getRecordBySymbol($symbol) {
 	return array_pop($arr);
 }
 
-function getRecordByName($owner, $name) {
+function getRecordByName($owner, $name, $full=false) {
 	global $json;
 
 	$arr = array_filter($json, function($item) use ($owner,$name) {
@@ -179,8 +184,8 @@ function addRecords($records) {
 
 		$coin->dateAdded = date('c');
 		$coin->languages = is_array($record->languages) ? $record->languages : explode(',', $record->languages);
-		$coin->releases = json_decode($record->releases);
-		$coin->data = json_decode($record->data);
+		// $coin->releases = json_decode($record->releases);
+		$coin->data = isset($record->data) ? json_decode($record->data) : array();
 
 		foreach($coin as $key => $val) {
 			if(!in_array($key, $fields)) {
@@ -213,6 +218,7 @@ function updateRecords($records) {
 						}, fetchJSON(FIELDS_FILE));
 
 	$updated = array();
+	$changedkeys = array();
 
 	foreach($records as $record) {
 
@@ -228,6 +234,13 @@ function updateRecords($records) {
 			}
 		}
 
+		// if the coinname or symbol changed, we need to update
+		// refs in aux data files...
+		if($record->coinname !== $json[$idx]->coinname ||
+			 $record->symbol !== $json[$idx]->symbol) {
+			$changedkeys[$json[$idx]->symbol] = $record;
+		}
+
 		$json[$idx] = (object) array_replace((array) $json[$idx], (array) $record);
 		array_push($updated, $json[$idx]);
 
@@ -235,7 +248,11 @@ function updateRecords($records) {
 
 	try {
 		write($json, JSON_FILE);
-		if(errorOutput()->errors) return errorOutput()->errors;
+		if(count($changedkeys) > 0) {
+			write(updateRelatedFile(ARCHIVE_FILE, $changedkeys), ARCHIVE_FILE);
+			// write(updateRelatedFile(DEV_FILE, $changedkeys), DEV_FILE);
+		}
+		if(errorOutput()->errors) return errorOutput();
 		return $updated;
 	} catch (Exception $e) {
 		errorLog('UPDATERECORDS_ERROR', $e->getMessage());
@@ -339,7 +356,7 @@ function archive($file=JSON_FILE) {
 				return strcmp($b->date, $a->date);
 			});
 		} else {
-			usort($cdata->archive, function($a, $b) {
+			usort($cdata->archive->data, function($a, $b) {
 				return strcmp($b->date, $a->date);
 			});
 			array_push($jsonarchive, $cdata->archive);
@@ -356,14 +373,53 @@ function archive($file=JSON_FILE) {
 
 }
 
-function backup() {
-	global $json;
+function getArchive($file=ARCHIVE_FILE, $from=null, $to=null) {
 
-	$filename = DEVELOPMENT ? 'data.' . date('Ymd') . '.backup.json' : 'backup';
+	$data = array();
+
+	$from = $from ? $from : strtotime('-14 days');
+	$to = $to ? $to : time();
+
+	$jsonarchive = fetchJSON($file);
+	if(errorOutput()->errors) return errorOutput();
+
+	foreach($jsonarchive as &$coin) {
+
+		$coin->data = array_filter($coin->data, function($day) use($from, $to) {
+			$t = strtotime($day->date);
+			return $t >= $from && $t <= $to;
+		});
+
+	}
+
+	return $jsonarchive;
+
+}
+
+function updateRelatedFile($file, $records) {
+
+	$json = fetchJSON($file);
+	if(errorOutput()->errors) return errorOutput();
+
+	foreach($records as $sym => $newrecord) {
+
+		$idx = array_search($sym, array_map(function($coin) { return $coin->symbol; }, $json));
+
+		$json[$idx]->coinname = $newrecord->coinname;
+		$json[$idx]->symbol = $newrecord->symbol;
+
+	}
+
+	return $json;
+}
+
+function backup($name, $src) {
+
+	$filename = DEVELOPMENT ? $name . '.' . date('Ymd') . '.backup.json' : $name . '.backup';
 
 	$file = dirname(LOCAL_FILE) . DIRECTORY_SEPARATOR . 'backup' . DIRECTORY_SEPARATOR . $filename;
 
-	if($json === null) fetchJSON();
+	$json = fetchJSON($src);
 	if(errorOutput()->errors) return errorOutput();
 
 	if(file_put_contents($file, json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES))) {

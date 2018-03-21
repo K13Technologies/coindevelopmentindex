@@ -151,6 +151,7 @@ jQuery(document).ready(function($) {
             coin;
 
         e.preventDefault();
+        resetAlert();
 
         $coinForm.find('input:disabled').prop('disabled', false);
         coin = $coinForm.serializeArray();
@@ -198,6 +199,8 @@ jQuery(document).ready(function($) {
                         ($('input[name="' + curr + '"]').val() === '' ? 'You must provide the ' + curr + ' for the coin.<br>' : '');
             }, ''),
             coin;
+
+        resetAlert();
 
         if(invalid.length > 0) {
             $output.addClass('alert alert-danger active').html(invalid);
@@ -252,6 +255,7 @@ jQuery(document).ready(function($) {
             count = 3;
 
         e.preventDefault();
+        resetAlert();
 
         if(window.confirm('Are you sure you want to DELETE ' + coin.coinname + ' (' + coin.symbol + ') ?')) {
 
@@ -308,6 +312,7 @@ jQuery(document).ready(function($) {
     };
 
     var resetForm = function(e) {
+        resetAlert();
         $coinSel.val('new');
         // if($releases.hasClass('wrapped')) {
         //     $releases.val('').removeClass('wrapped').addClass('col-sm-12').unwrap().next('ul').remove();
@@ -331,7 +336,7 @@ jQuery(document).ready(function($) {
         $fields.find('input, select').each(function() {
             var $f = $(this),
                 n = $f.attr('name'),
-                val = coin[n];
+                val = coin[n] || '';
 
             if(reset) {
 
@@ -465,12 +470,14 @@ jQuery(document).ready(function($) {
 
     var hideAlert = function(t) {
         t = t || 2000;
-        setTimeout(function() {
-            $output.removeClass('alert alert-danger alert-success  alert-info  alert-secondary active');
-        }, t);
+        setTimeout(resetAlert, t);
         setTimeout(function() {
             $output.empty();
         }, t + 800);
+    };
+
+    var resetAlert = function() {
+        $output.removeClass('alert alert-danger alert-success alert-info  alert-secondary active');
     };
 
     getJSONLocation();

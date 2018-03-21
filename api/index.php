@@ -68,7 +68,7 @@
 			}
 
 			if(isset($_POST['csvupdate'])) {
-				$records = array(getCSVrecord($_POST['symbol'], fetchCSV()));
+				$records = array(getCSVrecord($_POST['symbol'], fetchCSV(CSV_FILE)));
 				out($records);
 				break;
 			}
@@ -108,15 +108,15 @@
 				out(write(fetchJSON(REMOTE_FILE),LOCAL_FILE, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
 				break;
 			}
-			if(isset($_GET['pushremote'])) {
-				$file = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'backup'  . DIRECTORY_SEPARATOR . $_GET['pushremote'];
-				out(write(fetchJSON($file), REMOTE_FILE));
-				break;
-			}
 			if(isset($_GET['restore'])) {
-				$backup = strlen($_GET['restore']) > 0 ? $_GET['restore'] : 'backup';
+				$backup = strlen($_GET['restore']) > 0 ? $_GET['restore'] : 'data.backup';
 				$file = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'assets/json/backup'  . DIRECTORY_SEPARATOR . $backup;
-				out(write(fetchJSON($file), LOCAL_FILE));
+				if(file_exists($file)) {
+					out(write(fetchJSON($file), LOCAL_FILE));
+				} else {
+					errorLog('RESTOREDATA_ERROR', 'Could not find restore file: ' . $file);
+					out(errorOutput());
+				}
 				break;
 			}
 			if(isset($_GET['githubfetchall'])) {
@@ -161,11 +161,18 @@
 				break;
 			}
 			if(isset($_GET['backup'])) {
-				if(!checkPermissions(dirname(LOCAL_FILE) . DIRECTORY_SEPARATOR . 'backup', '0664')) {
+				if(!checkPermissions(dirname(LOCAL_FILE) . DIRECTORY_SEPARATOR . 'backup', '0755')) {
 					array_map(function($err){echo $err->type . $err->message . PHP_EOL;}, errorOutput()->errors);
 					break;
 				}
-				out(backup());
+				backup('archive', ARCHIVE_FILE);
+				backup('data', JSON_FILE);
+				if(errorOutput()->errors) {
+					array_map(function($err){echo $err->type . $err->message . PHP_EOL;}, errorOutput()->errors);
+				} else {
+					echo 'Backup of ' . JSON_FILE . ' successful.<br>';
+					echo 'Backup of ' . ARCHIVE_FILE . ' successful.<br>';
+				}
 				break;
 			}
 			if(isset($_GET['local'])) {
@@ -175,10 +182,11 @@
 
 			$find = array();
 
-			if(isset($_GET['coinname'])) array_push($find, $_GET['coinname']);
-			if(isset($_GET['symbol'])) array_push($find, $_GET['symbol']);
+			if(isset($_GET['coinname'])) $find['coinname'] = $_GET['coinname'];
+			if(isset($_GET['symbol'])) $find['symbol'] = $_GET['symbol'];
+			$full = isset($_GET['detail']);
 
-			out(getRecord($find));
+			out(getRecord($find, $full));
 			break;
 
 	}
