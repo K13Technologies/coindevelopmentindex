@@ -239,6 +239,7 @@ footer {
 
 .container {
 	max-width: $ctr-wd-xs;
+	overflow: hidden;
 
 	@media only screen and (min-width:500px) {
 		max-width: $ctr-wd-sm;
@@ -312,6 +313,10 @@ footer {
 		}
 	}
 
+}
+
+.nobreak {
+	white-space: nowrap;
 }
 
 @media only screen and (max-width:900px) {

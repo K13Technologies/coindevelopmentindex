@@ -1,6 +1,6 @@
 /*! COINS */
 
-/* globals R */
+/* globals R, Utils */
 var Coins = (function($) {
 	'use strict';
 
@@ -10,17 +10,18 @@ var Coins = (function($) {
 					if(param[0]) prev[param[0]] = param[1] ? param[1] : true;
 					return prev;
 				}, {}),
-	coinfile = params.local ? 'http://api.coindev.local' : 'https://api.coindevelopmentindex.tech',
-	// coinfile = 'https://api.coindevelopmentindex.tech',
-	fieldsfile = coinfile + '?fields',
-	coinAPI = 'https://api.coindevelopmentindex.tech',
-	rateAPI = 'https://min-api.cryptocompare.com/data/pricemulti',
-	initialized = false,
-	complete = false,
-	callbacks = [],
-	currSort = 'latest.rank',
-	indexAvgs = {},
-	coins, results, fields;
+			coinfile = params.local ? 'http://api.coindev.local' : 'https://api.coindevelopmentindex.tech',
+			// coinfile = 'https://api.coindevelopmentindex.tech',
+			fieldsfile = coinfile + '?fields',
+			coinAPI = 'https://api.coindevelopmentindex.tech',
+			rateAPI = 'https://min-api.cryptocompare.com/data/pricemulti',
+			initialized = false,
+			complete = false,
+			callbacks = [],
+			currSort = 'latest.rank',
+			indexVals = {},
+			indexAvgs = {},
+			coins, results, fields;
 
 	var isAdminSite = function() {
 		return /(api\.)?coindev(elopmentindex)?\.(tech|local)\/admin/.test(window.location);
@@ -83,7 +84,7 @@ var Coins = (function($) {
 		var data =  Object.keys(params)
 												.filter(function(key) { return key.length > 0; })
 												.map(function(key) { return { name: key, value: params[key] }; });
-		
+
 		query = query || 'location';
 
 		return $.get(coinfile + '?' + query, data);
@@ -117,6 +118,65 @@ var Coins = (function($) {
 						return sortFn(nA,nB);
 
 					},
+					all: {
+						'default': function(a,b) {
+
+							var nA, nB;
+
+							if(a.data && a.data.length) {
+								nA = a.data.reduce(function(acc,d) {
+									if(Number.isNaN(parseInt(d[currSort.split('.')[1]]))) return acc;
+									return acc + parseInt(d[currSort.split('.')[1]]);
+								}, 0);
+								if(nA) {
+									nA = $.isNumeric(nA) ? parseFloat(nA) : nA.toLowerCase();
+								} else {
+									nA = null;
+								}
+							} else {
+								nA = null;
+							}
+							if(b.data && b.data.length) {
+								nB = b.data.reduce(function(acc,d) {
+									if(Number.isNaN(parseInt(d[currSort.split('.')[1]]))) return acc;
+									return acc + parseInt(d[currSort.split('.')[1]]);
+								}, 0);
+								if(nB) {
+									nB = $.isNumeric(nB) ? parseFloat(nB) : nB.toLowerCase();
+								} else {
+									nB = null;
+								}
+							} else {
+								nB = null;
+							}
+
+							return sortFn(nA,nB);
+						}
+					},
+					chg: {
+						'default': function(a,b) {
+
+							var nA, nB;
+
+							if(a.data && a.data.length) {
+								nA = Utils.chg(a.data.slice().reverse().map(function(d) { return d[currSort.split('.')[1]]; } ));
+								if(!nA) {
+									nA = null;
+								}
+							} else {
+								nA = null;
+							}
+							if(b.data && b.data.length) {
+								nB = Utils.chg(b.data.slice().reverse().map(function(d) { return d[currSort.split('.')[1]]; } ));
+								if(!nB) {
+									nB = null;
+								}
+							} else {
+								nB = null;
+							}
+							return sortFn(nA,nB);
+						}
+					},
 					latest: {
 						'default': function(a,b) {
 
@@ -145,14 +205,21 @@ var Coins = (function($) {
 
 							return sortFn(nA,nB);
 						},
-						classification: function(a,b) {
+						price: function(a,b) {
 							var nA, nB;
 
-							nA = a.classification ? a.classification : a.type;
-							nB = b.classification ? b.classification : b.type;
+							if(a.data && a.data.length && a.data[0].price && a.data[1].price) {
+								nA = (a.data[0].price - a.data[1].price) / a.data[1].price;
+							} else {
+								nA = null;
+							}
+							if(b.data && b.data.length && b.data[0].price && b.data[1].price) {
+								nB = (b.data[0].price - b.data[1].price) / b.data[1].price;
+							} else {
+								nB = null;
+							}
 
 							return sortFn(nA,nB);
-
 						},
 						releases: function(a,b) {
 
@@ -164,72 +231,52 @@ var Coins = (function($) {
 							return sortFn(nA,nB);
 						}
 					},
+					classification: function(a,b) {
+						var nA, nB;
+
+						nA = a.classification ? a.classification : a.type;
+						nB = b.classification ? b.classification : b.type;
+
+						return sortFn(nA,nB);
+
+					},
 					trend: function(a,b) {
-							var nA = null, nB = null, iA = 0, iB = 0,
-									xA = 0, yA = 0, xyA = 0, x2A = 0,
-									xB = 0, yB = 0, xyB = 0, x2B = 0;
+						var nA = null, nB = null;
 
-							if(a.data && a.data.length && a.data[0].rank) {
-								a.data.forEach(function(d) {
-									var day = new Date(d.date).getTime()/1000/60/60/24,
-											rank = d.rank ? parseInt(d.rank,10) : null,
-											wr = day * rank,
-											ws = day * day;
-
-										if(rank) {
-											xA += day;
-											yA += rank;
-											xyA += wr;
-											x2A += ws;
-											iA++;
-										}
-								});
-								nA = -((iA * xyA) - (xA * yA)) / ((iA * x2A) - (xA * xA)) * iA;
-								if(Number.isNaN(nA)) nA = null;
-							}
-							if(b.data && b.data.length && b.data[0].rank) {
-								b.data.forEach(function(d) {
-									var day = new Date(d.date).getTime()/1000/60/60/24,
-											rank = d.rank ? parseInt(d.rank,10) : null,
-											wr = day * rank,
-											ws = day * day;
-
-										if(rank) {
-											xB += day;
-											yB += rank;
-											xyB += wr;
-											x2B += ws;
-											iB++;
-										}
-								});
-								nB = -((iB * xyB) - (xB * yB)) / ((iB * x2B) - (xB * xB)) * iB;
-								if(Number.isNaN(nB)) nB = null;
-							}
-							return sortFn(nA,nB);
+						if(a.data && a.data.length && a.data[0].rank) {
+							nA = -Utils.trend(a.data, 'rank');
+							if(Number.isNaN(nA)) nA = null;
+						}
+						if(b.data && b.data.length && b.data[0].rank) {
+							nB = -Utils.trend(a.data, 'rank');
+							if(Number.isNaN(nB)) nB = null;
+						}
+						return sortFn(nA,nB);
 					},
 					volatility: function(a,b) {
-							var nA, nB, sumA, sumB;
 
-							if(a.data && a.data.length && a.data[0].volatility) {
-								sumA = a.data.reduce(function(prev,curr) {
-												return prev + (curr.volatility ? curr.volatility : 0);
-											}, 0);
-								nA =  sumA / a.data.length;
-								if(Number.isNaN(nA)) nA = null;
-							} else {
-								nA = null;
-							}
-							if(b.data && b.data.length && b.data[0].volatility) {
-								sumB = b.data.reduce(function(prev,curr) {
-												return prev + (curr.volatility ? curr.volatility : 0);
-											}, 0);
-								nB = sumB / b.data.length;
-								if(Number.isNaN(nB)) nB = null;
-							} else {
-								nB = null;
-							}
+						var nA, nB, aVals, bVals;
 
-							return sortFn(nA,nB);
+						if(a.data && a.data.length > 6) {
+							aVals = a.data.map(function(d) {
+								return d.price || 0;
+							});
+							nA = Utils.vol(aVals).toFixed(4);
+							if(!nA || Number.isNaN(nA)) nA = null;
+						} else {
+							nA = null;
+						}
+						if(b.data && b.data.length > 6) {
+							bVals = b.data.map(function(d) {
+								return d.price || 0;
+							});
+							nB = Utils.vol(bVals).toFixed(4);
+							if(!nB || Number.isNaN(nB)) nB = null;
+						} else {
+							nB = null;
+						}
+
+						return sortFn(nA,nB);
 					}
 				};
 
@@ -246,17 +293,6 @@ var Coins = (function($) {
 								sorters[currSort] :
 								sorters['default'];
 		}
-
-		// var ascSorter, sortByProp;
-
-		// ascSorter = asc ? R.ascend(R.path(currSort.split('.'))) : R.descend(R.path(currSort.split('.')));
-
-		// sortByProp = R.sortWith([
-		// 	ascSorter,
-		// 	R.ascend(R.path(['latest', 'rank']))
-		// ]);
-
-		// sortByProp(coins);
 
 		coins.sort(sorter);
 		if(results) results.sort(sorter);
@@ -280,15 +316,15 @@ var Coins = (function($) {
 
 	var search = function(search) {
 		results = coins
-						.filter(function(coin) {
-							var regexp = new RegExp(search.regexp, 'ig'),
-									tregexp = new RegExp(search.type, 'ig');
+								.filter(function(coin) {
+									var regexp = new RegExp(search.regexp, 'ig'),
+											tregexp = new RegExp(search.type, 'ig');
 
-							if(search.type !== 'All' && !tregexp.test(coin.type)) {
-								return false;
-							}
-							return regexp.test(coin.coinname) || regexp.test(coin.symbol);
-						});
+									if(search.type !== 'All' && !tregexp.test(coin.type)) {
+										return false;
+									}
+									return regexp.test(coin.coinname) || regexp.test(coin.symbol);
+								});
 		return results;
 	};
 
@@ -382,57 +418,48 @@ var Coins = (function($) {
 		});
 	};
 
-	var indexAvg = function(field) {
+	var indexVals = function(field, calcfield, nonull) {
 
-		var sum, avg, idxSum;
+		var calcs = {
+					default: Utils.avg,
+					commits: Utils.sum,
+					chg: Utils.chg,
+					volatility: Utils.vol
+				},
+				calc, coinArr, idxArr;
 
-		if(indexAvgs[field]) return indexAvgs[field];
+		nonull = nonull || false;
 
-		idxSum = coins.reduce(function(prev,curr) {
+		if(indexVals[field]) return indexVals[field];
 
-			var data = curr.data;
+		// coinArr = results && results.length > 1 ? results : coins;
+
+		idxArr = coins.map(function(coin) {
+
+			var data = coin.data;
 
 			if(data && data.length) {
 
-				if(!data[0][field]) return prev;
+				if(!data.some(function(d) { return calcfield ? d[calcfield] : d[field]; })) return null;
 
-				sum = data.reduce(function(prev,curr) {
-					return prev + ($.isNumeric(curr[field]) ? curr[field] : 0);
-				}, 0);
+				calc = calcs[field] ?
+								calcs[field](data.slice().reverse().map(function(d) { return calcfield ? d[calcfield] : d[field]; })) :
+								calcs.default(data.slice().reverse().map(function(d) { return calcfield ? d[calcfield] : d[field]; }));
 
-				avg = sum / data.length;
-				if(!$.isNumeric(avg)) return prev;
-				return prev + avg;
+				if(!$.isNumeric(calc)) return null;
+
+				return calc;
 			}
 
-			return prev;
+			return null;
 
-		}, 0);
-
- 		indexAvgs[field] = idxSum / coins.length;
-
-		return indexAvgs[field];
-
-	};
-
-	var parseNullChars = function() {
-
-		getFields()
-			.then(function(fields) {
-
-			});
-
-		coins.forEach(function(coin) {
-			var c, f;
-			for(c in coin) {
-				f = fields.find(function(field) { return field.name === c; });
-				if(f && !coin[c] && f['null-char']) {
-					coin[c] = f['null-char'];
-				}
-			}
 		});
-	};
 
+		if(nonull) { idxArr = idxArr.filter(function(d) { return d !== null; }); }
+
+		return idxArr;
+
+	};
 
 	return {
 		init: init,
@@ -444,7 +471,7 @@ var Coins = (function($) {
 		file: file,
 		find: find,
 		filter: filter,
-		indexAvg: indexAvg,
+		indexVals: indexVals,
 		update: update,
 		deleteCoin: deleteCoin,
 		price: price,

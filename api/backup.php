@@ -11,7 +11,8 @@
 					}, errorOutput()->errors);
 		logFile('/var/log/coindevelopmentindex/update.log', $msgs);
 	} else {
-		backup();
+		backup('archive', ARCHIVE_FILE);
+		backup('data', JSON_FILE);
 		if(errorOutput()->errors) {
 			$msgs = array_map(function($error) {
 							return  $error->type . ': ' . $error->message;
