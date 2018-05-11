@@ -46,7 +46,7 @@ scss-lint-report.xml
 
 # Ignore generated css
 *.min.css
-*.css.map
+*.map
 
 # Jekyll metadata
 docs/.jekyll-metadata

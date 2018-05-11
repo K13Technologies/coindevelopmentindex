@@ -29,15 +29,15 @@
   "homepage": "https://github.com/PatchChat/coindevindex-website#readme",
   "dependencies": {
     "bootstrap-beta": "^4.0.0-beta",
-    "floatthead": "^2.0.3",
+    "floatthead": "^2.1.2",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.2.1",
-    "popper.js": "^1.13.0",
-    "tether": "^1.4.1",
-    "underscore": "^1.8.3"
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.3",
+    "tether": "^1.4.4",
+    "underscore": "^1.9.0"
   },
   "devDependencies": {
-    "grunt": "^1.0.1",
+    "grunt": "^1.0.2",
     "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
@@ -45,11 +45,11 @@
     "grunt-contrib-handlebars": "^1.0.0",
     "grunt-contrib-htmlmin": "^2.4.0",
     "grunt-contrib-imagemin": "^2.0.1",
-    "grunt-contrib-uglify": "^3.1.0",
-    "grunt-contrib-watch": "^1.0.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.0.1",
     "grunt-html-build": "^0.7.1",
     "grunt-import": "^1.0.3",
-    "grunt-sass": "^2.0.0",
+    "grunt-sass": "^2.1.0",
     "grunt-sftp-deploy": "^0.2.5"
   }
 }
