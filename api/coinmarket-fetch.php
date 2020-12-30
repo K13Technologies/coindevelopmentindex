@@ -5,7 +5,7 @@ include_once('coin.php');
 include_once('utils.php');
 include_once('token.php');
 
-define('COINMARKET_LIST', 'https://api.coinmarketcap.com/v1/ticker/?limit=0');
+define('COINMARKET_LIST', 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest');
 
 define('SKIP_LIST', array(
 	'JINN', 'CRYPTOBNB', 'BTC2X', 'PAYX'
@@ -28,9 +28,35 @@ if(DEBUG) {
 
 function fetchCoinMarketData($json) {
 
-	$coins = fetchJSON(COINMARKET_LIST);
+  $coins = fetchJSON(COINMARKET_LIST);
 
-	if(DEBUG) echo '<pre>';
+  $parameters = [
+    'start' => '1',
+    'limit' => '5000',
+    'convert' => 'USD'
+  ];
+
+  $ch = curl_init();
+
+  $qs = http_build_query($parameters); // query string encode the parameters
+
+	// set URL and other appropriate options
+	curl_setopt($ch, CURLOPT_URL, COINMARKET_LIST . "?${qs}");
+	// curl_setopt($ch, CURLOPT_FRESH_CONNECT, TRUE);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($ch, CURLOPT_USERAGENT, 'PatchChat');
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Accepts: application/json',
+    'X-CMC_PRO_API_KEY: ' . COINMARKET_API_KEY));
+
+  $raw = json_decode(curl_exec($ch));
+  curl_close($ch);
+
+  $coins = $raw->data;
+
+  if(DEBUG) echo '<pre>';
+  echo print_r($coins);
+  exit();
 
 	if(!is_array($json)) {
 		$json = array($json);

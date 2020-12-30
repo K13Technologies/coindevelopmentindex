@@ -23,6 +23,13 @@ sudo npm install -g grunt-cli
 grunt
 ```
 
+### OR 
+
+ - Just run grunt via NPX to start the watch task
+ ```
+ npx grunt-cli
+ ```
+
 - Prior to deployment, run grunt build task to output production ready files
 ```
 grunt build

@@ -10,7 +10,7 @@ var Coins = (function($) {
 					if(param[0]) prev[param[0]] = param[1] ? param[1] : true;
 					return prev;
 				}, {}),
-			coinfile = params.local ? 'http://api.coindev.local' : 'https://api.coindevelopmentindex.tech',
+			coinfile = params.local ? 'http://api.coindev.local:8082' : 'https://api.coindevelopmentindex.tech',
 			// coinfile = 'https://api.coindevelopmentindex.tech',
 			fieldsfile = coinfile + '?fields',
 			coinAPI = 'https://api.coindevelopmentindex.tech',
